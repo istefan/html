@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" preserveAspectRatio="none">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="100%" stop-color="#f8f9fb" stop-opacity="1" />
+    </radialGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8f9fb" stop-opacity="1" />
+      <stop offset="100%" stop-color="#e2e8f0" stop-opacity="0.3" />
+    </linearGradient>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#cbd5e1" stroke-width="0.5" stroke-opacity="0.4" />
+    </pattern>
+  </defs>
+  
+  <!-- Base background -->
+  <rect width="100%" height="100%" fill="url(#glow)" />
+  
+  <!-- Perspective Grid -->
+  <g transform="translate(720, 600) scale(1, 0.4) rotate(45)">
+    <rect x="-1000" y="-1000" width="2000" height="2000" fill="url(#grid)" />
+  </g>
+  
+  <!-- Overlay to fade the grid in the distance -->
+  <rect width="100%" height="100%" fill="url(#fade)" />
+  
+  <!-- Some futuristic abstract nodes / data lines -->
+  <g opacity="0.6">
+    <circle cx="200" cy="300" r="3" fill="#94a3b8" />
+    <circle cx="200" cy="300" r="10" fill="none" stroke="#94a3b8" stroke-width="0.5" />
+    <line x1="200" y1="300" x2="350" y2="150" stroke="#cbd5e1" stroke-width="1" />
+    <circle cx="350" cy="150" r="2" fill="#94a3b8" />
+    
+    <circle cx="1200" cy="500" r="4" fill="#94a3b8" />
+    <line x1="1200" y1="500" x2="1000" y2="650" stroke="#cbd5e1" stroke-width="1" />
+    <circle cx="1000" cy="650" r="2" fill="#94a3b8" />
+    
+    <circle cx="1300" cy="200" r="2" fill="#94a3b8" />
+    <line x1="1300" y1="200" x2="1150" y2="250" stroke="#cbd5e1" stroke-width="1" />
+    <circle cx="1150" cy="250" r="3" fill="#94a3b8" />
+    <circle cx="1150" cy="250" r="8" fill="none" stroke="#94a3b8" stroke-width="0.5" />
+    
+    <circle cx="400" cy="700" r="2" fill="#94a3b8" />
+    <line x1="400" y1="700" x2="550" y2="800" stroke="#cbd5e1" stroke-width="1" />
+    <circle cx="550" cy="800" r="3" fill="#94a3b8" />
+  </g>
+  
+  <!-- Binary/Hex subtle text -->
+  <text x="150" y="200" font-family="monospace" font-size="10" fill="#cbd5e1" opacity="0.5">01001011 01100101</text>
+  <text x="1250" y="350" font-family="monospace" font-size="10" fill="#cbd5e1" opacity="0.5">0x7F 0xA3 0x99</text>
+</svg>
