@@ -22,12 +22,12 @@
     <!-- ── Logo ─────────────────────────────────────────────────────── -->
     <!-- React: <SidebarLogo activeApp={activeApp} /> -->
     <div class="logo">
-        <a href="index.html" title="SONIC GRID – Acasă">
-            <img src="assets/images/sonic-grid-logo.svg"
-                 alt="SONIC GRID"
+        <a href="sonic-dashboard.html" title="SONIC – Acasă">
+            <img src="assets/images/sonic-logo.svg"
+                 alt="SONIC"
                  class="logo-full"
                  id="sidebarLogo">
-            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">SG</span>
+            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">S</span>
         </a>
     </div>
 
@@ -36,7 +36,7 @@
     <nav class="sidebar-nav" aria-label="Navigare principală">
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC GRID
+             ║  1. SONIC GRID
              ╚══════════════════════════════════════════════════════════════ -->
         <div class="app-section"
              data-app="sonic-grid"
@@ -44,6 +44,7 @@
              data-logo-icon="SG">
             <button class="app-section-header" type="button" title="SONIC GRID">
                 <img src="assets/images/sonic-grid-logo.svg" class="app-section-logo" alt="SONIC GRID">
+                <span class="app-section-badge">SG</span>
             </button>
             <div class="app-section-body">
 
@@ -142,14 +143,71 @@
         </div>
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC BILLING
+             ║  2. SONIC MARKET
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-market"
+             data-logo="assets/images/sonic-market-logo.svg"
+             data-logo-icon="SM">
+            <button class="app-section-header" type="button" title="SONIC MARKET">
+                <img src="assets/images/sonic-market-logo.svg" class="app-section-logo" alt="SONIC MARKET">
+                <span class="app-section-badge">SM</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard Market -->
+                <a href="market-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  3. SONIC PRO
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-pro"
+             data-logo="assets/images/sonic-pro-logo.svg"
+             data-logo-icon="SP">
+            <button class="app-section-header" type="button" title="SONIC PRO">
+                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+                <span class="app-section-badge">SP</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard PRO -->
+                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- Intervenții -->
+                <a href="interventii.html" class="nav-item " title="Intervenții">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </span>
+                    <span class="nav-label">Intervenții</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  4. SONIC BILLING
              ╚══════════════════════════════════════════════════════════════ -->
         <div class="app-section open"
              data-app="sonic-billing"
              data-logo="assets/images/sonic-billing-logo.svg"
-             data-logo-icon="SG">
+             data-logo-icon="SB">
             <button class="app-section-header" type="button" title="SONIC BILLING">
                 <img src="assets/images/sonic-billing-logo.svg" class="app-section-logo" alt="SONIC BILLING">
+                <span class="app-section-badge">SB</span>
             </button>
             <div class="app-section-body">
 
@@ -213,25 +271,6 @@
                         <a href="modele-repartitoare.html" class="nav-subitem ">Modele Repartitoare</a>
                         <a href="modele-contoare.html" class="nav-subitem ">Modele Contoare</a>
                         <a href="serii-apometre.html" class="nav-subitem ">Serii Apometre Achiziționate</a>
-                    </div>
-                </div>
-
-                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
-                <div class="nav-group " data-group="master-data">
-                    <button class="nav-group-title" type="button" title="Master Data Management">
-                        <span class="nav-group-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </span>
-                        <span class="nav-label">Master Data Management</span>
-                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                    </button>
-                    <div class="nav-subitems">
-                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
-                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
-                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
-                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
-                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
-                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
                     </div>
                 </div>
 
@@ -349,32 +388,68 @@
         </div>
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC PRO
+             ║  5. SONIC FIN
              ╚══════════════════════════════════════════════════════════════ -->
         <div class="app-section"
-             data-app="sonic-pro"
-             data-logo="assets/images/sonic-pro-logo.svg"
-             data-logo-icon="SP">
-            <button class="app-section-header" type="button" title="SONIC PRO">
-                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+             data-app="sonic-fin"
+             data-logo="assets/images/sonic-fin-logo.svg"
+             data-logo-icon="SF">
+            <button class="app-section-header" type="button" title="SONIC FIN">
+                <img src="assets/images/sonic-fin-logo.svg" class="app-section-logo" alt="SONIC FIN">
+                <span class="app-section-badge">SF</span>
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
-                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                <!-- Dashboard FIN -->
+                <a href="fin-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  6. SONIC (Base – Ecosistem & Configurare)
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic"
+             data-logo="assets/images/sonic-logo.svg"
+             data-logo-icon="S">
+            <button class="app-section-header" type="button" title="SONIC">
+                <img src="assets/images/sonic-logo.svg" class="app-section-logo" alt="SONIC">
+                <span class="app-section-badge">S</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard SONIC -->
+                <a href="sonic-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
-                    <span class="nav-label">Intervenții</span>
+                    <span class="nav-label">Dashboard</span>
                 </a>
+
+                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <div class="nav-group " data-group="master-data">
+                    <button class="nav-group-title" type="button" title="Master Data Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Master Data Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
+                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
+                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
+                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
+                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
+                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -449,7 +524,7 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="index.html">
+            <a href="sonic-dashboard.html">
                 <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
             </a>
         </div>
@@ -536,7 +611,7 @@
 <div class="page-title-container">
     <div class="page-title">
         <h1>Editare Furnizor</h1>
-        <p>Completează formularul de mai jos pentru a înregistra un nou furnizor.</p>
+        <p>Modifici informațiile pentru furnizorul selectat.</p>
     </div>
     <a href="furnizori.html" class="btn-secondary">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" style="margin-right: 6px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
@@ -564,7 +639,7 @@
                                                     <option value="4" >Arges</option>
                                                     <option value="5" >Bacau</option>
                                                     <option value="6" >Bihor</option>
-                                                    <option value="10" >Brasov</option>
+                                                    <option value="10" selected>Brasov</option>
                                                     <option value="11" >Bucuresti</option>
                                                     <option value="15" >Cluj - Napoca</option>
                                                     <option value="16" >Constanta</option>
@@ -583,7 +658,7 @@
                 <div class="form-group">
                     <label class="form-label" for="txtCity">Localitate <span class="required-star">*</span></label>
                     <div class="input-with-icon" style="position: relative;">
-                        <input type="text" id="txtCity" name="city" class="input-control" value="" required readonly style="background-color: var(--bg-hover); cursor: pointer;" onclick="openCityPicker()">
+                        <input type="text" id="txtCity" name="city" class="input-control" value="Brașov" required readonly style="background-color: var(--bg-hover); cursor: pointer;" onclick="openCityPicker()">
                         <div style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;" onclick="openCityPicker()">
                             <svg viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                         </div>
@@ -593,7 +668,7 @@
             
             <div class="form-group" style="margin-bottom: 0;">
                 <label class="form-label" for="txtName">Denumire furnizor <span class="required-star">*</span></label>
-                <input type="text" id="txtName" name="name" class="input-control" maxlength="50" value="" required style="max-width: 400px;">
+                <input type="text" id="txtName" name="name" class="input-control" maxlength="50" value="Compania Apa Brasov S.A." required style="max-width: 400px;">
             </div>
         </div>
     </div>
@@ -616,10 +691,10 @@
                                             </div>
                                                         <div class="utility-item" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: var(--bg-body); border: 1px solid var(--border-color); border-radius: 6px;">
                         <label style="display: flex; align-items: center; cursor: pointer; user-select: none; margin: 0; font-size: 14px; font-weight: 500; color: var(--text-color);">
-                            <input type="checkbox" id="chkAC" name="utilities[]" value="chkAC"  style="margin-right: 10px; width: 16px; height: 16px; accent-color: var(--accent);" onchange="toggleUnitSelect('chkAC')">
+                            <input type="checkbox" id="chkAC" name="utilities[]" value="chkAC" checked style="margin-right: 10px; width: 16px; height: 16px; accent-color: var(--accent);" onchange="toggleUnitSelect('chkAC')">
                             Apa caldă                        </label>
                         
-                                                    <select id="unit_chkAC" name="unit_chkAC" class="input-control" style="width: auto; padding: 4px 8px; font-size: 13px; height: 28px; display: none;">
+                                                    <select id="unit_chkAC" name="unit_chkAC" class="input-control" style="width: auto; padding: 4px 8px; font-size: 13px; height: 28px; ">
                                                                     <option value="1" >GCal</option>
                                                                     <option value="2" >MWh</option>
                                                                     <option value="3" >GJ</option>
@@ -633,10 +708,10 @@
                                             </div>
                                                         <div class="utility-item" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: var(--bg-body); border: 1px solid var(--border-color); border-radius: 6px;">
                         <label style="display: flex; align-items: center; cursor: pointer; user-select: none; margin: 0; font-size: 14px; font-weight: 500; color: var(--text-color);">
-                            <input type="checkbox" id="chkAR" name="utilities[]" value="chkAR"  style="margin-right: 10px; width: 16px; height: 16px; accent-color: var(--accent);" onchange="toggleUnitSelect('chkAR')">
+                            <input type="checkbox" id="chkAR" name="utilities[]" value="chkAR" checked style="margin-right: 10px; width: 16px; height: 16px; accent-color: var(--accent);" onchange="toggleUnitSelect('chkAR')">
                             Apa rece                        </label>
                         
-                                                    <select id="unit_chkAR" name="unit_chkAR" class="input-control" style="width: auto; padding: 4px 8px; font-size: 13px; height: 28px; display: none;">
+                                                    <select id="unit_chkAR" name="unit_chkAR" class="input-control" style="width: auto; padding: 4px 8px; font-size: 13px; height: 28px; ">
                                                                     <option value="1" >GCal</option>
                                                                     <option value="2" >MWh</option>
                                                                     <option value="3" >GJ</option>
@@ -656,10 +731,10 @@
                                             </div>
                                                         <div class="utility-item" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: var(--bg-body); border: 1px solid var(--border-color); border-radius: 6px;">
                         <label style="display: flex; align-items: center; cursor: pointer; user-select: none; margin: 0; font-size: 14px; font-weight: 500; color: var(--text-color);">
-                            <input type="checkbox" id="chkCanalAR" name="utilities[]" value="chkCanalAR"  style="margin-right: 10px; width: 16px; height: 16px; accent-color: var(--accent);" onchange="toggleUnitSelect('chkCanalAR')">
+                            <input type="checkbox" id="chkCanalAR" name="utilities[]" value="chkCanalAR" checked style="margin-right: 10px; width: 16px; height: 16px; accent-color: var(--accent);" onchange="toggleUnitSelect('chkCanalAR')">
                             Canal A.R.                        </label>
                         
-                                                    <select id="unit_chkCanalAR" name="unit_chkCanalAR" class="input-control" style="width: auto; padding: 4px 8px; font-size: 13px; height: 28px; display: none;">
+                                                    <select id="unit_chkCanalAR" name="unit_chkCanalAR" class="input-control" style="width: auto; padding: 4px 8px; font-size: 13px; height: 28px; ">
                                                                     <option value="1" >GCal</option>
                                                                     <option value="2" >MWh</option>
                                                                     <option value="3" >GJ</option>
@@ -673,10 +748,10 @@
                                             </div>
                                                         <div class="utility-item" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: var(--bg-body); border: 1px solid var(--border-color); border-radius: 6px;">
                         <label style="display: flex; align-items: center; cursor: pointer; user-select: none; margin: 0; font-size: 14px; font-weight: 500; color: var(--text-color);">
-                            <input type="checkbox" id="chkMeteoAR" name="utilities[]" value="chkMeteoAR"  style="margin-right: 10px; width: 16px; height: 16px; accent-color: var(--accent);" onchange="toggleUnitSelect('chkMeteoAR')">
+                            <input type="checkbox" id="chkMeteoAR" name="utilities[]" value="chkMeteoAR" checked style="margin-right: 10px; width: 16px; height: 16px; accent-color: var(--accent);" onchange="toggleUnitSelect('chkMeteoAR')">
                             Meteo A.R.                        </label>
                         
-                                                    <select id="unit_chkMeteoAR" name="unit_chkMeteoAR" class="input-control" style="width: auto; padding: 4px 8px; font-size: 13px; height: 28px; display: none;">
+                                                    <select id="unit_chkMeteoAR" name="unit_chkMeteoAR" class="input-control" style="width: auto; padding: 4px 8px; font-size: 13px; height: 28px; ">
                                                                     <option value="1" >GCal</option>
                                                                     <option value="2" >MWh</option>
                                                                     <option value="3" >GJ</option>
@@ -696,10 +771,10 @@
                                             </div>
                                                         <div class="utility-item" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: var(--bg-body); border: 1px solid var(--border-color); border-radius: 6px;">
                         <label style="display: flex; align-items: center; cursor: pointer; user-select: none; margin: 0; font-size: 14px; font-weight: 500; color: var(--text-color);">
-                            <input type="checkbox" id="chkCanalAC" name="utilities[]" value="chkCanalAC"  style="margin-right: 10px; width: 16px; height: 16px; accent-color: var(--accent);" onchange="toggleUnitSelect('chkCanalAC')">
+                            <input type="checkbox" id="chkCanalAC" name="utilities[]" value="chkCanalAC" checked style="margin-right: 10px; width: 16px; height: 16px; accent-color: var(--accent);" onchange="toggleUnitSelect('chkCanalAC')">
                             Canal A.C.                        </label>
                         
-                                                    <select id="unit_chkCanalAC" name="unit_chkCanalAC" class="input-control" style="width: auto; padding: 4px 8px; font-size: 13px; height: 28px; display: none;">
+                                                    <select id="unit_chkCanalAC" name="unit_chkCanalAC" class="input-control" style="width: auto; padding: 4px 8px; font-size: 13px; height: 28px; ">
                                                                     <option value="1" >GCal</option>
                                                                     <option value="2" >MWh</option>
                                                                     <option value="3" >GJ</option>
@@ -713,15 +788,15 @@
                                             </div>
                                                         <div class="utility-item" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: var(--bg-body); border: 1px solid var(--border-color); border-radius: 6px;">
                         <label style="display: flex; align-items: center; cursor: pointer; user-select: none; margin: 0; font-size: 14px; font-weight: 500; color: var(--text-color);">
-                            <input type="checkbox" id="chkHeatAC" name="utilities[]" value="chkHeatAC"  style="margin-right: 10px; width: 16px; height: 16px; accent-color: var(--accent);" onchange="toggleUnitSelect('chkHeatAC')">
+                            <input type="checkbox" id="chkHeatAC" name="utilities[]" value="chkHeatAC" checked style="margin-right: 10px; width: 16px; height: 16px; accent-color: var(--accent);" onchange="toggleUnitSelect('chkHeatAC')">
                             Încălzire pentru A.C.                        </label>
                         
-                                                    <select id="unit_chkHeatAC" name="unit_chkHeatAC" class="input-control" style="width: auto; padding: 4px 8px; font-size: 13px; height: 28px; display: none;">
-                                                                    <option value="1" >GCal</option>
+                                                    <select id="unit_chkHeatAC" name="unit_chkHeatAC" class="input-control" style="width: auto; padding: 4px 8px; font-size: 13px; height: 28px; ">
+                                                                    <option value="1" selected>GCal</option>
                                                                     <option value="2" >MWh</option>
                                                                     <option value="3" >GJ</option>
                                                                     <option value="4" >kWh</option>
-                                                                    <option value="5" selected>mc</option>
+                                                                    <option value="5" >mc</option>
                                                                     <option value="6" >Nmc</option>
                                                                     <option value="7" >RON</option>
                                                                     <option value="8" >KG</option>
@@ -814,7 +889,7 @@
 
         setTimeout(() => {
             alert('Furnizorul a fost salvat cu succes!');
-            window.location.href = 'furnizori.php';
+            window.location.href = 'furnizori.html';
         }, 800);
 
         return false;

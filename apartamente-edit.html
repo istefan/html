@@ -1,0 +1,2259 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
+    <title>Editare Apartament – SONIC BILLING</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <script src="assets/js/nod-picker.js"></script>
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+<script>
+    (function() {
+        var sb = document.getElementById('sidebar');
+        var ls = localStorage.getItem('sb_collapsed');
+        if (ls === '1') sb.classList.add('collapsed');
+        else if (ls === '0') sb.classList.remove('collapsed');
+    })();
+</script>
+    <!-- ── Logo ─────────────────────────────────────────────────────── -->
+    <!-- React: <SidebarLogo activeApp={activeApp} /> -->
+    <div class="logo">
+        <a href="sonic-dashboard.html" title="SONIC – Acasă">
+            <img src="assets/images/sonic-logo.svg"
+                 alt="SONIC"
+                 class="logo-full"
+                 id="sidebarLogo">
+            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">S</span>
+        </a>
+    </div>
+
+    <!-- ── Nav ───────────────────────────────────────────────────────── -->
+    <!-- React: <SidebarNav activeApp={activeApp} onAppChange={setActiveApp} /> -->
+    <nav class="sidebar-nav" aria-label="Navigare principală">
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  1. SONIC GRID
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-grid"
+             data-logo="assets/images/sonic-grid-logo.svg"
+             data-logo-icon="SG">
+            <button class="app-section-header" type="button" title="SONIC GRID">
+                <img src="assets/images/sonic-grid-logo.svg" class="app-section-logo" alt="SONIC GRID">
+                <span class="app-section-badge">SG</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Panoul Meu -->
+                <a href="panoul-meu.html" class="nav-item " title="Panoul Meu">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </span>
+                    <span class="nav-label">Panoul Meu</span>
+                </a>
+
+                <!-- Adresele Mele -->
+                <a href="adresele-mele.html" class="nav-item " title="Adresele Mele">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </span>
+                    <span class="nav-label">Adresele Mele</span>
+                </a>
+
+                <!-- Regiuni / Zone -->
+                <a href="regiuni-zone.html" class="nav-item " title="Regiuni / Zone">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </span>
+                    <span class="nav-label">Regiuni / Zone</span>
+                </a>
+
+                <!-- Perioade Citiri -->
+                <a href="perioade-citiri.html" class="nav-item " title="Perioade Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </span>
+                    <span class="nav-label">Perioade Citiri</span>
+                </a>
+
+                <!-- Setări Alerte -->
+                <a href="setari-alerte.html" class="nav-item " title="Setări Alerte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </span>
+                    <span class="nav-label">Setări Alerte</span>
+                </a>
+
+                <!-- Info Center -->
+                <a href="info-center.html" class="nav-item " title="Info Center">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    <span class="nav-label">Info Center</span>
+                </a>
+
+                <!-- Contact -->
+                <a href="contact.html" class="nav-item " title="Contact">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </span>
+                    <span class="nav-label">Contact</span>
+                </a>
+
+                <!-- ── RAPOARTE (section label) ── -->
+                <div class="nav-section">Rapoarte</div>
+
+                <!-- Raport Citiri -->
+                <a href="raport-citiri.html" class="nav-item " title="Raport Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Raport Citiri</span>
+                </a>
+
+                <!-- Bilanț Neînchideri Apă -->
+                <a href="bilant-neinchideri.html" class="nav-item " title="Bilanț Neînchideri Apă">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                    </span>
+                    <span class="nav-label">Bilanț Neînchideri Apă</span>
+                </a>
+
+                <!-- Estimări Consum -->
+                <a href="estimari-consum.html" class="nav-item " title="Estimări Consum">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </span>
+                    <span class="nav-label">Estimări Consum</span>
+                </a>
+
+                <!-- Raport Alerte -->
+                <a href="raport-alerte.html" class="nav-item " title="Raport Alerte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Raport Alerte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  2. SONIC MARKET
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-market"
+             data-logo="assets/images/sonic-market-logo.svg"
+             data-logo-icon="SM">
+            <button class="app-section-header" type="button" title="SONIC MARKET">
+                <img src="assets/images/sonic-market-logo.svg" class="app-section-logo" alt="SONIC MARKET">
+                <span class="app-section-badge">SM</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard Market -->
+                <a href="market-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  3. SONIC PRO
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-pro"
+             data-logo="assets/images/sonic-pro-logo.svg"
+             data-logo-icon="SP">
+            <button class="app-section-header" type="button" title="SONIC PRO">
+                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+                <span class="app-section-badge">SP</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard PRO -->
+                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- Intervenții -->
+                <a href="interventii.html" class="nav-item " title="Intervenții">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </span>
+                    <span class="nav-label">Intervenții</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  4. SONIC BILLING
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-billing"
+             data-logo="assets/images/sonic-billing-logo.svg"
+             data-logo-icon="SB">
+            <button class="app-section-header" type="button" title="SONIC BILLING">
+                <img src="assets/images/sonic-billing-logo.svg" class="app-section-logo" alt="SONIC BILLING">
+                <span class="app-section-badge">SB</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard -->
+                <a href="index.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── ADMINISTRARE ─────────────────────────────────────────── -->
+                <div class="nav-group " data-group="administrare">
+                    <button class="nav-group-title" type="button" title="Administrare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                        </span>
+                        <span class="nav-label">Administrare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="utilizatori.html" class="nav-subitem ">Utilizatori</a>
+                        <a href="cititori.html" class="nav-subitem ">Cititori</a>
+                        <a href="parametri-sistem.html" class="nav-subitem ">Parametri Sistem</a>
+                        <a href="stergere-perioade.html" class="nav-subitem ">Ștergere Perioade Calcul</a>
+                    </div>
+                </div>
+
+                <!-- ── DICTIONARE ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="dictionare">
+                    <button class="nav-group-title" type="button" title="Dictionare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Dictionare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="localitati.html" class="nav-subitem ">Localități</a>
+                        <a href="puncte-lucru.html" class="nav-subitem ">Puncte de Lucru</a>
+                        <a href="producatori.html" class="nav-subitem ">Producători</a>
+                        <a href="furnizori.html" class="nav-subitem ">Furnizori Utilități</a>
+                        <a href="unitati-masura.html" class="nav-subitem ">Unități de Măsură</a>
+                        <a href="tipuri-servicii.html" class="nav-subitem ">Tipuri Servicii</a>
+                        <a href="companii.html" class="nav-subitem ">Companii</a>
+                    </div>
+                </div>
+
+                <!-- ── DATABANK MANAGEMENT ──────────────────────────────────── -->
+                <div class="nav-group " data-group="databank">
+                    <button class="nav-group-title" type="button" title="Databank Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                        </span>
+                        <span class="nav-label">Databank Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="tipuri-radiatoare.html" class="nav-subitem ">Tipuri Radiatoare</a>
+                        <a href="modele-radiatoare.html" class="nav-subitem ">Modele Radiatoare</a>
+                        <a href="modele-repartitoare.html" class="nav-subitem ">Modele Repartitoare</a>
+                        <a href="modele-contoare.html" class="nav-subitem ">Modele Contoare</a>
+                        <a href="serii-apometre.html" class="nav-subitem ">Serii Apometre Achiziționate</a>
+                    </div>
+                </div>
+
+                <!-- ── CALCUL ────────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="calcul">
+                    <button class="nav-group-title" type="button" title="Calcul">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </span>
+                        <span class="nav-label">Calcul</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
+                        <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
+                        <a href="tarife.html" class="nav-subitem ">Tarife</a>
+                    </div>
+                </div>
+
+                <!-- ── IMPORT / EXPORT CITIRI ───────────────────────────────── -->
+                <div class="nav-group " data-group="import-export">
+                    <button class="nav-group-title" type="button" title="Import / Export Citiri">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </span>
+                        <span class="nav-label">Import / Export Citiri</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="citire-manuala-et.html" class="nav-subitem ">Citire Manuală ET</a>
+                        <a href="citire-manuala-apa.html" class="nav-subitem ">Citire Manuală Apă</a>
+                        <a href="citiri-brute-et.html" class="nav-subitem ">Citiri Brute Energie Termică</a>
+                        <a href="citiri-brute-apa.html" class="nav-subitem ">Citiri Brute Apă</a>
+                        <a href="export-pl.html" class="nav-subitem ">Export PL</a>
+                    </div>
+                </div>
+
+                <!-- ── CONSUM ENERGIE TERMICĂ ────────────────────────────────── -->
+                <div class="nav-group " data-group="consum-et">
+                    <button class="nav-group-title" type="button" title="Consum Energie Termică">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                        </span>
+                        <span class="nav-label">Consum Energie Termică</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="consum-et-detaliat.html" class="nav-subitem ">Introducere Detaliată</a>
+                        <a href="consum-et-cumulat.html" class="nav-subitem ">Introducere Cumulată</a>
+                    </div>
+                </div>
+
+                <!-- ── CONSUM APĂ ─────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="consum-apa">
+                    <button class="nav-group-title" type="button" title="Consum Apă">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L7 10a5 5 0 0 0 10 0L12 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Consum Apă</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="consum-apa-detaliat.html" class="nav-subitem ">Introducere Detaliată</a>
+                    </div>
+                </div>
+
+                <!-- ── VALIDARE CITIRE ───────────────────────────────────────── -->
+                <div class="nav-group " data-group="validare">
+                    <button class="nav-group-title" type="button" title="Validare Citire">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </span>
+                        <span class="nav-label">Validare Citire</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="validare-et.html" class="nav-subitem ">Validare Citire – ET</a>
+                        <a href="validare-apa.html" class="nav-subitem ">Validare Citire – Apă</a>
+                        <a href="cost-split-apa.html" class="nav-subitem ">Cost Split – Apă</a>
+                    </div>
+                </div>
+
+                <!-- ── GESTIUNE FACTURARE (standalone) ──────────────────────── -->
+                <a href="facturare.html" class="nav-item " title="Gestiune Facturare">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Gestiune Facturare</span>
+                </a>
+
+                <!-- ── GESTIUNE TIPĂRIRE ───────────────────────────────────────── -->
+                <div class="nav-group " data-group="tiparire">
+                    <button class="nav-group-title" type="button" title="Gestiune Tipărire">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                        </span>
+                        <span class="nav-label">Gestiune Tipărire</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="nod-tiparire.html" class="nav-subitem ">NOD pentru Tipărire</a>
+                        <a href="fise-citire.html" class="nav-subitem ">Fișe Citire</a>
+                    </div>
+                </div>
+
+                <!-- ── RAPOARTE (standalone) ──────────────────────────────────── -->
+                <a href="rapoarte.html" class="nav-item " title="Rapoarte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <span class="nav-label">Rapoarte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  5. SONIC FIN
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-fin"
+             data-logo="assets/images/sonic-fin-logo.svg"
+             data-logo-icon="SF">
+            <button class="app-section-header" type="button" title="SONIC FIN">
+                <img src="assets/images/sonic-fin-logo.svg" class="app-section-logo" alt="SONIC FIN">
+                <span class="app-section-badge">SF</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard FIN -->
+                <a href="fin-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  6. SONIC (Base – Ecosistem & Configurare)
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section open"
+             data-app="sonic"
+             data-logo="assets/images/sonic-logo.svg"
+             data-logo-icon="S">
+            <button class="app-section-header" type="button" title="SONIC">
+                <img src="assets/images/sonic-logo.svg" class="app-section-logo" alt="SONIC">
+                <span class="app-section-badge">S</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard SONIC -->
+                <a href="sonic-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <div class="nav-group open" data-group="master-data">
+                    <button class="nav-group-title" type="button" title="Master Data Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Master Data Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
+                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
+                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
+                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
+                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
+                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- ── Sidebar Footer ─────────────────────────────────────────────── -->
+    <!-- React: <SidebarFooter /> -->
+    <div class="sidebar-footer">
+        <a href="contul-meu.html" class="nav-item " title="Contul Meu">
+            <span class="nav-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <span class="nav-label">Contul Meu</span>
+        </a>
+    </div>
+
+</aside>
+
+<!-- React: <main className="main"> -->
+<div class="main">
+
+    <!--
+        React: <Header
+            onToggleSidebar={toggleSidebar}
+            isCollapsed={isCollapsed}
+            isMobileOpen={isMobileOpen}
+            pageTitle={pageTitle}
+        />
+    -->
+    <div class="header">
+
+        <!-- LEFT: hamburger / sidebar-toggle + search (desktop) -->
+        <div class="header-left">
+            <!--
+                React: <SidebarToggleBtn
+                    onClick={onToggleSidebar}
+                    isCollapsed={isCollapsed}
+                    isMobile={isMobile}
+                />
+                Desktop: panel-left icon with collapse arrow
+                Mobile : hamburger icon
+            -->
+            <button class="sidebar-toggle-btn" id="sidebarToggle"
+                    title="Restrânge / Extinde meniu"
+                    aria-label="Toggle sidebar"
+                    data-collapsed="0">
+                <script>
+                    (function() {
+                        var btn = document.getElementById('sidebarToggle');
+                        var ls = localStorage.getItem('sb_collapsed');
+                        if (ls === '1') btn.setAttribute('data-collapsed', '1');
+                        else if (ls === '0') btn.setAttribute('data-collapsed', '0');
+                    })();
+                </script>
+                <!-- Mobile hamburger (hidden on desktop via CSS) -->
+                <svg class="icon-hamburger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+                <!-- Desktop panel icon (hidden on mobile via CSS) -->
+                <svg class="icon-panel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <line x1="9" y1="3" x2="9" y2="21"/>
+                    <polyline points="15 8 12 12 15 16" class="toggle-arrow"/>
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- CENTER: logo (mobile only, absolutely centered) -->
+        <!-- React: isMobile && <HeaderLogo /> -->
+        <div class="header-logo" aria-hidden="true">
+            <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+            </a>
+        </div>
+
+        <!-- RIGHT: page title (desktop) + user + logout -->
+        <div class="header-actions">
+            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <div class="header-page-title">Editare Apartament</div>
+
+            <!-- User profile avatar (always visible) -->
+            <a href="contul-meu.html" class="user-profile" title="Contul meu">SI</a>
+
+            <!-- Logout button – icon only, always visible -->
+            <!-- React: <LogoutBtn onClick={handleLogout} /> -->
+            <a href="login.html" class="logout-btn" title="Deconectare" aria-label="Deconectare">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+            </a>
+        </div>
+
+    </div><!-- /.header -->
+
+    <!--
+        CONTEXTUAL HELP BAR (WordPress-style)
+        React: <HelpBar onToggle={toggleHelp} isOpen={isHelpOpen} />
+               <HelpPanel isOpen={isHelpOpen} tabs={helpTabs} />
+    -->
+    <div class="help-wrapper">
+        <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
+            <div class="help-panel-inner">
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Generalități &amp; Adresă                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Parametri Încălzire                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Parametri Apă                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Date de Identificare</h4>
+            <p>Introduceți datele complete de adresă (oraș, stradă, bloc, scară, etaj, număr apartament) și proprietarul unității de consum.</p>
+            <p>Câmpul <strong>Cod apartament</strong> este identificatorul unic în cadrul asociației/nodului.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <h4>Configurare Energie Termică</h4>
+            <p>Setați tipul de contorizare pentru încălzire (ex: Contorizat, CT, Inactiv), suprafața utilă (SUT) și suprafața încălzită (SIT), precum și repartitoarele instalate.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <h4>Configurare Consum & Contoare Apă</h4>
+            <p>Configurați tipul de contorizare pentru apă (ex: Contorizat, Necontorizat, CT, Debranșat), data montajului, codurile de regie pentru apă rece și caldă, numărul de persoane și suprafața utilă.</p>
+            <p>În secțiunea <strong>Echipare apă</strong> gestionați apometrele mecanice și modulele radio instalate în fiecare încăpere (Bucătărie, Baie etc.).</p>
+                            </div>
+                                    </div>
+                    </div><!-- /.help-panel-inner -->
+        </div><!-- /.help-panel -->
+        
+        <div class="help-bar">
+            <button class="help-toggle-btn" id="helpToggle"
+                    aria-expanded="false"
+                    aria-controls="helpPanel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round"
+                     width="14" height="14" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                <span>Ajutor</span>
+                <svg class="help-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                     aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"/>
+                </svg>
+            </button>
+        </div><!-- /.help-bar -->
+    </div><!-- /.help-wrapper -->
+
+    <div class="content">
+
+<!-- ══ Antet Pagină ═════════════════════════════════════════════════════ -->
+<div class="page-title-container">
+    <div class="page-title">
+        <h1>Editare Apartament</h1>
+        <p>Modifici datele pentru apartamentul nr. <strong>1</strong>, STEFAN CEL MARE 27 (Proprietar: <strong>TOMA BARBU ELENA</strong>).</p>
+    </div>
+    <a href="apartamente.html" class="btn-secondary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <span>Înapoi la Apartamente</span>
+    </a>
+</div>
+
+<!-- ══ Tab Navigation ═══════════════════════════════════════════════════ -->
+<div class="edit-tabs-wrapper">
+    <div class="edit-tabs-nav" role="tablist">
+        <button type="button" class="edit-tab-btn active" role="tab" aria-selected="true" aria-controls="tab-general" id="tabBtn-general" onclick="switchApartamentTab('general', this)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            Generalități &amp; Adresă
+        </button>
+        <button type="button" class="edit-tab-btn " role="tab" aria-selected="false" aria-controls="tab-heating" id="tabBtn-heating" onclick="switchApartamentTab('heating', this)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            Încălzire
+        </button>
+        <button type="button" class="edit-tab-btn " role="tab" aria-selected="false" aria-controls="tab-water" id="tabBtn-water" onclick="switchApartamentTab('water', this)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+            Apă
+        </button>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     TAB 1 – Generalități & Adresă
+══════════════════════════════════════════════════════════════════════ -->
+<div id="tab-general" class="tab-pane active" role="tabpanel" aria-labelledby="tabBtn-general" >
+    <form id="apartamentEditForm" method="POST" action="apartamente.html" onsubmit="return handleApartamentSubmit(event)">
+        
+        <!-- ── Card 1: Adresă ────────────────────────────────────────── -->
+        <div class="card edit-section-card" style="margin-bottom: 20px;">
+            <div class="edit-section-header">
+                <span class="edit-section-title">Adresă</span>
+            </div>
+            
+            <div class="edit-section-body" style="padding-top: 16px;">
+                <!-- Rând 1: Oraș, Stradă, Număr -->
+                <div class="form-row-address-main">
+                    <div class="form-group">
+                        <label class="form-label" for="cityPickerInput">
+                            Oraș <span class="required-star">*</span>
+                        </label>
+                        <div class="picker-group">
+                            <input type="text" id="cityPickerInput" name="city" class="input-control" readonly placeholder="Selectează..." value="Bucuresti">
+                            <button type="button" class="btn-picker" id="btnOpenCityModal" title="Alege oraș">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            </button>
+                            <button type="button" class="btn-picker delete" title="Șterge selecție" onclick="document.getElementById('cityPickerInput').value=''">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtStreet">
+                            Stradă <span class="required-star">*</span>
+                        </label>
+                        <input name="street" type="text" id="txtStreet" class="input-control" maxlength="200" placeholder="Denumire stradă..." value="STEFAN CEL MARE">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtNo">
+                            Număr <span class="required-star">*</span>
+                        </label>
+                        <input name="no" type="text" id="txtNo" class="input-control" maxlength="60" placeholder="Nr." value="27">
+                    </div>
+                </div>
+
+                <!-- Rând 2: Bloc, Scară, Etaj, Apartament, Cod poștal -->
+                <div class="form-row-5">
+                    <div class="form-group">
+                        <label class="form-label" for="txtBlock">Bloc</label>
+                        <input name="block" type="text" id="txtBlock" class="input-control" maxlength="60" placeholder="Bl." value="27">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtEntrance">
+                            Scară <span class="required-star">*</span>
+                        </label>
+                        <input name="entrance" type="text" id="txtEntrance" class="input-control" maxlength="100" placeholder="Sc." value="1">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtFloor">Etaj</label>
+                        <input name="floor" type="text" id="txtFloor" class="input-control" maxlength="4" placeholder="Et." value="1">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtFlat">
+                            Apartament <span class="required-star">*</span>
+                        </label>
+                        <input name="flat" type="text" id="txtFlat" class="input-control" maxlength="20" placeholder="Ap." value="1">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtZipCode">Cod poștal</label>
+                        <input name="zip_code" type="text" id="txtZipCode" class="input-control" maxlength="20" placeholder="Cod poștal" value="020125">
+                    </div>
+                </div>
+
+                <!-- Rând 3: Sector, Telefon, Email -->
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label class="form-label" for="txtSector">Sector</label>
+                        <input name="sector" type="text" id="txtSector" class="input-control" maxlength="100" placeholder="Ex: 2" value="2">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtPhone">Telefon</label>
+                        <input name="phone" type="text" id="txtPhone" class="input-control" maxlength="100" placeholder="Număr de contact..." value="0722123456">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtEmail">Email</label>
+                        <input name="email" type="email" id="txtEmail" class="input-control" maxlength="250" placeholder="adresă@email.com" value="elena.toma@exemplu.ro">
+                    </div>
+                </div>
+
+                <!-- Rând 4: Nivel 1 - Nivel 6 (Structură ierarhică locație) -->
+                <div style="margin-top: 10px; padding-top: 14px; border-top: 1px dashed var(--border-color);">
+                    <div style="margin-bottom: 8px;">
+                        <span style="font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Structură Nivele (0 - 255)</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px;">
+                        <div class="form-group">
+                            <label class="form-label" for="txtLevel1">Nivel 1</label>
+                            <input name="level1" type="number" min="0" max="255" id="txtLevel1" class="input-control" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="txtLevel2">Nivel 2</label>
+                            <input name="level2" type="number" min="0" max="255" id="txtLevel2" class="input-control" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="txtLevel3">Nivel 3</label>
+                            <input name="level3" type="number" min="0" max="255" id="txtLevel3" class="input-control" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="txtLevel4">Nivel 4</label>
+                            <input name="level4" type="number" min="0" max="255" id="txtLevel4" class="input-control" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="txtLevel5">Nivel 5</label>
+                            <input name="level5" type="number" min="0" max="255" id="txtLevel5" class="input-control" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="txtLevel6">Nivel 6</label>
+                            <input name="level6" type="number" min="0" max="255" id="txtLevel6" class="input-control" value="0">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ── Card 2: Generalități Apartament ──────────────────────── -->
+        <div class="card edit-section-card" style="margin-bottom: 20px;">
+            <div class="edit-section-header">
+                <span class="edit-section-title">Generalități Apartament</span>
+            </div>
+            
+            <div class="edit-section-body" style="padding-top: 16px;">
+                
+                <!-- Rând 1: Cod apartament & Nume proprietar -->
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label class="form-label" for="txtCode">
+                            Cod apartament <span class="required-star">*</span>
+                        </label>
+                        <input name="code" type="text" id="txtCode" class="input-control" maxlength="10" placeholder="Ex: 0001" value="0001" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtOwnerName">
+                            Nume proprietar <span class="required-star">*</span>
+                        </label>
+                        <input name="owner_name" type="text" id="txtOwnerName" class="input-control" maxlength="250" placeholder="Nume și prenume proprietar..." value="TOMA BARBU ELENA" required>
+                    </div>
+                </div>
+
+                <!-- Rând 2: Cod intern apartament & Tip proprietar -->
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label class="form-label" for="txtInternalCode">Cod intern apartament</label>
+                        <input name="internal_code" type="text" id="txtInternalCode" class="input-control" maxlength="10" placeholder="Cod intern..." value="">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="ddlOwnerType">
+                            Tip proprietar <span class="required-star">*</span>
+                        </label>
+                        <select name="owner_type" id="ddlOwnerType" class="input-control">
+                            <option value="1" selected>Locatar</option>
+                            <option value="2" >Agent economic</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Rând 3: Perioadă valabilitate, TVA, Factură separată -->
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label class="form-label" for="dtpStartDate">Perioadă valabilitate (Început)</label>
+                        <input name="start_date" type="date" id="dtpStartDate" class="input-control" value="2023-01-01">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="dtpEndDate">Perioadă valabilitate (Sfârșit)</label>
+                        <input name="end_date" type="date" id="dtpEndDate" class="input-control" value="">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="ddlOwnInvoice">Are factură separată</label>
+                        <select name="own_invoice" id="ddlOwnInvoice" class="input-control">
+                            <option value="0" selected>Nu</option>
+                            <option value="1" >Da</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Rând 4: Procent TVA & Opțiuni Checkbox -->
+                <div class="form-row-2" style="align-items: center;">
+                    <div class="form-group">
+                        <label class="form-label" for="txtVATPercent">Procent TVA (%)</label>
+                        <input name="vat_percent" type="text" id="txtVATPercent" class="input-control" value="19" style="width: 120px;" placeholder="19">
+                    </div>
+                    <div style="display: flex; gap: 24px; padding-top: 18px;">
+                        <label class="checkbox-label" style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 13.5px; font-weight: 500;">
+                            <input type="checkbox" name="ignore_ownership_weight" value="1" >
+                            <span>Ignoră ponderea de proprietate</span>
+                        </label>
+                        <label class="checkbox-label" style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 13.5px; font-weight: 500;">
+                            <input type="checkbox" name="exclude_services" value="1" >
+                            <span>Exclus de la plata serviciilor</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Rând 5: Observații -->
+                <div class="form-group" style="margin-top: 14px;">
+                    <label class="form-label" for="txtObservations">Observații DC</label>
+                    <textarea name="observations" id="txtObservations" class="input-control" rows="3" placeholder="Observații departament calcul / administrare...">Client titular de contract. Apartament standard 2 camere.</textarea>
+                </div>
+
+            </div>
+
+            <!-- Butoane Acțiune (Înapoi stânga / Salvează dreapta) -->
+            <div class="form-actions-row" style="display: flex; justify-content: space-between; align-items: center;">
+                <a href="apartamente.html" class="btn-secondary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    <span>Înapoi la listă</span>
+                </a>
+                <button type="submit" class="btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                    <span>Salvează Apartament</span>
+                </button>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     TAB 2 – Încălzire & Repartitoare
+══════════════════════════════════════════════════════════════════════ -->
+<div id="tab-heating" class="tab-pane " role="tabpanel" aria-labelledby="tabBtn-heating" style="display: none;">
+    
+    <!-- ── Card 1: Parametri Tehnici Încălzire ──────────────────────── -->
+    <div class="card edit-section-card" style="margin-bottom: 20px;">
+        <div class="edit-section-header">
+            <span class="edit-section-title">Parametri Tehnici Încălzire</span>
+        </div>
+        
+        <div class="edit-section-body" style="padding-top: 16px;">
+            <div class="form-row-3">
+                <div class="form-group">
+                    <label class="form-label" for="ddlHeatingType">Tip contorizare încălzire</label>
+                    <select name="heating_type" id="ddlHeatingType" class="input-control">
+                        <option value="2" selected>Contorizat</option>
+                        <option value="8" >CititAsociatie</option>
+                        <option value="4" >CT (Centrală proprie)</option>
+                        <option value="3" >Debranșat</option>
+                        <option value="6" >Inactiv</option>
+                        <option value="1" >Necontorizat</option>
+                        <option value="9" >NecontorizatFaraAC</option>
+                        <option value="7" >NecontorizatFaraSet</option>
+                        <option value="5" >Restanțier</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="txtSUT">Suprafață utilă – SUT (mp)</label>
+                    <input name="sut" type="text" id="txtSUT" class="input-control" value="32.400" placeholder="Ex: 32.400">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="txtSIT">Suprafață încălzită – SIT (mp)</label>
+                    <input name="sit" type="text" id="txtSIT" class="input-control" value="32.400" placeholder="Ex: 32.400">
+                </div>
+            </div>
+
+            <div class="form-row-2">
+                <div class="form-group">
+                    <label class="form-label" for="txtCotaIndiviza">Cotă parte indiviză (%)</label>
+                    <input name="cota_indiviza" type="text" id="txtCotaIndiviza" class="input-control" value="2.15" placeholder="Ex: 2.15">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="txtCoefAmplasare">Coeficient de amplasament</label>
+                    <input name="coef_amplasare" type="text" id="txtCoefAmplasare" class="input-control" value="1.00" placeholder="Ex: 1.00">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Card 2: Repartitoare / Corpuri de Încălzire ───────────────── -->
+    <div class="card edit-section-card" style="margin-bottom: 20px;">
+        <div class="edit-section-header" style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="edit-section-title">Repartitoare &amp; Corpuri de Încălzire</span>
+            <button type="button" class="btn-secondary" style="font-size: 12.5px; padding: 6px 12px;" onclick="openAddRadiatorModal()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>Adaugă Corp</span>
+            </button>
+        </div>
+
+        <div class="table-container" style="border: none; border-radius: 0; box-shadow: none;">
+            <div style="overflow-x: auto; width: 100%;">
+                <table class="partners-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 14%;">Încăpere / Cameră</th>
+                            <th style="width: 20%;">Tip Radiator</th>
+                            <th style="width: 14%;">Dimensiuni</th>
+                            <th style="width: 9%; text-align: right;">Dim. spec.</th>
+                            <th style="width: 8%; text-align: right;">SET</th>
+                            <th style="width: 12%;">Model Repartitor</th>
+                            <th style="width: 12%;">Serie Repartitor</th>
+                            <th style="width: 5%; text-align: center;">Stare</th>
+                            <th style="width: 6%; text-align: center;">Acțiuni</th>
+                        </tr>
+                    </thead>
+                    <tbody id="radiatorsTableBody">
+                        <!-- Populat dinamic prin JS din radiatorsData -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Butoane Acțiune Tab Încălzire -->
+        <div class="form-actions-row" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-top: 1px solid var(--border-color); background: #fafbfc; border-radius: 0 0 8px 8px;">
+            <a href="apartamente.html" class="btn-secondary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                <span>Înapoi la listă</span>
+            </a>
+            <button type="button" class="btn-primary" onclick="handleApartamentSubmit(event)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                <span>Salvează Date Încălzire</span>
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     TAB 3 – Apă (Conform FlatWaterEdit.aspx)
+══════════════════════════════════════════════════════════════════════ -->
+<div id="tab-water" class="tab-pane " role="tabpanel" aria-labelledby="tabBtn-water" style="display: none;">
+
+    <!-- ── Casetă Contextuală Apartament ─────────────────────────── -->
+    <div class="utility-context-strip">
+        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+            <div style="font-size: 13px;">
+                <span style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; margin-right: 4px;">Proprietar:</span>
+                <strong style="color: var(--text-main);">TOMA BARBU ELENA</strong>
+            </div>
+            <div style="height: 14px; width: 1px; background: var(--border-color);"></div>
+            <div style="font-size: 13px;">
+                <span style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; margin-right: 4px;">Adresă:</span>
+                <span style="color: var(--text-main);">Str. STEFAN CEL MARE, Nr. 27, Bl. 27, Sc. 1, Et. 1, Ap. 1, Sector 2, Bucuresti</span>
+            </div>
+        </div>
+        <div>
+            <span class="status-badge status-online">Utilitate Activă: Apă</span>
+        </div>
+    </div>
+
+    <!-- ── Card 1: Informații calcul apă ────────────────────────── -->
+    <div class="card edit-section-card" style="margin-bottom: 20px;">
+        <div class="edit-section-header">
+            <span class="edit-section-title">Informații calcul apă</span>
+        </div>
+        
+        <div class="edit-section-body" style="padding-top: 16px;">
+            
+            <!-- Rând 1: Tip contorizare apă, Data montaj apă, Cod regie apă rece -->
+            <div class="form-row-3">
+                <div class="form-group">
+                    <label class="form-label" for="ddlWaterStatus">
+                        Tip contorizare apă <span class="required-star">*</span>
+                    </label>
+                    <select name="water_status" id="ddlWaterStatus" class="input-control" required>
+                                                <option value="-1" >-</option>
+                                                <option value="8" >CititAsociatie</option>
+                                                <option value="2" selected>Contorizat</option>
+                                                <option value="4" >CT</option>
+                                                <option value="3" >Debransat</option>
+                                                <option value="6" >Inactiv</option>
+                                                <option value="1" >Necontorizat</option>
+                                                <option value="9" >NecontorizatFaraAC</option>
+                                                <option value="7" >NecontorizatFaraSet</option>
+                                                <option value="5" >Restantier</option>
+                                            </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="dtpWaterInstallDate">Data montaj apă</label>
+                    <input name="water_install_date" type="date" id="dtpWaterInstallDate" class="input-control" value="2015-03-16">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="txtColdProviderCode">Cod regie apă rece</label>
+                    <input name="cold_provider_code" type="text" id="txtColdProviderCode" class="input-control" maxlength="50" placeholder="Cod regie AR..." value="">
+                </div>
+            </div>
+
+            <!-- Rând 2: Tip apartament, Număr persoane, Cod regie apă caldă -->
+            <div class="form-row-3">
+                <div class="form-group">
+                    <label class="form-label" for="ddlFlatType">
+                        Tip apartament <span class="required-star">*</span>
+                    </label>
+                    <select name="flat_type" id="ddlFlatType" class="input-control" required>
+                                                <option value="-1" >-</option>
+                                                <option value="2" selected>Apartament cu 2 camere</option>
+                                                <option value="3" >Apartament cu 3 camere</option>
+                                                <option value="4" >Apartament cu 4 sau mai multe camere</option>
+                                                <option value="1" >Garsoniera</option>
+                                            </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="txtPersNo">
+                        Număr persoane <span class="required-star">*</span>
+                    </label>
+                    <input name="pers_no" type="number" min="0" max="999" id="txtPersNo" class="input-control" value="2" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="txtHotProviderCode">Cod regie apă caldă</label>
+                    <input name="hot_provider_code" type="text" id="txtHotProviderCode" class="input-control" maxlength="50" placeholder="Cod regie AC..." value="">
+                </div>
+            </div>
+
+            <!-- Rând 3: Plătește PC din spații comune, Suprafață utilă, Excludere neînchideri apă caldă -->
+            <div class="form-row-3">
+                <div class="form-group">
+                    <label class="form-label">Plătește PC din spații comune</label>
+                    <div style="display: flex; align-items: center; gap: 20px; height: 38px;">
+                        <label class="checkbox-label" style="display: inline-flex; align-items: center; gap: 6px; cursor: pointer; margin: 0; font-size: 13px;">
+                            <input type="radio" name="water_is_paying_common_parts" value="1" checked>
+                            <span>Da</span>
+                        </label>
+                        <label class="checkbox-label" style="display: inline-flex; align-items: center; gap: 6px; cursor: pointer; margin: 0; font-size: 13px;">
+                            <input type="radio" name="water_is_paying_common_parts" value="0" >
+                            <span>Nu</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="txtWaterSurface">
+                        Suprafață utilă apartament (mp) <span class="required-star">*</span>
+                    </label>
+                    <input name="water_surface" type="text" id="txtWaterSurface" class="input-control" maxlength="8" value="32.400" placeholder="Ex: 1.000" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Excludere de la plata neînchideri apă caldă</label>
+                    <div style="display: flex; align-items: center; gap: 20px; height: 38px;">
+                        <label class="checkbox-label" style="display: inline-flex; align-items: center; gap: 6px; cursor: pointer; margin: 0; font-size: 13px;">
+                            <input type="radio" name="water_exclude_unclosed_hot" value="1" >
+                            <span>Da</span>
+                        </label>
+                        <label class="checkbox-label" style="display: inline-flex; align-items: center; gap: 6px; cursor: pointer; margin: 0; font-size: 13px;">
+                            <input type="radio" name="water_exclude_unclosed_hot" value="0" checked>
+                            <span>Nu</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rând 4: Spații cu altă destinație decât locuință (SAD) & Bucăți -->
+            <div class="form-row-2">
+                <div class="form-group">
+                    <label class="form-label" for="ddlSysOtherRoomType">Spații cu altă destinație decât locuință (SAD)</label>
+                    <select name="other_room_type" id="ddlSysOtherRoomType" class="input-control" onchange="toggleOtherRoomUnits(this.value)">
+                                                <option value="-1" selected>-</option>
+                                                <option value="20" >Atelier fotografic</option>
+                                                <option value="1" >Birouri</option>
+                                                <option value="3" >Bufete, bodega, bar, patiserii</option>
+                                                <option value="9" >Camine</option>
+                                                <option value="4" >Cantine, restaurante, cofetarii, alte unitati de alimentatie</option>
+                                                <option value="2" >Cluburi, case de cultura si teatre</option>
+                                                <option value="14" >Crese/Gradinite cu internat</option>
+                                                <option value="6" >Desfacere carne, pescarie</option>
+                                                <option value="16" >Dispensare, policlinici, cabinete medicale, saloane cosmetice etc.</option>
+                                                <option value="21" >Farmacie</option>
+                                                <option value="22" >Florarie</option>
+                                                <option value="19" >Frizerie, coafor</option>
+                                                <option value="15" >Gradinite fara internat</option>
+                                                <option value="12" >Hoteluri si pensiuni cu grup sanitar in camera</option>
+                                                <option value="13" >Hoteluri si pensiuni cu grupuri sanitare comune</option>
+                                                <option value="7" >Legume si fructe, magazin alimentar</option>
+                                                <option value="5" >Rotiserii, unitati cu vanzare la strada</option>
+                                                <option value="23" >Sali de joc, Sali de internet etc.</option>
+                                                <option value="10" >Scoala cu internat</option>
+                                                <option value="11" >Scoala fara internat</option>
+                                                <option value="17" >Spalatorii de rufe</option>
+                                                <option value="8" >Spital</option>
+                                                <option value="18" >Unitati cu activitati economice, altele decat cele specificate</option>
+                                            </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="txtOtherRoomUnits">Bucăți</label>
+                    <input name="other_room_units" type="number" min="0" max="999" id="txtOtherRoomUnits" class="input-control" maxlength="3" placeholder="Număr unități..." value="" disabled>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ── Card 2: Echipare apă ──────────────────────────────────── -->
+    <div class="card edit-section-card" style="margin-bottom: 20px;">
+        <div class="edit-section-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span class="edit-section-title">Echipare apă</span>
+                <span class="status-badge status-online" id="waterCounterCountBadge" style="font-size: 11px; padding: 2px 8px;">4 contoare</span>
+            </div>
+            <button type="button" class="btn-secondary" style="font-size: 12.5px; padding: 6px 12px;" onclick="openAddWaterCounterModal()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>Adaugă Contor</span>
+            </button>
+        </div>
+
+        <div class="table-container" style="border: none; border-radius: 0; box-shadow: none;">
+            <div style="overflow-x: auto; width: 100%;">
+                <table class="partners-table" id="waterCountersTable">
+                    <thead>
+                        <tr>
+                            <th style="width: 55px; text-align: center;">Nr. ord.</th>
+                            <th style="width: 85px; text-align: center;">Nr. încăpere</th>
+                            <th style="width: 16%;">Tip încăpere</th>
+                            <th style="width: 13%;">Tip contor</th>
+                            <th style="width: 16%;">Model contor</th>
+                            <th style="width: 18%;">Serie contor mecanic</th>
+                            <th style="width: 18%;">Serie modul radio</th>
+                            <th style="width: 75px; text-align: center;">Acțiuni</th>
+                        </tr>
+                    </thead>
+                    <tbody id="waterCountersTableBody">
+                        <!-- Populat dinamic via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="waterCountersEmptyState" style="display: none; padding: 32px 16px; text-align: center; color: var(--text-muted); font-size: 13px;">
+                Nu există niciun contor de apă înregistrat pentru acest apartament. Apăsați pe „Adaugă Contor” pentru a adăuga o echipare.
+            </div>
+        </div>
+
+        <!-- Butoane Acțiune Tab Apă -->
+        <div class="form-actions-row" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-top: 1px solid var(--border-color); background: #fafbfc; border-radius: 0 0 8px 8px;">
+            <a href="apartamente.html" class="btn-secondary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                <span>Înapoi la listă</span>
+            </a>
+            <button type="button" class="btn-primary" onclick="handleApartamentWaterSubmit(event)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                <span>Salvează Date Apă</span>
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<!-- ══ Modal Selector Oraș / Localitate ══════════════════════════════════ -->
+<div id="cityPickerModal" class="modal-overlay" style="display: none;">
+    <div class="modal-card" style="max-width: 520px; width: 90%;">
+        <div class="modal-header">
+            <h3 class="modal-title">Selectează Oraș / Localitate</h3>
+            <button type="button" class="btn-action-icon" id="btnCloseCityModal" title="Închide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="modal-body" style="padding: 16px;">
+            <div style="margin-bottom: 14px;">
+                <input type="text" id="citySearchInput" class="input-control" placeholder="Caută localitate..." autofocus>
+            </div>
+            <div id="cityListContainer" style="max-height: 280px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 6px;">
+                                <div class="city-picker-item" onclick="selectCity('Apold')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Apold                </div>
+                                <div class="city-picker-item" onclick="selectCity('Brasov')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Brasov                </div>
+                                <div class="city-picker-item" onclick="selectCity('Bucuresti')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Bucuresti                </div>
+                                <div class="city-picker-item" onclick="selectCity('Bucuresti_')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Bucuresti_                </div>
+                                <div class="city-picker-item" onclick="selectCity('Buftea')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Buftea                </div>
+                                <div class="city-picker-item" onclick="selectCity('Calimanesti')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Calimanesti                </div>
+                                <div class="city-picker-item" onclick="selectCity('Chiajna')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Chiajna                </div>
+                                <div class="city-picker-item" onclick="selectCity('Chitila')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Chitila                </div>
+                                <div class="city-picker-item" onclick="selectCity('Cisnadie')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Cisnadie                </div>
+                                <div class="city-picker-item" onclick="selectCity('Constanta')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Constanta                </div>
+                                <div class="city-picker-item" onclick="selectCity('Deva')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Deva                </div>
+                                <div class="city-picker-item" onclick="selectCity('Dobroesti')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Dobroesti                </div>
+                                <div class="city-picker-item" onclick="selectCity('Eforie Nord')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Eforie Nord                </div>
+                                <div class="city-picker-item" onclick="selectCity('Giurgiu')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Giurgiu                </div>
+                                <div class="city-picker-item" onclick="selectCity('Iasi')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Iasi                </div>
+                                <div class="city-picker-item" onclick="selectCity('Magurele')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Magurele                </div>
+                                <div class="city-picker-item" onclick="selectCity('Mamaia')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Mamaia                </div>
+                                <div class="city-picker-item" onclick="selectCity('Mangalia')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Mangalia                </div>
+                                <div class="city-picker-item" onclick="selectCity('Medgidia')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Medgidia                </div>
+                                <div class="city-picker-item" onclick="selectCity('Medias')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Medias                </div>
+                                <div class="city-picker-item" onclick="selectCity('Mihail Kogalniceanu')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Mihail Kogalniceanu                </div>
+                                <div class="city-picker-item" onclick="selectCity('Municipiul Târgu Mures')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Municipiul Târgu Mures                </div>
+                                <div class="city-picker-item" onclick="selectCity('Navodari')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Navodari                </div>
+                                <div class="city-picker-item" onclick="selectCity('Neptun')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Neptun                </div>
+                                <div class="city-picker-item" onclick="selectCity('Olimp')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Olimp                </div>
+                                <div class="city-picker-item" onclick="selectCity('Orasul Tulcea')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Orasul Tulcea                </div>
+                                <div class="city-picker-item" onclick="selectCity('Ovidiu')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Ovidiu                </div>
+                                <div class="city-picker-item" onclick="selectCity('Ploiesti')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Ploiesti                </div>
+                                <div class="city-picker-item" onclick="selectCity('Ploiestiori')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Ploiestiori                </div>
+                                <div class="city-picker-item" onclick="selectCity('Popesti Leordeni')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Popesti Leordeni                </div>
+                                <div class="city-picker-item" onclick="selectCity('Predeal')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Predeal                </div>
+                                <div class="city-picker-item" onclick="selectCity('Rosu')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Rosu                </div>
+                                <div class="city-picker-item" onclick="selectCity('Râmnicu Vâlcea')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Râmnicu Vâlcea                </div>
+                                <div class="city-picker-item" onclick="selectCity('Sibiu')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Sibiu                </div>
+                                <div class="city-picker-item" onclick="selectCity('Sighisoara')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Sighisoara                </div>
+                                <div class="city-picker-item" onclick="selectCity('Singeorgiu de Mures')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Singeorgiu de Mures                </div>
+                                <div class="city-picker-item" onclick="selectCity('Targu Mures')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Targu Mures                </div>
+                                <div class="city-picker-item" onclick="selectCity('Tulcea')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Tulcea                </div>
+                                <div class="city-picker-item" onclick="selectCity('Tunari')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Tunari                </div>
+                                <div class="city-picker-item" onclick="selectCity('Târgu Jiu')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Târgu Jiu                </div>
+                                <div class="city-picker-item" onclick="selectCity('Ungheni')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Ungheni                </div>
+                                <div class="city-picker-item" onclick="selectCity('Voluntari')" style="padding: 9px 14px; border-bottom: 1px solid #f1f5f9; cursor: pointer; font-size: 13.5px; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+                    Voluntari                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ══ Modal Echipare Apă (Conform formularului existent) ═══════════════ -->
+<div id="waterCounterModal" class="modal-overlay" style="display: none;">
+    <div class="modal-card" style="max-width: 860px; width: 95%;">
+        <div class="modal-header" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 20px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <h3 class="modal-title" id="waterCounterModalTitle" style="font-size: 15px; font-weight: 600;">Echipare apa</h3>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <button type="submit" form="waterCounterForm" class="btn-primary" style="padding: 6px 16px; font-size: 12.5px;">Valideaza</button>
+                <button type="button" class="btn-secondary" style="padding: 6px 14px; font-size: 12.5px;" onclick="closeWaterCounterModal()">Renunta</button>
+                <button type="button" class="btn-action-icon" id="btnCloseWaterCounterModal" title="Închide" onclick="closeWaterCounterModal()" style="margin-left: 4px;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+        </div>
+        <form id="waterCounterForm" onsubmit="saveWaterCounter(event)">
+            <input type="hidden" id="modalCounterId" value="">
+            <div class="modal-body" style="padding: 20px;">
+                <!-- Rând 1: Tip camera, Nr. incapere, Serie sigiliu -->
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label class="form-label" for="modalCounterRoomType">Tip camera</label>
+                        <select id="modalCounterRoomType" class="input-control" required>
+                                                        <option value="Bucătărie">Bucătărie</option>
+                                                        <option value="Baie">Baie</option>
+                                                        <option value="Balcon">Balcon</option>
+                                                        <option value="Bazin WC">Bazin WC</option>
+                                                        <option value="Cameră">Cameră</option>
+                                                        <option value="Casă scării">Casă scării</option>
+                                                        <option value="Chiuvetă">Chiuvetă</option>
+                                                        <option value="Dormitor">Dormitor</option>
+                                                        <option value="Garaj">Garaj</option>
+                                                        <option value="Ghenă">Ghenă</option>
+                                                        <option value="Grădină">Grădină</option>
+                                                        <option value="Hol">Hol</option>
+                                                        <option value="Mașină de spălat">Mașină de spălat</option>
+                                                        <option value="Pisoar">Pisoar</option>
+                                                        <option value="Subsol">Subsol</option>
+                                                        <option value="Sufragerie">Sufragerie</option>
+                                                        <option value="Uscătorie">Uscătorie</option>
+                                                        <option value="WC Serviciu">WC Serviciu</option>
+                                                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="modalCounterRoomNo">Nr. incapere</label>
+                        <input type="text" id="modalCounterRoomNo" class="input-control" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="modalCounterSealSerial">Serie sigiliu</label>
+                        <input type="text" id="modalCounterSealSerial" class="input-control" placeholder="">
+                    </div>
+                </div>
+
+                <!-- Rând 2: Tip contor, Serie contor mecanic, Data instalare contor mecanic -->
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label class="form-label" for="modalCounterType">Tip contor</label>
+                        <select id="modalCounterType" class="input-control" required onchange="handleCounterTypeChange(this.value)">
+                            <option value="Apa rece">Apa rece</option>
+                            <option value="Apa calda">Apa calda</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="modalCounterMechSerial">Serie contor mecanic</label>
+                        <input type="text" id="modalCounterMechSerial" class="input-control" placeholder="54977800" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="modalCounterMechInstallDate">Data instalare contor mecanic</label>
+                        <input type="date" id="modalCounterMechInstallDate" class="input-control" value="2015-03-05">
+                    </div>
+                </div>
+
+                <!-- Rând 3: Model contor apa:, Serie modul radio, Data instalare modul radio -->
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label class="form-label" for="modalCounterModel">Model contor apa:</label>
+                        <select id="modalCounterModel" class="input-control" required>
+                            <!-- Populat dinamic în funcție de Tip contor -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="modalCounterRadioSerial">Serie modul radio</label>
+                        <input type="text" id="modalCounterRadioSerial" class="input-control" placeholder="302653646">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="modalCounterRadioInstallDate">Data instalare modul radio</label>
+                        <input type="date" id="modalCounterRadioInstallDate" class="input-control" value="2026-07-01">
+                    </div>
+                </div>
+
+                <!-- Rând 4: Index direct 0, Index invers 0 -->
+                <div class="form-row-3" style="margin-bottom: 0;">
+                    <div class="form-group">
+                        <label class="form-label" for="modalCounterDirectIndex">Index direct 0</label>
+                        <input type="text" id="modalCounterDirectIndex" class="input-control" placeholder="47.789" value="0.000">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="modalCounterInverseIndex">Index invers 0</label>
+                        <input type="text" id="modalCounterInverseIndex" class="input-control" placeholder="0.000" value="0.000">
+                    </div>
+                    <div class="form-group">
+                        <!-- Spațiu liber pentru alinierea pe 3 coloane -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-top: 1px solid var(--border-color); background: #fafbfc; border-radius: 0 0 8px 8px;">
+                <button type="button" class="btn-secondary" onclick="closeWaterCounterModal()">Renunta</button>
+                <button type="submit" class="btn-primary" id="btnSaveWaterCounter">Valideaza</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- ══ Modal Echipare Încălzire (Conform Echipare incalzire) ══════════════ -->
+<div id="heatingRadiatorModal" class="modal-overlay" style="display: none;">
+    <div class="modal-card" style="max-width: 900px; width: 95%;">
+        <div class="modal-header" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-bottom: 1px solid var(--border-color); background: #fafbfc; border-radius: 8px 8px 0 0;">
+            <h3 id="heatingRadiatorModalTitle" style="margin: 0; font-size: 15px; font-weight: 600; color: var(--text-main);">Echipare incalzire</h3>
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <button type="button" class="btn-primary" style="padding: 6px 14px; font-size: 12.5px;" onclick="document.getElementById('heatingRadiatorForm').requestSubmit()">Valideaza</button>
+                <button type="button" class="btn-secondary" style="padding: 6px 14px; font-size: 12.5px;" onclick="closeHeatingRadiatorModal()">Renunta</button>
+                <button type="button" class="btn-action-icon" onclick="closeHeatingRadiatorModal()" title="Închide" style="margin-left: 4px;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+        </div>
+        <form id="heatingRadiatorForm" onsubmit="return saveHeatingRadiator(event)">
+            <input type="hidden" id="modalRadiatorId" value="">
+            <div class="modal-body" style="padding: 20px;">
+                <!-- Rând 1: Model repartitor, Tip radiator, Dimensiuni -->
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label class="form-label" for="modalHeatingModel">Model repartitor</label>
+                        <select id="modalHeatingModel" class="input-control" required>
+                                                        <option value="E-ITN 30.4">E-ITN 30.4</option>
+                                                        <option value="E-ITN 10.5">E-ITN 10.5</option>
+                                                        <option value="E-ITN 40L">E-ITN 40L</option>
+                                                        <option value="Programat">Programat</option>
+                                                        <option value="SET">SET</option>
+                                                        <option value="WHE.30Z">WHE.30Z</option>
+                                                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="modalHeatingRadiatorType">Tip radiator</label>
+                        <select id="modalHeatingRadiatorType" class="input-control" required>
+                                                        <option value="Fonta Calan">Fonta Calan</option>
+                                                        <option value="Fonta Bucuresti">Fonta Bucuresti</option>
+                                                        <option value="Fonta Tip Nou">Fonta Tip Nou</option>
+                                                        <option value="Fonta URSS">Fonta URSS</option>
+                                                        <option value="Aluminiu Alurad">Aluminiu Alurad</option>
+                                                        <option value="Aluminiu Seven">Aluminiu Seven</option>
+                                                        <option value="Aluminiu Titan Kristal">Aluminiu Titan Kristal</option>
+                                                        <option value="Coloana Otel">Coloana Otel</option>
+                                                        <option value="Coloana PP/Pexal">Coloana PP/Pexal</option>
+                                                        <option value="Otel cu Coloane">Otel cu Coloane</option>
+                                                        <option value="Otel Panou Korado Radik Clasic">Otel Panou Korado Radik Clasic</option>
+                                                        <option value="Portprosop">Portprosop</option>
+                                                        <option value="Registru Tevi">Registru Tevi</option>
+                                                        <option value="ROTERM RT">ROTERM RT</option>
+                                                        <option value="Aluminiu Geniale">Aluminiu Geniale</option>
+                                                        <option value="Otel cu Elementi 46 - Cordivari">Otel cu Elementi 46 - Cordivari</option>
+                                                        <option value="Otel cu Elementi Kalifa">Otel cu Elementi Kalifa</option>
+                                                        <option value="Otel Elementi Verticali Niagara">Otel Elementi Verticali Niagara</option>
+                                                        <option value="Otel cu Elementi Zehnder">Otel cu Elementi Zehnder</option>
+                                                        <option value="Otel Panou Vertical Plan">Otel Panou Vertical Plan</option>
+                                                        <option value="Otel Panou Vogel &amp; Noot">Otel Panou Vogel &amp; Noot</option>
+                                                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="modalHeatingDimensions">Dimensiuni</label>
+                        <select id="modalHeatingDimensions" class="input-control">
+                                                        <option value="624-4-50-142---">624-4-50-142---</option>
+                                                        <option value="600/1000">600/1000</option>
+                                                        <option value="22-600/800">22-600/800</option>
+                                                        <option value="22-600/600">22-600/600</option>
+                                                        <option value="500-2-60-100---">500-2-60-100---</option>
+                                                        <option value="254-1-75-62---">254-1-75-62---</option>
+                                                        <option value="454-1-75-62---">454-1-75-62---</option>
+                                                        <option value="554-1-75-62---">554-1-75-62---</option>
+                                                    </select>
+                    </div>
+                </div>
+
+                <!-- Rând 2: Dim. specifica, SET, spațiu liber -->
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label class="form-label" for="modalHeatingDimSpec">Dim. specifica</label>
+                        <input type="text" id="modalHeatingDimSpec" class="input-control" placeholder="17.00" value="17.00">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="modalHeatingSet">SET</label>
+                        <input type="text" id="modalHeatingSet" class="input-control" placeholder="0.282" value="0.282">
+                    </div>
+                    <div class="form-group">
+                        <!-- Spațiu liber aliniere coloana 3 -->
+                    </div>
+                </div>
+
+                <div class="heating-section-divider"></div>
+
+                <!-- Rând 3: Foloseste etalon, Este etalon, Serie repartitor -->
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label class="form-label">Foloseste etalon</label>
+                        <div class="heating-radio-group">
+                            <label class="heating-radio-item">
+                                <input type="radio" name="modalHeatingUseStandard" value="1">
+                                <span>Da</span>
+                            </label>
+                            <label class="heating-radio-item">
+                                <input type="radio" name="modalHeatingUseStandard" value="0" checked>
+                                <span>Nu</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Este etalon</label>
+                        <div class="heating-radio-group">
+                            <label class="heating-radio-item">
+                                <input type="radio" name="modalHeatingIsStandard" value="1">
+                                <span>Da</span>
+                            </label>
+                            <label class="heating-radio-item">
+                                <input type="radio" name="modalHeatingIsStandard" value="0" checked>
+                                <span>Nu</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="modalHeatingSerial">Serie repartitor</label>
+                        <input type="text" id="modalHeatingSerial" class="input-control" placeholder="34060979" required>
+                    </div>
+                </div>
+
+                <!-- Rând 4: Tip camera, Este activ, Este teava & Nr. incapere -->
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label class="form-label" for="modalHeatingRoom">Tip camera</label>
+                        <select id="modalHeatingRoom" class="input-control">
+                                                        <option value="Bucatarie">Bucătărie</option>
+                                                        <option value="Baie">Baie</option>
+                                                        <option value="Balcon">Balcon</option>
+                                                        <option value="Bazin WC">Bazin WC</option>
+                                                        <option value="Camera">Cameră</option>
+                                                        <option value="Casa scarii">Casă scării</option>
+                                                        <option value="Chiuveta">Chiuvetă</option>
+                                                        <option value="Dormitor">Dormitor</option>
+                                                        <option value="Garaj">Garaj</option>
+                                                        <option value="Ghena">Ghenă</option>
+                                                        <option value="Gradina">Grădină</option>
+                                                        <option value="Hol">Hol</option>
+                                                        <option value="Masina de spalat">Mașină de spălat</option>
+                                                        <option value="Pisoar">Pisoar</option>
+                                                        <option value="Subsol">Subsol</option>
+                                                        <option value="Sufragerie">Sufragerie</option>
+                                                        <option value="Uscatorie">Uscătorie</option>
+                                                        <option value="WC Serviciu">WC Serviciu</option>
+                                                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Este activ</label>
+                        <div class="heating-radio-group">
+                            <label class="heating-radio-item">
+                                <input type="radio" name="modalHeatingIsActive" value="1" checked>
+                                <span>Da</span>
+                            </label>
+                            <label class="heating-radio-item">
+                                <input type="radio" name="modalHeatingIsActive" value="0">
+                                <span>Nu</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="heating-pipe-room-group">
+                            <label class="heating-checkbox-item">
+                                <input type="checkbox" id="modalHeatingIsPipe" value="1">
+                                <span>Este teava</span>
+                            </label>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <label class="form-label" for="modalHeatingRoomNo" style="margin-bottom: 0; white-space: nowrap;">Nr. incapere</label>
+                                <input type="text" id="modalHeatingRoomNo" class="input-control" style="width: 80px;" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="heating-section-divider"></div>
+
+                <!-- Rând 5: Factori de calcul -->
+                <div class="heating-factor-row">
+                    <label class="heating-factor-label" for="modalHeatingFactorLocation">Factori de amplasare la repartizarea costurilor pe baza repartitoarelor de costuri</label>
+                    <div class="heating-factor-control">
+                        <select id="modalHeatingFactorLocation" class="input-control">
+                                                        <option value="01 Camera de mijloc etaj curent">01 Camera de mijloc etaj curent</option>
+                                                        <option value="02 Camera de colt etaj curent">02 Camera de colt etaj curent</option>
+                                                        <option value="03 Camera de mijloc ultimul etaj">03 Camera de mijloc ultimul etaj</option>
+                                                        <option value="04 Camera de colt ultimul etaj">04 Camera de colt ultimul etaj</option>
+                                                        <option value="05 Camera de mijloc parter">05 Camera de mijloc parter</option>
+                                                        <option value="06 Camera de colt parter">06 Camera de colt parter</option>
+                                                        <option value="07 Spatii comune">07 Spatii comune</option>
+                                                    </select>
+                    </div>
+                </div>
+
+                <div class="heating-factor-row">
+                    <label class="heating-factor-label" for="modalHeatingFactorCardinal">Factori de corectie fata de punctele cardinale</label>
+                    <div class="heating-factor-control">
+                        <select id="modalHeatingFactorCardinal" class="input-control">
+                                                        <option value="Directia Nord">Directia Nord</option>
+                                                        <option value="Directia Sud">Directia Sud</option>
+                                                        <option value="Directia Est">Directia Est</option>
+                                                        <option value="Directia Vest">Directia Vest</option>
+                                                        <option value="Directia Nord-Est">Directia Nord-Est</option>
+                                                        <option value="Directia Nord-Vest">Directia Nord-Vest</option>
+                                                        <option value="Directia Sud-Est">Directia Sud-Est</option>
+                                                        <option value="Directia Sud-Vest">Directia Sud-Vest</option>
+                                                    </select>
+                    </div>
+                </div>
+
+                <div class="heating-factor-row" style="margin-bottom: 0;">
+                    <label class="heating-factor-label" for="modalHeatingFactorCorrection">Factori de corectie de amplasare</label>
+                    <div class="heating-factor-control">
+                        <select id="modalHeatingFactorCorrection" class="input-control">
+                                                        <option value="Incaperi normale">Incaperi normale</option>
+                                                        <option value="Incaperi defavorizate">Incaperi defavorizate</option>
+                                                        <option value="Incaperi puternic defavorizate">Incaperi puternic defavorizate</option>
+                                                        <option value="Incaperi favorizate">Incaperi favorizate</option>
+                                                        <option value="Fara corectie">Fara corectie</option>
+                                                    </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-top: 1px solid var(--border-color); background: #fafbfc; border-radius: 0 0 8px 8px;">
+                <button type="button" class="btn-secondary" onclick="closeHeatingRadiatorModal()">Renunta</button>
+                <button type="submit" class="btn-primary" id="btnSaveHeatingRadiator">Valideaza</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+/**
+ * Logica de navigare între tab-uri, modal oraș și tab-ul Apă.
+ * React conversion: se mută în starea componentei <ApartamentEditPage />
+ */
+function switchApartamentTab(tabId, btn) {
+    document.querySelectorAll('.tab-pane').forEach(function(pane) {
+        pane.style.display = 'none';
+        pane.classList.remove('active');
+    });
+    document.querySelectorAll('.edit-tab-btn').forEach(function(b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+    });
+
+    var targetPane = document.getElementById('tab-' + tabId);
+    if (targetPane) {
+        targetPane.style.display = 'block';
+        targetPane.classList.add('active');
+    }
+    if (btn) {
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+    }
+
+    // Sincronizare parametru URL tab fără reîncărcare pagină
+    try {
+        var url = new URL(window.location);
+        url.searchParams.set('tab', tabId);
+        window.history.replaceState({}, '', url);
+    } catch (e) {}
+}
+
+function handleApartamentSubmit(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    alert('Datele apartamentului au fost salvate cu succes!');
+    window.location.href = 'apartamente.html';
+    return false;
+}
+
+// ── State și logica pentru Tab-ul Încălzire (Repartitoare) ─────────────
+var radiatorsData = [{"id":1,"room":"Dormitor","room_no":"","allocator_model":"E-ITN 30.4","radiator_type":"Fonta Calan","dimensions":"624-4-50-142---","dim_spec":"17.00","set_val":"0.282","use_standard":"0","is_standard":"0","allocator_serial":"34060979","is_active":"1","is_pipe":"0","factor_location":"01 Camera de mijloc etaj curent","factor_cardinal":"Directia Nord","factor_correction":"Incaperi normale"},{"id":2,"room":"Sufragerie","room_no":"","allocator_model":"E-ITN 30.4","radiator_type":"Fonta Calan","dimensions":"600\/1000","dim_spec":"14.00","set_val":"0.350","use_standard":"0","is_standard":"0","allocator_serial":"74829101","is_active":"1","is_pipe":"0","factor_location":"01 Camera de mijloc etaj curent","factor_cardinal":"Directia Sud","factor_correction":"Incaperi normale"},{"id":3,"room":"Buc\u0103t\u0103rie","room_no":"","allocator_model":"E-ITN 30.4","radiator_type":"Otel Panou Korado Radik Clasic","dimensions":"22-600\/600","dim_spec":"10.00","set_val":"0.210","use_standard":"0","is_standard":"0","allocator_serial":"74829103","is_active":"1","is_pipe":"0","factor_location":"01 Camera de mijloc etaj curent","factor_cardinal":"Directia Nord","factor_correction":"Incaperi normale"}];
+
+function renderRadiatorsTable() {
+    var tbody = document.getElementById('radiatorsTableBody');
+    if (!tbody) return;
+
+    if (!radiatorsData || radiatorsData.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="9" style="text-align: center; color: var(--text-muted); padding: 24px;">Nu există corpuri de încălzire înregistrate.</td></tr>';
+        return;
+    }
+
+    var html = '';
+    radiatorsData.forEach(function(r) {
+        var isActive = (r.is_active == '1' || r.is_active === true || r.is_active === 'Activ');
+        var trClass = isActive ? '' : ' class="radiator-row-inactive"';
+        var statusBadge = isActive
+            ? '<span class="status-badge status-online" style="font-size: 11px; padding: 2px 7px;">Activ</span>'
+            : '<span class="status-badge status-offline" style="font-size: 11px; padding: 2px 7px;">Inactiv</span>';
+
+        var deactivateTitle = isActive ? 'Dezactivează echipament (marchează inactiv)' : 'Activează echipament';
+
+        html += '<tr' + trClass + '>' +
+            '<td style="font-weight: 600; color: var(--text-main);">' + escapeHtml(r.room) + (r.room_no ? ' (' + escapeHtml(r.room_no) + ')' : '') + (r.is_pipe == '1' ? ' <span style="font-size: 10.5px; color: var(--text-muted); font-weight: 400;">[Țeavă]</span>' : '') + '</td>' +
+            '<td>' + escapeHtml(r.radiator_type) + '</td>' +
+            '<td><span style="font-family: monospace; font-size: 12px;">' + escapeHtml(r.dimensions || '&ndash;') + '</span></td>' +
+            '<td style="text-align: right; font-variant-numeric: tabular-nums;">' + escapeHtml(r.dim_spec || '&ndash;') + '</td>' +
+            '<td style="text-align: right; font-variant-numeric: tabular-nums; font-weight: 600;">' + escapeHtml(r.set_val || '&ndash;') + '</td>' +
+            '<td><span style="font-size: 12px; font-weight: 500;">' + escapeHtml(r.allocator_model || '&ndash;') + '</span></td>' +
+            '<td><span style="font-family: monospace; font-size: 12.5px; font-weight: 600; color: var(--text-main);">' + escapeHtml(r.allocator_serial) + '</span></td>' +
+            '<td style="text-align: center;">' + statusBadge + '</td>' +
+            '<td style="text-align: center;">' +
+                '<div style="display: inline-flex; align-items: center; gap: 4px;">' +
+                    '<button type="button" class="btn-action-icon" title="Editează corp" onclick="openEditRadiatorModal(' + r.id + ')">' +
+                        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>' +
+                    '</button>' +
+                    '<button type="button" class="btn-action-icon" title="' + deactivateTitle + '" onclick="toggleRadiatorActive(' + r.id + ')">' +
+                        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>' +
+                    '</button>' +
+                '</div>' +
+            '</td>' +
+        '</tr>';
+    });
+
+    tbody.innerHTML = html;
+}
+
+function toggleRadiatorActive(id) {
+    var item = radiatorsData.find(function(r) { return r.id === id; });
+    if (!item) return;
+
+    var isActive = (item.is_active == '1' || item.is_active === true || item.is_active === 'Activ');
+    if (isActive) {
+        if (!confirm('Doriți să dezactivați acest echipament (repartitor)? Echipamentul va fi marcat ca inactiv și nu va fi șters din evidență.')) {
+            return;
+        }
+        item.is_active = '0';
+    } else {
+        if (!confirm('Doriți să reactivați acest echipament (repartitor)?')) {
+            return;
+        }
+        item.is_active = '1';
+    }
+    renderRadiatorsTable();
+}
+
+function openAddRadiatorModal() {
+    document.getElementById('modalRadiatorId').value = '';
+    document.getElementById('heatingRadiatorModalTitle').textContent = 'Echipare incalzire – Adaugare';
+    document.getElementById('modalHeatingModel').value = 'E-ITN 30.4';
+    document.getElementById('modalHeatingRadiatorType').value = 'Fonta Calan';
+    document.getElementById('modalHeatingDimensions').value = '624-4-50-142---';
+    document.getElementById('modalHeatingDimSpec').value = '17.00';
+    document.getElementById('modalHeatingSet').value = '0.282';
+
+    var useStdNu = document.querySelector('input[name="modalHeatingUseStandard"][value="0"]');
+    if (useStdNu) useStdNu.checked = true;
+
+    var isStdNu = document.querySelector('input[name="modalHeatingIsStandard"][value="0"]');
+    if (isStdNu) isStdNu.checked = true;
+
+    document.getElementById('modalHeatingSerial').value = '';
+    document.getElementById('modalHeatingRoom').value = 'Dormitor';
+
+    var isActDa = document.querySelector('input[name="modalHeatingIsActive"][value="1"]');
+    if (isActDa) isActDa.checked = true;
+
+    var chkPipe = document.getElementById('modalHeatingIsPipe');
+    if (chkPipe) chkPipe.checked = false;
+    document.getElementById('modalHeatingRoomNo').value = '';
+
+    document.getElementById('modalHeatingFactorLocation').value = '01 Camera de mijloc etaj curent';
+    document.getElementById('modalHeatingFactorCardinal').value = 'Directia Nord';
+    document.getElementById('modalHeatingFactorCorrection').value = 'Incaperi normale';
+
+    document.getElementById('heatingRadiatorModal').style.display = 'flex';
+    setTimeout(function() {
+        document.getElementById('modalHeatingSerial').focus();
+    }, 100);
+}
+
+function openEditRadiatorModal(id) {
+    var item = radiatorsData.find(function(r) { return r.id === id; });
+    if (!item) return;
+
+    document.getElementById('modalRadiatorId').value = item.id;
+    document.getElementById('heatingRadiatorModalTitle').textContent = 'Echipare incalzire';
+    document.getElementById('modalHeatingModel').value = item.allocator_model || 'E-ITN 30.4';
+    document.getElementById('modalHeatingRadiatorType').value = item.radiator_type || 'Fonta Calan';
+    document.getElementById('modalHeatingDimensions').value = item.dimensions || '624-4-50-142---';
+    document.getElementById('modalHeatingDimSpec').value = (item.dim_spec !== undefined) ? item.dim_spec : '17.00';
+    document.getElementById('modalHeatingSet').value = (item.set_val !== undefined) ? item.set_val : '0.282';
+
+    var useStdDa = document.querySelector('input[name="modalHeatingUseStandard"][value="1"]');
+    var useStdNu = document.querySelector('input[name="modalHeatingUseStandard"][value="0"]');
+    if (item.use_standard == '1' || item.use_standard === true) {
+        if (useStdDa) useStdDa.checked = true;
+    } else {
+        if (useStdNu) useStdNu.checked = true;
+    }
+
+    var isStdDa = document.querySelector('input[name="modalHeatingIsStandard"][value="1"]');
+    var isStdNu = document.querySelector('input[name="modalHeatingIsStandard"][value="0"]');
+    if (item.is_standard == '1' || item.is_standard === true) {
+        if (isStdDa) isStdDa.checked = true;
+    } else {
+        if (isStdNu) isStdNu.checked = true;
+    }
+
+    document.getElementById('modalHeatingSerial').value = item.allocator_serial || '';
+    document.getElementById('modalHeatingRoom').value = item.room || 'Dormitor';
+
+    var isActDa = document.querySelector('input[name="modalHeatingIsActive"][value="1"]');
+    var isActNu = document.querySelector('input[name="modalHeatingIsActive"][value="0"]');
+    if (item.is_active == '1' || item.is_active === true || item.is_active === 'Activ') {
+        if (isActDa) isActDa.checked = true;
+    } else {
+        if (isActNu) isActNu.checked = true;
+    }
+
+    var chkPipe = document.getElementById('modalHeatingIsPipe');
+    if (chkPipe) chkPipe.checked = (item.is_pipe == '1' || item.is_pipe === true);
+    document.getElementById('modalHeatingRoomNo').value = item.room_no || '';
+
+    document.getElementById('modalHeatingFactorLocation').value = item.factor_location || '01 Camera de mijloc etaj curent';
+    document.getElementById('modalHeatingFactorCardinal').value = item.factor_cardinal || 'Directia Nord';
+    document.getElementById('modalHeatingFactorCorrection').value = item.factor_correction || 'Incaperi normale';
+
+    document.getElementById('heatingRadiatorModal').style.display = 'flex';
+}
+
+function closeHeatingRadiatorModal() {
+    var modal = document.getElementById('heatingRadiatorModal');
+    if (modal) modal.style.display = 'none';
+}
+
+function saveHeatingRadiator(e) {
+    if (e && e.preventDefault) e.preventDefault();
+
+    var idVal = document.getElementById('modalRadiatorId').value;
+    var model = document.getElementById('modalHeatingModel').value;
+    var radType = document.getElementById('modalHeatingRadiatorType').value;
+    var dims = document.getElementById('modalHeatingDimensions').value;
+    var dimSpec = document.getElementById('modalHeatingDimSpec').value.trim();
+    var setVal = document.getElementById('modalHeatingSet').value.trim();
+
+    var useStdEl = document.querySelector('input[name="modalHeatingUseStandard"]:checked');
+    var useStd = useStdEl ? useStdEl.value : '0';
+
+    var isStdEl = document.querySelector('input[name="modalHeatingIsStandard"]:checked');
+    var isStd = isStdEl ? isStdEl.value : '0';
+
+    var serial = document.getElementById('modalHeatingSerial').value.trim();
+    var room = document.getElementById('modalHeatingRoom').value;
+
+    var isActEl = document.querySelector('input[name="modalHeatingIsActive"]:checked');
+    var isActive = isActEl ? isActEl.value : '1';
+
+    var isPipe = document.getElementById('modalHeatingIsPipe').checked ? '1' : '0';
+    var roomNo = document.getElementById('modalHeatingRoomNo').value.trim();
+
+    var factLoc = document.getElementById('modalHeatingFactorLocation').value;
+    var factCard = document.getElementById('modalHeatingFactorCardinal').value;
+    var factCorr = document.getElementById('modalHeatingFactorCorrection').value;
+
+    if (!serial) {
+        alert('Seria repartitorului este obligatorie.');
+        document.getElementById('modalHeatingSerial').focus();
+        return false;
+    }
+
+    if (idVal) {
+        var id = parseInt(idVal, 10);
+        var existing = radiatorsData.find(function(r) { return r.id === id; });
+        if (existing) {
+            existing.allocator_model = model;
+            existing.radiator_type = radType;
+            existing.dimensions = dims;
+            existing.dim_spec = dimSpec;
+            existing.set_val = setVal;
+            existing.use_standard = useStd;
+            existing.is_standard = isStd;
+            existing.allocator_serial = serial;
+            existing.room = room;
+            existing.is_active = isActive;
+            existing.is_pipe = isPipe;
+            existing.room_no = roomNo;
+            existing.factor_location = factLoc;
+            existing.factor_cardinal = factCard;
+            existing.factor_correction = factCorr;
+        }
+    } else {
+        var newId = (radiatorsData.length > 0) ? Math.max.apply(Math, radiatorsData.map(function(r) { return r.id; })) + 1 : 1;
+        radiatorsData.push({
+            id: newId,
+            allocator_model: model,
+            radiator_type: radType,
+            dimensions: dims,
+            dim_spec: dimSpec,
+            set_val: setVal,
+            use_standard: useStd,
+            is_standard: isStd,
+            allocator_serial: serial,
+            room: room,
+            is_active: isActive,
+            is_pipe: isPipe,
+            room_no: roomNo,
+            factor_location: factLoc,
+            factor_cardinal: factCard,
+            factor_correction: factCorr
+        });
+    }
+
+    closeHeatingRadiatorModal();
+    renderRadiatorsTable();
+    return false;
+}
+
+// ── State și logica pentru Tab-ul Apă ─────────────────────────────────
+var coldWaterModels = ["ADDRA WMP","Axioma AR","E-RM 30 AR","OP-LWAN AR","Ultrimis AR"];
+var hotWaterModels  = ["Axioma AC","E-RM 30 AC","OP-LWAN AC","Ultrimis AC"];
+var waterCountersData = [{"id":1,"nr_ord":1,"room_no":"","room_type":"Buc\u0103t\u0103rie","seal_serial":"","counter_type":"Apa rece","mech_serial":"54977800","mech_install_date":"2015-03-05","model":"E-RM 30 AR","radio_serial":"302653646","radio_install_date":"2026-07-01","direct_index":"47.789","inverse_index":"0.000"},{"id":2,"nr_ord":2,"room_no":"","room_type":"Buc\u0103t\u0103rie","seal_serial":"","counter_type":"Apa calda","mech_serial":"54980032","mech_install_date":"2015-03-05","model":"E-RM 30 AC","radio_serial":"302007221","radio_install_date":"2026-07-01","direct_index":"32.140","inverse_index":"0.000"},{"id":3,"nr_ord":3,"room_no":"","room_type":"Baie","seal_serial":"","counter_type":"Apa rece","mech_serial":"54978029","mech_install_date":"2015-03-05","model":"E-RM 30 AR","radio_serial":"302006984","radio_install_date":"2026-07-01","direct_index":"28.650","inverse_index":"0.000"},{"id":4,"nr_ord":4,"room_no":"","room_type":"Baie","seal_serial":"","counter_type":"Apa calda","mech_serial":"54980034","mech_install_date":"2015-03-05","model":"E-RM 30 AC","radio_serial":"302007211","radio_install_date":"2026-07-01","direct_index":"19.820","inverse_index":"0.000"}];
+
+function handleCounterTypeChange(counterType, selectedModel) {
+    var sel = document.getElementById('modalCounterModel');
+    if (!sel) return;
+    sel.innerHTML = '';
+    var list = (counterType === 'Apa calda') ? hotWaterModels : coldWaterModels;
+    list.forEach(function(m) {
+        var opt = document.createElement('option');
+        opt.value = m;
+        opt.textContent = m;
+        if (selectedModel && selectedModel === m) {
+            opt.selected = true;
+        } else if (!selectedModel && m === list[0]) {
+            opt.selected = true;
+        }
+        sel.appendChild(opt);
+    });
+}
+
+function renderWaterCountersTable() {
+    var tbody = document.getElementById('waterCountersTableBody');
+    var emptyState = document.getElementById('waterCountersEmptyState');
+    var countBadge = document.getElementById('waterCounterCountBadge');
+    if (!tbody) return;
+
+    if (!waterCountersData || waterCountersData.length === 0) {
+        tbody.innerHTML = '';
+        if (emptyState) emptyState.style.display = 'block';
+        if (countBadge) countBadge.textContent = '0 contoare';
+        return;
+    }
+
+    if (emptyState) emptyState.style.display = 'none';
+    if (countBadge) countBadge.textContent = waterCountersData.length + ' contoare';
+
+    var html = '';
+    waterCountersData.forEach(function(c, idx) {
+        var isCold = (c.counter_type === 'Apa rece');
+        var badgeClass = isCold ? 'water-badge-cold' : 'water-badge-hot';
+        var badgeLabel = isCold ? 'Apă rece' : 'Apă caldă';
+
+        html += '<tr>' +
+            '<td style="text-align: center; font-weight: 600; color: var(--text-muted);">' + (idx + 1) + '</td>' +
+            '<td style="text-align: center; font-weight: 500;">' + (c.room_no ? escapeHtml(c.room_no) : '&ndash;') + '</td>' +
+            '<td style="font-weight: 600; color: var(--text-main);">' + escapeHtml(c.room_type) + '</td>' +
+            '<td><span class="' + badgeClass + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg> ' + badgeLabel + '</span></td>' +
+            '<td style="font-size: 12.5px; color: var(--text-main); font-weight: 500;">' + (c.model ? escapeHtml(c.model) : '&ndash;') + '</td>' +
+            '<td><span style="font-family: monospace; font-size: 12.5px; font-weight: 600; color: var(--text-main);">' + escapeHtml(c.mech_serial) + '</span></td>' +
+            '<td><span style="font-family: monospace; font-size: 12.5px; font-weight: 500; color: var(--text-muted);">' + (c.radio_serial ? escapeHtml(c.radio_serial) : '&ndash;') + '</span></td>' +
+            '<td style="text-align: center;">' +
+                '<div style="display: inline-flex; align-items: center; gap: 4px;">' +
+                    '<button type="button" class="btn-action-icon" title="Modifică contor" onclick="openEditWaterCounterModal(' + c.id + ')">' +
+                        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>' +
+                    '</button>' +
+                    '<button type="button" class="btn-action-icon" title="Șterge contor" onclick="deleteWaterCounter(' + c.id + ')">' +
+                        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>' +
+                    '</button>' +
+                '</div>' +
+            '</td>' +
+        '</tr>';
+    });
+
+    tbody.innerHTML = html;
+}
+
+function escapeHtml(str) {
+    if (str === null || str === undefined) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
+function openAddWaterCounterModal() {
+    document.getElementById('modalCounterId').value = '';
+    document.getElementById('waterCounterModalTitle').textContent = 'Echipare apa – Adaugare';
+    document.getElementById('modalCounterRoomNo').value = '';
+    document.getElementById('modalCounterRoomType').selectedIndex = 0;
+    document.getElementById('modalCounterSealSerial').value = '';
+    document.getElementById('modalCounterType').value = 'Apa rece';
+    handleCounterTypeChange('Apa rece', 'E-RM 30 AR');
+    document.getElementById('modalCounterMechSerial').value = '';
+    document.getElementById('modalCounterMechInstallDate').value = '2015-03-05';
+    document.getElementById('modalCounterRadioSerial').value = '';
+    document.getElementById('modalCounterRadioInstallDate').value = '2026-07-01';
+    document.getElementById('modalCounterDirectIndex').value = '0.000';
+    document.getElementById('modalCounterInverseIndex').value = '0.000';
+    document.getElementById('waterCounterModal').style.display = 'flex';
+    setTimeout(function() {
+        document.getElementById('modalCounterRoomNo').focus();
+    }, 100);
+}
+
+function openEditWaterCounterModal(id) {
+    var item = waterCountersData.find(function(c) { return c.id === id; });
+    if (!item) return;
+
+    document.getElementById('modalCounterId').value = item.id;
+    document.getElementById('waterCounterModalTitle').textContent = 'Echipare apa';
+    document.getElementById('modalCounterRoomNo').value = item.room_no || '';
+    document.getElementById('modalCounterRoomType').value = item.room_type || 'Bucătărie';
+    document.getElementById('modalCounterSealSerial').value = item.seal_serial || '';
+    document.getElementById('modalCounterType').value = item.counter_type || 'Apa rece';
+    handleCounterTypeChange(item.counter_type || 'Apa rece', item.model || (item.counter_type === 'Apa calda' ? 'E-RM 30 AC' : 'E-RM 30 AR'));
+    document.getElementById('modalCounterMechSerial').value = item.mech_serial || '';
+    document.getElementById('modalCounterMechInstallDate').value = item.mech_install_date || '2015-03-05';
+    document.getElementById('modalCounterRadioSerial').value = item.radio_serial || '';
+    document.getElementById('modalCounterRadioInstallDate').value = item.radio_install_date || '2026-07-01';
+    document.getElementById('modalCounterDirectIndex').value = (item.direct_index !== undefined) ? item.direct_index : '0.000';
+    document.getElementById('modalCounterInverseIndex').value = (item.inverse_index !== undefined) ? item.inverse_index : '0.000';
+    document.getElementById('waterCounterModal').style.display = 'flex';
+}
+
+function closeWaterCounterModal() {
+    var modal = document.getElementById('waterCounterModal');
+    if (modal) modal.style.display = 'none';
+}
+
+function saveWaterCounter(e) {
+    if (e && e.preventDefault) e.preventDefault();
+
+    var idVal = document.getElementById('modalCounterId').value;
+    var roomNo = document.getElementById('modalCounterRoomNo').value.trim();
+    var roomType = document.getElementById('modalCounterRoomType').value;
+    var sealSerial = document.getElementById('modalCounterSealSerial').value.trim();
+    var counterType = document.getElementById('modalCounterType').value;
+    var model = document.getElementById('modalCounterModel').value;
+    var mechSerial = document.getElementById('modalCounterMechSerial').value.trim();
+    var mechInstallDate = document.getElementById('modalCounterMechInstallDate').value;
+    var radioSerial = document.getElementById('modalCounterRadioSerial').value.trim();
+    var radioInstallDate = document.getElementById('modalCounterRadioInstallDate').value;
+    var directIndex = document.getElementById('modalCounterDirectIndex').value.trim() || '0.000';
+    var inverseIndex = document.getElementById('modalCounterInverseIndex').value.trim() || '0.000';
+
+    if (!mechSerial) {
+        alert('Seria contor mecanic este obligatorie.');
+        document.getElementById('modalCounterMechSerial').focus();
+        return false;
+    }
+
+    if (!/^\d+$/.test(mechSerial)) {
+        alert('Seria contor mecanic trebuie sa fie numerica.');
+        document.getElementById('modalCounterMechSerial').focus();
+        return false;
+    }
+
+    if (radioSerial && !/^\d+$/.test(radioSerial)) {
+        var proceed = window.confirm('Seria modul radio nu este valida. Doriti sa continuati?');
+        if (!proceed) {
+            document.getElementById('modalCounterRadioSerial').focus();
+            return false;
+        }
+    }
+
+    if (idVal) {
+        // Editare
+        var id = parseInt(idVal, 10);
+        var existing = waterCountersData.find(function(c) { return c.id === id; });
+        if (existing) {
+            existing.room_no = roomNo;
+            existing.room_type = roomType;
+            existing.seal_serial = sealSerial;
+            existing.counter_type = counterType;
+            existing.model = model;
+            existing.mech_serial = mechSerial;
+            existing.mech_install_date = mechInstallDate;
+            existing.radio_serial = radioSerial;
+            existing.radio_install_date = radioInstallDate;
+            existing.direct_index = directIndex;
+            existing.inverse_index = inverseIndex;
+        }
+    } else {
+        // Adăugare
+        var newId = (waterCountersData.length > 0) ? Math.max.apply(Math, waterCountersData.map(function(c) { return c.id; })) + 1 : 1;
+        waterCountersData.push({
+            id: newId,
+            nr_ord: waterCountersData.length + 1,
+            room_no: roomNo,
+            room_type: roomType,
+            seal_serial: sealSerial,
+            counter_type: counterType,
+            model: model,
+            mech_serial: mechSerial,
+            mech_install_date: mechInstallDate,
+            radio_serial: radioSerial,
+            radio_install_date: radioInstallDate,
+            direct_index: directIndex,
+            inverse_index: inverseIndex
+        });
+    }
+
+    closeWaterCounterModal();
+    renderWaterCountersTable();
+    return false;
+}
+
+function deleteWaterCounter(id) {
+    if (!confirm('Sunteți sigur că doriți să ștergeți acest contor de apă?')) {
+        return;
+    }
+    waterCountersData = waterCountersData.filter(function(c) { return c.id !== id; });
+    renderWaterCountersTable();
+}
+
+function toggleOtherRoomUnits(val) {
+    var inp = document.getElementById('txtOtherRoomUnits');
+    if (!inp) return;
+    if (val === '-1') {
+        inp.value = '';
+        inp.disabled = true;
+    } else {
+        inp.disabled = false;
+        inp.focus();
+    }
+}
+
+function handleApartamentWaterSubmit(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    var persNo = document.getElementById('txtPersNo').value.trim();
+    if (!/^\d+$/.test(persNo)) {
+        alert('Numărul de persoane este un număr întreg.');
+        document.getElementById('txtPersNo').focus();
+        return false;
+    }
+    alert('Datele de calcul apă și echiparea apartamentului au fost salvate cu succes!');
+    return false;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    renderWaterCountersTable();
+    renderRadiatorsTable();
+
+    var modal    = document.getElementById('cityPickerModal');
+    var btnOpen  = document.getElementById('btnOpenCityModal');
+    var btnClose = document.getElementById('btnCloseCityModal');
+    var searchEl = document.getElementById('citySearchInput');
+
+    if (btnOpen && modal) {
+        btnOpen.addEventListener('click', function() {
+            modal.style.display = 'flex';
+            if (searchEl) {
+                searchEl.value = '';
+                filterCities('');
+                setTimeout(function() { searchEl.focus(); }, 100);
+            }
+        });
+    }
+
+    if (btnClose && modal) {
+        btnClose.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+    }
+
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) modal.style.display = 'none';
+        });
+    }
+
+    var waterModal = document.getElementById('waterCounterModal');
+    if (waterModal) {
+        waterModal.addEventListener('click', function(e) {
+            if (e.target === waterModal) closeWaterCounterModal();
+        });
+    }
+
+    var heatingModal = document.getElementById('heatingRadiatorModal');
+    if (heatingModal) {
+        heatingModal.addEventListener('click', function(e) {
+            if (e.target === heatingModal) closeHeatingRadiatorModal();
+        });
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            if (modal && modal.style.display === 'flex') {
+                modal.style.display = 'none';
+            }
+            if (waterModal && waterModal.style.display === 'flex') {
+                closeWaterCounterModal();
+            }
+            if (heatingModal && heatingModal.style.display === 'flex') {
+                closeHeatingRadiatorModal();
+            }
+        }
+    });
+
+    if (searchEl) {
+        searchEl.addEventListener('input', function() {
+            filterCities(this.value);
+        });
+    }
+});
+
+function filterCities(query) {
+    var items = document.querySelectorAll('.city-picker-item');
+    var q = query.toLowerCase().trim();
+    items.forEach(function(item) {
+        var match = item.textContent.toLowerCase().indexOf(q) !== -1;
+        item.style.display = match ? '' : 'none';
+    });
+}
+
+function selectCity(cityName) {
+    var inp = document.getElementById('cityPickerInput');
+    if (inp) inp.value = cityName;
+    var modal = document.getElementById('cityPickerModal');
+    if (modal) modal.style.display = 'none';
+}
+</script>
+
+    </div><!-- /.content -->
+    <footer class="app-footer">
+        SONIC GRID &copy; 2026 &ndash; All rights reserved
+    </footer>
+</div><!-- /.main -->
+
+<script src="assets/js/sidebar.js?v=1.0.1"></script>
+</body>
+</html>

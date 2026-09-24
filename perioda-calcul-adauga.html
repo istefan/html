@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Gestiune NOD – SONIC BILLING</title>
+    <title>Adăugare Perioadă de Calcul – SONIC BILLING</title>
     <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
     <script src="assets/js/nod-picker.js"></script>
 </head>
@@ -201,7 +201,7 @@
         <!-- ╔══════════════════════════════════════════════════════════════
              ║  4. SONIC BILLING
              ╚══════════════════════════════════════════════════════════════ -->
-        <div class="app-section"
+        <div class="app-section open"
              data-app="sonic-billing"
              data-logo="assets/images/sonic-billing-logo.svg"
              data-logo-icon="SB">
@@ -275,7 +275,7 @@
                 </div>
 
                 <!-- ── CALCUL ────────────────────────────────────────────────── -->
-                <div class="nav-group " data-group="calcul">
+                <div class="nav-group open" data-group="calcul">
                     <button class="nav-group-title" type="button" title="Calcul">
                         <span class="nav-group-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
@@ -414,7 +414,7 @@
         <!-- ╔══════════════════════════════════════════════════════════════
              ║  6. SONIC (Base – Ecosistem & Configurare)
              ╚══════════════════════════════════════════════════════════════ -->
-        <div class="app-section open"
+        <div class="app-section"
              data-app="sonic"
              data-logo="assets/images/sonic-logo.svg"
              data-logo-icon="S">
@@ -433,7 +433,7 @@
                 </a>
 
                 <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
-                <div class="nav-group open" data-group="master-data">
+                <div class="nav-group " data-group="master-data">
                     <button class="nav-group-title" type="button" title="Master Data Management">
                         <span class="nav-group-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
@@ -445,7 +445,7 @@
                         <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
                         <a href="contracte.html" class="nav-subitem ">Contracte</a>
                         <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
-                        <a href="gestiune-nod.html" class="nav-subitem active">Gestiune NOD</a>
+                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
                         <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
                         <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
                     </div>
@@ -532,7 +532,7 @@
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
             <!-- Desktop page breadcrumb (hidden on mobile) -->
-            <div class="header-page-title">Gestiune NOD</div>
+            <div class="header-page-title">Adăugare Perioadă de Calcul</div>
 
             <!-- User profile avatar (always visible) -->
             <a href="contul-meu.html" class="user-profile" title="Contul meu">SI</a>
@@ -566,28 +566,14 @@
                             aria-selected="true"
                             aria-controls="help-pane-0"
                             data-tab="0">
-                        Prezentare generala                    </button>
+                        Prezentare generală                    </button>
                                         <button class="help-tab-btn "
                             role="tab"
                             id="help-tab-1"
                             aria-selected="false"
                             aria-controls="help-pane-1"
                             data-tab="1">
-                        Filtrare si Cautare                    </button>
-                                        <button class="help-tab-btn "
-                            role="tab"
-                            id="help-tab-2"
-                            aria-selected="false"
-                            aria-controls="help-pane-2"
-                            data-tab="2">
-                        Selectie NOD (Pop-up modal)                    </button>
-                                        <button class="help-tab-btn "
-                            role="tab"
-                            id="help-tab-3"
-                            aria-selected="false"
-                            aria-controls="help-pane-3"
-                            data-tab="3">
-                        Alocare cititor in masa                    </button>
+                        Reguli de index                    </button>
                                     </nav>
                 <!-- Tab content panes -->
                 <div class="help-tab-content">
@@ -596,25 +582,25 @@
                          id="help-pane-0"
                          aria-labelledby="help-tab-0"
                          data-pane="0">
-                        <h4>Gestiune NOD</h4><p>Aceasta pagina permite vizualizarea si administrarea NOD-urilor (puncte de distributie / bransamente) inregistrate in sistem, impreuna cu starea lor de alocare, contorizare si calcul.</p>                    </div>
+                        
+            <h4>Adăugare Perioadă de Calcul</h4>
+            <p>Inițiază un nou ciclu de calcul și facturare pentru o utilitate aferentă unui NOD de branșament.</p>
+            <p>Configurați intervalul de date (start / sfârșit), metoda de preluare a indexului inițial, tipul de calcul (normal sau recalculare) și cititorul alocat.</p>
+                            </div>
                                         <div class="help-tab-pane "
                          role="tabpanel"
                          id="help-pane-1"
                          aria-labelledby="help-tab-1"
                          data-pane="1">
-                        <h4>Cum functioneaza filtrele?</h4><ul><li><strong>Filtre principale (Server-side):</strong> Utilizati formularul de sus pentru a cauta dupa Localitate, Adresa, Bloc, NOD, Stare NOD, Tip proprietar, Perioada de calcul, Stare calcul, % contorizare sau Utilitate. Apasati <em>Cauta</em> pentru a aplica filtrele.</li><li><strong>Cautare dinamica (Client-side):</strong> Utilizati caseta de cautare din bara tabelului pentru a filtra instantaneu dupa NOD sau adresa, fara reincarcarea paginii.</li></ul>                    </div>
-                                        <div class="help-tab-pane "
-                         role="tabpanel"
-                         id="help-pane-2"
-                         aria-labelledby="help-tab-2"
-                         data-pane="2">
-                        <h4>Selectie NOD de consum</h4><p>Apasati pe pictograma cu lupa din dreptul campului <strong>NOD</strong> pentru a deschide modalul interactiv de selectie NOD.</p>                    </div>
-                                        <div class="help-tab-pane "
-                         role="tabpanel"
-                         id="help-pane-3"
-                         aria-labelledby="help-tab-3"
-                         data-pane="3">
-                        <h4>Alocare cititor pentru mai multe NOD-uri</h4><p>Bifati unul sau mai multe NOD-uri din tabel, apoi apasati butonul <strong>Alocare cititor</strong> din bara tabelului pentru a asocia un cititor tuturor NOD-urilor selectate simultan.</p>                    </div>
+                        
+            <h4>Metode de stabilire index inițial</h4>
+            <ul>
+                <li><strong>Index vechi 0:</strong> Folosit la punerea în funcțiune sau resetarea contoarelor.</li>
+                <li><strong>Index vechi = Index nou perioada anterioară:</strong> Continuitate directă standard de la luna precedentă.</li>
+                <li><strong>Index vechi = Index nou din sezon anterior:</strong> Se aplică pentru energie termică la pornirea sezonului rece.</li>
+                <li><strong>Selecție manuală:</strong> Preluare la alegere din arhivă.</li>
+            </ul>
+                            </div>
                                     </div>
                     </div><!-- /.help-panel-inner -->
         </div><!-- /.help-panel -->
@@ -642,550 +628,416 @@
 
     <div class="content">
 
+<!-- ===================================================================
+     React: <CalculationPeriodAddPage />
+     =================================================================== -->
+
+<!-- === Antet Pagină & Navigare Înapoi ===
+     React: <PageTitleContainer title="Adăugare Perioadă de Calcul" onBack={...} />
+-->
 <div class="page-title-container">
     <div class="page-title">
-        <h1>Gestiune NOD</h1>
-        <p>Vizualizeaza, filtreaza si administreaza NOD-urile inregistrate in sistem.</p>
+        <h1>Adăugare Perioadă de Calcul</h1>
+        <p>Configurați parametrii unui nou ciclu de calcul pentru un nod de branșament.</p>
     </div>
+    <a href="perioda-calcul.html" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 6px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+            <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+        <span>Înapoi la listă</span>
+    </a>
 </div>
 
-<div class="card" style="margin-bottom: 24px;">
-    <div style="margin-bottom: 18px;">
-        <span class="chart-title" style="font-size: 14px; font-weight: 600;">Filtrare Avansata</span>
-    </div>
-    <form method="GET" action="gestiune-nod.html" id="filterFormGestiuneNod">
-        <div class="filter-grid">
+<!-- === Tabs Navigare Secțiuni ===
+     React: <TabsNav activeTab={activeTab} onChange={setActiveTab} />
+-->
+<div class="tabs-nav" style="margin-bottom: 20px;">
+    <button type="button" class="tab-btn active" onclick="switchPeriodTab(this, 'tab-general')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15" style="margin-right: 6px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        <span>General</span>
+    </button>
+    <button type="button" class="tab-btn" onclick="switchPeriodTab(this, 'tab-common-parts')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15" style="margin-right: 6px;"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span>Spații Comune</span>
+    </button>
+    <button type="button" class="tab-btn" onclick="switchPeriodTab(this, 'tab-costs')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15" style="margin-right: 6px;"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+        <span>Costuri & Tarife</span>
+    </button>
+</div>
 
-            <div class="form-group">
-                <label class="form-label" for="cbCityNod">Localitate</label>
-                <select name="city" id="cbCityNod" class="input-control">
-                    <option value="-1">-</option>
-                                            <option value="18" >Apold</option>
-                                            <option value="32" >Brasov</option>
-                                            <option value="1" >Bucuresti</option>
-                                            <option value="14" >Bucuresti_</option>
-                                            <option value="38" >Buftea</option>
-                                            <option value="8" >Calimanesti</option>
-                                            <option value="30" >Chiajna</option>
-                                            <option value="35" >Chitila</option>
-                                            <option value="7" >Cisnadie</option>
-                                            <option value="12" >Constanta</option>
-                                            <option value="27" >Deva</option>
-                                            <option value="26" >Dobroesti</option>
-                                            <option value="22" >Eforie Nord</option>
-                                            <option value="3" >Giurgiu</option>
-                                            <option value="2" >Iasi</option>
-                                            <option value="34" >Magurele</option>
-                                            <option value="20" >Mamaia</option>
-                                            <option value="19" >Mangalia</option>
-                                            <option value="40" >Medgidia</option>
-                                            <option value="9" >Medias</option>
-                                            <option value="31" >Mihail Kogalniceanu</option>
-                                            <option value="41" >Municipiul Targu Mures</option>
-                                            <option value="21" >Navodari</option>
-                                            <option value="33" >Neptun</option>
-                                            <option value="24" >Olimp</option>
-                                            <option value="28" >Orasul Tulcea</option>
-                                            <option value="36" >Ovidiu</option>
-                                            <option value="17" >Ploiesti</option>
-                                            <option value="37" >Ploiestiori</option>
-                                            <option value="25" >Popesti Leordeni</option>
-                                            <option value="39" >Predeal</option>
-                                            <option value="10" >Ramnicu Valcea</option>
-                                            <option value="42" >Rosu</option>
-                                            <option value="5" >Sibiu</option>
-                                            <option value="6" >Sighisoara</option>
-                                            <option value="15" >Singeorgiu de Mures</option>
-                                            <option value="23" >Targu Jiu</option>
-                                            <option value="13" >Targu Mures</option>
-                                            <option value="4" >Targu Mures</option>
-                                            <option value="11" >Tulcea</option>
-                                            <option value="43" >Tunari</option>
-                                            <option value="16" >Ungheni</option>
-                                            <option value="29" >Voluntari</option>
-                                    </select>
+<form method="POST" action="perioda-calcul.html" id="formAddPeriod" onsubmit="handleSavePeriod(event)">
+
+    <!-- ══ TAB 1: General ════════════════════════════════════════════════ -->
+    <div id="tab-general" class="tab-content active">
+
+        <!-- Card Informații Meta & NOD -->
+        <div class="card" style="margin-bottom: 20px;">
+            <div style="margin-bottom: 16px;">
+                <span class="chart-title" style="font-size: 14px; font-weight: 600;">Date Generale & Identificare NOD</span>
             </div>
 
-            <div class="form-group">
-                <label class="form-label" for="txtAdresaNod">Adresa</label>
-                <input type="text" name="adresa" id="txtAdresaNod" class="input-control" placeholder="Denumire strada..." value="">
-            </div>
-
-            <div class="form-group">
-                <label class="form-label" for="txtBlocNod">Bloc</label>
-                <input type="text" name="bloc" id="txtBlocNod" class="input-control" placeholder="Ex: 27" value="">
-            </div>
-
-            <div class="form-group">
-                <label class="form-label" for="txtNODGestiune">NOD</label>
-                <div class="picker-group">
-                    <input type="text" id="txtNODGestiune" name="nod_picker" class="input-control" readonly placeholder="Click pe lupa..." value="">
-                    <button type="button" class="btn-action-icon" id="btnOpenNodModalGestiune" title="Deschide selector NOD">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    </button>
-                    <button type="button" class="btn-action-icon delete" title="Sterge selectie" onclick="document.getElementById('txtNODGestiune').value=''">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                    </button>
+            <!-- Meta info: Autor + Data creare -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--border-color);">
+                <div class="form-group">
+                    <label class="form-label">Autor creare</label>
+                    <input type="text" class="input-control" value="Stefan Iftimie" readonly style="background-color: var(--bg-surface); font-weight: 500;">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Data creare</label>
+                    <input type="text" class="input-control" value="24.09.2026 09:58" readonly style="background-color: var(--bg-surface);">
                 </div>
             </div>
 
-            <div class="form-group">
-                <label class="form-label" for="ddlStareNod">Stare NOD</label>
-                <select name="stare_nod" id="ddlStareNod" class="input-control">
-                                            <option value="-1" selected>-</option>
-                                            <option value="4" >Alocat</option>
-                                            <option value="5" >Nealocat</option>
-                                    </select>
-            </div>
+            <!-- NOD + Utilitate -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                <div class="form-group">
+                    <label class="form-label" for="txtNodPeriodAdd">Cod NOD Branșament <span class="required-star">*</span></label>
+                    <div class="picker-group">
+                        <input type="text" id="txtNodPeriodAdd" name="nod_code" class="input-control"
+                               readonly required placeholder="Selectați codul NOD..." value="">
+                        <button type="button" class="btn-picker" id="btnOpenNodPickerAdd" title="Deschide selector NOD">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </button>
+                        <button type="button" class="btn-picker delete" title="Șterge selecție" onclick="document.getElementById('txtNodPeriodAdd').value=''">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        </button>
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <label class="form-label" for="ddlTipProprietarNod">Tip proprietar</label>
-                <select name="tip_proprietar" id="ddlTipProprietarNod" class="input-control">
-                                            <option value="-1" selected>-</option>
-                                            <option value="1" >Cu agenti economici</option>
-                                            <option value="2" >Fara agenti economici</option>
-                                    </select>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label" for="dtpStartDate">Perioada calcul</label>
-                <div class="date-range-group">
-                    <input type="date" name="start_date" id="dtpStartDate" class="input-control" value="">
-                    <span class="date-range-separator">&ndash;</span>
-                    <input type="date" name="end_date" id="dtpEndDate" class="input-control" value="">
+                <div class="form-group">
+                    <label class="form-label" for="cbUtilitateAdd">Utilitate <span class="required-star">*</span></label>
+                    <select name="utility" id="cbUtilitateAdd" class="input-control" required>
+                        <option value="">Alege utilitate...</option>
+                                                    <option value="2">Apă</option>
+                                                    <option value="1">Energie Termică</option>
+                                                    <option value="3">Gaz</option>
+                                            </select>
                 </div>
             </div>
 
+            <!-- Intervale Dată: Start / Sfârșit -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                <div class="form-group">
+                    <label class="form-label" for="dtpStartDate">Data de start <span class="required-star">*</span></label>
+                    <input type="date" id="dtpStartDate" name="start_date" class="input-control" required value="2026-08-01">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="dtpEndDate">Data de sfârșit <span class="required-star">*</span></label>
+                    <input type="date" id="dtpEndDate" name="end_date" class="input-control" required value="2026-08-31">
+                </div>
+            </div>
+
+            <!-- Citire Manuală & Cititor -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div class="form-group">
+                    <label class="form-label" for="dtpManualReading">Data Citire Manuală</label>
+                    <input type="date" id="dtpManualReading" name="manual_reading_date" class="input-control" value="2026-08-31">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="ddlReaderAdd">Cititor Alocat</label>
+                    <select name="reader_id" id="ddlReaderAdd" class="input-control">
+                        <option value="-1">- Selectați cititor -</option>
+                                                    <option value="60">1 Deservcom</option>
+                                                    <option value="75">3 Deservcom</option>
+                                                    <option value="76">4 Deservcom</option>
+                                                    <option value="39">Adriana Popescu</option>
+                                                    <option value="30">Alexandru Balanescu</option>
+                                                    <option value="3">Aura Radut</option>
+                                                    <option value="34">Aurica Paizan</option>
+                                                    <option value="62">BUC Sectorul 1</option>
+                                                    <option value="63">BUC Sectorul 2a</option>
+                                                    <option value="97">BUC Sectorul 2b</option>
+                                                    <option value="64">BUC Sectorul 3a</option>
+                                                    <option value="72">BUC Sectorul 3b</option>
+                                                    <option value="98">BUC Sectorul 3c</option>
+                                                    <option value="99">BUC Sectorul 3d</option>
+                                                    <option value="65">BUC Sectorul 4a</option>
+                                                    <option value="77">BUC Sectorul 4b</option>
+                                                    <option value="66">BUC Sectorul 5</option>
+                                                    <option value="67">BUC Sectorul 6a</option>
+                                                    <option value="80">BUC Sectorul 6b</option>
+                                                    <option value="73">BUC Sectorul nou</option>
+                                                    <option value="89">Brasov 1</option>
+                                                    <option value="92">Buftea 1</option>
+                                                    <option value="31">Camelia Gurgu</option>
+                                                    <option value="17">Carmen Malearic</option>
+                                                    <option value="2">Cezar Miulescu</option>
+                                                    <option value="87">Chiajna 1</option>
+                                                    <option value="91">Chitila 1</option>
+                                                    <option value="1">Citire Autor</option>
+                                                    <option value="70">Constanta 1</option>
+                                                    <option value="26">Constantin Sandulache</option>
+                                                    <option value="25">Costica Dumitrescu</option>
+                                                    <option value="44">Cristina Al Najar</option>
+                                                    <option value="81">Dobroesti 1</option>
+                                                    <option value="35">Doru Dadarlat</option>
+                                                    <option value="50">Dumitru Ciobanu</option>
+                                                    <option value="42">Elena Moise</option>
+                                                    <option value="20">Elena Simion</option>
+                                                    <option value="52">Elena Zaharia</option>
+                                                    <option value="5">Elvira Grigorcea</option>
+                                                    <option value="47">Florentina Stanciu</option>
+                                                    <option value="38">Florin Ungurian</option>
+                                                    <option value="19">Gabriel Benig</option>
+                                                    <option value="46">Gabriel Dobreanu</option>
+                                                    <option value="40">Gabriela Preda</option>
+                                                    <option value="27">George Rozescu</option>
+                                                    <option value="29">Georgiana Lotzcar</option>
+                                                    <option value="8">Geta Obretin</option>
+                                                    <option value="21">I. Gheorghe</option>
+                                                    <option value="18">I. Ilie</option>
+                                                    <option value="54">I. Popic</option>
+                                                    <option value="28">Ilie Ciocarlan</option>
+                                                    <option value="49">Ion Matei</option>
+                                                    <option value="14">Ion Petcu</option>
+                                                    <option value="24">Ion Stoian</option>
+                                                    <option value="51">Ionel Costea</option>
+                                                    <option value="53">Iulian Zaharia</option>
+                                                    <option value="79">Jilava 1</option>
+                                                    <option value="23">Klara Tanase</option>
+                                                    <option value="7">Laurentiu Plesa</option>
+                                                    <option value="4">Luminita Capan</option>
+                                                    <option value="11">M. Baltag</option>
+                                                    <option value="90">Magurele 1</option>
+                                                    <option value="41">Maria Constantin</option>
+                                                    <option value="32">Maria Dragulici</option>
+                                                    <option value="12">Maria Iosu</option>
+                                                    <option value="36">Marius Bacleseanu</option>
+                                                    <option value="94">Medgidia 1</option>
+                                                    <option value="48">Mihaela Ghitulescu</option>
+                                                    <option value="88">Mihail Kogalniceanu 1</option>
+                                                    <option value="95">Municipiul Târgu Mures 1</option>
+                                                    <option value="96">Navodari 1</option>
+                                                    <option value="6">Nela Ene</option>
+                                                    <option value="15">Nina Ghizdavin</option>
+                                                    <option value="85">Orasul Tulcea 1</option>
+                                                    <option value="45">Paul Ene</option>
+                                                    <option value="10">Petre Pana</option>
+                                                    <option value="22">Petre Spanu</option>
+                                                    <option value="9">Petre Turcus</option>
+                                                    <option value="69">Ploiesti 1</option>
+                                                    <option value="74">Popesti 1</option>
+                                                    <option value="93">Predeal 1</option>
+                                                    <option value="13">Radu Cheveresan</option>
+                                                    <option value="55">Radu Murar</option>
+                                                    <option value="57">Radu Murar 2</option>
+                                                    <option value="58">Radu Murar 3</option>
+                                                    <option value="84">Radu Murar 4</option>
+                                                    <option value="83">Radu Murar 5</option>
+                                                    <option value="82">Radu Murar 6</option>
+                                                    <option value="59">Rodica Baluta</option>
+                                                    <option value="71">Rodica Baluta 2</option>
+                                                    <option value="43">Stelian Rosu</option>
+                                                    <option value="61">Szasz Balind</option>
+                                                    <option value="56">Teodor Milian</option>
+                                                    <option value="100">Tunari 1</option>
+                                                    <option value="78">Valeriu George Nicola</option>
+                                                    <option value="68">Vartolomeu Georgescu</option>
+                                                    <option value="33">Vasile Oprea</option>
+                                                    <option value="16">Viorica Radu</option>
+                                                    <option value="86">Voluntari 1</option>
+                                                    <option value="37">Zanfir Ene</option>
+                                            </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Reguli Index & Tip Perioadă -->
+        <div class="card" style="margin-bottom: 20px;">
+            <div style="margin-bottom: 16px;">
+                <span class="chart-title" style="font-size: 14px; font-weight: 600;">Reguli Calcul & Index Inițial</span>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px;">
+                <!-- Opțiuni Index -->
+                <div>
+                    <label class="form-label" style="margin-bottom: 10px;">Metodă de preluare Index Inițial <span class="required-star">*</span></label>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; padding: 6px 10px; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-surface);">
+                            <input type="radio" name="index_rule" value="1">
+                            <span>Index vechi 0</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; padding: 6px 10px; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-surface);">
+                            <input type="radio" name="index_rule" value="2" checked>
+                            <span style="font-weight: 600; color: var(--text-main);">Index vechi egal cu index nou din perioada anterioară</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; padding: 6px 10px; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-surface);">
+                            <input type="radio" name="index_rule" value="3">
+                            <span>Index vechi egal cu index nou din sezon anterior</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; padding: 6px 10px; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-surface);">
+                            <input type="radio" name="index_rule" value="4">
+                            <span>Index vechi egal cu index nou (SELECȚIE)</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; padding: 6px 10px; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-surface);">
+                            <input type="radio" name="index_rule" value="5">
+                            <span>Index vechi egal cu index vechi (SELECȚIE)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Tipul Perioadei -->
+                <div>
+                    <label class="form-label" style="margin-bottom: 10px;">Tipul Perioadei de Calcul <span class="required-star">*</span></label>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-surface);">
+                            <input type="radio" name="period_type" value="1" checked>
+                            <div>
+                                <span style="font-weight: 600; color: var(--text-main);">Normal</span>
+                                <div style="font-size: 11.5px; color: var(--text-muted);">Calcul lunar standard de repartiție și consum</div>
+                            </div>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-surface);">
+                            <input type="radio" name="period_type" value="2">
+                            <div>
+                                <span style="font-weight: 600; color: var(--text-main);">Recalculare</span>
+                                <div style="font-size: 11.5px; color: var(--text-muted);">Recalculare retroactivă sau ajustare date istorice</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Observații -->
+        <div class="card" style="margin-bottom: 20px;">
             <div class="form-group">
-                <label class="form-label" for="ddlStareCalcul">Stare calcul</label>
-                <select name="stare_calcul" id="ddlStareCalcul" class="input-control">
-                                            <option value="-1" selected>-</option>
-                                            <option value="4" >Alocat</option>
-                                            <option value="3" >Gata de calcul</option>
-                                            <option value="6" >Gata de facturare</option>
-                                            <option value="7" >Gata de tiparit</option>
-                                            <option value="5" >In calcul</option>
-                                            <option value="8" >Incheiat</option>
-                                    </select>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label" for="ddlPctContorizare">% contorizare</label>
-                <select name="pct_contorizare" id="ddlPctContorizare" class="input-control">
-                                            <option value="-1" selected>-</option>
-                                            <option value="1" >Mai mic de 80</option>
-                                            <option value="2" >Mai mare sau egal cu 80</option>
-                                    </select>
-            </div>
-
-            <div class="form-group">
-                <label class="form-label" for="ddlUtilitateNod">Utilitate</label>
-                <select name="utilitate" id="ddlUtilitateNod" class="input-control">
-                                            <option value="-1" selected>-</option>
-                                            <option value="2" >Apa</option>
-                                            <option value="1" >Energie Termica</option>
-                                            <option value="3" >Gaz</option>
-                                    </select>
-            </div>
-
-        </div>
-
-        <div class="filter-actions">
-            <div class="filter-per-page">
-                <label class="filter-per-page-label" for="ddlPerPageNod">Inreg / pag</label>
-                <select name="per_page" id="ddlPerPageNod" class="input-control select-per-page">
-                    <option value="10"  >10</option>
-                    <option value="15"  >15</option>
-                    <option value="25"  >25</option>
-                    <option value="50"  >50</option>
-                    <option value="100" selected>100</option>
-                </select>
-            </div>
-            <a href="gestiune-nod.html" class="btn-secondary">Reseteaza</a>
-            <button type="submit" class="btn-primary">Cauta</button>
-        </div>
-    </form>
-</div>
-
-<div class="table-container">
-    <div class="table-toolbar">
-        <div class="table-toolbar-left" style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
-            <span style="color: var(--text-muted); font-size: 13px; font-weight: 500;">
-                Afisare <strong id="nodVisibleCount">13</strong> din <strong>5.983</strong> inregistrari
-            </span>
-            <button type="button" class="btn-secondary" id="btnBulkAllocateReader" disabled title="Selectati cel putin un NOD din tabel">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                Alocare cititor
-                <span id="bulkSelectedCount" style="display:none; background: var(--accent); color: #fff; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 1px 7px;">0</span>
-            </button>
-        </div>
-        <div class="table-toolbar-right">
-            <div class="live-search-wrapper" title="Filtrare locala in timp real dupa NOD sau adresa">
-                <span class="live-search-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                </span>
-                <input type="text" id="nodTableSearch" class="input-control" placeholder="Cautare dinamica NOD / adresa...">
+                <label class="form-label" for="txtPeriodObservations">Observații / Mențiuni procesare</label>
+                <textarea id="txtPeriodObservations" name="observations" class="input-control" rows="3"
+                          placeholder="Adăugați observații specifice pentru acest ciclu de calcul..."></textarea>
             </div>
         </div>
+
+    </div><!-- /#tab-general -->
+
+    <!-- ══ TAB 2: Spații Comune ══════════════════════════════════════════ -->
+    <div id="tab-common-parts" class="tab-content" style="display: none;">
+        <div class="card" style="margin-bottom: 20px;">
+            <div style="margin-bottom: 16px;">
+                <span class="chart-title" style="font-size: 14px; font-weight: 600;">Configurare Repartiție Spații Comune</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 16px;">
+                Parametrii de repartizare pentru părțile comune (casa scării, uscătorii, subsoluri) conform normativelor aplicabile.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+                <div class="form-group">
+                    <label class="form-label" for="txtCommonPct">Procent Spații Comune (%)</label>
+                    <input type="number" id="txtCommonPct" name="common_pct" class="input-control" value="10" min="0" max="100" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="ddlCommonMethod">Metodă calcul spații comune</label>
+                    <select id="ddlCommonMethod" name="common_method" class="input-control">
+                        <option value="1">Proporțional cu suprafața utilă (SU)</option>
+                        <option value="2">Proporțional cu cota indiviză</option>
+                        <option value="3">Cotă fixă per apartament</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="txtCommonSubsol">Factor corecție subsol</label>
+                    <input type="number" id="txtCommonSubsol" name="common_subsol_factor" class="input-control" value="1.0" min="0" max="5" step="0.05">
+                </div>
+            </div>
+        </div>
+    </div><!-- /#tab-common-parts -->
+
+    <!-- ══ TAB 3: Costuri & Tarife ═══════════════════════════════════════ -->
+    <div id="tab-costs" class="tab-content" style="display: none;">
+        <div class="card" style="margin-bottom: 20px;">
+            <div style="margin-bottom: 16px;">
+                <span class="chart-title" style="font-size: 14px; font-weight: 600;">Tarife și Costuri Aplicabile</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 16px;">
+                Specificați tariful de bază al utilității facturate sau selectați tariful din dicționarul de tarife active.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+                <div class="form-group">
+                    <label class="form-label" for="txtUnitPrice">Preț Unitar de Bază (RON / UM)</label>
+                    <input type="number" id="txtUnitPrice" name="unit_price" class="input-control" value="0.00" min="0" step="0.0001">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="txtTvaRate">Cotă TVA (%)</label>
+                    <input type="number" id="txtTvaRate" name="tva_rate" class="input-control" value="19" min="0" max="100">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="ddlTariffSource">Sursă Tarif</label>
+                    <select id="ddlTariffSource" name="tariff_source" class="input-control">
+                        <option value="standard">Tarif standard furnizor</option>
+                        <option value="custom">Tarif particularizat asociație</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div><!-- /#tab-costs -->
+
+    <!-- ══ Butoane de Acțiune (Jos) ══════════════════════════════════════ -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-color);">
+        <a href="perioda-calcul.html" class="btn-secondary">
+            &larr; Înapoi la listă
+        </a>
+        <button type="submit" class="btn-primary" style="padding: 10px 24px;">
+            Salvează Perioada
+        </button>
     </div>
 
-    <div style="overflow-x: auto; width: 100%;">
-        <table class="partners-table" id="nodTable">
-            <thead>
-                <tr>
-                    <th style="width:28px; text-align:center;">
-                        <input type="checkbox" class="table-checkbox" id="nodSelectAll" title="Selecteaza tot">
-                    </th>
-                    <th style="width:10%;">Localitate</th>
-                    <th style="width:10%;">NOD</th>
-                    <th style="width:37%;">Adresa de bransament</th>
-                    <th style="width:8%;">Stare</th>
-                    <th class="centerTd" style="width:7%; text-align:center;">% incalzire</th>
-                    <th style="width:11%;">Status incalzire</th>
-                    <th class="centerTd" style="width:6%; text-align:center;">% apa</th>
-                    <th style="width:11%;">Status apa</th>
-                    <th style="width:4%; text-align:center;">Actiuni</th>
-                </tr>
-            </thead>
-            <tbody id="nodTableBody">
-                                <tr data-search="81-001-0001 str. stefan cel mare, nr. 27, bl. 27, sc. 1, distr. 2, bucuresti">
-                    <td style="text-align:center;">
-                        <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0001">
-                    </td>
-                    <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
-                    <td>Str. STEFAN CEL MARE, Nr. 27, Bl. 27, Sc. 1, Distr. 2, Bucuresti</td>
-                    <td><span class="status-badge status-online">Alocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">100</td>
-                    <td><span class="status-badge status-online">Deblocat manual</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
-                    <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center;">
-                        <a href="gestiune-nod-edit.html?nod=81-001-0001" class="btn-action-icon" title="Editeaza NOD">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-                        </a>
-                    </td>
-                </tr>
-                                <tr data-search="81-001-0002 str. reziliat, nr. 36, bl. vila, sc. 1, distr. 1, bucuresti">
-                    <td style="text-align:center;">
-                        <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0002">
-                    </td>
-                    <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0002</td>
-                    <td>Str. REZILIAT, Nr. 36, Bl. Vila, Sc. 1, Distr. 1, Bucuresti</td>
-                    <td><span class="status-badge status-online">Alocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">100</td>
-                    <td><span class="status-badge status-offline">Blocat contract reziliat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
-                    <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center;">
-                        <a href="gestiune-nod-edit.html?nod=81-001-0002" class="btn-action-icon" title="Editeaza NOD">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-                        </a>
-                    </td>
-                </tr>
-                                <tr data-search="81-001-0003 str. reziliat, sc. 1, distr. 5, bucuresti">
-                    <td style="text-align:center;">
-                        <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0003">
-                    </td>
-                    <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0003</td>
-                    <td>Str. REZILIAT, Sc. 1, Distr. 5, Bucuresti</td>
-                    <td><span class="status-badge status-online">Alocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">100</td>
-                    <td><span class="status-badge status-offline">Blocat contract reziliat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
-                    <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center;">
-                        <a href="gestiune-nod-edit.html?nod=81-001-0003" class="btn-action-icon" title="Editeaza NOD">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-                        </a>
-                    </td>
-                </tr>
-                                <tr data-search="81-001-0004 str. gura ialomitei, nr. 3, bl. pc9, sc. b, distr. 3, bucuresti">
-                    <td style="text-align:center;">
-                        <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0004">
-                    </td>
-                    <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0004</td>
-                    <td>Str. GURA IALOMITEI, Nr. 3, Bl. PC9, Sc. B, Distr. 3, Bucuresti</td>
-                    <td><span class="status-badge status-online">Alocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">100</td>
-                    <td><span class="status-badge status-online">Deblocat manual</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
-                    <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center;">
-                        <a href="gestiune-nod-edit.html?nod=81-001-0004" class="btn-action-icon" title="Editeaza NOD">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-                        </a>
-                    </td>
-                </tr>
-                                <tr data-search="81-001-0005 str. gura ialomitei, nr. 3, bl. pc9, sc. a, distr. 3, bucuresti">
-                    <td style="text-align:center;">
-                        <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0005">
-                    </td>
-                    <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0005</td>
-                    <td>Str. GURA IALOMITEI, Nr. 3, Bl. PC9, Sc. A, Distr. 3, Bucuresti</td>
-                    <td><span class="status-badge status-online">Alocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">100</td>
-                    <td><span class="status-badge status-online">Deblocat manual</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
-                    <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center;">
-                        <a href="gestiune-nod-edit.html?nod=81-001-0005" class="btn-action-icon" title="Editeaza NOD">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-                        </a>
-                    </td>
-                </tr>
-                                <tr data-search="81-001-0008 str. liber, nr. 012, bl. 0, sc. 2, bucuresti">
-                    <td style="text-align:center;">
-                        <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0008">
-                    </td>
-                    <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0008</td>
-                    <td>Str. Liber, Nr. 012, Bl. 0, Sc. 2, Bucuresti</td>
-                    <td><span class="status-badge status-offline">Nealocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
-                    <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
-                    <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center;">
-                        <a href="gestiune-nod-edit.html?nod=81-001-0008" class="btn-action-icon" title="Editeaza NOD">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-                        </a>
-                    </td>
-                </tr>
-                                <tr data-search="81-001-0018 str. unirii, nr. 13, bl. 2c, sc. 1, distr. 5, bucuresti">
-                    <td style="text-align:center;">
-                        <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0018">
-                    </td>
-                    <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0018</td>
-                    <td>Str. UNIRII, Nr. 13, Bl. 2C, Sc. 1, Distr. 5, Bucuresti</td>
-                    <td><span class="status-badge status-online">Alocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">100</td>
-                    <td><span class="status-badge status-online">Deblocat manual</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
-                    <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center;">
-                        <a href="gestiune-nod-edit.html?nod=81-001-0018" class="btn-action-icon" title="Editeaza NOD">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-                        </a>
-                    </td>
-                </tr>
-                                <tr data-search="81-001-0020 str. pantelimon, nr. 332, bl. 32, sc. 1, distr. 2, bucuresti">
-                    <td style="text-align:center;">
-                        <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0020">
-                    </td>
-                    <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0020</td>
-                    <td>Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 1, Distr. 2, Bucuresti</td>
-                    <td><span class="status-badge status-online">Alocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">97</td>
-                    <td><span class="status-badge status-online">Deblocat manual</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;"></td>
-                    <td><span class="status-badge status-online">Deblocat manual</span></td>
-                    <td style="text-align:center;">
-                        <a href="gestiune-nod-edit.html?nod=81-001-0020" class="btn-action-icon" title="Editeaza NOD">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-                        </a>
-                    </td>
-                </tr>
-                                <tr data-search="81-001-0055 str. aleea barsanesti, nr. 2, bl. 156, sc. 2, distr. 6, bucuresti">
-                    <td style="text-align:center;">
-                        <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0055">
-                    </td>
-                    <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0055</td>
-                    <td>Str. ALEEA BARSANESTI, Nr. 2, Bl. 156, Sc. 2, Distr. 6, Bucuresti</td>
-                    <td><span class="status-badge status-online">Alocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
-                    <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">98</td>
-                    <td><span class="status-badge status-online">Deblocat manual</span></td>
-                    <td style="text-align:center;">
-                        <a href="gestiune-nod-edit.html?nod=81-001-0055" class="btn-action-icon" title="Editeaza NOD">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-                        </a>
-                    </td>
-                </tr>
-                                <tr data-search="81-001-0056 str. de modificat, sc. -, distr. 3, bucuresti">
-                    <td style="text-align:center;">
-                        <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0056">
-                    </td>
-                    <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0056</td>
-                    <td>Str. DE MODIFICAT, Sc. -, Distr. 3, Bucuresti</td>
-                    <td><span class="status-badge status-offline">Nealocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;"></td>
-                    <td><span class="status-badge status-offline">Blocat necompletat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
-                    <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center;">
-                        <a href="gestiune-nod-edit.html?nod=81-001-0056" class="btn-action-icon" title="Editeaza NOD">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-                        </a>
-                    </td>
-                </tr>
-                                <tr data-search="81-001-0068 str. petre ionescu, nr. 51, bl. 7, sc. 3, distr. 3, bucuresti">
-                    <td style="text-align:center;">
-                        <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0068">
-                    </td>
-                    <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0068</td>
-                    <td>Str. PETRE IONESCU, Nr. 51, Bl. 7, Sc. 3, Distr. 3, Bucuresti</td>
-                    <td><span class="status-badge status-online">Alocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
-                    <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">93</td>
-                    <td><span class="status-badge status-online">Deblocat manual</span></td>
-                    <td style="text-align:center;">
-                        <a href="gestiune-nod-edit.html?nod=81-001-0068" class="btn-action-icon" title="Editeaza NOD">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-                        </a>
-                    </td>
-                </tr>
-                                <tr data-search="81-001-0080 str. de modificat, nr. 23-25, bl. 39, sc. 3+4, distr. 4, bucuresti">
-                    <td style="text-align:center;">
-                        <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0080">
-                    </td>
-                    <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0080</td>
-                    <td>Str. DE MODIFICAT, Nr. 23-25, Bl. 39, Sc. 3+4, Distr. 4, Bucuresti</td>
-                    <td><span class="status-badge status-offline">Nealocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;"></td>
-                    <td><span class="status-badge status-offline">Blocat contract reziliat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
-                    <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center;">
-                        <a href="gestiune-nod-edit.html?nod=81-001-0080" class="btn-action-icon" title="Editeaza NOD">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-                        </a>
-                    </td>
-                </tr>
-                                <tr data-search="81-001-0086 str. test vlad, nr. 1, bl. 1, sc. 1, distr. 1, bucuresti">
-                    <td style="text-align:center;">
-                        <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0086">
-                    </td>
-                    <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0086</td>
-                    <td>Str. TEST VLAD, Nr. 1, Bl. 1, Sc. 1, Distr. 1, Bucuresti</td>
-                    <td><span class="status-badge status-online">Alocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">83</td>
-                    <td><span class="status-badge status-online">Deblocat manual</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
-                    <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center;">
-                        <a href="gestiune-nod-edit.html?nod=81-001-0086" class="btn-action-icon" title="Editeaza NOD">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-                        </a>
-                    </td>
-                </tr>
-                            </tbody>
-        </table>
-    </div>
-
-    <!-- === Paginație === -->
-    <div class="table-pagination">
-        <div style="font-size: 13px; color: var(--text-muted);">
-            Afișare <strong>1</strong> - <strong id="nodPaginationVisible">13</strong> din <strong>6.000</strong> înregistrări
-        </div>
-        <div style="display: flex; align-items: center; gap: 8px;">
-            <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" disabled>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                <span>Anterior</span>
-            </button>
-            <div class="pagination-pages">
-                <button type="button" class="btn-secondary active" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;">1</button>
-                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 2')">2</button>
-                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 3')">3</button>
-                <span style="padding: 0 4px; color: var(--text-muted); font-size: 12px;">...</span>
-                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 60')">60</button>
-            </div>
-            <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" onclick="alert('Pagina următoare')">
-                <span>Următor</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </button>
-        </div>
-    </div>
-</div>
+</form>
 
 
 <!-- ══ NOD Picker Modal (partial) ════════════════════════════════════════════
-     React: <NodPickerModal id="nodPickerModalGestiune" onSelect={handleSelect} />
+     React: <NodPickerModal id="nodPickerModalPeriodAdd" onSelect={handleSelect} />
 ══════════════════════════════════════════════════════════════════════════════ -->
-<div class="modal-overlay" id="nodPickerModalGestiune" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="nodPickerModalGestiune-title">
+<div class="modal-overlay" id="nodPickerModalPeriodAdd" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="nodPickerModalPeriodAdd-title">
     <div class="modal-card nod-picker-card">
         <div class="modal-header">
-            <h3 id="nodPickerModalGestiune-title">Alegere NOD</h3>
-            <button type="button" class="btn-close nod-picker-close" data-modal="nodPickerModalGestiune" title="Închide fereastra">
+            <h3 id="nodPickerModalPeriodAdd-title">Alegere NOD</h3>
+            <button type="button" class="btn-close nod-picker-close" data-modal="nodPickerModalPeriodAdd" title="Închide fereastra">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
         </div>
         <div class="modal-body">
             <!-- Formular de filtrare -->
-            <form class="nod-picker-filter-form" id="nodPickerModalGestiune-form" onsubmit="return false;">
+            <form class="nod-picker-filter-form" id="nodPickerModalPeriodAdd-form" onsubmit="return false;">
                 <div class="nod-picker-filter-grid">
                     <!-- Localitate -->
                     <div class="form-group">
-                        <label class="form-label" for="nodPickerModalGestiune-city">Localitate</label>
-                        <select id="nodPickerModalGestiune-city" class="input-control">
+                        <label class="form-label" for="nodPickerModalPeriodAdd-city">Localitate</label>
+                        <select id="nodPickerModalPeriodAdd-city" class="input-control">
                             <option value="-1">-</option>
                                                         <option value="Apold">Apold</option>
                                                         <option value="Brasov">Brasov</option>
                                                         <option value="Bucuresti">Bucuresti</option>
-                                                        <option value="Bucuresti_">Bucuresti_</option>
                                                         <option value="Buftea">Buftea</option>
-                                                        <option value="Calimanesti">Calimanesti</option>
                                                         <option value="Chiajna">Chiajna</option>
                                                         <option value="Chitila">Chitila</option>
                                                         <option value="Cisnadie">Cisnadie</option>
                                                         <option value="Constanta">Constanta</option>
                                                         <option value="Deva">Deva</option>
-                                                        <option value="Dobroesti">Dobroesti</option>
-                                                        <option value="Eforie Nord">Eforie Nord</option>
                                                         <option value="Giurgiu">Giurgiu</option>
                                                         <option value="Iasi">Iasi</option>
-                                                        <option value="Magurele">Magurele</option>
                                                         <option value="Mamaia">Mamaia</option>
                                                         <option value="Mangalia">Mangalia</option>
                                                         <option value="Medgidia">Medgidia</option>
-                                                        <option value="Medias">Medias</option>
-                                                        <option value="Mihail Kogalniceanu">Mihail Kogalniceanu</option>
-                                                        <option value="Municipiul Targu Mures">Municipiul Targu Mures</option>
                                                         <option value="Navodari">Navodari</option>
-                                                        <option value="Neptun">Neptun</option>
-                                                        <option value="Olimp">Olimp</option>
-                                                        <option value="Orasul Tulcea">Orasul Tulcea</option>
-                                                        <option value="Ovidiu">Ovidiu</option>
                                                         <option value="Ploiesti">Ploiesti</option>
-                                                        <option value="Ploiestiori">Ploiestiori</option>
-                                                        <option value="Popesti Leordeni">Popesti Leordeni</option>
                                                         <option value="Predeal">Predeal</option>
-                                                        <option value="Ramnicu Valcea">Ramnicu Valcea</option>
-                                                        <option value="Rosu">Rosu</option>
                                                         <option value="Sibiu">Sibiu</option>
                                                         <option value="Sighisoara">Sighisoara</option>
-                                                        <option value="Singeorgiu de Mures">Singeorgiu de Mures</option>
-                                                        <option value="Targu Jiu">Targu Jiu</option>
-                                                        <option value="Targu Mures">Targu Mures</option>
                                                         <option value="Targu Mures">Targu Mures</option>
                                                         <option value="Tulcea">Tulcea</option>
-                                                        <option value="Tunari">Tunari</option>
-                                                        <option value="Ungheni">Ungheni</option>
                                                         <option value="Voluntari">Voluntari</option>
                                                     </select>
                     </div>
                     <!-- Strada -->
                     <div class="form-group">
-                        <label class="form-label" for="nodPickerModalGestiune-street">Strada</label>
-                        <input type="text" id="nodPickerModalGestiune-street" class="input-control" placeholder="Denumire stradă...">
+                        <label class="form-label" for="nodPickerModalPeriodAdd-street">Strada</label>
+                        <input type="text" id="nodPickerModalPeriodAdd-street" class="input-control" placeholder="Denumire stradă...">
                     </div>
                     <!-- Tip -->
                     <div class="form-group">
-                        <label class="form-label" for="nodPickerModalGestiune-type">Tip</label>
-                        <select id="nodPickerModalGestiune-type" class="input-control">
+                        <label class="form-label" for="nodPickerModalPeriodAdd-type">Tip</label>
+                        <select id="nodPickerModalPeriodAdd-type" class="input-control">
                             <option value="-1">-</option>
                             <option value="1">Cu agenți economici</option>
                             <option value="2">Fără agenți economici</option>
@@ -1193,19 +1045,19 @@
                     </div>
                     <!-- Asociație -->
                     <div class="form-group">
-                        <label class="form-label" for="nodPickerModalGestiune-assoc">Asociație</label>
-                        <input type="text" id="nodPickerModalGestiune-assoc" class="input-control" placeholder="Nume asociație...">
+                        <label class="form-label" for="nodPickerModalPeriodAdd-assoc">Asociație</label>
+                        <input type="text" id="nodPickerModalPeriodAdd-assoc" class="input-control" placeholder="Nume asociație...">
                     </div>
                     <!-- Cod NOD -->
                     <div class="form-group">
-                        <label class="form-label" for="nodPickerModalGestiune-code">Cod NOD</label>
-                        <input type="text" id="nodPickerModalGestiune-code" class="input-control" placeholder="Cod...">
+                        <label class="form-label" for="nodPickerModalPeriodAdd-code">Cod NOD</label>
+                        <input type="text" id="nodPickerModalPeriodAdd-code" class="input-control" placeholder="Cod...">
                     </div>
                 </div>
                 <div class="nod-picker-filter-actions">
                     <div class="filter-per-page">
-                        <label class="filter-per-page-label" for="nodPickerModalGestiune-perpage">Înreg / pag</label>
-                        <select id="nodPickerModalGestiune-perpage" class="input-control select-per-page">
+                        <label class="filter-per-page-label" for="nodPickerModalPeriodAdd-perpage">Înreg / pag</label>
+                        <select id="nodPickerModalPeriodAdd-perpage" class="input-control select-per-page">
                             <option value="10">10</option>
                             <option value="15">15</option>
                             <option value="25">25</option>
@@ -1213,8 +1065,8 @@
                             <option value="100" selected>100</option>
                         </select>
                     </div>
-                    <button type="button" class="btn-secondary nod-picker-reset" data-modal="nodPickerModalGestiune">Resetează</button>
-                    <button type="button" class="btn-primary nod-picker-search" data-modal="nodPickerModalGestiune">Caută</button>
+                    <button type="button" class="btn-secondary nod-picker-reset" data-modal="nodPickerModalPeriodAdd">Resetează</button>
+                    <button type="button" class="btn-primary nod-picker-search" data-modal="nodPickerModalPeriodAdd">Caută</button>
                 </div>
             </form>
 
@@ -1229,7 +1081,7 @@
                             <th class="nod-picker-th-sel"></th>
                         </tr>
                     </thead>
-                    <tbody class="nod-picker-tbody" id="nodPickerModalGestiune-tbody">
+                    <tbody class="nod-picker-tbody" id="nodPickerModalPeriodAdd-tbody">
                         <!-- Populat dinamic prin JS -->
                     </tbody>
                 </table>
@@ -1238,13 +1090,13 @@
             <!-- Paginație Modal -->
             <div class="nod-picker-pagination">
                 <span class="nod-picker-count-label">
-                    Afișare NOD-uri: <strong class="nod-picker-count" id="nodPickerModalGestiune-count">0</strong>
+                    Afișare NOD-uri: <strong class="nod-picker-count" id="nodPickerModalPeriodAdd-count">0</strong>
                 </span>
                 <div class="nod-picker-page-btns">
-                    <button type="button" class="btn-action-icon nod-picker-prev" data-modal="nodPickerModalGestiune" disabled>
+                    <button type="button" class="btn-action-icon nod-picker-prev" data-modal="nodPickerModalPeriodAdd" disabled>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
                     </button>
-                    <button type="button" class="btn-action-icon nod-picker-next" data-modal="nodPickerModalGestiune" disabled>
+                    <button type="button" class="btn-action-icon nod-picker-next" data-modal="nodPickerModalPeriodAdd" disabled>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
                 </div>
@@ -1259,7 +1111,7 @@
 <script>
 (function() {
     /* ── Date NOD ────────────────────────────────────────────────────── */
-    var _nodPickerData_nodPickerModalGestiune = [
+    var _nodPickerData_nodPickerModalPeriodAdd = [
     { id: "1",  code: "81-001-0001", address: "Str. STEFAN CEL MARE, Nr. 27, Bl. 27, Sc. 1, Distr. 2, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC 27 SCARA 1",    city: "Bucuresti", street: "stefan cel mare",          ownerType: "1" },
     { id: "2",  code: "81-001-0002", address: "Str. REZILIAT, Nr. 36, Bl. Vila, Sc. 1, Distr. 1, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC VILA",          city: "Bucuresti", street: "reziliat",                  ownerType: "1" },
     { id: "3",  code: "81-001-0003", address: "Str. REZILIAT, Sc. 1, Distr. 5, Bucuresti",                              association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
@@ -1301,88 +1153,59 @@
 
     /* ── Configurare instanță ────────────────────────────────────────── */
     var _cfg = {
-        modalId:    "nodPickerModalGestiune",
-        inputId:    "txtNODGestiune",
-        btnOpenId:  "btnOpenNodModalGestiune",
+        modalId:    "nodPickerModalPeriodAdd",
+        inputId:    "txtNodPeriodAdd",
+        btnOpenId:  "btnOpenNodPickerAdd",
         callback:   null   /* funcție opțională apelată la selecție */
     };
 
-    function initNodPicker_nodPickerModalGestiune() {
+    function initNodPicker_nodPickerModalPeriodAdd() {
         NodPicker.init(
             _cfg,
-            _nodPickerData_nodPickerModalGestiune        );
+            _nodPickerData_nodPickerModalPeriodAdd        );
     }
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initNodPicker_nodPickerModalGestiune);
+        document.addEventListener('DOMContentLoaded', initNodPicker_nodPickerModalPeriodAdd);
     } else {
-        initNodPicker_nodPickerModalGestiune();
+        initNodPicker_nodPickerModalPeriodAdd();
     }
 })();
 </script>
 
 <script>
-(function () {
-    'use strict';
+/**
+ * Tab switching & Form Submission
+ * React conversion: se mută în state-ul componentei <CalculationPeriodAddPage />
+ */
+function switchPeriodTab(btn, tabId) {
+    var tabs = document.querySelectorAll('.tab-btn');
+    tabs.forEach(function (t) { t.classList.remove('active'); });
+    btn.classList.add('active');
 
-    /* ── Cautare dinamica (client-side) ─────────────────────────────── */
-    var searchInput  = document.getElementById('nodTableSearch');
-    var tableBody    = document.getElementById('nodTableBody');
-    var visibleCount = document.getElementById('nodVisibleCount');
-    var pagCountEl   = document.getElementById('nodPaginationVisible');
-    if (searchInput && tableBody) {
-        searchInput.addEventListener('input', function () {
-            var term = this.value.trim().toLowerCase();
-            var rows = tableBody.querySelectorAll('tr');
-            var visible = 0;
-            rows.forEach(function (row) {
-                var haystack = row.getAttribute('data-search') || '';
-                var show = !term || haystack.indexOf(term) !== -1;
-                row.style.display = show ? '' : 'none';
-                if (show) visible++;
-            });
-            if (visibleCount) visibleCount.textContent = visible;
-            if (pagCountEl) pagCountEl.textContent = visible;
-        });
-    }
-
-    /* ── Selectie in masa + Alocare cititor ─────────────────────────── */
-    var selectAll   = document.getElementById('nodSelectAll');
-    var rowChecks   = document.querySelectorAll('.nod-row-checkbox');
-    var bulkBtn     = document.getElementById('btnBulkAllocateReader');
-    var bulkCount   = document.getElementById('bulkSelectedCount');
-
-    function updateBulkState() {
-        var checked = document.querySelectorAll('.nod-row-checkbox:checked');
-        var n = checked.length;
-        if (bulkBtn) bulkBtn.disabled = (n === 0);
-        if (bulkCount) {
-            bulkCount.style.display = (n > 0) ? 'inline-block' : 'none';
-            bulkCount.textContent = n;
-        }
-        if (selectAll) {
-            selectAll.checked = (n > 0 && n === rowChecks.length);
-            selectAll.indeterminate = (n > 0 && n < rowChecks.length);
-        }
-    }
-
-    if (selectAll) {
-        selectAll.addEventListener('change', function () {
-            rowChecks.forEach(function (cb) { cb.checked = selectAll.checked; });
-            updateBulkState();
-        });
-    }
-    rowChecks.forEach(function (cb) {
-        cb.addEventListener('change', updateBulkState);
+    var contents = document.querySelectorAll('.tab-content');
+    contents.forEach(function (c) {
+        c.classList.remove('active');
+        c.style.display = 'none';
     });
 
-    if (bulkBtn) {
-        bulkBtn.addEventListener('click', function () {
-            var checked = document.querySelectorAll('.nod-row-checkbox:checked');
-            var nods = Array.prototype.map.call(checked, function (cb) { return cb.value; });
-            alert('Se va deschide selectorul de cititori pentru ' + nods.length + ' NOD(uri) selectate:\n\n' + nods.join(', ') + '\n\nAceasta actiune va fi conectata la API-ul backend.');
-        });
+    var target = document.getElementById(tabId);
+    if (target) {
+        target.classList.add('active');
+        target.style.display = 'block';
     }
-})();
+}
+
+function handleSavePeriod(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    var nod = document.getElementById('txtNodPeriodAdd').value;
+    if (!nod) {
+        alert('Vă rugăm să selectați un cod NOD!');
+        return false;
+    }
+    alert('Perioada de calcul a fost adăugată cu succes!');
+    window.location.href = 'perioda-calcul.html';
+    return false;
+}
 </script>
 
     </div><!-- /.content -->

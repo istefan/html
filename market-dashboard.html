@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Perioade Citiri – SONIC BILLING</title>
+    <title>Dashboard Market – SONIC BILLING</title>
     <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
     <script src="assets/js/nod-picker.js"></script>
 </head>
@@ -38,7 +38,7 @@
         <!-- ╔══════════════════════════════════════════════════════════════
              ║  1. SONIC GRID
              ╚══════════════════════════════════════════════════════════════ -->
-        <div class="app-section open"
+        <div class="app-section"
              data-app="sonic-grid"
              data-logo="assets/images/sonic-grid-logo.svg"
              data-logo-icon="SG">
@@ -73,7 +73,7 @@
                 </a>
 
                 <!-- Perioade Citiri -->
-                <a href="perioade-citiri.html" class="nav-item active" title="Perioade Citiri">
+                <a href="perioade-citiri.html" class="nav-item " title="Perioade Citiri">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     </span>
@@ -145,7 +145,7 @@
         <!-- ╔══════════════════════════════════════════════════════════════
              ║  2. SONIC MARKET
              ╚══════════════════════════════════════════════════════════════ -->
-        <div class="app-section"
+        <div class="app-section open"
              data-app="sonic-market"
              data-logo="assets/images/sonic-market-logo.svg"
              data-logo-icon="SM">
@@ -156,7 +156,7 @@
             <div class="app-section-body">
 
                 <!-- Dashboard Market -->
-                <a href="market-dashboard.html" class="nav-item " title="Dashboard">
+                <a href="market-dashboard.html" class="nav-item active" title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
@@ -532,7 +532,7 @@
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
             <!-- Desktop page breadcrumb (hidden on mobile) -->
-            <div class="header-page-title">Perioade Citiri</div>
+            <div class="header-page-title">Dashboard Market</div>
 
             <!-- User profile avatar (always visible) -->
             <a href="contul-meu.html" class="user-profile" title="Contul meu">SI</a>
@@ -558,7 +558,52 @@
     <div class="help-wrapper">
         <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
             <div class="help-panel-inner">
-                                <p class="help-empty">Nu există informații de ajutor disponibile pentru această pagină.</p>
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Indicatori KPI                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>SONIC MARKET – Magazin de Produse și Servicii</h4>
+            <p>Dashboard-ul SONIC MARKET oferă o privire de ansamblu asupra comenzilor, 
+            produselor disponibile și serviciilor contractate de clienți.</p>
+            <p>Clienții pot comanda echipamente (contoare, repartitoare, module radio) 
+            și servicii (montaj, verificare metrologică, intervenții tehnice).</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <h4>Ce reprezintă indicatorii?</h4>
+            <ul>
+                <li><strong>Comenzi Active</strong> – numărul de comenzi în curs de procesare sau livrare.</li>
+                <li><strong>Produse Disponibile</strong> – numărul total de produse listate în catalogul online.</li>
+                <li><strong>Vânzări Lunare</strong> – valoarea totală a vânzărilor realizate în luna curentă.</li>
+                <li><strong>Cereri Servicii</strong> – numărul de cereri de servicii primite și nerezolvate.</li>
+            </ul>
+                            </div>
+                                    </div>
                     </div><!-- /.help-panel-inner -->
         </div><!-- /.help-panel -->
         
@@ -585,22 +630,117 @@
 
     <div class="content">
 
-<div class="page-title-container">
-    <div class="page-title">
-        <h1>Perioade Citiri</h1>
-        <p>Pagina este în construcție.</p>
-    </div>
-</div>
+        <div class="page-title">
+            <h1>Dashboard Market</h1>
+            <p>Magazin online – comenzi, produse și servicii disponibile pentru clienți.</p>
+        </div>
 
-<div class="card" style="padding: 60px 40px; text-align: center; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; margin-top: 24px;">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="64" height="64" style="margin-bottom: 20px; opacity: 0.3; color: var(--accent);">
-        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-        <polyline points="2 17 12 22 22 17"></polyline>
-        <polyline points="2 12 12 17 22 12"></polyline>
-    </svg>
-    <h2 style="color: var(--text-main); margin-bottom: 12px; font-weight: 600;">În curând</h2>
-    <p style="font-size: 15px;">Interfața pentru <strong>Perioade Citiri</strong> nu a fost încă generată în acest demo.</p>
-</div>
+        <!-- ── KPI Cards ──────────────────────────────────────────── -->
+        <div class="grid-4">
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Comenzi Active</span>
+                    <div class="card-icon"><div class="card-icon-inner" style="border-radius:50%;"></div></div>
+                </div>
+                <div class="card-value">42</div>
+                <div class="card-trend">↑ 8 comenzi noi azi</div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Produse Disponibile</span>
+                    <div class="card-icon"><div class="card-icon-inner"></div></div>
+                </div>
+                <div class="card-value">156</div>
+                <div class="card-trend">↑ 12 produse noi luna aceasta</div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Vânzări Lunare</span>
+                    <div class="card-icon"><div class="card-icon-inner"></div></div>
+                </div>
+                <div class="card-value">67,840 lei</div>
+                <div class="card-trend">↑ 14.2% vs luna trecută</div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Cereri Servicii</span>
+                    <div class="card-icon"><div class="card-icon-inner" style="border-color:var(--red);"></div></div>
+                </div>
+                <div class="card-value">18</div>
+                <div class="card-trend negative">7 nepreluate</div>
+            </div>
+        </div>
+
+        <!-- ── Charts ─────────────────────────────────────────────── -->
+        <div class="grid-2-1">
+            <div class="chart-container">
+                <div class="chart-header">
+                    <span class="chart-title">Evoluție Comenzi</span>
+                    <div class="chart-period">Ultimele 12 luni</div>
+                </div>
+                <div class="chart-placeholder">
+                    <div class="chart-line" style="bottom:30%;">
+                        <svg width="100%" height="100%" style="overflow:visible;position:absolute;bottom:0;">
+                            <path d="M0,85 Q80,75 160,60 T320,45 T480,50 T640,30 T800,15" fill="none" stroke="var(--accent)" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="chart-labels">
+                        <span>Oct</span><span>Nov</span><span>Dec</span><span>Ian</span><span>Feb</span><span>Mar</span><span>Apr</span><span>Mai</span><span>Iun</span><span>Iul</span><span>Aug</span><span>Sep</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="chart-container" style="height:100%;">
+                    <span class="chart-title" style="display:block;margin-bottom:32px;">Categorii Produse</span>
+                    <div style="height:140px;display:flex;align-items:center;justify-content:center;margin-bottom:32px;">
+                        <div style="width:140px;height:140px;border-radius:50%;border:20px solid var(--accent);border-left-color:var(--border-color);border-bottom-color:#edf2f7;position:relative;">
+                            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:18px;font-weight:600;">156</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="list-item"><span class="list-label"><span class="dot" style="background:var(--accent);"></span> Echipamente</span><span class="list-value">58%</span></div>
+                        <div class="list-item"><span class="list-label"><span class="dot" style="background:var(--border-color);"></span> Servicii</span><span class="list-value">28%</span></div>
+                        <div class="list-item"><span class="list-label"><span class="dot" style="background:#edf2f7;"></span> Accesorii</span><span class="list-value">14%</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Tabel Comenzi Recente ──────────────────────────────── -->
+        <div class="table-container">
+            <div class="table-header">
+                <span class="chart-title">Comenzi Recente</span>
+                <a href="#" class="table-link">Vezi toate ↗</a>
+            </div>
+            <table>
+                <thead><tr><th>Nr. Comandă</th><th>Client</th><th>Produs / Serviciu</th><th>Cantitate</th><th>Valoare</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td style="font-weight:500;">CMD-2026-0421</td><td>Asociația Nr. 3 Bl. B7</td><td>Contor apă rece DN15</td><td>24 buc</td><td>4,320 lei</td><td><span class="status-badge status-online">Livrat</span></td></tr>
+                    <tr><td style="font-weight:500;">CMD-2026-0420</td><td>Asociația Nr. 12 Bl. D16</td><td>Repartitor Ista Doprimo 3</td><td>48 buc</td><td>12,480 lei</td><td><span class="status-badge status-warning">În procesare</span></td></tr>
+                    <tr><td style="font-weight:500;">CMD-2026-0419</td><td>Popescu Ion – Ap. 24</td><td>Montaj contor apă caldă</td><td>1 serv</td><td>180 lei</td><td><span class="status-badge status-online">Finalizat</span></td></tr>
+                    <tr><td style="font-weight:500;">CMD-2026-0418</td><td>Asociația Nr. 5 Bl. A3</td><td>Modul radio WMBus</td><td>36 buc</td><td>8,640 lei</td><td><span class="status-badge status-warning">În livrare</span></td></tr>
+                    <tr><td style="font-weight:500;">CMD-2026-0417</td><td>Stanescu Ana – Ap. 7</td><td>Verificare metrologică</td><td>2 serv</td><td>240 lei</td><td><span class="status-badge status-error">Anulat</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ── Produse Populare ────────────────────────────────────── -->
+        <div class="table-container">
+            <div class="table-header">
+                <span class="chart-title">Produse Populare</span>
+                <a href="#" class="table-link">Catalog complet ↗</a>
+            </div>
+            <table>
+                <thead><tr><th>Cod Produs</th><th>Denumire</th><th>Categorie</th><th>Preț Unitar</th><th>Stoc</th><th>Vânzări (30 zile)</th></tr></thead>
+                <tbody>
+                    <tr><td style="font-weight:500;">PRD-001</td><td>Contor apă rece DN15 R160</td><td>Echipamente</td><td>180 lei</td><td>342</td><td>87</td></tr>
+                    <tr><td style="font-weight:500;">PRD-002</td><td>Contor apă caldă DN15 R160</td><td>Echipamente</td><td>195 lei</td><td>218</td><td>64</td></tr>
+                    <tr><td style="font-weight:500;">PRD-003</td><td>Repartitor Ista Doprimo 3</td><td>Echipamente</td><td>260 lei</td><td>156</td><td>48</td></tr>
+                    <tr><td style="font-weight:500;">PRD-004</td><td>Modul radio WMBus OMS</td><td>Accesorii</td><td>240 lei</td><td>89</td><td>36</td></tr>
+                    <tr><td style="font-weight:500;">SRV-001</td><td>Montaj contor apă (manoperă)</td><td>Servicii</td><td>180 lei</td><td>—</td><td>52</td></tr>
+                </tbody>
+            </table>
+        </div>
 
     </div><!-- /.content -->
     <footer class="app-footer">

@@ -22,12 +22,12 @@
     <!-- ── Logo ─────────────────────────────────────────────────────── -->
     <!-- React: <SidebarLogo activeApp={activeApp} /> -->
     <div class="logo">
-        <a href="index.html" title="SONIC GRID – Acasă">
-            <img src="assets/images/sonic-grid-logo.svg"
-                 alt="SONIC GRID"
+        <a href="sonic-dashboard.html" title="SONIC – Acasă">
+            <img src="assets/images/sonic-logo.svg"
+                 alt="SONIC"
                  class="logo-full"
                  id="sidebarLogo">
-            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">SG</span>
+            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">S</span>
         </a>
     </div>
 
@@ -36,7 +36,7 @@
     <nav class="sidebar-nav" aria-label="Navigare principală">
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC GRID
+             ║  1. SONIC GRID
              ╚══════════════════════════════════════════════════════════════ -->
         <div class="app-section"
              data-app="sonic-grid"
@@ -44,6 +44,7 @@
              data-logo-icon="SG">
             <button class="app-section-header" type="button" title="SONIC GRID">
                 <img src="assets/images/sonic-grid-logo.svg" class="app-section-logo" alt="SONIC GRID">
+                <span class="app-section-badge">SG</span>
             </button>
             <div class="app-section-body">
 
@@ -142,14 +143,71 @@
         </div>
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC BILLING
+             ║  2. SONIC MARKET
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-market"
+             data-logo="assets/images/sonic-market-logo.svg"
+             data-logo-icon="SM">
+            <button class="app-section-header" type="button" title="SONIC MARKET">
+                <img src="assets/images/sonic-market-logo.svg" class="app-section-logo" alt="SONIC MARKET">
+                <span class="app-section-badge">SM</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard Market -->
+                <a href="market-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  3. SONIC PRO
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-pro"
+             data-logo="assets/images/sonic-pro-logo.svg"
+             data-logo-icon="SP">
+            <button class="app-section-header" type="button" title="SONIC PRO">
+                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+                <span class="app-section-badge">SP</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard PRO -->
+                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- Intervenții -->
+                <a href="interventii.html" class="nav-item " title="Intervenții">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </span>
+                    <span class="nav-label">Intervenții</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  4. SONIC BILLING
              ╚══════════════════════════════════════════════════════════════ -->
         <div class="app-section open"
              data-app="sonic-billing"
              data-logo="assets/images/sonic-billing-logo.svg"
-             data-logo-icon="SG">
+             data-logo-icon="SB">
             <button class="app-section-header" type="button" title="SONIC BILLING">
                 <img src="assets/images/sonic-billing-logo.svg" class="app-section-logo" alt="SONIC BILLING">
+                <span class="app-section-badge">SB</span>
             </button>
             <div class="app-section-body">
 
@@ -213,25 +271,6 @@
                         <a href="modele-repartitoare.html" class="nav-subitem ">Modele Repartitoare</a>
                         <a href="modele-contoare.html" class="nav-subitem ">Modele Contoare</a>
                         <a href="serii-apometre.html" class="nav-subitem ">Serii Apometre Achiziționate</a>
-                    </div>
-                </div>
-
-                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
-                <div class="nav-group " data-group="master-data">
-                    <button class="nav-group-title" type="button" title="Master Data Management">
-                        <span class="nav-group-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </span>
-                        <span class="nav-label">Master Data Management</span>
-                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                    </button>
-                    <div class="nav-subitems">
-                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
-                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
-                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
-                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
-                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
-                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
                     </div>
                 </div>
 
@@ -349,32 +388,68 @@
         </div>
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC PRO
+             ║  5. SONIC FIN
              ╚══════════════════════════════════════════════════════════════ -->
         <div class="app-section"
-             data-app="sonic-pro"
-             data-logo="assets/images/sonic-pro-logo.svg"
-             data-logo-icon="SP">
-            <button class="app-section-header" type="button" title="SONIC PRO">
-                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+             data-app="sonic-fin"
+             data-logo="assets/images/sonic-fin-logo.svg"
+             data-logo-icon="SF">
+            <button class="app-section-header" type="button" title="SONIC FIN">
+                <img src="assets/images/sonic-fin-logo.svg" class="app-section-logo" alt="SONIC FIN">
+                <span class="app-section-badge">SF</span>
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
-                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                <!-- Dashboard FIN -->
+                <a href="fin-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  6. SONIC (Base – Ecosistem & Configurare)
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic"
+             data-logo="assets/images/sonic-logo.svg"
+             data-logo-icon="S">
+            <button class="app-section-header" type="button" title="SONIC">
+                <img src="assets/images/sonic-logo.svg" class="app-section-logo" alt="SONIC">
+                <span class="app-section-badge">S</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard SONIC -->
+                <a href="sonic-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
-                    <span class="nav-label">Intervenții</span>
+                    <span class="nav-label">Dashboard</span>
                 </a>
+
+                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <div class="nav-group " data-group="master-data">
+                    <button class="nav-group-title" type="button" title="Master Data Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Master Data Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
+                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
+                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
+                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
+                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
+                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -449,7 +524,7 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="index.html">
+            <a href="sonic-dashboard.html">
                 <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
             </a>
         </div>
@@ -483,7 +558,67 @@
     <div class="help-wrapper">
         <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
             <div class="help-panel-inner">
-                                <p class="help-empty">Nu există informații de ajutor disponibile pentru această pagină.</p>
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Stări de Calcul                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Filtrare &amp; Căutare                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Management Perioade de Calcul</h4>
+            <p>Această pagină centralizează perioadele lunare de facturare și calcul pentru toate utilitățile (Apă, Energie Termică, Gaz) asociate NOD-urilor de contorizare.</p>
+            <p>Fiecare linie reprezintă o instanță activă sau arhivată a unui ciclu de calcul pentru o adresă de branșament și o asociație de proprietari.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <h4>Fluxul stărilor de calcul</h4>
+            <ul>
+                <li><span class="status-badge status-offline">Neînceput</span> &ndash; Perioada a fost deschisă, dar nu s-au preluat citirile.</li>
+                <li><span class="status-badge status-warning">În Pregătire</span> / <span class="status-badge status-online">Alocat</span> &ndash; Datele de consum sunt în curs de colectare / validare.</li>
+                <li><span class="status-badge status-warning">În calcul</span> &ndash; Algoritmul de repartiție și calcul cost split este în execuție.</li>
+                <li><span class="status-badge status-online">Gata de facturare</span> &ndash; Calculele au fost validate și fișele sunt gata pentru emiterea facturilor.</li>
+                <li><span class="status-badge status-draft">Încheiat</span> &ndash; Perioada este finalizată și arhivată.</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <h4>Căutare eficientă</h4>
+            <p>Puteți filtra rapid după localitate, cod NOD (folosind selectorul pop-up), tip asociație, utilitate, starea calculului sau dacă este perioada curentă activă.</p>
+                            </div>
+                                    </div>
                     </div><!-- /.help-panel-inner -->
         </div><!-- /.help-panel -->
         
@@ -510,22 +645,1673 @@
 
     <div class="content">
 
+<!-- ===================================================================
+     React: <CalculationPeriodListPage />
+     =================================================================== -->
+
+<!-- === Page Title Container ===
+     React: <PageTitleContainer title="Perioadă de Calcul" onAddPeriod={handleOpenAddModal} />
+-->
 <div class="page-title-container">
     <div class="page-title">
         <h1>Perioadă de Calcul</h1>
-        <p>Pagina este în construcție.</p>
+        <p>Monitorizează, inițiază și gestionează ciclurile lunare de calcul și facturare pentru toate utilitățile.</p>
+    </div>
+    <a href="perioda-calcul-adauga.html" class="btn-secondary"
+       style="border-color: var(--accent); color: var(--accent); font-weight: 600; padding: 10px 18px; display: inline-flex; align-items: center; text-decoration: none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+             stroke-linecap="round" stroke-linejoin="round" width="14" height="14"
+             style="margin-right: 6px;">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+        <span>Adaugă Perioadă</span>
+    </a>
+</div>
+
+<!-- === Formular de Filtrare ===
+     React: <FilterCard onSearch={handleSearch} onReset={handleReset} fields={...} />
+-->
+<div class="card" style="margin-bottom: 24px;">
+    <div style="margin-bottom: 18px;">
+        <span class="chart-title" style="font-size: 14px; font-weight: 600;">Filtrare Avansată</span>
+    </div>
+    <form method="GET" action="perioda-calcul.html" id="filterFormCalcPeriod">
+        <div class="filter-grid">
+
+            <!-- Localitate -->
+            <div class="form-group">
+                <label class="form-label" for="cbCity">Localitate</label>
+                <select name="city" id="cbCity" class="input-control">
+                    <option value="-1">-</option>
+                                            <option value="18" >
+                            Apold                        </option>
+                                            <option value="32" >
+                            Brasov                        </option>
+                                            <option value="1" >
+                            Bucuresti                        </option>
+                                            <option value="14" >
+                            Bucuresti_                        </option>
+                                            <option value="38" >
+                            Buftea                        </option>
+                                            <option value="8" >
+                            Calimanesti                        </option>
+                                            <option value="30" >
+                            Chiajna                        </option>
+                                            <option value="35" >
+                            Chitila                        </option>
+                                            <option value="7" >
+                            Cisnadie                        </option>
+                                            <option value="12" >
+                            Constanta                        </option>
+                                            <option value="27" >
+                            Deva                        </option>
+                                            <option value="26" >
+                            Dobroesti                        </option>
+                                            <option value="22" >
+                            Eforie Nord                        </option>
+                                            <option value="3" >
+                            Giurgiu                        </option>
+                                            <option value="2" >
+                            Iasi                        </option>
+                                            <option value="34" >
+                            Magurele                        </option>
+                                            <option value="20" >
+                            Mamaia                        </option>
+                                            <option value="19" >
+                            Mangalia                        </option>
+                                            <option value="40" >
+                            Medgidia                        </option>
+                                            <option value="9" >
+                            Medias                        </option>
+                                            <option value="31" >
+                            Mihail Kogalniceanu                        </option>
+                                            <option value="41" >
+                            Municipiul Târgu Mures                        </option>
+                                            <option value="21" >
+                            Navodari                        </option>
+                                            <option value="33" >
+                            Neptun                        </option>
+                                            <option value="24" >
+                            Olimp                        </option>
+                                            <option value="28" >
+                            Orasul Tulcea                        </option>
+                                            <option value="36" >
+                            Ovidiu                        </option>
+                                            <option value="17" >
+                            Ploiesti                        </option>
+                                            <option value="37" >
+                            Ploiestiori                        </option>
+                                            <option value="25" >
+                            Popesti Leordeni                        </option>
+                                            <option value="39" >
+                            Predeal                        </option>
+                                            <option value="42" >
+                            Rosu                        </option>
+                                            <option value="10" >
+                            Râmnicu Vâlcea                        </option>
+                                            <option value="5" >
+                            Sibiu                        </option>
+                                            <option value="6" >
+                            Sighisoara                        </option>
+                                            <option value="15" >
+                            Singeorgiu de Mures                        </option>
+                                            <option value="13" >
+                            Targu Mures                        </option>
+                                            <option value="11" >
+                            Tulcea                        </option>
+                                            <option value="43" >
+                            Tunari                        </option>
+                                            <option value="23" >
+                            Târgu Jiu                        </option>
+                                            <option value="4" >
+                            Târgu Mures                        </option>
+                                            <option value="16" >
+                            Ungheni                        </option>
+                                            <option value="29" >
+                            Voluntari                        </option>
+                                    </select>
+            </div>
+
+            <!-- NOD Picker -->
+            <div class="form-group">
+                <label class="form-label" for="txtNODCalc">NOD</label>
+                <div class="picker-group">
+                    <input type="text" id="txtNODCalc" name="nod_picker" class="input-control"
+                           readonly placeholder="Click pe lupă..."
+                           value="">
+                    <button type="button" class="btn-picker" id="btnOpenNodModalCalc" title="Deschide selector NOD">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                    <button type="button" class="btn-picker delete" title="Șterge selecție" onclick="document.getElementById('txtNODCalc').value=''">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tip Proprietar -->
+            <div class="form-group">
+                <label class="form-label" for="ddlOwnerType">Tip Proprietar</label>
+                <select name="owner_type" id="ddlOwnerType" class="input-control">
+                                            <option value="-1" selected>
+                            -                        </option>
+                                            <option value="1" >
+                            Cu agenți economici                        </option>
+                                            <option value="2" >
+                            Fără agenți economici                        </option>
+                                    </select>
+            </div>
+
+            <!-- Perioada Calcul -->
+            <div class="form-group">
+                <label class="form-label" for="ddlCalculationPeriod">Perioadă Calcul</label>
+                <select name="calc_period" id="ddlCalculationPeriod" class="input-control">
+                                            <option value="-1" selected>
+                            -                        </option>
+                                            <option value="2026-08" >
+                            01.08.2026 - 31.08.2026                        </option>
+                                            <option value="2026-07" >
+                            01.07.2026 - 31.07.2026                        </option>
+                                            <option value="2026-06" >
+                            01.06.2026 - 30.06.2026                        </option>
+                                            <option value="2026-05" >
+                            01.05.2026 - 31.05.2026                        </option>
+                                            <option value="2026-04" >
+                            01.04.2026 - 30.04.2026                        </option>
+                                    </select>
+            </div>
+
+            <!-- Stare Calcul -->
+            <div class="form-group">
+                <label class="form-label" for="ddlStatus">Stare Calcul</label>
+                <select name="status" id="ddlStatus" class="input-control">
+                                            <option value="-1" selected>
+                            -                        </option>
+                                            <option value="1" >
+                            Neînceput                        </option>
+                                            <option value="2" >
+                            În Pregătire                        </option>
+                                            <option value="4" >
+                            Alocat                        </option>
+                                            <option value="5" >
+                            În calcul                        </option>
+                                            <option value="3" >
+                            Gata de calcul                        </option>
+                                            <option value="6" >
+                            Gata de facturare                        </option>
+                                            <option value="7" >
+                            Gata de tipărit                        </option>
+                                            <option value="8" >
+                            Încheiat                        </option>
+                                    </select>
+            </div>
+
+            <!-- Este Curentă -->
+            <div class="form-group">
+                <label class="form-label" for="ddlActive">Este Curentă</label>
+                <select name="is_active" id="ddlActive" class="input-control">
+                    <option value="-1" selected>-</option>
+                    <option value="1"  >Da</option>
+                    <option value="0"  >Nu</option>
+                </select>
+            </div>
+
+            <!-- Asociație -->
+            <div class="form-group">
+                <label class="form-label" for="txtPartnerName">Asociație</label>
+                <input type="text" name="partner" id="txtPartnerName" class="input-control"
+                       placeholder="Denumire asociație..." value="">
+            </div>
+
+            <!-- Utilitate -->
+            <div class="form-group">
+                <label class="form-label" for="ddlUS">Utilitate</label>
+                <select name="utility" id="ddlUS" class="input-control">
+                                            <option value="-1" selected>
+                            -                        </option>
+                                            <option value="2" >
+                            Apă                        </option>
+                                            <option value="1" >
+                            Energie Termică                        </option>
+                                            <option value="3" >
+                            Gaz                        </option>
+                                    </select>
+            </div>
+
+            <!-- Arhivat -->
+            <div class="form-group">
+                <label class="form-label" for="ddlIsArchived">Arhivat</label>
+                <select name="is_archived" id="ddlIsArchived" class="input-control">
+                    <option value="-1" >-</option>
+                    <option value="1"  >Da</option>
+                    <option value="0"  selected>Nu</option>
+                </select>
+            </div>
+
+        </div><!-- /.filter-grid -->
+
+        <!-- Acțiuni filtru: Înreg/pag + Resetează + Caută -->
+        <div class="filter-actions">
+            <div class="filter-per-page">
+                <label class="filter-per-page-label" for="ddlPerPageCalc">Înreg / pag</label>
+                <select name="per_page" id="ddlPerPageCalc" class="input-control select-per-page">
+                    <option value="10"  >10</option>
+                    <option value="15"  >15</option>
+                    <option value="25"  >25</option>
+                    <option value="50"  >50</option>
+                    <option value="100" selected>100</option>
+                </select>
+            </div>
+            <a href="perioda-calcul.html" class="btn-secondary">Resetează</a>
+            <button type="submit" class="btn-primary">Caută</button>
+        </div>
+    </form>
+</div>
+
+<!-- === Tabel Perioade de Calcul ===
+     React: <CalculationPeriodsTable data={periods} onView={handleView} onReport={handleReport} />
+-->
+<div class="table-container">
+    <!-- Bara de sus a tabelului -->
+    <div class="table-toolbar">
+        <div class="table-toolbar-left">
+            <span style="color: var(--text-muted); font-size: 13px; font-weight: 500;">
+                Afișare <strong id="calcVisibleCount">23</strong>
+                din <strong>255.070</strong> înregistrări
+            </span>
+        </div>
+        <div class="table-toolbar-right">
+            <!-- Căutare dinamică client-side -->
+            <div class="live-search-wrapper"
+                 title="Filtrare locală în timp real după NOD, asociație, adresă sau autor">
+                <span class="live-search-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </span>
+                <input type="text" id="calcTableSearch" class="input-control"
+                       placeholder="Căutare dinamică perioadă / NOD...">
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabel propriu-zis -->
+    <div style="overflow-x: auto; width: 100%;">
+        <table class="partners-table" id="calcPeriodsTable">
+            <thead>
+                <tr>
+                    <th style="width: 10%; text-align: center;">NOD</th>
+                    <th style="width: 10%; text-align: center;">Utilitate</th>
+                    <th style="width: 25%;">Adresă de branșament</th>
+                    <th style="width: 20%;">Asociație</th>
+                    <th style="width: 13%; text-align: center;">Perioadă de calcul</th>
+                    <th style="width: 10%;">Autor</th>
+                    <th style="width: 8%; text-align: center;">Status</th>
+                    <th style="width: 4%; text-align: center;">Curentă</th>
+                    <th style="width: 5%; text-align: center;">Acțiuni</th>
+                </tr>
+            </thead>
+            <tbody id="calcPeriodsTableBody">
+                                <tr data-search="81-011-0041 apă str. frasinului, nr. 3, bl. 3, sc. b, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian În pregătire">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-011-0041                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Apă                        </span>
+                    </td>
+                    <td>Str. Frasinului, Nr. 3, Bl. 3, Sc. B, Tulcea, Tulcea</td>
+                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.08.2026 - 31.08.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Teodor Milian                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-warning">În Pregătire</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" title="Perioadă Curentă Activă">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-011-0041 (01.08.2026 - 31.08.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-011-0041');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-011-0040 apă str. frasinului, nr. 3, bl. 3, sc. a, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-011-0040                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Apă                        </span>
+                    </td>
+                    <td>Str. Frasinului, Nr. 3, Bl. 3, Sc. A, Tulcea, Tulcea</td>
+                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.08.2026 - 31.08.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Teodor Milian                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" title="Perioadă Curentă Activă">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-011-0040 (01.08.2026 - 31.08.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-011-0040');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-011-0039 apă str. 1848, nr. 19, bl. 19, sc. d, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-011-0039                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Apă                        </span>
+                    </td>
+                    <td>Str. 1848, Nr. 19, Bl. 19, Sc. D, Tulcea, Tulcea</td>
+                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.08.2026 - 31.08.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Teodor Milian                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" title="Perioadă Curentă Activă">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-011-0039 (01.08.2026 - 31.08.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-011-0039');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-011-0038 apă str. 1848, nr. 19, bl. 19, sc. c, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-011-0038                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Apă                        </span>
+                    </td>
+                    <td>Str. 1848, Nr. 19, Bl. 19, Sc. C, Tulcea, Tulcea</td>
+                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.08.2026 - 31.08.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Teodor Milian                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" title="Perioadă Curentă Activă">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-011-0038 (01.08.2026 - 31.08.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-011-0038');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-011-0037 apă str. 1848, nr. 19, bl. 19, sc. b, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-011-0037                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Apă                        </span>
+                    </td>
+                    <td>Str. 1848, Nr. 19, Bl. 19, Sc. B, Tulcea, Tulcea</td>
+                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.08.2026 - 31.08.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Teodor Milian                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" title="Perioadă Curentă Activă">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-011-0037 (01.08.2026 - 31.08.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-011-0037');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-011-0036 apă str. 1848, nr. 19, bl. 19, sc. a, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-011-0036                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Apă                        </span>
+                    </td>
+                    <td>Str. 1848, Nr. 19, Bl. 19, Sc. A, Tulcea, Tulcea</td>
+                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.08.2026 - 31.08.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Teodor Milian                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" title="Perioadă Curentă Activă">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-011-0036 (01.08.2026 - 31.08.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-011-0036');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-011-0035 apă str. 1848, nr. 17, bl. 17, sc. c, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-011-0035                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Apă                        </span>
+                    </td>
+                    <td>Str. 1848, Nr. 17, Bl. 17, Sc. C, Tulcea, Tulcea</td>
+                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.08.2026 - 31.08.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Teodor Milian                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" title="Perioadă Curentă Activă">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-011-0035 (01.08.2026 - 31.08.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-011-0035');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-011-0034 apă str. 1848, nr. 17, bl. 17, sc. b, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-011-0034                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Apă                        </span>
+                    </td>
+                    <td>Str. 1848, Nr. 17, Bl. 17, Sc. B, Tulcea, Tulcea</td>
+                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.08.2026 - 31.08.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Teodor Milian                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" title="Perioadă Curentă Activă">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-011-0034 (01.08.2026 - 31.08.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-011-0034');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-011-0033 apă str. 1848, nr. 17, bl. 17, sc. a, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-011-0033                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Apă                        </span>
+                    </td>
+                    <td>Str. 1848, Nr. 17, Bl. 17, Sc. A, Tulcea, Tulcea</td>
+                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.08.2026 - 31.08.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Teodor Milian                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" title="Perioadă Curentă Activă">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-011-0033 (01.08.2026 - 31.08.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-011-0033');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-011-0032 apă str. 1848, nr. 15, bl. 15, sc. c, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-011-0032                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Apă                        </span>
+                    </td>
+                    <td>Str. 1848, Nr. 15, Bl. 15, Sc. C, Tulcea, Tulcea</td>
+                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.08.2026 - 31.08.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Teodor Milian                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" title="Perioadă Curentă Activă">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-011-0032 (01.08.2026 - 31.08.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-011-0032');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-011-0031 apă str. 1848, nr. 15, bl. 15, sc. b, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-011-0031                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Apă                        </span>
+                    </td>
+                    <td>Str. 1848, Nr. 15, Bl. 15, Sc. B, Tulcea, Tulcea</td>
+                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.08.2026 - 31.08.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Teodor Milian                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" title="Perioadă Curentă Activă">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-011-0031 (01.08.2026 - 31.08.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-011-0031');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-011-0030 apă str. 1848, nr. 15, bl. 15, sc. a, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-011-0030                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Apă                        </span>
+                    </td>
+                    <td>Str. 1848, Nr. 15, Bl. 15, Sc. A, Tulcea, Tulcea</td>
+                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.08.2026 - 31.08.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Teodor Milian                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" title="Perioadă Curentă Activă">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-011-0030 (01.08.2026 - 31.08.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-011-0030');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-011-0029 apă str. 1848, nr. 14, bl. 14, sc. d, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-011-0029                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Apă                        </span>
+                    </td>
+                    <td>Str. 1848, Nr. 14, Bl. 14, Sc. D, Tulcea, Tulcea</td>
+                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.08.2026 - 31.08.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Teodor Milian                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" title="Perioadă Curentă Activă">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-011-0029 (01.08.2026 - 31.08.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-011-0029');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-029-0030 apă str. viitorului, nr. 30, bl. b2, sc. a, orasul tulcea, tulcea asociatia de proprietari bloc 50 01.08.2026 - 31.08.2026 stefania chiran gata de facturare">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-029-0030                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Apă                        </span>
+                    </td>
+                    <td>Str. VIITORULUI, Nr. 30, Bl. B2, Sc. A, Orasul Tulcea, Tulcea</td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI BLOC 50</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.08.2026 - 31.08.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Stefania Chiran                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Gata de facturare</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" title="Perioadă Curentă Activă">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-029-0030 (01.08.2026 - 31.08.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-029-0030');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-029-0029 apă str. viitorului, nr. 30, bl. 50, sc. a, orasul tulcea, tulcea asociatia de proprietari bloc 50 01.08.2026 - 31.08.2026 stefania chiran gata de facturare">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-029-0029                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Apă                        </span>
+                    </td>
+                    <td>Str. VIITORULUI, Nr. 30, Bl. 50, Sc. A, Orasul Tulcea, Tulcea</td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI BLOC 50</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.08.2026 - 31.08.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Stefania Chiran                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Gata de facturare</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" title="Perioadă Curentă Activă">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-029-0029 (01.08.2026 - 31.08.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-029-0029');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-029-0003 apă str. eternitatii, nr. 36, bl. n9, sc. a+b+c, orasul tulcea, tulcea asociatia de proprietari bloc n7+n8+n9 01.08.2026 - 31.08.2026 stefania chiran gata de facturare">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-029-0003                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Apă                        </span>
+                    </td>
+                    <td>Str. ETERNITATII, Nr. 36, Bl. N9, Sc. A+B+C, Orasul Tulcea, Tulcea</td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI BLOC N7+N8+N9</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.08.2026 - 31.08.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Stefania Chiran                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Gata de facturare</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" title="Perioadă Curentă Activă">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-029-0003 (01.08.2026 - 31.08.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-029-0003');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-004-0847 energie termică str. p-ta victoriei, nr. 34, bl. 34, sc. -, târgu mures, mures p-ta victoriei 01.08.2026 - 31.08.2026 bogdan antal În pregătire">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-004-0847                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Energie Termică                        </span>
+                    </td>
+                    <td>Str. P-TA VICTORIEI, Nr. 34, Bl. 34, Sc. -, Târgu Mures, Mures</td>
+                    <td style="font-weight: 500;">P-TA VICTORIEI</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.08.2026 - 31.08.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Bogdan Antal                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-warning">În Pregătire</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" title="Perioadă Curentă Activă">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-004-0847 (01.08.2026 - 31.08.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-004-0847');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-001-2108 apă str. cremenita, nr. 5, bl. corp_a+b, sc. corp_b, distr. 2, bucuresti, bucuresti asociatia de proprietari cremenita 5 01.07.2026 - 31.07.2026 manuel tudorache În pregătire">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-001-2108                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Apă                        </span>
+                    </td>
+                    <td>Str. CREMENITA, Nr. 5, Bl. CORP_A+B, Sc. CORP_B, Distr. 2, Bucuresti, Bucuresti</td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI CREMENITA 5</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.07.2026 - 31.07.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Manuel Tudorache                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-warning">În Pregătire</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <span style="color: var(--text-muted);">&ndash;</span>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-001-2108 (01.07.2026 - 31.07.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-001-2108');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-001-2107 apă str. cremenita, nr. 5, bl. corp_a+b, sc. corp_a, distr. 2, bucuresti, bucuresti asociatia de proprietari cremenita 5 01.07.2026 - 31.07.2026 manuel tudorache În pregătire">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-001-2107                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Apă                        </span>
+                    </td>
+                    <td>Str. CREMENITA, Nr. 5, Bl. CORP_A+B, Sc. CORP_A, Distr. 2, Bucuresti, Bucuresti</td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI CREMENITA 5</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.07.2026 - 31.07.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Manuel Tudorache                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-warning">În Pregătire</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <span style="color: var(--text-muted);">&ndash;</span>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-001-2107 (01.07.2026 - 31.07.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-001-2107');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-004-0664 energie termică str. cetatii, nr. 11, bl. 11, sc. -, et. 0, târgu mures, mures cetatii 01.07.2026 - 31.07.2026 bogdan antal În pregătire">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-004-0664                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Energie Termică                        </span>
+                    </td>
+                    <td>Str. CETATII, Nr. 11, Bl. 11, Sc. -, Et. 0, Târgu Mures, Mures</td>
+                    <td style="font-weight: 500;">CETATII</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.07.2026 - 31.07.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Bogdan Antal                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-warning">În Pregătire</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <span style="color: var(--text-muted);">&ndash;</span>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-004-0664 (01.07.2026 - 31.07.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-004-0664');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-001-0467 apă str. aleea callatis, nr. 1, bl. a14a, sc. 7+8, distr. 6, bucuresti, bucuresti asociatia de proprietari bloc a14a 01.07.2026 - 31.07.2026 nina marcu gata de facturare">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-001-0467                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Apă                        </span>
+                    </td>
+                    <td>Str. ALEEA CALLATIS, Nr. 1, Bl. A14A, Sc. 7+8, Distr. 6, Bucuresti, Bucuresti</td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI BLOC A14A</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.07.2026 - 31.07.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Nina Marcu                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Gata de facturare</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <span style="color: var(--text-muted);">&ndash;</span>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-001-0467 (01.07.2026 - 31.07.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-001-0467');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-001-1503 energie termică str. aleea scolarilor, nr. 10, bl. s24, sc. 1, distr. 3, bucuresti, bucuresti asociatia de proprietari bl s24 01.07.2026 - 31.07.2026 georgiana serban gata de facturare">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-001-1503                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Energie Termică                        </span>
+                    </td>
+                    <td>Str. ALEEA SCOLARILOR, Nr. 10, Bl. S24, Sc. 1, Distr. 3, Bucuresti, Bucuresti</td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI BL S24</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.07.2026 - 31.07.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Georgiana Serban                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Gata de facturare</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <span style="color: var(--text-muted);">&ndash;</span>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-001-1503 (01.07.2026 - 31.07.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-001-1503');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                                <tr data-search="81-004-1003 gaz str. bolyai farkas, nr. 1, bl. 1, sc. b, târgu mures, mures bolyai farkas 01.07.2026 - 31.07.2026 bogdan antal Încheiat">
+                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                        81-004-1003                    </td>
+                    <td style="text-align: center;">
+                        <span style="font-weight: 500; font-size: 12.5px;">
+                            Gaz                        </span>
+                    </td>
+                    <td>Str. BOLYAI FARKAS, Nr. 1, Bl. 1, Sc. B, Târgu Mures, Mures</td>
+                    <td style="font-weight: 500;">BOLYAI FARKAS</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                        01.07.2026 - 31.07.2026                    </td>
+                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                        Bogdan Antal                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-draft">Încheiat</span>                    </td>
+                    <td style="text-align: center;">
+                                                    <span style="color: var(--text-muted);">&ndash;</span>
+                                            </td>
+                    <td style="text-align: center;">
+                        <div style="display: inline-flex; gap: 4px; justify-content: center;">
+                            <button type="button" class="btn-action-icon" title="Vizualizare / Procesare Perioadă"
+                                    onclick="alert('Vizualizare perioadă calcul: 81-004-1003 (01.07.2026 - 31.07.2026)');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-action-icon" title="Raport detaliat calcul"
+                                    onclick="alert('Generare raport calcul pentru 81-004-1003');">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                            </tbody>
+        </table>
+    </div>
+
+    <!-- === Paginație (Conformă cu parteneri.php) === -->
+    <div class="table-pagination">
+        <div style="font-size: 13px; color: var(--text-muted);">
+            Afișare <strong>1</strong> - <strong id="calcPaginationVisible">23</strong> din <strong>255.070</strong> înregistrări
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" disabled>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                <span>Anterior</span>
+            </button>
+            <div class="pagination-pages">
+                <button type="button" class="btn-secondary active" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;">1</button>
+                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 2')">2</button>
+                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 3')">3</button>
+                <span style="padding: 0 4px; color: var(--text-muted); font-size: 12px;">...</span>
+                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 2550')">2550</button>
+            </div>
+            <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" onclick="alert('Pagina următoare')">
+                <span>Următor</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
     </div>
 </div>
 
-<div class="card" style="padding: 60px 40px; text-align: center; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; margin-top: 24px;">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="64" height="64" style="margin-bottom: 20px; opacity: 0.3; color: var(--accent);">
-        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-        <polyline points="2 17 12 22 22 17"></polyline>
-        <polyline points="2 12 12 17 22 12"></polyline>
-    </svg>
-    <h2 style="color: var(--text-main); margin-bottom: 12px; font-weight: 600;">În curând</h2>
-    <p style="font-size: 15px;">Interfața pentru <strong>Perioadă de Calcul</strong> nu a fost încă generată în acest demo.</p>
+<!-- ══ Modal Adăugare Perioadă Nouă ═════════════════════════════════════ -->
+<div id="addPeriodModal" class="modal-overlay" style="display: none;">
+    <div class="modal-card" style="max-width: 540px; width: 90%;">
+        <div class="modal-header">
+            <h3 class="modal-title">Deschidere Perioadă de Calcul Nouă</h3>
+            <button type="button" class="btn-action-icon" id="btnCloseAddPeriodModal" title="Închide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <form id="addPeriodForm" onsubmit="handleAddPeriodSubmit(event)">
+            <div class="modal-body" style="padding: 20px;">
+                <div class="form-group" style="margin-bottom: 14px;">
+                    <label class="form-label" for="modalAddPeriodCity">Localitate <span class="required-star">*</span></label>
+                    <select id="modalAddPeriodCity" class="input-control" required>
+                        <option value="">Alege localitate...</option>
+                                                    <option value="Apold">Apold</option>
+                                                    <option value="Brasov">Brasov</option>
+                                                    <option value="Bucuresti">Bucuresti</option>
+                                                    <option value="Bucuresti_">Bucuresti_</option>
+                                                    <option value="Buftea">Buftea</option>
+                                                    <option value="Calimanesti">Calimanesti</option>
+                                                    <option value="Chiajna">Chiajna</option>
+                                                    <option value="Chitila">Chitila</option>
+                                                    <option value="Cisnadie">Cisnadie</option>
+                                                    <option value="Constanta">Constanta</option>
+                                                    <option value="Deva">Deva</option>
+                                                    <option value="Dobroesti">Dobroesti</option>
+                                                    <option value="Eforie Nord">Eforie Nord</option>
+                                                    <option value="Giurgiu">Giurgiu</option>
+                                                    <option value="Iasi">Iasi</option>
+                                                    <option value="Magurele">Magurele</option>
+                                                    <option value="Mamaia">Mamaia</option>
+                                                    <option value="Mangalia">Mangalia</option>
+                                                    <option value="Medgidia">Medgidia</option>
+                                                    <option value="Medias">Medias</option>
+                                                    <option value="Mihail Kogalniceanu">Mihail Kogalniceanu</option>
+                                                    <option value="Municipiul Târgu Mures">Municipiul Târgu Mures</option>
+                                                    <option value="Navodari">Navodari</option>
+                                                    <option value="Neptun">Neptun</option>
+                                                    <option value="Olimp">Olimp</option>
+                                                    <option value="Orasul Tulcea">Orasul Tulcea</option>
+                                                    <option value="Ovidiu">Ovidiu</option>
+                                                    <option value="Ploiesti">Ploiesti</option>
+                                                    <option value="Ploiestiori">Ploiestiori</option>
+                                                    <option value="Popesti Leordeni">Popesti Leordeni</option>
+                                                    <option value="Predeal">Predeal</option>
+                                                    <option value="Rosu">Rosu</option>
+                                                    <option value="Râmnicu Vâlcea">Râmnicu Vâlcea</option>
+                                                    <option value="Sibiu">Sibiu</option>
+                                                    <option value="Sighisoara">Sighisoara</option>
+                                                    <option value="Singeorgiu de Mures">Singeorgiu de Mures</option>
+                                                    <option value="Targu Mures">Targu Mures</option>
+                                                    <option value="Tulcea">Tulcea</option>
+                                                    <option value="Tunari">Tunari</option>
+                                                    <option value="Târgu Jiu">Târgu Jiu</option>
+                                                    <option value="Târgu Mures">Târgu Mures</option>
+                                                    <option value="Ungheni">Ungheni</option>
+                                                    <option value="Voluntari">Voluntari</option>
+                                            </select>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 14px;">
+                    <label class="form-label" for="modalAddPeriodUtility">Utilitate <span class="required-star">*</span></label>
+                    <select id="modalAddPeriodUtility" class="input-control" required>
+                        <option value="Apă">Apă</option>
+                        <option value="Energie Termică">Energie Termică</option>
+                        <option value="Gaz">Gaz</option>
+                    </select>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px;">
+                    <div class="form-group">
+                        <label class="form-label" for="modalAddPeriodStart">Dată Început <span class="required-star">*</span></label>
+                        <input type="date" id="modalAddPeriodStart" class="input-control" required value="2026-09-01">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="modalAddPeriodEnd">Dată Sfârșit <span class="required-star">*</span></label>
+                        <input type="date" id="modalAddPeriodEnd" class="input-control" required value="2026-09-30">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="modalAddPeriodNotes">Observații ciclu calcul</label>
+                    <textarea id="modalAddPeriodNotes" class="input-control" rows="2" placeholder="Mențiuni speciale pentru procesare..."></textarea>
+                </div>
+            </div>
+
+            <div class="modal-footer" style="padding: 16px 20px; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end; gap: 10px;">
+                <button type="button" class="btn-secondary" id="btnCancelAddPeriodModal">Renunță</button>
+                <button type="submit" class="btn-primary">Deschide Perioada</button>
+            </div>
+        </form>
+    </div>
 </div>
+
+
+<!-- ══ NOD Picker Modal (partial) ════════════════════════════════════════════
+     React: <NodPickerModal id="nodPickerModalCalc" onSelect={handleSelect} />
+══════════════════════════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="nodPickerModalCalc" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="nodPickerModalCalc-title">
+    <div class="modal-card nod-picker-card">
+        <div class="modal-header">
+            <h3 id="nodPickerModalCalc-title">Alegere NOD</h3>
+            <button type="button" class="btn-close nod-picker-close" data-modal="nodPickerModalCalc" title="Închide fereastra">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!-- Formular de filtrare -->
+            <form class="nod-picker-filter-form" id="nodPickerModalCalc-form" onsubmit="return false;">
+                <div class="nod-picker-filter-grid">
+                    <!-- Localitate -->
+                    <div class="form-group">
+                        <label class="form-label" for="nodPickerModalCalc-city">Localitate</label>
+                        <select id="nodPickerModalCalc-city" class="input-control">
+                            <option value="-1">-</option>
+                                                        <option value="Apold">Apold</option>
+                                                        <option value="Brasov">Brasov</option>
+                                                        <option value="Bucuresti">Bucuresti</option>
+                                                        <option value="Bucuresti_">Bucuresti_</option>
+                                                        <option value="Buftea">Buftea</option>
+                                                        <option value="Calimanesti">Calimanesti</option>
+                                                        <option value="Chiajna">Chiajna</option>
+                                                        <option value="Chitila">Chitila</option>
+                                                        <option value="Cisnadie">Cisnadie</option>
+                                                        <option value="Constanta">Constanta</option>
+                                                        <option value="Deva">Deva</option>
+                                                        <option value="Dobroesti">Dobroesti</option>
+                                                        <option value="Eforie Nord">Eforie Nord</option>
+                                                        <option value="Giurgiu">Giurgiu</option>
+                                                        <option value="Iasi">Iasi</option>
+                                                        <option value="Magurele">Magurele</option>
+                                                        <option value="Mamaia">Mamaia</option>
+                                                        <option value="Mangalia">Mangalia</option>
+                                                        <option value="Medgidia">Medgidia</option>
+                                                        <option value="Medias">Medias</option>
+                                                        <option value="Mihail Kogalniceanu">Mihail Kogalniceanu</option>
+                                                        <option value="Municipiul Târgu Mures">Municipiul Târgu Mures</option>
+                                                        <option value="Navodari">Navodari</option>
+                                                        <option value="Neptun">Neptun</option>
+                                                        <option value="Olimp">Olimp</option>
+                                                        <option value="Orasul Tulcea">Orasul Tulcea</option>
+                                                        <option value="Ovidiu">Ovidiu</option>
+                                                        <option value="Ploiesti">Ploiesti</option>
+                                                        <option value="Ploiestiori">Ploiestiori</option>
+                                                        <option value="Popesti Leordeni">Popesti Leordeni</option>
+                                                        <option value="Predeal">Predeal</option>
+                                                        <option value="Rosu">Rosu</option>
+                                                        <option value="Râmnicu Vâlcea">Râmnicu Vâlcea</option>
+                                                        <option value="Sibiu">Sibiu</option>
+                                                        <option value="Sighisoara">Sighisoara</option>
+                                                        <option value="Singeorgiu de Mures">Singeorgiu de Mures</option>
+                                                        <option value="Targu Mures">Targu Mures</option>
+                                                        <option value="Tulcea">Tulcea</option>
+                                                        <option value="Tunari">Tunari</option>
+                                                        <option value="Târgu Jiu">Târgu Jiu</option>
+                                                        <option value="Târgu Mures">Târgu Mures</option>
+                                                        <option value="Ungheni">Ungheni</option>
+                                                        <option value="Voluntari">Voluntari</option>
+                                                    </select>
+                    </div>
+                    <!-- Strada -->
+                    <div class="form-group">
+                        <label class="form-label" for="nodPickerModalCalc-street">Strada</label>
+                        <input type="text" id="nodPickerModalCalc-street" class="input-control" placeholder="Denumire stradă...">
+                    </div>
+                    <!-- Tip -->
+                    <div class="form-group">
+                        <label class="form-label" for="nodPickerModalCalc-type">Tip</label>
+                        <select id="nodPickerModalCalc-type" class="input-control">
+                            <option value="-1">-</option>
+                            <option value="1">Cu agenți economici</option>
+                            <option value="2">Fără agenți economici</option>
+                        </select>
+                    </div>
+                    <!-- Asociație -->
+                    <div class="form-group">
+                        <label class="form-label" for="nodPickerModalCalc-assoc">Asociație</label>
+                        <input type="text" id="nodPickerModalCalc-assoc" class="input-control" placeholder="Nume asociație...">
+                    </div>
+                    <!-- Cod NOD -->
+                    <div class="form-group">
+                        <label class="form-label" for="nodPickerModalCalc-code">Cod NOD</label>
+                        <input type="text" id="nodPickerModalCalc-code" class="input-control" placeholder="Cod...">
+                    </div>
+                </div>
+                <div class="nod-picker-filter-actions">
+                    <div class="filter-per-page">
+                        <label class="filter-per-page-label" for="nodPickerModalCalc-perpage">Înreg / pag</label>
+                        <select id="nodPickerModalCalc-perpage" class="input-control select-per-page">
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100" selected>100</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn-secondary nod-picker-reset" data-modal="nodPickerModalCalc">Resetează</button>
+                    <button type="button" class="btn-primary nod-picker-search" data-modal="nodPickerModalCalc">Caută</button>
+                </div>
+            </form>
+
+            <!-- Tabelul de rezultate NOD -->
+            <div class="nod-picker-table-wrap">
+                <table class="modal-table">
+                    <thead>
+                        <tr>
+                            <th>NOD</th>
+                            <th>Adresă NOD</th>
+                            <th>Asociație</th>
+                            <th class="nod-picker-th-sel"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="nod-picker-tbody" id="nodPickerModalCalc-tbody">
+                        <!-- Populat dinamic prin JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Paginație Modal -->
+            <div class="nod-picker-pagination">
+                <span class="nod-picker-count-label">
+                    Afișare NOD-uri: <strong class="nod-picker-count" id="nodPickerModalCalc-count">0</strong>
+                </span>
+                <div class="nod-picker-page-btns">
+                    <button type="button" class="btn-action-icon nod-picker-prev" data-modal="nodPickerModalCalc" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button type="button" class="btn-action-icon nod-picker-next" data-modal="nodPickerModalCalc" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </div><!-- /modal-body -->
+    </div><!-- /modal-card -->
+</div><!-- /modal-overlay -->
+
+<!-- NOD Picker: date & logică JS ============================================
+     React: datele vin din props/API; logica este în NodPickerModal.tsx
+============================================================================ -->
+<script>
+(function() {
+    /* ── Date NOD ────────────────────────────────────────────────────── */
+    var _nodPickerData_nodPickerModalCalc = [
+    { id: "1",  code: "81-001-0001", address: "Str. STEFAN CEL MARE, Nr. 27, Bl. 27, Sc. 1, Distr. 2, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC 27 SCARA 1",    city: "Bucuresti", street: "stefan cel mare",          ownerType: "1" },
+    { id: "2",  code: "81-001-0002", address: "Str. REZILIAT, Nr. 36, Bl. Vila, Sc. 1, Distr. 1, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC VILA",          city: "Bucuresti", street: "reziliat",                  ownerType: "1" },
+    { id: "3",  code: "81-001-0003", address: "Str. REZILIAT, Sc. 1, Distr. 5, Bucuresti",                              association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "14", code: "81-001-0004", address: "Str. GURA IALOMITEI, Nr. 3, Bl. PC9, Sc. B, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC PC9 SCARA B",   city: "Bucuresti", street: "gura ialomitei",             ownerType: "1" },
+    { id: "15", code: "81-001-0005", address: "Str. GURA IALOMITEI, Nr. 3, Bl. PC9, Sc. A, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC PC9 SCARA A",   city: "Bucuresti", street: "gura ialomitei",             ownerType: "1" },
+    { id: "16", code: "81-001-0006", address: "Str. REZILIAT, Nr. 28, Bl. V81A, Sc. A, Distr. 3, Bucuresti",           association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "17", code: "81-001-0007", address: "Str. Laborator, Nr. 125-127, Bl. S1, Sc. 2, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC S1 SCARA 2",    city: "Bucuresti", street: "laborator",                  ownerType: "1" },
+    { id: "18", code: "81-001-0008", address: "Str. Liber, Nr. 012, Bl. 0, Sc. 2, Bucuresti",                          association: "",                                            city: "Bucuresti", street: "liber",                     ownerType: "2" },
+    { id: "20", code: "81-001-0010", address: "Str. BIBESCU VODA, Nr. 2, Bl. P5, Sc. 4, Distr. 4, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC P5 SCARA 4",    city: "Bucuresti", street: "bibescu voda",               ownerType: "1" },
+    { id: "21", code: "81-001-0011", address: "Str. REZILIAT, Sc. A+B, Apt. -, Distr. 3, Bucuresti",                   association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "22", code: "81-001-0012", address: "Str. MIHAI BRAVU, Nr. 291, Bl. 12A, Sc. 1, Distr. 3, Bucuresti",        association: "ASOCIATIA DE PROPRIETARI BLOC 12A SCARA A",   city: "Bucuresti", street: "mihai bravu",                ownerType: "1" },
+    { id: "23", code: "81-001-0013", address: "Str. REZILIAT, Sc. 1, Distr. 3, Bucuresti",                             association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "25", code: "81-001-0015", address: "Str. REZILIAT, Sc. 2, Distr. 3, Bucuresti",                             association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "27", code: "81-001-0017", address: "Str. SIBIU, Nr. 18, Bl. 813, Sc. 1, Distr. 6, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BL 813",             city: "Bucuresti", street: "sibiu",                     ownerType: "1" },
+    { id: "28", code: "81-001-0018", address: "Str. UNIRII, Nr. 13, Bl. 2C, Sc. 1, Distr. 5, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BLOC 2C",            city: "Bucuresti", street: "unirii",                    ownerType: "1" },
+    { id: "29", code: "81-001-0019", address: "Str. UNIRII, Nr. 13, Bl. 2C, Sc. 2, Distr. 5, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BLOC 2C",            city: "Bucuresti", street: "unirii",                    ownerType: "1" },
+    { id: "30", code: "81-001-0020", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 1, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "31", code: "81-001-0021", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 2, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "32", code: "81-001-0022", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 3, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "34", code: "81-001-0023", address: "Str. OTESANI, Nr. 14, Bl. T8B, Sc. 1, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC T8B",           city: "Bucuresti", street: "otesani",                   ownerType: "1" },
+    { id: "35", code: "81-001-0024", address: "Str. COLENTINA, Nr. 70, Bl. 108, Sc. 1, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 108",           city: "Bucuresti", street: "colentina",                  ownerType: "1" },
+    { id: "36", code: "81-001-0025", address: "Str. FUNDENI, Nr. 227, Bl. 116B, Sc. A, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 116B",          city: "Bucuresti", street: "fundeni",                   ownerType: "1" },
+    { id: "37", code: "81-001-0026", address: "Str. FUNDENI, Nr. 227, Bl. 116B, Sc. B, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 116B",          city: "Bucuresti", street: "fundeni",                   ownerType: "1" },
+    { id: "40", code: "81-001-0029", address: "Str. CONSTANTIN RADULESCU MOTRU, Nr. 23, Bl. B35, Sc. B, Distr. 4",    association: "ASOCIATIA DE PROPRIETARI BLOC 35 SCARA 2",   city: "Bucuresti", street: "constantin radulescu motru", ownerType: "1" },
+    { id: "41", code: "81-001-0030", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. A, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA A",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "42", code: "81-001-0031", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. B, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA B",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "43", code: "81-001-0032", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. E, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA E",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "51", code: "81-001-0040", address: "Str. CALEA MOSILOR, Nr. 241, Bl. 47, Sc. A+B+C, Distr. 2, Bucuresti",  association: "ASOCIATIA DE PROPRIETARI BLOC 47",            city: "Bucuresti", street: "calea mosilor",              ownerType: "1" },
+    { id: "52", code: "81-001-0041", address: "Str. MURGENI, Nr. 7, Bl. L27, Sc. A, Distr. 3, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC L27",           city: "Bucuresti", street: "murgeni",                   ownerType: "1" },
+    { id: "53", code: "81-001-0042", address: "Str. ALEEA CODLEA, Nr. 6, Bl. J3, Sc. 1, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC J3",            city: "Bucuresti", street: "aleea codlea",               ownerType: "1" },
+    { id: "54", code: "81-001-0043", address: "Str. ALEEA ROTUNDA, Nr. 1-4, Bl. Y1B, Sc. 5, Distr. 3, Bucuresti",     association: "ASOCIATIA DE PROPRIETARI BLOC Y1B SCARA 1-5", city: "Bucuresti", street: "aleea rotunda",              ownerType: "1" },
+    { id: "59", code: "81-001-0047", address: "Str. LACUL TEI, Nr. 121, Bl. 5, Sc. 1, Distr. 2, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC 5 SCARA 1-4",  city: "Bucuresti", street: "lacul tei",                  ownerType: "1" },
+    { id: "65", code: "81-001-0053", address: "Str. CALEA VACARESTI, Nr. 308, Bl. 1E, Sc. 1, Distr. 4, Bucuresti",    association: "ASOCIATIA DE PROPRIETARI BLOC 1E",            city: "Bucuresti", street: "calea vacaresti",            ownerType: "1" },
+    { id: "66", code: "81-001-0054", address: "Str. OLTENITEI, Nr. 140, Bl. 5, Sc. 3, Distr. 4, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC 5 SCARA 3",    city: "Bucuresti", street: "oltenitei",                  ownerType: "1" },
+    { id: "8",  code: "81-001-0055", address: "Str. ALEEA BARSANESTI, Nr. 2, Bl. 156, Sc. 2, Distr. 6, Bucuresti",    association: "ASOCIATIA DE PROPRIETARI BLOC156 SC. 2",     city: "Bucuresti", street: "aleea barsanesti",           ownerType: "1" },
+    { id: "68", code: "81-001-0057", address: "Str. CEAHLAU, Nr. 15, Bl. 75, Sc. 1, Distr. 6, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC 75",            city: "Bucuresti", street: "ceahlau",                   ownerType: "1" },
+    { id: "69", code: "81-001-0058", address: "Str. CEAHLAU, Nr. 15, Bl. 75, Sc. 2, Distr. 6, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC 75",            city: "Bucuresti", street: "ceahlau",                   ownerType: "1" }
+];
+
+    /* ── Configurare instanță ────────────────────────────────────────── */
+    var _cfg = {
+        modalId:    "nodPickerModalCalc",
+        inputId:    "txtNODCalc",
+        btnOpenId:  "btnOpenNodModalCalc",
+        callback:   null   /* funcție opțională apelată la selecție */
+    };
+
+    function initNodPicker_nodPickerModalCalc() {
+        NodPicker.init(
+            _cfg,
+            _nodPickerData_nodPickerModalCalc        );
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initNodPicker_nodPickerModalCalc);
+    } else {
+        initNodPicker_nodPickerModalCalc();
+    }
+})();
+</script>
+
+<script>
+/**
+ * Căutare dinamică client-side și modal deschidere perioadă nouă.
+ * React conversion: se mută în hook-urile componentei <CalculationPeriodListPage />
+ */
+(function () {
+    'use strict';
+
+    var searchInput  = document.getElementById('calcTableSearch');
+    var tableBody    = document.getElementById('calcPeriodsTableBody');
+    var visibleCount = document.getElementById('calcVisibleCount');
+    var pagCountEl   = document.getElementById('calcPaginationVisible');
+
+    if (searchInput && tableBody) {
+        searchInput.addEventListener('input', function () {
+            var term    = this.value.trim().toLowerCase();
+            var rows    = tableBody.querySelectorAll('tr');
+            var visible = 0;
+
+            rows.forEach(function (row) {
+                var haystack = row.getAttribute('data-search') || '';
+                var show     = !term || haystack.indexOf(term) !== -1;
+                row.style.display = show ? '' : 'none';
+                if (show) visible++;
+            });
+
+            if (visibleCount) visibleCount.textContent = visible;
+            if (pagCountEl) pagCountEl.textContent = visible;
+        });
+    }
+
+    // Modal Adăugare Perioadă
+    var modalAdd   = document.getElementById('addPeriodModal');
+    var btnOpen    = document.getElementById('btnOpenAddPeriodModal');
+    var btnClose   = document.getElementById('btnCloseAddPeriodModal');
+    var btnCancel  = document.getElementById('btnCancelAddPeriodModal');
+
+    if (btnOpen && modalAdd) {
+        btnOpen.addEventListener('click', function () {
+            modalAdd.style.display = 'flex';
+        });
+    }
+
+    function closeModal() {
+        if (modalAdd) modalAdd.style.display = 'none';
+    }
+
+    if (btnClose)  btnClose.addEventListener('click', closeModal);
+    if (btnCancel) btnCancel.addEventListener('click', closeModal);
+
+    if (modalAdd) {
+        modalAdd.addEventListener('click', function (e) {
+            if (e.target === modalAdd) closeModal();
+        });
+    }
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modalAdd && modalAdd.style.display === 'flex') {
+            closeModal();
+        }
+    });
+})();
+
+function handleAddPeriodSubmit(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    alert('Perioada de calcul a fost deschisă cu succes!');
+    var modal = document.getElementById('addPeriodModal');
+    if (modal) modal.style.display = 'none';
+    return false;
+}
+</script>
 
     </div><!-- /.content -->
     <footer class="app-footer">

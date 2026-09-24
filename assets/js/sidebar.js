@@ -342,7 +342,7 @@
     }
 
     /* ═══════════════════════════════════════════════════════════════
-       6. APP SECTION ACCORDION  (SONIC GRID / BILLING / PRO)
+       6. APP SECTION ACCORDION  (SONIC GRID / MARKET / PRO / BILLING / FIN / SONIC)
           React: useState(activeApp) in <Layout>, <AppSection isOpen={...} />
     ═══════════════════════════════════════════════════════════════ */
     function updateLogo(section) {
@@ -381,8 +381,23 @@
     }
 
     function toggleAppSection(clickedSection) {
-        /* Collapsed desktop mode → ignore */
-        if (!isMobile() && sidebar.classList.contains('collapsed')) return;
+        /* Collapsed desktop mode → switch active section */
+        if (!isMobile() && sidebar.classList.contains('collapsed')) {
+            if (clickedSection.classList.contains('open')) return;
+            document.querySelectorAll('.app-section').forEach(function (sec) {
+                if (sec !== clickedSection && sec.classList.contains('open')) {
+                    sec.classList.remove('open');
+                    var b = sec.querySelector('.app-section-body');
+                    if (b) b.style.maxHeight = '0';
+                }
+            });
+            clickedSection.classList.add('open');
+            var body = clickedSection.querySelector('.app-section-body');
+            if (body) body.style.maxHeight = 'none';
+            updateLogo(clickedSection);
+            localStorage.setItem('active_app_section', clickedSection.getAttribute('data-app'));
+            return;
+        }
 
         var isOpen = clickedSection.classList.contains('open');
 

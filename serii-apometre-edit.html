@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Adaugă Interval Serii Apometre – SONIC BILLING</title>
+    <title>Editează Interval Serii Apometre – SONIC BILLING</title>
     <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
     <script src="assets/js/nod-picker.js"></script>
 </head>
@@ -22,12 +22,12 @@
     <!-- ── Logo ─────────────────────────────────────────────────────── -->
     <!-- React: <SidebarLogo activeApp={activeApp} /> -->
     <div class="logo">
-        <a href="index.html" title="SONIC GRID – Acasă">
-            <img src="assets/images/sonic-grid-logo.svg"
-                 alt="SONIC GRID"
+        <a href="sonic-dashboard.html" title="SONIC – Acasă">
+            <img src="assets/images/sonic-logo.svg"
+                 alt="SONIC"
                  class="logo-full"
                  id="sidebarLogo">
-            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">SG</span>
+            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">S</span>
         </a>
     </div>
 
@@ -36,7 +36,7 @@
     <nav class="sidebar-nav" aria-label="Navigare principală">
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC GRID
+             ║  1. SONIC GRID
              ╚══════════════════════════════════════════════════════════════ -->
         <div class="app-section"
              data-app="sonic-grid"
@@ -44,6 +44,7 @@
              data-logo-icon="SG">
             <button class="app-section-header" type="button" title="SONIC GRID">
                 <img src="assets/images/sonic-grid-logo.svg" class="app-section-logo" alt="SONIC GRID">
+                <span class="app-section-badge">SG</span>
             </button>
             <div class="app-section-body">
 
@@ -142,14 +143,71 @@
         </div>
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC BILLING
+             ║  2. SONIC MARKET
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-market"
+             data-logo="assets/images/sonic-market-logo.svg"
+             data-logo-icon="SM">
+            <button class="app-section-header" type="button" title="SONIC MARKET">
+                <img src="assets/images/sonic-market-logo.svg" class="app-section-logo" alt="SONIC MARKET">
+                <span class="app-section-badge">SM</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard Market -->
+                <a href="market-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  3. SONIC PRO
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-pro"
+             data-logo="assets/images/sonic-pro-logo.svg"
+             data-logo-icon="SP">
+            <button class="app-section-header" type="button" title="SONIC PRO">
+                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+                <span class="app-section-badge">SP</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard PRO -->
+                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- Intervenții -->
+                <a href="interventii.html" class="nav-item " title="Intervenții">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </span>
+                    <span class="nav-label">Intervenții</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  4. SONIC BILLING
              ╚══════════════════════════════════════════════════════════════ -->
         <div class="app-section open"
              data-app="sonic-billing"
              data-logo="assets/images/sonic-billing-logo.svg"
-             data-logo-icon="SG">
+             data-logo-icon="SB">
             <button class="app-section-header" type="button" title="SONIC BILLING">
                 <img src="assets/images/sonic-billing-logo.svg" class="app-section-logo" alt="SONIC BILLING">
+                <span class="app-section-badge">SB</span>
             </button>
             <div class="app-section-body">
 
@@ -213,25 +271,6 @@
                         <a href="modele-repartitoare.html" class="nav-subitem ">Modele Repartitoare</a>
                         <a href="modele-contoare.html" class="nav-subitem ">Modele Contoare</a>
                         <a href="serii-apometre.html" class="nav-subitem active">Serii Apometre Achiziționate</a>
-                    </div>
-                </div>
-
-                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
-                <div class="nav-group " data-group="master-data">
-                    <button class="nav-group-title" type="button" title="Master Data Management">
-                        <span class="nav-group-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </span>
-                        <span class="nav-label">Master Data Management</span>
-                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                    </button>
-                    <div class="nav-subitems">
-                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
-                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
-                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
-                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
-                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
-                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
                     </div>
                 </div>
 
@@ -349,32 +388,68 @@
         </div>
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC PRO
+             ║  5. SONIC FIN
              ╚══════════════════════════════════════════════════════════════ -->
         <div class="app-section"
-             data-app="sonic-pro"
-             data-logo="assets/images/sonic-pro-logo.svg"
-             data-logo-icon="SP">
-            <button class="app-section-header" type="button" title="SONIC PRO">
-                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+             data-app="sonic-fin"
+             data-logo="assets/images/sonic-fin-logo.svg"
+             data-logo-icon="SF">
+            <button class="app-section-header" type="button" title="SONIC FIN">
+                <img src="assets/images/sonic-fin-logo.svg" class="app-section-logo" alt="SONIC FIN">
+                <span class="app-section-badge">SF</span>
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
-                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                <!-- Dashboard FIN -->
+                <a href="fin-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  6. SONIC (Base – Ecosistem & Configurare)
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic"
+             data-logo="assets/images/sonic-logo.svg"
+             data-logo-icon="S">
+            <button class="app-section-header" type="button" title="SONIC">
+                <img src="assets/images/sonic-logo.svg" class="app-section-logo" alt="SONIC">
+                <span class="app-section-badge">S</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard SONIC -->
+                <a href="sonic-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
-                    <span class="nav-label">Intervenții</span>
+                    <span class="nav-label">Dashboard</span>
                 </a>
+
+                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <div class="nav-group " data-group="master-data">
+                    <button class="nav-group-title" type="button" title="Master Data Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Master Data Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
+                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
+                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
+                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
+                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
+                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -449,7 +524,7 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="index.html">
+            <a href="sonic-dashboard.html">
                 <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
             </a>
         </div>
@@ -457,7 +532,7 @@
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
             <!-- Desktop page breadcrumb (hidden on mobile) -->
-            <div class="header-page-title">Adaugă Interval Serii Apometre</div>
+            <div class="header-page-title">Editează Interval Serii Apometre</div>
 
             <!-- User profile avatar (always visible) -->
             <a href="contul-meu.html" class="user-profile" title="Contul meu">SI</a>
@@ -535,8 +610,8 @@
 
 <div class="page-title-container">
     <div class="page-title">
-        <h1>Adaugă Interval Serii Apometre</h1>
-        <p>Completează formularul de mai jos pentru a înregistra un nou interval de serii.</p>
+        <h1>Editează Interval Serii Apometre</h1>
+        <p>Modifici informațiile pentru intervalul selectat.</p>
     </div>
     <a href="serii-apometre.html" class="btn-secondary">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" style="margin-right: 6px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
@@ -555,13 +630,13 @@
             <div class="form-row-2">
                 <div class="form-group">
                     <label class="form-label" for="txtStart">Început Interval <span class="required-star">*</span></label>
-                    <input type="text" id="txtStart" name="start" class="input-control" maxlength="10" value="" placeholder="Ex: 302001280" required>
+                    <input type="text" id="txtStart" name="start" class="input-control" maxlength="10" value="302001280" placeholder="Ex: 302001280" required>
                     <span class="form-error-text" id="errStart" style="display: none; color: var(--error); font-size: 12px; margin-top: 4px;">Valoarea trebuie să fie numerică.</span>
                 </div>
                 
                 <div class="form-group">
                     <label class="form-label" for="txtEnd">Sfârșit Interval <span class="required-star">*</span></label>
-                    <input type="text" id="txtEnd" name="end" class="input-control" maxlength="10" value="" placeholder="Ex: 302001579" required>
+                    <input type="text" id="txtEnd" name="end" class="input-control" maxlength="10" value="302001579" placeholder="Ex: 302001579" required>
                     <span class="form-error-text" id="errEnd" style="display: none; color: var(--error); font-size: 12px; margin-top: 4px;">Valoarea trebuie să fie numerică.</span>
                 </div>
             </div>
@@ -626,7 +701,7 @@
 
         setTimeout(() => {
             alert('Intervalul de serii a fost salvat cu succes!');
-            window.location.href = 'serii-apometre.php';
+            window.location.href = 'serii-apometre.html';
         }, 800);
 
         return false;

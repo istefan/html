@@ -22,12 +22,12 @@
     <!-- ── Logo ─────────────────────────────────────────────────────── -->
     <!-- React: <SidebarLogo activeApp={activeApp} /> -->
     <div class="logo">
-        <a href="index.html" title="SONIC GRID – Acasă">
-            <img src="assets/images/sonic-grid-logo.svg"
-                 alt="SONIC GRID"
+        <a href="sonic-dashboard.html" title="SONIC – Acasă">
+            <img src="assets/images/sonic-logo.svg"
+                 alt="SONIC"
                  class="logo-full"
                  id="sidebarLogo">
-            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">SG</span>
+            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">S</span>
         </a>
     </div>
 
@@ -36,7 +36,7 @@
     <nav class="sidebar-nav" aria-label="Navigare principală">
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC GRID
+             ║  1. SONIC GRID
              ╚══════════════════════════════════════════════════════════════ -->
         <div class="app-section"
              data-app="sonic-grid"
@@ -44,6 +44,7 @@
              data-logo-icon="SG">
             <button class="app-section-header" type="button" title="SONIC GRID">
                 <img src="assets/images/sonic-grid-logo.svg" class="app-section-logo" alt="SONIC GRID">
+                <span class="app-section-badge">SG</span>
             </button>
             <div class="app-section-body">
 
@@ -142,14 +143,71 @@
         </div>
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC BILLING
+             ║  2. SONIC MARKET
              ╚══════════════════════════════════════════════════════════════ -->
-        <div class="app-section open"
+        <div class="app-section"
+             data-app="sonic-market"
+             data-logo="assets/images/sonic-market-logo.svg"
+             data-logo-icon="SM">
+            <button class="app-section-header" type="button" title="SONIC MARKET">
+                <img src="assets/images/sonic-market-logo.svg" class="app-section-logo" alt="SONIC MARKET">
+                <span class="app-section-badge">SM</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard Market -->
+                <a href="market-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  3. SONIC PRO
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-pro"
+             data-logo="assets/images/sonic-pro-logo.svg"
+             data-logo-icon="SP">
+            <button class="app-section-header" type="button" title="SONIC PRO">
+                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+                <span class="app-section-badge">SP</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard PRO -->
+                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- Intervenții -->
+                <a href="interventii.html" class="nav-item " title="Intervenții">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </span>
+                    <span class="nav-label">Intervenții</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  4. SONIC BILLING
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
              data-app="sonic-billing"
              data-logo="assets/images/sonic-billing-logo.svg"
-             data-logo-icon="SG">
+             data-logo-icon="SB">
             <button class="app-section-header" type="button" title="SONIC BILLING">
                 <img src="assets/images/sonic-billing-logo.svg" class="app-section-logo" alt="SONIC BILLING">
+                <span class="app-section-badge">SB</span>
             </button>
             <div class="app-section-body">
 
@@ -213,25 +271,6 @@
                         <a href="modele-repartitoare.html" class="nav-subitem ">Modele Repartitoare</a>
                         <a href="modele-contoare.html" class="nav-subitem ">Modele Contoare</a>
                         <a href="serii-apometre.html" class="nav-subitem ">Serii Apometre Achiziționate</a>
-                    </div>
-                </div>
-
-                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
-                <div class="nav-group open" data-group="master-data">
-                    <button class="nav-group-title" type="button" title="Master Data Management">
-                        <span class="nav-group-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </span>
-                        <span class="nav-label">Master Data Management</span>
-                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                    </button>
-                    <div class="nav-subitems">
-                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
-                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
-                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
-                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
-                        <a href="rezervare-nod.html" class="nav-subitem active">Rezervare NOD</a>
-                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
                     </div>
                 </div>
 
@@ -349,32 +388,68 @@
         </div>
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC PRO
+             ║  5. SONIC FIN
              ╚══════════════════════════════════════════════════════════════ -->
         <div class="app-section"
-             data-app="sonic-pro"
-             data-logo="assets/images/sonic-pro-logo.svg"
-             data-logo-icon="SP">
-            <button class="app-section-header" type="button" title="SONIC PRO">
-                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+             data-app="sonic-fin"
+             data-logo="assets/images/sonic-fin-logo.svg"
+             data-logo-icon="SF">
+            <button class="app-section-header" type="button" title="SONIC FIN">
+                <img src="assets/images/sonic-fin-logo.svg" class="app-section-logo" alt="SONIC FIN">
+                <span class="app-section-badge">SF</span>
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
-                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                <!-- Dashboard FIN -->
+                <a href="fin-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  6. SONIC (Base – Ecosistem & Configurare)
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section open"
+             data-app="sonic"
+             data-logo="assets/images/sonic-logo.svg"
+             data-logo-icon="S">
+            <button class="app-section-header" type="button" title="SONIC">
+                <img src="assets/images/sonic-logo.svg" class="app-section-logo" alt="SONIC">
+                <span class="app-section-badge">S</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard SONIC -->
+                <a href="sonic-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
-                    <span class="nav-label">Intervenții</span>
+                    <span class="nav-label">Dashboard</span>
                 </a>
+
+                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <div class="nav-group open" data-group="master-data">
+                    <button class="nav-group-title" type="button" title="Master Data Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Master Data Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
+                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
+                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
+                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
+                        <a href="rezervare-nod.html" class="nav-subitem active">Rezervare NOD</a>
+                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -449,7 +524,7 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="index.html">
+            <a href="sonic-dashboard.html">
                 <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
             </a>
         </div>
@@ -483,7 +558,66 @@
     <div class="help-wrapper">
         <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
             <div class="help-panel-inner">
-                                <p class="help-empty">Nu există informații de ajutor disponibile pentru această pagină.</p>
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Filtrare și Căutare                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Comandă NOD Nou                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Management Rezervări NOD</h4>
+            <p>Această pagină permite vizualizarea, căutarea și administrarea comenzilor de rezervare pentru codurile NOD (puncte de distribuție și calcul).</p>
+            <p>Fiecare înregistrare reprezintă o solicitare de alocare a unui cod NOD pentru o anumită adresă fizică (bloc/scară), indicând data comenzii, data aprobării rezervării și starea curentă.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <h4>Filtre disponibile</h4>
+            <ul>
+                <li><strong>Localitate, Stradă, Bloc:</strong> Căutare după componentele adresei de branșament.</li>
+                <li><strong>NOD:</strong> Selectați un cod existent prin picker-ul interactiv (lupă).</li>
+                <li><strong>Perioadă rezervare:</strong> Interval de date calendaristice pentru comenzi/rezervări.</li>
+                <li><strong>Stare:</strong> Filtrați după stadiul solicitării (Comandă, Rezervat, Respins comandă).</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <h4>Cum se solicită un NOD?</h4>
+            <p>Apăsați butonul <strong>„Comandă NOD”</strong> din antetul paginii pentru a deschide formularul rapid de rezervare a unui nou cod de contorizare.</p>
+                            </div>
+                                    </div>
                     </div><!-- /.help-panel-inner -->
         </div><!-- /.help-panel -->
         
@@ -510,22 +644,1136 @@
 
     <div class="content">
 
+<!-- ===================================================================
+     React: <NodReservationListPage />
+     =================================================================== -->
+
+<!-- === Page Title Container ===
+     React: <PageTitleContainer title="Rezervări NOD" onOrderNew={handleOpenOrderModal} />
+-->
 <div class="page-title-container">
     <div class="page-title">
-        <h1>Rezervare NOD</h1>
-        <p>Pagina este în construcție.</p>
+        <h1>Rezervări NOD</h1>
+        <p>Vizualizează, caută și gestionează comenzile de rezervare pentru codurile NOD.</p>
+    </div>
+    <button type="button" class="btn-secondary" id="btnOpenNewOrderModal"
+            style="border-color: var(--accent); color: var(--accent); font-weight: 600; padding: 10px 18px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+             stroke-linecap="round" stroke-linejoin="round" width="14" height="14"
+             style="margin-right: 6px;">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+        <span>Comandă NOD</span>
+    </button>
+</div>
+
+<!-- === Formular de Filtrare ===
+     React: <FilterCard onSearch={handleSearch} onReset={handleReset} fields={...} />
+-->
+<div class="card" style="margin-bottom: 24px;">
+    <div style="margin-bottom: 18px;">
+        <span class="chart-title" style="font-size: 14px; font-weight: 600;">Filtrare Avansată</span>
+    </div>
+    <form method="GET" action="rezervare-nod.html" id="filterFormRezervare">
+        <div class="filter-grid">
+
+            <!-- Localitate -->
+            <div class="form-group">
+                <label class="form-label" for="ddlCityRes">Localitate</label>
+                <select name="city" id="ddlCityRes" class="input-control">
+                    <option value="-1">-</option>
+                                            <option value="18" >
+                            Apold                        </option>
+                                            <option value="32" >
+                            Brasov                        </option>
+                                            <option value="1" >
+                            Bucuresti                        </option>
+                                            <option value="14" >
+                            Bucuresti_                        </option>
+                                            <option value="38" >
+                            Buftea                        </option>
+                                            <option value="8" >
+                            Calimanesti                        </option>
+                                            <option value="30" >
+                            Chiajna                        </option>
+                                            <option value="35" >
+                            Chitila                        </option>
+                                            <option value="7" >
+                            Cisnadie                        </option>
+                                            <option value="12" >
+                            Constanta                        </option>
+                                            <option value="27" >
+                            Deva                        </option>
+                                            <option value="26" >
+                            Dobroesti                        </option>
+                                            <option value="22" >
+                            Eforie Nord                        </option>
+                                            <option value="3" >
+                            Giurgiu                        </option>
+                                            <option value="2" >
+                            Iasi                        </option>
+                                            <option value="34" >
+                            Magurele                        </option>
+                                            <option value="20" >
+                            Mamaia                        </option>
+                                            <option value="19" >
+                            Mangalia                        </option>
+                                            <option value="40" >
+                            Medgidia                        </option>
+                                            <option value="9" >
+                            Medias                        </option>
+                                            <option value="31" >
+                            Mihail Kogalniceanu                        </option>
+                                            <option value="41" >
+                            Municipiul Târgu Mures                        </option>
+                                            <option value="21" >
+                            Navodari                        </option>
+                                            <option value="33" >
+                            Neptun                        </option>
+                                            <option value="24" >
+                            Olimp                        </option>
+                                            <option value="28" >
+                            Orasul Tulcea                        </option>
+                                            <option value="36" >
+                            Ovidiu                        </option>
+                                            <option value="17" >
+                            Ploiesti                        </option>
+                                            <option value="37" >
+                            Ploiestiori                        </option>
+                                            <option value="25" >
+                            Popesti Leordeni                        </option>
+                                            <option value="39" >
+                            Predeal                        </option>
+                                            <option value="42" >
+                            Rosu                        </option>
+                                            <option value="10" >
+                            Râmnicu Vâlcea                        </option>
+                                            <option value="5" >
+                            Sibiu                        </option>
+                                            <option value="6" >
+                            Sighisoara                        </option>
+                                            <option value="15" >
+                            Singeorgiu de Mures                        </option>
+                                            <option value="13" >
+                            Targu Mures                        </option>
+                                            <option value="11" >
+                            Tulcea                        </option>
+                                            <option value="43" >
+                            Tunari                        </option>
+                                            <option value="23" >
+                            Târgu Jiu                        </option>
+                                            <option value="4" >
+                            Târgu Mures                        </option>
+                                            <option value="16" >
+                            Ungheni                        </option>
+                                            <option value="29" >
+                            Voluntari                        </option>
+                                    </select>
+            </div>
+
+            <!-- Stradă -->
+            <div class="form-group">
+                <label class="form-label" for="txtStreetRes">Stradă</label>
+                <input type="text" name="street" id="txtStreetRes" class="input-control"
+                       placeholder="Denumire stradă..." value="">
+            </div>
+
+            <!-- Bloc -->
+            <div class="form-group">
+                <label class="form-label" for="txtBlockRes">Bloc</label>
+                <input type="text" name="block" id="txtBlockRes" class="input-control"
+                       placeholder="Ex: 27" value="">
+            </div>
+
+            <!-- NOD Picker -->
+            <div class="form-group">
+                <label class="form-label" for="txtNODRes">NOD</label>
+                <div class="picker-group">
+                    <input type="text" id="txtNODRes" name="nod_picker" class="input-control"
+                           readonly placeholder="Click pe lupă..."
+                           value="">
+                    <button type="button" class="btn-picker" id="btnOpenNodModalRes" title="Deschide selector NOD">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                    <button type="button" class="btn-picker delete" title="Șterge selecție" onclick="document.getElementById('txtNODRes').value=''">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Rezervare (Perioadă Data început - Data sfârșit) -->
+            <div class="form-group">
+                <label class="form-label" for="dtpStartDateRes">Rezervare (De la)</label>
+                <input type="date" name="start_date" id="dtpStartDateRes" class="input-control"
+                       value="">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="dtpEndDateRes">Rezervare (Până la)</label>
+                <input type="date" name="end_date" id="dtpEndDateRes" class="input-control"
+                       value="">
+            </div>
+
+            <!-- Stare -->
+            <div class="form-group">
+                <label class="form-label" for="ddlStatusRes">Stare</label>
+                <select name="status" id="ddlStatusRes" class="input-control">
+                                            <option value="-1" selected>
+                            -                        </option>
+                                            <option value="1" >
+                            Comandă                        </option>
+                                            <option value="2" >
+                            Rezervat                        </option>
+                                            <option value="3" >
+                            Respins comandă                        </option>
+                                    </select>
+            </div>
+
+        </div><!-- /.filter-grid -->
+
+        <!-- Acțiuni filtru: Înreg/pag + Resetează + Caută -->
+        <div class="filter-actions">
+            <div class="filter-per-page">
+                <label class="filter-per-page-label" for="ddlPerPageRes">Înreg / pag</label>
+                <select name="per_page" id="ddlPerPageRes" class="input-control select-per-page">
+                    <option value="10"  >10</option>
+                    <option value="15"  >15</option>
+                    <option value="25"  >25</option>
+                    <option value="50"  >50</option>
+                    <option value="100" selected>100</option>
+                </select>
+            </div>
+            <a href="rezervare-nod.html" class="btn-secondary">Resetează</a>
+            <button type="submit" class="btn-primary">Caută</button>
+        </div>
+    </form>
+</div>
+
+<!-- === Tabel Rezervări NOD ===
+     React: <ReservationsTable data={reservations} onAction={handleAction} />
+-->
+<div class="table-container">
+    <!-- Bara de sus a tabelului -->
+    <div class="table-toolbar">
+        <div class="table-toolbar-left">
+            <span style="color: var(--text-muted); font-size: 13px; font-weight: 500;">
+                Afișare <strong id="resVisibleCount">18</strong>
+                din <strong>120</strong> înregistrări
+            </span>
+        </div>
+        <div class="table-toolbar-right">
+            <!-- Căutare dinamică client-side -->
+            <div class="live-search-wrapper"
+                 title="Filtrare locală în timp real după adresă, motiv sau cod NOD">
+                <span class="live-search-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </span>
+                <input type="text" id="resTableSearch" class="input-control"
+                       placeholder="Căutare dinamică adresă / NOD...">
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabel propriu-zis -->
+    <div style="overflow-x: auto; width: 100%;">
+        <table class="partners-table" id="reservationsTable">
+            <thead>
+                <tr>
+                    <th style="width: 12%;">Localitate</th>
+                    <th style="width: 10%; text-align: center;">Data comandă</th>
+                    <th style="width: 10%; text-align: center;">Data rezervare</th>
+                    <th style="width: 12%;">Cod NOD</th>
+                    <th style="width: 32%;">Adresă</th>
+                    <th style="width: 12%;">Motiv Rezervare</th>
+                    <th style="width: 8%; text-align: center;">Stare</th>
+                    <th style="width: 4%; text-align: center;">Acțiuni</th>
+                </tr>
+            </thead>
+            <tbody id="reservationsTableBody">
+                                <tr data-search="bucuresti str. ceairului, nr. 1, bl. j9, sc. 2,3, bucuresti, bucuresti - nod nou comandă">
+                    <td style="font-weight: 500;">Bucuresti</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        25.11.2015                    </td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        -                    </td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <span style="color: var(--text-muted); font-family: inherit;">-</span>                    </td>
+                    <td>Str. CEAIRULUI, Nr. 1, Bl. J9, Sc. 2,3, Bucuresti, Bucuresti</td>
+                    <td>
+                        <span style="font-size: 12.5px; color: var(--text-muted);">
+                            NOD NOU                        </span>
+                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-warning">Comandă</span>                    </td>
+                    <td style="text-align: center;">
+                        <button type="button" class="btn-action-icon" title="Detalii rezervare"
+                                onclick="alert('Detalii rezervare: Str. CEAIRULUI, Nr. 1, Bl. J9, Sc. 2,3, Bucuresti, Bucuresti');">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                                <tr data-search="bucuresti str. estacadei, nr. 4, bl. n25, sc. 2, et. 0, apt. 20, bucuresti, bucuresti - nod nou comandă">
+                    <td style="font-weight: 500;">Bucuresti</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        22.12.2015                    </td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        -                    </td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <span style="color: var(--text-muted); font-family: inherit;">-</span>                    </td>
+                    <td>Str. ESTACADEI, Nr. 4, Bl. N25, Sc. 2, Et. 0, Apt. 20, Bucuresti, Bucuresti</td>
+                    <td>
+                        <span style="font-size: 12.5px; color: var(--text-muted);">
+                            NOD NOU                        </span>
+                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-warning">Comandă</span>                    </td>
+                    <td style="text-align: center;">
+                        <button type="button" class="btn-action-icon" title="Detalii rezervare"
+                                onclick="alert('Detalii rezervare: Str. ESTACADEI, Nr. 4, Bl. N25, Sc. 2, Et. 0, Apt. 20, Bucuresti, Bucuresti');">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                                <tr data-search="târgu mures str. libertatii, nr. 109, bl. 109, sc. 1, apt. 80, târgu mures, mures - nod nou comandă">
+                    <td style="font-weight: 500;">Târgu Mures</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        26.05.2016                    </td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        -                    </td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <span style="color: var(--text-muted); font-family: inherit;">-</span>                    </td>
+                    <td>Str. LIBERTATII, Nr. 109, Bl. 109, Sc. 1, Apt. 80, Târgu Mures, Mures</td>
+                    <td>
+                        <span style="font-size: 12.5px; color: var(--text-muted);">
+                            NOD NOU                        </span>
+                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-warning">Comandă</span>                    </td>
+                    <td style="text-align: center;">
+                        <button type="button" class="btn-action-icon" title="Detalii rezervare"
+                                onclick="alert('Detalii rezervare: Str. LIBERTATII, Nr. 109, Bl. 109, Sc. 1, Apt. 80, Târgu Mures, Mures');">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                                <tr data-search="sibiu str. aleea steaza, nr. 2, bl. 2, sc. a, sibiu, sibiu 81-005-0015 nod nou rezervat">
+                    <td style="font-weight: 500;">Sibiu</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        28.06.2016                    </td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        28.06.2016                    </td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        81-005-0015                    </td>
+                    <td>Str. ALEEA STEAZA, Nr. 2, Bl. 2, Sc. A, Sibiu, Sibiu</td>
+                    <td>
+                        <span style="font-size: 12.5px; color: var(--text-muted);">
+                            NOD NOU                        </span>
+                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Rezervat</span>                    </td>
+                    <td style="text-align: center;">
+                        <button type="button" class="btn-action-icon" title="Detalii rezervare"
+                                onclick="alert('Detalii rezervare: Str. ALEEA STEAZA, Nr. 2, Bl. 2, Sc. A, Sibiu, Sibiu');">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                                <tr data-search="bucuresti str. theodor pallady, nr. 4, bl. m2, sc. e, distr. 3, bucuresti, bucuresti 81-001-0371 extindere rețea rezervat">
+                    <td style="font-weight: 500;">Bucuresti</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        07.11.2014                    </td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        23.03.2015                    </td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        81-001-0371                    </td>
+                    <td>Str. THEODOR PALLADY, Nr. 4, Bl. M2, Sc. E, Distr. 3, Bucuresti, Bucuresti</td>
+                    <td>
+                        <span style="font-size: 12.5px; color: var(--text-muted);">
+                            Extindere rețea                        </span>
+                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Rezervat</span>                    </td>
+                    <td style="text-align: center;">
+                        <button type="button" class="btn-action-icon" title="Detalii rezervare"
+                                onclick="alert('Detalii rezervare: Str. THEODOR PALLADY, Nr. 4, Bl. M2, Sc. E, Distr. 3, Bucuresti, Bucuresti');">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                                <tr data-search="bucuresti str. barsanesti, nr. 2, bl. 156, sc. 2, distr. 6, bucuresti, bucuresti 81-001-0891 nod nou rezervat">
+                    <td style="font-weight: 500;">Bucuresti</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        25.10.2018                    </td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        25.10.2018                    </td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        81-001-0891                    </td>
+                    <td>Str. BARSANESTI, Nr. 2, Bl. 156, Sc. 2, Distr. 6, Bucuresti, Bucuresti</td>
+                    <td>
+                        <span style="font-size: 12.5px; color: var(--text-muted);">
+                            NOD NOU                        </span>
+                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Rezervat</span>                    </td>
+                    <td style="text-align: center;">
+                        <button type="button" class="btn-action-icon" title="Detalii rezervare"
+                                onclick="alert('Detalii rezervare: Str. BARSANESTI, Nr. 2, Bl. 156, Sc. 2, Distr. 6, Bucuresti, Bucuresti');">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                                <tr data-search="bucuresti str. barsanesti, nr. 2, bl. 156, sc. c, distr. 6, bucuresti, bucuresti 81-001-0892 nod nou rezervat">
+                    <td style="font-weight: 500;">Bucuresti</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        25.10.2018                    </td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        25.10.2018                    </td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        81-001-0892                    </td>
+                    <td>Str. BARSANESTI, Nr. 2, Bl. 156, Sc. C, Distr. 6, Bucuresti, Bucuresti</td>
+                    <td>
+                        <span style="font-size: 12.5px; color: var(--text-muted);">
+                            NOD NOU                        </span>
+                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Rezervat</span>                    </td>
+                    <td style="text-align: center;">
+                        <button type="button" class="btn-action-icon" title="Detalii rezervare"
+                                onclick="alert('Detalii rezervare: Str. BARSANESTI, Nr. 2, Bl. 156, Sc. C, Distr. 6, Bucuresti, Bucuresti');">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                                <tr data-search="bucuresti str. caporal gheorghe ion, nr. 11, bl. 103, sc. 2, distr. 4, bucuresti 81-001-0990 nod nou rezervat">
+                    <td style="font-weight: 500;">Bucuresti</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        15.05.2019                    </td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        15.05.2019                    </td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        81-001-0990                    </td>
+                    <td>Str. CAPORAL GHEORGHE ION, Nr. 11, Bl. 103, Sc. 2, Distr. 4, Bucuresti</td>
+                    <td>
+                        <span style="font-size: 12.5px; color: var(--text-muted);">
+                            NOD NOU                        </span>
+                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Rezervat</span>                    </td>
+                    <td style="text-align: center;">
+                        <button type="button" class="btn-action-icon" title="Detalii rezervare"
+                                onclick="alert('Detalii rezervare: Str. CAPORAL GHEORGHE ION, Nr. 11, Bl. 103, Sc. 2, Distr. 4, Bucuresti');">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                                <tr data-search="bucuresti str. pridvorului, nr. 13, bl. 13, sc. 2, distr. 4, bucuresti, bucuresti 81-001-1007 nod nou rezervat">
+                    <td style="font-weight: 500;">Bucuresti</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        19.06.2019                    </td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        19.06.2019                    </td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        81-001-1007                    </td>
+                    <td>Str. PRIDVORULUI, Nr. 13, Bl. 13, Sc. 2, Distr. 4, Bucuresti, Bucuresti</td>
+                    <td>
+                        <span style="font-size: 12.5px; color: var(--text-muted);">
+                            NOD NOU                        </span>
+                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Rezervat</span>                    </td>
+                    <td style="text-align: center;">
+                        <button type="button" class="btn-action-icon" title="Detalii rezervare"
+                                onclick="alert('Detalii rezervare: Str. PRIDVORULUI, Nr. 13, Bl. 13, Sc. 2, Distr. 4, Bucuresti, Bucuresti');">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                                <tr data-search="bucuresti str. calea dudesti, nr. 104-122, bl. cmg vitan, sc. 2, distr. 3, bucuresti 81-001-1186 nod nou rezervat">
+                    <td style="font-weight: 500;">Bucuresti</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        27.03.2020                    </td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        27.03.2020                    </td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        81-001-1186                    </td>
+                    <td>Str. CALEA DUDESTI, Nr. 104-122, Bl. CMG VITAN, Sc. 2, Distr. 3, Bucuresti</td>
+                    <td>
+                        <span style="font-size: 12.5px; color: var(--text-muted);">
+                            NOD NOU                        </span>
+                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Rezervat</span>                    </td>
+                    <td style="text-align: center;">
+                        <button type="button" class="btn-action-icon" title="Detalii rezervare"
+                                onclick="alert('Detalii rezervare: Str. CALEA DUDESTI, Nr. 104-122, Bl. CMG VITAN, Sc. 2, Distr. 3, Bucuresti');">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                                <tr data-search="iasi str. aleea rozelor, nr. 32, bl. k3, iasi, iasi 81-003-0036 nod nou rezervat">
+                    <td style="font-weight: 500;">Iasi</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        19.10.2015                    </td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        19.10.2015                    </td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        81-003-0036                    </td>
+                    <td>Str. ALEEA ROZELOR, Nr. 32, Bl. K3, Iasi, Iasi</td>
+                    <td>
+                        <span style="font-size: 12.5px; color: var(--text-muted);">
+                            NOD NOU                        </span>
+                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Rezervat</span>                    </td>
+                    <td style="text-align: center;">
+                        <button type="button" class="btn-action-icon" title="Detalii rezervare"
+                                onclick="alert('Detalii rezervare: Str. ALEEA ROZELOR, Nr. 32, Bl. K3, Iasi, Iasi');">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                                <tr data-search="târgu mures str. vasile lucaciu, nr. 4, bl. 4, sc. 0, târgu mures, mures 81-004-0932 nod nou rezervat">
+                    <td style="font-weight: 500;">Târgu Mures</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        14.02.2024                    </td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        14.02.2024                    </td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        81-004-0932                    </td>
+                    <td>Str. VASILE LUCACIU, Nr. 4, Bl. 4, Sc. 0, Târgu Mures, Mures</td>
+                    <td>
+                        <span style="font-size: 12.5px; color: var(--text-muted);">
+                            NOD NOU                        </span>
+                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Rezervat</span>                    </td>
+                    <td style="text-align: center;">
+                        <button type="button" class="btn-action-icon" title="Detalii rezervare"
+                                onclick="alert('Detalii rezervare: Str. VASILE LUCACIU, Nr. 4, Bl. 4, Sc. 0, Târgu Mures, Mures');">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                                <tr data-search="cisnadie str. wernigerode, nr. c, bl. c, sc. a, cisnadie, sibiu 81-007-0110 nod nou rezervat">
+                    <td style="font-weight: 500;">Cisnadie</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        25.05.2024                    </td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        25.05.2024                    </td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        81-007-0110                    </td>
+                    <td>Str. WERNIGERODE, Nr. C, Bl. C, Sc. A, Cisnadie, Sibiu</td>
+                    <td>
+                        <span style="font-size: 12.5px; color: var(--text-muted);">
+                            NOD NOU                        </span>
+                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Rezervat</span>                    </td>
+                    <td style="text-align: center;">
+                        <button type="button" class="btn-action-icon" title="Detalii rezervare"
+                                onclick="alert('Detalii rezervare: Str. WERNIGERODE, Nr. C, Bl. C, Sc. A, Cisnadie, Sibiu');">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                                <tr data-search="râmnicu vâlcea str. g-ral magheru, bl. g, sc. g, apt. 10, râmnicu vâlcea, valcea 81-010-0032 nod nou rezervat">
+                    <td style="font-weight: 500;">Râmnicu Vâlcea</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        23.03.2018                    </td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        23.03.2018                    </td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        81-010-0032                    </td>
+                    <td>Str. G-RAL MAGHERU, Bl. G, Sc. G, Apt. 10, Râmnicu Vâlcea, Valcea</td>
+                    <td>
+                        <span style="font-size: 12.5px; color: var(--text-muted);">
+                            NOD NOU                        </span>
+                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Rezervat</span>                    </td>
+                    <td style="text-align: center;">
+                        <button type="button" class="btn-action-icon" title="Detalii rezervare"
+                                onclick="alert('Detalii rezervare: Str. G-RAL MAGHERU, Bl. G, Sc. G, Apt. 10, Râmnicu Vâlcea, Valcea');">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                                <tr data-search="tulcea str. cicoarei, nr. 9, bl. 8, sc. a, tulcea, tulcea 81-011-0046 montare apometre rezervat">
+                    <td style="font-weight: 500;">Tulcea</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        27.09.2018                    </td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        19.10.2018                    </td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        81-011-0046                    </td>
+                    <td>Str. Cicoarei, Nr. 9, Bl. 8, Sc. A, Tulcea, Tulcea</td>
+                    <td>
+                        <span style="font-size: 12.5px; color: var(--text-muted);">
+                            Montare apometre                        </span>
+                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Rezervat</span>                    </td>
+                    <td style="text-align: center;">
+                        <button type="button" class="btn-action-icon" title="Detalii rezervare"
+                                onclick="alert('Detalii rezervare: Str. Cicoarei, Nr. 9, Bl. 8, Sc. A, Tulcea, Tulcea');">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                                <tr data-search="brasov str. saturn, nr. 40, bl. 19, sc. a, brasov, brasov - nod nou comandă">
+                    <td style="font-weight: 500;">Brasov</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        19.12.2024                    </td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        -                    </td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <span style="color: var(--text-muted); font-family: inherit;">-</span>                    </td>
+                    <td>Str. SATURN, Nr. 40, Bl. 19, Sc. A, Brasov, Brasov</td>
+                    <td>
+                        <span style="font-size: 12.5px; color: var(--text-muted);">
+                            NOD NOU                        </span>
+                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-warning">Comandă</span>                    </td>
+                    <td style="text-align: center;">
+                        <button type="button" class="btn-action-icon" title="Detalii rezervare"
+                                onclick="alert('Detalii rezervare: Str. SATURN, Nr. 40, Bl. 19, Sc. A, Brasov, Brasov');">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                                <tr data-search="târgu mures str. godeanu, nr. 1, bl. 1, sc. 0, târgu mures, mures - nod nou comandă">
+                    <td style="font-weight: 500;">Târgu Mures</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        31.03.2026                    </td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        -                    </td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <span style="color: var(--text-muted); font-family: inherit;">-</span>                    </td>
+                    <td>Str. GODEANU, Nr. 1, Bl. 1, Sc. 0, Târgu Mures, Mures</td>
+                    <td>
+                        <span style="font-size: 12.5px; color: var(--text-muted);">
+                            NOD NOU                        </span>
+                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-warning">Comandă</span>                    </td>
+                    <td style="text-align: center;">
+                        <button type="button" class="btn-action-icon" title="Detalii rezervare"
+                                onclick="alert('Detalii rezervare: Str. GODEANU, Nr. 1, Bl. 1, Sc. 0, Târgu Mures, Mures');">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                                <tr data-search="bucuresti str. caporal preda, nr. 2, bl. 3e, sc. 2, distr. 5, bucuresti, bucuresti - documentație lipsă respins comandă">
+                    <td style="font-weight: 500;">Bucuresti</td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        14.10.2024                    </td>
+                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                        -                    </td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <span style="color: var(--text-muted); font-family: inherit;">-</span>                    </td>
+                    <td>Str. CAPORAL PREDA, Nr. 2, Bl. 3E, Sc. 2, Distr. 5, Bucuresti, Bucuresti</td>
+                    <td>
+                        <span style="font-size: 12.5px; color: var(--text-muted);">
+                            Documentație lipsă                        </span>
+                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">Respins</span>                    </td>
+                    <td style="text-align: center;">
+                        <button type="button" class="btn-action-icon" title="Detalii rezervare"
+                                onclick="alert('Detalii rezervare: Str. CAPORAL PREDA, Nr. 2, Bl. 3E, Sc. 2, Distr. 5, Bucuresti, Bucuresti');">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                            </tbody>
+        </table>
+    </div>
+
+    <!-- === Paginație === -->
+    <div class="table-pagination">
+        <div style="font-size: 13px; color: var(--text-muted);">
+            Afișare <strong>1</strong> - <strong id="resPaginationVisible">18</strong> din <strong>120</strong> înregistrări
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" disabled>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                <span>Anterior</span>
+            </button>
+            <div class="pagination-pages">
+                <button type="button" class="btn-secondary active" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;">1</button>
+                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 2')">2</button>
+            </div>
+            <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" onclick="alert('Pagina următoare')">
+                <span>Următor</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
     </div>
 </div>
 
-<div class="card" style="padding: 60px 40px; text-align: center; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; margin-top: 24px;">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="64" height="64" style="margin-bottom: 20px; opacity: 0.3; color: var(--accent);">
-        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-        <polyline points="2 17 12 22 22 17"></polyline>
-        <polyline points="2 12 12 17 22 12"></polyline>
-    </svg>
-    <h2 style="color: var(--text-main); margin-bottom: 12px; font-weight: 600;">În curând</h2>
-    <p style="font-size: 15px;">Interfața pentru <strong>Rezervare NOD</strong> nu a fost încă generată în acest demo.</p>
+<!-- ══ Modal Comandă NOD Nou ════════════════════════════════════════════ -->
+<div id="newOrderModal" class="modal-overlay" style="display: none;">
+    <div class="modal-card" style="max-width: 580px; width: 90%;">
+        <div class="modal-header">
+            <h3 class="modal-title">Comandă Rezervare NOD Nou</h3>
+            <button type="button" class="btn-action-icon" id="btnCloseOrderModal" title="Închide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <form id="newOrderForm" onsubmit="handleNewOrderSubmit(event)">
+            <div class="modal-body" style="padding: 20px;">
+                <div class="form-group" style="margin-bottom: 14px;">
+                    <label class="form-label" for="modalOrderCity">Localitate <span class="required-star">*</span></label>
+                    <select id="modalOrderCity" class="input-control" required>
+                        <option value="">Alege localitate...</option>
+                                                    <option value="Apold">Apold</option>
+                                                    <option value="Brasov">Brasov</option>
+                                                    <option value="Bucuresti">Bucuresti</option>
+                                                    <option value="Bucuresti_">Bucuresti_</option>
+                                                    <option value="Buftea">Buftea</option>
+                                                    <option value="Calimanesti">Calimanesti</option>
+                                                    <option value="Chiajna">Chiajna</option>
+                                                    <option value="Chitila">Chitila</option>
+                                                    <option value="Cisnadie">Cisnadie</option>
+                                                    <option value="Constanta">Constanta</option>
+                                                    <option value="Deva">Deva</option>
+                                                    <option value="Dobroesti">Dobroesti</option>
+                                                    <option value="Eforie Nord">Eforie Nord</option>
+                                                    <option value="Giurgiu">Giurgiu</option>
+                                                    <option value="Iasi">Iasi</option>
+                                                    <option value="Magurele">Magurele</option>
+                                                    <option value="Mamaia">Mamaia</option>
+                                                    <option value="Mangalia">Mangalia</option>
+                                                    <option value="Medgidia">Medgidia</option>
+                                                    <option value="Medias">Medias</option>
+                                                    <option value="Mihail Kogalniceanu">Mihail Kogalniceanu</option>
+                                                    <option value="Municipiul Târgu Mures">Municipiul Târgu Mures</option>
+                                                    <option value="Navodari">Navodari</option>
+                                                    <option value="Neptun">Neptun</option>
+                                                    <option value="Olimp">Olimp</option>
+                                                    <option value="Orasul Tulcea">Orasul Tulcea</option>
+                                                    <option value="Ovidiu">Ovidiu</option>
+                                                    <option value="Ploiesti">Ploiesti</option>
+                                                    <option value="Ploiestiori">Ploiestiori</option>
+                                                    <option value="Popesti Leordeni">Popesti Leordeni</option>
+                                                    <option value="Predeal">Predeal</option>
+                                                    <option value="Rosu">Rosu</option>
+                                                    <option value="Râmnicu Vâlcea">Râmnicu Vâlcea</option>
+                                                    <option value="Sibiu">Sibiu</option>
+                                                    <option value="Sighisoara">Sighisoara</option>
+                                                    <option value="Singeorgiu de Mures">Singeorgiu de Mures</option>
+                                                    <option value="Targu Mures">Targu Mures</option>
+                                                    <option value="Tulcea">Tulcea</option>
+                                                    <option value="Tunari">Tunari</option>
+                                                    <option value="Târgu Jiu">Târgu Jiu</option>
+                                                    <option value="Târgu Mures">Târgu Mures</option>
+                                                    <option value="Ungheni">Ungheni</option>
+                                                    <option value="Voluntari">Voluntari</option>
+                                            </select>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 14px;">
+                    <label class="form-label" for="modalOrderStreet">Stradă <span class="required-star">*</span></label>
+                    <input type="text" id="modalOrderStreet" class="input-control" placeholder="Denumire stradă..." required>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 14px;">
+                    <div class="form-group">
+                        <label class="form-label" for="modalOrderNo">Număr</label>
+                        <input type="text" id="modalOrderNo" class="input-control" placeholder="Nr.">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="modalOrderBlock">Bloc</label>
+                        <input type="text" id="modalOrderBlock" class="input-control" placeholder="Bl.">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="modalOrderStair">Scară</label>
+                        <input type="text" id="modalOrderStair" class="input-control" placeholder="Sc.">
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 14px;">
+                    <label class="form-label" for="modalOrderReason">Motiv Rezervare <span class="required-star">*</span></label>
+                    <select id="modalOrderReason" class="input-control" required>
+                        <option value="NOD NOU">NOD NOU (Branșament nou)</option>
+                        <option value="Extindere rețea">Extindere rețea / Apartamente noi</option>
+                        <option value="Montare apometre">Montare apometre radio</option>
+                        <option value="Inlocuire NOD">Înlocuire NOD existent</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="modalOrderNotes">Observații</label>
+                    <textarea id="modalOrderNotes" class="input-control" rows="2" placeholder="Detalii tehnice suplimentare..."></textarea>
+                </div>
+            </div>
+
+            <div class="modal-footer" style="padding: 16px 20px; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end; gap: 10px;">
+                <button type="button" class="btn-secondary" id="btnCancelOrderModal">Renunță</button>
+                <button type="submit" class="btn-primary">Trimite Comanda</button>
+            </div>
+        </form>
+    </div>
 </div>
+
+
+<!-- ══ NOD Picker Modal (partial) ════════════════════════════════════════════
+     React: <NodPickerModal id="nodPickerModalRes" onSelect={handleSelect} />
+══════════════════════════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="nodPickerModalRes" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="nodPickerModalRes-title">
+    <div class="modal-card nod-picker-card">
+        <div class="modal-header">
+            <h3 id="nodPickerModalRes-title">Alegere NOD</h3>
+            <button type="button" class="btn-close nod-picker-close" data-modal="nodPickerModalRes" title="Închide fereastra">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!-- Formular de filtrare -->
+            <form class="nod-picker-filter-form" id="nodPickerModalRes-form" onsubmit="return false;">
+                <div class="nod-picker-filter-grid">
+                    <!-- Localitate -->
+                    <div class="form-group">
+                        <label class="form-label" for="nodPickerModalRes-city">Localitate</label>
+                        <select id="nodPickerModalRes-city" class="input-control">
+                            <option value="-1">-</option>
+                                                        <option value="Apold">Apold</option>
+                                                        <option value="Brasov">Brasov</option>
+                                                        <option value="Bucuresti">Bucuresti</option>
+                                                        <option value="Bucuresti_">Bucuresti_</option>
+                                                        <option value="Buftea">Buftea</option>
+                                                        <option value="Calimanesti">Calimanesti</option>
+                                                        <option value="Chiajna">Chiajna</option>
+                                                        <option value="Chitila">Chitila</option>
+                                                        <option value="Cisnadie">Cisnadie</option>
+                                                        <option value="Constanta">Constanta</option>
+                                                        <option value="Deva">Deva</option>
+                                                        <option value="Dobroesti">Dobroesti</option>
+                                                        <option value="Eforie Nord">Eforie Nord</option>
+                                                        <option value="Giurgiu">Giurgiu</option>
+                                                        <option value="Iasi">Iasi</option>
+                                                        <option value="Magurele">Magurele</option>
+                                                        <option value="Mamaia">Mamaia</option>
+                                                        <option value="Mangalia">Mangalia</option>
+                                                        <option value="Medgidia">Medgidia</option>
+                                                        <option value="Medias">Medias</option>
+                                                        <option value="Mihail Kogalniceanu">Mihail Kogalniceanu</option>
+                                                        <option value="Municipiul Târgu Mures">Municipiul Târgu Mures</option>
+                                                        <option value="Navodari">Navodari</option>
+                                                        <option value="Neptun">Neptun</option>
+                                                        <option value="Olimp">Olimp</option>
+                                                        <option value="Orasul Tulcea">Orasul Tulcea</option>
+                                                        <option value="Ovidiu">Ovidiu</option>
+                                                        <option value="Ploiesti">Ploiesti</option>
+                                                        <option value="Ploiestiori">Ploiestiori</option>
+                                                        <option value="Popesti Leordeni">Popesti Leordeni</option>
+                                                        <option value="Predeal">Predeal</option>
+                                                        <option value="Rosu">Rosu</option>
+                                                        <option value="Râmnicu Vâlcea">Râmnicu Vâlcea</option>
+                                                        <option value="Sibiu">Sibiu</option>
+                                                        <option value="Sighisoara">Sighisoara</option>
+                                                        <option value="Singeorgiu de Mures">Singeorgiu de Mures</option>
+                                                        <option value="Targu Mures">Targu Mures</option>
+                                                        <option value="Tulcea">Tulcea</option>
+                                                        <option value="Tunari">Tunari</option>
+                                                        <option value="Târgu Jiu">Târgu Jiu</option>
+                                                        <option value="Târgu Mures">Târgu Mures</option>
+                                                        <option value="Ungheni">Ungheni</option>
+                                                        <option value="Voluntari">Voluntari</option>
+                                                    </select>
+                    </div>
+                    <!-- Strada -->
+                    <div class="form-group">
+                        <label class="form-label" for="nodPickerModalRes-street">Strada</label>
+                        <input type="text" id="nodPickerModalRes-street" class="input-control" placeholder="Denumire stradă...">
+                    </div>
+                    <!-- Tip -->
+                    <div class="form-group">
+                        <label class="form-label" for="nodPickerModalRes-type">Tip</label>
+                        <select id="nodPickerModalRes-type" class="input-control">
+                            <option value="-1">-</option>
+                            <option value="1">Cu agenți economici</option>
+                            <option value="2">Fără agenți economici</option>
+                        </select>
+                    </div>
+                    <!-- Asociație -->
+                    <div class="form-group">
+                        <label class="form-label" for="nodPickerModalRes-assoc">Asociație</label>
+                        <input type="text" id="nodPickerModalRes-assoc" class="input-control" placeholder="Nume asociație...">
+                    </div>
+                    <!-- Cod NOD -->
+                    <div class="form-group">
+                        <label class="form-label" for="nodPickerModalRes-code">Cod NOD</label>
+                        <input type="text" id="nodPickerModalRes-code" class="input-control" placeholder="Cod...">
+                    </div>
+                </div>
+                <div class="nod-picker-filter-actions">
+                    <div class="filter-per-page">
+                        <label class="filter-per-page-label" for="nodPickerModalRes-perpage">Înreg / pag</label>
+                        <select id="nodPickerModalRes-perpage" class="input-control select-per-page">
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100" selected>100</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn-secondary nod-picker-reset" data-modal="nodPickerModalRes">Resetează</button>
+                    <button type="button" class="btn-primary nod-picker-search" data-modal="nodPickerModalRes">Caută</button>
+                </div>
+            </form>
+
+            <!-- Tabelul de rezultate NOD -->
+            <div class="nod-picker-table-wrap">
+                <table class="modal-table">
+                    <thead>
+                        <tr>
+                            <th>NOD</th>
+                            <th>Adresă NOD</th>
+                            <th>Asociație</th>
+                            <th class="nod-picker-th-sel"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="nod-picker-tbody" id="nodPickerModalRes-tbody">
+                        <!-- Populat dinamic prin JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Paginație Modal -->
+            <div class="nod-picker-pagination">
+                <span class="nod-picker-count-label">
+                    Afișare NOD-uri: <strong class="nod-picker-count" id="nodPickerModalRes-count">0</strong>
+                </span>
+                <div class="nod-picker-page-btns">
+                    <button type="button" class="btn-action-icon nod-picker-prev" data-modal="nodPickerModalRes" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button type="button" class="btn-action-icon nod-picker-next" data-modal="nodPickerModalRes" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </div><!-- /modal-body -->
+    </div><!-- /modal-card -->
+</div><!-- /modal-overlay -->
+
+<!-- NOD Picker: date & logică JS ============================================
+     React: datele vin din props/API; logica este în NodPickerModal.tsx
+============================================================================ -->
+<script>
+(function() {
+    /* ── Date NOD ────────────────────────────────────────────────────── */
+    var _nodPickerData_nodPickerModalRes = [
+    { id: "1",  code: "81-001-0001", address: "Str. STEFAN CEL MARE, Nr. 27, Bl. 27, Sc. 1, Distr. 2, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC 27 SCARA 1",    city: "Bucuresti", street: "stefan cel mare",          ownerType: "1" },
+    { id: "2",  code: "81-001-0002", address: "Str. REZILIAT, Nr. 36, Bl. Vila, Sc. 1, Distr. 1, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC VILA",          city: "Bucuresti", street: "reziliat",                  ownerType: "1" },
+    { id: "3",  code: "81-001-0003", address: "Str. REZILIAT, Sc. 1, Distr. 5, Bucuresti",                              association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "14", code: "81-001-0004", address: "Str. GURA IALOMITEI, Nr. 3, Bl. PC9, Sc. B, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC PC9 SCARA B",   city: "Bucuresti", street: "gura ialomitei",             ownerType: "1" },
+    { id: "15", code: "81-001-0005", address: "Str. GURA IALOMITEI, Nr. 3, Bl. PC9, Sc. A, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC PC9 SCARA A",   city: "Bucuresti", street: "gura ialomitei",             ownerType: "1" },
+    { id: "16", code: "81-001-0006", address: "Str. REZILIAT, Nr. 28, Bl. V81A, Sc. A, Distr. 3, Bucuresti",           association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "17", code: "81-001-0007", address: "Str. Laborator, Nr. 125-127, Bl. S1, Sc. 2, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC S1 SCARA 2",    city: "Bucuresti", street: "laborator",                  ownerType: "1" },
+    { id: "18", code: "81-001-0008", address: "Str. Liber, Nr. 012, Bl. 0, Sc. 2, Bucuresti",                          association: "",                                            city: "Bucuresti", street: "liber",                     ownerType: "2" },
+    { id: "20", code: "81-001-0010", address: "Str. BIBESCU VODA, Nr. 2, Bl. P5, Sc. 4, Distr. 4, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC P5 SCARA 4",    city: "Bucuresti", street: "bibescu voda",               ownerType: "1" },
+    { id: "21", code: "81-001-0011", address: "Str. REZILIAT, Sc. A+B, Apt. -, Distr. 3, Bucuresti",                   association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "22", code: "81-001-0012", address: "Str. MIHAI BRAVU, Nr. 291, Bl. 12A, Sc. 1, Distr. 3, Bucuresti",        association: "ASOCIATIA DE PROPRIETARI BLOC 12A SCARA A",   city: "Bucuresti", street: "mihai bravu",                ownerType: "1" },
+    { id: "23", code: "81-001-0013", address: "Str. REZILIAT, Sc. 1, Distr. 3, Bucuresti",                             association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "25", code: "81-001-0015", address: "Str. REZILIAT, Sc. 2, Distr. 3, Bucuresti",                             association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "27", code: "81-001-0017", address: "Str. SIBIU, Nr. 18, Bl. 813, Sc. 1, Distr. 6, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BL 813",             city: "Bucuresti", street: "sibiu",                     ownerType: "1" },
+    { id: "28", code: "81-001-0018", address: "Str. UNIRII, Nr. 13, Bl. 2C, Sc. 1, Distr. 5, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BLOC 2C",            city: "Bucuresti", street: "unirii",                    ownerType: "1" },
+    { id: "29", code: "81-001-0019", address: "Str. UNIRII, Nr. 13, Bl. 2C, Sc. 2, Distr. 5, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BLOC 2C",            city: "Bucuresti", street: "unirii",                    ownerType: "1" },
+    { id: "30", code: "81-001-0020", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 1, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "31", code: "81-001-0021", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 2, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "32", code: "81-001-0022", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 3, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "34", code: "81-001-0023", address: "Str. OTESANI, Nr. 14, Bl. T8B, Sc. 1, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC T8B",           city: "Bucuresti", street: "otesani",                   ownerType: "1" },
+    { id: "35", code: "81-001-0024", address: "Str. COLENTINA, Nr. 70, Bl. 108, Sc. 1, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 108",           city: "Bucuresti", street: "colentina",                  ownerType: "1" },
+    { id: "36", code: "81-001-0025", address: "Str. FUNDENI, Nr. 227, Bl. 116B, Sc. A, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 116B",          city: "Bucuresti", street: "fundeni",                   ownerType: "1" },
+    { id: "37", code: "81-001-0026", address: "Str. FUNDENI, Nr. 227, Bl. 116B, Sc. B, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 116B",          city: "Bucuresti", street: "fundeni",                   ownerType: "1" },
+    { id: "40", code: "81-001-0029", address: "Str. CONSTANTIN RADULESCU MOTRU, Nr. 23, Bl. B35, Sc. B, Distr. 4",    association: "ASOCIATIA DE PROPRIETARI BLOC 35 SCARA 2",   city: "Bucuresti", street: "constantin radulescu motru", ownerType: "1" },
+    { id: "41", code: "81-001-0030", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. A, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA A",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "42", code: "81-001-0031", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. B, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA B",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "43", code: "81-001-0032", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. E, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA E",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "51", code: "81-001-0040", address: "Str. CALEA MOSILOR, Nr. 241, Bl. 47, Sc. A+B+C, Distr. 2, Bucuresti",  association: "ASOCIATIA DE PROPRIETARI BLOC 47",            city: "Bucuresti", street: "calea mosilor",              ownerType: "1" },
+    { id: "52", code: "81-001-0041", address: "Str. MURGENI, Nr. 7, Bl. L27, Sc. A, Distr. 3, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC L27",           city: "Bucuresti", street: "murgeni",                   ownerType: "1" },
+    { id: "53", code: "81-001-0042", address: "Str. ALEEA CODLEA, Nr. 6, Bl. J3, Sc. 1, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC J3",            city: "Bucuresti", street: "aleea codlea",               ownerType: "1" },
+    { id: "54", code: "81-001-0043", address: "Str. ALEEA ROTUNDA, Nr. 1-4, Bl. Y1B, Sc. 5, Distr. 3, Bucuresti",     association: "ASOCIATIA DE PROPRIETARI BLOC Y1B SCARA 1-5", city: "Bucuresti", street: "aleea rotunda",              ownerType: "1" },
+    { id: "59", code: "81-001-0047", address: "Str. LACUL TEI, Nr. 121, Bl. 5, Sc. 1, Distr. 2, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC 5 SCARA 1-4",  city: "Bucuresti", street: "lacul tei",                  ownerType: "1" },
+    { id: "65", code: "81-001-0053", address: "Str. CALEA VACARESTI, Nr. 308, Bl. 1E, Sc. 1, Distr. 4, Bucuresti",    association: "ASOCIATIA DE PROPRIETARI BLOC 1E",            city: "Bucuresti", street: "calea vacaresti",            ownerType: "1" },
+    { id: "66", code: "81-001-0054", address: "Str. OLTENITEI, Nr. 140, Bl. 5, Sc. 3, Distr. 4, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC 5 SCARA 3",    city: "Bucuresti", street: "oltenitei",                  ownerType: "1" },
+    { id: "8",  code: "81-001-0055", address: "Str. ALEEA BARSANESTI, Nr. 2, Bl. 156, Sc. 2, Distr. 6, Bucuresti",    association: "ASOCIATIA DE PROPRIETARI BLOC156 SC. 2",     city: "Bucuresti", street: "aleea barsanesti",           ownerType: "1" },
+    { id: "68", code: "81-001-0057", address: "Str. CEAHLAU, Nr. 15, Bl. 75, Sc. 1, Distr. 6, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC 75",            city: "Bucuresti", street: "ceahlau",                   ownerType: "1" },
+    { id: "69", code: "81-001-0058", address: "Str. CEAHLAU, Nr. 15, Bl. 75, Sc. 2, Distr. 6, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC 75",            city: "Bucuresti", street: "ceahlau",                   ownerType: "1" }
+];
+
+    /* ── Configurare instanță ────────────────────────────────────────── */
+    var _cfg = {
+        modalId:    "nodPickerModalRes",
+        inputId:    "txtNODRes",
+        btnOpenId:  "btnOpenNodModalRes",
+        callback:   null   /* funcție opțională apelată la selecție */
+    };
+
+    function initNodPicker_nodPickerModalRes() {
+        NodPicker.init(
+            _cfg,
+            _nodPickerData_nodPickerModalRes        );
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initNodPicker_nodPickerModalRes);
+    } else {
+        initNodPicker_nodPickerModalRes();
+    }
+})();
+</script>
+
+<script>
+/**
+ * Căutare dinamică client-side și modal comandă nouă.
+ * React conversion: se mută în hook-urile componentei <NodReservationListPage />
+ */
+(function () {
+    'use strict';
+
+    var searchInput  = document.getElementById('resTableSearch');
+    var tableBody    = document.getElementById('reservationsTableBody');
+    var visibleCount = document.getElementById('resVisibleCount');
+    var pagCountEl   = document.getElementById('resPaginationVisible');
+
+    if (searchInput && tableBody) {
+        searchInput.addEventListener('input', function () {
+            var term    = this.value.trim().toLowerCase();
+            var rows    = tableBody.querySelectorAll('tr');
+            var visible = 0;
+
+            rows.forEach(function (row) {
+                var haystack = row.getAttribute('data-search') || '';
+                var show     = !term || haystack.indexOf(term) !== -1;
+                row.style.display = show ? '' : 'none';
+                if (show) visible++;
+            });
+
+            if (visibleCount) visibleCount.textContent = visible;
+            if (pagCountEl) pagCountEl.textContent = visible;
+        });
+    }
+
+    // Modal Comandă NOD
+    var modalOrder = document.getElementById('newOrderModal');
+    var btnOpen    = document.getElementById('btnOpenNewOrderModal');
+    var btnClose   = document.getElementById('btnCloseOrderModal');
+    var btnCancel  = document.getElementById('btnCancelOrderModal');
+
+    if (btnOpen && modalOrder) {
+        btnOpen.addEventListener('click', function () {
+            modalOrder.style.display = 'flex';
+        });
+    }
+
+    function closeModal() {
+        if (modalOrder) modalOrder.style.display = 'none';
+    }
+
+    if (btnClose)  btnClose.addEventListener('click', closeModal);
+    if (btnCancel) btnCancel.addEventListener('click', closeModal);
+
+    if (modalOrder) {
+        modalOrder.addEventListener('click', function (e) {
+            if (e.target === modalOrder) closeModal();
+        });
+    }
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modalOrder && modalOrder.style.display === 'flex') {
+            closeModal();
+        }
+    });
+})();
+
+function handleNewOrderSubmit(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    alert('Comanda pentru rezervare NOD a fost transmisă cu succes!');
+    var modal = document.getElementById('newOrderModal');
+    if (modal) modal.style.display = 'none';
+    return false;
+}
+</script>
 
     </div><!-- /.content -->
     <footer class="app-footer">

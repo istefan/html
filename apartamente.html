@@ -22,12 +22,12 @@
     <!-- ── Logo ─────────────────────────────────────────────────────── -->
     <!-- React: <SidebarLogo activeApp={activeApp} /> -->
     <div class="logo">
-        <a href="index.html" title="SONIC GRID – Acasă">
-            <img src="assets/images/sonic-grid-logo.svg"
-                 alt="SONIC GRID"
+        <a href="sonic-dashboard.html" title="SONIC – Acasă">
+            <img src="assets/images/sonic-logo.svg"
+                 alt="SONIC"
                  class="logo-full"
                  id="sidebarLogo">
-            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">SG</span>
+            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">S</span>
         </a>
     </div>
 
@@ -36,7 +36,7 @@
     <nav class="sidebar-nav" aria-label="Navigare principală">
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC GRID
+             ║  1. SONIC GRID
              ╚══════════════════════════════════════════════════════════════ -->
         <div class="app-section"
              data-app="sonic-grid"
@@ -44,6 +44,7 @@
              data-logo-icon="SG">
             <button class="app-section-header" type="button" title="SONIC GRID">
                 <img src="assets/images/sonic-grid-logo.svg" class="app-section-logo" alt="SONIC GRID">
+                <span class="app-section-badge">SG</span>
             </button>
             <div class="app-section-body">
 
@@ -142,14 +143,71 @@
         </div>
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC BILLING
+             ║  2. SONIC MARKET
              ╚══════════════════════════════════════════════════════════════ -->
-        <div class="app-section open"
+        <div class="app-section"
+             data-app="sonic-market"
+             data-logo="assets/images/sonic-market-logo.svg"
+             data-logo-icon="SM">
+            <button class="app-section-header" type="button" title="SONIC MARKET">
+                <img src="assets/images/sonic-market-logo.svg" class="app-section-logo" alt="SONIC MARKET">
+                <span class="app-section-badge">SM</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard Market -->
+                <a href="market-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  3. SONIC PRO
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-pro"
+             data-logo="assets/images/sonic-pro-logo.svg"
+             data-logo-icon="SP">
+            <button class="app-section-header" type="button" title="SONIC PRO">
+                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+                <span class="app-section-badge">SP</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard PRO -->
+                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- Intervenții -->
+                <a href="interventii.html" class="nav-item " title="Intervenții">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </span>
+                    <span class="nav-label">Intervenții</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  4. SONIC BILLING
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
              data-app="sonic-billing"
              data-logo="assets/images/sonic-billing-logo.svg"
-             data-logo-icon="SG">
+             data-logo-icon="SB">
             <button class="app-section-header" type="button" title="SONIC BILLING">
                 <img src="assets/images/sonic-billing-logo.svg" class="app-section-logo" alt="SONIC BILLING">
+                <span class="app-section-badge">SB</span>
             </button>
             <div class="app-section-body">
 
@@ -213,25 +271,6 @@
                         <a href="modele-repartitoare.html" class="nav-subitem ">Modele Repartitoare</a>
                         <a href="modele-contoare.html" class="nav-subitem ">Modele Contoare</a>
                         <a href="serii-apometre.html" class="nav-subitem ">Serii Apometre Achiziționate</a>
-                    </div>
-                </div>
-
-                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
-                <div class="nav-group open" data-group="master-data">
-                    <button class="nav-group-title" type="button" title="Master Data Management">
-                        <span class="nav-group-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </span>
-                        <span class="nav-label">Master Data Management</span>
-                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                    </button>
-                    <div class="nav-subitems">
-                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
-                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
-                        <a href="apartamente.html" class="nav-subitem active">Apartamente</a>
-                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
-                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
-                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
                     </div>
                 </div>
 
@@ -349,32 +388,68 @@
         </div>
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC PRO
+             ║  5. SONIC FIN
              ╚══════════════════════════════════════════════════════════════ -->
         <div class="app-section"
-             data-app="sonic-pro"
-             data-logo="assets/images/sonic-pro-logo.svg"
-             data-logo-icon="SP">
-            <button class="app-section-header" type="button" title="SONIC PRO">
-                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+             data-app="sonic-fin"
+             data-logo="assets/images/sonic-fin-logo.svg"
+             data-logo-icon="SF">
+            <button class="app-section-header" type="button" title="SONIC FIN">
+                <img src="assets/images/sonic-fin-logo.svg" class="app-section-logo" alt="SONIC FIN">
+                <span class="app-section-badge">SF</span>
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
-                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                <!-- Dashboard FIN -->
+                <a href="fin-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  6. SONIC (Base – Ecosistem & Configurare)
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section open"
+             data-app="sonic"
+             data-logo="assets/images/sonic-logo.svg"
+             data-logo-icon="S">
+            <button class="app-section-header" type="button" title="SONIC">
+                <img src="assets/images/sonic-logo.svg" class="app-section-logo" alt="SONIC">
+                <span class="app-section-badge">S</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard SONIC -->
+                <a href="sonic-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
-                    <span class="nav-label">Intervenții</span>
+                    <span class="nav-label">Dashboard</span>
                 </a>
+
+                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <div class="nav-group open" data-group="master-data">
+                    <button class="nav-group-title" type="button" title="Master Data Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Master Data Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
+                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
+                        <a href="apartamente.html" class="nav-subitem active">Apartamente</a>
+                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
+                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
+                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -449,7 +524,7 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="index.html">
+            <a href="sonic-dashboard.html">
                 <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
             </a>
         </div>
@@ -483,7 +558,51 @@
     <div class="help-wrapper">
         <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
             <div class="help-panel-inner">
-                                <p class="help-empty">Nu există informații de ajutor disponibile pentru această pagină.</p>
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generala                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Filtrare si Cautare                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Selectie NOD (Pop-up modal)                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        <h4>Gestiune Apartamente</h4><p>Aceasta pagina permite vizualizarea si administrarea apartamentelor inregistrate in sistem, asociate unui NOD si unui partener contractual.</p>                    </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        <h4>Cum functioneaza filtrele?</h4><ul><li><strong>Filtre principale (Server-side):</strong> Utilizati formularul de sus pentru a cauta dupa NOD, Proprietar, Localitate, Bloc, Scara, Etaj, Apartament, Asociatie sau Tip contorizare. Apasati <em>Cauta</em> pentru a aplica filtrele.</li><li><strong>Cautare dinamica (Client-side):</strong> Utilizati caseta de cautare din bara tabelului pentru a filtra instantaneu dupa proprietar sau adresa, fara reincarcarea paginii.</li></ul>                    </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        <h4>Selectie NOD de consum</h4><p>Apasati pe pictograma cu lupa din dreptul campului <strong>NOD</strong> pentru a deschide modalul interactiv de selectie NOD.</p>                    </div>
+                                    </div>
                     </div><!-- /.help-panel-inner -->
         </div><!-- /.help-panel -->
         
@@ -513,19 +632,979 @@
 <div class="page-title-container">
     <div class="page-title">
         <h1>Apartamente</h1>
-        <p>Pagina este în construcție.</p>
+        <p>Vizualizeaza, filtreaza si administreaza apartamentele inregistrate in sistem.</p>
     </div>
 </div>
 
-<div class="card" style="padding: 60px 40px; text-align: center; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; margin-top: 24px;">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="64" height="64" style="margin-bottom: 20px; opacity: 0.3; color: var(--accent);">
-        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-        <polyline points="2 17 12 22 22 17"></polyline>
-        <polyline points="2 12 12 17 22 12"></polyline>
-    </svg>
-    <h2 style="color: var(--text-main); margin-bottom: 12px; font-weight: 600;">În curând</h2>
-    <p style="font-size: 15px;">Interfața pentru <strong>Apartamente</strong> nu a fost încă generată în acest demo.</p>
+<div class="card" style="margin-bottom: 24px;">
+    <div style="margin-bottom: 18px;">
+        <span class="chart-title" style="font-size: 14px; font-weight: 600;">Filtrare Avansata</span>
+    </div>
+    <form method="GET" action="apartamente.html" id="filterFormApartamente">
+        <div class="filter-grid">
+
+            <div class="form-group">
+                <label class="form-label" for="txtNODApartamente">NOD</label>
+                <div class="picker-group">
+                    <input type="text" id="txtNODApartamente" name="nod_picker" class="input-control" readonly placeholder="Click pe lupa..." value="">
+                    <button type="button" class="btn-picker" id="btnOpenNodModalApart" title="Deschide selector NOD">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                    <button type="button" class="btn-picker delete" title="Sterge selectie" onclick="document.getElementById('txtNODApartamente').value=''">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="txtProprietarApart">Proprietar</label>
+                <input type="text" name="proprietar" id="txtProprietarApart" class="input-control" placeholder="Nume proprietar..." value="">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="ddlTipProprietar">Tip proprietar</label>
+                <select name="tip_proprietar" id="ddlTipProprietar" class="input-control">
+                                            <option value="-1" selected>-</option>
+                                            <option value="2" >Agent economic</option>
+                                            <option value="1" >Locatar</option>
+                                    </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="cbCityApart">Localitate</label>
+                <select name="city" id="cbCityApart" class="input-control">
+                    <option value="-1">-</option>
+                                            <option value="18" >Apold</option>
+                                            <option value="32" >Brasov</option>
+                                            <option value="1" >Bucuresti</option>
+                                            <option value="14" >Bucuresti_</option>
+                                            <option value="38" >Buftea</option>
+                                            <option value="8" >Calimanesti</option>
+                                            <option value="30" >Chiajna</option>
+                                            <option value="35" >Chitila</option>
+                                            <option value="7" >Cisnadie</option>
+                                            <option value="12" >Constanta</option>
+                                            <option value="27" >Deva</option>
+                                            <option value="26" >Dobroesti</option>
+                                            <option value="22" >Eforie Nord</option>
+                                            <option value="3" >Giurgiu</option>
+                                            <option value="2" >Iasi</option>
+                                            <option value="34" >Magurele</option>
+                                            <option value="20" >Mamaia</option>
+                                            <option value="19" >Mangalia</option>
+                                            <option value="40" >Medgidia</option>
+                                            <option value="9" >Medias</option>
+                                            <option value="31" >Mihail Kogalniceanu</option>
+                                            <option value="41" >Municipiul Targu Mures</option>
+                                            <option value="21" >Navodari</option>
+                                            <option value="33" >Neptun</option>
+                                            <option value="24" >Olimp</option>
+                                            <option value="28" >Orasul Tulcea</option>
+                                            <option value="36" >Ovidiu</option>
+                                            <option value="17" >Ploiesti</option>
+                                            <option value="37" >Ploiestiori</option>
+                                            <option value="25" >Popesti Leordeni</option>
+                                            <option value="39" >Predeal</option>
+                                            <option value="10" >Ramnicu Valcea</option>
+                                            <option value="42" >Rosu</option>
+                                            <option value="5" >Sibiu</option>
+                                            <option value="6" >Sighisoara</option>
+                                            <option value="15" >Singeorgiu de Mures</option>
+                                            <option value="23" >Targu Jiu</option>
+                                            <option value="13" >Targu Mures</option>
+                                            <option value="4" >Targu Mures</option>
+                                            <option value="11" >Tulcea</option>
+                                            <option value="43" >Tunari</option>
+                                            <option value="16" >Ungheni</option>
+                                            <option value="29" >Voluntari</option>
+                                    </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="txtBlocApart">Bloc</label>
+                <input type="text" name="bloc" id="txtBlocApart" class="input-control" placeholder="Ex: 27" value="">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="txtScaraApart">Scara</label>
+                <input type="text" name="scara" id="txtScaraApart" class="input-control" placeholder="Ex: 1" value="">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="txtEtajApart">Etaj</label>
+                <input type="text" name="etaj" id="txtEtajApart" class="input-control" placeholder="Ex: 3" value="">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="txtApartamentApart">Apartament</label>
+                <input type="text" name="apartament" id="txtApartamentApart" class="input-control" placeholder="Ex: 15" value="">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="txtAsociatieApart">Asociatie</label>
+                <input type="text" name="asociatie" id="txtAsociatieApart" class="input-control" placeholder="Cod / nume asociatie..." value="">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="ddlTipContApart">Tip cont. incalzire</label>
+                <select name="tip_cont" id="ddlTipContApart" class="input-control">
+                                            <option value="-1" selected>-</option>
+                                            <option value="8" >CititAsociatie</option>
+                                            <option value="2" >Contorizat</option>
+                                            <option value="4" >CT</option>
+                                            <option value="3" >Debransat</option>
+                                            <option value="6" >Inactiv</option>
+                                            <option value="1" >Necontorizat</option>
+                                            <option value="9" >NecontorizatFaraAC</option>
+                                            <option value="7" >NecontorizatFaraSet</option>
+                                            <option value="5" >Restantier</option>
+                                    </select>
+            </div>
+
+        </div>
+
+        <div class="filter-actions">
+            <div class="filter-per-page">
+                <label class="filter-per-page-label" for="ddlPerPageApart">Inreg / pag</label>
+                <select name="per_page" id="ddlPerPageApart" class="input-control select-per-page">
+                    <option value="10"  >10</option>
+                    <option value="15"  >15</option>
+                    <option value="25"  >25</option>
+                    <option value="50"  >50</option>
+                    <option value="100" selected>100</option>
+                </select>
+            </div>
+            <a href="apartamente.html" class="btn-secondary">Reseteaza</a>
+            <button type="submit" class="btn-primary">Cauta</button>
+        </div>
+    </form>
 </div>
+
+<div class="table-container">
+    <div class="table-toolbar">
+        <div class="table-toolbar-left">
+            <span style="color: var(--text-muted); font-size: 13px; font-weight: 500;">
+                Afisare <strong id="apartVisibleCount">25</strong> din <strong>189.900</strong> inregistrari
+            </span>
+        </div>
+        <div class="table-toolbar-right">
+            <div class="live-search-wrapper" title="Filtrare locala in timp real dupa proprietar sau adresa">
+                <span class="live-search-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </span>
+                <input type="text" id="apartTableSearch" class="input-control" placeholder="Cautare dinamica proprietar / adresa...">
+            </div>
+        </div>
+    </div>
+
+    <div style="overflow-x: auto; width: 100%;">
+        <table class="partners-table" id="apartamenteTable">
+            <thead>
+                <tr>
+                    <th style="width:9%;">NOD</th>
+                    <th style="width:13%;">Strada</th>
+                    <th style="width:4%;">Nr.</th>
+                    <th style="width:5%;">Bl.</th>
+                    <th style="width:4%;">Sc.</th>
+                    <th style="width:4%;">Et.</th>
+                    <th style="width:4%;">Ap.</th>
+                    <th style="width:5%;">Cod</th>
+                    <th style="width:17%;">Proprietar</th>
+                    <th style="width:9%;">Tip</th>
+                    <th style="width:9%;">Cont. ET</th>
+                    <th style="width:6%; text-align:right;">SUT (mp)</th>
+                    <th style="width:5%;">Cod intern</th>
+                    <th style="width:4%; text-align:center;">Tip ap.</th>
+                    <th style="width:4%; text-align:center;">Actiuni</th>
+                </tr>
+            </thead>
+            <tbody id="apartamenteTableBody">
+                                <tr data-search="toma barbu elena stefan cel mare 27">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td>STEFAN CEL MARE</td>
+                    <td>27</td>
+                    <td>27</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td style="font-weight:600;">1</td>
+                    <td>0001</td>
+                    <td style="font-weight:500;">TOMA BARBU ELENA</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-online">Contorizat</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">32.400</td>
+                    <td></td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=1" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="surugiu mihai stefan cel mare 27">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td>STEFAN CEL MARE</td>
+                    <td>27</td>
+                    <td>27</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td style="font-weight:600;">2</td>
+                    <td>0002</td>
+                    <td style="font-weight:500;">SURUGIU MIHAI</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-online">Contorizat</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">36.800</td>
+                    <td></td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=2" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="badea c-tin stefan cel mare 27">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td>STEFAN CEL MARE</td>
+                    <td>27</td>
+                    <td>27</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td style="font-weight:600;">3</td>
+                    <td>0003</td>
+                    <td style="font-weight:500;">BADEA C-TIN</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-online">Contorizat</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">52.100</td>
+                    <td></td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=3" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="ene marin stefan cel mare 27">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td>STEFAN CEL MARE</td>
+                    <td>27</td>
+                    <td>27</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td style="font-weight:600;">5</td>
+                    <td>0005</td>
+                    <td style="font-weight:500;">ENE MARIN</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-online">Contorizat</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">17.700</td>
+                    <td></td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=4" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="macavei elena stefan cel mare 27">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td>STEFAN CEL MARE</td>
+                    <td>27</td>
+                    <td>27</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td style="font-weight:600;">6</td>
+                    <td>0006</td>
+                    <td style="font-weight:500;">MACAVEI ELENA</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-online">Contorizat</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">35.200</td>
+                    <td></td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=5" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="rotariu petre stefan cel mare 27">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td>STEFAN CEL MARE</td>
+                    <td>27</td>
+                    <td>27</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td style="font-weight:600;">7</td>
+                    <td>0007</td>
+                    <td style="font-weight:500;">ROTARIU PETRE</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-online">Contorizat</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">49.900</td>
+                    <td></td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=6" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="alexandru c-tin stefan cel mare 27">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td>STEFAN CEL MARE</td>
+                    <td>27</td>
+                    <td>27</td>
+                    <td>1</td>
+                    <td>4</td>
+                    <td style="font-weight:600;">9</td>
+                    <td>0009</td>
+                    <td style="font-weight:500;">ALEXANDRU C-TIN</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-online">Contorizat</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">34.400</td>
+                    <td></td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=7" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="dianu constanta stefan cel mare 27">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td>STEFAN CEL MARE</td>
+                    <td>27</td>
+                    <td>27</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td style="font-weight:600;">11</td>
+                    <td>0011</td>
+                    <td style="font-weight:500;">DIANU CONSTANTA</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-online">Contorizat</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">36.800</td>
+                    <td></td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=8" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="blaj anne-marie stefan cel mare 27">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td>STEFAN CEL MARE</td>
+                    <td>27</td>
+                    <td>27</td>
+                    <td>1</td>
+                    <td>6</td>
+                    <td style="font-weight:600;">13</td>
+                    <td>0013</td>
+                    <td style="font-weight:500;">BLAJ ANNE-MARIE</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-online">Contorizat</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">33.000</td>
+                    <td></td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=9" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="laborator stefan cel mare 27">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td>STEFAN CEL MARE</td>
+                    <td>27</td>
+                    <td>27</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td style="font-weight:600;">1000</td>
+                    <td>0055</td>
+                    <td style="font-weight:500;">LABORATOR</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Agent economic</span></td>
+                    <td><span class="status-badge status-online">Contorizat</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">34.400</td>
+                    <td></td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=10" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="cabinet 7 stefan cel mare 27">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td>STEFAN CEL MARE</td>
+                    <td>27</td>
+                    <td>27</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td style="font-weight:600;">1001</td>
+                    <td>0056</td>
+                    <td style="font-weight:500;">CABINET 7</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Agent economic</span></td>
+                    <td><span class="status-badge status-online">Contorizat</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">14.040</td>
+                    <td></td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=11" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="stancu gheorghe reziliat vila">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0002</td>
+                    <td>REZILIAT</td>
+                    <td>36</td>
+                    <td>Vila</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td style="font-weight:600;">1</td>
+                    <td>0001</td>
+                    <td style="font-weight:500;">STANCU GHEORGHE</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-online">Contorizat</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">27.230</td>
+                    <td>001</td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=12" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="ciolca laurentiu reziliat vila">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0002</td>
+                    <td>REZILIAT</td>
+                    <td>36</td>
+                    <td>Vila</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td style="font-weight:600;">2</td>
+                    <td>0002</td>
+                    <td style="font-weight:500;">Ciolca Laurentiu</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-online">Contorizat</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">40.000</td>
+                    <td>002</td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=13" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="caloianu ruxandra reziliat vila">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0002</td>
+                    <td>REZILIAT</td>
+                    <td>36</td>
+                    <td>Vila</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td style="font-weight:600;">4</td>
+                    <td>0003</td>
+                    <td style="font-weight:500;">Caloianu Ruxandra</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-online">Contorizat</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">55.900</td>
+                    <td>003</td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=14" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="arnautu ioan reziliat 27">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0003</td>
+                    <td>REZILIAT</td>
+                    <td></td>
+                    <td>27</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td style="font-weight:600;">1</td>
+                    <td>0001</td>
+                    <td style="font-weight:500;">ARNAUTU IOAN</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-warning">CT</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">81.000</td>
+                    <td>001</td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=15" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="zarnescu vasilica reziliat 27">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0003</td>
+                    <td>REZILIAT</td>
+                    <td></td>
+                    <td>27</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td style="font-weight:600;">3</td>
+                    <td>0002</td>
+                    <td style="font-weight:500;">ZARNESCU VASILICA</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-online">Contorizat</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">81.000</td>
+                    <td>003</td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=16" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="andronovici carmen reziliat 27">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0003</td>
+                    <td>REZILIAT</td>
+                    <td></td>
+                    <td>27</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td style="font-weight:600;">6</td>
+                    <td>0006</td>
+                    <td style="font-weight:500;">ANDRONOVICI CARMEN</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-warning">CT</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">97.000</td>
+                    <td>006</td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=17" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="casa scarii gura ialomitei pc9">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0004</td>
+                    <td>GURA IALOMITEI</td>
+                    <td>3</td>
+                    <td>PC9</td>
+                    <td>B</td>
+                    <td>0</td>
+                    <td style="font-weight:600;">100</td>
+                    <td>0011</td>
+                    <td style="font-weight:500;">CASA SCARII</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-offline">Inactiv</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">0.000</td>
+                    <td></td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=18" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="serbanescu marian gura ialomitei pc9">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0004</td>
+                    <td>GURA IALOMITEI</td>
+                    <td>3</td>
+                    <td>PC9</td>
+                    <td>B</td>
+                    <td>0</td>
+                    <td style="font-weight:600;">11</td>
+                    <td>0001</td>
+                    <td style="font-weight:500;">Serbanescu Marian</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-online">Contorizat</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">76.480</td>
+                    <td>11</td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=19" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="duta violeta gura ialomitei pc9">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0004</td>
+                    <td>GURA IALOMITEI</td>
+                    <td>3</td>
+                    <td>PC9</td>
+                    <td>B</td>
+                    <td>1</td>
+                    <td style="font-weight:600;">13</td>
+                    <td>0003</td>
+                    <td style="font-weight:500;">Duta Violeta</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-online">Contorizat</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">76.480</td>
+                    <td>13</td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=20" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="tutuianu gabriel gura ialomitei pc9">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0004</td>
+                    <td>GURA IALOMITEI</td>
+                    <td>3</td>
+                    <td>PC9</td>
+                    <td>B</td>
+                    <td>2</td>
+                    <td style="font-weight:600;">15</td>
+                    <td>0005</td>
+                    <td style="font-weight:500;">TUTUIANU GABRIEL</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-online">Contorizat</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">76.480</td>
+                    <td>15</td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=21" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="slave mihai gura ialomitei pc9">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0004</td>
+                    <td>GURA IALOMITEI</td>
+                    <td>3</td>
+                    <td>PC9</td>
+                    <td>B</td>
+                    <td>4</td>
+                    <td style="font-weight:600;">20</td>
+                    <td>0010</td>
+                    <td style="font-weight:500;">Slave Mihai</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-warning">CT</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">76.480</td>
+                    <td>20</td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=22" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="popescu stelian gura ialomitei pc9">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0005</td>
+                    <td>GURA IALOMITEI</td>
+                    <td>3</td>
+                    <td>PC9</td>
+                    <td>A</td>
+                    <td>0</td>
+                    <td style="font-weight:600;">1</td>
+                    <td>0001</td>
+                    <td style="font-weight:500;">POPESCU STELIAN</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-online">Contorizat</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">76.480</td>
+                    <td>0001</td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=23" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="cosma julieta gura ialomitei pc9">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0005</td>
+                    <td>GURA IALOMITEI</td>
+                    <td>3</td>
+                    <td>PC9</td>
+                    <td>A</td>
+                    <td>1</td>
+                    <td style="font-weight:600;">3</td>
+                    <td>0003</td>
+                    <td style="font-weight:500;">COSMA JULIETA</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-online">Contorizat</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">76.480</td>
+                    <td>0003</td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=24" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="negrea victor gura ialomitei pc9">
+                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0005</td>
+                    <td>GURA IALOMITEI</td>
+                    <td>3</td>
+                    <td>PC9</td>
+                    <td>A</td>
+                    <td>3</td>
+                    <td style="font-weight:600;">7</td>
+                    <td>0007</td>
+                    <td style="font-weight:500;">NEGREA VICTOR</td>
+                    <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
+                    <td><span class="status-badge status-warning">CT</span></td>
+                    <td style="text-align:right; font-variant-numeric:tabular-nums;">76.480</td>
+                    <td>0007</td>
+                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align:center;">
+                        <a href="apartamente-edit.html?id=25" class="btn-action-icon" title="Editeaza apartament">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                        </a>
+                    </td>
+                </tr>
+                            </tbody>
+        </table>
+    </div>
+
+    <!-- === Paginație === -->
+    <div class="table-pagination">
+        <div style="font-size: 13px; color: var(--text-muted);">
+            Afișare <strong>1</strong> - <strong id="apartPaginationVisible">25</strong> din <strong>189.900</strong> înregistrări
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" disabled>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                <span>Anterior</span>
+            </button>
+            <div class="pagination-pages">
+                <button type="button" class="btn-secondary active" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;">1</button>
+                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 2')">2</button>
+                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 3')">3</button>
+                <span style="padding: 0 4px; color: var(--text-muted); font-size: 12px;">...</span>
+                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 1900')">1900</button>
+            </div>
+            <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" onclick="alert('Pagina următoare')">
+                <span>Următor</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- ══ NOD Picker Modal (partial) ════════════════════════════════════════════
+     React: <NodPickerModal id="nodPickerModalApart" onSelect={handleSelect} />
+══════════════════════════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="nodPickerModalApart" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="nodPickerModalApart-title">
+    <div class="modal-card nod-picker-card">
+        <div class="modal-header">
+            <h3 id="nodPickerModalApart-title">Alegere NOD</h3>
+            <button type="button" class="btn-close nod-picker-close" data-modal="nodPickerModalApart" title="Închide fereastra">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!-- Formular de filtrare -->
+            <form class="nod-picker-filter-form" id="nodPickerModalApart-form" onsubmit="return false;">
+                <div class="nod-picker-filter-grid">
+                    <!-- Localitate -->
+                    <div class="form-group">
+                        <label class="form-label" for="nodPickerModalApart-city">Localitate</label>
+                        <select id="nodPickerModalApart-city" class="input-control">
+                            <option value="-1">-</option>
+                                                        <option value="Apold">Apold</option>
+                                                        <option value="Brasov">Brasov</option>
+                                                        <option value="Bucuresti">Bucuresti</option>
+                                                        <option value="Bucuresti_">Bucuresti_</option>
+                                                        <option value="Buftea">Buftea</option>
+                                                        <option value="Calimanesti">Calimanesti</option>
+                                                        <option value="Chiajna">Chiajna</option>
+                                                        <option value="Chitila">Chitila</option>
+                                                        <option value="Cisnadie">Cisnadie</option>
+                                                        <option value="Constanta">Constanta</option>
+                                                        <option value="Deva">Deva</option>
+                                                        <option value="Dobroesti">Dobroesti</option>
+                                                        <option value="Eforie Nord">Eforie Nord</option>
+                                                        <option value="Giurgiu">Giurgiu</option>
+                                                        <option value="Iasi">Iasi</option>
+                                                        <option value="Magurele">Magurele</option>
+                                                        <option value="Mamaia">Mamaia</option>
+                                                        <option value="Mangalia">Mangalia</option>
+                                                        <option value="Medgidia">Medgidia</option>
+                                                        <option value="Medias">Medias</option>
+                                                        <option value="Mihail Kogalniceanu">Mihail Kogalniceanu</option>
+                                                        <option value="Municipiul Targu Mures">Municipiul Targu Mures</option>
+                                                        <option value="Navodari">Navodari</option>
+                                                        <option value="Neptun">Neptun</option>
+                                                        <option value="Olimp">Olimp</option>
+                                                        <option value="Orasul Tulcea">Orasul Tulcea</option>
+                                                        <option value="Ovidiu">Ovidiu</option>
+                                                        <option value="Ploiesti">Ploiesti</option>
+                                                        <option value="Ploiestiori">Ploiestiori</option>
+                                                        <option value="Popesti Leordeni">Popesti Leordeni</option>
+                                                        <option value="Predeal">Predeal</option>
+                                                        <option value="Ramnicu Valcea">Ramnicu Valcea</option>
+                                                        <option value="Rosu">Rosu</option>
+                                                        <option value="Sibiu">Sibiu</option>
+                                                        <option value="Sighisoara">Sighisoara</option>
+                                                        <option value="Singeorgiu de Mures">Singeorgiu de Mures</option>
+                                                        <option value="Targu Jiu">Targu Jiu</option>
+                                                        <option value="Targu Mures">Targu Mures</option>
+                                                        <option value="Targu Mures">Targu Mures</option>
+                                                        <option value="Tulcea">Tulcea</option>
+                                                        <option value="Tunari">Tunari</option>
+                                                        <option value="Ungheni">Ungheni</option>
+                                                        <option value="Voluntari">Voluntari</option>
+                                                    </select>
+                    </div>
+                    <!-- Strada -->
+                    <div class="form-group">
+                        <label class="form-label" for="nodPickerModalApart-street">Strada</label>
+                        <input type="text" id="nodPickerModalApart-street" class="input-control" placeholder="Denumire stradă...">
+                    </div>
+                    <!-- Tip -->
+                    <div class="form-group">
+                        <label class="form-label" for="nodPickerModalApart-type">Tip</label>
+                        <select id="nodPickerModalApart-type" class="input-control">
+                            <option value="-1">-</option>
+                            <option value="1">Cu agenți economici</option>
+                            <option value="2">Fără agenți economici</option>
+                        </select>
+                    </div>
+                    <!-- Asociație -->
+                    <div class="form-group">
+                        <label class="form-label" for="nodPickerModalApart-assoc">Asociație</label>
+                        <input type="text" id="nodPickerModalApart-assoc" class="input-control" placeholder="Nume asociație...">
+                    </div>
+                    <!-- Cod NOD -->
+                    <div class="form-group">
+                        <label class="form-label" for="nodPickerModalApart-code">Cod NOD</label>
+                        <input type="text" id="nodPickerModalApart-code" class="input-control" placeholder="Cod...">
+                    </div>
+                </div>
+                <div class="nod-picker-filter-actions">
+                    <div class="filter-per-page">
+                        <label class="filter-per-page-label" for="nodPickerModalApart-perpage">Înreg / pag</label>
+                        <select id="nodPickerModalApart-perpage" class="input-control select-per-page">
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100" selected>100</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn-secondary nod-picker-reset" data-modal="nodPickerModalApart">Resetează</button>
+                    <button type="button" class="btn-primary nod-picker-search" data-modal="nodPickerModalApart">Caută</button>
+                </div>
+            </form>
+
+            <!-- Tabelul de rezultate NOD -->
+            <div class="nod-picker-table-wrap">
+                <table class="modal-table">
+                    <thead>
+                        <tr>
+                            <th>NOD</th>
+                            <th>Adresă NOD</th>
+                            <th>Asociație</th>
+                            <th class="nod-picker-th-sel"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="nod-picker-tbody" id="nodPickerModalApart-tbody">
+                        <!-- Populat dinamic prin JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Paginație Modal -->
+            <div class="nod-picker-pagination">
+                <span class="nod-picker-count-label">
+                    Afișare NOD-uri: <strong class="nod-picker-count" id="nodPickerModalApart-count">0</strong>
+                </span>
+                <div class="nod-picker-page-btns">
+                    <button type="button" class="btn-action-icon nod-picker-prev" data-modal="nodPickerModalApart" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button type="button" class="btn-action-icon nod-picker-next" data-modal="nodPickerModalApart" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </div><!-- /modal-body -->
+    </div><!-- /modal-card -->
+</div><!-- /modal-overlay -->
+
+<!-- NOD Picker: date & logică JS ============================================
+     React: datele vin din props/API; logica este în NodPickerModal.tsx
+============================================================================ -->
+<script>
+(function() {
+    /* ── Date NOD ────────────────────────────────────────────────────── */
+    var _nodPickerData_nodPickerModalApart = [
+    { id: "1",  code: "81-001-0001", address: "Str. STEFAN CEL MARE, Nr. 27, Bl. 27, Sc. 1, Distr. 2, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC 27 SCARA 1",    city: "Bucuresti", street: "stefan cel mare",          ownerType: "1" },
+    { id: "2",  code: "81-001-0002", address: "Str. REZILIAT, Nr. 36, Bl. Vila, Sc. 1, Distr. 1, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC VILA",          city: "Bucuresti", street: "reziliat",                  ownerType: "1" },
+    { id: "3",  code: "81-001-0003", address: "Str. REZILIAT, Sc. 1, Distr. 5, Bucuresti",                              association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "14", code: "81-001-0004", address: "Str. GURA IALOMITEI, Nr. 3, Bl. PC9, Sc. B, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC PC9 SCARA B",   city: "Bucuresti", street: "gura ialomitei",             ownerType: "1" },
+    { id: "15", code: "81-001-0005", address: "Str. GURA IALOMITEI, Nr. 3, Bl. PC9, Sc. A, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC PC9 SCARA A",   city: "Bucuresti", street: "gura ialomitei",             ownerType: "1" },
+    { id: "16", code: "81-001-0006", address: "Str. REZILIAT, Nr. 28, Bl. V81A, Sc. A, Distr. 3, Bucuresti",           association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "17", code: "81-001-0007", address: "Str. Laborator, Nr. 125-127, Bl. S1, Sc. 2, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC S1 SCARA 2",    city: "Bucuresti", street: "laborator",                  ownerType: "1" },
+    { id: "18", code: "81-001-0008", address: "Str. Liber, Nr. 012, Bl. 0, Sc. 2, Bucuresti",                          association: "",                                            city: "Bucuresti", street: "liber",                     ownerType: "2" },
+    { id: "20", code: "81-001-0010", address: "Str. BIBESCU VODA, Nr. 2, Bl. P5, Sc. 4, Distr. 4, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC P5 SCARA 4",    city: "Bucuresti", street: "bibescu voda",               ownerType: "1" },
+    { id: "21", code: "81-001-0011", address: "Str. REZILIAT, Sc. A+B, Apt. -, Distr. 3, Bucuresti",                   association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "22", code: "81-001-0012", address: "Str. MIHAI BRAVU, Nr. 291, Bl. 12A, Sc. 1, Distr. 3, Bucuresti",        association: "ASOCIATIA DE PROPRIETARI BLOC 12A SCARA A",   city: "Bucuresti", street: "mihai bravu",                ownerType: "1" },
+    { id: "23", code: "81-001-0013", address: "Str. REZILIAT, Sc. 1, Distr. 3, Bucuresti",                             association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "25", code: "81-001-0015", address: "Str. REZILIAT, Sc. 2, Distr. 3, Bucuresti",                             association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "27", code: "81-001-0017", address: "Str. SIBIU, Nr. 18, Bl. 813, Sc. 1, Distr. 6, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BL 813",             city: "Bucuresti", street: "sibiu",                     ownerType: "1" },
+    { id: "28", code: "81-001-0018", address: "Str. UNIRII, Nr. 13, Bl. 2C, Sc. 1, Distr. 5, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BLOC 2C",            city: "Bucuresti", street: "unirii",                    ownerType: "1" },
+    { id: "29", code: "81-001-0019", address: "Str. UNIRII, Nr. 13, Bl. 2C, Sc. 2, Distr. 5, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BLOC 2C",            city: "Bucuresti", street: "unirii",                    ownerType: "1" },
+    { id: "30", code: "81-001-0020", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 1, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "31", code: "81-001-0021", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 2, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "32", code: "81-001-0022", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 3, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "34", code: "81-001-0023", address: "Str. OTESANI, Nr. 14, Bl. T8B, Sc. 1, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC T8B",           city: "Bucuresti", street: "otesani",                   ownerType: "1" },
+    { id: "35", code: "81-001-0024", address: "Str. COLENTINA, Nr. 70, Bl. 108, Sc. 1, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 108",           city: "Bucuresti", street: "colentina",                  ownerType: "1" },
+    { id: "36", code: "81-001-0025", address: "Str. FUNDENI, Nr. 227, Bl. 116B, Sc. A, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 116B",          city: "Bucuresti", street: "fundeni",                   ownerType: "1" },
+    { id: "37", code: "81-001-0026", address: "Str. FUNDENI, Nr. 227, Bl. 116B, Sc. B, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 116B",          city: "Bucuresti", street: "fundeni",                   ownerType: "1" },
+    { id: "40", code: "81-001-0029", address: "Str. CONSTANTIN RADULESCU MOTRU, Nr. 23, Bl. B35, Sc. B, Distr. 4",    association: "ASOCIATIA DE PROPRIETARI BLOC 35 SCARA 2",   city: "Bucuresti", street: "constantin radulescu motru", ownerType: "1" },
+    { id: "41", code: "81-001-0030", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. A, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA A",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "42", code: "81-001-0031", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. B, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA B",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "43", code: "81-001-0032", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. E, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA E",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "51", code: "81-001-0040", address: "Str. CALEA MOSILOR, Nr. 241, Bl. 47, Sc. A+B+C, Distr. 2, Bucuresti",  association: "ASOCIATIA DE PROPRIETARI BLOC 47",            city: "Bucuresti", street: "calea mosilor",              ownerType: "1" },
+    { id: "52", code: "81-001-0041", address: "Str. MURGENI, Nr. 7, Bl. L27, Sc. A, Distr. 3, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC L27",           city: "Bucuresti", street: "murgeni",                   ownerType: "1" },
+    { id: "53", code: "81-001-0042", address: "Str. ALEEA CODLEA, Nr. 6, Bl. J3, Sc. 1, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC J3",            city: "Bucuresti", street: "aleea codlea",               ownerType: "1" },
+    { id: "54", code: "81-001-0043", address: "Str. ALEEA ROTUNDA, Nr. 1-4, Bl. Y1B, Sc. 5, Distr. 3, Bucuresti",     association: "ASOCIATIA DE PROPRIETARI BLOC Y1B SCARA 1-5", city: "Bucuresti", street: "aleea rotunda",              ownerType: "1" },
+    { id: "59", code: "81-001-0047", address: "Str. LACUL TEI, Nr. 121, Bl. 5, Sc. 1, Distr. 2, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC 5 SCARA 1-4",  city: "Bucuresti", street: "lacul tei",                  ownerType: "1" },
+    { id: "65", code: "81-001-0053", address: "Str. CALEA VACARESTI, Nr. 308, Bl. 1E, Sc. 1, Distr. 4, Bucuresti",    association: "ASOCIATIA DE PROPRIETARI BLOC 1E",            city: "Bucuresti", street: "calea vacaresti",            ownerType: "1" },
+    { id: "66", code: "81-001-0054", address: "Str. OLTENITEI, Nr. 140, Bl. 5, Sc. 3, Distr. 4, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC 5 SCARA 3",    city: "Bucuresti", street: "oltenitei",                  ownerType: "1" },
+    { id: "8",  code: "81-001-0055", address: "Str. ALEEA BARSANESTI, Nr. 2, Bl. 156, Sc. 2, Distr. 6, Bucuresti",    association: "ASOCIATIA DE PROPRIETARI BLOC156 SC. 2",     city: "Bucuresti", street: "aleea barsanesti",           ownerType: "1" },
+    { id: "68", code: "81-001-0057", address: "Str. CEAHLAU, Nr. 15, Bl. 75, Sc. 1, Distr. 6, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC 75",            city: "Bucuresti", street: "ceahlau",                   ownerType: "1" },
+    { id: "69", code: "81-001-0058", address: "Str. CEAHLAU, Nr. 15, Bl. 75, Sc. 2, Distr. 6, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC 75",            city: "Bucuresti", street: "ceahlau",                   ownerType: "1" }
+];
+
+    /* ── Configurare instanță ────────────────────────────────────────── */
+    var _cfg = {
+        modalId:    "nodPickerModalApart",
+        inputId:    "txtNODApartamente",
+        btnOpenId:  "btnOpenNodModalApart",
+        callback:   null   /* funcție opțională apelată la selecție */
+    };
+
+    function initNodPicker_nodPickerModalApart() {
+        NodPicker.init(
+            _cfg,
+            _nodPickerData_nodPickerModalApart        );
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initNodPicker_nodPickerModalApart);
+    } else {
+        initNodPicker_nodPickerModalApart();
+    }
+})();
+</script>
+
+<script>
+(function () {
+    'use strict';
+    var searchInput  = document.getElementById('apartTableSearch');
+    var tableBody    = document.getElementById('apartamenteTableBody');
+    var visibleCount = document.getElementById('apartVisibleCount');
+    var pagCountEl   = document.getElementById('apartPaginationVisible');
+    if (!searchInput || !tableBody) return;
+    searchInput.addEventListener('input', function () {
+        var term = this.value.trim().toLowerCase();
+        var rows = tableBody.querySelectorAll('tr');
+        var visible = 0;
+        rows.forEach(function (row) {
+            var haystack = row.getAttribute('data-search') || '';
+            var show = !term || haystack.indexOf(term) !== -1;
+            row.style.display = show ? '' : 'none';
+            if (show) visible++;
+        });
+        if (visibleCount) visibleCount.textContent = visible;
+        if (pagCountEl) pagCountEl.textContent = visible;
+    });
+})();
+</script>
 
     </div><!-- /.content -->
     <footer class="app-footer">

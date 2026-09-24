@@ -30,7 +30,7 @@ var NodPicker = (function() {
      */
     function init(cfg, data) {
         var modalId   = cfg.modalId   || 'nodPickerModal';
-        var inputId   = cfg.inputId   || 'txtNOD';
+        var inputId   = (cfg.inputId !== undefined && cfg.inputId !== null && cfg.inputId !== '') ? cfg.inputId : (cfg.inputId === '' ? null : 'txtNOD');
         var btnOpenId = cfg.btnOpenId || 'btnOpenNodModal';
         var callbackName = cfg.callback || null;
         /* callback poate fi funcție directă sau string cu numele funcției globale */
@@ -39,9 +39,9 @@ var NodPicker = (function() {
             onSelect = callbackName;
         } else if (typeof callbackName === 'string' && callbackName) {
             /* Lazy resolution – funcția poate fi definita dupa init() */
-            onSelect = function(code) {
+            onSelect = function(code, item) {
                 if (typeof window[callbackName] === 'function') {
-                    window[callbackName](code);
+                    window[callbackName](code, item);
                 }
             };
         }
@@ -120,13 +120,13 @@ var NodPicker = (function() {
                 btn.title = 'Selectează acest NOD';
                 btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg>';
 
-                (function(nodCode) {
+                (function(nodItem) {
                     btn.addEventListener('click', function() {
-                        if (inputEl) inputEl.value = nodCode;
-                        if (onSelect) onSelect(nodCode);
+                        if (inputEl) inputEl.value = nodItem.code;
+                        if (onSelect) onSelect(nodItem.code, nodItem);
                         closeModal();
                     });
-                })(nod.code);
+                })(nod);
 
                 tdSel.appendChild(btn);
                 tr.appendChild(tdCode);

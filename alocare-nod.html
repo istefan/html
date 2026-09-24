@@ -22,12 +22,12 @@
     <!-- ── Logo ─────────────────────────────────────────────────────── -->
     <!-- React: <SidebarLogo activeApp={activeApp} /> -->
     <div class="logo">
-        <a href="index.html" title="SONIC GRID – Acasă">
-            <img src="assets/images/sonic-grid-logo.svg"
-                 alt="SONIC GRID"
+        <a href="sonic-dashboard.html" title="SONIC – Acasă">
+            <img src="assets/images/sonic-logo.svg"
+                 alt="SONIC"
                  class="logo-full"
                  id="sidebarLogo">
-            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">SG</span>
+            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">S</span>
         </a>
     </div>
 
@@ -36,7 +36,7 @@
     <nav class="sidebar-nav" aria-label="Navigare principală">
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC GRID
+             ║  1. SONIC GRID
              ╚══════════════════════════════════════════════════════════════ -->
         <div class="app-section"
              data-app="sonic-grid"
@@ -44,6 +44,7 @@
              data-logo-icon="SG">
             <button class="app-section-header" type="button" title="SONIC GRID">
                 <img src="assets/images/sonic-grid-logo.svg" class="app-section-logo" alt="SONIC GRID">
+                <span class="app-section-badge">SG</span>
             </button>
             <div class="app-section-body">
 
@@ -142,14 +143,71 @@
         </div>
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC BILLING
+             ║  2. SONIC MARKET
              ╚══════════════════════════════════════════════════════════════ -->
-        <div class="app-section open"
+        <div class="app-section"
+             data-app="sonic-market"
+             data-logo="assets/images/sonic-market-logo.svg"
+             data-logo-icon="SM">
+            <button class="app-section-header" type="button" title="SONIC MARKET">
+                <img src="assets/images/sonic-market-logo.svg" class="app-section-logo" alt="SONIC MARKET">
+                <span class="app-section-badge">SM</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard Market -->
+                <a href="market-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  3. SONIC PRO
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-pro"
+             data-logo="assets/images/sonic-pro-logo.svg"
+             data-logo-icon="SP">
+            <button class="app-section-header" type="button" title="SONIC PRO">
+                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+                <span class="app-section-badge">SP</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard PRO -->
+                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- Intervenții -->
+                <a href="interventii.html" class="nav-item " title="Intervenții">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </span>
+                    <span class="nav-label">Intervenții</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  4. SONIC BILLING
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
              data-app="sonic-billing"
              data-logo="assets/images/sonic-billing-logo.svg"
-             data-logo-icon="SG">
+             data-logo-icon="SB">
             <button class="app-section-header" type="button" title="SONIC BILLING">
                 <img src="assets/images/sonic-billing-logo.svg" class="app-section-logo" alt="SONIC BILLING">
+                <span class="app-section-badge">SB</span>
             </button>
             <div class="app-section-body">
 
@@ -213,25 +271,6 @@
                         <a href="modele-repartitoare.html" class="nav-subitem ">Modele Repartitoare</a>
                         <a href="modele-contoare.html" class="nav-subitem ">Modele Contoare</a>
                         <a href="serii-apometre.html" class="nav-subitem ">Serii Apometre Achiziționate</a>
-                    </div>
-                </div>
-
-                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
-                <div class="nav-group open" data-group="master-data">
-                    <button class="nav-group-title" type="button" title="Master Data Management">
-                        <span class="nav-group-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </span>
-                        <span class="nav-label">Master Data Management</span>
-                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                    </button>
-                    <div class="nav-subitems">
-                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
-                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
-                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
-                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
-                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
-                        <a href="alocare-nod.html" class="nav-subitem active">Alocare NOD</a>
                     </div>
                 </div>
 
@@ -349,32 +388,68 @@
         </div>
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC PRO
+             ║  5. SONIC FIN
              ╚══════════════════════════════════════════════════════════════ -->
         <div class="app-section"
-             data-app="sonic-pro"
-             data-logo="assets/images/sonic-pro-logo.svg"
-             data-logo-icon="SP">
-            <button class="app-section-header" type="button" title="SONIC PRO">
-                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+             data-app="sonic-fin"
+             data-logo="assets/images/sonic-fin-logo.svg"
+             data-logo-icon="SF">
+            <button class="app-section-header" type="button" title="SONIC FIN">
+                <img src="assets/images/sonic-fin-logo.svg" class="app-section-logo" alt="SONIC FIN">
+                <span class="app-section-badge">SF</span>
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
-                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                <!-- Dashboard FIN -->
+                <a href="fin-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  6. SONIC (Base – Ecosistem & Configurare)
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section open"
+             data-app="sonic"
+             data-logo="assets/images/sonic-logo.svg"
+             data-logo-icon="S">
+            <button class="app-section-header" type="button" title="SONIC">
+                <img src="assets/images/sonic-logo.svg" class="app-section-logo" alt="SONIC">
+                <span class="app-section-badge">S</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard SONIC -->
+                <a href="sonic-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
-                    <span class="nav-label">Intervenții</span>
+                    <span class="nav-label">Dashboard</span>
                 </a>
+
+                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <div class="nav-group open" data-group="master-data">
+                    <button class="nav-group-title" type="button" title="Master Data Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Master Data Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
+                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
+                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
+                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
+                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
+                        <a href="alocare-nod.html" class="nav-subitem active">Alocare NOD</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -449,7 +524,7 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="index.html">
+            <a href="sonic-dashboard.html">
                 <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
             </a>
         </div>
@@ -483,7 +558,55 @@
     <div class="help-wrapper">
         <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
             <div class="help-panel-inner">
-                                <p class="help-empty">Nu există informații de ajutor disponibile pentru această pagină.</p>
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Filtrare și Căutare                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Management Alocare NOD către Parteneri</h4>
+            <p>Această pagină permite vizualizarea și verificarea stării de alocare a NOD-urilor de contorizare către Asociațiile de Proprietari și Parteneri.</p>
+            <p>Starea de alocare reflectă dacă toate branșamentele / scările asociate partenerului au fost configurate cu un cod NOD activ:</p>
+            <ul>
+                <li><span class="status-badge status-online">Alocat total</span> &ndash; Toate adresele și scările partenerului au coduri NOD alocate.</li>
+                <li><span class="status-badge status-warning">Alocat parțial</span> &ndash; Doar o parte din scările de bloc au primit coduri NOD.</li>
+                <li><span class="status-badge status-offline">Nealocat</span> &ndash; Niciun nod nu a fost încă asignat acestui partener.</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <h4>Criterii de filtrare</h4>
+            <ul>
+                <li><strong>Stare Alocare:</strong> Selectați dintre Alocat total, Alocat parțial sau Nealocat.</li>
+                <li><strong>Localitate:</strong> Filtrare geografică după oraș/comună.</li>
+                <li><strong>NOD:</strong> Alegeți un cod NOD specific folosind selectorul modal interactiv.</li>
+                <li><strong>Cod Partener / Asociație / Stradă:</strong> Căutare flexibilă după datele de identificare ale asociației.</li>
+            </ul>
+                            </div>
+                                    </div>
                     </div><!-- /.help-panel-inner -->
         </div><!-- /.help-panel -->
         
@@ -510,22 +633,1104 @@
 
     <div class="content">
 
+<!-- ===================================================================
+     React: <PartnerAllocationListPage />
+     =================================================================== -->
+
+<!-- === Page Title Container ===
+     React: <PageTitleContainer title="Alocare NOD" />
+-->
 <div class="page-title-container">
     <div class="page-title">
         <h1>Alocare NOD</h1>
-        <p>Pagina este în construcție.</p>
+        <p>Vizualizează, filtrează și verifică starea alocării nodurilor către parteneri și asociații.</p>
     </div>
 </div>
 
-<div class="card" style="padding: 60px 40px; text-align: center; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; margin-top: 24px;">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="64" height="64" style="margin-bottom: 20px; opacity: 0.3; color: var(--accent);">
-        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-        <polyline points="2 17 12 22 22 17"></polyline>
-        <polyline points="2 12 12 17 22 12"></polyline>
-    </svg>
-    <h2 style="color: var(--text-main); margin-bottom: 12px; font-weight: 600;">În curând</h2>
-    <p style="font-size: 15px;">Interfața pentru <strong>Alocare NOD</strong> nu a fost încă generată în acest demo.</p>
+<!-- === Formular de Filtrare ===
+     React: <FilterCard onSearch={handleSearch} onReset={handleReset} fields={...} />
+-->
+<div class="card" style="margin-bottom: 24px;">
+    <div style="margin-bottom: 18px;">
+        <span class="chart-title" style="font-size: 14px; font-weight: 600;">Filtrare Avansată</span>
+    </div>
+    <form method="GET" action="alocare-nod.html" id="filterFormAlocare">
+        <div class="filter-grid-3">
+
+            <!-- Alocare (Stare) -->
+            <div class="form-group">
+                <label class="form-label" for="ddlStatusAlloc">Alocare</label>
+                <select name="status" id="ddlStatusAlloc" class="input-control">
+                                            <option value="-1" selected>
+                            -                        </option>
+                                            <option value="3" >
+                            Alocat total                        </option>
+                                            <option value="2" >
+                            Alocat parțial                        </option>
+                                            <option value="1" >
+                            Nealocat                        </option>
+                                    </select>
+            </div>
+
+            <!-- Localitate -->
+            <div class="form-group">
+                <label class="form-label" for="ddlCityAlloc">Localitate</label>
+                <select name="city" id="ddlCityAlloc" class="input-control">
+                    <option value="-1">-</option>
+                                            <option value="18" >
+                            Apold                        </option>
+                                            <option value="32" >
+                            Brasov                        </option>
+                                            <option value="1" >
+                            Bucuresti                        </option>
+                                            <option value="14" >
+                            Bucuresti_                        </option>
+                                            <option value="38" >
+                            Buftea                        </option>
+                                            <option value="8" >
+                            Calimanesti                        </option>
+                                            <option value="30" >
+                            Chiajna                        </option>
+                                            <option value="35" >
+                            Chitila                        </option>
+                                            <option value="7" >
+                            Cisnadie                        </option>
+                                            <option value="12" >
+                            Constanta                        </option>
+                                            <option value="27" >
+                            Deva                        </option>
+                                            <option value="26" >
+                            Dobroesti                        </option>
+                                            <option value="22" >
+                            Eforie Nord                        </option>
+                                            <option value="3" >
+                            Giurgiu                        </option>
+                                            <option value="2" >
+                            Iasi                        </option>
+                                            <option value="34" >
+                            Magurele                        </option>
+                                            <option value="20" >
+                            Mamaia                        </option>
+                                            <option value="19" >
+                            Mangalia                        </option>
+                                            <option value="40" >
+                            Medgidia                        </option>
+                                            <option value="9" >
+                            Medias                        </option>
+                                            <option value="31" >
+                            Mihail Kogalniceanu                        </option>
+                                            <option value="41" >
+                            Municipiul Târgu Mures                        </option>
+                                            <option value="21" >
+                            Navodari                        </option>
+                                            <option value="33" >
+                            Neptun                        </option>
+                                            <option value="24" >
+                            Olimp                        </option>
+                                            <option value="28" >
+                            Orasul Tulcea                        </option>
+                                            <option value="36" >
+                            Ovidiu                        </option>
+                                            <option value="17" >
+                            Ploiesti                        </option>
+                                            <option value="37" >
+                            Ploiestiori                        </option>
+                                            <option value="25" >
+                            Popesti Leordeni                        </option>
+                                            <option value="39" >
+                            Predeal                        </option>
+                                            <option value="42" >
+                            Rosu                        </option>
+                                            <option value="10" >
+                            Râmnicu Vâlcea                        </option>
+                                            <option value="5" >
+                            Sibiu                        </option>
+                                            <option value="6" >
+                            Sighisoara                        </option>
+                                            <option value="15" >
+                            Singeorgiu de Mures                        </option>
+                                            <option value="13" >
+                            Targu Mures                        </option>
+                                            <option value="11" >
+                            Tulcea                        </option>
+                                            <option value="43" >
+                            Tunari                        </option>
+                                            <option value="23" >
+                            Târgu Jiu                        </option>
+                                            <option value="4" >
+                            Târgu Mures                        </option>
+                                            <option value="16" >
+                            Ungheni                        </option>
+                                            <option value="29" >
+                            Voluntari                        </option>
+                                    </select>
+            </div>
+
+            <!-- NOD Picker -->
+            <div class="form-group">
+                <label class="form-label" for="txtNODAlloc">NOD</label>
+                <div class="picker-group">
+                    <input type="text" id="txtNODAlloc" name="nod_picker" class="input-control"
+                           readonly placeholder="Click pe lupă..."
+                           value="">
+                    <button type="button" class="btn-picker" id="btnOpenNodModalAlloc" title="Deschide selector NOD">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                    <button type="button" class="btn-picker delete" title="Șterge selecție" onclick="document.getElementById('txtNODAlloc').value=''">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Cod Partener -->
+            <div class="form-group">
+                <label class="form-label" for="txtPartnerCodeAlloc">Cod Partener</label>
+                <input type="text" name="partner_code" id="txtPartnerCodeAlloc" class="input-control"
+                       placeholder="Ex: BV0125..." value="">
+            </div>
+
+            <!-- Asociație -->
+            <div class="form-group">
+                <label class="form-label" for="txtPartnerNameAlloc">Asociație</label>
+                <input type="text" name="partner_name" id="txtPartnerNameAlloc" class="input-control"
+                       placeholder="Denumire asociație..." value="">
+            </div>
+
+            <!-- Adresă (stradă) -->
+            <div class="form-group">
+                <label class="form-label" for="txtStreetAlloc">Adresă (stradă)</label>
+                <input type="text" name="street" id="txtStreetAlloc" class="input-control"
+                       placeholder="Denumire stradă..." value="">
+            </div>
+
+        </div><!-- /.filter-grid -->
+
+        <!-- Acțiuni filtru: Înreg/pag + Resetează + Caută -->
+        <div class="filter-actions">
+            <div class="filter-per-page">
+                <label class="filter-per-page-label" for="ddlPerPageAlloc">Înreg / pag</label>
+                <select name="per_page" id="ddlPerPageAlloc" class="input-control select-per-page">
+                    <option value="10"  >10</option>
+                    <option value="15"  >15</option>
+                    <option value="25"  >25</option>
+                    <option value="50"  >50</option>
+                    <option value="100" selected>100</option>
+                </select>
+            </div>
+            <a href="alocare-nod.html" class="btn-secondary">Resetează</a>
+            <button type="submit" class="btn-primary">Caută</button>
+        </div>
+    </form>
 </div>
+
+<!-- === Tabel Alocare NOD Parteneri ===
+     React: <PartnerAllocationTable data={allocations} onEdit={handleEdit} />
+-->
+<div class="table-container">
+    <!-- Bara de sus a tabelului -->
+    <div class="table-toolbar">
+        <div class="table-toolbar-left">
+            <span style="color: var(--text-muted); font-size: 13px; font-weight: 500;">
+                Afișare <strong id="allocVisibleCount">22</strong>
+                din <strong>4.891</strong> înregistrări
+            </span>
+        </div>
+        <div class="table-toolbar-right">
+            <!-- Căutare dinamică client-side -->
+            <div class="live-search-wrapper"
+                 title="Filtrare locală în timp real după cod partener, asociație sau adresă">
+                <span class="live-search-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </span>
+                <input type="text" id="allocTableSearch" class="input-control"
+                       placeholder="Căutare dinamică partener / adresă...">
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabel propriu-zis -->
+    <div style="overflow-x: auto; width: 100%;">
+        <table class="partners-table" id="allocationsTable">
+            <thead>
+                <tr>
+                    <th style="width: 4%; text-align: center;">Nr.</th>
+                    <th style="width: 12%;">Localitate</th>
+                    <th style="width: 12%;">Cod Partener</th>
+                    <th style="width: 28%;">Nume Asociație</th>
+                    <th style="width: 30%;">Adresă Asociație</th>
+                    <th style="width: 10%; text-align: center;">Alocare</th>
+                    <th style="width: 4%; text-align: center;">Acțiuni</th>
+                </tr>
+            </thead>
+            <tbody id="allocationsTableBody">
+                                <tr data-search="1 apold a-4 apold apold alocat total">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        1.
+                    </td>
+                    <td style="font-weight: 500;">Apold</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=A-4"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener A-4">
+                            A-4                        </a>
+                    </td>
+                    <td style="font-weight: 500;">APOLD</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        APOLD                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat total</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=A-4"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="2 apold a-1 apold mures saes alocat total">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        2.
+                    </td>
+                    <td style="font-weight: 500;">Apold</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=A-1"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener A-1">
+                            A-1                        </a>
+                    </td>
+                    <td style="font-weight: 500;">APOLD MURES</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        SAES                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat total</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=A-1"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="3 apold a-2 daia daia alocat total">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        3.
+                    </td>
+                    <td style="font-weight: 500;">Apold</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=A-2"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener A-2">
+                            A-2                        </a>
+                    </td>
+                    <td style="font-weight: 500;">DAIA</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        DAIA                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat total</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=A-2"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="4 apold a-3 vulcan vulcan alocat total">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        4.
+                    </td>
+                    <td style="font-weight: 500;">Apold</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=A-3"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener A-3">
+                            A-3                        </a>
+                    </td>
+                    <td style="font-weight: 500;">VULCAN</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        VULCAN                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat total</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=A-3"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="5 brasov bv0125 asocia de proprietari trifoiasul str. trifoiului, nr. 12, bl. 12, sc. a alocat total">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        5.
+                    </td>
+                    <td style="font-weight: 500;">Brasov</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=BV0125"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener BV0125">
+                            BV0125                        </a>
+                    </td>
+                    <td style="font-weight: 500;">ASOCIA DE PROPRIETARI TRIFOIASUL</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        Str. TRIFOIULUI, Nr. 12, Bl. 12, Sc. A                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat total</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=BV0125"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="6 brasov bv0085 asociatia de apartamente 152 str. lamaitei, nr. 4, bl. 152, sc. a+b alocat total">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        6.
+                    </td>
+                    <td style="font-weight: 500;">Brasov</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=BV0085"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener BV0085">
+                            BV0085                        </a>
+                    </td>
+                    <td style="font-weight: 500;">ASOCIATIA DE APARTAMENTE 152</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        Str. LAMAITEI, Nr. 4, Bl. 152, Sc. A+B                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat total</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=BV0085"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="7 brasov bv00129 asociatia de proprietai petunia 40-2 str. harmanului, nr. 40, bl. 40, sc. 2 alocat total">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        7.
+                    </td>
+                    <td style="font-weight: 500;">Brasov</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=BV00129"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener BV00129">
+                            BV00129                        </a>
+                    </td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETAI PETUNIA 40-2</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        Str. HARMANULUI, Nr. 40, Bl. 40, Sc. 2                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat total</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=BV00129"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="8 brasov bv0032 asociatia de proprietari de apartamente albina str. paraului, nr. 15, bl. 14, sc. a alocat total">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        8.
+                    </td>
+                    <td style="font-weight: 500;">Brasov</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=BV0032"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener BV0032">
+                            BV0032                        </a>
+                    </td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI DE APARTAMENTE ALBINA</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        Str. PARAULUI, Nr. 15, Bl. 14, Sc. A                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat total</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=BV0032"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="9 brasov bv0104 asociatia de proprietari 162 str. jepilor, nr. 7, bl. 162, sc. a alocat total">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        9.
+                    </td>
+                    <td style="font-weight: 500;">Brasov</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=BV0104"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener BV0104">
+                            BV0104                        </a>
+                    </td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI 162</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        Str. JEPILOR, Nr. 7, Bl. 162, Sc. A                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat total</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=BV0104"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="10 brasov bv0103 asociatia de proprietari 162 str. valea cetatii, nr. 6, bl. 162, sc. b alocat total">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        10.
+                    </td>
+                    <td style="font-weight: 500;">Brasov</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=BV0103"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener BV0103">
+                            BV0103                        </a>
+                    </td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI 162</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        Str. VALEA CETATII, Nr. 6, Bl. 162, Sc. B                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat total</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=BV0103"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="11 brasov bv0102 asociatia de proprietari 162 str. fragilor, nr. 2, bl. 162, sc. c alocat total">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        11.
+                    </td>
+                    <td style="font-weight: 500;">Brasov</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=BV0102"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener BV0102">
+                            BV0102                        </a>
+                    </td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI 162</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        Str. FRAGILOR, Nr. 2, Bl. 162, Sc. C                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat total</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=BV0102"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="12 brasov bv0105 asociatia de proprietari 162 str. jepilor, nr. 19, bl. 162, sc. d alocat total">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        12.
+                    </td>
+                    <td style="font-weight: 500;">Brasov</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=BV0105"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener BV0105">
+                            BV0105                        </a>
+                    </td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI 162</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        Str. JEPILOR, Nr. 19, Bl. 162, Sc. D                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat total</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=BV0105"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="13 brasov bv0097 asociatia de proprietari 5 cmb str. mircea cel batran, nr. 22, bl. 5 alocat parțial">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        13.
+                    </td>
+                    <td style="font-weight: 500;">Brasov</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=BV0097"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener BV0097">
+                            BV0097                        </a>
+                    </td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI 5 CMB</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        Str. MIRCEA CEL BATRAN, Nr. 22, Bl. 5                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-warning">Alocat parțial</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=BV0097"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="14 brasov bv0053 asociatia de proprietari 7 crizantema str. general leonard mociulschi, nr. 1, bl. 7 alocat total">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        14.
+                    </td>
+                    <td style="font-weight: 500;">Brasov</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=BV0053"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener BV0053">
+                            BV0053                        </a>
+                    </td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI 7 CRIZANTEMA</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        Str. GENERAL LEONARD MOCIULSCHI, Nr. 1, Bl. 7                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat total</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=BV0053"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="15 brasov bv0082 asociatia de proprietari 9 mai str. 9 mai, nr. 8, bl. 9 alocat total">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        15.
+                    </td>
+                    <td style="font-weight: 500;">Brasov</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=BV0082"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener BV0082">
+                            BV0082                        </a>
+                    </td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI 9 MAI</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        Str. 9 MAI, Nr. 8, Bl. 9                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat total</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=BV0082"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="16 brasov bv0059 asociatia de proprietari alexandru cel bun 19 str. alexandru cel bun, nr. 19, bl. 19 alocat total">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        16.
+                    </td>
+                    <td style="font-weight: 500;">Brasov</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=BV0059"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener BV0059">
+                            BV0059                        </a>
+                    </td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI ALEXANDRU CEL BUN 19</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        Str. ALEXANDRU CEL BUN, Nr. 19, Bl. 19                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat total</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=BV0059"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="17 brasov bv0055 asociatia de proprietari apollo-neptun str. saturn, nr. 30, bl. 30 alocat total">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        17.
+                    </td>
+                    <td style="font-weight: 500;">Brasov</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=BV0055"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener BV0055">
+                            BV0055                        </a>
+                    </td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI APOLLO-NEPTUN</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        Str. SATURN, Nr. 30, Bl. 30                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat total</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=BV0055"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="18 brasov bv0057 asociatia de proprietari ardealul str. saturn, nr. 40, bl. 40 alocat total">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        18.
+                    </td>
+                    <td style="font-weight: 500;">Brasov</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=BV0057"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener BV0057">
+                            BV0057                        </a>
+                    </td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI ARDEALUL</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        Str. SATURN, Nr. 40, Bl. 40                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat total</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=BV0057"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="19 brasov bv0120 asociatia de proprietari astra 159 str. calea bucuresti, nr. 159, bl. 159 alocat total">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        19.
+                    </td>
+                    <td style="font-weight: 500;">Brasov</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=BV0120"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener BV0120">
+                            BV0120                        </a>
+                    </td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI ASTRA 159</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        Str. CALEA BUCURESTI, Nr. 159, Bl. 159                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat total</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=BV0120"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="20 brasov bv0006 asociatia de proprietari bloc 2+3 str. iuliu maniu, nr. 2-3, bl. 2, sc. a+b alocat parțial">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        20.
+                    </td>
+                    <td style="font-weight: 500;">Brasov</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=BV0006"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener BV0006">
+                            BV0006                        </a>
+                    </td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI BLOC 2+3</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        Str. IULIU MANIU, Nr. 2-3, Bl. 2, Sc. A+B                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-warning">Alocat parțial</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=BV0006"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="21 brasov bv0032_n asociatia de proprietari albina (scara b) str. de modificat, nr. 1, bl. 1, sc. b nealocat">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        21.
+                    </td>
+                    <td style="font-weight: 500;">Brasov</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=BV0032_N"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener BV0032_N">
+                            BV0032_N                        </a>
+                    </td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI ALBINA (SCARA B)</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        Str. DE MODIFICAT, Nr. 1, Bl. 1, Sc. B                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">Nealocat</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=BV0032_N"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr data-search="22 brasov bv0066 asociatia de proprietari bloc 120 str. alexandru vlahuta, nr. 40, bl. 120, sc. a+b alocat total">
+                    <td style="text-align: center; color: var(--text-muted); font-size: 12.5px;">
+                        22.
+                    </td>
+                    <td style="font-weight: 500;">Brasov</td>
+                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                        <a href="parteneri-edit.html?code=BV0066"
+                           style="color: var(--accent); text-decoration: none;"
+                           title="Vezi detalii partener BV0066">
+                            BV0066                        </a>
+                    </td>
+                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI BLOC 120</td>
+                    <td style="color: var(--text-main); font-size: 13px;">
+                        Str. ALEXANDRU VLAHUTA, Nr. 40, Bl. 120, Sc. A+B                    </td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">Alocat total</span>                    </td>
+                    <td style="text-align: center;">
+                        <a href="alocare-nod-edit.html?code=BV0066"
+                           class="btn-action-icon" title="Editează / Gestionează Alocare Partener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                            </tbody>
+        </table>
+    </div>
+
+    <!-- === Paginație (Conformă cu parteneri.php) === -->
+    <div class="table-pagination">
+        <div style="font-size: 13px; color: var(--text-muted);">
+            Afișare <strong>1</strong> - <strong id="allocPaginationVisible">22</strong> din <strong>4.891</strong> înregistrări
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" disabled>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                <span>Anterior</span>
+            </button>
+            <div class="pagination-pages">
+                <button type="button" class="btn-secondary active" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;">1</button>
+                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 2')">2</button>
+                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 3')">3</button>
+                <span style="padding: 0 4px; color: var(--text-muted); font-size: 12px;">...</span>
+                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 49')">49</button>
+            </div>
+            <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" onclick="alert('Pagina următoare')">
+                <span>Următor</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- ══ NOD Picker Modal (partial) ════════════════════════════════════════════
+     React: <NodPickerModal id="nodPickerModalAlloc" onSelect={handleSelect} />
+══════════════════════════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="nodPickerModalAlloc" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="nodPickerModalAlloc-title">
+    <div class="modal-card nod-picker-card">
+        <div class="modal-header">
+            <h3 id="nodPickerModalAlloc-title">Alegere NOD</h3>
+            <button type="button" class="btn-close nod-picker-close" data-modal="nodPickerModalAlloc" title="Închide fereastra">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!-- Formular de filtrare -->
+            <form class="nod-picker-filter-form" id="nodPickerModalAlloc-form" onsubmit="return false;">
+                <div class="nod-picker-filter-grid">
+                    <!-- Localitate -->
+                    <div class="form-group">
+                        <label class="form-label" for="nodPickerModalAlloc-city">Localitate</label>
+                        <select id="nodPickerModalAlloc-city" class="input-control">
+                            <option value="-1">-</option>
+                                                        <option value="Apold">Apold</option>
+                                                        <option value="Brasov">Brasov</option>
+                                                        <option value="Bucuresti">Bucuresti</option>
+                                                        <option value="Bucuresti_">Bucuresti_</option>
+                                                        <option value="Buftea">Buftea</option>
+                                                        <option value="Calimanesti">Calimanesti</option>
+                                                        <option value="Chiajna">Chiajna</option>
+                                                        <option value="Chitila">Chitila</option>
+                                                        <option value="Cisnadie">Cisnadie</option>
+                                                        <option value="Constanta">Constanta</option>
+                                                        <option value="Deva">Deva</option>
+                                                        <option value="Dobroesti">Dobroesti</option>
+                                                        <option value="Eforie Nord">Eforie Nord</option>
+                                                        <option value="Giurgiu">Giurgiu</option>
+                                                        <option value="Iasi">Iasi</option>
+                                                        <option value="Magurele">Magurele</option>
+                                                        <option value="Mamaia">Mamaia</option>
+                                                        <option value="Mangalia">Mangalia</option>
+                                                        <option value="Medgidia">Medgidia</option>
+                                                        <option value="Medias">Medias</option>
+                                                        <option value="Mihail Kogalniceanu">Mihail Kogalniceanu</option>
+                                                        <option value="Municipiul Târgu Mures">Municipiul Târgu Mures</option>
+                                                        <option value="Navodari">Navodari</option>
+                                                        <option value="Neptun">Neptun</option>
+                                                        <option value="Olimp">Olimp</option>
+                                                        <option value="Orasul Tulcea">Orasul Tulcea</option>
+                                                        <option value="Ovidiu">Ovidiu</option>
+                                                        <option value="Ploiesti">Ploiesti</option>
+                                                        <option value="Ploiestiori">Ploiestiori</option>
+                                                        <option value="Popesti Leordeni">Popesti Leordeni</option>
+                                                        <option value="Predeal">Predeal</option>
+                                                        <option value="Rosu">Rosu</option>
+                                                        <option value="Râmnicu Vâlcea">Râmnicu Vâlcea</option>
+                                                        <option value="Sibiu">Sibiu</option>
+                                                        <option value="Sighisoara">Sighisoara</option>
+                                                        <option value="Singeorgiu de Mures">Singeorgiu de Mures</option>
+                                                        <option value="Targu Mures">Targu Mures</option>
+                                                        <option value="Tulcea">Tulcea</option>
+                                                        <option value="Tunari">Tunari</option>
+                                                        <option value="Târgu Jiu">Târgu Jiu</option>
+                                                        <option value="Târgu Mures">Târgu Mures</option>
+                                                        <option value="Ungheni">Ungheni</option>
+                                                        <option value="Voluntari">Voluntari</option>
+                                                    </select>
+                    </div>
+                    <!-- Strada -->
+                    <div class="form-group">
+                        <label class="form-label" for="nodPickerModalAlloc-street">Strada</label>
+                        <input type="text" id="nodPickerModalAlloc-street" class="input-control" placeholder="Denumire stradă...">
+                    </div>
+                    <!-- Tip -->
+                    <div class="form-group">
+                        <label class="form-label" for="nodPickerModalAlloc-type">Tip</label>
+                        <select id="nodPickerModalAlloc-type" class="input-control">
+                            <option value="-1">-</option>
+                            <option value="1">Cu agenți economici</option>
+                            <option value="2">Fără agenți economici</option>
+                        </select>
+                    </div>
+                    <!-- Asociație -->
+                    <div class="form-group">
+                        <label class="form-label" for="nodPickerModalAlloc-assoc">Asociație</label>
+                        <input type="text" id="nodPickerModalAlloc-assoc" class="input-control" placeholder="Nume asociație...">
+                    </div>
+                    <!-- Cod NOD -->
+                    <div class="form-group">
+                        <label class="form-label" for="nodPickerModalAlloc-code">Cod NOD</label>
+                        <input type="text" id="nodPickerModalAlloc-code" class="input-control" placeholder="Cod...">
+                    </div>
+                </div>
+                <div class="nod-picker-filter-actions">
+                    <div class="filter-per-page">
+                        <label class="filter-per-page-label" for="nodPickerModalAlloc-perpage">Înreg / pag</label>
+                        <select id="nodPickerModalAlloc-perpage" class="input-control select-per-page">
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100" selected>100</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn-secondary nod-picker-reset" data-modal="nodPickerModalAlloc">Resetează</button>
+                    <button type="button" class="btn-primary nod-picker-search" data-modal="nodPickerModalAlloc">Caută</button>
+                </div>
+            </form>
+
+            <!-- Tabelul de rezultate NOD -->
+            <div class="nod-picker-table-wrap">
+                <table class="modal-table">
+                    <thead>
+                        <tr>
+                            <th>NOD</th>
+                            <th>Adresă NOD</th>
+                            <th>Asociație</th>
+                            <th class="nod-picker-th-sel"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="nod-picker-tbody" id="nodPickerModalAlloc-tbody">
+                        <!-- Populat dinamic prin JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Paginație Modal -->
+            <div class="nod-picker-pagination">
+                <span class="nod-picker-count-label">
+                    Afișare NOD-uri: <strong class="nod-picker-count" id="nodPickerModalAlloc-count">0</strong>
+                </span>
+                <div class="nod-picker-page-btns">
+                    <button type="button" class="btn-action-icon nod-picker-prev" data-modal="nodPickerModalAlloc" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button type="button" class="btn-action-icon nod-picker-next" data-modal="nodPickerModalAlloc" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </div><!-- /modal-body -->
+    </div><!-- /modal-card -->
+</div><!-- /modal-overlay -->
+
+<!-- NOD Picker: date & logică JS ============================================
+     React: datele vin din props/API; logica este în NodPickerModal.tsx
+============================================================================ -->
+<script>
+(function() {
+    /* ── Date NOD ────────────────────────────────────────────────────── */
+    var _nodPickerData_nodPickerModalAlloc = [
+    { id: "1",  code: "81-001-0001", address: "Str. STEFAN CEL MARE, Nr. 27, Bl. 27, Sc. 1, Distr. 2, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC 27 SCARA 1",    city: "Bucuresti", street: "stefan cel mare",          ownerType: "1" },
+    { id: "2",  code: "81-001-0002", address: "Str. REZILIAT, Nr. 36, Bl. Vila, Sc. 1, Distr. 1, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC VILA",          city: "Bucuresti", street: "reziliat",                  ownerType: "1" },
+    { id: "3",  code: "81-001-0003", address: "Str. REZILIAT, Sc. 1, Distr. 5, Bucuresti",                              association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "14", code: "81-001-0004", address: "Str. GURA IALOMITEI, Nr. 3, Bl. PC9, Sc. B, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC PC9 SCARA B",   city: "Bucuresti", street: "gura ialomitei",             ownerType: "1" },
+    { id: "15", code: "81-001-0005", address: "Str. GURA IALOMITEI, Nr. 3, Bl. PC9, Sc. A, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC PC9 SCARA A",   city: "Bucuresti", street: "gura ialomitei",             ownerType: "1" },
+    { id: "16", code: "81-001-0006", address: "Str. REZILIAT, Nr. 28, Bl. V81A, Sc. A, Distr. 3, Bucuresti",           association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "17", code: "81-001-0007", address: "Str. Laborator, Nr. 125-127, Bl. S1, Sc. 2, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC S1 SCARA 2",    city: "Bucuresti", street: "laborator",                  ownerType: "1" },
+    { id: "18", code: "81-001-0008", address: "Str. Liber, Nr. 012, Bl. 0, Sc. 2, Bucuresti",                          association: "",                                            city: "Bucuresti", street: "liber",                     ownerType: "2" },
+    { id: "20", code: "81-001-0010", address: "Str. BIBESCU VODA, Nr. 2, Bl. P5, Sc. 4, Distr. 4, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC P5 SCARA 4",    city: "Bucuresti", street: "bibescu voda",               ownerType: "1" },
+    { id: "21", code: "81-001-0011", address: "Str. REZILIAT, Sc. A+B, Apt. -, Distr. 3, Bucuresti",                   association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "22", code: "81-001-0012", address: "Str. MIHAI BRAVU, Nr. 291, Bl. 12A, Sc. 1, Distr. 3, Bucuresti",        association: "ASOCIATIA DE PROPRIETARI BLOC 12A SCARA A",   city: "Bucuresti", street: "mihai bravu",                ownerType: "1" },
+    { id: "23", code: "81-001-0013", address: "Str. REZILIAT, Sc. 1, Distr. 3, Bucuresti",                             association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "25", code: "81-001-0015", address: "Str. REZILIAT, Sc. 2, Distr. 3, Bucuresti",                             association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "27", code: "81-001-0017", address: "Str. SIBIU, Nr. 18, Bl. 813, Sc. 1, Distr. 6, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BL 813",             city: "Bucuresti", street: "sibiu",                     ownerType: "1" },
+    { id: "28", code: "81-001-0018", address: "Str. UNIRII, Nr. 13, Bl. 2C, Sc. 1, Distr. 5, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BLOC 2C",            city: "Bucuresti", street: "unirii",                    ownerType: "1" },
+    { id: "29", code: "81-001-0019", address: "Str. UNIRII, Nr. 13, Bl. 2C, Sc. 2, Distr. 5, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BLOC 2C",            city: "Bucuresti", street: "unirii",                    ownerType: "1" },
+    { id: "30", code: "81-001-0020", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 1, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "31", code: "81-001-0021", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 2, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "32", code: "81-001-0022", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 3, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "34", code: "81-001-0023", address: "Str. OTESANI, Nr. 14, Bl. T8B, Sc. 1, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC T8B",           city: "Bucuresti", street: "otesani",                   ownerType: "1" },
+    { id: "35", code: "81-001-0024", address: "Str. COLENTINA, Nr. 70, Bl. 108, Sc. 1, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 108",           city: "Bucuresti", street: "colentina",                  ownerType: "1" },
+    { id: "36", code: "81-001-0025", address: "Str. FUNDENI, Nr. 227, Bl. 116B, Sc. A, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 116B",          city: "Bucuresti", street: "fundeni",                   ownerType: "1" },
+    { id: "37", code: "81-001-0026", address: "Str. FUNDENI, Nr. 227, Bl. 116B, Sc. B, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 116B",          city: "Bucuresti", street: "fundeni",                   ownerType: "1" },
+    { id: "40", code: "81-001-0029", address: "Str. CONSTANTIN RADULESCU MOTRU, Nr. 23, Bl. B35, Sc. B, Distr. 4",    association: "ASOCIATIA DE PROPRIETARI BLOC 35 SCARA 2",   city: "Bucuresti", street: "constantin radulescu motru", ownerType: "1" },
+    { id: "41", code: "81-001-0030", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. A, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA A",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "42", code: "81-001-0031", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. B, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA B",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "43", code: "81-001-0032", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. E, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA E",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "51", code: "81-001-0040", address: "Str. CALEA MOSILOR, Nr. 241, Bl. 47, Sc. A+B+C, Distr. 2, Bucuresti",  association: "ASOCIATIA DE PROPRIETARI BLOC 47",            city: "Bucuresti", street: "calea mosilor",              ownerType: "1" },
+    { id: "52", code: "81-001-0041", address: "Str. MURGENI, Nr. 7, Bl. L27, Sc. A, Distr. 3, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC L27",           city: "Bucuresti", street: "murgeni",                   ownerType: "1" },
+    { id: "53", code: "81-001-0042", address: "Str. ALEEA CODLEA, Nr. 6, Bl. J3, Sc. 1, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC J3",            city: "Bucuresti", street: "aleea codlea",               ownerType: "1" },
+    { id: "54", code: "81-001-0043", address: "Str. ALEEA ROTUNDA, Nr. 1-4, Bl. Y1B, Sc. 5, Distr. 3, Bucuresti",     association: "ASOCIATIA DE PROPRIETARI BLOC Y1B SCARA 1-5", city: "Bucuresti", street: "aleea rotunda",              ownerType: "1" },
+    { id: "59", code: "81-001-0047", address: "Str. LACUL TEI, Nr. 121, Bl. 5, Sc. 1, Distr. 2, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC 5 SCARA 1-4",  city: "Bucuresti", street: "lacul tei",                  ownerType: "1" },
+    { id: "65", code: "81-001-0053", address: "Str. CALEA VACARESTI, Nr. 308, Bl. 1E, Sc. 1, Distr. 4, Bucuresti",    association: "ASOCIATIA DE PROPRIETARI BLOC 1E",            city: "Bucuresti", street: "calea vacaresti",            ownerType: "1" },
+    { id: "66", code: "81-001-0054", address: "Str. OLTENITEI, Nr. 140, Bl. 5, Sc. 3, Distr. 4, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC 5 SCARA 3",    city: "Bucuresti", street: "oltenitei",                  ownerType: "1" },
+    { id: "8",  code: "81-001-0055", address: "Str. ALEEA BARSANESTI, Nr. 2, Bl. 156, Sc. 2, Distr. 6, Bucuresti",    association: "ASOCIATIA DE PROPRIETARI BLOC156 SC. 2",     city: "Bucuresti", street: "aleea barsanesti",           ownerType: "1" },
+    { id: "68", code: "81-001-0057", address: "Str. CEAHLAU, Nr. 15, Bl. 75, Sc. 1, Distr. 6, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC 75",            city: "Bucuresti", street: "ceahlau",                   ownerType: "1" },
+    { id: "69", code: "81-001-0058", address: "Str. CEAHLAU, Nr. 15, Bl. 75, Sc. 2, Distr. 6, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC 75",            city: "Bucuresti", street: "ceahlau",                   ownerType: "1" }
+];
+
+    /* ── Configurare instanță ────────────────────────────────────────── */
+    var _cfg = {
+        modalId:    "nodPickerModalAlloc",
+        inputId:    "txtNODAlloc",
+        btnOpenId:  "btnOpenNodModalAlloc",
+        callback:   null   /* funcție opțională apelată la selecție */
+    };
+
+    function initNodPicker_nodPickerModalAlloc() {
+        NodPicker.init(
+            _cfg,
+            _nodPickerData_nodPickerModalAlloc        );
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initNodPicker_nodPickerModalAlloc);
+    } else {
+        initNodPicker_nodPickerModalAlloc();
+    }
+})();
+</script>
+
+<script>
+/**
+ * Căutare dinamică client-side.
+ * React conversion: se mută în hook-urile componentei <PartnerAllocationListPage />
+ */
+(function () {
+    'use strict';
+
+    var searchInput  = document.getElementById('allocTableSearch');
+    var tableBody    = document.getElementById('allocationsTableBody');
+    var visibleCount = document.getElementById('allocVisibleCount');
+    var pagCountEl   = document.getElementById('allocPaginationVisible');
+
+    if (!searchInput || !tableBody) return;
+
+    searchInput.addEventListener('input', function () {
+        var term    = this.value.trim().toLowerCase();
+        var rows    = tableBody.querySelectorAll('tr');
+        var visible = 0;
+
+        rows.forEach(function (row) {
+            var haystack = row.getAttribute('data-search') || '';
+            var show     = !term || haystack.indexOf(term) !== -1;
+            row.style.display = show ? '' : 'none';
+            if (show) visible++;
+        });
+
+        if (visibleCount) visibleCount.textContent = visible;
+        if (pagCountEl) pagCountEl.textContent = visible;
+    });
+})();
+</script>
 
     </div><!-- /.content -->
     <footer class="app-footer">

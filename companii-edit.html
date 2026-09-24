@@ -22,12 +22,12 @@
     <!-- ── Logo ─────────────────────────────────────────────────────── -->
     <!-- React: <SidebarLogo activeApp={activeApp} /> -->
     <div class="logo">
-        <a href="index.html" title="SONIC GRID – Acasă">
-            <img src="assets/images/sonic-grid-logo.svg"
-                 alt="SONIC GRID"
+        <a href="sonic-dashboard.html" title="SONIC – Acasă">
+            <img src="assets/images/sonic-logo.svg"
+                 alt="SONIC"
                  class="logo-full"
                  id="sidebarLogo">
-            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">SG</span>
+            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">S</span>
         </a>
     </div>
 
@@ -36,7 +36,7 @@
     <nav class="sidebar-nav" aria-label="Navigare principală">
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC GRID
+             ║  1. SONIC GRID
              ╚══════════════════════════════════════════════════════════════ -->
         <div class="app-section"
              data-app="sonic-grid"
@@ -44,6 +44,7 @@
              data-logo-icon="SG">
             <button class="app-section-header" type="button" title="SONIC GRID">
                 <img src="assets/images/sonic-grid-logo.svg" class="app-section-logo" alt="SONIC GRID">
+                <span class="app-section-badge">SG</span>
             </button>
             <div class="app-section-body">
 
@@ -142,14 +143,71 @@
         </div>
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC BILLING
+             ║  2. SONIC MARKET
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-market"
+             data-logo="assets/images/sonic-market-logo.svg"
+             data-logo-icon="SM">
+            <button class="app-section-header" type="button" title="SONIC MARKET">
+                <img src="assets/images/sonic-market-logo.svg" class="app-section-logo" alt="SONIC MARKET">
+                <span class="app-section-badge">SM</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard Market -->
+                <a href="market-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  3. SONIC PRO
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-pro"
+             data-logo="assets/images/sonic-pro-logo.svg"
+             data-logo-icon="SP">
+            <button class="app-section-header" type="button" title="SONIC PRO">
+                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+                <span class="app-section-badge">SP</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard PRO -->
+                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- Intervenții -->
+                <a href="interventii.html" class="nav-item " title="Intervenții">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </span>
+                    <span class="nav-label">Intervenții</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  4. SONIC BILLING
              ╚══════════════════════════════════════════════════════════════ -->
         <div class="app-section open"
              data-app="sonic-billing"
              data-logo="assets/images/sonic-billing-logo.svg"
-             data-logo-icon="SG">
+             data-logo-icon="SB">
             <button class="app-section-header" type="button" title="SONIC BILLING">
                 <img src="assets/images/sonic-billing-logo.svg" class="app-section-logo" alt="SONIC BILLING">
+                <span class="app-section-badge">SB</span>
             </button>
             <div class="app-section-body">
 
@@ -213,25 +271,6 @@
                         <a href="modele-repartitoare.html" class="nav-subitem ">Modele Repartitoare</a>
                         <a href="modele-contoare.html" class="nav-subitem ">Modele Contoare</a>
                         <a href="serii-apometre.html" class="nav-subitem ">Serii Apometre Achiziționate</a>
-                    </div>
-                </div>
-
-                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
-                <div class="nav-group " data-group="master-data">
-                    <button class="nav-group-title" type="button" title="Master Data Management">
-                        <span class="nav-group-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </span>
-                        <span class="nav-label">Master Data Management</span>
-                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                    </button>
-                    <div class="nav-subitems">
-                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
-                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
-                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
-                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
-                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
-                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
                     </div>
                 </div>
 
@@ -349,32 +388,68 @@
         </div>
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC PRO
+             ║  5. SONIC FIN
              ╚══════════════════════════════════════════════════════════════ -->
         <div class="app-section"
-             data-app="sonic-pro"
-             data-logo="assets/images/sonic-pro-logo.svg"
-             data-logo-icon="SP">
-            <button class="app-section-header" type="button" title="SONIC PRO">
-                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+             data-app="sonic-fin"
+             data-logo="assets/images/sonic-fin-logo.svg"
+             data-logo-icon="SF">
+            <button class="app-section-header" type="button" title="SONIC FIN">
+                <img src="assets/images/sonic-fin-logo.svg" class="app-section-logo" alt="SONIC FIN">
+                <span class="app-section-badge">SF</span>
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
-                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                <!-- Dashboard FIN -->
+                <a href="fin-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  6. SONIC (Base – Ecosistem & Configurare)
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic"
+             data-logo="assets/images/sonic-logo.svg"
+             data-logo-icon="S">
+            <button class="app-section-header" type="button" title="SONIC">
+                <img src="assets/images/sonic-logo.svg" class="app-section-logo" alt="SONIC">
+                <span class="app-section-badge">S</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard SONIC -->
+                <a href="sonic-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
-                    <span class="nav-label">Intervenții</span>
+                    <span class="nav-label">Dashboard</span>
                 </a>
+
+                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <div class="nav-group " data-group="master-data">
+                    <button class="nav-group-title" type="button" title="Master Data Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Master Data Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
+                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
+                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
+                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
+                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
+                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -449,7 +524,7 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="index.html">
+            <a href="sonic-dashboard.html">
                 <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
             </a>
         </div>
@@ -534,7 +609,7 @@
 <div class="page-title-container">
     <div class="page-title">
         <h1>Editare Companie</h1>
-        <p>Completează formularul de mai jos pentru a adăuga o nouă companie.</p>
+        <p>Modifici informațiile pentru compania selectată.</p>
     </div>
     <div style="display: flex; gap: 12px; align-items: center;">
         <a href="companii.html" class="btn-secondary">
@@ -557,7 +632,7 @@
             
             <div class="form-group" style="margin-bottom: 16px;">
                 <label class="form-label" for="txtCompany">Companie <span class="required-star">*</span></label>
-                <input type="text" id="txtCompany" name="name" class="input-control" maxlength="50" value="" required>
+                <input type="text" id="txtCompany" name="name" class="input-control" maxlength="50" value="DECOR PRESS SERVICII INSTALATII" required>
             </div>
             
             <div class="form-row-2" style="margin-bottom: 16px; gap: 20px;">
@@ -567,7 +642,7 @@
                         <option value="-1">- Selectați orașul -</option>
                                                     <option value="18" >Apold</option>
                                                     <option value="32" >Brasov</option>
-                                                    <option value="1" >Bucuresti</option>
+                                                    <option value="1" selected>Bucuresti</option>
                                                     <option value="14" >Bucuresti_</option>
                                                     <option value="38" >Buftea</option>
                                                     <option value="8" >Calimanesti</option>
@@ -613,19 +688,19 @@
 
                 <div class="form-group" style="margin-bottom: 0;">
                     <label class="form-label" for="txtSector">Sector <span class="required-star">*</span></label>
-                    <input type="text" id="txtSector" name="sector" class="input-control" maxlength="50" value="" required>
+                    <input type="text" id="txtSector" name="sector" class="input-control" maxlength="50" value="4" required>
                 </div>
             </div>
 
             <div class="form-row-2" style="margin-bottom: 0; gap: 20px;">
                 <div class="form-group" style="margin-bottom: 0;">
                     <label class="form-label" for="txtStreet">Stradă <span class="required-star">*</span></label>
-                    <input type="text" id="txtStreet" name="street" class="input-control" maxlength="50" value="" required>
+                    <input type="text" id="txtStreet" name="street" class="input-control" maxlength="50" value="Nitu Vasile" required>
                 </div>
 
                 <div class="form-group" style="margin-bottom: 0;">
                     <label class="form-label" for="txtNumber">Număr <span class="required-star">*</span></label>
-                    <input type="text" id="txtNumber" name="number" class="input-control" maxlength="50" value="" required>
+                    <input type="text" id="txtNumber" name="number" class="input-control" maxlength="50" value="57" required>
                 </div>
             </div>
 
@@ -644,24 +719,24 @@
             <div class="form-row-2" style="margin-bottom: 16px; gap: 20px;">
                 <div class="form-group" style="margin-bottom: 0;">
                     <label class="form-label" for="txtFiscal">Cod fiscal <span class="required-star">*</span></label>
-                    <input type="text" id="txtFiscal" name="cui" class="input-control" maxlength="50" value="" required>
+                    <input type="text" id="txtFiscal" name="cui" class="input-control" maxlength="50" value="RO393007" required>
                 </div>
 
                 <div class="form-group" style="margin-bottom: 0;">
                     <label class="form-label" for="txtRegCom">Registrul Comerțului <span class="required-star">*</span></label>
-                    <input type="text" id="txtRegCom" name="reg_com" class="input-control" maxlength="50" value="" required>
+                    <input type="text" id="txtRegCom" name="reg_com" class="input-control" maxlength="50" value="ROONRC.J1991007171404" required>
                 </div>
             </div>
             
             <div class="form-row-2" style="margin-bottom: 0; gap: 20px;">
                 <div class="form-group" style="margin-bottom: 0;">
                     <label class="form-label" for="txtBank">Banca <span class="required-star">*</span></label>
-                    <input type="text" id="txtBank" name="bank" class="input-control" maxlength="50" value="" required>
+                    <input type="text" id="txtBank" name="bank" class="input-control" maxlength="50" value="ING BANK" required>
                 </div>
 
                 <div class="form-group" style="margin-bottom: 0;">
                     <label class="form-label" for="txtIban">Cont Bancar (IBAN) <span class="required-star">*</span></label>
-                    <input type="text" id="txtIban" name="iban" class="input-control" maxlength="50" value="" required>
+                    <input type="text" id="txtIban" name="iban" class="input-control" maxlength="50" value="RO82INGB0000999907708219" required>
                 </div>
             </div>
 
@@ -680,17 +755,17 @@
             <div class="form-row-3" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 0;">
                 <div class="form-group" style="margin-bottom: 0;">
                     <label class="form-label" for="txtPhone">Telefon <span class="required-star">*</span></label>
-                    <input type="text" id="txtPhone" name="phone" class="input-control" maxlength="50" value="" required>
+                    <input type="text" id="txtPhone" name="phone" class="input-control" maxlength="50" value="0214505111" required>
                 </div>
 
                 <div class="form-group" style="margin-bottom: 0;">
                     <label class="form-label" for="txtFax">Fax <span class="required-star">*</span></label>
-                    <input type="text" id="txtFax" name="fax" class="input-control" maxlength="50" value="" required>
+                    <input type="text" id="txtFax" name="fax" class="input-control" maxlength="50" value="0314282475" required>
                 </div>
 
                 <div class="form-group" style="margin-bottom: 0;">
                     <label class="form-label" for="txtEmail">Email <span class="required-star">*</span></label>
-                    <input type="email" id="txtEmail" name="email" class="input-control" maxlength="50" value="" required>
+                    <input type="email" id="txtEmail" name="email" class="input-control" maxlength="50" value="calcul@decorpress.ro" required>
                 </div>
             </div>
 
@@ -717,12 +792,12 @@
             <div class="form-row-2" style="margin-bottom: 0; gap: 20px;">
                 <div class="form-group" style="margin-bottom: 0;">
                     <label class="form-label" style="color: var(--text-muted);">Nume document curent</label>
-                    <input type="text" class="input-control" value="" disabled>
+                    <input type="text" class="input-control" value="StampilaDPSI.png" disabled>
                 </div>
 
                 <div class="form-group" style="margin-bottom: 0;">
                     <label class="form-label" style="color: var(--text-muted);">Dimensiune (bytes)</label>
-                    <input type="text" class="input-control" value="" disabled>
+                    <input type="text" class="input-control" value="493552" disabled>
                 </div>
             </div>
 
@@ -771,7 +846,7 @@
 
         setTimeout(() => {
             alert('Compania a fost salvată cu succes!');
-            window.location.href = 'companii.php';
+            window.location.href = 'companii.html';
         }, 800);
 
         return false;

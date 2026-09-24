@@ -22,12 +22,12 @@
     <!-- ── Logo ─────────────────────────────────────────────────────── -->
     <!-- React: <SidebarLogo activeApp={activeApp} /> -->
     <div class="logo">
-        <a href="index.html" title="SONIC GRID – Acasă">
-            <img src="assets/images/sonic-grid-logo.svg"
-                 alt="SONIC GRID"
+        <a href="sonic-dashboard.html" title="SONIC – Acasă">
+            <img src="assets/images/sonic-logo.svg"
+                 alt="SONIC"
                  class="logo-full"
                  id="sidebarLogo">
-            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">SG</span>
+            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">S</span>
         </a>
     </div>
 
@@ -36,7 +36,7 @@
     <nav class="sidebar-nav" aria-label="Navigare principală">
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC GRID
+             ║  1. SONIC GRID
              ╚══════════════════════════════════════════════════════════════ -->
         <div class="app-section"
              data-app="sonic-grid"
@@ -44,6 +44,7 @@
              data-logo-icon="SG">
             <button class="app-section-header" type="button" title="SONIC GRID">
                 <img src="assets/images/sonic-grid-logo.svg" class="app-section-logo" alt="SONIC GRID">
+                <span class="app-section-badge">SG</span>
             </button>
             <div class="app-section-body">
 
@@ -142,14 +143,71 @@
         </div>
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC BILLING
+             ║  2. SONIC MARKET
              ╚══════════════════════════════════════════════════════════════ -->
-        <div class="app-section open"
+        <div class="app-section"
+             data-app="sonic-market"
+             data-logo="assets/images/sonic-market-logo.svg"
+             data-logo-icon="SM">
+            <button class="app-section-header" type="button" title="SONIC MARKET">
+                <img src="assets/images/sonic-market-logo.svg" class="app-section-logo" alt="SONIC MARKET">
+                <span class="app-section-badge">SM</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard Market -->
+                <a href="market-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  3. SONIC PRO
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-pro"
+             data-logo="assets/images/sonic-pro-logo.svg"
+             data-logo-icon="SP">
+            <button class="app-section-header" type="button" title="SONIC PRO">
+                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+                <span class="app-section-badge">SP</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard PRO -->
+                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- Intervenții -->
+                <a href="interventii.html" class="nav-item " title="Intervenții">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </span>
+                    <span class="nav-label">Intervenții</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  4. SONIC BILLING
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
              data-app="sonic-billing"
              data-logo="assets/images/sonic-billing-logo.svg"
-             data-logo-icon="SG">
+             data-logo-icon="SB">
             <button class="app-section-header" type="button" title="SONIC BILLING">
                 <img src="assets/images/sonic-billing-logo.svg" class="app-section-logo" alt="SONIC BILLING">
+                <span class="app-section-badge">SB</span>
             </button>
             <div class="app-section-body">
 
@@ -213,25 +271,6 @@
                         <a href="modele-repartitoare.html" class="nav-subitem ">Modele Repartitoare</a>
                         <a href="modele-contoare.html" class="nav-subitem ">Modele Contoare</a>
                         <a href="serii-apometre.html" class="nav-subitem ">Serii Apometre Achiziționate</a>
-                    </div>
-                </div>
-
-                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
-                <div class="nav-group open" data-group="master-data">
-                    <button class="nav-group-title" type="button" title="Master Data Management">
-                        <span class="nav-group-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </span>
-                        <span class="nav-label">Master Data Management</span>
-                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                    </button>
-                    <div class="nav-subitems">
-                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
-                        <a href="contracte.html" class="nav-subitem active">Contracte</a>
-                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
-                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
-                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
-                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
                     </div>
                 </div>
 
@@ -349,32 +388,68 @@
         </div>
 
         <!-- ╔══════════════════════════════════════════════════════════════
-             ║  SONIC PRO
+             ║  5. SONIC FIN
              ╚══════════════════════════════════════════════════════════════ -->
         <div class="app-section"
-             data-app="sonic-pro"
-             data-logo="assets/images/sonic-pro-logo.svg"
-             data-logo-icon="SP">
-            <button class="app-section-header" type="button" title="SONIC PRO">
-                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+             data-app="sonic-fin"
+             data-logo="assets/images/sonic-fin-logo.svg"
+             data-logo-icon="SF">
+            <button class="app-section-header" type="button" title="SONIC FIN">
+                <img src="assets/images/sonic-fin-logo.svg" class="app-section-logo" alt="SONIC FIN">
+                <span class="app-section-badge">SF</span>
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
-                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                <!-- Dashboard FIN -->
+                <a href="fin-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  6. SONIC (Base – Ecosistem & Configurare)
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section open"
+             data-app="sonic"
+             data-logo="assets/images/sonic-logo.svg"
+             data-logo-icon="S">
+            <button class="app-section-header" type="button" title="SONIC">
+                <img src="assets/images/sonic-logo.svg" class="app-section-logo" alt="SONIC">
+                <span class="app-section-badge">S</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard SONIC -->
+                <a href="sonic-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
-                    <span class="nav-label">Intervenții</span>
+                    <span class="nav-label">Dashboard</span>
                 </a>
+
+                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <div class="nav-group open" data-group="master-data">
+                    <button class="nav-group-title" type="button" title="Master Data Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Master Data Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
+                        <a href="contracte.html" class="nav-subitem active">Contracte</a>
+                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
+                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
+                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
+                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -449,7 +524,7 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="index.html">
+            <a href="sonic-dashboard.html">
                 <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
             </a>
         </div>
@@ -483,7 +558,28 @@
     <div class="help-wrapper">
         <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
             <div class="help-panel-inner">
-                                <p class="help-empty">Nu există informații de ajutor disponibile pentru această pagină.</p>
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Gestiune Contracte</h4>
+            <p>Această pagină vă permite să vizualizați, să filtrați și să administrați contractele asociate partenerilor (asociații, clienți direcți, agenți economici) din sistem.</p>
+                            </div>
+                                    </div>
                     </div><!-- /.help-panel-inner -->
         </div><!-- /.help-panel -->
         
@@ -510,22 +606,358 @@
 
     <div class="content">
 
+<!-- === Page Title Container === -->
 <div class="page-title-container">
     <div class="page-title">
-        <h1>Contracte</h1>
-        <p>Pagina este în construcție.</p>
+        <h1>Lista Contracte</h1>
+        <p>Vizualizează, filtrează și administrează contractele înregistrate în sistem.</p>
+    </div>
+    <a href="contracte-edit.html" class="btn-secondary" style="border-color: var(--accent); color: var(--accent); font-weight: 600; padding: 10px 18px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="margin-right: 6px;"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        <span>Adaugă Contract</span>
+    </a>
+</div>
+
+<!-- === Formular de Filtrare === -->
+<div class="card" style="margin-bottom: 24px;">
+    <div style="margin-bottom: 18px;">
+        <span class="chart-title" style="font-size: 14px; font-weight: 600;">Filtrare Avansată</span>
+    </div>
+
+    <form method="GET" action="contracte.html" id="filterForm">
+        <div class="filter-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+            
+            <div class="form-group">
+                <label class="form-label" for="txtContractNo">Număr contract</label>
+                <input name="contract_no" type="text" id="txtContractNo" class="input-control" placeholder="Ex: 0102" value="">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="ddlCity">Localitate</label>
+                <select name="city" id="ddlCity" class="input-control">
+                    <option value="-1">- Toate -</option>
+                                            <option value="18" >Apold</option>
+                                            <option value="32" >Brasov</option>
+                                            <option value="1" >Bucuresti</option>
+                                            <option value="14" >Bucuresti_</option>
+                                            <option value="38" >Buftea</option>
+                                            <option value="8" >Calimanesti</option>
+                                            <option value="30" >Chiajna</option>
+                                            <option value="35" >Chitila</option>
+                                            <option value="7" >Cisnadie</option>
+                                            <option value="12" >Constanta</option>
+                                            <option value="27" >Deva</option>
+                                            <option value="26" >Dobroesti</option>
+                                            <option value="22" >Eforie Nord</option>
+                                            <option value="3" >Giurgiu</option>
+                                            <option value="2" >Iasi</option>
+                                            <option value="34" >Magurele</option>
+                                            <option value="20" >Mamaia</option>
+                                            <option value="19" >Mangalia</option>
+                                            <option value="40" >Medgidia</option>
+                                            <option value="9" >Medias</option>
+                                            <option value="31" >Mihail Kogalniceanu</option>
+                                            <option value="41" >Municipiul Târgu Mures</option>
+                                            <option value="21" >Navodari</option>
+                                            <option value="33" >Neptun</option>
+                                            <option value="24" >Olimp</option>
+                                            <option value="28" >Orasul Tulcea</option>
+                                            <option value="36" >Ovidiu</option>
+                                            <option value="17" >Ploiesti</option>
+                                            <option value="37" >Ploiestiori</option>
+                                            <option value="25" >Popesti Leordeni</option>
+                                            <option value="39" >Predeal</option>
+                                            <option value="42" >Rosu</option>
+                                            <option value="10" >Râmnicu Vâlcea</option>
+                                            <option value="5" >Sibiu</option>
+                                            <option value="6" >Sighisoara</option>
+                                            <option value="15" >Singeorgiu de Mures</option>
+                                            <option value="13" >Targu Mures</option>
+                                            <option value="11" >Tulcea</option>
+                                            <option value="43" >Tunari</option>
+                                            <option value="23" >Târgu Jiu</option>
+                                            <option value="4" >Târgu Mures</option>
+                                            <option value="16" >Ungheni</option>
+                                            <option value="29" >Voluntari</option>
+                                    </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="txtPartnerCode">Cod partener</label>
+                <input name="partner_code" type="text" id="txtPartnerCode" class="input-control" placeholder="Cod partener..." value="">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="txtPartnerName">Nume partener</label>
+                <input name="partner_name" type="text" id="txtPartnerName" class="input-control" placeholder="Nume asociație/client..." value="">
+            </div>
+
+        </div>
+        <div class="filter-actions">
+            <div class="filter-per-page">
+                <label class="filter-per-page-label" for="ddlPerPage">Înreg / pag</label>
+                <select name="per_page" id="ddlPerPage" class="input-control select-per-page">
+                    <option value="10" >10</option>
+                    <option value="15" >15</option>
+                    <option value="25" >25</option>
+                    <option value="50" >50</option>
+                    <option value="100" selected>100</option>
+                </select>
+            </div>
+            <a href="contracte.html" class="btn-secondary">Resetează</a>
+            <button type="submit" class="btn-primary">Caută</button>
+        </div>
+    </form>
+</div>
+
+<!-- === Tabel Date Contracte === -->
+<div class="table-container">
+    <div class="table-toolbar">
+        <div class="table-toolbar-left">
+            <span style="color: var(--text-muted); font-size: 13px; font-weight: 500;">
+                Afișare <strong id="visibleCount">14</strong> din <strong>4107</strong> contracte
+            </span>
+        </div>
+        <div class="table-toolbar-right">
+            <div class="live-search-wrapper" title="Filtrare locală în timp real...">
+                <span class="live-search-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </span>
+                <input type="text" id="tableSearch" class="input-control" placeholder="Caută dinamic în listă...">
+            </div>
+        </div>
+    </div>
+
+    <div style="overflow-x: auto; width: 100%;">
+        <table class="partners-table" id="dataTable">
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Număr contract</th>
+                    <th style="width: 15%; text-align: center;">Data contract</th>
+                    <th style="width: 15%;">Cod partener</th>
+                    <th style="width: 50%;">Nume partener</th>
+                    <th style="width: 5%; text-align: center;">Acțiuni</th>
+                </tr>
+            </thead>
+            <tbody id="dataTableBody">
+                                    <tr data-search="0102 0102 1 decembrie 1918 bl 12 sc 1">
+                        <td style="font-weight: 600; color: var(--accent);">0102</td>
+                        <td style="text-align: center; color: var(--text-muted); font-size: 13px;">15.09.2023</td>
+                        <td style="font-family: monospace; font-size: 13px; font-weight: 500;">0102</td>
+                        <td style="font-weight: 500; color: var(--text-main);">1 DECEMBRIE 1918 BL 12 SC 1</td>
+                        <td style="text-align: center;">
+                            <a href="contracte-edit.html?id=1" class="btn-action-icon" title="Editează contract">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr data-search="0200 0200 1 decembrie 1918 bl 71 sc 2">
+                        <td style="font-weight: 600; color: var(--accent);">0200</td>
+                        <td style="text-align: center; color: var(--text-muted); font-size: 13px;">15.04.2026</td>
+                        <td style="font-family: monospace; font-size: 13px; font-weight: 500;">0200</td>
+                        <td style="font-weight: 500; color: var(--text-main);">1 DECEMBRIE 1918 BL 71 SC 2</td>
+                        <td style="text-align: center;">
+                            <a href="contracte-edit.html?id=2" class="btn-action-icon" title="Editează contract">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr data-search="13 13 1 decembrie 1918, nr. 1, bl. 310, sc. a">
+                        <td style="font-weight: 600; color: var(--accent);">13</td>
+                        <td style="text-align: center; color: var(--text-muted); font-size: 13px;">09.01.2015</td>
+                        <td style="font-family: monospace; font-size: 13px; font-weight: 500;">13</td>
+                        <td style="font-weight: 500; color: var(--text-main);">1 DECEMBRIE 1918, Nr. 1, Bl. 310, Sc. A</td>
+                        <td style="text-align: center;">
+                            <a href="contracte-edit.html?id=3" class="btn-action-icon" title="Editează contract">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr data-search="0147 0147 11 iunie bl 102 sc 3">
+                        <td style="font-weight: 600; color: var(--accent);">0147</td>
+                        <td style="text-align: center; color: var(--text-muted); font-size: 13px;">06.12.2024</td>
+                        <td style="font-family: monospace; font-size: 13px; font-weight: 500;">0147</td>
+                        <td style="font-weight: 500; color: var(--text-main);">11 IUNIE BL 102 SC 3</td>
+                        <td style="text-align: center;">
+                            <a href="contracte-edit.html?id=4" class="btn-action-icon" title="Editează contract">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr data-search="0155 0155 11 iunie bl 102 sc 7">
+                        <td style="font-weight: 600; color: var(--accent);">0155</td>
+                        <td style="text-align: center; color: var(--text-muted); font-size: 13px;">10.04.2025</td>
+                        <td style="font-family: monospace; font-size: 13px; font-weight: 500;">0155</td>
+                        <td style="font-weight: 500; color: var(--text-main);">11 IUNIE BL 102 SC 7</td>
+                        <td style="text-align: center;">
+                            <a href="contracte-edit.html?id=5" class="btn-action-icon" title="Editează contract">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr data-search="0100 0100 16 februarie bl 10 sc 1">
+                        <td style="font-weight: 600; color: var(--accent);">0100</td>
+                        <td style="text-align: center; color: var(--text-muted); font-size: 13px;">29.08.2023</td>
+                        <td style="font-family: monospace; font-size: 13px; font-weight: 500;">0100</td>
+                        <td style="font-weight: 500; color: var(--text-main);">16 FEBRUARIE BL 10 SC 1</td>
+                        <td style="text-align: center;">
+                            <a href="contracte-edit.html?id=6" class="btn-action-icon" title="Editează contract">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr data-search="t-3 t-3 1848">
+                        <td style="font-weight: 600; color: var(--accent);">T-3</td>
+                        <td style="text-align: center; color: var(--text-muted); font-size: 13px;">01.03.2016</td>
+                        <td style="font-family: monospace; font-size: 13px; font-weight: 500;">T-3</td>
+                        <td style="font-weight: 500; color: var(--text-main);">1848</td>
+                        <td style="text-align: center;">
+                            <a href="contracte-edit.html?id=7" class="btn-action-icon" title="Editează contract">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr data-search="0154 0154 22 decembrie 1989 bl 1 sc 3">
+                        <td style="font-weight: 600; color: var(--accent);">0154</td>
+                        <td style="text-align: center; color: var(--text-muted); font-size: 13px;">03.02.2025</td>
+                        <td style="font-family: monospace; font-size: 13px; font-weight: 500;">0154</td>
+                        <td style="font-weight: 500; color: var(--text-main);">22 DECEMBRIE 1989 BL 1 SC 3</td>
+                        <td style="text-align: center;">
+                            <a href="contracte-edit.html?id=8" class="btn-action-icon" title="Editează contract">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr data-search="025 025 22 decembrie 1989 bl 27 sc 3">
+                        <td style="font-weight: 600; color: var(--accent);">025</td>
+                        <td style="text-align: center; color: var(--text-muted); font-size: 13px;">07.05.2021</td>
+                        <td style="font-family: monospace; font-size: 13px; font-weight: 500;">025</td>
+                        <td style="font-weight: 500; color: var(--text-main);">22 DECEMBRIE 1989 BL 27 SC 3</td>
+                        <td style="text-align: center;">
+                            <a href="contracte-edit.html?id=9" class="btn-action-icon" title="Editează contract">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr data-search="026 026 22 decembrie 1989 bl 27 sc 1">
+                        <td style="font-weight: 600; color: var(--accent);">026</td>
+                        <td style="text-align: center; color: var(--text-muted); font-size: 13px;">10.05.2021</td>
+                        <td style="font-family: monospace; font-size: 13px; font-weight: 500;">026</td>
+                        <td style="font-weight: 500; color: var(--text-main);">22 DECEMBRIE 1989 BL 27 SC 1</td>
+                        <td style="text-align: center;">
+                            <a href="contracte-edit.html?id=10" class="btn-action-icon" title="Editează contract">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr data-search="046 046 22 decembrie 1989 bl 27 sc 2">
+                        <td style="font-weight: 600; color: var(--accent);">046</td>
+                        <td style="text-align: center; color: var(--text-muted); font-size: 13px;">06.09.2021</td>
+                        <td style="font-family: monospace; font-size: 13px; font-weight: 500;">046</td>
+                        <td style="font-weight: 500; color: var(--text-main);">22 DECEMBRIE 1989 BL 27 SC 2</td>
+                        <td style="text-align: center;">
+                            <a href="contracte-edit.html?id=11" class="btn-action-icon" title="Editează contract">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr data-search="062 062 22 decembrie 1989 bl 27 sc 4">
+                        <td style="font-weight: 600; color: var(--accent);">062</td>
+                        <td style="text-align: center; color: var(--text-muted); font-size: 13px;">12.08.2022</td>
+                        <td style="font-family: monospace; font-size: 13px; font-weight: 500;">062</td>
+                        <td style="font-weight: 500; color: var(--text-main);">22 DECEMBRIE 1989 BL 27 SC 4</td>
+                        <td style="text-align: center;">
+                            <a href="contracte-edit.html?id=12" class="btn-action-icon" title="Editează contract">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr data-search="r01983 r01983 asociatia de proprietari bloc 34">
+                        <td style="font-weight: 600; color: var(--accent);">R01983</td>
+                        <td style="text-align: center; color: var(--text-muted); font-size: 13px;">03.06.2025</td>
+                        <td style="font-family: monospace; font-size: 13px; font-weight: 500;">R01983</td>
+                        <td style="font-weight: 500; color: var(--text-main);">ASOCIATIA DE PROPRIETARI BLOC 34</td>
+                        <td style="text-align: center;">
+                            <a href="contracte-edit.html?id=13" class="btn-action-icon" title="Editează contract">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr data-search="s-113 s-113 alba iulia">
+                        <td style="font-weight: 600; color: var(--accent);">S-113</td>
+                        <td style="text-align: center; color: var(--text-muted); font-size: 13px;">11.01.2018</td>
+                        <td style="font-family: monospace; font-size: 13px; font-weight: 500;">S-113</td>
+                        <td style="font-weight: 500; color: var(--text-main);">ALBA IULIA</td>
+                        <td style="text-align: center;">
+                            <a href="contracte-edit.html?id=14" class="btn-action-icon" title="Editează contract">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                            </a>
+                        </td>
+                    </tr>
+                                
+                <tr id="noResultsRow" style="display: none;">
+                    <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 32px; font-style: italic;">
+                        Niciun contract găsit.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- === Paginație === -->
+    <div class="table-pagination">
+        <div style="font-size: 13px; color: var(--text-muted);">
+            Afișare <strong>1</strong> - <strong id="paginationVisible">14</strong> din <strong>4107</strong> înregistrări
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" disabled>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                <span>Anterior</span>
+            </button>
+            <div class="pagination-pages">
+                <button type="button" class="btn-secondary active" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;">1</button>
+                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 2')">2</button>
+                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 3')">3</button>
+                <span style="padding: 0 4px; color: var(--text-muted); font-size: 12px;">...</span>
+                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 42')">42</button>
+            </div>
+            <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;">
+                <span>Următor</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
     </div>
 </div>
 
-<div class="card" style="padding: 60px 40px; text-align: center; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; margin-top: 24px;">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="64" height="64" style="margin-bottom: 20px; opacity: 0.3; color: var(--accent);">
-        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-        <polyline points="2 17 12 22 22 17"></polyline>
-        <polyline points="2 12 12 17 22 12"></polyline>
-    </svg>
-    <h2 style="color: var(--text-main); margin-bottom: 12px; font-weight: 600;">În curând</h2>
-    <p style="font-size: 15px;">Interfața pentru <strong>Contracte</strong> nu a fost încă generată în acest demo.</p>
-</div>
+<!-- === JavaScript: Căutare dinamică client-side === -->
+<script>
+(function () {
+    var searchInput = document.getElementById('tableSearch');
+    var tbody = document.getElementById('dataTableBody');
+    var countEl = document.getElementById('visibleCount');
+    var pagCountEl = document.getElementById('paginationVisible');
+    var noResultsEl = document.getElementById('noResultsRow');
+
+    if (!searchInput || !tbody) return;
+
+    searchInput.addEventListener('input', function () {
+        var query = this.value.trim().toLowerCase();
+        var rows = tbody.querySelectorAll('tr:not(#noResultsRow)');
+        var visible = 0;
+
+        rows.forEach(function (row) {
+            var searchStr = (row.getAttribute('data-search') || '').toLowerCase();
+            var show = !query || searchStr.indexOf(query) !== -1;
+            row.style.display = show ? '' : 'none';
+            if (show) visible++;
+        });
+
+        if (countEl) countEl.textContent = visible;
+        if (pagCountEl) pagCountEl.textContent = visible;
+        if (noResultsEl) noResultsEl.style.display = visible === 0 ? '' : 'none';
+    });
+})();
+</script>
 
     </div><!-- /.content -->
     <footer class="app-footer">
