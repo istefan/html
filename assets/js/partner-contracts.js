@@ -55,13 +55,13 @@ var PartnerContracts = (function () {
             var editCtrUrl = 'contracte-edit.php?id=' + encodeURIComponent(ctr.contractNo || ctr.id || 'CTR-2026-001') + '&partner_code=' + encodeURIComponent(partnerCode) + '&return_to=' + encodeURIComponent('parteneri-edit.php?code=' + encodeURIComponent(partnerCode) + '&tab=contract');
 
             html += '<tr data-contract-id="' + ctr.id + '">';
-            html += '<td style="font-weight:600;">' + _escHtml(ctr.contractNo) + '</td>';
+            html += '<td class="td-code">' + _escHtml(ctr.contractNo) + '</td>';
             html += '<td>' + _escHtml(ctr.date) + '</td>';
-            html += '<td style="text-align:center;">' + _escHtml(ctr.duration) + '</td>';
+            html += '<td style="text-align: center;">' + _escHtml(ctr.duration) + '</td>';
             html += '<td>' + _escHtml(ctr.installDate || '–') + '</td>';
-            html += '<td style="font-size:12px; font-family:monospace;">' + _escHtml(nodsStr) + '</td>';
-            html += '<td style="text-align:center; font-weight:600;">' + srvCount + '</td>';
-            html += '<td style="text-align:center;">';
+            html += '<td>' + _escHtml(nodsStr) + '</td>';
+            html += '<td class="td-code" style="text-align: center;">' + srvCount + '</td>';
+            html += '<td style="text-align: center;">';
             // Editare -> navigare la contracte-edit.php
             html += '<a href="' + editCtrUrl + '" class="btn-action-icon" title="Editează contract">';
             html += '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>';
@@ -125,11 +125,11 @@ var PartnerContracts = (function () {
         var html = '';
         _currentServices.forEach(function (srv, idx) {
             html += '<tr>';
-            html += '<td style="font-weight:600; font-family:monospace;">' + _escHtml(srv.code) + '</td>';
+            html += '<td class="td-code">' + _escHtml(srv.code) + '</td>';
             html += '<td>' + _escHtml(srv.name) + '</td>';
             html += '<td>' + _escHtml(srv.utility) + '</td>';
-            html += '<td style="text-align:center;">';
-            html += '<button type="button" class="btn-action-icon" title="Elimină serviciu" style="color:var(--red);" onclick="PartnerContracts.removeService(' + idx + ')">';
+            html += '<td style="text-align: center;">';
+            html += '<button type="button" class="btn-action-icon" title="Elimină serviciu" onclick="PartnerContracts.removeService(' + idx + ')">';
             html += '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
             html += '</button>';
             html += '</td>';
@@ -165,9 +165,9 @@ var PartnerContracts = (function () {
 
         // Reset form
         document.getElementById('cfmContractNo').value = '';
-        document.getElementById('cfmContractDate').value = new Date().toISOString().split('T')[0];
+        SonicDatepicker.setValue(document.getElementById('cfmContractDate'), new Date());
         document.getElementById('cfmDuration').value = '5';
-        document.getElementById('cfmInstallDate').value = new Date().toISOString().split('T')[0];
+        SonicDatepicker.setValue(document.getElementById('cfmInstallDate'), new Date());
         document.getElementById('cfmComments').value = '';
 
         refreshNodChecklist();
@@ -194,9 +194,9 @@ var PartnerContracts = (function () {
         _currentServices = (ctr.services || []).slice();
 
         document.getElementById('cfmContractNo').value = ctr.contractNo || '';
-        document.getElementById('cfmContractDate').value = ctr.date || '';
+        SonicDatepicker.setValue(document.getElementById('cfmContractDate'), ctr.date || '');
         document.getElementById('cfmDuration').value = ctr.duration || '5';
-        document.getElementById('cfmInstallDate').value = ctr.installDate || '';
+        SonicDatepicker.setValue(document.getElementById('cfmInstallDate'), ctr.installDate || '');
         document.getElementById('cfmComments').value = ctr.comments || '';
 
         refreshNodChecklist();
@@ -211,7 +211,7 @@ var PartnerContracts = (function () {
 
     function saveContractForm() {
         var contractNo = document.getElementById('cfmContractNo').value.trim();
-        var contractDate = document.getElementById('cfmContractDate').value;
+        var contractDate = SonicDatepicker.getISO(document.getElementById('cfmContractDate'));
         var duration = document.getElementById('cfmDuration').value;
 
         if (!contractNo) {
@@ -242,7 +242,7 @@ var PartnerContracts = (function () {
             contractNo: contractNo,
             date:       contractDate,
             duration:   duration,
-            installDate: document.getElementById('cfmInstallDate').value,
+            installDate: SonicDatepicker.getISO(document.getElementById('cfmInstallDate')),
             comments:   document.getElementById('cfmComments').value.trim(),
             nods:       selectedNods,
             services:   _currentServices.slice(),

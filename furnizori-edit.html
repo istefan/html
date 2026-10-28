@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Editare Furnizor – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Editare Furnizor – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
 </head>
 <body>
 
@@ -179,7 +182,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +190,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +327,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +569,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-billing-logo.svg" alt="SONIC BILLING" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Editare Furnizor</div>
 
             <!-- User profile avatar (always visible) -->
@@ -898,7 +943,7 @@
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

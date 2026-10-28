@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Apartamente – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Apartamente – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
 </head>
 <body>
 
@@ -179,7 +182,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +190,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +327,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +569,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-logo.svg" alt="SONIC" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Apartamente</div>
 
             <!-- User profile avatar (always visible) -->
@@ -636,12 +681,12 @@
     </div>
 </div>
 
-<div class="card" style="margin-bottom: 24px;">
-    <div style="margin-bottom: 18px;">
-        <span class="chart-title" style="font-size: 14px; font-weight: 600;">Filtrare Avansata</span>
+<div class="card filter-card">
+    <div class="filter-card-head">
+        <span class="filter-card-title">Filtrare Avansată</span>
     </div>
     <form method="GET" action="apartamente.html" id="filterFormApartamente">
-        <div class="filter-grid">
+        <div class="filter-grid-5">
 
             <div class="form-group">
                 <label class="form-label" for="txtNODApartamente">NOD</label>
@@ -774,8 +819,8 @@
                     <option value="100" selected>100</option>
                 </select>
             </div>
-            <a href="apartamente.html" class="btn-secondary">Reseteaza</a>
-            <button type="submit" class="btn-primary">Cauta</button>
+            <a href="apartamente.html" class="btn-secondary">Resetează</a>
+            <button type="submit" class="btn-primary">Caută</button>
         </div>
     </form>
 </div>
@@ -783,7 +828,7 @@
 <div class="table-container">
     <div class="table-toolbar">
         <div class="table-toolbar-left">
-            <span style="color: var(--text-muted); font-size: 13px; font-weight: 500;">
+            <span class="table-count">
                 Afisare <strong id="apartVisibleCount">25</strong> din <strong>189.900</strong> inregistrari
             </span>
         </div>
@@ -797,7 +842,7 @@
         </div>
     </div>
 
-    <div style="overflow-x: auto; width: 100%;">
+    <div class="table-scroll">
         <table class="partners-table" id="apartamenteTable">
             <thead>
                 <tr>
@@ -820,525 +865,525 @@
             </thead>
             <tbody id="apartamenteTableBody">
                                 <tr data-search="toma barbu elena stefan cel mare 27">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0001</td>
                     <td>STEFAN CEL MARE</td>
                     <td>27</td>
                     <td>27</td>
                     <td>1</td>
                     <td>1</td>
-                    <td style="font-weight:600;">1</td>
+                    <td class="td-code">1</td>
                     <td>0001</td>
-                    <td style="font-weight:500;">TOMA BARBU ELENA</td>
+                    <td class="td-name">TOMA BARBU ELENA</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-online">Contorizat</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">32.400</td>
+                    <td style="text-align: right;">32.400</td>
                     <td></td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=1" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="surugiu mihai stefan cel mare 27">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0001</td>
                     <td>STEFAN CEL MARE</td>
                     <td>27</td>
                     <td>27</td>
                     <td>1</td>
                     <td>1</td>
-                    <td style="font-weight:600;">2</td>
+                    <td class="td-code">2</td>
                     <td>0002</td>
-                    <td style="font-weight:500;">SURUGIU MIHAI</td>
+                    <td class="td-name">SURUGIU MIHAI</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-online">Contorizat</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">36.800</td>
+                    <td style="text-align: right;">36.800</td>
                     <td></td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=2" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="badea c-tin stefan cel mare 27">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0001</td>
                     <td>STEFAN CEL MARE</td>
                     <td>27</td>
                     <td>27</td>
                     <td>1</td>
                     <td>1</td>
-                    <td style="font-weight:600;">3</td>
+                    <td class="td-code">3</td>
                     <td>0003</td>
-                    <td style="font-weight:500;">BADEA C-TIN</td>
+                    <td class="td-name">BADEA C-TIN</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-online">Contorizat</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">52.100</td>
+                    <td style="text-align: right;">52.100</td>
                     <td></td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=3" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="ene marin stefan cel mare 27">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0001</td>
                     <td>STEFAN CEL MARE</td>
                     <td>27</td>
                     <td>27</td>
                     <td>1</td>
                     <td>2</td>
-                    <td style="font-weight:600;">5</td>
+                    <td class="td-code">5</td>
                     <td>0005</td>
-                    <td style="font-weight:500;">ENE MARIN</td>
+                    <td class="td-name">ENE MARIN</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-online">Contorizat</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">17.700</td>
+                    <td style="text-align: right;">17.700</td>
                     <td></td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=4" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="macavei elena stefan cel mare 27">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0001</td>
                     <td>STEFAN CEL MARE</td>
                     <td>27</td>
                     <td>27</td>
                     <td>1</td>
                     <td>2</td>
-                    <td style="font-weight:600;">6</td>
+                    <td class="td-code">6</td>
                     <td>0006</td>
-                    <td style="font-weight:500;">MACAVEI ELENA</td>
+                    <td class="td-name">MACAVEI ELENA</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-online">Contorizat</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">35.200</td>
+                    <td style="text-align: right;">35.200</td>
                     <td></td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=5" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="rotariu petre stefan cel mare 27">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0001</td>
                     <td>STEFAN CEL MARE</td>
                     <td>27</td>
                     <td>27</td>
                     <td>1</td>
                     <td>3</td>
-                    <td style="font-weight:600;">7</td>
+                    <td class="td-code">7</td>
                     <td>0007</td>
-                    <td style="font-weight:500;">ROTARIU PETRE</td>
+                    <td class="td-name">ROTARIU PETRE</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-online">Contorizat</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">49.900</td>
+                    <td style="text-align: right;">49.900</td>
                     <td></td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=6" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="alexandru c-tin stefan cel mare 27">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0001</td>
                     <td>STEFAN CEL MARE</td>
                     <td>27</td>
                     <td>27</td>
                     <td>1</td>
                     <td>4</td>
-                    <td style="font-weight:600;">9</td>
+                    <td class="td-code">9</td>
                     <td>0009</td>
-                    <td style="font-weight:500;">ALEXANDRU C-TIN</td>
+                    <td class="td-name">ALEXANDRU C-TIN</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-online">Contorizat</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">34.400</td>
+                    <td style="text-align: right;">34.400</td>
                     <td></td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=7" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="dianu constanta stefan cel mare 27">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0001</td>
                     <td>STEFAN CEL MARE</td>
                     <td>27</td>
                     <td>27</td>
                     <td>1</td>
                     <td>5</td>
-                    <td style="font-weight:600;">11</td>
+                    <td class="td-code">11</td>
                     <td>0011</td>
-                    <td style="font-weight:500;">DIANU CONSTANTA</td>
+                    <td class="td-name">DIANU CONSTANTA</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-online">Contorizat</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">36.800</td>
+                    <td style="text-align: right;">36.800</td>
                     <td></td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=8" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="blaj anne-marie stefan cel mare 27">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0001</td>
                     <td>STEFAN CEL MARE</td>
                     <td>27</td>
                     <td>27</td>
                     <td>1</td>
                     <td>6</td>
-                    <td style="font-weight:600;">13</td>
+                    <td class="td-code">13</td>
                     <td>0013</td>
-                    <td style="font-weight:500;">BLAJ ANNE-MARIE</td>
+                    <td class="td-name">BLAJ ANNE-MARIE</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-online">Contorizat</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">33.000</td>
+                    <td style="text-align: right;">33.000</td>
                     <td></td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=9" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="laborator stefan cel mare 27">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0001</td>
                     <td>STEFAN CEL MARE</td>
                     <td>27</td>
                     <td>27</td>
                     <td>1</td>
                     <td>0</td>
-                    <td style="font-weight:600;">1000</td>
+                    <td class="td-code">1000</td>
                     <td>0055</td>
-                    <td style="font-weight:500;">LABORATOR</td>
+                    <td class="td-name">LABORATOR</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Agent economic</span></td>
                     <td><span class="status-badge status-online">Contorizat</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">34.400</td>
+                    <td style="text-align: right;">34.400</td>
                     <td></td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=10" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="cabinet 7 stefan cel mare 27">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0001</td>
                     <td>STEFAN CEL MARE</td>
                     <td>27</td>
                     <td>27</td>
                     <td>1</td>
                     <td>0</td>
-                    <td style="font-weight:600;">1001</td>
+                    <td class="td-code">1001</td>
                     <td>0056</td>
-                    <td style="font-weight:500;">CABINET 7</td>
+                    <td class="td-name">CABINET 7</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Agent economic</span></td>
                     <td><span class="status-badge status-online">Contorizat</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">14.040</td>
+                    <td style="text-align: right;">14.040</td>
                     <td></td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=11" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="stancu gheorghe reziliat vila">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0002</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0002</td>
                     <td>REZILIAT</td>
                     <td>36</td>
                     <td>Vila</td>
                     <td>1</td>
                     <td>0</td>
-                    <td style="font-weight:600;">1</td>
+                    <td class="td-code">1</td>
                     <td>0001</td>
-                    <td style="font-weight:500;">STANCU GHEORGHE</td>
+                    <td class="td-name">STANCU GHEORGHE</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-online">Contorizat</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">27.230</td>
+                    <td style="text-align: right;">27.230</td>
                     <td>001</td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=12" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="ciolca laurentiu reziliat vila">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0002</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0002</td>
                     <td>REZILIAT</td>
                     <td>36</td>
                     <td>Vila</td>
                     <td>1</td>
                     <td>0</td>
-                    <td style="font-weight:600;">2</td>
+                    <td class="td-code">2</td>
                     <td>0002</td>
-                    <td style="font-weight:500;">Ciolca Laurentiu</td>
+                    <td class="td-name">Ciolca Laurentiu</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-online">Contorizat</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">40.000</td>
+                    <td style="text-align: right;">40.000</td>
                     <td>002</td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=13" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="caloianu ruxandra reziliat vila">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0002</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0002</td>
                     <td>REZILIAT</td>
                     <td>36</td>
                     <td>Vila</td>
                     <td>1</td>
                     <td>1</td>
-                    <td style="font-weight:600;">4</td>
+                    <td class="td-code">4</td>
                     <td>0003</td>
-                    <td style="font-weight:500;">Caloianu Ruxandra</td>
+                    <td class="td-name">Caloianu Ruxandra</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-online">Contorizat</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">55.900</td>
+                    <td style="text-align: right;">55.900</td>
                     <td>003</td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=14" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="arnautu ioan reziliat 27">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0003</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0003</td>
                     <td>REZILIAT</td>
                     <td></td>
                     <td>27</td>
                     <td>1</td>
                     <td>0</td>
-                    <td style="font-weight:600;">1</td>
+                    <td class="td-code">1</td>
                     <td>0001</td>
-                    <td style="font-weight:500;">ARNAUTU IOAN</td>
+                    <td class="td-name">ARNAUTU IOAN</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-warning">CT</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">81.000</td>
+                    <td style="text-align: right;">81.000</td>
                     <td>001</td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=15" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="zarnescu vasilica reziliat 27">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0003</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0003</td>
                     <td>REZILIAT</td>
                     <td></td>
                     <td>27</td>
                     <td>1</td>
                     <td>1</td>
-                    <td style="font-weight:600;">3</td>
+                    <td class="td-code">3</td>
                     <td>0002</td>
-                    <td style="font-weight:500;">ZARNESCU VASILICA</td>
+                    <td class="td-name">ZARNESCU VASILICA</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-online">Contorizat</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">81.000</td>
+                    <td style="text-align: right;">81.000</td>
                     <td>003</td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=16" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="andronovici carmen reziliat 27">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0003</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0003</td>
                     <td>REZILIAT</td>
                     <td></td>
                     <td>27</td>
                     <td>1</td>
                     <td>2</td>
-                    <td style="font-weight:600;">6</td>
+                    <td class="td-code">6</td>
                     <td>0006</td>
-                    <td style="font-weight:500;">ANDRONOVICI CARMEN</td>
+                    <td class="td-name">ANDRONOVICI CARMEN</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-warning">CT</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">97.000</td>
+                    <td style="text-align: right;">97.000</td>
                     <td>006</td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=17" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="casa scarii gura ialomitei pc9">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0004</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0004</td>
                     <td>GURA IALOMITEI</td>
                     <td>3</td>
                     <td>PC9</td>
                     <td>B</td>
                     <td>0</td>
-                    <td style="font-weight:600;">100</td>
+                    <td class="td-code">100</td>
                     <td>0011</td>
-                    <td style="font-weight:500;">CASA SCARII</td>
+                    <td class="td-name">CASA SCARII</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-offline">Inactiv</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">0.000</td>
+                    <td style="text-align: right;">0.000</td>
                     <td></td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=18" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="serbanescu marian gura ialomitei pc9">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0004</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0004</td>
                     <td>GURA IALOMITEI</td>
                     <td>3</td>
                     <td>PC9</td>
                     <td>B</td>
                     <td>0</td>
-                    <td style="font-weight:600;">11</td>
+                    <td class="td-code">11</td>
                     <td>0001</td>
-                    <td style="font-weight:500;">Serbanescu Marian</td>
+                    <td class="td-name">Serbanescu Marian</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-online">Contorizat</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">76.480</td>
+                    <td style="text-align: right;">76.480</td>
                     <td>11</td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=19" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="duta violeta gura ialomitei pc9">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0004</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0004</td>
                     <td>GURA IALOMITEI</td>
                     <td>3</td>
                     <td>PC9</td>
                     <td>B</td>
                     <td>1</td>
-                    <td style="font-weight:600;">13</td>
+                    <td class="td-code">13</td>
                     <td>0003</td>
-                    <td style="font-weight:500;">Duta Violeta</td>
+                    <td class="td-name">Duta Violeta</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-online">Contorizat</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">76.480</td>
+                    <td style="text-align: right;">76.480</td>
                     <td>13</td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=20" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="tutuianu gabriel gura ialomitei pc9">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0004</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0004</td>
                     <td>GURA IALOMITEI</td>
                     <td>3</td>
                     <td>PC9</td>
                     <td>B</td>
                     <td>2</td>
-                    <td style="font-weight:600;">15</td>
+                    <td class="td-code">15</td>
                     <td>0005</td>
-                    <td style="font-weight:500;">TUTUIANU GABRIEL</td>
+                    <td class="td-name">TUTUIANU GABRIEL</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-online">Contorizat</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">76.480</td>
+                    <td style="text-align: right;">76.480</td>
                     <td>15</td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=21" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="slave mihai gura ialomitei pc9">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0004</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0004</td>
                     <td>GURA IALOMITEI</td>
                     <td>3</td>
                     <td>PC9</td>
                     <td>B</td>
                     <td>4</td>
-                    <td style="font-weight:600;">20</td>
+                    <td class="td-code">20</td>
                     <td>0010</td>
-                    <td style="font-weight:500;">Slave Mihai</td>
+                    <td class="td-name">Slave Mihai</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-warning">CT</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">76.480</td>
+                    <td style="text-align: right;">76.480</td>
                     <td>20</td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=22" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="popescu stelian gura ialomitei pc9">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0005</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0005</td>
                     <td>GURA IALOMITEI</td>
                     <td>3</td>
                     <td>PC9</td>
                     <td>A</td>
                     <td>0</td>
-                    <td style="font-weight:600;">1</td>
+                    <td class="td-code">1</td>
                     <td>0001</td>
-                    <td style="font-weight:500;">POPESCU STELIAN</td>
+                    <td class="td-name">POPESCU STELIAN</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-online">Contorizat</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">76.480</td>
+                    <td style="text-align: right;">76.480</td>
                     <td>0001</td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=23" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="cosma julieta gura ialomitei pc9">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0005</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0005</td>
                     <td>GURA IALOMITEI</td>
                     <td>3</td>
                     <td>PC9</td>
                     <td>A</td>
                     <td>1</td>
-                    <td style="font-weight:600;">3</td>
+                    <td class="td-code">3</td>
                     <td>0003</td>
-                    <td style="font-weight:500;">COSMA JULIETA</td>
+                    <td class="td-name">COSMA JULIETA</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-online">Contorizat</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">76.480</td>
+                    <td style="text-align: right;">76.480</td>
                     <td>0003</td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=24" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="negrea victor gura ialomitei pc9">
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0005</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0005</td>
                     <td>GURA IALOMITEI</td>
                     <td>3</td>
                     <td>PC9</td>
                     <td>A</td>
                     <td>3</td>
-                    <td style="font-weight:600;">7</td>
+                    <td class="td-code">7</td>
                     <td>0007</td>
-                    <td style="font-weight:500;">NEGREA VICTOR</td>
+                    <td class="td-name">NEGREA VICTOR</td>
                     <td><span style="font-size:12px; color:var(--text-muted);">Locatar</span></td>
                     <td><span class="status-badge status-warning">CT</span></td>
-                    <td style="text-align:right; font-variant-numeric:tabular-nums;">76.480</td>
+                    <td style="text-align: right;">76.480</td>
                     <td>0007</td>
-                    <td style="text-align:center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;"><span style="font-size:12px; font-weight:600; color:var(--text-muted);">G</span></td>
+                    <td style="text-align: center;">
                         <a href="apartamente-edit.html?id=25" class="btn-action-icon" title="Editeaza apartament">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
@@ -1350,22 +1395,22 @@
 
     <!-- === Paginație === -->
     <div class="table-pagination">
-        <div style="font-size: 13px; color: var(--text-muted);">
+        <div class="pagination-info">
             Afișare <strong>1</strong> - <strong id="apartPaginationVisible">25</strong> din <strong>189.900</strong> înregistrări
         </div>
-        <div style="display: flex; align-items: center; gap: 8px;">
-            <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" disabled>
+        <div class="pagination-controls">
+            <button type="button" class="btn-secondary btn-page-nav" disabled>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
                 <span>Anterior</span>
             </button>
             <div class="pagination-pages">
-                <button type="button" class="btn-secondary active" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;">1</button>
-                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 2')">2</button>
-                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 3')">3</button>
-                <span style="padding: 0 4px; color: var(--text-muted); font-size: 12px;">...</span>
-                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 1900')">1900</button>
+                <button type="button" class="btn-secondary btn-page active">1</button>
+                <button type="button" class="btn-secondary btn-page" onclick="alert('Pagina 2')">2</button>
+                <button type="button" class="btn-secondary btn-page" onclick="alert('Pagina 3')">3</button>
+                <span class="pagination-gap">…</span>
+                <button type="button" class="btn-secondary btn-page" onclick="alert('Pagina 1900')">1900</button>
             </div>
-            <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" onclick="alert('Pagina următoare')">
+            <button type="button" class="btn-secondary btn-page-nav" onclick="alert('Pagina următoare')">
                 <span>Următor</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </button>
@@ -1503,10 +1548,10 @@
                     Afișare NOD-uri: <strong class="nod-picker-count" id="nodPickerModalApart-count">0</strong>
                 </span>
                 <div class="nod-picker-page-btns">
-                    <button type="button" class="btn-action-icon nod-picker-prev" data-modal="nodPickerModalApart" disabled>
+                    <button type="button" class="btn-action-icon nod-picker-prev" title="Pagina anterioară" data-modal="nodPickerModalApart" disabled>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
                     </button>
-                    <button type="button" class="btn-action-icon nod-picker-next" data-modal="nodPickerModalApart" disabled>
+                    <button type="button" class="btn-action-icon nod-picker-next" title="Pagina următoare" data-modal="nodPickerModalApart" disabled>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
                 </div>
@@ -1608,7 +1653,7 @@
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

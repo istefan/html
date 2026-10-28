@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Citiri Brute Energie Termică – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Citiri Brute Energie Termică – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
 </head>
 <body>
 
@@ -179,7 +182,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +190,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +327,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +569,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-billing-logo.svg" alt="SONIC BILLING" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Citiri Brute Energie Termică</div>
 
             <!-- User profile avatar (always visible) -->
@@ -558,7 +603,76 @@
     <div class="help-wrapper">
         <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
             <div class="help-panel-inner">
-                                <p class="help-empty">Nu există informații de ajutor disponibile pentru această pagină.</p>
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Filtrare                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Coloane &amp; Semnificații                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Lista Citiri Brute Energie Termică</h4>
+            <p>Această pagină afișează înregistrările brute din bufferul de citiri pentru repartitoarele de costuri de <strong>Energie Termică</strong>, așa cum au fost preluate din fișierele sau sistemele de import înainte de procesare și validare.</p>
+            <p>Pagina face parte din modulul <strong>SONIC BILLING</strong>, grupul <em>Import / Export Citiri</em>.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <h4>Câmpurile de filtrare</h4>
+            <ul>
+                <li><strong>Data import / Data citire</strong> &ndash; filtrează citirile după data încărcării în sistem sau data citirii efective (format <code>ZZ.LL.AAAA</code>).</li>
+                <li><strong>NOD</strong> &ndash; selectează un NOD din fereastra de selecție (lupă) sau șterge selecția (X).</li>
+                <li><strong>Utilitate</strong> &ndash; câmp informativ preselectat pe contextul paginii.</li>
+                <li><strong>Cod eroare</strong> &ndash; filtrează după codul de eroare raportat de repartitor (ex. <code>0</code> pentru citiri fără erori).</li>
+                <li><strong>Stadiu sigiliu</strong> &ndash; <code>INTACT</code> sau <code>VIOLAT</code>.</li>
+                <li><strong>Este memorie</strong> &ndash; filtrează citirile de tip memorie (<code>Da</code> / <code>Nu</code>).</li>
+                <li><strong>Serie aparat</strong> &ndash; căutare exactă sau parțială după seria repartitorului.</li>
+                <li><strong>Import din</strong> &ndash; sursa citirii: <em>AMM, Decor Press, FGH &ndash; Seamens, FGH &ndash; Sontex, M - Bus, SMDE &ndash; Clasic, SMDE &ndash; Radio</em>.</li>
+                <li><strong>Înreg / pag</strong> &ndash; numărul de rânduri afișate pe pagină (10, 15, 25, 50, 100).</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <h4>Structura tabelului de citiri brute</h4>
+            <ul>
+                <li><strong>Serie aparat</strong> &ndash; seria unică a repartitorului de costuri, afișată în format evidențiat monospace.</li>
+                <li><strong>Index precedent / Index actual</strong> &ndash; valorile de index transmise la citire.</li>
+                <li><strong>Cod unități cons.</strong> &ndash; codul alfanumeric de control transmis de aparat.</li>
+                <li><strong>Eroare / Sursă / Stadiu sigiliu</strong> &ndash; indicatori de integritate tehnică a citirii preluate.</li>
+            </ul>
+                            </div>
+                                    </div>
                     </div><!-- /.help-panel-inner -->
         </div><!-- /.help-panel -->
         
@@ -585,26 +699,2107 @@
 
     <div class="content">
 
+<!-- ===================================================================
+     React: <RawReadingsEtPage />
+     =================================================================== -->
+
+<!-- === Titlu pagină + Buton Adaugă (ctl00_phContent_btnAdd) ===
+     React: <PageTitleContainer title="Lista Citiri Brute Energie Termică" />
+-->
 <div class="page-title-container">
     <div class="page-title">
-        <h1>Citiri Brute Energie Termică</h1>
-        <p>Pagina este în construcție.</p>
+        <h1>Lista Citiri Brute Energie Termică</h1>
+        <p>Vizualizare și filtrare citiri brute preluate în buffer pentru repartitoarele de energie termică.</p>
+    </div>
+    <a href="adauga-citiri-brute-et.html" class="btn-secondary btn-add" id="ctl00_phContent_btnAdd">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        <span>Adaugă</span>
+    </a>
+</div>
+
+<!-- === Sumar erori validare (ctl00_VS) === -->
+<div id="ctl00_VS" class="card" style="display: none; border-color: var(--red); padding: 12px 16px; margin-bottom: 16px;"></div>
+
+<!-- === Casetă de Filtrare (9 câmpuri în .filter-grid-3 conform RULES.md §1.5) ===
+     React: <RawReadingsEtFilterCard filters={filters} onSearch={handleSearch} onReset={handleReset} />
+-->
+<div class="card filter-card">
+    <div class="filter-card-head">
+        <span class="filter-card-title">Filtrare Avansată</span>
+    </div>
+    <form method="GET" action="citiri-brute-et.html" id="rawEtFilterForm" novalidate>
+        <div class="filter-grid-3">
+
+            <!-- 1. Data import (ctl00$phContent$dtpImportDate) -->
+            <div class="form-group">
+                <label class="form-label" for="ctl00_phContent_dtpImportDate">Data import</label>
+                <div class="picker-group">
+                    <input type="text" data-datepicker name="import_date" id="ctl00_phContent_dtpImportDate"
+                           class="input-control" maxlength="10"
+                           value="">
+                    <button type="button" class="btn-picker delete" title="Șterge data import"
+                            onclick="clear_Date('ctl00_phContent_dtpImportDate')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+                <span id="ctl00_phContent_dtpvImportDate" style="display: none;">Data import nu este valida.</span>
+            </div>
+
+            <!-- 2. Data citire (ctl00$phContent$dtpReadingDate) -->
+            <div class="form-group">
+                <label class="form-label" for="ctl00_phContent_dtpReadingDate">Data citire</label>
+                <div class="picker-group">
+                    <input type="text" data-datepicker name="reading_date" id="ctl00_phContent_dtpReadingDate"
+                           class="input-control" maxlength="10"
+                           value="">
+                    <button type="button" class="btn-picker delete" title="Șterge data citire"
+                            onclick="clear_Date('ctl00_phContent_dtpReadingDate')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+                <span id="ctl00_phContent_dtpvReadingDate" style="display: none;">Data citire nu este valida.</span>
+            </div>
+
+            <!-- 3. NOD (ctl00$phContent$USCounterPicker) -->
+            <div class="form-group">
+                <label class="form-label" id="ctl00_phContent_lbUSCounter" for="ctl00_phContent_USCounterPicker">NOD</label>
+                <div class="picker-group">
+                    <input type="text" name="nod" id="ctl00_phContent_USCounterPicker"
+                           class="input-control" readonly placeholder="Click pe lupă..."
+                           value="">
+                    <input type="hidden" name="nod_value" id="ctl00_phContent_USCounterPickerValue"
+                           value="-1">
+                    <!-- Câmp păstrat din sursă; în aplicația veche conținea URL-ul pickerului ASP.NET
+                         (/BillingControl/Common/Pickers/USCounterPickerList.aspx). În SONIC pickerul este partials/nod-picker.php. -->
+                    <input type="hidden" name="ctl00$phContent$USCounterPickerURL" value="">
+                    <button type="button" class="btn-picker" id="btnOpenRawEtNod" title="Selectează NOD">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                    <button type="button" class="btn-picker delete" id="btnClearRawEtNod" title="Șterge NOD">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+                <input type="button" id="btnCP" style="display: none;">
+            </div>
+
+            <!-- 4. Utilitate (ctl00$phContent$ddlUtility – disabled în sursă) -->
+            <div class="form-group">
+                <label class="form-label" for="ctl00_phContent_ddlUtility">Utilitate</label>
+                <select name="ctl00$phContent$ddlUtility" id="ctl00_phContent_ddlUtility" class="input-control" disabled="disabled">
+                                            <option value="-1" selected="selected">
+                            -                        </option>
+                                            <option value="2" >
+                            Apa                        </option>
+                                            <option value="1" >
+                            Energie Termica                        </option>
+                                            <option value="3" >
+                            Gaz                        </option>
+                                    </select>
+            </div>
+
+            <!-- 5. Cod eroare (ctl00$phContent$txtErrorCode) -->
+            <div class="form-group">
+                <label class="form-label" for="ctl00_phContent_txtErrorCode">Cod eroare</label>
+                <input type="text" name="error_code" id="ctl00_phContent_txtErrorCode"
+                       class="input-control" placeholder="Ex: 0"
+                       value="">
+            </div>
+
+            <!-- 6. Stadiu sigiliu (ctl00$phContent$ddlSigiliu) -->
+            <div class="form-group">
+                <label class="form-label" for="ctl00_phContent_ddlSigiliu">Stadiu sigiliu</label>
+                <select name="seal" id="ctl00_phContent_ddlSigiliu" class="input-control">
+                                            <option value="-" selected="selected">
+                            -                        </option>
+                                            <option value="INTACT" >
+                            INTACT                        </option>
+                                            <option value="VIOLAT" >
+                            VIOLAT                        </option>
+                                    </select>
+            </div>
+
+            <!-- 7. Este memorie (ctl00$phContent$ddlMemory) -->
+            <div class="form-group">
+                <label class="form-label" for="ctl00_phContent_ddlMemory">Este memorie</label>
+                <select name="memory" id="ctl00_phContent_ddlMemory" class="input-control">
+                                            <option value="-1" selected="selected">
+                            -                        </option>
+                                            <option value="1" >
+                            Da                        </option>
+                                            <option value="0" >
+                            Nu                        </option>
+                                    </select>
+            </div>
+
+            <!-- 8. Serie aparat (ctl00$phContent$txtSerialNo) -->
+            <div class="form-group">
+                <label class="form-label" for="ctl00_phContent_txtSerialNo">Serie aparat</label>
+                <input type="text" name="serial" id="ctl00_phContent_txtSerialNo"
+                       class="input-control" placeholder="Serie repartitor..."
+                       value="">
+            </div>
+
+            <!-- 9. Import din (ctl00$phContent$ddlReadingMethod) -->
+            <div class="form-group">
+                <label class="form-label" for="ctl00_phContent_ddlReadingMethod">Import din</label>
+                <select name="reading_method" id="ctl00_phContent_ddlReadingMethod" class="input-control">
+                                            <option value="-1" selected="selected">
+                            -                        </option>
+                                            <option value="7" >
+                            AMM                        </option>
+                                            <option value="1" >
+                            Decor Press                        </option>
+                                            <option value="2" >
+                            FGH – Seamens                        </option>
+                                            <option value="3" >
+                            FGH – Sontex                        </option>
+                                            <option value="6" >
+                            M - Bus                        </option>
+                                            <option value="5" >
+                            SMDE – Clasic                        </option>
+                                            <option value="4" >
+                            SMDE – Radio                        </option>
+                                    </select>
+            </div>
+
+        </div><!-- /.filter-grid-3 -->
+
+        <!-- Footer filtru conform RULES.md §1.5: Înreg / pag + Resetează + Caută -->
+        <div class="filter-actions">
+            <div class="filter-per-page">
+                <label class="filter-per-page-label" for="ctl00_phContent_ucItemsPerPage_txtItemsPerPage">Înreg / pag</label>
+                <select name="per_page" id="ctl00_phContent_ucItemsPerPage_txtItemsPerPage" class="input-control select-per-page">
+                                            <option value="10" >10</option>
+                                            <option value="15" >15</option>
+                                            <option value="25" >25</option>
+                                            <option value="50" >50</option>
+                                            <option value="100" selected="selected">100</option>
+                                    </select>
+                <span id="ctl00_phContent_ucItemsPerPage_rfvItemsPerPage" style="display: none;">*</span>
+                <span id="ctl00_phContent_ucItemsPerPage_rvItemsPerPage" style="display: none;">*</span>
+            </div>
+            <a href="citiri-brute-et.html" class="btn-secondary">Resetează</a>
+            <button type="submit" class="btn-primary" name="ctl00$phContent$btnSearch" id="ctl00_phContent_btnSearch">Caută</button>
+        </div>
+    </form>
+</div>
+
+<!-- === Tabel Citiri Brute Energie Termică (ctl00_phContent_dgReadingsBuffer) ===
+     React: <RawReadingsEtTable rows={rows} total={displayTotal} />
+-->
+<div class="table-container">
+    <div class="table-toolbar">
+        <div class="table-toolbar-left">
+            <span class="table-count">
+                Afișare <strong id="rawEtVisibleCount">100</strong>
+                din <strong>5.489.975</strong> înregistrări
+            </span>
+        </div>
+        <div class="table-toolbar-right">
+            <div class="live-search-wrapper" title="Filtrare rapidă în pagina curentă">
+                <span class="live-search-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </span>
+                <input type="text" id="rawEtLiveSearch" class="input-control" placeholder="Căutare dinamică serie / cod / sursă...">
+            </div>
+        </div>
+    </div>
+
+    <div class="table-scroll">
+        <table class="partners-table" id="ctl00_phContent_dgReadingsBuffer">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">Data import</th>
+                    <th style="text-align: center;">Data citire</th>
+                    <th>Serie aparat</th>
+                    <th>Utilitate</th>
+                    <th style="text-align: center;">Este memorie</th>
+                    <th style="text-align: right;">Index precedent</th>
+                    <th style="text-align: center;">Cod unități cons.</th>
+                    <th style="text-align: right;">Index actual</th>
+                    <th style="text-align: center;">Eroare</th>
+                    <th>Sursă</th>
+                    <th style="text-align: center;">Stadiu sigiliu</th>
+                </tr>
+            </thead>
+            <tbody id="rawEtTableBody">
+                                <tr data-search="29.09.2026 30.09.2026 14021311 energie termica ei4ll decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14021311</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">Ei4LL</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14021320 energie termica 93ult decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14021320</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">93uLt</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14021328 energie termica jb5od decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14021328</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">Jb5od</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14021331 energie termica t52cl decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14021331</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">t52cL</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14027233 energie termica acdtt decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14027233</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">Acdtt</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14027234 energie termica tu6j1 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14027234</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">tu6J1</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14027716 energie termica p7218 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14027716</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">P7218</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14027717 energie termica ue3uu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14027717</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">uE3uu</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14027720 energie termica 7poc7 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14027720</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">7Poc7</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14027721 energie termica ijpui decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14027721</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">iJPui</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14027723 energie termica pt0ed decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14027723</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">Pt0Ed</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14027725 energie termica u4r85 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14027725</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">u4r85</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14027727 energie termica 4prun decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14027727</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">4Prun</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14027728 energie termica 53oju decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14027728</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">53oJu</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14027729 energie termica t7jb9 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14027729</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">t7Jb9</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14027730 energie termica 6034h decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14027730</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">6034h</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14027732 energie termica t26fi decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14027732</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">t26Fi</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14027733 energie termica o1c8h decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14027733</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">o1c8h</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14027734 energie termica bdhf2 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14027734</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">bdhF2</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14027783 energie termica 27uto decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14027783</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">27uto</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14027788 energie termica f0h9d decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14027788</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">F0h9d</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14027791 energie termica 4oa3i decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14027791</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">4oA3i</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028309 energie termica 4ci75 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028309</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">4ci75</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028310 energie termica 84aaj decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028310</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">84AAJ</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028311 energie termica 4ufp6 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028311</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">4uFP6</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028312 energie termica pa8ap decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028312</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">PA8AP</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028313 energie termica al1h3 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028313</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">AL1h3</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028316 energie termica d1cc0 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028316</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">d1cc0</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028317 energie termica 016ud decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028317</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">016ud</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028318 energie termica 0ob3n decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028318</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">0ob3n</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028320 energie termica p2npr decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028320</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">P2nPr</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028324 energie termica el623 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028324</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">EL623</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028325 energie termica 8uai4 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028325</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">8uAi4</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028326 energie termica 2euhn decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028326</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">2Euhn</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028333 energie termica h2rbc decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028333</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">39.00</td>
+                    <td class="td-code" style="text-align: center;">h2rbc</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028334 energie termica t8dcl decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028334</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">t8dcL</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028335 energie termica ne45h decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028335</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">36.00</td>
+                    <td class="td-code" style="text-align: center;">nE45h</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028336 energie termica 4crhe decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028336</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">15.00</td>
+                    <td class="td-code" style="text-align: center;">4crhE</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028337 energie termica plu56 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028337</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">PLu56</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028338 energie termica o86ai decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028338</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">o86Ai</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028339 energie termica u6jf5 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028339</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">u6JF5</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028345 energie termica h2j33 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028345</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">h2J33</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028347 energie termica p0792 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028347</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">146.00</td>
+                    <td class="td-code" style="text-align: center;">P0792</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028350 energie termica jc740 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028350</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">97.00</td>
+                    <td class="td-code" style="text-align: center;">Jc740</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028351 energie termica cjn04 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028351</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">142.00</td>
+                    <td class="td-code" style="text-align: center;">cJn04</td>
+                    <td style="text-align: right;">1.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028352 energie termica a77ua decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028352</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">A77uA</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028355 energie termica 98in4 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028355</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">26.00</td>
+                    <td class="td-code" style="text-align: center;">98in4</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028356 energie termica io8ca decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028356</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">5.00</td>
+                    <td class="td-code" style="text-align: center;">io8cA</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028357 energie termica joc86 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028357</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">70.00</td>
+                    <td class="td-code" style="text-align: center;">Joc86</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028358 energie termica fl47e decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028358</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">142.00</td>
+                    <td class="td-code" style="text-align: center;">FL47E</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028360 energie termica e6enu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028360</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">53.00</td>
+                    <td class="td-code" style="text-align: center;">E6Enu</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028361 energie termica oo3dn decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028361</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">45.00</td>
+                    <td class="td-code" style="text-align: center;">oo3dn</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028362 energie termica fieo9 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028362</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">44.00</td>
+                    <td class="td-code" style="text-align: center;">FiEo9</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028364 energie termica dthbe decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028364</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">70.00</td>
+                    <td class="td-code" style="text-align: center;">dthbE</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028365 energie termica fl0fo decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028365</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">49.00</td>
+                    <td class="td-code" style="text-align: center;">FL0Fo</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028368 energie termica l0375 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028368</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">L0375</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028370 energie termica i09oh decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028370</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">i09oh</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028371 energie termica p8che decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028371</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">P8chE</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028372 energie termica 3hdnc decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028372</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">3hdnc</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028381 energie termica i8fea decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028381</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">i8FEA</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028384 energie termica ddf7p decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028384</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">ddF7P</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028386 energie termica 3d49d decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028386</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">3d49d</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028391 energie termica baf56 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028391</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">bAF56</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028399 energie termica l30dc decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028399</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">L30dc</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028401 energie termica rau8h decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028401</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">rAu8h</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028403 energie termica 7o7bp decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028403</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">97.00</td>
+                    <td class="td-code" style="text-align: center;">7o7bP</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14028404 energie termica 199b5 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14028404</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">68.00</td>
+                    <td class="td-code" style="text-align: center;">199b5</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 14098173 energie termica cd4op decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">14098173</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">cd4oP</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928622 energie termica uur0t decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928622</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">uur0t</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928623 energie termica r4h65 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928623</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">r4h65</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928624 energie termica o3l1l decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928624</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">o3L1L</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928625 energie termica 739l9 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928625</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">739L9</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928627 energie termica 6oijn decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928627</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">6oiJn</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928628 energie termica p8122 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928628</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">P8122</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928629 energie termica 4hhi6 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928629</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">4hhi6</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928630 energie termica 1hn9a decor press violat">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928630</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">1hn9A</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-warning">VIOLAT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928631 energie termica b048h decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928631</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">b048h</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928632 energie termica 5h7ut decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928632</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">5h7ut</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928633 energie termica iu7ct decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928633</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">iu7ct</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928634 energie termica t9t12 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928634</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">t9t12</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928635 energie termica 1u19l decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928635</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">1u19L</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928636 energie termica 1cp5e decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928636</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">1cP5E</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928637 energie termica uc00h decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928637</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">uc00h</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928638 energie termica e674t decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928638</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">E674t</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928639 energie termica c8c89 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928639</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">c8c89</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928640 energie termica 2u6d3 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928640</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">2u6d3</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928641 energie termica 449op decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928641</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">449oP</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928642 energie termica 51rr9 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928642</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">51rr9</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928643 energie termica ul1af decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928643</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">uL1AF</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928644 energie termica 23cjr decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928644</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">23cJr</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928645 energie termica ddf9b decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928645</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">ddF9b</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928646 energie termica 88ead decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928646</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">88EAd</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928647 energie termica nb5pr decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928647</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">nb5Pr</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928648 energie termica 7bu50 decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928648</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">7bu50</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928649 energie termica n8euo decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928649</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">n8Euo</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928650 energie termica obbro decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928650</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">obbro</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928651 energie termica t18o1 decor press violat">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928651</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">t18o1</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-warning">VIOLAT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928653 energie termica h2jti decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928653</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">h2Jti</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928655 energie termica rep1c decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928655</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">rEP1c</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="29.09.2026 30.09.2026 34928656 energie termica ohcfu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">29.09.2026</td>
+                    <td style="text-align: center; white-space: nowrap;">30.09.2026</td>
+                    <td><span class="serial-value">34928656</span></td>
+                    <td>Energie Termica</td>
+                    <td style="text-align: center;">
+                                            </td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">ohcFu</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td style="text-align: center;">0</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr id="rawEtEmptyRow" style="display: none;">
+                    <td colspan="11" class="table-empty">Nu există citiri brute care să corespundă criteriilor selectate.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Paginație conform RULES.md §1.5 -->
+    <div class="table-pagination">
+        <div class="pagination-info">
+            Afișare <strong>1</strong> - <strong id="rawEtPaginationTo">100</strong> din <strong>5.489.975</strong> înregistrări
+        </div>
+        <div class="pagination-controls">
+            <button type="button" class="btn-secondary btn-page-nav" disabled>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                <span>Anterior</span>
+            </button>
+            <div class="pagination-pages">
+                <button type="button" class="btn-secondary btn-page active">1</button>
+                                <button type="button" class="btn-secondary btn-page">2</button>
+                <button type="button" class="btn-secondary btn-page">3</button>
+                <span class="pagination-gap">…</span>
+                <button type="button" class="btn-secondary btn-page">54.900</button>
+                            </div>
+            <button type="button" class="btn-secondary btn-page-nav" >
+                <span>Următor</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
     </div>
 </div>
 
-<div class="card" style="padding: 60px 40px; text-align: center; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; margin-top: 24px;">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="64" height="64" style="margin-bottom: 20px; opacity: 0.3; color: var(--accent);">
-        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-        <polyline points="2 17 12 22 22 17"></polyline>
-        <polyline points="2 12 12 17 22 12"></polyline>
-    </svg>
-    <h2 style="color: var(--text-main); margin-bottom: 12px; font-weight: 600;">În curând</h2>
-    <p style="font-size: 15px;">Interfața pentru <strong>Citiri Brute Energie Termică</strong> nu a fost încă generată în acest demo.</p>
-</div>
+
+<!-- ══ NOD Picker Modal (partial) ════════════════════════════════════════════
+     React: <NodPickerModal id="rawEtNodPickerModal" onSelect={handleSelect} />
+══════════════════════════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="rawEtNodPickerModal" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="rawEtNodPickerModal-title">
+    <div class="modal-card nod-picker-card">
+        <div class="modal-header">
+            <h3 id="rawEtNodPickerModal-title">Alegere NOD</h3>
+            <button type="button" class="btn-close nod-picker-close" data-modal="rawEtNodPickerModal" title="Închide fereastra">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!-- Formular de filtrare -->
+            <form class="nod-picker-filter-form" id="rawEtNodPickerModal-form" onsubmit="return false;">
+                <div class="nod-picker-filter-grid">
+                    <!-- Localitate -->
+                    <div class="form-group">
+                        <label class="form-label" for="rawEtNodPickerModal-city">Localitate</label>
+                        <select id="rawEtNodPickerModal-city" class="input-control">
+                            <option value="-1">-</option>
+                                                        <option value="Apold">Apold</option>
+                                                        <option value="Brasov">Brasov</option>
+                                                        <option value="Bucuresti">Bucuresti</option>
+                                                        <option value="Buftea">Buftea</option>
+                                                        <option value="Chiajna">Chiajna</option>
+                                                        <option value="Chitila">Chitila</option>
+                                                        <option value="Cisnadie">Cisnadie</option>
+                                                        <option value="Constanta">Constanta</option>
+                                                        <option value="Deva">Deva</option>
+                                                        <option value="Giurgiu">Giurgiu</option>
+                                                        <option value="Iasi">Iasi</option>
+                                                        <option value="Mamaia">Mamaia</option>
+                                                        <option value="Mangalia">Mangalia</option>
+                                                        <option value="Medgidia">Medgidia</option>
+                                                        <option value="Navodari">Navodari</option>
+                                                        <option value="Ploiesti">Ploiesti</option>
+                                                        <option value="Predeal">Predeal</option>
+                                                        <option value="Sibiu">Sibiu</option>
+                                                        <option value="Sighisoara">Sighisoara</option>
+                                                        <option value="Targu Mures">Targu Mures</option>
+                                                        <option value="Tulcea">Tulcea</option>
+                                                        <option value="Voluntari">Voluntari</option>
+                                                    </select>
+                    </div>
+                    <!-- Strada -->
+                    <div class="form-group">
+                        <label class="form-label" for="rawEtNodPickerModal-street">Strada</label>
+                        <input type="text" id="rawEtNodPickerModal-street" class="input-control" placeholder="Denumire stradă...">
+                    </div>
+                    <!-- Tip -->
+                    <div class="form-group">
+                        <label class="form-label" for="rawEtNodPickerModal-type">Tip</label>
+                        <select id="rawEtNodPickerModal-type" class="input-control">
+                            <option value="-1">-</option>
+                            <option value="1">Cu agenți economici</option>
+                            <option value="2">Fără agenți economici</option>
+                        </select>
+                    </div>
+                    <!-- Asociație -->
+                    <div class="form-group">
+                        <label class="form-label" for="rawEtNodPickerModal-assoc">Asociație</label>
+                        <input type="text" id="rawEtNodPickerModal-assoc" class="input-control" placeholder="Nume asociație...">
+                    </div>
+                    <!-- Cod NOD -->
+                    <div class="form-group">
+                        <label class="form-label" for="rawEtNodPickerModal-code">Cod NOD</label>
+                        <input type="text" id="rawEtNodPickerModal-code" class="input-control" placeholder="Cod...">
+                    </div>
+                </div>
+                <div class="nod-picker-filter-actions">
+                    <div class="filter-per-page">
+                        <label class="filter-per-page-label" for="rawEtNodPickerModal-perpage">Înreg / pag</label>
+                        <select id="rawEtNodPickerModal-perpage" class="input-control select-per-page">
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100" selected>100</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn-secondary nod-picker-reset" data-modal="rawEtNodPickerModal">Resetează</button>
+                    <button type="button" class="btn-primary nod-picker-search" data-modal="rawEtNodPickerModal">Caută</button>
+                </div>
+            </form>
+
+            <!-- Tabelul de rezultate NOD -->
+            <div class="nod-picker-table-wrap">
+                <table class="modal-table">
+                    <thead>
+                        <tr>
+                            <th>NOD</th>
+                            <th>Adresă NOD</th>
+                            <th>Asociație</th>
+                            <th class="nod-picker-th-sel"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="nod-picker-tbody" id="rawEtNodPickerModal-tbody">
+                        <!-- Populat dinamic prin JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Paginație Modal -->
+            <div class="nod-picker-pagination">
+                <span class="nod-picker-count-label">
+                    Afișare NOD-uri: <strong class="nod-picker-count" id="rawEtNodPickerModal-count">0</strong>
+                </span>
+                <div class="nod-picker-page-btns">
+                    <button type="button" class="btn-action-icon nod-picker-prev" title="Pagina anterioară" data-modal="rawEtNodPickerModal" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button type="button" class="btn-action-icon nod-picker-next" title="Pagina următoare" data-modal="rawEtNodPickerModal" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </div><!-- /modal-body -->
+    </div><!-- /modal-card -->
+</div><!-- /modal-overlay -->
+
+<!-- NOD Picker: date & logică JS ============================================
+     React: datele vin din props/API; logica este în NodPickerModal.tsx
+============================================================================ -->
+<script>
+(function() {
+    /* ── Date NOD ────────────────────────────────────────────────────── */
+    var _nodPickerData_rawEtNodPickerModal = [
+    { id: "1",  code: "81-001-0001", address: "Str. STEFAN CEL MARE, Nr. 27, Bl. 27, Sc. 1, Distr. 2, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC 27 SCARA 1",    city: "Bucuresti", street: "stefan cel mare",          ownerType: "1" },
+    { id: "2",  code: "81-001-0002", address: "Str. REZILIAT, Nr. 36, Bl. Vila, Sc. 1, Distr. 1, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC VILA",          city: "Bucuresti", street: "reziliat",                  ownerType: "1" },
+    { id: "3",  code: "81-001-0003", address: "Str. REZILIAT, Sc. 1, Distr. 5, Bucuresti",                              association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "14", code: "81-001-0004", address: "Str. GURA IALOMITEI, Nr. 3, Bl. PC9, Sc. B, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC PC9 SCARA B",   city: "Bucuresti", street: "gura ialomitei",             ownerType: "1" },
+    { id: "15", code: "81-001-0005", address: "Str. GURA IALOMITEI, Nr. 3, Bl. PC9, Sc. A, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC PC9 SCARA A",   city: "Bucuresti", street: "gura ialomitei",             ownerType: "1" },
+    { id: "16", code: "81-001-0006", address: "Str. REZILIAT, Nr. 28, Bl. V81A, Sc. A, Distr. 3, Bucuresti",           association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "17", code: "81-001-0007", address: "Str. Laborator, Nr. 125-127, Bl. S1, Sc. 2, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC S1 SCARA 2",    city: "Bucuresti", street: "laborator",                  ownerType: "1" },
+    { id: "18", code: "81-001-0008", address: "Str. Liber, Nr. 012, Bl. 0, Sc. 2, Bucuresti",                          association: "",                                            city: "Bucuresti", street: "liber",                     ownerType: "2" },
+    { id: "20", code: "81-001-0010", address: "Str. BIBESCU VODA, Nr. 2, Bl. P5, Sc. 4, Distr. 4, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC P5 SCARA 4",    city: "Bucuresti", street: "bibescu voda",               ownerType: "1" },
+    { id: "21", code: "81-001-0011", address: "Str. REZILIAT, Sc. A+B, Apt. -, Distr. 3, Bucuresti",                   association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "22", code: "81-001-0012", address: "Str. MIHAI BRAVU, Nr. 291, Bl. 12A, Sc. 1, Distr. 3, Bucuresti",        association: "ASOCIATIA DE PROPRIETARI BLOC 12A SCARA A",   city: "Bucuresti", street: "mihai bravu",                ownerType: "1" },
+    { id: "23", code: "81-001-0013", address: "Str. REZILIAT, Sc. 1, Distr. 3, Bucuresti",                             association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "25", code: "81-001-0015", address: "Str. REZILIAT, Sc. 2, Distr. 3, Bucuresti",                             association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "27", code: "81-001-0017", address: "Str. SIBIU, Nr. 18, Bl. 813, Sc. 1, Distr. 6, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BL 813",             city: "Bucuresti", street: "sibiu",                     ownerType: "1" },
+    { id: "28", code: "81-001-0018", address: "Str. UNIRII, Nr. 13, Bl. 2C, Sc. 1, Distr. 5, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BLOC 2C",            city: "Bucuresti", street: "unirii",                    ownerType: "1" },
+    { id: "29", code: "81-001-0019", address: "Str. UNIRII, Nr. 13, Bl. 2C, Sc. 2, Distr. 5, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BLOC 2C",            city: "Bucuresti", street: "unirii",                    ownerType: "1" },
+    { id: "30", code: "81-001-0020", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 1, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "31", code: "81-001-0021", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 2, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "32", code: "81-001-0022", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 3, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "34", code: "81-001-0023", address: "Str. OTESANI, Nr. 14, Bl. T8B, Sc. 1, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC T8B",           city: "Bucuresti", street: "otesani",                   ownerType: "1" },
+    { id: "35", code: "81-001-0024", address: "Str. COLENTINA, Nr. 70, Bl. 108, Sc. 1, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 108",           city: "Bucuresti", street: "colentina",                  ownerType: "1" },
+    { id: "36", code: "81-001-0025", address: "Str. FUNDENI, Nr. 227, Bl. 116B, Sc. A, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 116B",          city: "Bucuresti", street: "fundeni",                   ownerType: "1" },
+    { id: "37", code: "81-001-0026", address: "Str. FUNDENI, Nr. 227, Bl. 116B, Sc. B, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 116B",          city: "Bucuresti", street: "fundeni",                   ownerType: "1" },
+    { id: "40", code: "81-001-0029", address: "Str. CONSTANTIN RADULESCU MOTRU, Nr. 23, Bl. B35, Sc. B, Distr. 4",    association: "ASOCIATIA DE PROPRIETARI BLOC 35 SCARA 2",   city: "Bucuresti", street: "constantin radulescu motru", ownerType: "1" },
+    { id: "41", code: "81-001-0030", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. A, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA A",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "42", code: "81-001-0031", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. B, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA B",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "43", code: "81-001-0032", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. E, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA E",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "51", code: "81-001-0040", address: "Str. CALEA MOSILOR, Nr. 241, Bl. 47, Sc. A+B+C, Distr. 2, Bucuresti",  association: "ASOCIATIA DE PROPRIETARI BLOC 47",            city: "Bucuresti", street: "calea mosilor",              ownerType: "1" },
+    { id: "52", code: "81-001-0041", address: "Str. MURGENI, Nr. 7, Bl. L27, Sc. A, Distr. 3, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC L27",           city: "Bucuresti", street: "murgeni",                   ownerType: "1" },
+    { id: "53", code: "81-001-0042", address: "Str. ALEEA CODLEA, Nr. 6, Bl. J3, Sc. 1, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC J3",            city: "Bucuresti", street: "aleea codlea",               ownerType: "1" },
+    { id: "54", code: "81-001-0043", address: "Str. ALEEA ROTUNDA, Nr. 1-4, Bl. Y1B, Sc. 5, Distr. 3, Bucuresti",     association: "ASOCIATIA DE PROPRIETARI BLOC Y1B SCARA 1-5", city: "Bucuresti", street: "aleea rotunda",              ownerType: "1" },
+    { id: "59", code: "81-001-0047", address: "Str. LACUL TEI, Nr. 121, Bl. 5, Sc. 1, Distr. 2, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC 5 SCARA 1-4",  city: "Bucuresti", street: "lacul tei",                  ownerType: "1" },
+    { id: "65", code: "81-001-0053", address: "Str. CALEA VACARESTI, Nr. 308, Bl. 1E, Sc. 1, Distr. 4, Bucuresti",    association: "ASOCIATIA DE PROPRIETARI BLOC 1E",            city: "Bucuresti", street: "calea vacaresti",            ownerType: "1" },
+    { id: "66", code: "81-001-0054", address: "Str. OLTENITEI, Nr. 140, Bl. 5, Sc. 3, Distr. 4, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC 5 SCARA 3",    city: "Bucuresti", street: "oltenitei",                  ownerType: "1" },
+    { id: "8",  code: "81-001-0055", address: "Str. ALEEA BARSANESTI, Nr. 2, Bl. 156, Sc. 2, Distr. 6, Bucuresti",    association: "ASOCIATIA DE PROPRIETARI BLOC156 SC. 2",     city: "Bucuresti", street: "aleea barsanesti",           ownerType: "1" },
+    { id: "68", code: "81-001-0057", address: "Str. CEAHLAU, Nr. 15, Bl. 75, Sc. 1, Distr. 6, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC 75",            city: "Bucuresti", street: "ceahlau",                   ownerType: "1" },
+    { id: "69", code: "81-001-0058", address: "Str. CEAHLAU, Nr. 15, Bl. 75, Sc. 2, Distr. 6, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC 75",            city: "Bucuresti", street: "ceahlau",                   ownerType: "1" }
+];
+
+    /* ── Configurare instanță ────────────────────────────────────────── */
+    var _cfg = {
+        modalId:    "rawEtNodPickerModal",
+        inputId:    "ctl00_phContent_USCounterPicker",
+        btnOpenId:  "btnOpenRawEtNod",
+        callback:   "onRawEtNodSelected"   /* funcție opțională apelată la selecție */
+    };
+
+    function initNodPicker_rawEtNodPickerModal() {
+        NodPicker.init(
+            _cfg,
+            _nodPickerData_rawEtNodPickerModal        );
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initNodPicker_rawEtNodPickerModal);
+    } else {
+        initNodPicker_rawEtNodPickerModal();
+    }
+})();
+</script>
+
+<script>
+/**
+ * Comportament client-side pentru Lista Citiri Brute Energie Termică (ReadingsBufferList.aspx)
+ */
+function clear_Date(objId) {
+    var el = document.getElementById(objId) || document.getElementsByName(objId)[0];
+    if (el) el.value = '';
+}
+
+window.onRawEtNodSelected = function (code) {
+    var hiddenVal = document.getElementById('ctl00_phContent_USCounterPickerValue');
+    if (hiddenVal) hiddenVal.value = code || '-1';
+};
+
+(function () {
+    'use strict';
+
+    // Ștergere NOD (FwkClear)
+    var btnClearNod = document.getElementById('btnClearRawEtNod');
+    var nodInput    = document.getElementById('ctl00_phContent_USCounterPicker');
+    var nodVal      = document.getElementById('ctl00_phContent_USCounterPickerValue');
+
+    if (btnClearNod && nodInput) {
+        btnClearNod.addEventListener('click', function () {
+            nodInput.value = '';
+            if (nodVal) nodVal.value = '-1';
+        });
+    }
+
+    // Căutare dinamică locală în tabel
+    var liveSearch = document.getElementById('rawEtLiveSearch');
+    var tbody      = document.getElementById('rawEtTableBody');
+    var countEl    = document.getElementById('rawEtVisibleCount');
+    var pagToEl    = document.getElementById('rawEtPaginationTo');
+    var emptyRow   = document.getElementById('rawEtEmptyRow');
+
+    if (liveSearch && tbody) {
+        liveSearch.addEventListener('input', function () {
+            var q = this.value.trim().toLowerCase();
+            var visible = 0;
+            tbody.querySelectorAll('tr[data-search]').forEach(function (tr) {
+                var text = tr.getAttribute('data-search') || '';
+                var match = !q || text.indexOf(q) !== -1;
+                tr.style.display = match ? '' : 'none';
+                if (match) visible++;
+            });
+            if (countEl) countEl.textContent = visible;
+            if (pagToEl) pagToEl.textContent = visible;
+            if (emptyRow) emptyRow.style.display = visible === 0 ? '' : 'none';
+        });
+    }
+})();
+</script>
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

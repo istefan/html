@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Panoul Meu – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Panoul Meu – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="assets/js/sonic-live-net.js"></script>
 </head>
 <body>
 
@@ -179,7 +185,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +193,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +330,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +572,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
+                        <a href="sonic-dashboard.html">
                 <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Panoul Meu</div>
 
             <!-- User profile avatar (always visible) -->
@@ -558,7 +606,66 @@
     <div class="help-wrapper">
         <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
             <div class="help-panel-inner">
-                                <p class="help-empty">Nu există informații de ajutor disponibile pentru această pagină.</p>
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Alerte                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Ghid interactiv                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Panoul Meu</h4>
+            <p>Pagina de start a portalului SONIC GRID: ce se întâmplă acum la locurile dumneavoastră de măsurare.</p>
+            <ul>
+                <li><strong>Harta live</strong> – fiecare punct este un loc de măsurare (branșament). Când un contor transmite, datele pleacă spre serverul SONIC; punctele roșii nu au transmis azi.</li>
+                <li><strong>Carduri de sumar</strong> – locuri de măsurare, locuri de consum (apartamente), echipamente și alerte active, cu legătură directă.</li>
+                <li><strong>Consum</strong> – ultimele 14 zile pentru locul de măsurare activ; ziua de azi se actualizează live.</li>
+                <li><strong>Locații active</strong> – locul de măsurare și locul de consum pentru care se afișează datele.</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <h4>Sistemul de alerte</h4>
+            <p>Alertele critice (țeavă spartă, îngheț) se transmit instant prin SMS; anomaliile și consumul zero se transmit zilnic sau lunar pe e-mail. Configurarea se face în <em>Setări Alerte</em>, iar istoricul în <em>Raport Alerte</em>.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <h4>Pornește Ghidul Interactiv</h4>
+            <p>Butonul din secțiunea de bun venit parcurge, pas cu pas, zonele principale ale paginii. Îl puteți închide oricând cu <em>Esc</em>.</p>
+                            </div>
+                                    </div>
                     </div><!-- /.help-panel-inner -->
         </div><!-- /.help-panel -->
         
@@ -588,23 +695,321 @@
 <div class="page-title-container">
     <div class="page-title">
         <h1>Panoul Meu</h1>
-        <p>Pagina este în construcție.</p>
+        <p>Bună, Popescu Ion! Iată ce se întâmplă acum la locurile dumneavoastră de măsurare.</p>
     </div>
 </div>
 
-<div class="card" style="padding: 60px 40px; text-align: center; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; margin-top: 24px;">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="64" height="64" style="margin-bottom: 20px; opacity: 0.3; color: var(--accent);">
-        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-        <polyline points="2 17 12 22 22 17"></polyline>
-        <polyline points="2 12 12 17 22 12"></polyline>
-    </svg>
-    <h2 style="color: var(--text-main); margin-bottom: 12px; font-weight: 600;">În curând</h2>
-    <p style="font-size: 15px;">Interfața pentru <strong>Panoul Meu</strong> nu a fost încă generată în acest demo.</p>
+<!-- React: <LiveHero /> -->
+<section class="live-hero" id="gridHero" data-tour="1">
+    <div id="gridHeroMap"></div>
+    <div class="live-hero-shade"></div>
+    <div class="live-hero-content">
+        <span class="live-eyebrow"><span class="pro-live-dot"></span>SONIC GRID · date în timp real</span>
+        <h2 class="live-title">Bun venit în viitorul contorizării</h2>
+        <p class="live-subtitle">Monitorizare inteligentă în timp real a consumului de apă. Date precise, alerte instantanee și eficiență maximă, direct în panoul dumneavoastră.</p>
+        <div class="live-actions">
+            <button type="button" class="btn-secondary" id="start-tour-btn" onclick="GridHome.tour(0)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"></path></svg>Pornește Ghidul Interactiv</button>
+        </div>
+        <div class="live-stats">
+            <div class="live-stat"><span class="live-stat-label">Citiri primite azi</span><span class="live-stat-value" id="gridReadings">21.384</span></div>
+            <div class="live-stat"><span class="live-stat-label">Consum azi</span><span class="live-stat-value"><span id="gridToday">94,62</span> <small>m³</small></span></div>
+            <div class="live-stat"><span class="live-stat-label">Transmit acum</span><span class="live-stat-value">17<small> / 19</small></span></div>
+        </div>
+    </div>
+    <div class="live-corner"><span class="pro-live-dot"></span><strong id="gridClock">--:--</strong><span>· 19 locuri de măsurare</span></div>
+    <ul class="live-ticker" id="gridTicker" aria-live="polite"></ul>
+</section>
+
+<!-- React: <SummaryCards /> – cardurile din portalul actual -->
+<div class="dash-stat-grid" data-tour="2">
+    <a href="adresele-mele.html" class="dash-stat">
+        <span class="dash-stat-top"><span class="dash-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="9" y1="6" x2="9" y2="6.01"></line><line x1="15" y1="6" x2="15" y2="6.01"></line><line x1="9" y1="10" x2="9" y2="10.01"></line><line x1="15" y1="10" x2="15" y2="10.01"></line><path d="M10 22v-4h4v4"></path></svg></span></span>
+        <span class="dash-stat-value">19</span>
+        <span class="dash-stat-label">Locuri de măsurare (branșamente)</span>
+        <span class="dash-stat-link">Mergeți la locuri de măsurare <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+    </a>
+    <a href="adresele-mele.html#loc-consum" class="dash-stat">
+        <span class="dash-stat-top"><span class="dash-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span></span>
+        <span class="dash-stat-value">479</span>
+        <span class="dash-stat-label">Locuri de consum (apartamente)</span>
+        <span class="dash-stat-link">Mergeți la locuri de consum <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+    </a>
+    <a href="raport-citiri.html" class="dash-stat">
+        <span class="dash-stat-top"><span class="dash-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"></path><path d="M12 12l6-6"></path><circle cx="12" cy="12" r="1.5"></circle></svg></span></span>
+        <span class="dash-stat-value">943</span>
+        <span class="dash-stat-label">Echipamente de măsură</span>
+        <span class="dash-stat-link">Vizualizați citiri zilnice <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+    </a>
+    <a href="raport-alerte.html" class="dash-stat">
+        <span class="dash-stat-top"><span class="dash-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></span><span class="status-badge status-error">2 critice</span></span>
+        <span class="dash-stat-value" id="gridAlerts">165</span>
+        <span class="dash-stat-label">Alerte active</span>
+        <span class="dash-stat-link">Mergeți la alerte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+    </a>
 </div>
+
+<div class="pro-grid-2-1">
+    <!-- React: <DailyConsumption /> -->
+    <div class="card pro-panel" data-tour="3">
+        <div class="edit-section-header">
+            <span class="edit-section-title">Consum apă · loc de măsurare activ · 14 zile</span>
+            <a href="raport-citiri.html" class="pro-panel-link">Raport citiri <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+        </div>
+        <div class="pro-bars pro-bars--dense" id="gridBars" style="height: 170px;">
+                        <div class="pro-bar-col">
+                <span class="pro-bar-value">11,2</span>
+                <div class="pro-bar pro-bar--muted" style="height: 80%;"></div>
+                <span class="pro-bar-label">15.10</span>
+            </div>
+                        <div class="pro-bar-col">
+                <span class="pro-bar-value">10,8</span>
+                <div class="pro-bar pro-bar--muted" style="height: 77%;"></div>
+                <span class="pro-bar-label">16.10</span>
+            </div>
+                        <div class="pro-bar-col">
+                <span class="pro-bar-value">12,4</span>
+                <div class="pro-bar pro-bar--muted" style="height: 89%;"></div>
+                <span class="pro-bar-label">17.10</span>
+            </div>
+                        <div class="pro-bar-col">
+                <span class="pro-bar-value">13,1</span>
+                <div class="pro-bar pro-bar--muted" style="height: 94%;"></div>
+                <span class="pro-bar-label">18.10</span>
+            </div>
+                        <div class="pro-bar-col">
+                <span class="pro-bar-value">11,9</span>
+                <div class="pro-bar pro-bar--muted" style="height: 85%;"></div>
+                <span class="pro-bar-label">19.10</span>
+            </div>
+                        <div class="pro-bar-col">
+                <span class="pro-bar-value">9,6</span>
+                <div class="pro-bar pro-bar--muted" style="height: 69%;"></div>
+                <span class="pro-bar-label">20.10</span>
+            </div>
+                        <div class="pro-bar-col">
+                <span class="pro-bar-value">8,9</span>
+                <div class="pro-bar pro-bar--muted" style="height: 64%;"></div>
+                <span class="pro-bar-label">21.10</span>
+            </div>
+                        <div class="pro-bar-col">
+                <span class="pro-bar-value">11,4</span>
+                <div class="pro-bar pro-bar--muted" style="height: 81%;"></div>
+                <span class="pro-bar-label">22.10</span>
+            </div>
+                        <div class="pro-bar-col">
+                <span class="pro-bar-value">12,2</span>
+                <div class="pro-bar pro-bar--muted" style="height: 87%;"></div>
+                <span class="pro-bar-label">23.10</span>
+            </div>
+                        <div class="pro-bar-col">
+                <span class="pro-bar-value">12,8</span>
+                <div class="pro-bar pro-bar--muted" style="height: 91%;"></div>
+                <span class="pro-bar-label">24.10</span>
+            </div>
+                        <div class="pro-bar-col">
+                <span class="pro-bar-value">11,7</span>
+                <div class="pro-bar pro-bar--muted" style="height: 84%;"></div>
+                <span class="pro-bar-label">25.10</span>
+            </div>
+                        <div class="pro-bar-col">
+                <span class="pro-bar-value">10,2</span>
+                <div class="pro-bar pro-bar--muted" style="height: 73%;"></div>
+                <span class="pro-bar-label">26.10</span>
+            </div>
+                        <div class="pro-bar-col">
+                <span class="pro-bar-value">9,4</span>
+                <div class="pro-bar pro-bar--muted" style="height: 67%;"></div>
+                <span class="pro-bar-label">27.10</span>
+            </div>
+                        <div class="pro-bar-col is-today">
+                <span class="pro-bar-value" id="gridTodayBarValue">5,8</span>
+                <div class="pro-bar" id="gridTodayBar" style="height: 41%;"></div>
+                <span class="pro-bar-label">Azi</span>
+            </div>
+        </div>
+        <div class="calc-kpi-grid" style="margin: 16px 0 0;">
+            <div class="calc-kpi"><span class="calc-kpi-label">Medie zilnică</span><span class="calc-kpi-value">11,3<span class="calc-kpi-unit"> m³</span></span></div>
+            <div class="calc-kpi"><span class="calc-kpi-label">Față de luna trecută</span><span class="calc-kpi-value">−4,2<span class="calc-kpi-unit"> %</span></span></div>
+            <div class="calc-kpi"><span class="calc-kpi-label">Consum nocturn</span><span class="calc-kpi-value">0,18<span class="calc-kpi-unit"> m³/h</span></span></div>
+            <div class="calc-kpi"><span class="calc-kpi-label">Neînchideri</span><span class="calc-kpi-value">3,1<span class="calc-kpi-unit"> %</span></span></div>
+        </div>
+    </div>
+
+    <!-- React: <RecentAlerts /> -->
+    <div class="card pro-panel" data-tour="4">
+        <div class="edit-section-header">
+            <span class="edit-section-title">Alerte recente</span>
+            <a href="raport-alerte.html" class="pro-panel-link">Raport alerte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+        </div>
+        <ul class="pro-feed">
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon pro-feed-icon--alert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">Posibilă țeavă spartă</div>
+                    <div class="pro-feed-text">Bl. 3, Ap. 41 – debit continuu 6 ore (SMS trimis)</div>
+                    <div class="pro-feed-meta">Șos. Olteniței 105 · azi, 04:12</div>
+                </div>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon pro-feed-icon--alert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">Risc de îngheț</div>
+                    <div class="pro-feed-text">Contor subsol – temperatură 1,5 °C</div>
+                    <div class="pro-feed-meta">Str. Covasna 2 · azi, 06:40</div>
+                </div>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon pro-feed-icon--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">Consum zero 7 zile</div>
+                    <div class="pro-feed-text">Ap. 18 – fără consum de apă caldă</div>
+                    <div class="pro-feed-meta">Str. Huedin 4 · ieri</div>
+                </div>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon pro-feed-icon--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">Fără transmisie</div>
+                    <div class="pro-feed-text">Gateway Bl. 3 – ultimul semnal acum 26 ore</div>
+                    <div class="pro-feed-meta">Str. Straja 6 · ieri</div>
+                </div>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">Alertă rezolvată automat</div>
+                    <div class="pro-feed-text">Flux invers oprit după 2 citiri normale</div>
+                    <div class="pro-feed-meta">Nitu Vasile 57 · 26.10</div>
+                </div>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+<!-- React: <PortalInfo /> + <ActivePlace /> – conținutul din portalul actual -->
+<div class="pro-grid-2-1">
+    <div class="card pro-panel">
+        <div class="edit-section-header"><span class="edit-section-title">Informații Portal</span></div>
+        <h3 class="dash-location-title">Despre platforma SONIC GRID</h3>
+        <p class="dash-text">SONIC GRID este platforma inteligentă de monitorizare și telegestiune a consumului de apă, bazată pe contoare cu ultrasunete și gateway-uri LoRaWAN instalate de <strong>Decor Press</strong>.</p>
+        <div class="dash-features">
+            <div class="dash-feature">
+                <h4 class="dash-feature-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Gestionare Proprietăți</h4>
+                <p>Adăugați și monitorizați locuri de măsurare (branșamente) sau locuri de consum (apartamente), grupați-le pe regiuni și generați invitații pentru locatari.</p>
+            </div>
+            <div class="dash-feature">
+                <h4 class="dash-feature-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>Rapoarte &amp; Bilanț Apă</h4>
+                <p>Generați rapoarte detaliate (zilnice, lunare, pe perioade), comparați citirile cu factura furnizorului și urmăriți estimările de consum.</p>
+            </div>
+            <div class="dash-feature">
+                <h4 class="dash-feature-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>Sistem Inteligent de Alerte</h4>
+                <p>Notificări SMS instant pentru alerte critice (țeavă spartă, îngheț) și alerte zilnice/lunare pe email pentru anomalii sau consum zero.</p>
+            </div>
+            <div class="dash-feature">
+                <h4 class="dash-feature-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>Siguranță &amp; Automatizare</h4>
+                <p>Transmisii zilnice și orare securizate, rezolvare automată a alertelor și monitorizare specială pentru persoane vulnerabile.</p>
+            </div>
+        </div>
+        <p class="dash-text">Pentru ghidul complet de utilizare și răspunsuri la întrebări frecvente, vizitați <a href="info-center.html" class="td-link"><strong>Secțiunea Info Center &rarr;</strong></a></p>
+    </div>
+
+    <div class="pro-stack" data-tour="5">
+        <div class="card pro-panel dash-location">
+            <div class="edit-section-header"><span class="edit-section-title">Loc de măsurare activ</span></div>
+            <h3 class="dash-location-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="9" y1="6" x2="9" y2="6.01"></line><line x1="15" y1="6" x2="15" y2="6.01"></line><line x1="9" y1="10" x2="9" y2="10.01"></line><line x1="15" y1="10" x2="15" y2="10.01"></line><path d="M10 22v-4h4v4"></path></svg>Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti</h3>
+            <p class="dash-text">Cod: <strong>810012411</strong></p>
+            <a class="btn-secondary" href="adresele-mele.html">Modifică locația activă</a>
+        </div>
+        <div class="card pro-panel dash-location">
+            <div class="edit-section-header"><span class="edit-section-title">Loc de consum activ</span></div>
+            <h3 class="dash-location-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, Ap. 2</h3>
+            <p class="dash-text">Cod: <strong>C00195669</strong></p>
+            <a class="btn-secondary" href="adresele-mele.html#loc-consum">Modifică locația activă</a>
+        </div>
+    </div>
+</div>
+
+<!-- React: <OnboardingTour /> -->
+<div class="dash-tour" id="gridTour" role="dialog" aria-live="polite" aria-labelledby="gridTourTitle">
+    <div class="dash-tour-step" id="gridTourStep"></div>
+    <div class="dash-tour-title" id="gridTourTitle"></div>
+    <p class="dash-tour-text" id="gridTourText"></p>
+    <div class="dash-tour-actions">
+        <button type="button" class="btn-secondary btn-page-nav" onclick="GridHome.tourEnd()">Închide</button>
+        <span class="pro-btn-group">
+            <button type="button" class="btn-secondary btn-page-nav" id="gridTourPrev" onclick="GridHome.tourMove(-1)">Înapoi</button>
+            <button type="button" class="btn-primary btn-page-nav" id="gridTourNext" onclick="GridHome.tourMove(1)">Următorul</button>
+        </span>
+    </div>
+</div>
+
+<script>
+/* Panoul Meu – hartă live, contoare, ghid interactiv (date demo; în producție WebSocket /api/grid/live) */
+var GridHome = (function () {
+    var HQ = {"name":"SONIC HQ","address":"Str. Nițu Vasile 57, Sector 4, București","gps":[44.3836,26.1166]};
+    var NODES = [{"id":"LM-810012411","gps":[44.3847,26.1158],"label":"Nitu Vasile 57, Bl. 1, Sc. 1","off":false},{"id":"LM-810012448","gps":[44.38289,26.14087],"label":"Nitu Vasile 57, Bl. 1, Sc. 2","off":false},{"id":"LM-810012485","gps":[44.40548,26.13416],"label":"Șos. Olteniței 105, Bl. 3","off":false},{"id":"LM-810012522","gps":[44.41234,26.11189],"label":"Str. Huedin 4, Bl. 22","off":false},{"id":"LM-810012559","gps":[44.39357,26.10497],"label":"Str. Ion Iriceanu 9, Bl. 18","off":false},{"id":"LM-810012596","gps":[44.3985,26.12854],"label":"Bd. Brâncoveanu 12, Bl. B7","off":false},{"id":"LM-810012633","gps":[44.38125,26.14011],"label":"Str. Turnu Măgurele 21, Bl. 31","off":false},{"id":"LM-810012670","gps":[44.37505,26.12148],"label":"Str. Covasna 2, Bl. 4","off":true},{"id":"LM-810012707","gps":[44.40531,26.13908],"label":"Șos. Berceni 26, Bl. 5","off":false},{"id":"LM-810012744","gps":[44.39674,26.12832],"label":"Str. Lunca Bradului 3, Bl. 12","off":false},{"id":"LM-810012781","gps":[44.40693,26.11329],"label":"Str. Izvorul Rece 7, Bl. 2","off":false},{"id":"LM-810012818","gps":[44.36273,26.12668],"label":"Str. Postăvarul 15, Bl. 11","off":false},{"id":"LM-810012855","gps":[44.39635,26.11137],"label":"Aleea Ilișua 1, Bl. 21","off":false},{"id":"LM-810012892","gps":[44.4,26.13474],"label":"Str. Straja 6, Bl. 3","off":true},{"id":"LM-810012929","gps":[44.41172,26.12614],"label":"Bd. Metalurgiei 44, Bl. A2","off":false},{"id":"LM-810012966","gps":[44.37819,26.13114],"label":"Str. Cuza Vodă 140, Bl. 6","off":false},{"id":"LM-810013003","gps":[44.40925,26.12483],"label":"Str. Emil Racoviță 12, Bl. 10","off":false},{"id":"LM-810013040","gps":[44.383,26.14346],"label":"Str. Secuilor 2, Bl. 40","off":false},{"id":"LM-810013077","gps":[44.38989,26.07647],"label":"Calea Văcărești 280, Bl. 1","off":false}];
+    var TOUR = [
+        { t: 'Harta live', x: 'Fiecare punct este un loc de măsurare. Când contoarele transmit, datele pleacă spre serverul SONIC – le vedeți în timp real, împreună cu ultimele evenimente.' },
+        { t: 'Sumarul contului', x: 'Locurile de măsurare, locurile de consum, echipamentele și alertele active. Fiecare card vă duce la lista completă.' },
+        { t: 'Consumul zilnic', x: 'Consumul locului de măsurare activ în ultimele 14 zile. Bara „Azi” crește pe măsură ce sosesc citirile.' },
+        { t: 'Alerte recente', x: 'Alertele critice se trimit și prin SMS. Istoricul complet este în Raport Alerte, iar pragurile se setează în Setări Alerte.' },
+        { t: 'Locațiile active', x: 'Datele din panou se referă la locul de măsurare și la locul de consum active. Le puteți schimba oricând din Adresele Mele.' }
+    ];
+    var readings = 21384, today = 94.62, todayBar = 5.8, step = 0;
+    function $(id) { return document.getElementById(id); }
+    function now() { var d = new Date(); return String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        SonicLiveNet.clock($('gridClock'));
+        var n = 0;
+        SonicLiveNet.create('gridHeroMap', {
+            hq: { gps: HQ.gps, label: HQ.name, address: HQ.address }, nodes: NODES, fit: 'all', hero: true, maxZoom: 14, padding: 60, rate: 3.5,
+            onPacket: function (node) {
+                readings += 1 + Math.floor(Math.random() * 4); today += Math.random() * 0.06; todayBar += 0.004;
+                SonicLiveNet.counter($('gridReadings'), readings);
+                SonicLiveNet.counter($('gridToday'), today, 2);
+                $('gridTodayBarValue').textContent = todayBar.toFixed(1).replace('.', ',');
+                $('gridTodayBar').style.height = Math.min(100, todayBar / 14 * 100) + '%';
+                if (++n % 3) return;
+                var alert = Math.random() < 0.08;
+                SonicLiveNet.ticker($('gridTicker'), alert
+                    ? '<time>' + now() + '</time><span><b>Consum nocturn continuu</b> · ' + node.label + '</span>'
+                    : '<time>' + now() + '</time><span><b>' + node.label + '</b> · citire primită</span>', 5);
+                if (alert) $('gridTicker').firstChild.classList.add('is-alert');
+            }
+        });
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') GridHome.tourEnd(); });
+
+    function show() {
+        document.querySelectorAll('.is-tour-focus').forEach(function (el) { el.classList.remove('is-tour-focus'); });
+        var target = document.querySelector('[data-tour="' + (step + 1) + '"]'), box = $('gridTour');
+        target.classList.add('is-tour-focus');
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        $('gridTourStep').textContent = 'Pasul ' + (step + 1) + ' din ' + TOUR.length;
+        $('gridTourTitle').textContent = TOUR[step].t;
+        $('gridTourText').textContent = TOUR[step].x;
+        $('gridTourPrev').disabled = step === 0;
+        $('gridTourNext').textContent = step === TOUR.length - 1 ? 'Gata' : 'Următorul';
+        box.classList.add('is-open');
+        setTimeout(function () { // poziționare lângă element
+            var r = target.getBoundingClientRect(), top = r.bottom + 12;
+            if (top + box.offsetHeight > window.innerHeight - 12) top = Math.max(12, r.top - box.offsetHeight - 12);
+            box.style.top = Math.max(12, Math.min(top, window.innerHeight - box.offsetHeight - 12)) + 'px';
+            box.style.left = Math.max(12, Math.min(r.left, window.innerWidth - box.offsetWidth - 12)) + 'px';
+        }, 380);
+    }
+    return {
+        tour: function (i) { step = i || 0; show(); },
+        tourMove: function (d) { step += d; if (step >= TOUR.length) { GridHome.tourEnd(); return; } show(); },
+        tourEnd: function () { $('gridTour').classList.remove('is-open'); document.querySelectorAll('.is-tour-focus').forEach(function (el) { el.classList.remove('is-tour-focus'); }); }
+    };
+})();
+</script>
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

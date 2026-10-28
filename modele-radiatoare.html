@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Modele Radiatoare – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Modele Radiatoare – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
 </head>
 <body>
 
@@ -179,7 +182,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +190,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +327,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +569,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-billing-logo.svg" alt="SONIC BILLING" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Modele Radiatoare</div>
 
             <!-- User profile avatar (always visible) -->
@@ -612,19 +657,19 @@
                 <h1>Modele Radiatoare</h1>
                 <p>Lista dimensiunilor și coeficienților SET pentru fiecare tip de radiator din databank.</p>
             </div>
-            <a href="modele-radiatoare-edit.html" class="btn-secondary" style="border-color: var(--accent); color: var(--accent); font-weight: 600; padding: 10px 18px;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="margin-right: 6px;"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <a href="modele-radiatoare-edit.html" class="btn-secondary btn-add">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                 <span>Adaugă Model</span>
             </a>
         </div>
 
         <!-- ── Formular de Filtrare ───────────────────────────────────────── -->
-        <div class="card" style="margin-bottom: 24px;">
-            <div style="margin-bottom: 18px;">
-                <span class="chart-title" style="font-size: 14px; font-weight: 600;">Căutare Modele Radiatoare</span>
+        <div class="card filter-card">
+            <div class="filter-card-head">
+                <span class="filter-card-title">Căutare Modele Radiatoare</span>
             </div>
             <form method="GET" action="modele-radiatoare.html" id="filterForm">
-                <div class="filter-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div class="filter-grid-3">
                     
                     <div class="form-group">
                         <label class="form-label" for="ddlType">Tip radiator</label>
@@ -682,7 +727,7 @@
         <div class="table-container">
             <div class="table-toolbar">
                 <div class="table-toolbar-left">
-                    <span style="color: var(--text-muted); font-size: 13px; font-weight: 500;">
+                    <span class="table-count">
                         Afișare <strong id="visibleCount">15</strong> din <strong>15</strong> modele
                     </span>
                 </div>
@@ -696,7 +741,7 @@
                 </div>
             </div>
 
-            <div style="overflow-x: auto; width: 100%;">
+            <div class="table-scroll">
                 <table class="partners-table" id="dataTable">
                     <thead>
                         <tr>
@@ -713,15 +758,15 @@
                     </thead>
                     <tbody id="dataTableBody">
                                                 <tr data-search="aluminiu alurad 254 0.151000">
-                            <td style="text-align: center; color: var(--text-muted);">1</td>
-                            <td style="font-weight: 600; font-size: 13px; color: var(--accent);">Aluminiu Alurad</td>
-                            <td style="text-align: center; font-weight: 500;">254</td>
+                            <td style="text-align: center;">1</td>
+                            <td class="td-code">Aluminiu Alurad</td>
+                            <td class="td-name" style="text-align: center;">254</td>
                             <td style="text-align: center;">1</td>
                             <td style="text-align: center;">75</td>
                             <td style="text-align: center;">62</td>
-                            <td style="text-align: right; font-weight: 600; color: #10b981;">0.151000</td>
+                            <td class="td-code" style="text-align: right;">0.151000</td>
                             <td style="text-align: center;">
-                                <a href="modele-radiatoare-edit.html?id=1&tab=kc" class="btn-secondary" style="padding: 4px 8px; font-size: 11px; font-weight: 600;">KC</a>
+                                <a href="modele-radiatoare-edit.html?id=1&tab=kc" class="btn-action-icon" title="Coeficienți KC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></a>
                             </td>
                             <td style="text-align: center;">
                                 <a href="modele-radiatoare-edit.html?id=1" class="btn-action-icon" title="Editează">
@@ -730,15 +775,15 @@
                             </td>
                         </tr>
                                                 <tr data-search="aluminiu alurad 454 0.234000">
-                            <td style="text-align: center; color: var(--text-muted);">2</td>
-                            <td style="font-weight: 600; font-size: 13px; color: var(--accent);">Aluminiu Alurad</td>
-                            <td style="text-align: center; font-weight: 500;">454</td>
+                            <td style="text-align: center;">2</td>
+                            <td class="td-code">Aluminiu Alurad</td>
+                            <td class="td-name" style="text-align: center;">454</td>
                             <td style="text-align: center;">1</td>
                             <td style="text-align: center;">75</td>
                             <td style="text-align: center;">62</td>
-                            <td style="text-align: right; font-weight: 600; color: #10b981;">0.234000</td>
+                            <td class="td-code" style="text-align: right;">0.234000</td>
                             <td style="text-align: center;">
-                                <a href="modele-radiatoare-edit.html?id=2&tab=kc" class="btn-secondary" style="padding: 4px 8px; font-size: 11px; font-weight: 600;">KC</a>
+                                <a href="modele-radiatoare-edit.html?id=2&tab=kc" class="btn-action-icon" title="Coeficienți KC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></a>
                             </td>
                             <td style="text-align: center;">
                                 <a href="modele-radiatoare-edit.html?id=2" class="btn-action-icon" title="Editează">
@@ -747,15 +792,15 @@
                             </td>
                         </tr>
                                                 <tr data-search="aluminiu alurad 554 0.268000">
-                            <td style="text-align: center; color: var(--text-muted);">3</td>
-                            <td style="font-weight: 600; font-size: 13px; color: var(--accent);">Aluminiu Alurad</td>
-                            <td style="text-align: center; font-weight: 500;">554</td>
+                            <td style="text-align: center;">3</td>
+                            <td class="td-code">Aluminiu Alurad</td>
+                            <td class="td-name" style="text-align: center;">554</td>
                             <td style="text-align: center;">1</td>
                             <td style="text-align: center;">75</td>
                             <td style="text-align: center;">62</td>
-                            <td style="text-align: right; font-weight: 600; color: #10b981;">0.268000</td>
+                            <td class="td-code" style="text-align: right;">0.268000</td>
                             <td style="text-align: center;">
-                                <a href="modele-radiatoare-edit.html?id=3&tab=kc" class="btn-secondary" style="padding: 4px 8px; font-size: 11px; font-weight: 600;">KC</a>
+                                <a href="modele-radiatoare-edit.html?id=3&tab=kc" class="btn-action-icon" title="Coeficienți KC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></a>
                             </td>
                             <td style="text-align: center;">
                                 <a href="modele-radiatoare-edit.html?id=3" class="btn-action-icon" title="Editează">
@@ -764,15 +809,15 @@
                             </td>
                         </tr>
                                                 <tr data-search="aluminiu alurad 954 0.395000">
-                            <td style="text-align: center; color: var(--text-muted);">4</td>
-                            <td style="font-weight: 600; font-size: 13px; color: var(--accent);">Aluminiu Alurad</td>
-                            <td style="text-align: center; font-weight: 500;">954</td>
+                            <td style="text-align: center;">4</td>
+                            <td class="td-code">Aluminiu Alurad</td>
+                            <td class="td-name" style="text-align: center;">954</td>
                             <td style="text-align: center;">1</td>
                             <td style="text-align: center;">75</td>
                             <td style="text-align: center;">62</td>
-                            <td style="text-align: right; font-weight: 600; color: #10b981;">0.395000</td>
+                            <td class="td-code" style="text-align: right;">0.395000</td>
                             <td style="text-align: center;">
-                                <a href="modele-radiatoare-edit.html?id=4&tab=kc" class="btn-secondary" style="padding: 4px 8px; font-size: 11px; font-weight: 600;">KC</a>
+                                <a href="modele-radiatoare-edit.html?id=4&tab=kc" class="btn-action-icon" title="Coeficienți KC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></a>
                             </td>
                             <td style="text-align: center;">
                                 <a href="modele-radiatoare-edit.html?id=4" class="btn-action-icon" title="Editează">
@@ -781,15 +826,15 @@
                             </td>
                         </tr>
                                                 <tr data-search="aluminiu seven 350 0.282000">
-                            <td style="text-align: center; color: var(--text-muted);">5</td>
-                            <td style="font-weight: 600; font-size: 13px; color: var(--accent);">Aluminiu Seven</td>
-                            <td style="text-align: center; font-weight: 500;">350</td>
+                            <td style="text-align: center;">5</td>
+                            <td class="td-code">Aluminiu Seven</td>
+                            <td class="td-name" style="text-align: center;">350</td>
                             <td style="text-align: center;">1</td>
                             <td style="text-align: center;">80</td>
                             <td style="text-align: center;">99</td>
-                            <td style="text-align: right; font-weight: 600; color: #10b981;">0.282000</td>
+                            <td class="td-code" style="text-align: right;">0.282000</td>
                             <td style="text-align: center;">
-                                <a href="modele-radiatoare-edit.html?id=5&tab=kc" class="btn-secondary" style="padding: 4px 8px; font-size: 11px; font-weight: 600;">KC</a>
+                                <a href="modele-radiatoare-edit.html?id=5&tab=kc" class="btn-action-icon" title="Coeficienți KC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></a>
                             </td>
                             <td style="text-align: center;">
                                 <a href="modele-radiatoare-edit.html?id=5" class="btn-action-icon" title="Editează">
@@ -798,15 +843,15 @@
                             </td>
                         </tr>
                                                 <tr data-search="aluminiu seven 500 0.377000">
-                            <td style="text-align: center; color: var(--text-muted);">6</td>
-                            <td style="font-weight: 600; font-size: 13px; color: var(--accent);">Aluminiu Seven</td>
-                            <td style="text-align: center; font-weight: 500;">500</td>
+                            <td style="text-align: center;">6</td>
+                            <td class="td-code">Aluminiu Seven</td>
+                            <td class="td-name" style="text-align: center;">500</td>
                             <td style="text-align: center;">1</td>
                             <td style="text-align: center;">80</td>
                             <td style="text-align: center;">99</td>
-                            <td style="text-align: right; font-weight: 600; color: #10b981;">0.377000</td>
+                            <td class="td-code" style="text-align: right;">0.377000</td>
                             <td style="text-align: center;">
-                                <a href="modele-radiatoare-edit.html?id=6&tab=kc" class="btn-secondary" style="padding: 4px 8px; font-size: 11px; font-weight: 600;">KC</a>
+                                <a href="modele-radiatoare-edit.html?id=6&tab=kc" class="btn-action-icon" title="Coeficienți KC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></a>
                             </td>
                             <td style="text-align: center;">
                                 <a href="modele-radiatoare-edit.html?id=6" class="btn-action-icon" title="Editează">
@@ -815,15 +860,15 @@
                             </td>
                         </tr>
                                                 <tr data-search="aluminiu seven 600 0.432000">
-                            <td style="text-align: center; color: var(--text-muted);">7</td>
-                            <td style="font-weight: 600; font-size: 13px; color: var(--accent);">Aluminiu Seven</td>
-                            <td style="text-align: center; font-weight: 500;">600</td>
+                            <td style="text-align: center;">7</td>
+                            <td class="td-code">Aluminiu Seven</td>
+                            <td class="td-name" style="text-align: center;">600</td>
                             <td style="text-align: center;">1</td>
                             <td style="text-align: center;">80</td>
                             <td style="text-align: center;">99</td>
-                            <td style="text-align: right; font-weight: 600; color: #10b981;">0.432000</td>
+                            <td class="td-code" style="text-align: right;">0.432000</td>
                             <td style="text-align: center;">
-                                <a href="modele-radiatoare-edit.html?id=7&tab=kc" class="btn-secondary" style="padding: 4px 8px; font-size: 11px; font-weight: 600;">KC</a>
+                                <a href="modele-radiatoare-edit.html?id=7&tab=kc" class="btn-action-icon" title="Coeficienți KC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></a>
                             </td>
                             <td style="text-align: center;">
                                 <a href="modele-radiatoare-edit.html?id=7" class="btn-action-icon" title="Editează">
@@ -832,15 +877,15 @@
                             </td>
                         </tr>
                                                 <tr data-search="aluminiu seven 700 0.488000">
-                            <td style="text-align: center; color: var(--text-muted);">8</td>
-                            <td style="font-weight: 600; font-size: 13px; color: var(--accent);">Aluminiu Seven</td>
-                            <td style="text-align: center; font-weight: 500;">700</td>
+                            <td style="text-align: center;">8</td>
+                            <td class="td-code">Aluminiu Seven</td>
+                            <td class="td-name" style="text-align: center;">700</td>
                             <td style="text-align: center;">1</td>
                             <td style="text-align: center;">80</td>
                             <td style="text-align: center;">99</td>
-                            <td style="text-align: right; font-weight: 600; color: #10b981;">0.488000</td>
+                            <td class="td-code" style="text-align: right;">0.488000</td>
                             <td style="text-align: center;">
-                                <a href="modele-radiatoare-edit.html?id=8&tab=kc" class="btn-secondary" style="padding: 4px 8px; font-size: 11px; font-weight: 600;">KC</a>
+                                <a href="modele-radiatoare-edit.html?id=8&tab=kc" class="btn-action-icon" title="Coeficienți KC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></a>
                             </td>
                             <td style="text-align: center;">
                                 <a href="modele-radiatoare-edit.html?id=8" class="btn-action-icon" title="Editează">
@@ -849,15 +894,15 @@
                             </td>
                         </tr>
                                                 <tr data-search="aluminiu seven 800 0.539000">
-                            <td style="text-align: center; color: var(--text-muted);">9</td>
-                            <td style="font-weight: 600; font-size: 13px; color: var(--accent);">Aluminiu Seven</td>
-                            <td style="text-align: center; font-weight: 500;">800</td>
+                            <td style="text-align: center;">9</td>
+                            <td class="td-code">Aluminiu Seven</td>
+                            <td class="td-name" style="text-align: center;">800</td>
                             <td style="text-align: center;">1</td>
                             <td style="text-align: center;">80</td>
                             <td style="text-align: center;">99</td>
-                            <td style="text-align: right; font-weight: 600; color: #10b981;">0.539000</td>
+                            <td class="td-code" style="text-align: right;">0.539000</td>
                             <td style="text-align: center;">
-                                <a href="modele-radiatoare-edit.html?id=9&tab=kc" class="btn-secondary" style="padding: 4px 8px; font-size: 11px; font-weight: 600;">KC</a>
+                                <a href="modele-radiatoare-edit.html?id=9&tab=kc" class="btn-action-icon" title="Coeficienți KC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></a>
                             </td>
                             <td style="text-align: center;">
                                 <a href="modele-radiatoare-edit.html?id=9" class="btn-action-icon" title="Editează">
@@ -866,15 +911,15 @@
                             </td>
                         </tr>
                                                 <tr data-search="aluminiu titan kristal 1000 0.596000">
-                            <td style="text-align: center; color: var(--text-muted);">10</td>
-                            <td style="font-weight: 600; font-size: 13px; color: var(--accent);">Aluminiu Titan Kristal</td>
-                            <td style="text-align: center; font-weight: 500;">1000</td>
+                            <td style="text-align: center;">10</td>
+                            <td class="td-code">Aluminiu Titan Kristal</td>
+                            <td class="td-name" style="text-align: center;">1000</td>
                             <td style="text-align: center;">1</td>
                             <td style="text-align: center;">80</td>
                             <td style="text-align: center;">100</td>
-                            <td style="text-align: right; font-weight: 600; color: #10b981;">0.596000</td>
+                            <td class="td-code" style="text-align: right;">0.596000</td>
                             <td style="text-align: center;">
-                                <a href="modele-radiatoare-edit.html?id=10&tab=kc" class="btn-secondary" style="padding: 4px 8px; font-size: 11px; font-weight: 600;">KC</a>
+                                <a href="modele-radiatoare-edit.html?id=10&tab=kc" class="btn-action-icon" title="Coeficienți KC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></a>
                             </td>
                             <td style="text-align: center;">
                                 <a href="modele-radiatoare-edit.html?id=10" class="btn-action-icon" title="Editează">
@@ -883,15 +928,15 @@
                             </td>
                         </tr>
                                                 <tr data-search="aluminiu titan kristal 1200 0.691000">
-                            <td style="text-align: center; color: var(--text-muted);">11</td>
-                            <td style="font-weight: 600; font-size: 13px; color: var(--accent);">Aluminiu Titan Kristal</td>
-                            <td style="text-align: center; font-weight: 500;">1200</td>
+                            <td style="text-align: center;">11</td>
+                            <td class="td-code">Aluminiu Titan Kristal</td>
+                            <td class="td-name" style="text-align: center;">1200</td>
                             <td style="text-align: center;">1</td>
                             <td style="text-align: center;">80</td>
                             <td style="text-align: center;">100</td>
-                            <td style="text-align: right; font-weight: 600; color: #10b981;">0.691000</td>
+                            <td class="td-code" style="text-align: right;">0.691000</td>
                             <td style="text-align: center;">
-                                <a href="modele-radiatoare-edit.html?id=11&tab=kc" class="btn-secondary" style="padding: 4px 8px; font-size: 11px; font-weight: 600;">KC</a>
+                                <a href="modele-radiatoare-edit.html?id=11&tab=kc" class="btn-action-icon" title="Coeficienți KC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></a>
                             </td>
                             <td style="text-align: center;">
                                 <a href="modele-radiatoare-edit.html?id=11" class="btn-action-icon" title="Editează">
@@ -900,15 +945,15 @@
                             </td>
                         </tr>
                                                 <tr data-search="aluminiu titan kristal 1400 0.781000">
-                            <td style="text-align: center; color: var(--text-muted);">12</td>
-                            <td style="font-weight: 600; font-size: 13px; color: var(--accent);">Aluminiu Titan Kristal</td>
-                            <td style="text-align: center; font-weight: 500;">1400</td>
+                            <td style="text-align: center;">12</td>
+                            <td class="td-code">Aluminiu Titan Kristal</td>
+                            <td class="td-name" style="text-align: center;">1400</td>
                             <td style="text-align: center;">1</td>
                             <td style="text-align: center;">80</td>
                             <td style="text-align: center;">100</td>
-                            <td style="text-align: right; font-weight: 600; color: #10b981;">0.781000</td>
+                            <td class="td-code" style="text-align: right;">0.781000</td>
                             <td style="text-align: center;">
-                                <a href="modele-radiatoare-edit.html?id=12&tab=kc" class="btn-secondary" style="padding: 4px 8px; font-size: 11px; font-weight: 600;">KC</a>
+                                <a href="modele-radiatoare-edit.html?id=12&tab=kc" class="btn-action-icon" title="Coeficienți KC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></a>
                             </td>
                             <td style="text-align: center;">
                                 <a href="modele-radiatoare-edit.html?id=12" class="btn-action-icon" title="Editează">
@@ -917,15 +962,15 @@
                             </td>
                         </tr>
                                                 <tr data-search="aluminiu titan kristal 1600 0.883000">
-                            <td style="text-align: center; color: var(--text-muted);">13</td>
-                            <td style="font-weight: 600; font-size: 13px; color: var(--accent);">Aluminiu Titan Kristal</td>
-                            <td style="text-align: center; font-weight: 500;">1600</td>
+                            <td style="text-align: center;">13</td>
+                            <td class="td-code">Aluminiu Titan Kristal</td>
+                            <td class="td-name" style="text-align: center;">1600</td>
                             <td style="text-align: center;">1</td>
                             <td style="text-align: center;">80</td>
                             <td style="text-align: center;">100</td>
-                            <td style="text-align: right; font-weight: 600; color: #10b981;">0.883000</td>
+                            <td class="td-code" style="text-align: right;">0.883000</td>
                             <td style="text-align: center;">
-                                <a href="modele-radiatoare-edit.html?id=13&tab=kc" class="btn-secondary" style="padding: 4px 8px; font-size: 11px; font-weight: 600;">KC</a>
+                                <a href="modele-radiatoare-edit.html?id=13&tab=kc" class="btn-action-icon" title="Coeficienți KC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></a>
                             </td>
                             <td style="text-align: center;">
                                 <a href="modele-radiatoare-edit.html?id=13" class="btn-action-icon" title="Editează">
@@ -934,15 +979,15 @@
                             </td>
                         </tr>
                                                 <tr data-search="aluminiu titan kristal 1800 0.978000">
-                            <td style="text-align: center; color: var(--text-muted);">14</td>
-                            <td style="font-weight: 600; font-size: 13px; color: var(--accent);">Aluminiu Titan Kristal</td>
-                            <td style="text-align: center; font-weight: 500;">1800</td>
+                            <td style="text-align: center;">14</td>
+                            <td class="td-code">Aluminiu Titan Kristal</td>
+                            <td class="td-name" style="text-align: center;">1800</td>
                             <td style="text-align: center;">1</td>
                             <td style="text-align: center;">80</td>
                             <td style="text-align: center;">100</td>
-                            <td style="text-align: right; font-weight: 600; color: #10b981;">0.978000</td>
+                            <td class="td-code" style="text-align: right;">0.978000</td>
                             <td style="text-align: center;">
-                                <a href="modele-radiatoare-edit.html?id=14&tab=kc" class="btn-secondary" style="padding: 4px 8px; font-size: 11px; font-weight: 600;">KC</a>
+                                <a href="modele-radiatoare-edit.html?id=14&tab=kc" class="btn-action-icon" title="Coeficienți KC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></a>
                             </td>
                             <td style="text-align: center;">
                                 <a href="modele-radiatoare-edit.html?id=14" class="btn-action-icon" title="Editează">
@@ -951,15 +996,15 @@
                             </td>
                         </tr>
                                                 <tr data-search="aluminiu titan kristal 200 0.181000">
-                            <td style="text-align: center; color: var(--text-muted);">15</td>
-                            <td style="font-weight: 600; font-size: 13px; color: var(--accent);">Aluminiu Titan Kristal</td>
-                            <td style="text-align: center; font-weight: 500;">200</td>
+                            <td style="text-align: center;">15</td>
+                            <td class="td-code">Aluminiu Titan Kristal</td>
+                            <td class="td-name" style="text-align: center;">200</td>
                             <td style="text-align: center;">1</td>
                             <td style="text-align: center;">80</td>
                             <td style="text-align: center;">100</td>
-                            <td style="text-align: right; font-weight: 600; color: #10b981;">0.181000</td>
+                            <td class="td-code" style="text-align: right;">0.181000</td>
                             <td style="text-align: center;">
-                                <a href="modele-radiatoare-edit.html?id=15&tab=kc" class="btn-secondary" style="padding: 4px 8px; font-size: 11px; font-weight: 600;">KC</a>
+                                <a href="modele-radiatoare-edit.html?id=15&tab=kc" class="btn-action-icon" title="Coeficienți KC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></a>
                             </td>
                             <td style="text-align: center;">
                                 <a href="modele-radiatoare-edit.html?id=15" class="btn-action-icon" title="Editează">
@@ -969,7 +1014,7 @@
                         </tr>
                         
                         <tr id="noResultsRow" style="display: none;">
-                            <td colspan="9" style="text-align: center; color: var(--text-muted); padding: 32px; font-style: italic;">
+                            <td colspan="9" class="table-empty">
                                 Niciun model găsit.
                             </td>
                         </tr>
@@ -978,18 +1023,18 @@
             </div>
 
             <div class="table-pagination">
-                <div style="font-size: 13px; color: var(--text-muted);">
+                <div class="pagination-info">
                     Afișare <strong>1</strong> - <strong>15</strong> din <strong>159</strong> înregistrări
                 </div>
-                <div style="display: flex; align-items: center; gap: 8px;">
-                    <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" disabled>
+                <div class="pagination-controls">
+                    <button type="button" class="btn-secondary btn-page-nav" disabled>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
                         <span>Anterior</span>
                     </button>
                     <div class="pagination-pages">
-                        <button type="button" class="btn-secondary active" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;">1</button>
+                        <button type="button" class="btn-secondary btn-page active">1</button>
                     </div>
-                    <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;">
+                    <button type="button" class="btn-secondary btn-page-nav">
                         <span>Următor</span>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
@@ -1026,7 +1071,7 @@
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

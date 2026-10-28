@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Monitorizare Calcul – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
+    <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+<script>
+    (function() {
+        var sb = document.getElementById('sidebar');
+        var ls = localStorage.getItem('sb_collapsed');
+        if (ls === '1') sb.classList.add('collapsed');
+        else if (ls === '0') sb.classList.remove('collapsed');
+    })();
+</script>
+    <!-- ── Logo ─────────────────────────────────────────────────────── -->
+    <!-- React: <SidebarLogo activeApp={activeApp} /> -->
+    <div class="logo">
+        <a href="sonic-dashboard.html" title="SONIC – Acasă">
+            <img src="assets/images/sonic-logo.svg"
+                 alt="SONIC"
+                 class="logo-full"
+                 id="sidebarLogo">
+            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">S</span>
+        </a>
+    </div>
+
+    <!-- ── Nav ───────────────────────────────────────────────────────── -->
+    <!-- React: <SidebarNav activeApp={activeApp} onAppChange={setActiveApp} /> -->
+    <nav class="sidebar-nav" aria-label="Navigare principală">
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  1. SONIC GRID
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-grid"
+             data-logo="assets/images/sonic-grid-logo.svg"
+             data-logo-icon="SG">
+            <button class="app-section-header" type="button" title="SONIC GRID">
+                <img src="assets/images/sonic-grid-logo.svg" class="app-section-logo" alt="SONIC GRID">
+                <span class="app-section-badge">SG</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Panoul Meu -->
+                <a href="panoul-meu.html" class="nav-item " title="Panoul Meu">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </span>
+                    <span class="nav-label">Panoul Meu</span>
+                </a>
+
+                <!-- Adresele Mele -->
+                <a href="adresele-mele.html" class="nav-item " title="Adresele Mele">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </span>
+                    <span class="nav-label">Adresele Mele</span>
+                </a>
+
+                <!-- Regiuni / Zone -->
+                <a href="regiuni-zone.html" class="nav-item " title="Regiuni / Zone">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </span>
+                    <span class="nav-label">Regiuni / Zone</span>
+                </a>
+
+                <!-- Perioade Citiri -->
+                <a href="perioade-citiri.html" class="nav-item " title="Perioade Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </span>
+                    <span class="nav-label">Perioade Citiri</span>
+                </a>
+
+                <!-- Setări Alerte -->
+                <a href="setari-alerte.html" class="nav-item " title="Setări Alerte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </span>
+                    <span class="nav-label">Setări Alerte</span>
+                </a>
+
+                <!-- Info Center -->
+                <a href="info-center.html" class="nav-item " title="Info Center">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    <span class="nav-label">Info Center</span>
+                </a>
+
+                <!-- Contact -->
+                <a href="contact.html" class="nav-item " title="Contact">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </span>
+                    <span class="nav-label">Contact</span>
+                </a>
+
+                <!-- ── RAPOARTE (section label) ── -->
+                <div class="nav-section">Rapoarte</div>
+
+                <!-- Raport Citiri -->
+                <a href="raport-citiri.html" class="nav-item " title="Raport Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Raport Citiri</span>
+                </a>
+
+                <!-- Bilanț Neînchideri Apă -->
+                <a href="bilant-neinchideri.html" class="nav-item " title="Bilanț Neînchideri Apă">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                    </span>
+                    <span class="nav-label">Bilanț Neînchideri Apă</span>
+                </a>
+
+                <!-- Estimări Consum -->
+                <a href="estimari-consum.html" class="nav-item " title="Estimări Consum">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </span>
+                    <span class="nav-label">Estimări Consum</span>
+                </a>
+
+                <!-- Raport Alerte -->
+                <a href="raport-alerte.html" class="nav-item " title="Raport Alerte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Raport Alerte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  2. SONIC MARKET
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-market"
+             data-logo="assets/images/sonic-market-logo.svg"
+             data-logo-icon="SM">
+            <button class="app-section-header" type="button" title="SONIC MARKET">
+                <img src="assets/images/sonic-market-logo.svg" class="app-section-logo" alt="SONIC MARKET">
+                <span class="app-section-badge">SM</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard Market -->
+                <a href="market-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  3. SONIC PRO
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-pro"
+             data-logo="assets/images/sonic-pro-logo.svg"
+             data-logo-icon="SP">
+            <button class="app-section-header" type="button" title="SONIC PRO">
+                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+                <span class="app-section-badge">SP</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard PRO (dispecerat) -->
+                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  4. SONIC BILLING
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section open"
+             data-app="sonic-billing"
+             data-logo="assets/images/sonic-billing-logo.svg"
+             data-logo-icon="SB">
+            <button class="app-section-header" type="button" title="SONIC BILLING">
+                <img src="assets/images/sonic-billing-logo.svg" class="app-section-logo" alt="SONIC BILLING">
+                <span class="app-section-badge">SB</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard -->
+                <a href="index.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── ADMINISTRARE ─────────────────────────────────────────── -->
+                <div class="nav-group " data-group="administrare">
+                    <button class="nav-group-title" type="button" title="Administrare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                        </span>
+                        <span class="nav-label">Administrare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="utilizatori.html" class="nav-subitem ">Utilizatori</a>
+                        <a href="cititori.html" class="nav-subitem ">Cititori</a>
+                        <a href="parametri-sistem.html" class="nav-subitem ">Parametri Sistem</a>
+                        <a href="stergere-perioade.html" class="nav-subitem ">Ștergere Perioade Calcul</a>
+                    </div>
+                </div>
+
+                <!-- ── DICTIONARE ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="dictionare">
+                    <button class="nav-group-title" type="button" title="Dictionare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Dictionare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="localitati.html" class="nav-subitem ">Localități</a>
+                        <a href="puncte-lucru.html" class="nav-subitem ">Puncte de Lucru</a>
+                        <a href="producatori.html" class="nav-subitem ">Producători</a>
+                        <a href="furnizori.html" class="nav-subitem ">Furnizori Utilități</a>
+                        <a href="unitati-masura.html" class="nav-subitem ">Unități de Măsură</a>
+                        <a href="tipuri-servicii.html" class="nav-subitem ">Tipuri Servicii</a>
+                        <a href="companii.html" class="nav-subitem ">Companii</a>
+                    </div>
+                </div>
+
+                <!-- ── DATABANK MANAGEMENT ──────────────────────────────────── -->
+                <div class="nav-group " data-group="databank">
+                    <button class="nav-group-title" type="button" title="Databank Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                        </span>
+                        <span class="nav-label">Databank Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="tipuri-radiatoare.html" class="nav-subitem ">Tipuri Radiatoare</a>
+                        <a href="modele-radiatoare.html" class="nav-subitem ">Modele Radiatoare</a>
+                        <a href="modele-repartitoare.html" class="nav-subitem ">Modele Repartitoare</a>
+                        <a href="modele-contoare.html" class="nav-subitem ">Modele Contoare</a>
+                        <a href="serii-apometre.html" class="nav-subitem ">Serii Apometre Achiziționate</a>
+                    </div>
+                </div>
+
+                <!-- ── CALCUL ────────────────────────────────────────────────── -->
+                <div class="nav-group open" data-group="calcul">
+                    <button class="nav-group-title" type="button" title="Calcul">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </span>
+                        <span class="nav-label">Calcul</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem active">Monitorizare Calcul</a>
+                        <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
+                        <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
+                        <a href="tarife.html" class="nav-subitem ">Tarife</a>
+                    </div>
+                </div>
+
+                <!-- ── IMPORT / EXPORT CITIRI ───────────────────────────────── -->
+                <div class="nav-group " data-group="import-export">
+                    <button class="nav-group-title" type="button" title="Import / Export Citiri">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </span>
+                        <span class="nav-label">Import / Export Citiri</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="citire-manuala-et.html" class="nav-subitem ">Citire Manuală ET</a>
+                        <a href="citire-manuala-apa.html" class="nav-subitem ">Citire Manuală Apă</a>
+                        <a href="citiri-brute-et.html" class="nav-subitem ">Citiri Brute Energie Termică</a>
+                        <a href="citiri-brute-apa.html" class="nav-subitem ">Citiri Brute Apă</a>
+                        <a href="export-pl.html" class="nav-subitem ">Export PL</a>
+                    </div>
+                </div>
+
+                <!-- ── CONSUM ENERGIE TERMICĂ ────────────────────────────────── -->
+                <div class="nav-group " data-group="consum-et">
+                    <button class="nav-group-title" type="button" title="Consum Energie Termică">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                        </span>
+                        <span class="nav-label">Consum Energie Termică</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="consum-et-detaliat.html" class="nav-subitem ">Introducere Detaliată</a>
+                        <a href="consum-et-cumulat.html" class="nav-subitem ">Introducere Cumulată</a>
+                    </div>
+                </div>
+
+                <!-- ── CONSUM APĂ ─────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="consum-apa">
+                    <button class="nav-group-title" type="button" title="Consum Apă">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L7 10a5 5 0 0 0 10 0L12 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Consum Apă</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="consum-apa-detaliat.html" class="nav-subitem ">Introducere Detaliată</a>
+                    </div>
+                </div>
+
+                <!-- ── VALIDARE CITIRE ───────────────────────────────────────── -->
+                <div class="nav-group " data-group="validare">
+                    <button class="nav-group-title" type="button" title="Validare Citire">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </span>
+                        <span class="nav-label">Validare Citire</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="validare-et.html" class="nav-subitem ">Validare Citire – ET</a>
+                        <a href="validare-apa.html" class="nav-subitem ">Validare Citire – Apă</a>
+                        <a href="cost-split-apa.html" class="nav-subitem ">Cost Split – Apă</a>
+                    </div>
+                </div>
+
+                <!-- ── GESTIUNE FACTURARE (standalone) ──────────────────────── -->
+                <a href="facturare.html" class="nav-item " title="Gestiune Facturare">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Gestiune Facturare</span>
+                </a>
+
+                <!-- ── GESTIUNE TIPĂRIRE ───────────────────────────────────────── -->
+                <div class="nav-group " data-group="tiparire">
+                    <button class="nav-group-title" type="button" title="Gestiune Tipărire">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                        </span>
+                        <span class="nav-label">Gestiune Tipărire</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="nod-tiparire.html" class="nav-subitem ">NOD pentru Tipărire</a>
+                        <a href="fise-citire.html" class="nav-subitem ">Fișe Citire</a>
+                    </div>
+                </div>
+
+                <!-- ── RAPOARTE (standalone) ──────────────────────────────────── -->
+                <a href="rapoarte.html" class="nav-item " title="Rapoarte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <span class="nav-label">Rapoarte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  5. SONIC FIN
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-fin"
+             data-logo="assets/images/sonic-fin-logo.svg"
+             data-logo-icon="SF">
+            <button class="app-section-header" type="button" title="SONIC FIN">
+                <img src="assets/images/sonic-fin-logo.svg" class="app-section-logo" alt="SONIC FIN">
+                <span class="app-section-badge">SF</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard FIN -->
+                <a href="fin-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  6. SONIC (Base – Ecosistem & Configurare)
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic"
+             data-logo="assets/images/sonic-logo.svg"
+             data-logo-icon="S">
+            <button class="app-section-header" type="button" title="SONIC">
+                <img src="assets/images/sonic-logo.svg" class="app-section-logo" alt="SONIC">
+                <span class="app-section-badge">S</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard SONIC -->
+                <a href="sonic-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <div class="nav-group " data-group="master-data">
+                    <button class="nav-group-title" type="button" title="Master Data Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Master Data Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
+                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
+                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
+                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
+                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
+                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- ── Sidebar Footer ─────────────────────────────────────────────── -->
+    <!-- React: <SidebarFooter /> -->
+    <div class="sidebar-footer">
+        <a href="contul-meu.html" class="nav-item " title="Contul Meu">
+            <span class="nav-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <span class="nav-label">Contul Meu</span>
+        </a>
+    </div>
+
+</aside>
+
+<!-- React: <main className="main"> -->
+<div class="main">
+
+    <!--
+        React: <Header
+            onToggleSidebar={toggleSidebar}
+            isCollapsed={isCollapsed}
+            isMobileOpen={isMobileOpen}
+            pageTitle={pageTitle}
+        />
+    -->
+    <div class="header">
+
+        <!-- LEFT: hamburger / sidebar-toggle + search (desktop) -->
+        <div class="header-left">
+            <!--
+                React: <SidebarToggleBtn
+                    onClick={onToggleSidebar}
+                    isCollapsed={isCollapsed}
+                    isMobile={isMobile}
+                />
+                Desktop: panel-left icon with collapse arrow
+                Mobile : hamburger icon
+            -->
+            <button class="sidebar-toggle-btn" id="sidebarToggle"
+                    title="Restrânge / Extinde meniu"
+                    aria-label="Toggle sidebar"
+                    data-collapsed="0">
+                <script>
+                    (function() {
+                        var btn = document.getElementById('sidebarToggle');
+                        var ls = localStorage.getItem('sb_collapsed');
+                        if (ls === '1') btn.setAttribute('data-collapsed', '1');
+                        else if (ls === '0') btn.setAttribute('data-collapsed', '0');
+                    })();
+                </script>
+                <!-- Mobile hamburger (hidden on desktop via CSS) -->
+                <svg class="icon-hamburger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+                <!-- Desktop panel icon (hidden on mobile via CSS) -->
+                <svg class="icon-panel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <line x1="9" y1="3" x2="9" y2="21"/>
+                    <polyline points="15 8 12 12 15 16" class="toggle-arrow"/>
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- CENTER: logo (mobile only, absolutely centered) -->
+        <!-- React: isMobile && <HeaderLogo /> -->
+        <div class="header-logo" aria-hidden="true">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-billing-logo.svg" alt="SONIC BILLING" id="headerLogo">
+            </a>
+        </div>
+
+        <!-- RIGHT: page title (desktop) + user + logout -->
+        <div class="header-actions">
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
+            <div class="header-page-title">Monitorizare Calcul</div>
+
+            <!-- User profile avatar (always visible) -->
+            <a href="contul-meu.html" class="user-profile" title="Contul meu">SI</a>
+
+            <!-- Logout button – icon only, always visible -->
+            <!-- React: <LogoutBtn onClick={handleLogout} /> -->
+            <a href="login.html" class="logout-btn" title="Deconectare" aria-label="Deconectare">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+            </a>
+        </div>
+
+    </div><!-- /.header -->
+
+    <!--
+        CONTEXTUAL HELP BAR (WordPress-style)
+        React: <HelpBar onToggle={toggleHelp} isOpen={isHelpOpen} />
+               <HelpPanel isOpen={isHelpOpen} tabs={helpTabs} />
+    -->
+    <div class="help-wrapper">
+        <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
+            <div class="help-panel-inner">
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Productivitate                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Reasignare                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Monitorizare Calcul</h4>
+            <p>Pagina arată, pentru perioada de calcul aleasă, cât a lucrat fiecare operator și unde a ajuns calculul fiecărui NOD.</p>
+            <p>Progresul unui NOD este pasul atins din cei 6 pași ai calculului: Note, Citiri, Necitite, Plauzibilitate, Calcul, Factură.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <ul>
+                <li><strong>Neîncepute</strong> – NOD-uri la care calculul nu a fost inițiat.</li>
+                <li><strong>În lucru</strong> – NOD-uri între pașii 1 și 5.</li>
+                <li><strong>Gata de facturare</strong> – calcul verificat, factura nu a fost încă emisă.</li>
+                <li><strong>Încheiate</strong> – factură emisă și notificare trimisă.</li>
+                <li><strong>Termen depășit</strong> – NOD-uri neîncheiate cu termenul perioadei depășit.</li>
+                <li><strong>Progres</strong> – media pașilor finalizați pe toate NOD-urile operatorului.</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <h4>Reasignarea NOD-urilor</h4>
+            <p>Când un operator lipsește, bifați NOD-urile lui și apăsați <strong>Reasignează NOD-urile selectate</strong> (sau acțiunea de pe rând). Alegeți noul operator, motivul și, pentru o înlocuire temporară, data până la care se aplică.</p>
+            <p>Noul operator vede NOD-urile în <strong>Inițiere Calcul</strong>, cu tot istoricul și notele de calcul – nu se pierde nimic din ce era notat.</p>
+                            </div>
+                                    </div>
+                    </div><!-- /.help-panel-inner -->
+        </div><!-- /.help-panel -->
+        
+        <div class="help-bar">
+            <button class="help-toggle-btn" id="helpToggle"
+                    aria-expanded="false"
+                    aria-controls="helpPanel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round"
+                     width="14" height="14" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                <span>Ajutor</span>
+                <svg class="help-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                     aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"/>
+                </svg>
+            </button>
+        </div><!-- /.help-bar -->
+    </div><!-- /.help-wrapper -->
+
+    <div class="content">
+
+<!-- ===================================================================
+     React: <CalcMonitoringPage />
+     =================================================================== -->
+
+<!-- === Titlu pagină (RULES §1.11) === -->
+<div class="page-title-container">
+    <div class="page-title">
+        <h1>Monitorizare Calcul</h1>
+        <p>Productivitatea operatorilor de calcul și stadiul fiecărui NOD în perioada de calcul.</p>
+    </div>
+</div>
+
+<!-- === Casetă de filtrare (4 câmpuri → .filter-grid) === -->
+<div class="card filter-card">
+    <div class="filter-card-head">
+        <span class="filter-card-title">Filtrare Avansată</span>
+    </div>
+    <form method="GET" action="monitorizare-calcul.html" id="filterFormMonitor">
+        <div class="filter-grid">
+            <div class="form-group">
+                <label class="form-label" for="ddlMonPeriod">Perioadă calcul</label>
+                <select name="calc_period" id="ddlMonPeriod" class="input-control">
+                    <option value="-1" >- Toate -</option>
+                                            <option value="2026-09" selected>01.09.2026 - 30.09.2026</option>
+                                            <option value="2026-08" >01.08.2026 - 31.08.2026</option>
+                                            <option value="2026-07" >01.07.2026 - 31.07.2026</option>
+                                    </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="ddlMonOperator">Operator calcul</label>
+                <select name="operator" id="ddlMonOperator" class="input-control">
+                    <option value="">- Toți operatorii -</option>
+                                            <option value="cbindaroi" >Carmen Bîndaroi</option>
+                                            <option value="ifomici" >Irina Fomici</option>
+                                            <option value="mtudorache" >Manuel Tudorache</option>
+                                            <option value="schiran" >Stefania Chiran</option>
+                                            <option value="nmarcu" >Nina Marcu</option>
+                                            <option value="gserban" >Georgiana Serban</option>
+                                    </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="ddlMonUtility">Utilitate</label>
+                <select name="utility" id="ddlMonUtility" class="input-control">
+                                            <option value="-1" selected>-</option>
+                                            <option value="Apă" >Apă</option>
+                                            <option value="Energie Termică" >Energie Termică</option>
+                                    </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="ddlMonStatus">Stare calcul</label>
+                <select name="status" id="ddlMonStatus" class="input-control">
+                    <option value="-1">-</option>
+                                            <option value="1" >Neînceput</option>
+                                            <option value="4" >Alocat</option>
+                                            <option value="2" >În Pregătire</option>
+                                            <option value="5" >În calcul</option>
+                                            <option value="3" >Gata de calcul</option>
+                                            <option value="6" >Gata de facturare</option>
+                                            <option value="7" >Gata de tipărit</option>
+                                            <option value="8" >Încheiat</option>
+                                    </select>
+            </div>
+        </div>
+        <div class="filter-actions">
+            <div class="filter-per-page">
+                <label class="filter-per-page-label" for="ddlMonPerPage">Înreg / pag</label>
+                <select name="per_page" id="ddlMonPerPage" class="input-control select-per-page">
+                                            <option value="10" >10</option>
+                                            <option value="15" >15</option>
+                                            <option value="25" >25</option>
+                                            <option value="50" >50</option>
+                                            <option value="100" selected>100</option>
+                                    </select>
+            </div>
+            <a href="monitorizare-calcul.html" class="btn-secondary">Resetează</a>
+            <button type="submit" class="btn-primary">Caută</button>
+        </div>
+    </form>
+</div>
+
+<!-- === KPI perioadă === -->
+<div class="calc-kpi-grid">
+    <div class="calc-kpi"><span class="calc-kpi-label">NOD-uri · 01.09.2026 - 30.09.2026</span><span class="calc-kpi-value">21</span></div>
+    <div class="calc-kpi"><span class="calc-kpi-label">Încheiate</span><span class="calc-kpi-value">6 <span class="calc-kpi-unit">29%</span></span></div>
+    <div class="calc-kpi"><span class="calc-kpi-label">În lucru</span><span class="calc-kpi-value">10</span></div>
+    <div class="calc-kpi"><span class="calc-kpi-label">Neîncepute</span><span class="calc-kpi-value">5</span></div>
+</div>
+
+<!-- === Productivitate pe operator ===
+     React: <OperatorProductivityTable rows={byOperator} onSelectOperator={setOperator} />
+-->
+<div class="table-container" style="margin-bottom: 24px;">
+    <div class="table-toolbar">
+        <div class="table-toolbar-left">
+            <span class="table-count">Productivitate pe operator · <strong>6</strong> operatori</span>
+        </div>
+    </div>
+    <div class="table-scroll">
+        <table class="partners-table" id="operatorTable">
+            <thead>
+                <tr>
+                    <th style="width: 19%;">Operator</th>
+                    <th style="width: 7%; text-align: center;">NOD-uri</th>
+                    <th style="width: 9%; text-align: center;">Neîncepute</th>
+                    <th style="width: 8%; text-align: center;">În lucru</th>
+                    <th style="width: 10%; text-align: center;">Gata de facturare</th>
+                    <th style="width: 8%; text-align: center;">Încheiate</th>
+                    <th style="width: 9%; text-align: center;">Termen depășit</th>
+                    <th style="width: 8%; text-align: center;">Note active</th>
+                    <th style="width: 16%;">Progres</th>
+                    <th style="width: 6%; text-align: center;">Acțiuni</th>
+                </tr>
+            </thead>
+            <tbody>
+                                    <tr>
+                        <td class="td-name">Carmen Bîndaroi<div class="list-sublabel">Operator calcul</div></td>
+                        <td class="td-code" style="text-align: center;">8</td>
+                        <td style="text-align: center;">3</td>
+                        <td style="text-align: center;">3</td>
+                        <td style="text-align: center;">1</td>
+                        <td style="text-align: center;">1</td>
+                        <td style="text-align: center;">0</td>
+                        <td style="text-align: center;"><span class="status-badge status-warning">4</span></td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 42%;"></div></div>
+                            <span class="progress-label">42% · 1 din 8 încheiate</span>
+                        </td>
+                        <td style="text-align: center;">
+                            <a href="monitorizare-calcul.html?calc_period=2026-09&operator=cbindaroi" class="btn-action-icon" title="Vezi NOD-urile operatorului">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td class="td-name">Georgiana Serban<div class="list-sublabel">Operator calcul</div></td>
+                        <td class="td-code" style="text-align: center;">3</td>
+                        <td style="text-align: center;">0</td>
+                        <td style="text-align: center;">0</td>
+                        <td style="text-align: center;">1</td>
+                        <td style="text-align: center;">2</td>
+                        <td style="text-align: center;">0</td>
+                        <td style="text-align: center;">0</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 94%;"></div></div>
+                            <span class="progress-label">94% · 2 din 3 încheiate</span>
+                        </td>
+                        <td style="text-align: center;">
+                            <a href="monitorizare-calcul.html?calc_period=2026-09&operator=gserban" class="btn-action-icon" title="Vezi NOD-urile operatorului">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td class="td-name">Irina Fomici<div class="list-sublabel">Operator calcul</div></td>
+                        <td class="td-code" style="text-align: center;">3</td>
+                        <td style="text-align: center;">0</td>
+                        <td style="text-align: center;">2</td>
+                        <td style="text-align: center;">0</td>
+                        <td style="text-align: center;">1</td>
+                        <td style="text-align: center;">0</td>
+                        <td style="text-align: center;"><span class="status-badge status-warning">2</span></td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 67%;"></div></div>
+                            <span class="progress-label">67% · 1 din 3 încheiate</span>
+                        </td>
+                        <td style="text-align: center;">
+                            <a href="monitorizare-calcul.html?calc_period=2026-09&operator=ifomici" class="btn-action-icon" title="Vezi NOD-urile operatorului">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td class="td-name">Manuel Tudorache<div class="list-sublabel">Operator calcul</div></td>
+                        <td class="td-code" style="text-align: center;">3</td>
+                        <td style="text-align: center;">0</td>
+                        <td style="text-align: center;">0</td>
+                        <td style="text-align: center;">1</td>
+                        <td style="text-align: center;">2</td>
+                        <td style="text-align: center;">0</td>
+                        <td style="text-align: center;">0</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 94%;"></div></div>
+                            <span class="progress-label">94% · 2 din 3 încheiate</span>
+                        </td>
+                        <td style="text-align: center;">
+                            <a href="monitorizare-calcul.html?calc_period=2026-09&operator=mtudorache" class="btn-action-icon" title="Vezi NOD-urile operatorului">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td class="td-name">Nina Marcu<div class="list-sublabel">Operator calcul</div></td>
+                        <td class="td-code" style="text-align: center;">2</td>
+                        <td style="text-align: center;">2</td>
+                        <td style="text-align: center;">0</td>
+                        <td style="text-align: center;">0</td>
+                        <td style="text-align: center;">0</td>
+                        <td style="text-align: center;">0</td>
+                        <td style="text-align: center;"><span class="status-badge status-warning">1</span></td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 0%;"></div></div>
+                            <span class="progress-label">0% · 0 din 2 încheiate</span>
+                        </td>
+                        <td style="text-align: center;">
+                            <a href="monitorizare-calcul.html?calc_period=2026-09&operator=nmarcu" class="btn-action-icon" title="Vezi NOD-urile operatorului">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                            </a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td class="td-name">Stefania Chiran<div class="list-sublabel">Specialist calcul</div></td>
+                        <td class="td-code" style="text-align: center;">2</td>
+                        <td style="text-align: center;">0</td>
+                        <td style="text-align: center;">2</td>
+                        <td style="text-align: center;">0</td>
+                        <td style="text-align: center;">0</td>
+                        <td style="text-align: center;">0</td>
+                        <td style="text-align: center;"><span class="status-badge status-warning">1</span></td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 33%;"></div></div>
+                            <span class="progress-label">33% · 0 din 2 încheiate</span>
+                        </td>
+                        <td style="text-align: center;">
+                            <a href="monitorizare-calcul.html?calc_period=2026-09&operator=schiran" class="btn-action-icon" title="Vezi NOD-urile operatorului">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                            </a>
+                        </td>
+                    </tr>
+                                            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- === Bară acțiuni în lot (între productivitate și lista NOD-urilor) === -->
+<div class="edit-actions-bar" style="margin-top: 0; margin-bottom: 16px;">
+    <div class="edit-actions-group">
+        <button type="button" class="btn-secondary" id="btnBulkReassign" onclick="openReassign(null)" disabled>Reasignează NOD-urile selectate</button>
+        <span class="calc-next-hint" id="bulkHint">Bifați NOD-urile din listă pentru a le reasigna.</span>
+    </div>
+</div>
+
+<!-- === Lista NOD-urilor (RULES §1.5) ===
+     React: <CalcNodsTable rows={nods} selectable onOpen onReassign />
+-->
+<div class="table-container">
+    <div class="table-toolbar">
+        <div class="table-toolbar-left">
+            <span class="table-count">Afișare <strong id="monVisibleCount">21</strong> din <strong>21</strong> NOD-uri</span>
+        </div>
+        <div class="table-toolbar-right">
+            <div class="live-search-wrapper">
+                <span class="live-search-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </span>
+                <input type="text" id="monSearch" class="input-control" placeholder="Căutare dinamică NOD / asociație / operator...">
+            </div>
+        </div>
+    </div>
+    <div class="table-scroll">
+        <table class="partners-table table-compact" id="monNodTable">
+            <thead>
+                <tr>
+                    <th style="width: 3%; text-align: center;"><input type="checkbox" id="monSelectAll" aria-label="Selectează toate"></th>
+                    <th style="width: 8%;">NOD</th>
+                    <th style="width: 18%;">Asociație</th>
+                    <th style="width: 8%;">Utilitate</th>
+                    <th style="width: 12%;">Operator</th>
+                    <th style="width: 9%; text-align: center;">Termen</th>
+                    <th style="width: 14%;">Progres</th>
+                    <th style="width: 9%; text-align: center;">Stare</th>
+                    <th style="width: 5%; text-align: center;">Note</th>
+                    <th style="width: 9%;">Ultima activitate</th>
+                    <th style="width: 5%; text-align: center;">Acțiuni</th>
+                </tr>
+            </thead>
+            <tbody id="monNodBody">
+                                    <tr data-nod="81-004-0847" data-search="81-004-0847 p-ta victoriei carmen bîndaroi alocat">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-004-0847"></td>
+                        <td class="td-code">81-004-0847</td>
+                        <td class="td-name">P-TA VICTORIEI</td>
+                        <td>Energie Termică</td>
+                        <td class="js-operator">Carmen Bîndaroi</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 0%;"></div></div>
+                            <span class="progress-label">Neînceput</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-online">Alocat</span></td>
+                        <td style="text-align: center;"><span class="list-sublabel">—</span></td>
+                        <td>—</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-004-0847" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-004-0847')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                    <tr data-nod="81-011-0037" data-search="81-011-0037 asociația de proprietari 55 carmen bîndaroi gata de calcul">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-011-0037"></td>
+                        <td class="td-code">81-011-0037</td>
+                        <td class="td-name">Asociația de Proprietari 55</td>
+                        <td>Apă</td>
+                        <td class="js-operator">Carmen Bîndaroi</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 67%;"></div></div>
+                            <span class="progress-label">Pas 5 din 6 · Calcul</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-warning">Gata de calcul</span></td>
+                        <td style="text-align: center;"><span class="list-sublabel">—</span></td>
+                        <td>28.09.2026 10:03</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-011-0037" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-011-0037')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                    <tr data-nod="81-011-0038" data-search="81-011-0038 asociația de proprietari 55 carmen bîndaroi gata de facturare">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-011-0038"></td>
+                        <td class="td-code">81-011-0038</td>
+                        <td class="td-name">Asociația de Proprietari 55</td>
+                        <td>Apă</td>
+                        <td class="js-operator">Carmen Bîndaroi</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 83%;"></div></div>
+                            <span class="progress-label">Pas 6 din 6 · Factură</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-online">Gata de facturare</span></td>
+                        <td style="text-align: center;"><span class="list-sublabel">—</span></td>
+                        <td>28.09.2026 09:12</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-011-0038" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-011-0038')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                    <tr data-nod="81-011-0040" data-search="81-011-0040 asociația de proprietari 55 carmen bîndaroi alocat">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-011-0040"></td>
+                        <td class="td-code">81-011-0040</td>
+                        <td class="td-name">Asociația de Proprietari 55</td>
+                        <td>Apă</td>
+                        <td class="js-operator">Carmen Bîndaroi</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 0%;"></div></div>
+                            <span class="progress-label">Neînceput</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-online">Alocat</span></td>
+                        <td style="text-align: center;"><span class="list-sublabel">—</span></td>
+                        <td>—</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-011-0040" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-011-0040')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                    <tr data-nod="81-011-0041" data-search="81-011-0041 asociația de proprietari 55 carmen bîndaroi alocat">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-011-0041"></td>
+                        <td class="td-code">81-011-0041</td>
+                        <td class="td-name">Asociația de Proprietari 55</td>
+                        <td>Apă</td>
+                        <td class="js-operator">Carmen Bîndaroi</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 0%;"></div></div>
+                            <span class="progress-label">Neînceput</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-online">Alocat</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-warning">3</span></td>
+                        <td>—</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-011-0041" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-011-0041')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                    <tr data-nod="81-029-0029" data-search="81-029-0029 asociatia de proprietari bloc 50 carmen bîndaroi în calcul">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-029-0029"></td>
+                        <td class="td-code">81-029-0029</td>
+                        <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC 50</td>
+                        <td>Apă</td>
+                        <td class="js-operator">Carmen Bîndaroi</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 50%;"></div></div>
+                            <span class="progress-label">Pas 4 din 6 · Plauzibilitate</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-warning">În calcul</span></td>
+                        <td style="text-align: center;"><span class="list-sublabel">—</span></td>
+                        <td>28.09.2026 15:42</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-029-0029" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-029-0029')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                    <tr data-nod="81-029-0030" data-search="81-029-0030 asociatia de proprietari bloc 50 carmen bîndaroi în pregătire">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-029-0030"></td>
+                        <td class="td-code">81-029-0030</td>
+                        <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC 50</td>
+                        <td>Apă</td>
+                        <td class="js-operator">Carmen Bîndaroi</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 33%;"></div></div>
+                            <span class="progress-label">Pas 3 din 6 · Necitite</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-warning">În Pregătire</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-warning">1</span></td>
+                        <td>28.09.2026 11:20</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-029-0030" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-029-0030')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                    <tr data-nod="81-001-0023" data-search="81-001-0023 asociatia de proprietari bloc t8b georgiana serban gata de facturare">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-001-0023"></td>
+                        <td class="td-code">81-001-0023</td>
+                        <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC T8B</td>
+                        <td>Energie Termică</td>
+                        <td class="js-operator">Georgiana Serban</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 83%;"></div></div>
+                            <span class="progress-label">Pas 6 din 6 · Factură</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-online">Gata de facturare</span></td>
+                        <td style="text-align: center;"><span class="list-sublabel">—</span></td>
+                        <td>28.09.2026 12:01</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-001-0023" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-001-0023')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                    <tr data-nod="81-001-0001" data-search="81-001-0001 asociatia de proprietari bloc 27 scara 1 irina fomici în pregătire">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-001-0001"></td>
+                        <td class="td-code">81-001-0001</td>
+                        <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC 27 SCARA 1</td>
+                        <td>Energie Termică</td>
+                        <td class="js-operator">Irina Fomici</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 33%;"></div></div>
+                            <span class="progress-label">Pas 3 din 6 · Necitite</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-warning">În Pregătire</span></td>
+                        <td style="text-align: center;"><span class="list-sublabel">—</span></td>
+                        <td>28.09.2026 10:31</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-001-0001" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-001-0001')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                    <tr data-nod="81-001-0055" data-search="81-001-0055 asociatia de proprietari bloc156 sc. 2 irina fomici gata de calcul">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-001-0055"></td>
+                        <td class="td-code">81-001-0055</td>
+                        <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC156 SC. 2</td>
+                        <td>Apă</td>
+                        <td class="js-operator">Irina Fomici</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 67%;"></div></div>
+                            <span class="progress-label">Pas 5 din 6 · Calcul</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-warning">Gata de calcul</span></td>
+                        <td style="text-align: center;"><span class="list-sublabel">—</span></td>
+                        <td>28.09.2026 14:10</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-001-0055" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-001-0055')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                    <tr data-nod="81-001-0005" data-search="81-001-0005 asociatia de proprietari bloc pc9 scara a manuel tudorache gata de facturare">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-001-0005"></td>
+                        <td class="td-code">81-001-0005</td>
+                        <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC PC9 SCARA A</td>
+                        <td>Apă</td>
+                        <td class="js-operator">Manuel Tudorache</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 83%;"></div></div>
+                            <span class="progress-label">Pas 6 din 6 · Factură</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-online">Gata de facturare</span></td>
+                        <td style="text-align: center;"><span class="list-sublabel">—</span></td>
+                        <td>28.09.2026 16:44</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-001-0005" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-001-0005')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                    <tr data-nod="81-001-0017" data-search="81-001-0017 asociatia de proprietari bl 813 nina marcu alocat">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-001-0017"></td>
+                        <td class="td-code">81-001-0017</td>
+                        <td class="td-name">ASOCIATIA DE PROPRIETARI BL 813</td>
+                        <td>Apă</td>
+                        <td class="js-operator">Nina Marcu</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 0%;"></div></div>
+                            <span class="progress-label">Neînceput</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-online">Alocat</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-warning">1</span></td>
+                        <td>—</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-001-0017" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-001-0017')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                    <tr data-nod="81-001-0018" data-search="81-001-0018 asociatia de proprietari bloc 2c nina marcu alocat">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-001-0018"></td>
+                        <td class="td-code">81-001-0018</td>
+                        <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC 2C</td>
+                        <td>Apă</td>
+                        <td class="js-operator">Nina Marcu</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 0%;"></div></div>
+                            <span class="progress-label">Neînceput</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-online">Alocat</span></td>
+                        <td style="text-align: center;"><span class="list-sublabel">—</span></td>
+                        <td>—</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-001-0018" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-001-0018')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                    <tr data-nod="81-001-0007" data-search="81-001-0007 asociatia de proprietari bloc s1 scara 2 stefania chiran în calcul">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-001-0007"></td>
+                        <td class="td-code">81-001-0007</td>
+                        <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC S1 SCARA 2</td>
+                        <td>Energie Termică</td>
+                        <td class="js-operator">Stefania Chiran</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 50%;"></div></div>
+                            <span class="progress-label">Pas 4 din 6 · Plauzibilitate</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-warning">În calcul</span></td>
+                        <td style="text-align: center;"><span class="list-sublabel">—</span></td>
+                        <td>28.09.2026 13:15</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-001-0007" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-001-0007')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                    <tr data-nod="81-001-0010" data-search="81-001-0010 asociatia de proprietari bloc p5 scara 4 stefania chiran în pregătire">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-001-0010"></td>
+                        <td class="td-code">81-001-0010</td>
+                        <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC P5 SCARA 4</td>
+                        <td>Apă</td>
+                        <td class="js-operator">Stefania Chiran</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 17%;"></div></div>
+                            <span class="progress-label">Pas 2 din 6 · Citiri</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-warning">În Pregătire</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-warning">1</span></td>
+                        <td>28.09.2026 08:55</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-001-0010" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-001-0010')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                    <tr data-nod="81-011-0039" data-search="81-011-0039 asociația de proprietari 55 carmen bîndaroi încheiat">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-011-0039"></td>
+                        <td class="td-code">81-011-0039</td>
+                        <td class="td-name">Asociația de Proprietari 55</td>
+                        <td>Apă</td>
+                        <td class="js-operator">Carmen Bîndaroi</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 100%;"></div></div>
+                            <span class="progress-label">Încheiat</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-draft">Încheiat</span></td>
+                        <td style="text-align: center;"><span class="list-sublabel">—</span></td>
+                        <td>27.09.2026 16:05</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-011-0039" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-011-0039')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                    <tr data-nod="81-001-0020" data-search="81-001-0020 asociatia de proprietari bloc 32 georgiana serban încheiat">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-001-0020"></td>
+                        <td class="td-code">81-001-0020</td>
+                        <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC 32</td>
+                        <td>Apă</td>
+                        <td class="js-operator">Georgiana Serban</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 100%;"></div></div>
+                            <span class="progress-label">Încheiat</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-draft">Încheiat</span></td>
+                        <td style="text-align: center;"><span class="list-sublabel">—</span></td>
+                        <td>25.09.2026 15:30</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-001-0020" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-001-0020')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                    <tr data-nod="81-001-0022" data-search="81-001-0022 asociatia de proprietari bloc 32 georgiana serban încheiat">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-001-0022"></td>
+                        <td class="td-code">81-001-0022</td>
+                        <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC 32</td>
+                        <td>Apă</td>
+                        <td class="js-operator">Georgiana Serban</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 100%;"></div></div>
+                            <span class="progress-label">Încheiat</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-draft">Încheiat</span></td>
+                        <td style="text-align: center;"><span class="list-sublabel">—</span></td>
+                        <td>26.09.2026 10:12</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-001-0022" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-001-0022')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                    <tr data-nod="81-001-0021" data-search="81-001-0021 asociatia de proprietari bloc 1 irina fomici încheiat">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-001-0021"></td>
+                        <td class="td-code">81-001-0021</td>
+                        <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC 1</td>
+                        <td>Apă</td>
+                        <td class="js-operator">Irina Fomici</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 100%;"></div></div>
+                            <span class="progress-label">Încheiat</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-draft">Încheiat</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-warning">2</span></td>
+                        <td>28.09.2026 12:47</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-001-0021" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-001-0021')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                    <tr data-nod="81-001-0002" data-search="81-001-0002 asociatia de proprietari bloc vila manuel tudorache încheiat">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-001-0002"></td>
+                        <td class="td-code">81-001-0002</td>
+                        <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC VILA</td>
+                        <td>Apă</td>
+                        <td class="js-operator">Manuel Tudorache</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 100%;"></div></div>
+                            <span class="progress-label">Încheiat</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-draft">Încheiat</span></td>
+                        <td style="text-align: center;"><span class="list-sublabel">—</span></td>
+                        <td>26.09.2026 17:20</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-001-0002" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-001-0002')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                    <tr data-nod="81-001-0004" data-search="81-001-0004 asociatia de proprietari bloc pc9 scara b manuel tudorache încheiat">
+                        <td style="text-align: center;"><input type="checkbox" class="js-mon-select" aria-label="Selectează 81-001-0004"></td>
+                        <td class="td-code">81-001-0004</td>
+                        <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC PC9 SCARA B</td>
+                        <td>Apă</td>
+                        <td class="js-operator">Manuel Tudorache</td>
+                        <td style="text-align: center;">30.09.2026</td>
+                        <td>
+                            <div class="progress-bar"><div class="progress-bar__fill" style="width: 100%;"></div></div>
+                            <span class="progress-label">Încheiat</span>
+                        </td>
+                        <td style="text-align: center;"><span class="status-badge status-draft">Încheiat</span></td>
+                        <td style="text-align: center;"><span class="list-sublabel">—</span></td>
+                        <td>27.09.2026 11:02</td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <a href="procesare-calcul.html?nod=81-001-0004" class="btn-action-icon" title="Deschide calculul">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </a>
+                            <button type="button" class="btn-action-icon" title="Reasignează operatorul" onclick="openReassign('81-001-0004')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            </button>
+                        </td>
+                    </tr>
+                                                <tr id="monNoResults" style="display: none;"><td colspan="11" class="table-empty">Niciun rezultat pentru căutarea rapidă.</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="table-pagination">
+        <div class="pagination-info">Afișare <strong>1</strong> - <strong>21</strong> din <strong>21</strong> înregistrări</div>
+        <div class="pagination-controls">
+            <button type="button" class="btn-secondary btn-page-nav" disabled>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                <span>Anterior</span>
+            </button>
+            <div class="pagination-pages"><button type="button" class="btn-secondary btn-page active">1</button></div>
+            <button type="button" class="btn-secondary btn-page-nav" disabled>
+                <span>Următor</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ══ Modal reasignare (RULES §1.7 – cu confirmare) ════════════════════════
+     React: <ReassignModal nods={selected} operators={operators} onConfirm={reassign} />
+═══════════════════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="reassignModal" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="reassignModal-title">
+    <div class="modal-card" style="max-width: 560px; width: 95%;">
+        <div class="modal-header">
+            <h3 id="reassignModal-title">Reasignare operator</h3>
+            <button type="button" class="btn-close" title="Închide fereastra" onclick="closeReassign()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="utility-context-strip"><div class="context-items"><div class="context-item"><span class="context-label">NOD-uri:</span><span class="context-value" id="reassignNods"></span></div></div></div>
+            <div class="calc-alert calc-alert--danger" id="reassignErrors" style="display:none;"></div>
+            <div class="form-row-2">
+                <div class="form-group">
+                    <label class="form-label" for="reassignOperator">Operator nou <span class="required-star">*</span></label>
+                    <select id="reassignOperator" class="input-control">
+                        <option value="">- Alegeți -</option>
+                                                    <option value="cbindaroi">Carmen Bîndaroi</option>
+                                                    <option value="ifomici">Irina Fomici</option>
+                                                    <option value="mtudorache">Manuel Tudorache</option>
+                                                    <option value="schiran">Stefania Chiran</option>
+                                                    <option value="nmarcu">Nina Marcu</option>
+                                                    <option value="gserban">Georgiana Serban</option>
+                                            </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="reassignReason">Motiv</label>
+                    <select id="reassignReason" class="input-control">
+                        <option value="temp">Înlocuire temporară (concediu / absență)</option>
+                        <option value="load">Redistribuire volum de lucru</option>
+                        <option value="perm">Schimbare permanentă</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row-2" style="margin-top: 14px;">
+                <div class="form-group" id="reassignUntilGroup">
+                    <label class="form-label" for="reassignUntil">Până la <span class="field-hint">(revine automat la operatorul inițial)</span></label>
+                    <input type="text" id="reassignUntil" class="input-control" data-datepicker>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="reassignComment">Comentariu</label>
+                    <input type="text" id="reassignComment" class="input-control" placeholder="ex. Concediu de odihnă">
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn-secondary" onclick="closeReassign()">Renunță</button>
+            <button type="button" class="btn-primary" onclick="confirmReassign()">Reasignează</button>
+        </div>
+    </div>
+</div>
+
+<script>
+/**
+ * Monitorizare: căutare rapidă, selecție în lot și reasignare (prototip – în producție PUT /api/nods/{nod}/operator).
+ */
+var OPERATORS = {"cbindaroi":"Carmen Bîndaroi","ifomici":"Irina Fomici","mtudorache":"Manuel Tudorache","schiran":"Stefania Chiran","nmarcu":"Nina Marcu","gserban":"Georgiana Serban"};
+var reassignTarget = [];
+
+function selectedNods() {
+    return Array.prototype.map.call(document.querySelectorAll('.js-mon-select:checked'), function (c) { return c.closest('tr').dataset.nod; });
+}
+
+function refreshBulk() {
+    var n = selectedNods().length;
+    document.getElementById('btnBulkReassign').disabled = n === 0;
+    document.getElementById('bulkHint').textContent = n ? n + (n === 1 ? ' NOD selectat.' : ' NOD-uri selectate.') : 'Bifați NOD-urile din listă pentru a le reasigna.';
+}
+
+function openReassign(nod) {
+    reassignTarget = nod ? [nod] : selectedNods();
+    if (!reassignTarget.length) return;
+    document.getElementById('reassignNods').textContent = reassignTarget.join(', ');
+    document.getElementById('reassignOperator').value = '';
+    document.getElementById('reassignReason').value = 'temp';
+    document.getElementById('reassignComment').value = '';
+    SonicDatepicker.setValue(document.getElementById('reassignUntil'), '');
+    document.getElementById('reassignUntilGroup').style.display = '';
+    document.getElementById('reassignErrors').style.display = 'none';
+    document.getElementById('reassignModal').style.display = 'flex';
+}
+
+function closeReassign() { document.getElementById('reassignModal').style.display = 'none'; }
+
+function confirmReassign() {
+    var op = document.getElementById('reassignOperator').value;
+    var reason = document.getElementById('reassignReason').value;
+    var until = document.getElementById('reassignUntil');
+    var errors = [];
+    if (!op) errors.push('Alegeți operatorul nou.');
+    if (reason === 'temp' && !SonicDatepicker.getISO(until)) errors.push('Pentru o înlocuire temporară alegeți data până la care se aplică.');
+    var box = document.getElementById('reassignErrors');
+    if (errors.length) { box.innerHTML = errors.map(function (e) { return '<div>' + e + '</div>'; }).join(''); box.style.display = ''; return; }
+    if (!confirm('Se reasignează ' + reassignTarget.length + (reassignTarget.length === 1 ? ' NOD' : ' NOD-uri') + ' către ' + OPERATORS[op] + '. Continuați?')) return;
+    reassignTarget.forEach(function (nod) {
+        var tr = document.querySelector('#monNodBody tr[data-nod="' + nod + '"]');
+        if (!tr) return;
+        tr.querySelector('.js-operator').innerHTML = OPERATORS[op] + (reason === 'temp' ? '<div class="list-sublabel">temporar, până la ' + until.value + '</div>' : '');
+        tr.querySelector('.js-mon-select').checked = false;
+    });
+    document.getElementById('monSelectAll').checked = false;
+    refreshBulk();
+    closeReassign();
+}
+
+(function () {
+    'use strict';
+    var search = document.getElementById('monSearch');
+    var rows = document.querySelectorAll('#monNodBody tr[data-search]');
+    search.addEventListener('input', function () {
+        var q = this.value.trim().toLowerCase(), visible = 0;
+        rows.forEach(function (r) {
+            var show = !q || r.dataset.search.indexOf(q) !== -1;
+            r.style.display = show ? '' : 'none';
+            if (show) visible++;
+        });
+        document.getElementById('monVisibleCount').textContent = visible;
+        document.getElementById('monNoResults').style.display = (visible === 0 && rows.length) ? '' : 'none';
+    });
+    document.getElementById('monSelectAll').addEventListener('change', function () {
+        var on = this.checked;
+        rows.forEach(function (r) { if (r.style.display !== 'none') r.querySelector('.js-mon-select').checked = on; });
+        refreshBulk();
+    });
+    document.querySelectorAll('.js-mon-select').forEach(function (c) { c.addEventListener('change', refreshBulk); });
+    document.getElementById('reassignReason').addEventListener('change', function () {
+        document.getElementById('reassignUntilGroup').style.display = this.value === 'temp' ? '' : 'none';
+    });
+    var modal = document.getElementById('reassignModal');
+    modal.addEventListener('click', function (e) { if (e.target === modal) closeReassign(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.style.display === 'flex') closeReassign(); });
+})();
+</script>
+
+    </div><!-- /.content -->
+    <footer class="app-footer">
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
+    </footer>
+</div><!-- /.main -->
+
+<script src="assets/js/sidebar.js?v=1.0.1"></script>
+</body>
+</html>

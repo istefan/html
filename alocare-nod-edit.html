@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Editare Alocare NOD – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Editare Alocare NOD – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
 </head>
 <body>
 
@@ -179,7 +182,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +190,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +327,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +569,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-logo.svg" alt="SONIC" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Editare Alocare NOD</div>
 
             <!-- User profile avatar (always visible) -->
@@ -651,12 +696,12 @@
      React: <Tabs activeTab={activeTab} onChange={setActiveTab} />
 -->
 <div class="edit-tabs-wrapper">
-    <div class="edit-tabs-nav" role="tablist">
-        <button type="button" class="edit-tab-btn active" role="tab" aria-selected="true" aria-controls="tab-general" id="tabBtn-general" onclick="switchAllocationTab(this, 'tab-general')">
+    <div class="edit-tabs-nav" role="tablist" aria-label="Secțiuni alocare NOD">
+        <button type="button" class="edit-tab-btn active" role="tab" aria-selected="true" aria-controls="tab-general" id="tabBtn-general" onclick="switchTab('general', this)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
             <span>Detalii Asociație &amp; Alocare</span>
         </button>
-        <button type="button" class="edit-tab-btn" role="tab" aria-selected="false" aria-controls="tab-nods" id="tabBtn-nods" onclick="switchAllocationTab(this, 'tab-nods')">
+        <button type="button" class="edit-tab-btn" role="tab" aria-selected="false" aria-controls="tab-nods" id="tabBtn-nods" onclick="switchTab('nods', this)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             <span>NOD-uri Alocate (1)</span>
         </button>
@@ -666,7 +711,7 @@
 <form method="POST" action="alocare-nod.html" id="formAllocEdit" onsubmit="handleSaveAllocation(event)">
 
     <!-- ══ TAB 1: Detalii Asociație & Alocare NOD ════════════════════════ -->
-    <div id="tab-general" class="tab-content active">
+    <div id="tab-general" class="tab-pane active" role="tabpanel" aria-labelledby="tabBtn-general">
 
         <!-- Card: Detalii Asociație -->
         <div class="card" style="margin-bottom: 20px;">
@@ -980,18 +1025,18 @@
     </div><!-- /#tab-general -->
 
     <!-- ══ TAB 2: NOD-uri Alocate ════════════════════════════════════════ -->
-    <div id="tab-nods" class="tab-content" style="display: none;">
+    <div id="tab-nods" class="tab-pane" role="tabpanel" aria-labelledby="tabBtn-nods" style="display:none;">
         <div class="card" style="margin-bottom: 20px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                 <span class="chart-title" style="font-size: 14px; font-weight: 600;">Lista NOD-urilor Alocate</span>
                 <button type="button" class="btn-secondary" style="font-size: 12px; padding: 6px 12px;"
-                        onclick="document.getElementById('txtNationalNod').focus(); switchAllocationTab(document.querySelector('.edit-tab-btn:first-child'), 'tab-general');">
+                        onclick="document.getElementById('txtNationalNod').focus(); switchTab('general');">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13" style="margin-right: 4px;"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                     Adaugă NOD Nou
                 </button>
             </div>
 
-            <div style="overflow-x: auto; width: 100%;">
+            <div class="table-scroll">
                 <table class="partners-table">
                     <thead>
                         <tr>
@@ -1004,13 +1049,11 @@
                     </thead>
                     <tbody>
                                                 <tr>
-                            <td style="font-weight: 600; font-family: monospace; font-size: 13px; color: var(--accent);">
+                            <td class="td-code">
                                 81-018-0002                            </td>
                             <td>Str. DAIA, Nr. 01, Bl. -, Sc. -, Apold, Mures</td>
                             <td>
-                                <span style="font-size: 12.5px; color: var(--text-muted);">
-                                    10 apartamente (Sc. A)                                </span>
-                            </td>
+                                10 apartamente (Sc. A)                            </td>
                             <td style="text-align: center;">
                                 <span class="status-badge status-online">Alocat total</span>
                             </td>
@@ -1035,11 +1078,11 @@
     </div><!-- /#tab-nods -->
 
     <!-- ══ Butoane de Acțiune (Jos) ══════════════════════════════════════ -->
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-color);">
+    <div class="edit-actions-bar">
         <a href="alocare-nod.html" class="btn-secondary">
             &larr; Înapoi la listă
         </a>
-        <button type="submit" class="btn-primary" style="padding: 10px 24px;">
+        <button type="submit" class="btn-primary">
             Salvează Modificările
         </button>
     </div>
@@ -1176,10 +1219,10 @@
                     Afișare NOD-uri: <strong class="nod-picker-count" id="nodPickerModalAllocEdit-count">0</strong>
                 </span>
                 <div class="nod-picker-page-btns">
-                    <button type="button" class="btn-action-icon nod-picker-prev" data-modal="nodPickerModalAllocEdit" disabled>
+                    <button type="button" class="btn-action-icon nod-picker-prev" title="Pagina anterioară" data-modal="nodPickerModalAllocEdit" disabled>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
                     </button>
-                    <button type="button" class="btn-action-icon nod-picker-next" data-modal="nodPickerModalAllocEdit" disabled>
+                    <button type="button" class="btn-action-icon nod-picker-next" title="Pagina următoare" data-modal="nodPickerModalAllocEdit" disabled>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
                 </div>
@@ -1260,27 +1303,6 @@
  * Tab switching & Form Handler
  * React conversion: se mută în state-ul componentei <PartnerAllocationEditPage />
  */
-function switchAllocationTab(btn, tabId) {
-    var tabs = document.querySelectorAll('.edit-tab-btn');
-    tabs.forEach(function (t) {
-        t.classList.remove('active');
-        t.setAttribute('aria-selected', 'false');
-    });
-    btn.classList.add('active');
-    btn.setAttribute('aria-selected', 'true');
-
-    var contents = document.querySelectorAll('.tab-content');
-    contents.forEach(function (c) {
-        c.classList.remove('active');
-        c.style.display = 'none';
-    });
-
-    var target = document.getElementById(tabId);
-    if (target) {
-        target.classList.add('active');
-        target.style.display = 'block';
-    }
-}
 
 function handleSaveAllocation(e) {
     if (e && e.preventDefault) e.preventDefault();
@@ -1292,7 +1314,7 @@ function handleSaveAllocation(e) {
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

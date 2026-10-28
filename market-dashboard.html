@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Dashboard Market – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Dashboard Market – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="assets/js/sonic-live-net.js"></script>
 </head>
 <body>
 
@@ -179,7 +185,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +193,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +330,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +572,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-market-logo.svg" alt="SONIC MARKET" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Dashboard Market</div>
 
             <!-- User profile avatar (always visible) -->
@@ -573,7 +621,7 @@
                             aria-selected="false"
                             aria-controls="help-pane-1"
                             data-tab="1">
-                        Indicatori KPI                    </button>
+                        Indicatori                    </button>
                                     </nav>
                 <!-- Tab content panes -->
                 <div class="help-tab-content">
@@ -583,11 +631,13 @@
                          aria-labelledby="help-tab-0"
                          data-pane="0">
                         
-            <h4>SONIC MARKET – Magazin de Produse și Servicii</h4>
-            <p>Dashboard-ul SONIC MARKET oferă o privire de ansamblu asupra comenzilor, 
-            produselor disponibile și serviciilor contractate de clienți.</p>
-            <p>Clienții pot comanda echipamente (contoare, repartitoare, module radio) 
-            și servicii (montaj, verificare metrologică, intervenții tehnice).</p>
+            <h4>SONIC MARKET</h4>
+            <p>Clienții comandă online echipamente (contoare, repartitoare, gateway-uri, senzori) și servicii (montaj, verificare metrologică, intervenții).</p>
+            <ul>
+                <li><strong>Harta</strong> – punctele albe sunt comenzile care sosesc la depozit; cele verzi deschis sunt livrările care pleacă spre clienți.</li>
+                <li><strong>Fluxul comenzilor</strong> – câte comenzi sunt în fiecare etapă.</li>
+                <li><strong>Cele mai vândute</strong> și <strong>comenzile recente</strong> – ultimele 30 de zile.</li>
+            </ul>
                             </div>
                                         <div class="help-tab-pane "
                          role="tabpanel"
@@ -595,12 +645,11 @@
                          aria-labelledby="help-tab-1"
                          data-pane="1">
                         
-            <h4>Ce reprezintă indicatorii?</h4>
             <ul>
-                <li><strong>Comenzi Active</strong> – numărul de comenzi în curs de procesare sau livrare.</li>
-                <li><strong>Produse Disponibile</strong> – numărul total de produse listate în catalogul online.</li>
-                <li><strong>Vânzări Lunare</strong> – valoarea totală a vânzărilor realizate în luna curentă.</li>
-                <li><strong>Cereri Servicii</strong> – numărul de cereri de servicii primite și nerezolvate.</li>
+                <li><strong>Comenzi azi / valoare</strong> – comenzile plasate astăzi și valoarea lor cu TVA.</li>
+                <li><strong>În livrare</strong> – coletele predate curierului.</li>
+                <li><strong>Coș mediu</strong> – valoarea medie a unei comenzi în ultimele 30 de zile.</li>
+                <li><strong>Stoc pentru comenzi</strong> – stocul liber din magazia centrală (după rezervările pentru montaje).</li>
             </ul>
                             </div>
                                     </div>
@@ -630,121 +679,255 @@
 
     <div class="content">
 
-        <div class="page-title">
-            <h1>Dashboard Market</h1>
-            <p>Magazin online – comenzi, produse și servicii disponibile pentru clienți.</p>
+<div class="page-title-container">
+    <div class="page-title">
+        <h1>Dashboard Market</h1>
+        <p>Comenzile clienților și livrările, în timp real.</p>
+    </div>
+</div>
+
+<!-- React: <LiveHero /> -->
+<section class="live-hero">
+    <div id="marketHeroMap"></div>
+    <div class="live-hero-shade"></div>
+    <div class="live-hero-content">
+        <span class="live-eyebrow"><span class="pro-live-dot"></span>SONIC MARKET · comenzi live</span>
+        <h2 class="live-title">Comenzile vin la depozit, livrările pleacă spre clienți</h2>
+        <p class="live-subtitle">Punctele albe sunt comenzile noi, cele verzi deschis sunt coletele care pleacă din depozitul SONIC (Str. Nițu Vasile 57) spre asociații.</p>
+        <div class="live-stats">
+            <div class="live-stat"><span class="live-stat-label">Comenzi azi</span><span class="live-stat-value" id="mkOrders">23</span></div>
+            <div class="live-stat"><span class="live-stat-label">Valoare azi</span><span class="live-stat-value"><span id="mkValue">48.920</span> <small>RON</small></span></div>
+            <div class="live-stat"><span class="live-stat-label">Livrări azi</span><span class="live-stat-value" id="mkDeliv">14</span></div>
+        </div>
+    </div>
+    <div class="live-corner"><span class="pro-live-dot"></span><strong id="mkClock">--:--</strong><span>· coș mediu 2.130 RON</span></div>
+    <ul class="live-ticker" id="mkTicker" aria-live="polite"></ul>
+</section>
+
+<!-- React: <OrderFlow /> -->
+<div class="card pro-panel">
+    <div class="edit-section-header"><span class="edit-section-title">Fluxul comenzilor</span></div>
+    <div class="dash-flow">
+                <div class="dash-flow-step">
+            <span class="dash-flow-num">7</span>
+            <span class="dash-flow-label">Nouă</span>
+            <span class="dash-flow-meta">de confirmat</span>
+        </div>
+                <div class="dash-flow-step">
+            <span class="dash-flow-num">12</span>
+            <span class="dash-flow-label">Confirmată</span>
+            <span class="dash-flow-meta">plată / contract</span>
+        </div>
+                <div class="dash-flow-step">
+            <span class="dash-flow-num">9</span>
+            <span class="dash-flow-label">În pregătire</span>
+            <span class="dash-flow-meta">în depozit</span>
+        </div>
+                <div class="dash-flow-step">
+            <span class="dash-flow-num">5</span>
+            <span class="dash-flow-label">În livrare</span>
+            <span class="dash-flow-meta">la curier</span>
+        </div>
+                <div class="dash-flow-step is-done">
+            <span class="dash-flow-num">41</span>
+            <span class="dash-flow-label">Livrată</span>
+            <span class="dash-flow-meta">ultimele 30 zile</span>
+        </div>
+            </div>
+</div>
+
+<div class="pro-grid-2-1">
+    <div class="pro-stack">
+        <!-- React: <RecentOrders /> -->
+        <div class="card pro-panel">
+            <div class="edit-section-header"><span class="edit-section-title">Comenzi recente</span></div>
+            <div class="pro-panel-flush">
+                <div class="table-scroll">
+                    <table class="partners-table">
+                        <thead><tr><th>Comandă</th><th>Client</th><th>Produse / servicii</th><th style="text-align: right;">Valoare (RON)</th><th style="text-align: center;">Stare</th></tr></thead>
+                        <tbody>
+                                                        <tr>
+                                <td class="td-code">MK-10482</td>
+                                <td class="td-name">Asociația de Proprietari Bloc 27<span class="list-sublabel">București</span></td>
+                                <td>120 × Repartitor E-ITN 30.4</td>
+                                <td style="text-align: right;">6.000</td>
+                                <td style="text-align: center;"><span class="status-badge status-warning">Nouă</span></td>
+                            </tr>
+                                                        <tr>
+                                <td class="td-code">MK-10481</td>
+                                <td class="td-name">Asociația de Proprietari 55<span class="list-sublabel">Tulcea</span></td>
+                                <td>48 × Contor apă E-RM 30 AR, 48 × AC</td>
+                                <td style="text-align: right;">11.760</td>
+                                <td style="text-align: center;"><span class="status-badge status-online">Confirmată</span></td>
+                            </tr>
+                                                        <tr>
+                                <td class="td-code">MK-10480</td>
+                                <td class="td-name">P-ta Victoriei 34<span class="list-sublabel">Târgu Mureș</span></td>
+                                <td>2 × Gateway LoRa / wM-Bus</td>
+                                <td style="text-align: right;">3.600</td>
+                                <td style="text-align: center;"><span class="status-badge status-warning">În pregătire</span></td>
+                            </tr>
+                                                        <tr>
+                                <td class="td-code">MK-10479</td>
+                                <td class="td-name">Asociația de Proprietari Bloc A14A<span class="list-sublabel">București</span></td>
+                                <td>Verificare metrologică · 96 contoare</td>
+                                <td style="text-align: right;">6.720</td>
+                                <td style="text-align: center;"><span class="status-badge status-online">Confirmată</span></td>
+                            </tr>
+                                                        <tr>
+                                <td class="td-code">MK-10478</td>
+                                <td class="td-name">Asociația de Proprietari Bl. 813<span class="list-sublabel">București</span></td>
+                                <td>12 × Senzor inundație</td>
+                                <td style="text-align: right;">1.440</td>
+                                <td style="text-align: center;"><span class="status-badge status-warning">În livrare</span></td>
+                            </tr>
+                                                        <tr>
+                                <td class="td-code">MK-10477</td>
+                                <td class="td-name">Asociația de Proprietari Bloc K<span class="list-sublabel">Constanța</span></td>
+                                <td>60 × Repartitor E-ITN 30.4 + montaj</td>
+                                <td style="text-align: right;">4.800</td>
+                                <td style="text-align: center;"><span class="status-badge status-offline">Livrată</span></td>
+                            </tr>
+                                                    </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
 
-        <!-- ── KPI Cards ──────────────────────────────────────────── -->
-        <div class="grid-4">
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">Comenzi Active</span>
-                    <div class="card-icon"><div class="card-icon-inner" style="border-radius:50%;"></div></div>
-                </div>
-                <div class="card-value">42</div>
-                <div class="card-trend">↑ 8 comenzi noi azi</div>
+        <!-- React: <BestSellers /> -->
+        <div class="card pro-panel">
+            <div class="edit-section-header"><span class="edit-section-title">Cele mai vândute · 30 zile</span></div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">Repartitor E-ITN 30.4</span>
+                <span class="pro-stock-nums"><strong>1.840</strong> buc. · 92.000 RON</span>
+                <div class="progress-bar"><div class="progress-bar__fill" style="width: 100%;"></div></div>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">Produse Disponibile</span>
-                    <div class="card-icon"><div class="card-icon-inner"></div></div>
-                </div>
-                <div class="card-value">156</div>
-                <div class="card-trend">↑ 12 produse noi luna aceasta</div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">Contor apă E-RM 30 AR</span>
+                <span class="pro-stock-nums"><strong>960</strong> buc. · 115.200 RON</span>
+                <div class="progress-bar"><div class="progress-bar__fill" style="width: 52%;"></div></div>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">Vânzări Lunare</span>
-                    <div class="card-icon"><div class="card-icon-inner"></div></div>
-                </div>
-                <div class="card-value">67,840 lei</div>
-                <div class="card-trend">↑ 14.2% vs luna trecută</div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">Contor apă E-RM 30 AC</span>
+                <span class="pro-stock-nums"><strong>870</strong> buc. · 113.100 RON</span>
+                <div class="progress-bar"><div class="progress-bar__fill" style="width: 47%;"></div></div>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">Cereri Servicii</span>
-                    <div class="card-icon"><div class="card-icon-inner" style="border-color:var(--red);"></div></div>
-                </div>
-                <div class="card-value">18</div>
-                <div class="card-trend negative">7 nepreluate</div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">Gateway LoRa / wM-Bus</span>
+                <span class="pro-stock-nums"><strong>24</strong> buc. · 43.200 RON</span>
+                <div class="progress-bar"><div class="progress-bar__fill" style="width: 1%;"></div></div>
+            </div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">Senzor inundație</span>
+                <span class="pro-stock-nums"><strong>140</strong> buc. · 16.800 RON</span>
+                <div class="progress-bar"><div class="progress-bar__fill" style="width: 8%;"></div></div>
+            </div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">Verificare metrologică</span>
+                <span class="pro-stock-nums"><strong>310</strong> buc. · 21.700 RON</span>
+                <div class="progress-bar"><div class="progress-bar__fill" style="width: 17%;"></div></div>
+            </div>
+                    </div>
+    </div>
+
+    <div class="pro-stack">
+        <!-- React: <MarketKpis /> -->
+        <div class="card pro-panel">
+            <div class="edit-section-header"><span class="edit-section-title">Luna aceasta</span></div>
+            <div class="calc-kpi-grid" style="grid-template-columns: repeat(2, 1fr); margin-bottom: 0;">
+                <div class="calc-kpi"><span class="calc-kpi-label">Vânzări</span><span class="calc-kpi-value">412<span class="calc-kpi-unit"> mii RON</span></span><span class="pro-kpi-meta">+18% față de sept.</span></div>
+                <div class="calc-kpi"><span class="calc-kpi-label">Comenzi</span><span class="calc-kpi-value">194</span><span class="pro-kpi-meta">74 clienți</span></div>
+                <div class="calc-kpi"><span class="calc-kpi-label">Coș mediu</span><span class="calc-kpi-value">2.130<span class="calc-kpi-unit"> RON</span></span></div>
+                <div class="calc-kpi"><span class="calc-kpi-label">Livrare medie</span><span class="calc-kpi-value">2,4<span class="calc-kpi-unit"> zile</span></span></div>
             </div>
         </div>
 
-        <!-- ── Charts ─────────────────────────────────────────────── -->
-        <div class="grid-2-1">
-            <div class="chart-container">
-                <div class="chart-header">
-                    <span class="chart-title">Evoluție Comenzi</span>
-                    <div class="chart-period">Ultimele 12 luni</div>
-                </div>
-                <div class="chart-placeholder">
-                    <div class="chart-line" style="bottom:30%;">
-                        <svg width="100%" height="100%" style="overflow:visible;position:absolute;bottom:0;">
-                            <path d="M0,85 Q80,75 160,60 T320,45 T480,50 T640,30 T800,15" fill="none" stroke="var(--accent)" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <div class="chart-labels">
-                        <span>Oct</span><span>Nov</span><span>Dec</span><span>Ian</span><span>Feb</span><span>Mar</span><span>Apr</span><span>Mai</span><span>Iun</span><span>Iul</span><span>Aug</span><span>Sep</span>
-                    </div>
-                </div>
+        <!-- React: <ServiceRequests /> -->
+        <div class="card pro-panel">
+            <div class="edit-section-header">
+                <span class="edit-section-title">Servicii cerute</span>
+                <a href="pro-solicitari.html" class="pro-panel-link">SONIC PRO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
             </div>
-            <div>
-                <div class="chart-container" style="height:100%;">
-                    <span class="chart-title" style="display:block;margin-bottom:32px;">Categorii Produse</span>
-                    <div style="height:140px;display:flex;align-items:center;justify-content:center;margin-bottom:32px;">
-                        <div style="width:140px;height:140px;border-radius:50%;border:20px solid var(--accent);border-left-color:var(--border-color);border-bottom-color:#edf2f7;position:relative;">
-                            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:18px;font-weight:600;">156</div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="list-item"><span class="list-label"><span class="dot" style="background:var(--accent);"></span> Echipamente</span><span class="list-value">58%</span></div>
-                        <div class="list-item"><span class="list-label"><span class="dot" style="background:var(--border-color);"></span> Servicii</span><span class="list-value">28%</span></div>
-                        <div class="list-item"><span class="list-label"><span class="dot" style="background:#edf2f7;"></span> Accesorii</span><span class="list-value">14%</span></div>
-                    </div>
-                </div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">Montaj echipamente</span>
+                <span class="pro-stock-nums"><strong>18</strong> deschise</span>
             </div>
-        </div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">Verificare metrologică</span>
+                <span class="pro-stock-nums"><strong>11</strong> deschise</span>
+            </div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">Montaj ulterior (apartament)</span>
+                <span class="pro-stock-nums"><strong>7</strong> deschise</span>
+            </div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">Intervenție tehnică</span>
+                <span class="pro-stock-nums"><strong>5</strong> deschise</span>
+            </div>
+                    </div>
 
-        <!-- ── Tabel Comenzi Recente ──────────────────────────────── -->
-        <div class="table-container">
-            <div class="table-header">
-                <span class="chart-title">Comenzi Recente</span>
-                <a href="#" class="table-link">Vezi toate ↗</a>
+        <!-- React: <StockForOrders /> -->
+        <div class="card pro-panel">
+            <div class="edit-section-header">
+                <span class="edit-section-title">Stoc liber pentru comenzi</span>
+                <a href="pro-montaje.html" class="pro-panel-link">Stocuri <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
             </div>
-            <table>
-                <thead><tr><th>Nr. Comandă</th><th>Client</th><th>Produs / Serviciu</th><th>Cantitate</th><th>Valoare</th><th>Status</th></tr></thead>
-                <tbody>
-                    <tr><td style="font-weight:500;">CMD-2026-0421</td><td>Asociația Nr. 3 Bl. B7</td><td>Contor apă rece DN15</td><td>24 buc</td><td>4,320 lei</td><td><span class="status-badge status-online">Livrat</span></td></tr>
-                    <tr><td style="font-weight:500;">CMD-2026-0420</td><td>Asociația Nr. 12 Bl. D16</td><td>Repartitor Ista Doprimo 3</td><td>48 buc</td><td>12,480 lei</td><td><span class="status-badge status-warning">În procesare</span></td></tr>
-                    <tr><td style="font-weight:500;">CMD-2026-0419</td><td>Popescu Ion – Ap. 24</td><td>Montaj contor apă caldă</td><td>1 serv</td><td>180 lei</td><td><span class="status-badge status-online">Finalizat</span></td></tr>
-                    <tr><td style="font-weight:500;">CMD-2026-0418</td><td>Asociația Nr. 5 Bl. A3</td><td>Modul radio WMBus</td><td>36 buc</td><td>8,640 lei</td><td><span class="status-badge status-warning">În livrare</span></td></tr>
-                    <tr><td style="font-weight:500;">CMD-2026-0417</td><td>Stanescu Ana – Ap. 7</td><td>Verificare metrologică</td><td>2 serv</td><td>240 lei</td><td><span class="status-badge status-error">Anulat</span></td></tr>
-                </tbody>
-            </table>
-        </div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">Repartitor E-ITN 30.4</span>
+                <span class="pro-stock-nums"><span class="status-badge status-error">Indisponibil</span></span>
+                <span class="progress-label">Revine în stoc pe 12.11.2026 (800 buc.)</span>            </div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">Contor apă rece E-RM 30 AR</span>
+                <span class="pro-stock-nums"><strong>160</strong> buc.</span>
+                            </div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">Contor apă caldă E-RM 30 AC</span>
+                <span class="pro-stock-nums"><strong>130</strong> buc.</span>
+                            </div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">Gateway LoRa / wM-Bus</span>
+                <span class="pro-stock-nums"><strong>12</strong> buc.</span>
+                            </div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">Senzor inundație</span>
+                <span class="pro-stock-nums"><strong>45</strong> buc.</span>
+                            </div>
+                    </div>
+    </div>
+</div>
 
-        <!-- ── Produse Populare ────────────────────────────────────── -->
-        <div class="table-container">
-            <div class="table-header">
-                <span class="chart-title">Produse Populare</span>
-                <a href="#" class="table-link">Catalog complet ↗</a>
-            </div>
-            <table>
-                <thead><tr><th>Cod Produs</th><th>Denumire</th><th>Categorie</th><th>Preț Unitar</th><th>Stoc</th><th>Vânzări (30 zile)</th></tr></thead>
-                <tbody>
-                    <tr><td style="font-weight:500;">PRD-001</td><td>Contor apă rece DN15 R160</td><td>Echipamente</td><td>180 lei</td><td>342</td><td>87</td></tr>
-                    <tr><td style="font-weight:500;">PRD-002</td><td>Contor apă caldă DN15 R160</td><td>Echipamente</td><td>195 lei</td><td>218</td><td>64</td></tr>
-                    <tr><td style="font-weight:500;">PRD-003</td><td>Repartitor Ista Doprimo 3</td><td>Echipamente</td><td>260 lei</td><td>156</td><td>48</td></tr>
-                    <tr><td style="font-weight:500;">PRD-004</td><td>Modul radio WMBus OMS</td><td>Accesorii</td><td>240 lei</td><td>89</td><td>36</td></tr>
-                    <tr><td style="font-weight:500;">SRV-001</td><td>Montaj contor apă (manoperă)</td><td>Servicii</td><td>180 lei</td><td>—</td><td>52</td></tr>
-                </tbody>
-            </table>
-        </div>
+<script>
+/* Dashboard Market – comenzi și livrări pe hartă (date demo; în producție WebSocket /api/market/live) */
+(function () {
+    var HQ = {"name":"SONIC HQ","address":"Str. Nițu Vasile 57, Sector 4, București","gps":[44.3836,26.1166]};
+    var NODES = [{"id":"CL-3100","gps":[44.40645,26.05567],"label":"București","off":false},{"id":"CL-3102","gps":[44.40892,26.11753],"label":"București","off":false},{"id":"CL-3104","gps":[44.39062,26.10324],"label":"București","off":false},{"id":"CL-3106","gps":[44.40527,26.12018],"label":"București","off":false},{"id":"CL-3108","gps":[44.47101,26.17076],"label":"București","off":false},{"id":"CL-3110","gps":[44.41568,26.12599],"label":"București","off":false},{"id":"CL-3112","gps":[44.3861,26.07603],"label":"București","off":false},{"id":"CL-3114","gps":[44.40417,26.09399],"label":"București","off":false},{"id":"CL-3116","gps":[44.40804,26.02834],"label":"București","off":false},{"id":"CL-3118","gps":[44.41262,26.17539],"label":"București","off":false},{"id":"CL-3120","gps":[44.39027,26.10465],"label":"București","off":false},{"id":"CL-3122","gps":[44.41621,26.05828],"label":"București","off":false},{"id":"CL-3124","gps":[44.43831,26.04644],"label":"București","off":false},{"id":"CL-3126","gps":[44.46606,26.12665],"label":"București","off":false},{"id":"CL-3128","gps":[44.40367,26.13982],"label":"București","off":false},{"id":"CL-3130","gps":[44.43101,26.15808],"label":"București","off":false},{"id":"CL-3132","gps":[44.46107,26.13834],"label":"București","off":false},{"id":"CL-3134","gps":[44.46318,26.17367],"label":"București","off":false},{"id":"CL-3136","gps":[44.47832,26.08274],"label":"București","off":false},{"id":"CL-3138","gps":[44.4815,26.13599],"label":"București","off":false},{"id":"CL-3140","gps":[44.43879,26.05863],"label":"București","off":false},{"id":"CL-3142","gps":[44.37727,26.10141],"label":"București","off":false},{"id":"CL-3144","gps":[44.40801,26.03597],"label":"București","off":false},{"id":"CL-3146","gps":[44.38478,26.10893],"label":"București","off":false},{"id":"CL-3148","gps":[44.48297,26.13529],"label":"București","off":false},{"id":"CL-3150","gps":[44.48352,26.05297],"label":"București","off":false},{"id":"CL-3152","gps":[44.4461,26.16482],"label":"București","off":false},{"id":"CL-3154","gps":[44.40521,26.0501],"label":"București","off":false},{"id":"CL-3156","gps":[44.45587,26.11885],"label":"București","off":false},{"id":"CL-3158","gps":[44.42721,26.17266],"label":"București","off":false},{"id":"CL-3160","gps":[44.41668,26.06081],"label":"București","off":false},{"id":"CL-3162","gps":[44.38001,26.13901],"label":"București","off":false},{"id":"CL-3164","gps":[45.18501,28.79216],"label":"Tulcea","off":false},{"id":"CL-3166","gps":[45.17364,28.81024],"label":"Tulcea","off":false},{"id":"CL-3168","gps":[45.17074,28.81798],"label":"Tulcea","off":false},{"id":"CL-3170","gps":[45.18095,28.80919],"label":"Tulcea","off":false},{"id":"CL-3172","gps":[45.17927,28.80507],"label":"Tulcea","off":false},{"id":"CL-3174","gps":[46.54675,24.57023],"label":"Târgu Mureș","off":false},{"id":"CL-3176","gps":[46.54672,24.55705],"label":"Târgu Mureș","off":false},{"id":"CL-3178","gps":[46.54647,24.57379],"label":"Târgu Mureș","off":false},{"id":"CL-3180","gps":[46.55282,24.56851],"label":"Târgu Mureș","off":false},{"id":"CL-3182","gps":[44.94064,26.0428],"label":"Ploiești","off":false},{"id":"CL-3184","gps":[44.93911,26.02498],"label":"Ploiești","off":false},{"id":"CL-3186","gps":[44.93676,26.02632],"label":"Ploiești","off":false},{"id":"CL-3188","gps":[44.18097,28.63966],"label":"Constanța","off":false},{"id":"CL-3190","gps":[44.18111,28.62895],"label":"Constanța","off":false},{"id":"CL-3192","gps":[44.17311,28.63815],"label":"Constanța","off":false},{"id":"CL-3194","gps":[44.15934,28.65022],"label":"Constanța","off":false},{"id":"CL-3196","gps":[45.66106,25.60471],"label":"Brașov","off":false},{"id":"CL-3198","gps":[45.65405,25.60549],"label":"Brașov","off":false},{"id":"CL-3200","gps":[45.64012,25.60307],"label":"Brașov","off":false}];
+    var ITEMS = [['Repartitor E-ITN 30.4', 50], ['Contor apă E-RM 30 AR', 120], ['Contor apă E-RM 30 AC', 130], ['Gateway LoRa / wM-Bus', 1800], ['Senzor inundație', 120]];
+    var orders = 23, value = 48920, deliv = 14, n = 0;
+    function $(id) { return document.getElementById(id); }
+    function now() { var d = new Date(); return String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); }
+    document.addEventListener('DOMContentLoaded', function () {
+        SonicLiveNet.clock($('mkClock'));
+        SonicLiveNet.create('marketHeroMap', {
+            hq: { gps: HQ.gps, label: 'Depozit SONIC', address: HQ.address }, nodes: NODES, fit: 'all', hero: true, maxZoom: 8, padding: 30, rate: 1.6, outbound: 0.4,
+            onPacket: function (node, dir) {
+                if (dir === 'in') {
+                    var it = ITEMS[Math.floor(Math.random() * ITEMS.length)], q = it[1] > 1000 ? 1 + Math.floor(Math.random() * 2) : 6 + Math.floor(Math.random() * 60), v = q * it[1];
+                    orders++; value += v;
+                    SonicLiveNet.counter($('mkOrders'), orders); SonicLiveNet.counter($('mkValue'), value);
+                    if (++n % 2) SonicLiveNet.ticker($('mkTicker'), '<time>' + now() + '</time><span><b>Comandă nouă</b> · ' + node.label + ' · ' + q + ' × ' + it[0] + ' · ' + v.toLocaleString('ro-RO') + ' RON</span>', 5);
+                } else {
+                    deliv++; SonicLiveNet.counter($('mkDeliv'), deliv);
+                    if (++n % 2) SonicLiveNet.ticker($('mkTicker'), '<time>' + now() + '</time><span><b>Livrat</b> · ' + node.label + ' · ' + (1 + Math.floor(Math.random() * 4)) + ' colete</span>', 5);
+                }
+            }
+        });
+    });
+})();
+</script>
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

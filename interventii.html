@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Intervenții – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Intervenții – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
 </head>
 <body>
 
@@ -179,7 +182,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +190,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item active" title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group open" data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem active">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +327,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +569,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-pro-logo.svg" alt="SONIC PRO" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Intervenții</div>
 
             <!-- User profile avatar (always visible) -->
@@ -558,7 +603,82 @@
     <div class="help-wrapper">
         <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
             <div class="help-panel-inner">
-                                <p class="help-empty">Nu există informații de ajutor disponibile pentru această pagină.</p>
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Filtre și filtre rapide                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Stări și reprogramare                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Intervenții</h4>
+            <p>Lista tuturor intervențiilor din teren: <strong>montaj</strong>, <strong>montaj ulterior</strong>, <strong>service</strong> și <strong>citire walk-by</strong>. Datele introduse de echipe în aplicația mobilă apar aici în timp real.</p>
+            <ul>
+                <li><strong>KPI-uri</strong> – intervențiile de azi, cele în curs, cele nerealizate (de reprogramat) și cele urgente.</li>
+                <li><strong>Echipă</strong> – persoanele alocate; o intervenție cu mai multe persoane este marcată <em>Cuplată</em>.</li>
+                <li><strong>Încasare</strong> – suma de încasat la fața locului (ex. intervenție în afara garanției).</li>
+                <li><strong>Detalii intervenție</strong> – contactul NOD-ului, garanția echipamentelor, solicitarea asociată și observațiile.</li>
+            </ul>
+            <p>Pentru o intervenție nouă folosiți butonul <strong>„Programare nouă”</strong>.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <h4>Caseta de filtrare</h4>
+            <ul>
+                <li><strong>Perioadă</strong> – intervalul de date al intervenției (de la – până la).</li>
+                <li><strong>Tip intervenție</strong>, <strong>Stare</strong>, <strong>Persoană</strong> (oricare membru al echipei), <strong>Urgent</strong>.</li>
+                <li><strong>NOD</strong> – se alege din fereastra de selecție (lupă); X golește selecția.</li>
+            </ul>
+            <p>Apăsați <em>„Caută”</em> pentru a aplica filtrele; <em>„Resetează”</em> le golește.</p>
+            <h4>Filtre rapide</h4>
+            <p>Butoanele de deasupra tabelului (<strong>Toate</strong>, <strong>Azi</strong>, <strong>De reprogramat</strong>, <strong>Urgente</strong>, <strong>Cuplate</strong>) se combină cu filtrele din casetă. Căutarea dinamică din dreapta filtrează după ID, NOD, adresă, tip sau persoană, pe măsură ce tastați.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <h4>Stările unei intervenții</h4>
+            <ul>
+                <li><strong>Programată</strong> – are zi, oră și echipă; se poate trimite clientului un <em>SMS de reamintire</em>.</li>
+                <li><strong>În curs</strong> – echipa a început intervenția (din aplicația mobilă).</li>
+                <li><strong>Finalizată</strong> – intervenția s-a încheiat; încasarea și observațiile sunt completate.</li>
+                <li><strong>Nerealizată</strong> – intervenția nu s-a putut face (ex. proprietarul nu a fost acasă) și trebuie reprogramată.</li>
+            </ul>
+            <h4>Reprogramare</h4>
+            <p>Acțiunea <strong>„Reprogramează”</strong> (disponibilă la intervențiile programate și nerealizate) deschide programarea cu NOD-ul și echipamentele precompletate; se propun zile, ore și persoane după traseu, competență și stoc.</p>
+            <p>Intervențiile <strong>urgente</strong> au un badge suplimentar „Urgent” în coloana Stare.</p>
+                            </div>
+                                    </div>
                     </div><!-- /.help-panel-inner -->
         </div><!-- /.help-panel -->
         
@@ -585,26 +705,1437 @@
 
     <div class="content">
 
-<div class="page-title-container">
-    <div class="page-title">
-        <h1>Intervenții</h1>
-        <p>Pagina este în construcție.</p>
-    </div>
-</div>
+        <!-- React: <PageHeader title="Intervenții" action={<AddButton to="/pro/programare" />} /> -->
+        <div class="page-title-container">
+            <div class="page-title">
+                <h1>Intervenții</h1>
+                <p>Toate intervențiile din teren: de reprogramat, urgente, cuplate și programările zilei.</p>
+            </div>
+            <a href="pro-programare.html" class="btn-secondary btn-add">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>Programare nouă</span>
+            </a>
+        </div>
 
-<div class="card" style="padding: 60px 40px; text-align: center; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; margin-top: 24px;">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="64" height="64" style="margin-bottom: 20px; opacity: 0.3; color: var(--accent);">
-        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-        <polyline points="2 17 12 22 22 17"></polyline>
-        <polyline points="2 12 12 17 22 12"></polyline>
-    </svg>
-    <h2 style="color: var(--text-main); margin-bottom: 12px; font-weight: 600;">În curând</h2>
-    <p style="font-size: 15px;">Interfața pentru <strong>Intervenții</strong> nu a fost încă generată în acest demo.</p>
-</div>
+        <!-- ── KPI-uri ─────────────────────────────────────────────────────
+             React: <KpiGrid items={kpis} /> -->
+        <div class="calc-kpi-grid">
+            <div class="calc-kpi">
+                <span class="calc-kpi-label">Azi · 28.10.2026</span>
+                <span class="calc-kpi-value">12 <span class="calc-kpi-unit">intervenții</span></span>
+                <span class="pro-kpi-meta">2 finalizate · 5 în curs · 4 programate</span>
+            </div>
+            <div class="calc-kpi">
+                <span class="calc-kpi-label">În curs</span>
+                <span class="calc-kpi-value">5</span>
+                <span class="pro-kpi-meta">5 persoane în teren acum</span>
+            </div>
+            <div class="calc-kpi">
+                <span class="calc-kpi-label">Nerealizate – de reprogramat</span>
+                <span class="calc-kpi-value">1</span>
+                <span class="pro-kpi-meta">Necesită o nouă programare</span>
+            </div>
+            <div class="calc-kpi">
+                <span class="calc-kpi-label">Urgente</span>
+                <span class="calc-kpi-value">2</span>
+                <span class="pro-kpi-meta">1 active · 1 finalizate</span>
+            </div>
+        </div>
+
+        <!-- ── Formular de Filtrare ───────────────────────────────────────
+             React: <FilterCard onSearch={applyFilters} onReset={reset} /> (6 câmpuri → filter-grid-3) -->
+        <div class="card filter-card">
+            <div class="filter-card-head">
+                <span class="filter-card-title">Filtrare Avansată</span>
+            </div>
+            <form method="GET" action="interventii.html" id="filterForm">
+                <div class="filter-grid-3">
+                    <!-- Perioadă -->
+                    <div class="form-group">
+                        <label class="form-label" for="dtpIvFrom">Perioadă</label>
+                        <div class="date-range-group">
+                            <input type="text" data-datepicker name="from" id="dtpIvFrom" class="input-control" value="">
+                            <span class="date-range-separator">&ndash;</span>
+                            <input type="text" data-datepicker name="to" id="dtpIvTo" class="input-control" value="">
+                        </div>
+                    </div>
+
+                    <!-- Tip intervenție -->
+                    <div class="form-group">
+                        <label class="form-label" for="ddlIvType">Tip intervenție</label>
+                        <select name="type" id="ddlIvType" class="input-control">
+                            <option value="">-</option>
+                                                        <option value="Montaj" >Montaj</option>
+                                                        <option value="Montaj ulterior" >Montaj ulterior</option>
+                                                        <option value="Service" >Service</option>
+                                                        <option value="Citire walk-by" >Citire walk-by</option>
+                                                    </select>
+                    </div>
+
+                    <!-- Stare -->
+                    <div class="form-group">
+                        <label class="form-label" for="ddlIvStatus">Stare</label>
+                        <select name="status" id="ddlIvStatus" class="input-control">
+                            <option value="">-</option>
+                                                        <option value="Programată" >Programată</option>
+                                                        <option value="În curs" >În curs</option>
+                                                        <option value="Finalizată" >Finalizată</option>
+                                                        <option value="Nerealizată" >Nerealizată</option>
+                                                    </select>
+                    </div>
+
+                    <!-- Persoană -->
+                    <div class="form-group">
+                        <label class="form-label" for="ddlIvStaff">Persoană</label>
+                        <select name="staff" id="ddlIvStaff" class="input-control">
+                            <option value="">-</option>
+                                                        <option value="s1" >Teodor Milian</option>
+                                                        <option value="s2" >Bogdan Antal</option>
+                                                        <option value="s3" >Mihai Dobre</option>
+                                                        <option value="s4" >Cristian Pană</option>
+                                                        <option value="s5" >Andrei Voicu</option>
+                                                        <option value="s6" >Florin Stoica</option>
+                                                        <option value="s7" >Daniel Ene</option>
+                                                        <option value="s8" >Radu Marinescu</option>
+                                                    </select>
+                    </div>
+
+                    <!-- NOD (selector partials/nod-picker.php) -->
+                    <div class="form-group">
+                        <label class="form-label" for="txtIvNod">NOD</label>
+                        <div class="picker-group">
+                            <input type="text" id="txtIvNod" name="nod" class="input-control" readonly placeholder="Click pe lupă..." value="">
+                            <button type="button" class="btn-picker" id="btnOpenIvNodModal" title="Deschide selector NOD">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            </button>
+                            <button type="button" class="btn-picker delete" title="Șterge selecție" onclick="document.getElementById('txtIvNod').value=''">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Urgent -->
+                    <div class="form-group">
+                        <label class="form-label" for="ddlIvUrgent">Urgent</label>
+                        <select name="urgent" id="ddlIvUrgent" class="input-control">
+                            <option value="">-</option>
+                            <option value="1" >Da</option>
+                            <option value="0" >Nu</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="filter-actions">
+                    <div class="filter-per-page">
+                        <label class="filter-per-page-label" for="ddlPerPage">Înreg / pag</label>
+                        <select name="per_page" id="ddlPerPage" class="input-control select-per-page">
+                                                        <option value="10" >10</option>
+                                                        <option value="15" >15</option>
+                                                        <option value="25" >25</option>
+                                                        <option value="50" >50</option>
+                                                        <option value="100" selected>100</option>
+                                                    </select>
+                    </div>
+                    <a href="interventii.html" class="btn-secondary">Resetează</a>
+                    <button type="submit" class="btn-primary">Caută</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- ── Tabel Intervenții ──────────────────────────────────────────
+             React: <DataTable columns={columns} rows={interventions} toolbar={<QuickFilters />} pagination /> -->
+        <div class="table-container">
+            <div class="table-toolbar">
+                <div class="table-toolbar-left" style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+                    <span class="table-count">
+                        Afișare <strong id="visibleCount">16</strong> din <strong id="totalCount">16</strong> înregistrări
+                    </span>
+                    <!-- React: <QuickFilters value={quick} onChange={setQuick} /> -->
+                    <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;" role="group" aria-label="Filtre rapide">
+                        <button type="button" class="water-filter-pill active" data-quick="all">Toate (16)</button>
+                        <button type="button" class="water-filter-pill" data-quick="today">Azi (12)</button>
+                        <button type="button" class="water-filter-pill" data-quick="reprogram">De reprogramat (1)</button>
+                        <button type="button" class="water-filter-pill" data-quick="urgent">Urgente (2)</button>
+                        <button type="button" class="water-filter-pill" data-quick="coupled">Cuplate (1)</button>
+                    </div>
+                </div>
+                <div class="table-toolbar-right">
+                    <div class="live-search-wrapper" title="Filtrare locală în timp real după ID, NOD, adresă, tip sau persoană">
+                        <span class="live-search-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </span>
+                        <input type="text" id="tableIvSearch" class="input-control" placeholder="Căutare dinamică ID, NOD, adresă...">
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-scroll">
+                <table class="partners-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 7%;">ID</th>
+                            <th style="width: 10%;">Data / Ora</th>
+                            <th style="width: 22%; min-width: 220px;">NOD</th>
+                            <th style="width: 9%;">Tip</th>
+                            <th style="width: 13%;">Echipamente</th>
+                            <th style="width: 15%; min-width: 170px;">Echipă</th>
+                            <th style="width: 7%; text-align: right;">Încasare</th>
+                            <th style="width: 8%;">Stare</th>
+                            <th style="width: 9%; text-align: center;">Acțiuni</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ivTableBody">
+                                                <tr data-id="I-5035"
+                            data-date="2026-10-28"
+                            data-type="Montaj"
+                            data-status="În curs"
+                            data-staff="s3"
+                            data-nod="81-001-2108"
+                            data-urgent="0"
+                            data-coupled="0"
+                            data-search="i-5035 81-001-2108 str. cremenița 5, corp b, sector 2 asociația de proprietari cremenița 5 montaj mihai dobre ">
+                            <td class="td-code">I-5035</td>
+                            <td style="white-space: nowrap;">
+                                28.10.2026                                <div class="list-sublabel">08:00 – 16:00 · 8 h</div>
+                            </td>
+                            <td>
+                                <span class="td-code">81-001-2108</span>
+                                <div class="list-sublabel">Str. Cremenița 5, Corp B, Sector 2</div>
+                            </td>
+                            <td>Montaj</td>
+                            <td>
+                                <div class="pro-chips">
+                                                                        <span class="pro-chip">Repartitor</span>
+                                                                        <span class="pro-chip">Contor apă</span>
+                                                                    </div>
+                            </td>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar-stack">
+                                                                                <span class="pro-avatar pro-avatar--sm" title="Mihai Dobre">MD</span>
+                                                                            </span>
+                                    <div>
+                                        Mihai Dobre                                                                            </div>
+                                </div>
+                            </td>
+                            <td style="text-align: right; white-space: nowrap;">—</td>
+                            <td>
+                                <div class="pro-chips"><span class="status-badge status-warning">În curs</span></div>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon js-iv-details" title="Detalii intervenție">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                                                                                <a href="gestiune-nod-edit.html?nod=81-001-2108" class="btn-action-icon" title="Fișa NOD-ului">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-id="I-5036"
+                            data-date="2026-10-28"
+                            data-type="Citire walk-by"
+                            data-status="În curs"
+                            data-staff="s8"
+                            data-nod="81-001-0047"
+                            data-urgent="0"
+                            data-coupled="0"
+                            data-search="i-5036 81-001-0047 str. lacul tei 121, bl. 5, sc. 1, sector 2 asociația de proprietari bloc 5 sc. 1-4 citire walk-by radu marinescu ">
+                            <td class="td-code">I-5036</td>
+                            <td style="white-space: nowrap;">
+                                28.10.2026                                <div class="list-sublabel">08:30 – 11:30 · 3 h</div>
+                            </td>
+                            <td>
+                                <span class="td-code">81-001-0047</span>
+                                <div class="list-sublabel">Str. Lacul Tei 121, Bl. 5, Sc. 1, Sector 2</div>
+                            </td>
+                            <td>Citire walk-by</td>
+                            <td>
+                                <div class="pro-chips">
+                                                                        <span class="pro-chip">Repartitor</span>
+                                                                    </div>
+                            </td>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar-stack">
+                                                                                <span class="pro-avatar pro-avatar--sm" title="Radu Marinescu">RM</span>
+                                                                            </span>
+                                    <div>
+                                        Radu Marinescu                                                                            </div>
+                                </div>
+                            </td>
+                            <td style="text-align: right; white-space: nowrap;">—</td>
+                            <td>
+                                <div class="pro-chips"><span class="status-badge status-warning">În curs</span></div>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon js-iv-details" title="Detalii intervenție">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                                                                                <a href="gestiune-nod-edit.html?nod=81-001-0047" class="btn-action-icon" title="Fișa NOD-ului">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-id="I-5021"
+                            data-date="2026-10-28"
+                            data-type="Service"
+                            data-status="Finalizată"
+                            data-staff="s4"
+                            data-nod="81-001-0004"
+                            data-urgent="1"
+                            data-coupled="0"
+                            data-search="i-5021 81-001-0004 str. gura ialomiței 3, bl. pc9, sc. b, sector 3 asociația de proprietari bloc pc9 sc. b service cristian pană s-2606">
+                            <td class="td-code">I-5021</td>
+                            <td style="white-space: nowrap;">
+                                28.10.2026                                <div class="list-sublabel">09:00 – 10:30 · 1,5 h</div>
+                            </td>
+                            <td>
+                                <span class="td-code">81-001-0004</span>
+                                <div class="list-sublabel">Str. Gura Ialomiței 3, Bl. PC9, Sc. B, Sector 3</div>
+                            </td>
+                            <td>Service</td>
+                            <td>
+                                <div class="pro-chips">
+                                                                        <span class="pro-chip">Gateway</span>
+                                                                    </div>
+                            </td>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar-stack">
+                                                                                <span class="pro-avatar pro-avatar--sm" title="Cristian Pană">CP</span>
+                                                                            </span>
+                                    <div>
+                                        Cristian Pană                                                                            </div>
+                                </div>
+                            </td>
+                            <td style="text-align: right; white-space: nowrap;">—</td>
+                            <td>
+                                <div class="pro-chips"><span class="status-badge status-online">Finalizată</span> <span class="status-badge status-error">Urgent</span></div>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon js-iv-details" title="Detalii intervenție">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                                                                                <a href="gestiune-nod-edit.html?nod=81-001-0004" class="btn-action-icon" title="Fișa NOD-ului">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-id="I-5024"
+                            data-date="2026-10-28"
+                            data-type="Service"
+                            data-status="Finalizată"
+                            data-staff="s2"
+                            data-nod="81-001-0055"
+                            data-urgent="0"
+                            data-coupled="0"
+                            data-search="i-5024 81-001-0055 aleea bârsănești 2, bl. 156, sc. 2, sector 6 asociația de proprietari bloc 156 sc. 2 service bogdan antal ">
+                            <td class="td-code">I-5024</td>
+                            <td style="white-space: nowrap;">
+                                28.10.2026                                <div class="list-sublabel">09:30 – 10:30 · 1 h</div>
+                            </td>
+                            <td>
+                                <span class="td-code">81-001-0055</span>
+                                <div class="list-sublabel">Aleea Bârsănești 2, Bl. 156, Sc. 2, Sector 6</div>
+                            </td>
+                            <td>Service</td>
+                            <td>
+                                <div class="pro-chips">
+                                                                        <span class="pro-chip">Contor apă</span>
+                                                                    </div>
+                            </td>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar-stack">
+                                                                                <span class="pro-avatar pro-avatar--sm" title="Bogdan Antal">BA</span>
+                                                                            </span>
+                                    <div>
+                                        Bogdan Antal                                                                            </div>
+                                </div>
+                            </td>
+                            <td style="text-align: right; white-space: nowrap;">120 RON</td>
+                            <td>
+                                <div class="pro-chips"><span class="status-badge status-online">Finalizată</span></div>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon js-iv-details" title="Detalii intervenție">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                                                                                <a href="gestiune-nod-edit.html?nod=81-001-0055" class="btn-action-icon" title="Fișa NOD-ului">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-id="I-5027"
+                            data-date="2026-10-28"
+                            data-type="Service"
+                            data-status="Nerealizată"
+                            data-staff="s1"
+                            data-nod="81-001-0040"
+                            data-urgent="0"
+                            data-coupled="0"
+                            data-search="i-5027 81-001-0040 calea moșilor 241, bl. 47, sc. a+b+c, sector 2 asociația de proprietari bloc 47 service teodor milian ">
+                            <td class="td-code">I-5027</td>
+                            <td style="white-space: nowrap;">
+                                28.10.2026                                <div class="list-sublabel">10:00 – 11:00 · 1 h</div>
+                            </td>
+                            <td>
+                                <span class="td-code">81-001-0040</span>
+                                <div class="list-sublabel">Calea Moșilor 241, Bl. 47, Sc. A+B+C, Sector 2</div>
+                            </td>
+                            <td>Service</td>
+                            <td>
+                                <div class="pro-chips">
+                                                                        <span class="pro-chip">Contor apă</span>
+                                                                    </div>
+                            </td>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar-stack">
+                                                                                <span class="pro-avatar pro-avatar--sm" title="Teodor Milian">TM</span>
+                                                                            </span>
+                                    <div>
+                                        Teodor Milian                                                                            </div>
+                                </div>
+                            </td>
+                            <td style="text-align: right; white-space: nowrap;">—</td>
+                            <td>
+                                <div class="pro-chips"><span class="status-badge status-error">Nerealizată</span></div>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon js-iv-details" title="Detalii intervenție">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                                                <a href="pro-programare.html?nod=81-001-0040&amp;types=apa&amp;reprogram=I-5027" class="btn-action-icon" title="Reprogramează">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><polyline points="10 14 12 16 15 13"></polyline></svg>
+                                </a>
+                                                                                                <a href="gestiune-nod-edit.html?nod=81-001-0040" class="btn-action-icon" title="Fișa NOD-ului">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-id="I-5030"
+                            data-date="2026-10-28"
+                            data-type="Service"
+                            data-status="În curs"
+                            data-staff="s6"
+                            data-nod="81-001-0017"
+                            data-urgent="1"
+                            data-coupled="0"
+                            data-search="i-5030 81-001-0017 str. sibiu 18, bl. 813, sc. 1, sector 6 asociația de proprietari bl. 813 service florin stoica ">
+                            <td class="td-code">I-5030</td>
+                            <td style="white-space: nowrap;">
+                                28.10.2026                                <div class="list-sublabel">10:30 – 12:00 · 1,5 h</div>
+                            </td>
+                            <td>
+                                <span class="td-code">81-001-0017</span>
+                                <div class="list-sublabel">Str. Sibiu 18, Bl. 813, Sc. 1, Sector 6</div>
+                            </td>
+                            <td>Service</td>
+                            <td>
+                                <div class="pro-chips">
+                                                                        <span class="pro-chip">Gateway</span>
+                                                                    </div>
+                            </td>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar-stack">
+                                                                                <span class="pro-avatar pro-avatar--sm" title="Florin Stoica">FS</span>
+                                                                            </span>
+                                    <div>
+                                        Florin Stoica                                                                            </div>
+                                </div>
+                            </td>
+                            <td style="text-align: right; white-space: nowrap;">—</td>
+                            <td>
+                                <div class="pro-chips"><span class="status-badge status-warning">În curs</span> <span class="status-badge status-error">Urgent</span></div>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon js-iv-details" title="Detalii intervenție">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                                                                                <a href="gestiune-nod-edit.html?nod=81-001-0017" class="btn-action-icon" title="Fișa NOD-ului">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-id="I-5022"
+                            data-date="2026-10-28"
+                            data-type="Service"
+                            data-status="În curs"
+                            data-staff="s4"
+                            data-nod="81-001-0002"
+                            data-urgent="0"
+                            data-coupled="0"
+                            data-search="i-5022 81-001-0002 str. reziliat 36, vila, sector 1 asociația de proprietari bloc vila service cristian pană ">
+                            <td class="td-code">I-5022</td>
+                            <td style="white-space: nowrap;">
+                                28.10.2026                                <div class="list-sublabel">11:00 – 12:00 · 1 h</div>
+                            </td>
+                            <td>
+                                <span class="td-code">81-001-0002</span>
+                                <div class="list-sublabel">Str. Reziliat 36, Vila, Sector 1</div>
+                            </td>
+                            <td>Service</td>
+                            <td>
+                                <div class="pro-chips">
+                                                                        <span class="pro-chip">Gateway</span>
+                                                                    </div>
+                            </td>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar-stack">
+                                                                                <span class="pro-avatar pro-avatar--sm" title="Cristian Pană">CP</span>
+                                                                            </span>
+                                    <div>
+                                        Cristian Pană                                                                            </div>
+                                </div>
+                            </td>
+                            <td style="text-align: right; white-space: nowrap;">—</td>
+                            <td>
+                                <div class="pro-chips"><span class="status-badge status-warning">În curs</span></div>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon js-iv-details" title="Detalii intervenție">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                                                                                <a href="gestiune-nod-edit.html?nod=81-001-0002" class="btn-action-icon" title="Fișa NOD-ului">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-id="I-5025"
+                            data-date="2026-10-28"
+                            data-type="Service"
+                            data-status="În curs"
+                            data-staff="s2"
+                            data-nod="81-001-0004"
+                            data-urgent="0"
+                            data-coupled="0"
+                            data-search="i-5025 81-001-0004 str. gura ialomiței 3, bl. pc9, sc. b, sector 3 asociația de proprietari bloc pc9 sc. b service bogdan antal ">
+                            <td class="td-code">I-5025</td>
+                            <td style="white-space: nowrap;">
+                                28.10.2026                                <div class="list-sublabel">12:00 – 13:00 · 1 h</div>
+                            </td>
+                            <td>
+                                <span class="td-code">81-001-0004</span>
+                                <div class="list-sublabel">Str. Gura Ialomiței 3, Bl. PC9, Sc. B, Sector 3</div>
+                            </td>
+                            <td>Service</td>
+                            <td>
+                                <div class="pro-chips">
+                                                                        <span class="pro-chip">Contor apă</span>
+                                                                    </div>
+                            </td>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar-stack">
+                                                                                <span class="pro-avatar pro-avatar--sm" title="Bogdan Antal">BA</span>
+                                                                            </span>
+                                    <div>
+                                        Bogdan Antal                                                                            </div>
+                                </div>
+                            </td>
+                            <td style="text-align: right; white-space: nowrap;">—</td>
+                            <td>
+                                <div class="pro-chips"><span class="status-badge status-warning">În curs</span></div>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon js-iv-details" title="Detalii intervenție">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                                                                                <a href="gestiune-nod-edit.html?nod=81-001-0004" class="btn-action-icon" title="Fișa NOD-ului">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-id="I-5028"
+                            data-date="2026-10-28"
+                            data-type="Service"
+                            data-status="Programată"
+                            data-staff="s1"
+                            data-nod="81-001-0001"
+                            data-urgent="0"
+                            data-coupled="0"
+                            data-search="i-5028 81-001-0001 str. stefan cel mare 27, bl. 27, sc. 1, sector 2 asociația de proprietari bloc 27 scara 1 service teodor milian ">
+                            <td class="td-code">I-5028</td>
+                            <td style="white-space: nowrap;">
+                                28.10.2026                                <div class="list-sublabel">13:00 – 14:00 · 1 h</div>
+                            </td>
+                            <td>
+                                <span class="td-code">81-001-0001</span>
+                                <div class="list-sublabel">Str. Stefan cel Mare 27, Bl. 27, Sc. 1, Sector 2</div>
+                            </td>
+                            <td>Service</td>
+                            <td>
+                                <div class="pro-chips">
+                                                                        <span class="pro-chip">Repartitor</span>
+                                                                    </div>
+                            </td>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar-stack">
+                                                                                <span class="pro-avatar pro-avatar--sm" title="Teodor Milian">TM</span>
+                                                                            </span>
+                                    <div>
+                                        Teodor Milian                                                                            </div>
+                                </div>
+                            </td>
+                            <td style="text-align: right; white-space: nowrap;">—</td>
+                            <td>
+                                <div class="pro-chips"><span class="status-badge status-online">Programată</span></div>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon js-iv-details" title="Detalii intervenție">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                                                <a href="pro-programare.html?nod=81-001-0001&amp;types=rep&amp;reprogram=I-5028" class="btn-action-icon" title="Reprogramează">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><polyline points="10 14 12 16 15 13"></polyline></svg>
+                                </a>
+                                                                                                <button type="button" class="btn-action-icon js-iv-sms" title="Trimite SMS de reamintire">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                </button>
+                                                                <a href="gestiune-nod-edit.html?nod=81-001-0001" class="btn-action-icon" title="Fișa NOD-ului">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-id="I-5031"
+                            data-date="2026-10-28"
+                            data-type="Service"
+                            data-status="Programată"
+                            data-staff="s6"
+                            data-nod="81-001-0467"
+                            data-urgent="0"
+                            data-coupled="0"
+                            data-search="i-5031 81-001-0467 aleea callatis 1, bl. a14a, sc. 7+8, sector 6 asociația de proprietari bloc a14a service florin stoica ">
+                            <td class="td-code">I-5031</td>
+                            <td style="white-space: nowrap;">
+                                28.10.2026                                <div class="list-sublabel">13:30 – 14:30 · 1 h</div>
+                            </td>
+                            <td>
+                                <span class="td-code">81-001-0467</span>
+                                <div class="list-sublabel">Aleea Callatis 1, Bl. A14A, Sc. 7+8, Sector 6</div>
+                            </td>
+                            <td>Service</td>
+                            <td>
+                                <div class="pro-chips">
+                                                                        <span class="pro-chip">Contor apă</span>
+                                                                    </div>
+                            </td>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar-stack">
+                                                                                <span class="pro-avatar pro-avatar--sm" title="Florin Stoica">FS</span>
+                                                                            </span>
+                                    <div>
+                                        Florin Stoica                                                                            </div>
+                                </div>
+                            </td>
+                            <td style="text-align: right; white-space: nowrap;">—</td>
+                            <td>
+                                <div class="pro-chips"><span class="status-badge status-online">Programată</span></div>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon js-iv-details" title="Detalii intervenție">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                                                <a href="pro-programare.html?nod=81-001-0467&amp;types=apa&amp;reprogram=I-5031" class="btn-action-icon" title="Reprogramează">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><polyline points="10 14 12 16 15 13"></polyline></svg>
+                                </a>
+                                                                                                <button type="button" class="btn-action-icon js-iv-sms" title="Trimite SMS de reamintire">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                </button>
+                                                                <a href="gestiune-nod-edit.html?nod=81-001-0467" class="btn-action-icon" title="Fișa NOD-ului">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-id="I-5023"
+                            data-date="2026-10-28"
+                            data-type="Service"
+                            data-status="Programată"
+                            data-staff="s4"
+                            data-nod="81-001-0021"
+                            data-urgent="0"
+                            data-coupled="0"
+                            data-search="i-5023 81-001-0021 str. bucureștii noi 26, bl. 1, sc. a, sector 1 asociația de proprietari bloc 1 service cristian pană ">
+                            <td class="td-code">I-5023</td>
+                            <td style="white-space: nowrap;">
+                                28.10.2026                                <div class="list-sublabel">14:00 – 15:00 · 1 h</div>
+                            </td>
+                            <td>
+                                <span class="td-code">81-001-0021</span>
+                                <div class="list-sublabel">Str. Bucureștii Noi 26, Bl. 1, Sc. A, Sector 1</div>
+                            </td>
+                            <td>Service</td>
+                            <td>
+                                <div class="pro-chips">
+                                                                        <span class="pro-chip">Senzor (fum / inundație / temperatură)</span>
+                                                                    </div>
+                            </td>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar-stack">
+                                                                                <span class="pro-avatar pro-avatar--sm" title="Cristian Pană">CP</span>
+                                                                            </span>
+                                    <div>
+                                        Cristian Pană                                                                            </div>
+                                </div>
+                            </td>
+                            <td style="text-align: right; white-space: nowrap;">—</td>
+                            <td>
+                                <div class="pro-chips"><span class="status-badge status-online">Programată</span></div>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon js-iv-details" title="Detalii intervenție">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                                                <a href="pro-programare.html?nod=81-001-0021&amp;types=senzor&amp;reprogram=I-5023" class="btn-action-icon" title="Reprogramează">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><polyline points="10 14 12 16 15 13"></polyline></svg>
+                                </a>
+                                                                                                <button type="button" class="btn-action-icon js-iv-sms" title="Trimite SMS de reamintire">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                </button>
+                                                                <a href="gestiune-nod-edit.html?nod=81-001-0021" class="btn-action-icon" title="Fișa NOD-ului">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-id="I-5026"
+                            data-date="2026-10-28"
+                            data-type="Service"
+                            data-status="Programată"
+                            data-staff="s2"
+                            data-nod="81-001-0140"
+                            data-urgent="0"
+                            data-coupled="0"
+                            data-search="i-5026 81-001-0140 str. liviu rebreanu 14, bl. k, sc. 3, sector 3 asociația de proprietari bloc k service bogdan antal ">
+                            <td class="td-code">I-5026</td>
+                            <td style="white-space: nowrap;">
+                                28.10.2026                                <div class="list-sublabel">15:00 – 16:00 · 1 h</div>
+                            </td>
+                            <td>
+                                <span class="td-code">81-001-0140</span>
+                                <div class="list-sublabel">Str. Liviu Rebreanu 14, Bl. K, Sc. 3, Sector 3</div>
+                            </td>
+                            <td>Service</td>
+                            <td>
+                                <div class="pro-chips">
+                                                                        <span class="pro-chip">Contor energie termică</span>
+                                                                    </div>
+                            </td>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar-stack">
+                                                                                <span class="pro-avatar pro-avatar--sm" title="Bogdan Antal">BA</span>
+                                                                            </span>
+                                    <div>
+                                        Bogdan Antal                                                                            </div>
+                                </div>
+                            </td>
+                            <td style="text-align: right; white-space: nowrap;">—</td>
+                            <td>
+                                <div class="pro-chips"><span class="status-badge status-online">Programată</span></div>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon js-iv-details" title="Detalii intervenție">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                                                <a href="pro-programare.html?nod=81-001-0140&amp;types=et&amp;reprogram=I-5026" class="btn-action-icon" title="Reprogramează">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><polyline points="10 14 12 16 15 13"></polyline></svg>
+                                </a>
+                                                                                                <button type="button" class="btn-action-icon js-iv-sms" title="Trimite SMS de reamintire">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                </button>
+                                                                <a href="gestiune-nod-edit.html?nod=81-001-0140" class="btn-action-icon" title="Fișa NOD-ului">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-id="I-5032"
+                            data-date="2026-10-29"
+                            data-type="Service"
+                            data-status="Programată"
+                            data-staff="s7"
+                            data-nod="81-001-0053"
+                            data-urgent="0"
+                            data-coupled="0"
+                            data-search="i-5032 81-001-0053 calea văcărești 308, bl. 1e, sc. 1, sector 4 asociația de proprietari bloc 1e service daniel ene ">
+                            <td class="td-code">I-5032</td>
+                            <td style="white-space: nowrap;">
+                                29.10.2026                                <div class="list-sublabel">09:00 – 10:00 · 1 h</div>
+                            </td>
+                            <td>
+                                <span class="td-code">81-001-0053</span>
+                                <div class="list-sublabel">Calea Văcărești 308, Bl. 1E, Sc. 1, Sector 4</div>
+                            </td>
+                            <td>Service</td>
+                            <td>
+                                <div class="pro-chips">
+                                                                        <span class="pro-chip">Contor energie termică</span>
+                                                                    </div>
+                            </td>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar-stack">
+                                                                                <span class="pro-avatar pro-avatar--sm" title="Daniel Ene">DE</span>
+                                                                            </span>
+                                    <div>
+                                        Daniel Ene                                                                            </div>
+                                </div>
+                            </td>
+                            <td style="text-align: right; white-space: nowrap;">—</td>
+                            <td>
+                                <div class="pro-chips"><span class="status-badge status-online">Programată</span></div>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon js-iv-details" title="Detalii intervenție">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                                                <a href="pro-programare.html?nod=81-001-0053&amp;types=et&amp;reprogram=I-5032" class="btn-action-icon" title="Reprogramează">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><polyline points="10 14 12 16 15 13"></polyline></svg>
+                                </a>
+                                                                                                <button type="button" class="btn-action-icon js-iv-sms" title="Trimite SMS de reamintire">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                </button>
+                                                                <a href="gestiune-nod-edit.html?nod=81-001-0053" class="btn-action-icon" title="Fișa NOD-ului">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-id="I-5029"
+                            data-date="2026-10-29"
+                            data-type="Montaj ulterior"
+                            data-status="Programată"
+                            data-staff="s3,s2"
+                            data-nod="81-001-0020"
+                            data-urgent="0"
+                            data-coupled="1"
+                            data-search="i-5029 81-001-0020 str. pantelimon 332, bl. 32, sc. 1, sector 2 asociația de proprietari bloc 32 montaj ulterior mihai dobre bogdan antal s-2607">
+                            <td class="td-code">I-5029</td>
+                            <td style="white-space: nowrap;">
+                                29.10.2026                                <div class="list-sublabel">10:00 – 12:00 · 2 h</div>
+                            </td>
+                            <td>
+                                <span class="td-code">81-001-0020</span>
+                                <div class="list-sublabel">Str. Pantelimon 332, Bl. 32, Sc. 1, Sector 2</div>
+                            </td>
+                            <td>Montaj ulterior</td>
+                            <td>
+                                <div class="pro-chips">
+                                                                        <span class="pro-chip">Repartitor</span>
+                                                                        <span class="pro-chip">Contor apă</span>
+                                                                    </div>
+                            </td>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar-stack">
+                                                                                <span class="pro-avatar pro-avatar--sm" title="Mihai Dobre">MD</span>
+                                                                                <span class="pro-avatar pro-avatar--sm" title="Bogdan Antal">BA</span>
+                                                                            </span>
+                                    <div>
+                                        Mihai Dobre, Bogdan Antal                                                                                <div class="list-sublabel"><span class="status-badge status-offline">Cuplată</span></div>
+                                                                            </div>
+                                </div>
+                            </td>
+                            <td style="text-align: right; white-space: nowrap;">450 RON</td>
+                            <td>
+                                <div class="pro-chips"><span class="status-badge status-online">Programată</span></div>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon js-iv-details" title="Detalii intervenție">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                                                <a href="pro-programare.html?nod=81-001-0020&amp;types=rep,apa&amp;reprogram=I-5029" class="btn-action-icon" title="Reprogramează">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><polyline points="10 14 12 16 15 13"></polyline></svg>
+                                </a>
+                                                                                                <button type="button" class="btn-action-icon js-iv-sms" title="Trimite SMS de reamintire">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                </button>
+                                                                <a href="gestiune-nod-edit.html?nod=81-001-0020" class="btn-action-icon" title="Fișa NOD-ului">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-id="I-5034"
+                            data-date="2026-10-29"
+                            data-type="Service"
+                            data-status="Programată"
+                            data-staff="s4"
+                            data-nod="81-001-0010"
+                            data-urgent="0"
+                            data-coupled="0"
+                            data-search="i-5034 81-001-0010 str. bibescu vodă 2, bl. p5, sc. 4, sector 4 asociația de proprietari bloc p5 sc. 4 service cristian pană ">
+                            <td class="td-code">I-5034</td>
+                            <td style="white-space: nowrap;">
+                                29.10.2026                                <div class="list-sublabel">10:00 – 11:00 · 1 h</div>
+                            </td>
+                            <td>
+                                <span class="td-code">81-001-0010</span>
+                                <div class="list-sublabel">Str. Bibescu Vodă 2, Bl. P5, Sc. 4, Sector 4</div>
+                            </td>
+                            <td>Service</td>
+                            <td>
+                                <div class="pro-chips">
+                                                                        <span class="pro-chip">Gateway</span>
+                                                                    </div>
+                            </td>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar-stack">
+                                                                                <span class="pro-avatar pro-avatar--sm" title="Cristian Pană">CP</span>
+                                                                            </span>
+                                    <div>
+                                        Cristian Pană                                                                            </div>
+                                </div>
+                            </td>
+                            <td style="text-align: right; white-space: nowrap;">—</td>
+                            <td>
+                                <div class="pro-chips"><span class="status-badge status-online">Programată</span></div>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon js-iv-details" title="Detalii intervenție">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                                                <a href="pro-programare.html?nod=81-001-0010&amp;types=gw&amp;reprogram=I-5034" class="btn-action-icon" title="Reprogramează">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><polyline points="10 14 12 16 15 13"></polyline></svg>
+                                </a>
+                                                                                                <button type="button" class="btn-action-icon js-iv-sms" title="Trimite SMS de reamintire">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                </button>
+                                                                <a href="gestiune-nod-edit.html?nod=81-001-0010" class="btn-action-icon" title="Fișa NOD-ului">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-id="I-5033"
+                            data-date="2026-10-29"
+                            data-type="Service"
+                            data-status="Programată"
+                            data-staff="s1"
+                            data-nod="81-001-0030"
+                            data-urgent="0"
+                            data-coupled="0"
+                            data-search="i-5033 81-001-0030 str. vergului 65, bl. 17, sc. a, sector 2 asociația de proprietari bloc 17 sc. a service teodor milian ">
+                            <td class="td-code">I-5033</td>
+                            <td style="white-space: nowrap;">
+                                29.10.2026                                <div class="list-sublabel">11:00 – 12:00 · 1 h</div>
+                            </td>
+                            <td>
+                                <span class="td-code">81-001-0030</span>
+                                <div class="list-sublabel">Str. Vergului 65, Bl. 17, Sc. A, Sector 2</div>
+                            </td>
+                            <td>Service</td>
+                            <td>
+                                <div class="pro-chips">
+                                                                        <span class="pro-chip">Repartitor</span>
+                                                                    </div>
+                            </td>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar-stack">
+                                                                                <span class="pro-avatar pro-avatar--sm" title="Teodor Milian">TM</span>
+                                                                            </span>
+                                    <div>
+                                        Teodor Milian                                                                            </div>
+                                </div>
+                            </td>
+                            <td style="text-align: right; white-space: nowrap;">—</td>
+                            <td>
+                                <div class="pro-chips"><span class="status-badge status-online">Programată</span></div>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon js-iv-details" title="Detalii intervenție">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                                                <a href="pro-programare.html?nod=81-001-0030&amp;types=rep&amp;reprogram=I-5033" class="btn-action-icon" title="Reprogramează">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><polyline points="10 14 12 16 15 13"></polyline></svg>
+                                </a>
+                                                                                                <button type="button" class="btn-action-icon js-iv-sms" title="Trimite SMS de reamintire">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                </button>
+                                                                <a href="gestiune-nod-edit.html?nod=81-001-0030" class="btn-action-icon" title="Fișa NOD-ului">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                </a>
+                            </td>
+                        </tr>
+                        
+                        <!-- No Results Row -->
+                        <tr id="noResultsRow" style="display: none;">
+                            <td colspan="9" class="table-empty">
+                                Nicio intervenție găsită pentru filtrele selectate.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ── Paginație ──────────────────────────────────────────────── -->
+            <div class="table-pagination">
+                <div class="pagination-info">
+                    Afișare <strong id="paginationStart">1</strong> - <strong id="paginationEnd">16</strong> din <strong id="paginationTotal">16</strong> înregistrări
+                </div>
+                <div class="pagination-controls">
+                    <button type="button" class="btn-secondary btn-page-nav" id="btnPagePrev" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        <span>Anterior</span>
+                    </button>
+                    <div class="pagination-pages" id="paginationPages">
+                        <button type="button" class="btn-secondary btn-page active">1</button>
+                    </div>
+                    <button type="button" class="btn-secondary btn-page-nav" id="btnPageNext" disabled>
+                        <span>Următor</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ Modal „Detalii intervenție” ═══════════════════════════════════
+             React: <InterventionDetailsModal intervention={selected} onReschedule={goToProgramare} onClose={close} />
+        ══════════════════════════════════════════════════════════════════════ -->
+        <div class="modal-overlay" id="ivDetailsModal" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="ivDetailsModal-title">
+            <div class="modal-card" style="max-width: 640px; width: 95%;">
+                <div class="modal-header">
+                    <h3 id="ivDetailsModal-title">Detalii intervenție</h3>
+                    <button type="button" class="btn-close" title="Închide fereastra" onclick="closeIvDetails()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="utility-context-strip">
+                        <div class="context-items">
+                            <div class="context-item"><span class="context-label">ID:</span><strong class="context-value context-code" id="ivdId"></strong></div>
+                            <div class="context-sep"></div>
+                            <div class="context-item"><span class="context-label">NOD:</span><strong class="context-value context-code" id="ivdNod"></strong></div>
+                            <div class="context-sep"></div>
+                            <div class="context-item"><span class="context-label">Adresă:</span><span class="context-value" id="ivdAddress"></span></div>
+                        </div>
+                        <div class="pro-chips" id="ivdBadges"></div>
+                    </div>
+
+                    <div class="pro-summary">
+                        <div class="pro-summary-row"><span>Tip</span><span id="ivdType"></span></div>
+                        <div class="pro-summary-row"><span>Data și ora</span><span id="ivdWhen"></span></div>
+                        <div class="pro-summary-row"><span>Durată estimată</span><span id="ivdDuration"></span></div>
+                        <div class="pro-summary-row"><span>Echipă</span><span id="ivdTeam"></span></div>
+                        <div class="pro-summary-row"><span>Echipamente</span><span id="ivdEquipment"></span></div>
+                        <div class="pro-summary-row"><span>Solicitare asociată</span><span id="ivdTicket"></span></div>
+                        <div class="pro-summary-row"><span>Contact NOD</span><span id="ivdContact"></span></div>
+                        <div class="pro-summary-row"><span>Încasare la fața locului</span><span id="ivdCollect"></span></div>
+                        <div class="pro-summary-row"><span>Observații</span><span id="ivdNote"></span></div>
+                    </div>
+
+                    <!-- Garanție (după ultima intervenție pe NOD) -->
+                    <div class="pro-warranty" id="ivdWarranty" style="margin-top: 14px;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        <div>
+                            <strong id="ivdWarrantyTitle"></strong>
+                            <span id="ivdWarrantyMeta"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" onclick="closeIvDetails()">Închide</button>
+                    <a href="#" class="btn-primary" id="ivdReprogram" style="display: none;">Reprogramează</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── MODAL POP-UP SELECTOR NOD (Inclus din partial, RULES §2.3) ── -->
+        
+<!-- ══ NOD Picker Modal (partial) ════════════════════════════════════════════
+     React: <NodPickerModal id="ivNodPickerModal" onSelect={handleSelect} />
+══════════════════════════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="ivNodPickerModal" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="ivNodPickerModal-title">
+    <div class="modal-card nod-picker-card">
+        <div class="modal-header">
+            <h3 id="ivNodPickerModal-title">Alegere NOD</h3>
+            <button type="button" class="btn-close nod-picker-close" data-modal="ivNodPickerModal" title="Închide fereastra">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!-- Formular de filtrare -->
+            <form class="nod-picker-filter-form" id="ivNodPickerModal-form" onsubmit="return false;">
+                <div class="nod-picker-filter-grid">
+                    <!-- Localitate -->
+                    <div class="form-group">
+                        <label class="form-label" for="ivNodPickerModal-city">Localitate</label>
+                        <select id="ivNodPickerModal-city" class="input-control">
+                            <option value="-1">-</option>
+                                                        <option value="Apold">Apold</option>
+                                                        <option value="Brasov">Brasov</option>
+                                                        <option value="Bucuresti">Bucuresti</option>
+                                                        <option value="Buftea">Buftea</option>
+                                                        <option value="Chiajna">Chiajna</option>
+                                                        <option value="Chitila">Chitila</option>
+                                                        <option value="Cisnadie">Cisnadie</option>
+                                                        <option value="Constanta">Constanta</option>
+                                                        <option value="Deva">Deva</option>
+                                                        <option value="Giurgiu">Giurgiu</option>
+                                                        <option value="Iasi">Iasi</option>
+                                                        <option value="Mamaia">Mamaia</option>
+                                                        <option value="Mangalia">Mangalia</option>
+                                                        <option value="Medgidia">Medgidia</option>
+                                                        <option value="Navodari">Navodari</option>
+                                                        <option value="Ploiesti">Ploiesti</option>
+                                                        <option value="Predeal">Predeal</option>
+                                                        <option value="Sibiu">Sibiu</option>
+                                                        <option value="Sighisoara">Sighisoara</option>
+                                                        <option value="Targu Mures">Targu Mures</option>
+                                                        <option value="Tulcea">Tulcea</option>
+                                                        <option value="Voluntari">Voluntari</option>
+                                                    </select>
+                    </div>
+                    <!-- Strada -->
+                    <div class="form-group">
+                        <label class="form-label" for="ivNodPickerModal-street">Strada</label>
+                        <input type="text" id="ivNodPickerModal-street" class="input-control" placeholder="Denumire stradă...">
+                    </div>
+                    <!-- Tip -->
+                    <div class="form-group">
+                        <label class="form-label" for="ivNodPickerModal-type">Tip</label>
+                        <select id="ivNodPickerModal-type" class="input-control">
+                            <option value="-1">-</option>
+                            <option value="1">Cu agenți economici</option>
+                            <option value="2">Fără agenți economici</option>
+                        </select>
+                    </div>
+                    <!-- Asociație -->
+                    <div class="form-group">
+                        <label class="form-label" for="ivNodPickerModal-assoc">Asociație</label>
+                        <input type="text" id="ivNodPickerModal-assoc" class="input-control" placeholder="Nume asociație...">
+                    </div>
+                    <!-- Cod NOD -->
+                    <div class="form-group">
+                        <label class="form-label" for="ivNodPickerModal-code">Cod NOD</label>
+                        <input type="text" id="ivNodPickerModal-code" class="input-control" placeholder="Cod...">
+                    </div>
+                </div>
+                <div class="nod-picker-filter-actions">
+                    <div class="filter-per-page">
+                        <label class="filter-per-page-label" for="ivNodPickerModal-perpage">Înreg / pag</label>
+                        <select id="ivNodPickerModal-perpage" class="input-control select-per-page">
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100" selected>100</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn-secondary nod-picker-reset" data-modal="ivNodPickerModal">Resetează</button>
+                    <button type="button" class="btn-primary nod-picker-search" data-modal="ivNodPickerModal">Caută</button>
+                </div>
+            </form>
+
+            <!-- Tabelul de rezultate NOD -->
+            <div class="nod-picker-table-wrap">
+                <table class="modal-table">
+                    <thead>
+                        <tr>
+                            <th>NOD</th>
+                            <th>Adresă NOD</th>
+                            <th>Asociație</th>
+                            <th class="nod-picker-th-sel"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="nod-picker-tbody" id="ivNodPickerModal-tbody">
+                        <!-- Populat dinamic prin JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Paginație Modal -->
+            <div class="nod-picker-pagination">
+                <span class="nod-picker-count-label">
+                    Afișare NOD-uri: <strong class="nod-picker-count" id="ivNodPickerModal-count">0</strong>
+                </span>
+                <div class="nod-picker-page-btns">
+                    <button type="button" class="btn-action-icon nod-picker-prev" title="Pagina anterioară" data-modal="ivNodPickerModal" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button type="button" class="btn-action-icon nod-picker-next" title="Pagina următoare" data-modal="ivNodPickerModal" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </div><!-- /modal-body -->
+    </div><!-- /modal-card -->
+</div><!-- /modal-overlay -->
+
+<!-- NOD Picker: date & logică JS ============================================
+     React: datele vin din props/API; logica este în NodPickerModal.tsx
+============================================================================ -->
+<script>
+(function() {
+    /* ── Date NOD ────────────────────────────────────────────────────── */
+    var _nodPickerData_ivNodPickerModal = [
+    { id: "1",  code: "81-001-0001", address: "Str. STEFAN CEL MARE, Nr. 27, Bl. 27, Sc. 1, Distr. 2, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC 27 SCARA 1",    city: "Bucuresti", street: "stefan cel mare",          ownerType: "1" },
+    { id: "2",  code: "81-001-0002", address: "Str. REZILIAT, Nr. 36, Bl. Vila, Sc. 1, Distr. 1, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC VILA",          city: "Bucuresti", street: "reziliat",                  ownerType: "1" },
+    { id: "3",  code: "81-001-0003", address: "Str. REZILIAT, Sc. 1, Distr. 5, Bucuresti",                              association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "14", code: "81-001-0004", address: "Str. GURA IALOMITEI, Nr. 3, Bl. PC9, Sc. B, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC PC9 SCARA B",   city: "Bucuresti", street: "gura ialomitei",             ownerType: "1" },
+    { id: "15", code: "81-001-0005", address: "Str. GURA IALOMITEI, Nr. 3, Bl. PC9, Sc. A, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC PC9 SCARA A",   city: "Bucuresti", street: "gura ialomitei",             ownerType: "1" },
+    { id: "16", code: "81-001-0006", address: "Str. REZILIAT, Nr. 28, Bl. V81A, Sc. A, Distr. 3, Bucuresti",           association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "17", code: "81-001-0007", address: "Str. Laborator, Nr. 125-127, Bl. S1, Sc. 2, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC S1 SCARA 2",    city: "Bucuresti", street: "laborator",                  ownerType: "1" },
+    { id: "18", code: "81-001-0008", address: "Str. Liber, Nr. 012, Bl. 0, Sc. 2, Bucuresti",                          association: "",                                            city: "Bucuresti", street: "liber",                     ownerType: "2" },
+    { id: "20", code: "81-001-0010", address: "Str. BIBESCU VODA, Nr. 2, Bl. P5, Sc. 4, Distr. 4, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC P5 SCARA 4",    city: "Bucuresti", street: "bibescu voda",               ownerType: "1" },
+    { id: "21", code: "81-001-0011", address: "Str. REZILIAT, Sc. A+B, Apt. -, Distr. 3, Bucuresti",                   association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "22", code: "81-001-0012", address: "Str. MIHAI BRAVU, Nr. 291, Bl. 12A, Sc. 1, Distr. 3, Bucuresti",        association: "ASOCIATIA DE PROPRIETARI BLOC 12A SCARA A",   city: "Bucuresti", street: "mihai bravu",                ownerType: "1" },
+    { id: "23", code: "81-001-0013", address: "Str. REZILIAT, Sc. 1, Distr. 3, Bucuresti",                             association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "25", code: "81-001-0015", address: "Str. REZILIAT, Sc. 2, Distr. 3, Bucuresti",                             association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "27", code: "81-001-0017", address: "Str. SIBIU, Nr. 18, Bl. 813, Sc. 1, Distr. 6, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BL 813",             city: "Bucuresti", street: "sibiu",                     ownerType: "1" },
+    { id: "28", code: "81-001-0018", address: "Str. UNIRII, Nr. 13, Bl. 2C, Sc. 1, Distr. 5, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BLOC 2C",            city: "Bucuresti", street: "unirii",                    ownerType: "1" },
+    { id: "29", code: "81-001-0019", address: "Str. UNIRII, Nr. 13, Bl. 2C, Sc. 2, Distr. 5, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BLOC 2C",            city: "Bucuresti", street: "unirii",                    ownerType: "1" },
+    { id: "30", code: "81-001-0020", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 1, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "31", code: "81-001-0021", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 2, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "32", code: "81-001-0022", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 3, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "34", code: "81-001-0023", address: "Str. OTESANI, Nr. 14, Bl. T8B, Sc. 1, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC T8B",           city: "Bucuresti", street: "otesani",                   ownerType: "1" },
+    { id: "35", code: "81-001-0024", address: "Str. COLENTINA, Nr. 70, Bl. 108, Sc. 1, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 108",           city: "Bucuresti", street: "colentina",                  ownerType: "1" },
+    { id: "36", code: "81-001-0025", address: "Str. FUNDENI, Nr. 227, Bl. 116B, Sc. A, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 116B",          city: "Bucuresti", street: "fundeni",                   ownerType: "1" },
+    { id: "37", code: "81-001-0026", address: "Str. FUNDENI, Nr. 227, Bl. 116B, Sc. B, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 116B",          city: "Bucuresti", street: "fundeni",                   ownerType: "1" },
+    { id: "40", code: "81-001-0029", address: "Str. CONSTANTIN RADULESCU MOTRU, Nr. 23, Bl. B35, Sc. B, Distr. 4",    association: "ASOCIATIA DE PROPRIETARI BLOC 35 SCARA 2",   city: "Bucuresti", street: "constantin radulescu motru", ownerType: "1" },
+    { id: "41", code: "81-001-0030", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. A, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA A",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "42", code: "81-001-0031", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. B, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA B",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "43", code: "81-001-0032", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. E, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA E",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "51", code: "81-001-0040", address: "Str. CALEA MOSILOR, Nr. 241, Bl. 47, Sc. A+B+C, Distr. 2, Bucuresti",  association: "ASOCIATIA DE PROPRIETARI BLOC 47",            city: "Bucuresti", street: "calea mosilor",              ownerType: "1" },
+    { id: "52", code: "81-001-0041", address: "Str. MURGENI, Nr. 7, Bl. L27, Sc. A, Distr. 3, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC L27",           city: "Bucuresti", street: "murgeni",                   ownerType: "1" },
+    { id: "53", code: "81-001-0042", address: "Str. ALEEA CODLEA, Nr. 6, Bl. J3, Sc. 1, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC J3",            city: "Bucuresti", street: "aleea codlea",               ownerType: "1" },
+    { id: "54", code: "81-001-0043", address: "Str. ALEEA ROTUNDA, Nr. 1-4, Bl. Y1B, Sc. 5, Distr. 3, Bucuresti",     association: "ASOCIATIA DE PROPRIETARI BLOC Y1B SCARA 1-5", city: "Bucuresti", street: "aleea rotunda",              ownerType: "1" },
+    { id: "59", code: "81-001-0047", address: "Str. LACUL TEI, Nr. 121, Bl. 5, Sc. 1, Distr. 2, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC 5 SCARA 1-4",  city: "Bucuresti", street: "lacul tei",                  ownerType: "1" },
+    { id: "65", code: "81-001-0053", address: "Str. CALEA VACARESTI, Nr. 308, Bl. 1E, Sc. 1, Distr. 4, Bucuresti",    association: "ASOCIATIA DE PROPRIETARI BLOC 1E",            city: "Bucuresti", street: "calea vacaresti",            ownerType: "1" },
+    { id: "66", code: "81-001-0054", address: "Str. OLTENITEI, Nr. 140, Bl. 5, Sc. 3, Distr. 4, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC 5 SCARA 3",    city: "Bucuresti", street: "oltenitei",                  ownerType: "1" },
+    { id: "8",  code: "81-001-0055", address: "Str. ALEEA BARSANESTI, Nr. 2, Bl. 156, Sc. 2, Distr. 6, Bucuresti",    association: "ASOCIATIA DE PROPRIETARI BLOC156 SC. 2",     city: "Bucuresti", street: "aleea barsanesti",           ownerType: "1" },
+    { id: "68", code: "81-001-0057", address: "Str. CEAHLAU, Nr. 15, Bl. 75, Sc. 1, Distr. 6, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC 75",            city: "Bucuresti", street: "ceahlau",                   ownerType: "1" },
+    { id: "69", code: "81-001-0058", address: "Str. CEAHLAU, Nr. 15, Bl. 75, Sc. 2, Distr. 6, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC 75",            city: "Bucuresti", street: "ceahlau",                   ownerType: "1" }
+];
+
+    /* ── Configurare instanță ────────────────────────────────────────── */
+    var _cfg = {
+        modalId:    "ivNodPickerModal",
+        inputId:    "txtIvNod",
+        btnOpenId:  "btnOpenIvNodModal",
+        callback:   null   /* funcție opțională apelată la selecție */
+    };
+
+    function initNodPicker_ivNodPickerModal() {
+        NodPicker.init(
+            _cfg,
+            _nodPickerData_ivNodPickerModal        );
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initNodPicker_ivNodPickerModal);
+    } else {
+        initNodPicker_ivNodPickerModal();
+    }
+})();
+</script>
+
+<script>
+/**
+ * Intervenții – filtrare client-side pe rândurile demo, filtre rapide, căutare live, paginație,
+ * modal „Detalii intervenție” și SMS de reamintire (simulat).
+ * Producție: GET /api/pro/interventions (filtre ca query), GET /api/pro/interventions/{id},
+ *            POST /api/pro/interventions/{id}/sms-reminder.
+ */
+var IV_DATA  = {"I-5035":{"id":"I-5035","nod":"81-001-2108","address":"Str. Cremenița 5, Corp B, Sector 2","partner":"Asociația de Proprietari Cremenița 5","type":"Montaj","when":"28.10.2026, ora 08:00 – 16:00","duration":"8 h","team":"Mihai Dobre (Montator)","coupled":false,"equipment":"Repartitor, Contor apă","ticket":"","ticketText":"","contact":"Valentina Iancu · 0744 210 218","contactName":"Valentina Iancu","phone":"0744 210 218","inWarranty":true,"warranty":"02.10.2028","lastIv":"02.10.2026","collect":"—","note":"Montaj NOD nou – 35 apartamente.","status":"În curs","badges":"\u003Cspan class=\"status-badge status-warning\"\u003EÎn curs\u003C\/span\u003E","reprogram":"","dateText":"28.10.2026","time":"08:00"},"I-5036":{"id":"I-5036","nod":"81-001-0047","address":"Str. Lacul Tei 121, Bl. 5, Sc. 1, Sector 2","partner":"Asociația de Proprietari Bloc 5 Sc. 1-4","type":"Citire walk-by","when":"28.10.2026, ora 08:30 – 11:30","duration":"3 h","team":"Radu Marinescu (Cititor, Montator)","coupled":false,"equipment":"Repartitor","ticket":"","ticketText":"","contact":"Alexandra Toma · 0744 210 047","contactName":"Alexandra Toma","phone":"0744 210 047","inWarranty":false,"warranty":"10.10.2025","lastIv":"10.10.2023","collect":"—","note":"—","status":"În curs","badges":"\u003Cspan class=\"status-badge status-warning\"\u003EÎn curs\u003C\/span\u003E","reprogram":"","dateText":"28.10.2026","time":"08:30"},"I-5021":{"id":"I-5021","nod":"81-001-0004","address":"Str. Gura Ialomiței 3, Bl. PC9, Sc. B, Sector 3","partner":"Asociația de Proprietari Bloc PC9 Sc. B","type":"Service","when":"28.10.2026, ora 09:00 – 10:30","duration":"1,5 h","team":"Cristian Pană (Service)","coupled":false,"equipment":"Gateway","ticket":"S-2606","ticketText":"S-2606 – Gateway nu transmite de 3 zile","contact":"Elena Matei · 0744 210 004","contactName":"Elena Matei","phone":"0744 210 004","inWarranty":true,"warranty":"11.02.2028","lastIv":"11.02.2026","collect":"—","note":"Resetare gateway + verificare alimentare.","status":"Finalizată","badges":"\u003Cspan class=\"status-badge status-online\"\u003EFinalizată\u003C\/span\u003E \u003Cspan class=\"status-badge status-error\"\u003EUrgent\u003C\/span\u003E","reprogram":"","dateText":"28.10.2026","time":"09:00"},"I-5024":{"id":"I-5024","nod":"81-001-0055","address":"Aleea Bârsănești 2, Bl. 156, Sc. 2, Sector 6","partner":"Asociația de Proprietari Bloc 156 Sc. 2","type":"Service","when":"28.10.2026, ora 09:30 – 10:30","duration":"1 h","team":"Bogdan Antal (Montator, Service)","coupled":false,"equipment":"Contor apă","ticket":"","ticketText":"","contact":"Maria Enea · 0744 210 055","contactName":"Maria Enea","phone":"0744 210 055","inWarranty":true,"warranty":"11.03.2028","lastIv":"11.03.2026","collect":"120 RON","note":"Încasare 120 RON – în afara garanției.","status":"Finalizată","badges":"\u003Cspan class=\"status-badge status-online\"\u003EFinalizată\u003C\/span\u003E","reprogram":"","dateText":"28.10.2026","time":"09:30"},"I-5027":{"id":"I-5027","nod":"81-001-0040","address":"Calea Moșilor 241, Bl. 47, Sc. A+B+C, Sector 2","partner":"Asociația de Proprietari Bloc 47","type":"Service","when":"28.10.2026, ora 10:00 – 11:00","duration":"1 h","team":"Teodor Milian (Cititor, Service)","coupled":false,"equipment":"Contor apă","ticket":"","ticketText":"","contact":"Radu Moldovan · 0744 210 040","contactName":"Radu Moldovan","phone":"0744 210 040","inWarranty":true,"warranty":"12.09.2028","lastIv":"12.09.2026","collect":"—","note":"Proprietarul nu a fost acasă – reprogramare necesară.","status":"Nerealizată","badges":"\u003Cspan class=\"status-badge status-error\"\u003ENerealizată\u003C\/span\u003E","reprogram":"pro-programare.html?nod=81-001-0040&types=apa&reprogram=I-5027","dateText":"28.10.2026","time":"10:00"},"I-5030":{"id":"I-5030","nod":"81-001-0017","address":"Str. Sibiu 18, Bl. 813, Sc. 1, Sector 6","partner":"Asociația de Proprietari Bl. 813","type":"Service","when":"28.10.2026, ora 10:30 – 12:00","duration":"1,5 h","team":"Florin Stoica (Montator, Service)","coupled":false,"equipment":"Gateway","ticket":"","ticketText":"","contact":"Gheorghe Dinu · 0744 210 017","contactName":"Gheorghe Dinu","phone":"0744 210 017","inWarranty":true,"warranty":"19.05.2028","lastIv":"19.05.2026","collect":"—","note":"Avarie: gateway fără alimentare.","status":"În curs","badges":"\u003Cspan class=\"status-badge status-warning\"\u003EÎn curs\u003C\/span\u003E \u003Cspan class=\"status-badge status-error\"\u003EUrgent\u003C\/span\u003E","reprogram":"","dateText":"28.10.2026","time":"10:30"},"I-5022":{"id":"I-5022","nod":"81-001-0002","address":"Str. Reziliat 36, Vila, Sector 1","partner":"Asociația de Proprietari Bloc Vila","type":"Service","when":"28.10.2026, ora 11:00 – 12:00","duration":"1 h","team":"Cristian Pană (Service)","coupled":false,"equipment":"Gateway","ticket":"","ticketText":"","contact":"Maria Stan · 0744 210 002","contactName":"Maria Stan","phone":"0744 210 002","inWarranty":false,"warranty":"02.06.2025","lastIv":"02.06.2023","collect":"—","note":"—","status":"În curs","badges":"\u003Cspan class=\"status-badge status-warning\"\u003EÎn curs\u003C\/span\u003E","reprogram":"","dateText":"28.10.2026","time":"11:00"},"I-5025":{"id":"I-5025","nod":"81-001-0004","address":"Str. Gura Ialomiței 3, Bl. PC9, Sc. B, Sector 3","partner":"Asociația de Proprietari Bloc PC9 Sc. B","type":"Service","when":"28.10.2026, ora 12:00 – 13:00","duration":"1 h","team":"Bogdan Antal (Montator, Service)","coupled":false,"equipment":"Contor apă","ticket":"","ticketText":"","contact":"Elena Matei · 0744 210 004","contactName":"Elena Matei","phone":"0744 210 004","inWarranty":true,"warranty":"11.02.2028","lastIv":"11.02.2026","collect":"—","note":"—","status":"În curs","badges":"\u003Cspan class=\"status-badge status-warning\"\u003EÎn curs\u003C\/span\u003E","reprogram":"","dateText":"28.10.2026","time":"12:00"},"I-5028":{"id":"I-5028","nod":"81-001-0001","address":"Str. Stefan cel Mare 27, Bl. 27, Sc. 1, Sector 2","partner":"Asociația de Proprietari Bloc 27 Scara 1","type":"Service","when":"28.10.2026, ora 13:00 – 14:00","duration":"1 h","team":"Teodor Milian (Cititor, Service)","coupled":false,"equipment":"Repartitor","ticket":"","ticketText":"","contact":"Ion Georgescu (administrator) · 0744 210 001","contactName":"Ion Georgescu (administrator)","phone":"0744 210 001","inWarranty":true,"warranty":"14.03.2027","lastIv":"14.03.2025","collect":"—","note":"—","status":"Programată","badges":"\u003Cspan class=\"status-badge status-online\"\u003EProgramată\u003C\/span\u003E","reprogram":"pro-programare.html?nod=81-001-0001&types=rep&reprogram=I-5028","dateText":"28.10.2026","time":"13:00"},"I-5031":{"id":"I-5031","nod":"81-001-0467","address":"Aleea Callatis 1, Bl. A14A, Sc. 7+8, Sector 6","partner":"Asociația de Proprietari Bloc A14A","type":"Service","when":"28.10.2026, ora 13:30 – 14:30","duration":"1 h","team":"Florin Stoica (Montator, Service)","coupled":false,"equipment":"Contor apă","ticket":"","ticketText":"","contact":"Florin Dragomir · 0744 210 467","contactName":"Florin Dragomir","phone":"0744 210 467","inWarranty":true,"warranty":"06.06.2028","lastIv":"06.06.2026","collect":"—","note":"—","status":"Programată","badges":"\u003Cspan class=\"status-badge status-online\"\u003EProgramată\u003C\/span\u003E","reprogram":"pro-programare.html?nod=81-001-0467&types=apa&reprogram=I-5031","dateText":"28.10.2026","time":"13:30"},"I-5023":{"id":"I-5023","nod":"81-001-0021","address":"Str. Bucureștii Noi 26, Bl. 1, Sc. A, Sector 1","partner":"Asociația de Proprietari Bloc 1","type":"Service","when":"28.10.2026, ora 14:00 – 15:00","duration":"1 h","team":"Cristian Pană (Service)","coupled":false,"equipment":"Senzor (fum \/ inundație \/ temperatură)","ticket":"","ticketText":"","contact":"Mihaela Barbu · 0744 210 021","contactName":"Mihaela Barbu","phone":"0744 210 021","inWarranty":true,"warranty":"15.07.2027","lastIv":"15.07.2025","collect":"—","note":"Senzor inundație subsol – baterie.","status":"Programată","badges":"\u003Cspan class=\"status-badge status-online\"\u003EProgramată\u003C\/span\u003E","reprogram":"pro-programare.html?nod=81-001-0021&types=senzor&reprogram=I-5023","dateText":"28.10.2026","time":"14:00"},"I-5026":{"id":"I-5026","nod":"81-001-0140","address":"Str. Liviu Rebreanu 14, Bl. K, Sc. 3, Sector 3","partner":"Asociația de Proprietari Bloc K","type":"Service","when":"28.10.2026, ora 15:00 – 16:00","duration":"1 h","team":"Bogdan Antal (Montator, Service)","coupled":false,"equipment":"Contor energie termică","ticket":"","ticketText":"","contact":"Carmen Voicu · 0744 210 140","contactName":"Carmen Voicu","phone":"0744 210 140","inWarranty":false,"warranty":"19.01.2026","lastIv":"19.01.2024","collect":"—","note":"—","status":"Programată","badges":"\u003Cspan class=\"status-badge status-online\"\u003EProgramată\u003C\/span\u003E","reprogram":"pro-programare.html?nod=81-001-0140&types=et&reprogram=I-5026","dateText":"28.10.2026","time":"15:00"},"I-5032":{"id":"I-5032","nod":"81-001-0053","address":"Calea Văcărești 308, Bl. 1E, Sc. 1, Sector 4","partner":"Asociația de Proprietari Bloc 1E","type":"Service","when":"29.10.2026, ora 09:00 – 10:00","duration":"1 h","team":"Daniel Ene (Service)","coupled":false,"equipment":"Contor energie termică","ticket":"","ticketText":"","contact":"Bogdan Cristea · 0744 210 053","contactName":"Bogdan Cristea","phone":"0744 210 053","inWarranty":true,"warranty":"01.12.2027","lastIv":"01.12.2025","collect":"—","note":"—","status":"Programată","badges":"\u003Cspan class=\"status-badge status-online\"\u003EProgramată\u003C\/span\u003E","reprogram":"pro-programare.html?nod=81-001-0053&types=et&reprogram=I-5032","dateText":"29.10.2026","time":"09:00"},"I-5029":{"id":"I-5029","nod":"81-001-0020","address":"Str. Pantelimon 332, Bl. 32, Sc. 1, Sector 2","partner":"Asociația de Proprietari Bloc 32","type":"Montaj ulterior","when":"29.10.2026, ora 10:00 – 12:00","duration":"2 h","team":"Mihai Dobre (Montator); Bogdan Antal (Montator, Service)","coupled":true,"equipment":"Repartitor, Contor apă","ticket":"S-2607","ticketText":"S-2607 – Montaj repartitoare + contor (nu a fost acasă la montaj)","contact":"Paul Florescu · 0744 210 020","contactName":"Paul Florescu","phone":"0744 210 020","inWarranty":true,"warranty":"27.01.2028","lastIv":"27.01.2026","collect":"450 RON","note":"Intervenție cuplată: Mihai Dobre – repartitoare, Bogdan Antal – contor apă.","status":"Programată","badges":"\u003Cspan class=\"status-badge status-online\"\u003EProgramată\u003C\/span\u003E","reprogram":"pro-programare.html?nod=81-001-0020&types=rep,apa&reprogram=I-5029","dateText":"29.10.2026","time":"10:00"},"I-5034":{"id":"I-5034","nod":"81-001-0010","address":"Str. Bibescu Vodă 2, Bl. P5, Sc. 4, Sector 4","partner":"Asociația de Proprietari Bloc P5 Sc. 4","type":"Service","when":"29.10.2026, ora 10:00 – 11:00","duration":"1 h","team":"Cristian Pană (Service)","coupled":false,"equipment":"Gateway","ticket":"","ticketText":"","contact":"Cristina Ionescu · 0744 210 010","contactName":"Cristina Ionescu","phone":"0744 210 010","inWarranty":true,"warranty":"03.09.2027","lastIv":"03.09.2025","collect":"—","note":"—","status":"Programată","badges":"\u003Cspan class=\"status-badge status-online\"\u003EProgramată\u003C\/span\u003E","reprogram":"pro-programare.html?nod=81-001-0010&types=gw&reprogram=I-5034","dateText":"29.10.2026","time":"10:00"},"I-5033":{"id":"I-5033","nod":"81-001-0030","address":"Str. Vergului 65, Bl. 17, Sc. A, Sector 2","partner":"Asociația de Proprietari Bloc 17 Sc. A","type":"Service","when":"29.10.2026, ora 11:00 – 12:00","duration":"1 h","team":"Teodor Milian (Cititor, Service)","coupled":false,"equipment":"Repartitor","ticket":"","ticketText":"","contact":"Simona Lazăr · 0744 210 030","contactName":"Simona Lazăr","phone":"0744 210 030","inWarranty":false,"warranty":"04.04.2026","lastIv":"04.04.2024","collect":"—","note":"—","status":"Programată","badges":"\u003Cspan class=\"status-badge status-online\"\u003EProgramată\u003C\/span\u003E","reprogram":"pro-programare.html?nod=81-001-0030&types=rep&reprogram=I-5033","dateText":"29.10.2026","time":"11:00"}};
+var IV_TODAY = "2026-10-28";
+
+var ivState = { quick: "all", page: 1, filters: {} };
+
+function ivNorm(s) {
+    return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+}
+
+/* Citește caseta de filtrare (aplicată la „Caută” și la încărcare) */
+function readIvFilters() {
+    var dp = window.SonicDatepicker;
+    var from = document.getElementById('dtpIvFrom'), to = document.getElementById('dtpIvTo');
+    ivState.filters = {
+        from:   dp ? dp.getISO(from) : '',
+        to:     dp ? dp.getISO(to) : '',
+        type:   document.getElementById('ddlIvType').value,
+        status: document.getElementById('ddlIvStatus').value,
+        staff:  document.getElementById('ddlIvStaff').value,
+        nod:    document.getElementById('txtIvNod').value.trim(),
+        urgent: document.getElementById('ddlIvUrgent').value
+    };
+}
+
+function ivRowMatches(tr, term) {
+    var f = ivState.filters, d = tr.dataset;
+    if (f.from && d.date < f.from) return false;
+    if (f.to && d.date > f.to) return false;
+    if (f.type && d.type !== f.type) return false;
+    if (f.status && d.status !== f.status) return false;
+    if (f.staff && d.staff.split(',').indexOf(f.staff) === -1) return false;
+    if (f.nod && d.nod !== f.nod) return false;
+    if (f.urgent && d.urgent !== f.urgent) return false;
+    switch (ivState.quick) {
+        case 'today':     if (d.date !== IV_TODAY) return false; break;
+        case 'reprogram': if (d.status !== 'Nerealizată') return false; break;
+        case 'urgent':    if (d.urgent !== '1') return false; break;
+        case 'coupled':   if (d.coupled !== '1') return false; break;
+    }
+    if (term) {
+        var hay = ivNorm(d.search);
+        var words = term.split(/\s+/).filter(Boolean);
+        for (var i = 0; i < words.length; i++) if (hay.indexOf(words[i]) === -1) return false;
+    }
+    return true;
+}
+
+function renderIvTable() {
+    var rows = Array.prototype.slice.call(document.querySelectorAll('#ivTableBody tr[data-id]'));
+    var term = ivNorm(document.getElementById('tableIvSearch').value.trim());
+    var perPage = parseInt(document.getElementById('ddlPerPage').value, 10) || 100;
+    var matches = rows.filter(function (tr) { return ivRowMatches(tr, term); });
+    var pages = Math.max(1, Math.ceil(matches.length / perPage));
+    if (ivState.page > pages) ivState.page = pages;
+    var start = (ivState.page - 1) * perPage;
+
+    rows.forEach(function (tr) { tr.style.display = 'none'; });
+    matches.slice(start, start + perPage).forEach(function (tr) { tr.style.display = ''; });
+    document.getElementById('noResultsRow').style.display = matches.length ? 'none' : '';
+
+    var shown = Math.min(perPage, matches.length - start);
+    document.getElementById('visibleCount').textContent = matches.length ? shown : 0;
+    document.getElementById('paginationStart').textContent = matches.length ? start + 1 : 0;
+    document.getElementById('paginationEnd').textContent = matches.length ? start + shown : 0;
+    document.getElementById('paginationTotal').textContent = matches.length;
+
+    var box = document.getElementById('paginationPages');
+    box.innerHTML = '';
+    for (var p = 1; p <= pages; p++) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'btn-secondary btn-page' + (p === ivState.page ? ' active' : '');
+        b.textContent = p;
+        b.dataset.page = p;
+        box.appendChild(b);
+    }
+    document.getElementById('btnPagePrev').disabled = ivState.page <= 1;
+    document.getElementById('btnPageNext').disabled = ivState.page >= pages;
+}
+
+/* Actualizează URL-ul cu filtrele (link partajabil), fără reîncărcare */
+function syncIvUrl() {
+    var params = new URLSearchParams(new FormData(document.getElementById('filterForm')));
+    Array.from(params.keys()).forEach(function (k) { if (!params.get(k)) params.delete(k); });
+    if (params.get('per_page') === '100') params.delete('per_page');
+    if (ivState.quick !== 'all') params.set('quick', ivState.quick);
+    var qs = params.toString();
+    history.replaceState(null, '', 'interventii.html' + (qs ? '?' + qs : ''));
+}
+
+/* ── Modal „Detalii intervenție” ── */
+function openIvDetails(id) {
+    var d = IV_DATA[id];
+    if (!d) return;
+    var set = function (elId, txt) { document.getElementById(elId).textContent = txt; };
+    set('ivdId', d.id);
+    set('ivdNod', d.nod);
+    set('ivdAddress', d.address);
+    document.getElementById('ivdBadges').innerHTML = d.badges;   // HTML generat de server (pro_status_badge)
+    set('ivdType', d.type);
+    set('ivdWhen', d.when);
+    set('ivdDuration', d.duration);
+    set('ivdTeam', d.team + (d.coupled ? ' – intervenție cuplată' : ''));
+    set('ivdEquipment', d.equipment || '—');
+    var ticket = document.getElementById('ivdTicket');
+    ticket.textContent = '';
+    if (d.ticket) {
+        var a = document.createElement('a');
+        a.href = 'pro-solicitari.html?id=' + encodeURIComponent(d.ticket);
+        a.className = 'td-link';
+        a.textContent = d.ticketText;
+        ticket.appendChild(a);
+    } else {
+        ticket.textContent = '—';
+    }
+    set('ivdContact', d.contact);
+    set('ivdCollect', d.collect);
+    set('ivdNote', d.note);
+    if (d.warranty) {
+        set('ivdWarrantyTitle', d.inWarranty ? 'În garanție până la ' + d.warranty : 'În afara garanției din ' + d.warranty);
+        set('ivdWarrantyMeta', 'Ultima intervenție pe NOD: ' + d.lastIv + (d.inWarranty ? '' : ' · intervenția se încasează'));
+    } else {
+        set('ivdWarrantyTitle', 'Garanție necunoscută');
+        set('ivdWarrantyMeta', 'Nu există o intervenție anterioară înregistrată pe NOD.');
+    }
+    var rep = document.getElementById('ivdReprogram');
+    rep.style.display = d.reprogram ? '' : 'none';
+    rep.href = d.reprogram || '#';
+    document.getElementById('ivDetailsModal').style.display = 'flex';
+}
+
+function closeIvDetails() {
+    document.getElementById('ivDetailsModal').style.display = 'none';
+}
+
+/* ── SMS de reamintire (simulat; producție: POST /api/pro/interventions/{id}/sms-reminder) ── */
+function sendIvSms(id, btn) {
+    var d = IV_DATA[id];
+    if (!d) return;
+    var msg = 'Se trimite SMS de reamintire către ' + d.contactName + ' (' + d.phone + ') pentru intervenția ' + d.id +
+              ' din ' + d.dateText + ', ora ' + d.time + ' (NOD ' + d.nod + ').\n\nDoriți să continuați?';
+    if (!confirm(msg)) return;
+    alert('SMS de reamintire trimis către ' + d.phone + ' (simulare).');
+    btn.title = 'Retrimite SMS de reamintire';
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    readIvFilters();
+    renderIvTable();
+
+    document.getElementById('filterForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        readIvFilters();
+        ivState.page = 1;
+        renderIvTable();
+        syncIvUrl();
+    });
+    document.getElementById('ddlPerPage').addEventListener('change', function () { ivState.page = 1; renderIvTable(); });
+    document.getElementById('tableIvSearch').addEventListener('input', function () { ivState.page = 1; renderIvTable(); });
+
+    document.querySelectorAll('.water-filter-pill[data-quick]').forEach(function (pill) {
+        pill.addEventListener('click', function () {
+            document.querySelectorAll('.water-filter-pill[data-quick]').forEach(function (p) { p.classList.remove('active'); });
+            pill.classList.add('active');
+            ivState.quick = pill.dataset.quick;
+            ivState.page = 1;
+            renderIvTable();
+            syncIvUrl();
+        });
+    });
+
+    document.getElementById('paginationPages').addEventListener('click', function (e) {
+        var b = e.target.closest('.btn-page');
+        if (!b) return;
+        ivState.page = parseInt(b.dataset.page, 10);
+        renderIvTable();
+    });
+    document.getElementById('btnPagePrev').addEventListener('click', function () { ivState.page--; renderIvTable(); });
+    document.getElementById('btnPageNext').addEventListener('click', function () { ivState.page++; renderIvTable(); });
+
+    document.getElementById('ivTableBody').addEventListener('click', function (e) {
+        var tr = e.target.closest('tr[data-id]');
+        if (!tr) return;
+        if (e.target.closest('.js-iv-details')) openIvDetails(tr.dataset.id);
+        var sms = e.target.closest('.js-iv-sms');
+        if (sms) sendIvSms(tr.dataset.id, sms);
+    });
+
+    var modal = document.getElementById('ivDetailsModal');
+    modal.addEventListener('click', function (e) { if (e.target === modal) closeIvDetails(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.style.display === 'flex') closeIvDetails(); });
+});
+</script>
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

@@ -123,11 +123,11 @@ var PartnerNods = (function () {
             var editNodUrl = 'gestiune-nod-edit.php?nod=' + encodeURIComponent(nod.code) + '&return_to=' + encodeURIComponent('parteneri-edit.php?code=' + encodeURIComponent(partnerCode) + '&tab=nod');
 
             html += '<tr data-nod-id="' + nod.id + '">';
-            html += '<td style="font-weight:600; font-family:monospace;">' + _escHtml(nod.code) + '</td>';
+            html += '<td class="td-code">' + _escHtml(nod.code) + '</td>';
             html += '<td>' + _escHtml(addr) + '</td>';
-            html += '<td><span style="font-family:monospace; font-weight:600; color:var(--accent);">' + _escHtml(nod.contract || 'CTR-2026-001') + '</span></td>';
-            html += '<td style="text-align:center; font-weight:600;">' + (nod.flatsCount > 0 ? '<a href="javascript:void(0)" onclick="switchToFlatTabWithNod(\'' + _escHtml(nod.code) + '\')" style="color:var(--accent); text-decoration:underline;" title="Vezi apartamente">' + nod.flatsCount + '</a>' : '0') + '</td>';
-            html += '<td style="text-align:center;">';
+            html += '<td class="td-code">' + _escHtml(nod.contract || 'CTR-2026-001') + '</td>';
+            html += '<td class="td-code" style="text-align: center;">' + (nod.flatsCount > 0 ? '<a href="javascript:void(0)" onclick="switchToFlatTabWithNod(\'' + _escHtml(nod.code) + '\')" style="color:var(--accent); text-decoration:underline;" title="Vezi apartamente">' + nod.flatsCount + '</a>' : '0') + '</td>';
+            html += '<td style="text-align: center;">';
             // Generare Apartamente
             html += '<button type="button" class="btn-action-icon" title="Generează apartamente" onclick="PartnerNods.openGenerateFlats(' + nod.id + ')">';
             html += '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>';
@@ -459,20 +459,20 @@ var PartnerNods = (function () {
             tr.setAttribute('data-nod', nod.code);
 
             tr.innerHTML = '' +
-                '<td style="font-size:12px; font-weight:600; white-space:nowrap;">' + _escHtml(nod.code) + '</td>' +
-                '<td style="font-weight:600;">' + String(apNum).padStart(4, '0') + '</td>' +
+                '<td class="td-code" style="white-space: nowrap;">' + _escHtml(nod.code) + '</td>' +
+                '<td class="td-code">' + String(apNum).padStart(4, '0') + '</td>' +
                 '<td></td>' +
-                '<td style="padding:6px 4px; text-align:center;"><input type="text" class="input-control flat-cell-input" maxlength="60" value="' + _escHtml(nod.block) + '" style="width:38px; text-align:center; padding:4px 4px; font-size:12px;"></td>' +
-                '<td style="padding:6px 4px; text-align:center;"><input type="text" class="input-control flat-cell-input" maxlength="100" value="' + _escHtml(nod.entrance) + '" style="width:30px; text-align:center; padding:4px 4px; font-size:12px;"></td>' +
-                '<td style="padding:6px 4px; text-align:center;"><input type="text" class="input-control flat-cell-input" maxlength="4" value="" style="width:30px; text-align:center; padding:4px 4px; font-size:12px;"></td>' +
-                '<td style="padding:6px 4px; text-align:center;"><input type="text" class="input-control flat-cell-input" maxlength="30" value="' + apNum + '" style="width:38px; text-align:center; padding:4px 4px; font-size:12px;"></td>' +
-                '<td style="padding:6px 4px; text-align:center;"><input type="text" class="input-control flat-cell-input" maxlength="100" value="" style="width:38px; text-align:center; padding:4px 4px; font-size:12px;"></td>' +
-                '<td style="padding:6px 4px; text-align:center;"><input type="text" class="input-control flat-cell-input" maxlength="5" value="" placeholder="0.00" style="width:50px; text-align:center; padding:4px 4px; font-size:12px;"></td>' +
-                '<td style="padding:6px 4px;"><select class="input-control flat-cell-input" style="font-size:12px; padding:4px 5px; width:118px;"><option value="-1">-</option><option value="2"' + (tipValue === '2' ? ' selected' : '') + '>Agent economic</option><option value="1"' + (tipValue === '1' ? ' selected' : '') + '>Locatar</option></select></td>' +
-                '<td style="padding:6px 4px; text-align:center;"><select class="input-control flat-cell-input" style="font-size:12px; padding:4px 5px; width:58px;"><option value="-1">-</option><option value="1">Da</option><option value="0" selected>Nu</option></select></td>' +
-                '<td style="text-align:center; padding:6px 3px;"><button type="button" class="btn-action-icon" title="Salvează" style="color:var(--green);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg></button></td>' +
-                '<td style="text-align:center; padding:6px 3px;"><button type="button" class="btn-action-icon" title="Șterge" style="color:var(--red);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M9 6V4h6v2"></path></svg></button></td>' +
-                '<td style="text-align:center; padding:6px 3px;"><button type="button" class="btn-action-icon" title="Editează"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button></td>';
+                '<td style="padding: 6px 4px; text-align: center;"><input type="text" class="input-control flat-cell-input" maxlength="60" value="' + _escHtml(nod.block) + '" style="width:38px; text-align:center; padding:4px 4px; font-size:12px;"></td>' +
+                '<td style="padding: 6px 4px; text-align: center;"><input type="text" class="input-control flat-cell-input" maxlength="100" value="' + _escHtml(nod.entrance) + '" style="width:30px; text-align:center; padding:4px 4px; font-size:12px;"></td>' +
+                '<td style="padding: 6px 4px; text-align: center;"><input type="text" class="input-control flat-cell-input" maxlength="4" value="" style="width:30px; text-align:center; padding:4px 4px; font-size:12px;"></td>' +
+                '<td style="padding: 6px 4px; text-align: center;"><input type="text" class="input-control flat-cell-input" maxlength="30" value="' + apNum + '" style="width:38px; text-align:center; padding:4px 4px; font-size:12px;"></td>' +
+                '<td style="padding: 6px 4px; text-align: center;"><input type="text" class="input-control flat-cell-input" maxlength="100" value="" style="width:38px; text-align:center; padding:4px 4px; font-size:12px;"></td>' +
+                '<td style="padding: 6px 4px; text-align: center;"><input type="text" class="input-control flat-cell-input" maxlength="5" value="" placeholder="0.00" style="width:50px; text-align:center; padding:4px 4px; font-size:12px;"></td>' +
+                '<td style="padding: 6px 4px;"><select class="input-control flat-cell-input" style="font-size:12px; padding:4px 5px; width:118px;"><option value="-1">-</option><option value="2"' + (tipValue === '2' ? ' selected' : '') + '>Agent economic</option><option value="1"' + (tipValue === '1' ? ' selected' : '') + '>Locatar</option></select></td>' +
+                '<td style="padding: 6px 4px; text-align: center;"><select class="input-control flat-cell-input" style="font-size:12px; padding:4px 5px; width:58px;"><option value="-1">-</option><option value="1">Da</option><option value="0" selected>Nu</option></select></td>' +
+                '<td style="text-align: center; padding: 6px 3px;"><button type="button" class="btn-action-icon" title="Salvează"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg></button></td>' +
+                '<td style="text-align: center; padding: 6px 3px;"><button type="button" class="btn-action-icon" title="Șterge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M9 6V4h6v2"></path></svg></button></td>' +
+                '<td style="text-align: center; padding: 6px 3px;"><button type="button" class="btn-action-icon" title="Editează"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button></td>';
 
             tbody.appendChild(tr);
         }

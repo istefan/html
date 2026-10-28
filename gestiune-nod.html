@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Gestiune NOD – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Gestiune NOD – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
 </head>
 <body>
 
@@ -179,7 +182,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +190,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +327,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +569,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-logo.svg" alt="SONIC" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Gestiune NOD</div>
 
             <!-- User profile avatar (always visible) -->
@@ -649,12 +694,12 @@
     </div>
 </div>
 
-<div class="card" style="margin-bottom: 24px;">
-    <div style="margin-bottom: 18px;">
-        <span class="chart-title" style="font-size: 14px; font-weight: 600;">Filtrare Avansata</span>
+<div class="card filter-card">
+    <div class="filter-card-head">
+        <span class="filter-card-title">Filtrare Avansată</span>
     </div>
     <form method="GET" action="gestiune-nod.html" id="filterFormGestiuneNod">
-        <div class="filter-grid">
+        <div class="filter-grid-5">
 
             <div class="form-group">
                 <label class="form-label" for="cbCityNod">Localitate</label>
@@ -750,9 +795,9 @@
             <div class="form-group">
                 <label class="form-label" for="dtpStartDate">Perioada calcul</label>
                 <div class="date-range-group">
-                    <input type="date" name="start_date" id="dtpStartDate" class="input-control" value="">
+                    <input type="text" data-datepicker name="start_date" id="dtpStartDate" class="input-control" value="">
                     <span class="date-range-separator">&ndash;</span>
-                    <input type="date" name="end_date" id="dtpEndDate" class="input-control" value="">
+                    <input type="text" data-datepicker name="end_date" id="dtpEndDate" class="input-control" value="">
                 </div>
             </div>
 
@@ -801,8 +846,8 @@
                     <option value="100" selected>100</option>
                 </select>
             </div>
-            <a href="gestiune-nod.html" class="btn-secondary">Reseteaza</a>
-            <button type="submit" class="btn-primary">Cauta</button>
+            <a href="gestiune-nod.html" class="btn-secondary">Resetează</a>
+            <button type="submit" class="btn-primary">Caută</button>
         </div>
     </form>
 </div>
@@ -810,7 +855,7 @@
 <div class="table-container">
     <div class="table-toolbar">
         <div class="table-toolbar-left" style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
-            <span style="color: var(--text-muted); font-size: 13px; font-weight: 500;">
+            <span class="table-count">
                 Afisare <strong id="nodVisibleCount">13</strong> din <strong>5.983</strong> inregistrari
             </span>
             <button type="button" class="btn-secondary" id="btnBulkAllocateReader" disabled title="Selectati cel putin un NOD din tabel">
@@ -829,7 +874,7 @@
         </div>
     </div>
 
-    <div style="overflow-x: auto; width: 100%;">
+    <div class="table-scroll">
         <table class="partners-table" id="nodTable">
             <thead>
                 <tr>
@@ -849,234 +894,234 @@
             </thead>
             <tbody id="nodTableBody">
                                 <tr data-search="81-001-0001 str. stefan cel mare, nr. 27, bl. 27, sc. 1, distr. 2, bucuresti">
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0001">
                     </td>
                     <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0001</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0001</td>
                     <td>Str. STEFAN CEL MARE, Nr. 27, Bl. 27, Sc. 1, Distr. 2, Bucuresti</td>
                     <td><span class="status-badge status-online">Alocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">100</td>
+                    <td style="text-align: center;">100</td>
                     <td><span class="status-badge status-online">Deblocat manual</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
+                    <td style="text-align: center;">0</td>
                     <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <a href="gestiune-nod-edit.html?nod=81-001-0001" class="btn-action-icon" title="Editeaza NOD">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="81-001-0002 str. reziliat, nr. 36, bl. vila, sc. 1, distr. 1, bucuresti">
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0002">
                     </td>
                     <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0002</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0002</td>
                     <td>Str. REZILIAT, Nr. 36, Bl. Vila, Sc. 1, Distr. 1, Bucuresti</td>
                     <td><span class="status-badge status-online">Alocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">100</td>
+                    <td style="text-align: center;">100</td>
                     <td><span class="status-badge status-offline">Blocat contract reziliat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
+                    <td style="text-align: center;">0</td>
                     <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <a href="gestiune-nod-edit.html?nod=81-001-0002" class="btn-action-icon" title="Editeaza NOD">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="81-001-0003 str. reziliat, sc. 1, distr. 5, bucuresti">
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0003">
                     </td>
                     <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0003</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0003</td>
                     <td>Str. REZILIAT, Sc. 1, Distr. 5, Bucuresti</td>
                     <td><span class="status-badge status-online">Alocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">100</td>
+                    <td style="text-align: center;">100</td>
                     <td><span class="status-badge status-offline">Blocat contract reziliat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
+                    <td style="text-align: center;">0</td>
                     <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <a href="gestiune-nod-edit.html?nod=81-001-0003" class="btn-action-icon" title="Editeaza NOD">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="81-001-0004 str. gura ialomitei, nr. 3, bl. pc9, sc. b, distr. 3, bucuresti">
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0004">
                     </td>
                     <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0004</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0004</td>
                     <td>Str. GURA IALOMITEI, Nr. 3, Bl. PC9, Sc. B, Distr. 3, Bucuresti</td>
                     <td><span class="status-badge status-online">Alocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">100</td>
+                    <td style="text-align: center;">100</td>
                     <td><span class="status-badge status-online">Deblocat manual</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
+                    <td style="text-align: center;">0</td>
                     <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <a href="gestiune-nod-edit.html?nod=81-001-0004" class="btn-action-icon" title="Editeaza NOD">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="81-001-0005 str. gura ialomitei, nr. 3, bl. pc9, sc. a, distr. 3, bucuresti">
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0005">
                     </td>
                     <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0005</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0005</td>
                     <td>Str. GURA IALOMITEI, Nr. 3, Bl. PC9, Sc. A, Distr. 3, Bucuresti</td>
                     <td><span class="status-badge status-online">Alocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">100</td>
+                    <td style="text-align: center;">100</td>
                     <td><span class="status-badge status-online">Deblocat manual</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
+                    <td style="text-align: center;">0</td>
                     <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <a href="gestiune-nod-edit.html?nod=81-001-0005" class="btn-action-icon" title="Editeaza NOD">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="81-001-0008 str. liber, nr. 012, bl. 0, sc. 2, bucuresti">
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0008">
                     </td>
                     <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0008</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0008</td>
                     <td>Str. Liber, Nr. 012, Bl. 0, Sc. 2, Bucuresti</td>
                     <td><span class="status-badge status-offline">Nealocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
+                    <td style="text-align: center;">0</td>
                     <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
+                    <td style="text-align: center;">0</td>
                     <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <a href="gestiune-nod-edit.html?nod=81-001-0008" class="btn-action-icon" title="Editeaza NOD">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="81-001-0018 str. unirii, nr. 13, bl. 2c, sc. 1, distr. 5, bucuresti">
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0018">
                     </td>
                     <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0018</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0018</td>
                     <td>Str. UNIRII, Nr. 13, Bl. 2C, Sc. 1, Distr. 5, Bucuresti</td>
                     <td><span class="status-badge status-online">Alocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">100</td>
+                    <td style="text-align: center;">100</td>
                     <td><span class="status-badge status-online">Deblocat manual</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
+                    <td style="text-align: center;">0</td>
                     <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <a href="gestiune-nod-edit.html?nod=81-001-0018" class="btn-action-icon" title="Editeaza NOD">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="81-001-0020 str. pantelimon, nr. 332, bl. 32, sc. 1, distr. 2, bucuresti">
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0020">
                     </td>
                     <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0020</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0020</td>
                     <td>Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 1, Distr. 2, Bucuresti</td>
                     <td><span class="status-badge status-online">Alocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">97</td>
+                    <td style="text-align: center;">97</td>
                     <td><span class="status-badge status-online">Deblocat manual</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;"></td>
+                    <td style="text-align: center;"></td>
                     <td><span class="status-badge status-online">Deblocat manual</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <a href="gestiune-nod-edit.html?nod=81-001-0020" class="btn-action-icon" title="Editeaza NOD">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="81-001-0055 str. aleea barsanesti, nr. 2, bl. 156, sc. 2, distr. 6, bucuresti">
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0055">
                     </td>
                     <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0055</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0055</td>
                     <td>Str. ALEEA BARSANESTI, Nr. 2, Bl. 156, Sc. 2, Distr. 6, Bucuresti</td>
                     <td><span class="status-badge status-online">Alocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
+                    <td style="text-align: center;">0</td>
                     <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">98</td>
+                    <td style="text-align: center;">98</td>
                     <td><span class="status-badge status-online">Deblocat manual</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <a href="gestiune-nod-edit.html?nod=81-001-0055" class="btn-action-icon" title="Editeaza NOD">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="81-001-0056 str. de modificat, sc. -, distr. 3, bucuresti">
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0056">
                     </td>
                     <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0056</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0056</td>
                     <td>Str. DE MODIFICAT, Sc. -, Distr. 3, Bucuresti</td>
                     <td><span class="status-badge status-offline">Nealocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;"></td>
+                    <td style="text-align: center;"></td>
                     <td><span class="status-badge status-offline">Blocat necompletat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
+                    <td style="text-align: center;">0</td>
                     <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <a href="gestiune-nod-edit.html?nod=81-001-0056" class="btn-action-icon" title="Editeaza NOD">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="81-001-0068 str. petre ionescu, nr. 51, bl. 7, sc. 3, distr. 3, bucuresti">
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0068">
                     </td>
                     <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0068</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0068</td>
                     <td>Str. PETRE IONESCU, Nr. 51, Bl. 7, Sc. 3, Distr. 3, Bucuresti</td>
                     <td><span class="status-badge status-online">Alocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
+                    <td style="text-align: center;">0</td>
                     <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">93</td>
+                    <td style="text-align: center;">93</td>
                     <td><span class="status-badge status-online">Deblocat manual</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <a href="gestiune-nod-edit.html?nod=81-001-0068" class="btn-action-icon" title="Editeaza NOD">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="81-001-0080 str. de modificat, nr. 23-25, bl. 39, sc. 3+4, distr. 4, bucuresti">
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0080">
                     </td>
                     <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0080</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0080</td>
                     <td>Str. DE MODIFICAT, Nr. 23-25, Bl. 39, Sc. 3+4, Distr. 4, Bucuresti</td>
                     <td><span class="status-badge status-offline">Nealocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;"></td>
+                    <td style="text-align: center;"></td>
                     <td><span class="status-badge status-offline">Blocat contract reziliat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
+                    <td style="text-align: center;">0</td>
                     <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <a href="gestiune-nod-edit.html?nod=81-001-0080" class="btn-action-icon" title="Editeaza NOD">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
                     </td>
                 </tr>
                                 <tr data-search="81-001-0086 str. test vlad, nr. 1, bl. 1, sc. 1, distr. 1, bucuresti">
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <input type="checkbox" class="table-checkbox nod-row-checkbox" value="81-001-0086">
                     </td>
                     <td>Bucuresti</td>
-                    <td style="font-weight:600; font-size:12px; letter-spacing:0.3px; white-space:nowrap;">81-001-0086</td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0086</td>
                     <td>Str. TEST VLAD, Nr. 1, Bl. 1, Sc. 1, Distr. 1, Bucuresti</td>
                     <td><span class="status-badge status-online">Alocat</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">83</td>
+                    <td style="text-align: center;">83</td>
                     <td><span class="status-badge status-online">Deblocat manual</span></td>
-                    <td style="text-align:center; font-variant-numeric:tabular-nums;">0</td>
+                    <td style="text-align: center;">0</td>
                     <td><span style="color: var(--text-muted); font-size: 13px;">&ndash;</span></td>
-                    <td style="text-align:center;">
+                    <td style="text-align: center;">
                         <a href="gestiune-nod-edit.html?nod=81-001-0086" class="btn-action-icon" title="Editeaza NOD">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
                         </a>
@@ -1088,22 +1133,22 @@
 
     <!-- === Paginație === -->
     <div class="table-pagination">
-        <div style="font-size: 13px; color: var(--text-muted);">
+        <div class="pagination-info">
             Afișare <strong>1</strong> - <strong id="nodPaginationVisible">13</strong> din <strong>6.000</strong> înregistrări
         </div>
-        <div style="display: flex; align-items: center; gap: 8px;">
-            <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" disabled>
+        <div class="pagination-controls">
+            <button type="button" class="btn-secondary btn-page-nav" disabled>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
                 <span>Anterior</span>
             </button>
             <div class="pagination-pages">
-                <button type="button" class="btn-secondary active" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;">1</button>
-                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 2')">2</button>
-                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 3')">3</button>
-                <span style="padding: 0 4px; color: var(--text-muted); font-size: 12px;">...</span>
-                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 60')">60</button>
+                <button type="button" class="btn-secondary btn-page active">1</button>
+                <button type="button" class="btn-secondary btn-page" onclick="alert('Pagina 2')">2</button>
+                <button type="button" class="btn-secondary btn-page" onclick="alert('Pagina 3')">3</button>
+                <span class="pagination-gap">…</span>
+                <button type="button" class="btn-secondary btn-page" onclick="alert('Pagina 60')">60</button>
             </div>
-            <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" onclick="alert('Pagina următoare')">
+            <button type="button" class="btn-secondary btn-page-nav" onclick="alert('Pagina următoare')">
                 <span>Următor</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </button>
@@ -1241,10 +1286,10 @@
                     Afișare NOD-uri: <strong class="nod-picker-count" id="nodPickerModalGestiune-count">0</strong>
                 </span>
                 <div class="nod-picker-page-btns">
-                    <button type="button" class="btn-action-icon nod-picker-prev" data-modal="nodPickerModalGestiune" disabled>
+                    <button type="button" class="btn-action-icon nod-picker-prev" title="Pagina anterioară" data-modal="nodPickerModalGestiune" disabled>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
                     </button>
-                    <button type="button" class="btn-action-icon nod-picker-next" data-modal="nodPickerModalGestiune" disabled>
+                    <button type="button" class="btn-action-icon nod-picker-next" title="Pagina următoare" data-modal="nodPickerModalGestiune" disabled>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
                 </div>
@@ -1387,7 +1432,7 @@
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

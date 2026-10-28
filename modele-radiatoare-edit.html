@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Editare Model Radiator – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Editare Model Radiator – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
 </head>
 <body>
 
@@ -179,7 +182,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +190,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +327,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +569,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-billing-logo.svg" alt="SONIC BILLING" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Editare Model Radiator</div>
 
             <!-- User profile avatar (always visible) -->
@@ -625,8 +670,8 @@
 
 <!-- ══ Tab Navigation ══════════════════════════════════════════════ -->
 <div class="edit-tabs-wrapper">
-    <div class="edit-tabs-nav" role="tablist">
-        <button type="button" class="edit-tab-btn active selected" role="tab" aria-selected="true" aria-controls="tab-general" id="tabBtn-general" onclick="switchTab('general', this)">
+    <div class="edit-tabs-nav" role="tablist" aria-label="Secțiuni model radiator">
+        <button type="button" class="edit-tab-btn active" role="tab" aria-selected="true" aria-controls="tab-general" id="tabBtn-general" onclick="switchTab('general', this)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
             Parametri Model
         </button>
@@ -737,7 +782,7 @@
         <div class="table-container" style="margin-bottom: 24px;">
             <div class="table-toolbar">
                 <div class="table-toolbar-left">
-                    <span style="color:var(--text-muted); font-size:13px; font-weight:500;">
+                    <span class="table-count">
                         Coeficienți Kc pentru <span style="color: var(--accent); font-weight: 600;">Otel cu Elementi 46 - Cordivari (Model Curent)</span>
                     </span>
                 </div>
@@ -753,8 +798,8 @@
                         </thead>
                         <tbody id="kcTableBody">
                                                                                             <tr>
-                                    <td style="color: var(--text-muted); font-size: 13px; font-weight: 500;">1</td>
-                                    <td style="font-weight: 500; color: var(--text-main);">E-ITN 10.5</td>
+                                    <td class="td-name">1</td>
+                                    <td class="td-name">E-ITN 10.5</td>
                                     <td>
                                         <div style="position: relative; max-width: 250px;">
                                             <input type="number" step="0.0001" name="kc[1]" class="input-control" value="1.1249" placeholder="Ex: 1.0000" style="font-family: monospace; font-size: 14px;" onblur="validateKc(this)">
@@ -762,8 +807,8 @@
                                     </td>
                                 </tr>
                                                                 <tr>
-                                    <td style="color: var(--text-muted); font-size: 13px; font-weight: 500;">2</td>
-                                    <td style="font-weight: 500; color: var(--text-main);">E-ITN 30.4</td>
+                                    <td class="td-name">2</td>
+                                    <td class="td-name">E-ITN 30.4</td>
                                     <td>
                                         <div style="position: relative; max-width: 250px;">
                                             <input type="number" step="0.0001" name="kc[2]" class="input-control" value="1.0946" placeholder="Ex: 1.0000" style="font-family: monospace; font-size: 14px;" onblur="validateKc(this)">
@@ -771,8 +816,8 @@
                                     </td>
                                 </tr>
                                                                 <tr>
-                                    <td style="color: var(--text-muted); font-size: 13px; font-weight: 500;">3</td>
-                                    <td style="font-weight: 500; color: var(--text-main);">E-ITN 40L</td>
+                                    <td class="td-name">3</td>
+                                    <td class="td-name">E-ITN 40L</td>
                                     <td>
                                         <div style="position: relative; max-width: 250px;">
                                             <input type="number" step="0.0001" name="kc[6]" class="input-control" value="1.0060" placeholder="Ex: 1.0000" style="font-family: monospace; font-size: 14px;" onblur="validateKc(this)">
@@ -780,8 +825,8 @@
                                     </td>
                                 </tr>
                                                                 <tr>
-                                    <td style="color: var(--text-muted); font-size: 13px; font-weight: 500;">4</td>
-                                    <td style="font-weight: 500; color: var(--text-main);">Programat</td>
+                                    <td class="td-name">4</td>
+                                    <td class="td-name">Programat</td>
                                     <td>
                                         <div style="position: relative; max-width: 250px;">
                                             <input type="number" step="0.0001" name="kc[4]" class="input-control" value="1.0000" placeholder="Ex: 1.0000" style="font-family: monospace; font-size: 14px;" onblur="validateKc(this)">
@@ -789,8 +834,8 @@
                                     </td>
                                 </tr>
                                                                 <tr>
-                                    <td style="color: var(--text-muted); font-size: 13px; font-weight: 500;">5</td>
-                                    <td style="font-weight: 500; color: var(--text-main);">SET</td>
+                                    <td class="td-name">5</td>
+                                    <td class="td-name">SET</td>
                                     <td>
                                         <div style="position: relative; max-width: 250px;">
                                             <input type="number" step="0.0001" name="kc[5]" class="input-control" value="1.0000" placeholder="Ex: 1.0000" style="font-family: monospace; font-size: 14px;" onblur="validateKc(this)">
@@ -798,8 +843,8 @@
                                     </td>
                                 </tr>
                                                                 <tr>
-                                    <td style="color: var(--text-muted); font-size: 13px; font-weight: 500;">6</td>
-                                    <td style="font-weight: 500; color: var(--text-main);">WHE.30Z</td>
+                                    <td class="td-name">6</td>
+                                    <td class="td-name">WHE.30Z</td>
                                     <td>
                                         <div style="position: relative; max-width: 250px;">
                                             <input type="number" step="0.0001" name="kc[3]" class="input-control" value="0.8410" placeholder="Ex: 1.0000" style="font-family: monospace; font-size: 14px;" onblur="validateKc(this)">
@@ -824,15 +869,6 @@
 </div>
 
 <script>
-    // Tab Switching Logic
-    function switchTab(tabId, btn) {
-        if (btn.hasAttribute('disabled')) return;
-        document.querySelectorAll('.edit-tab-btn').forEach(b => b.classList.remove('active', 'selected'));
-        btn.classList.add('active', 'selected');
-
-        document.querySelectorAll('.tab-pane').forEach(p => p.style.display = 'none');
-        document.getElementById('tab-' + tabId).style.display = 'block';
-    }
 
     // Validate Kc Field
     function validateKc(input) {
@@ -870,7 +906,7 @@
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Echipe Teren – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
+    <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+<script>
+    (function() {
+        var sb = document.getElementById('sidebar');
+        var ls = localStorage.getItem('sb_collapsed');
+        if (ls === '1') sb.classList.add('collapsed');
+        else if (ls === '0') sb.classList.remove('collapsed');
+    })();
+</script>
+    <!-- ── Logo ─────────────────────────────────────────────────────── -->
+    <!-- React: <SidebarLogo activeApp={activeApp} /> -->
+    <div class="logo">
+        <a href="sonic-dashboard.html" title="SONIC – Acasă">
+            <img src="assets/images/sonic-logo.svg"
+                 alt="SONIC"
+                 class="logo-full"
+                 id="sidebarLogo">
+            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">S</span>
+        </a>
+    </div>
+
+    <!-- ── Nav ───────────────────────────────────────────────────────── -->
+    <!-- React: <SidebarNav activeApp={activeApp} onAppChange={setActiveApp} /> -->
+    <nav class="sidebar-nav" aria-label="Navigare principală">
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  1. SONIC GRID
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-grid"
+             data-logo="assets/images/sonic-grid-logo.svg"
+             data-logo-icon="SG">
+            <button class="app-section-header" type="button" title="SONIC GRID">
+                <img src="assets/images/sonic-grid-logo.svg" class="app-section-logo" alt="SONIC GRID">
+                <span class="app-section-badge">SG</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Panoul Meu -->
+                <a href="panoul-meu.html" class="nav-item " title="Panoul Meu">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </span>
+                    <span class="nav-label">Panoul Meu</span>
+                </a>
+
+                <!-- Adresele Mele -->
+                <a href="adresele-mele.html" class="nav-item " title="Adresele Mele">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </span>
+                    <span class="nav-label">Adresele Mele</span>
+                </a>
+
+                <!-- Regiuni / Zone -->
+                <a href="regiuni-zone.html" class="nav-item " title="Regiuni / Zone">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </span>
+                    <span class="nav-label">Regiuni / Zone</span>
+                </a>
+
+                <!-- Perioade Citiri -->
+                <a href="perioade-citiri.html" class="nav-item " title="Perioade Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </span>
+                    <span class="nav-label">Perioade Citiri</span>
+                </a>
+
+                <!-- Setări Alerte -->
+                <a href="setari-alerte.html" class="nav-item " title="Setări Alerte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </span>
+                    <span class="nav-label">Setări Alerte</span>
+                </a>
+
+                <!-- Info Center -->
+                <a href="info-center.html" class="nav-item " title="Info Center">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    <span class="nav-label">Info Center</span>
+                </a>
+
+                <!-- Contact -->
+                <a href="contact.html" class="nav-item " title="Contact">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </span>
+                    <span class="nav-label">Contact</span>
+                </a>
+
+                <!-- ── RAPOARTE (section label) ── -->
+                <div class="nav-section">Rapoarte</div>
+
+                <!-- Raport Citiri -->
+                <a href="raport-citiri.html" class="nav-item " title="Raport Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Raport Citiri</span>
+                </a>
+
+                <!-- Bilanț Neînchideri Apă -->
+                <a href="bilant-neinchideri.html" class="nav-item " title="Bilanț Neînchideri Apă">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                    </span>
+                    <span class="nav-label">Bilanț Neînchideri Apă</span>
+                </a>
+
+                <!-- Estimări Consum -->
+                <a href="estimari-consum.html" class="nav-item " title="Estimări Consum">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </span>
+                    <span class="nav-label">Estimări Consum</span>
+                </a>
+
+                <!-- Raport Alerte -->
+                <a href="raport-alerte.html" class="nav-item " title="Raport Alerte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Raport Alerte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  2. SONIC MARKET
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-market"
+             data-logo="assets/images/sonic-market-logo.svg"
+             data-logo-icon="SM">
+            <button class="app-section-header" type="button" title="SONIC MARKET">
+                <img src="assets/images/sonic-market-logo.svg" class="app-section-logo" alt="SONIC MARKET">
+                <span class="app-section-badge">SM</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard Market -->
+                <a href="market-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  3. SONIC PRO
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section open"
+             data-app="sonic-pro"
+             data-logo="assets/images/sonic-pro-logo.svg"
+             data-logo-icon="SP">
+            <button class="app-section-header" type="button" title="SONIC PRO">
+                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+                <span class="app-section-badge">SP</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard PRO (dispecerat) -->
+                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group open" data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem active">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  4. SONIC BILLING
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-billing"
+             data-logo="assets/images/sonic-billing-logo.svg"
+             data-logo-icon="SB">
+            <button class="app-section-header" type="button" title="SONIC BILLING">
+                <img src="assets/images/sonic-billing-logo.svg" class="app-section-logo" alt="SONIC BILLING">
+                <span class="app-section-badge">SB</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard -->
+                <a href="index.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── ADMINISTRARE ─────────────────────────────────────────── -->
+                <div class="nav-group " data-group="administrare">
+                    <button class="nav-group-title" type="button" title="Administrare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                        </span>
+                        <span class="nav-label">Administrare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="utilizatori.html" class="nav-subitem ">Utilizatori</a>
+                        <a href="cititori.html" class="nav-subitem ">Cititori</a>
+                        <a href="parametri-sistem.html" class="nav-subitem ">Parametri Sistem</a>
+                        <a href="stergere-perioade.html" class="nav-subitem ">Ștergere Perioade Calcul</a>
+                    </div>
+                </div>
+
+                <!-- ── DICTIONARE ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="dictionare">
+                    <button class="nav-group-title" type="button" title="Dictionare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Dictionare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="localitati.html" class="nav-subitem ">Localități</a>
+                        <a href="puncte-lucru.html" class="nav-subitem ">Puncte de Lucru</a>
+                        <a href="producatori.html" class="nav-subitem ">Producători</a>
+                        <a href="furnizori.html" class="nav-subitem ">Furnizori Utilități</a>
+                        <a href="unitati-masura.html" class="nav-subitem ">Unități de Măsură</a>
+                        <a href="tipuri-servicii.html" class="nav-subitem ">Tipuri Servicii</a>
+                        <a href="companii.html" class="nav-subitem ">Companii</a>
+                    </div>
+                </div>
+
+                <!-- ── DATABANK MANAGEMENT ──────────────────────────────────── -->
+                <div class="nav-group " data-group="databank">
+                    <button class="nav-group-title" type="button" title="Databank Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                        </span>
+                        <span class="nav-label">Databank Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="tipuri-radiatoare.html" class="nav-subitem ">Tipuri Radiatoare</a>
+                        <a href="modele-radiatoare.html" class="nav-subitem ">Modele Radiatoare</a>
+                        <a href="modele-repartitoare.html" class="nav-subitem ">Modele Repartitoare</a>
+                        <a href="modele-contoare.html" class="nav-subitem ">Modele Contoare</a>
+                        <a href="serii-apometre.html" class="nav-subitem ">Serii Apometre Achiziționate</a>
+                    </div>
+                </div>
+
+                <!-- ── CALCUL ────────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="calcul">
+                    <button class="nav-group-title" type="button" title="Calcul">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </span>
+                        <span class="nav-label">Calcul</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
+                        <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
+                        <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
+                        <a href="tarife.html" class="nav-subitem ">Tarife</a>
+                    </div>
+                </div>
+
+                <!-- ── IMPORT / EXPORT CITIRI ───────────────────────────────── -->
+                <div class="nav-group " data-group="import-export">
+                    <button class="nav-group-title" type="button" title="Import / Export Citiri">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </span>
+                        <span class="nav-label">Import / Export Citiri</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="citire-manuala-et.html" class="nav-subitem ">Citire Manuală ET</a>
+                        <a href="citire-manuala-apa.html" class="nav-subitem ">Citire Manuală Apă</a>
+                        <a href="citiri-brute-et.html" class="nav-subitem ">Citiri Brute Energie Termică</a>
+                        <a href="citiri-brute-apa.html" class="nav-subitem ">Citiri Brute Apă</a>
+                        <a href="export-pl.html" class="nav-subitem ">Export PL</a>
+                    </div>
+                </div>
+
+                <!-- ── CONSUM ENERGIE TERMICĂ ────────────────────────────────── -->
+                <div class="nav-group " data-group="consum-et">
+                    <button class="nav-group-title" type="button" title="Consum Energie Termică">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                        </span>
+                        <span class="nav-label">Consum Energie Termică</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="consum-et-detaliat.html" class="nav-subitem ">Introducere Detaliată</a>
+                        <a href="consum-et-cumulat.html" class="nav-subitem ">Introducere Cumulată</a>
+                    </div>
+                </div>
+
+                <!-- ── CONSUM APĂ ─────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="consum-apa">
+                    <button class="nav-group-title" type="button" title="Consum Apă">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L7 10a5 5 0 0 0 10 0L12 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Consum Apă</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="consum-apa-detaliat.html" class="nav-subitem ">Introducere Detaliată</a>
+                    </div>
+                </div>
+
+                <!-- ── VALIDARE CITIRE ───────────────────────────────────────── -->
+                <div class="nav-group " data-group="validare">
+                    <button class="nav-group-title" type="button" title="Validare Citire">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </span>
+                        <span class="nav-label">Validare Citire</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="validare-et.html" class="nav-subitem ">Validare Citire – ET</a>
+                        <a href="validare-apa.html" class="nav-subitem ">Validare Citire – Apă</a>
+                        <a href="cost-split-apa.html" class="nav-subitem ">Cost Split – Apă</a>
+                    </div>
+                </div>
+
+                <!-- ── GESTIUNE FACTURARE (standalone) ──────────────────────── -->
+                <a href="facturare.html" class="nav-item " title="Gestiune Facturare">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Gestiune Facturare</span>
+                </a>
+
+                <!-- ── GESTIUNE TIPĂRIRE ───────────────────────────────────────── -->
+                <div class="nav-group " data-group="tiparire">
+                    <button class="nav-group-title" type="button" title="Gestiune Tipărire">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                        </span>
+                        <span class="nav-label">Gestiune Tipărire</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="nod-tiparire.html" class="nav-subitem ">NOD pentru Tipărire</a>
+                        <a href="fise-citire.html" class="nav-subitem ">Fișe Citire</a>
+                    </div>
+                </div>
+
+                <!-- ── RAPOARTE (standalone) ──────────────────────────────────── -->
+                <a href="rapoarte.html" class="nav-item " title="Rapoarte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <span class="nav-label">Rapoarte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  5. SONIC FIN
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-fin"
+             data-logo="assets/images/sonic-fin-logo.svg"
+             data-logo-icon="SF">
+            <button class="app-section-header" type="button" title="SONIC FIN">
+                <img src="assets/images/sonic-fin-logo.svg" class="app-section-logo" alt="SONIC FIN">
+                <span class="app-section-badge">SF</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard FIN -->
+                <a href="fin-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  6. SONIC (Base – Ecosistem & Configurare)
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic"
+             data-logo="assets/images/sonic-logo.svg"
+             data-logo-icon="S">
+            <button class="app-section-header" type="button" title="SONIC">
+                <img src="assets/images/sonic-logo.svg" class="app-section-logo" alt="SONIC">
+                <span class="app-section-badge">S</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard SONIC -->
+                <a href="sonic-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <div class="nav-group " data-group="master-data">
+                    <button class="nav-group-title" type="button" title="Master Data Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Master Data Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
+                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
+                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
+                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
+                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
+                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- ── Sidebar Footer ─────────────────────────────────────────────── -->
+    <!-- React: <SidebarFooter /> -->
+    <div class="sidebar-footer">
+        <a href="contul-meu.html" class="nav-item " title="Contul Meu">
+            <span class="nav-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <span class="nav-label">Contul Meu</span>
+        </a>
+    </div>
+
+</aside>
+
+<!-- React: <main className="main"> -->
+<div class="main">
+
+    <!--
+        React: <Header
+            onToggleSidebar={toggleSidebar}
+            isCollapsed={isCollapsed}
+            isMobileOpen={isMobileOpen}
+            pageTitle={pageTitle}
+        />
+    -->
+    <div class="header">
+
+        <!-- LEFT: hamburger / sidebar-toggle + search (desktop) -->
+        <div class="header-left">
+            <!--
+                React: <SidebarToggleBtn
+                    onClick={onToggleSidebar}
+                    isCollapsed={isCollapsed}
+                    isMobile={isMobile}
+                />
+                Desktop: panel-left icon with collapse arrow
+                Mobile : hamburger icon
+            -->
+            <button class="sidebar-toggle-btn" id="sidebarToggle"
+                    title="Restrânge / Extinde meniu"
+                    aria-label="Toggle sidebar"
+                    data-collapsed="0">
+                <script>
+                    (function() {
+                        var btn = document.getElementById('sidebarToggle');
+                        var ls = localStorage.getItem('sb_collapsed');
+                        if (ls === '1') btn.setAttribute('data-collapsed', '1');
+                        else if (ls === '0') btn.setAttribute('data-collapsed', '0');
+                    })();
+                </script>
+                <!-- Mobile hamburger (hidden on desktop via CSS) -->
+                <svg class="icon-hamburger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+                <!-- Desktop panel icon (hidden on mobile via CSS) -->
+                <svg class="icon-panel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <line x1="9" y1="3" x2="9" y2="21"/>
+                    <polyline points="15 8 12 12 15 16" class="toggle-arrow"/>
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- CENTER: logo (mobile only, absolutely centered) -->
+        <!-- React: isMobile && <HeaderLogo /> -->
+        <div class="header-logo" aria-hidden="true">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-pro-logo.svg" alt="SONIC PRO" id="headerLogo">
+            </a>
+        </div>
+
+        <!-- RIGHT: page title (desktop) + user + logout -->
+        <div class="header-actions">
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
+            <div class="header-page-title">Echipe Teren</div>
+
+            <!-- User profile avatar (always visible) -->
+            <a href="contul-meu.html" class="user-profile" title="Contul meu">SI</a>
+
+            <!-- Logout button – icon only, always visible -->
+            <!-- React: <LogoutBtn onClick={handleLogout} /> -->
+            <a href="login.html" class="logout-btn" title="Deconectare" aria-label="Deconectare">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+            </a>
+        </div>
+
+    </div><!-- /.header -->
+
+    <!--
+        CONTEXTUAL HELP BAR (WordPress-style)
+        React: <HelpBar onToggle={toggleHelp} isOpen={isHelpOpen} />
+               <HelpPanel isOpen={isHelpOpen} tabs={helpTabs} />
+    -->
+    <div class="help-wrapper">
+        <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
+            <div class="help-panel-inner">
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Roluri și competențe                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Disponibilitate și gestiuni                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Echipe Teren</h4>
+            <p>Pagina reunește toate persoanele care lucrează în teren: cititori, montatori și tehnicieni de service. Pentru fiecare persoană vedeți rolurile, competențele pe tipuri de echipamente, gestiunea virtuală, intervențiile de azi și disponibilitatea.</p>
+            <ul>
+                <li><strong>KPI-uri:</strong> persoane active, persoane aflate acum în teren, persoane indisponibile azi (concediu, alte sarcini, medical, formare) și acoperirea competențelor – tipul de echipament acoperit de cele mai puține persoane apare ca avertizare.</li>
+                <li><strong>Filtrare:</strong> după nume, rol, competență și disponibilitatea de azi. Căutarea dinamică din dreapta tabelului filtrează instantaneu după nume, telefon sau gestiune.</li>
+                <li><strong>Acțiuni pe rând:</strong> editare roluri și competențe, calendarul de disponibilitate, stocul din gestiune, dezactivare / activare.</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <h4>Roluri</h4>
+            <p>O persoană poate avea unul sau mai multe roluri: <strong>Cititor</strong> (citiri walk-by), <strong>Montator</strong> (montaje noi și ulterioare), <strong>Service</strong> (reparații, înlocuiri, verificări). Trebuie bifat cel puțin un rol.</p>
+            <h4>Competențe – tipuri de echipamente</h4>
+            <p>Competențele spun pe ce echipamente poate lucra persoana: contor apă, contor energie termică, repartitor, gateway, senzori. De exemplu, un tehnician de service poate repara doar contoare de apă și repartitoare. Pentru rolurile Montator și Service este obligatorie cel puțin o competență.</p>
+            <p><strong>Important:</strong> recomandările din <em>Programare intervenție</em> (zi, oră, persoană) folosesc aceste competențe – sunt propuse doar persoanele cu rol Service care au competența pentru echipamentele solicitate. Dacă niciuna nu le acoperă pe toate, se propune o intervenție cuplată.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <h4>Disponibilitate</h4>
+            <p>Coloana <strong>Disponibilitate azi</strong> arată „Disponibil” sau motivul indisponibilității (concediu, alte sarcini, medical, formare). <strong>Următoarea indisponibilitate</strong> arată perioada în curs sau cea mai apropiată perioadă viitoare. Perioadele se gestionează din <em>Calendar Echipe</em> (pictograma calendar de pe rând). Weekendul este implicit indisponibil.</p>
+            <h4>Gestiune virtuală</h4>
+            <p>Fiecare persoană care montează sau repară echipamente are o gestiune virtuală – stocul primit din magazia centrală și aflat la ea. Pictograma cutie de pe rând afișează produsele și cantitățile din gestiune.</p>
+            <h4>Dezactivare</h4>
+            <p>Persoanele nu se șterg: se dezactivează (cu confirmare) și nu mai sunt propuse la programare. Se pot reactiva oricând.</p>
+                            </div>
+                                    </div>
+                    </div><!-- /.help-panel-inner -->
+        </div><!-- /.help-panel -->
+        
+        <div class="help-bar">
+            <button class="help-toggle-btn" id="helpToggle"
+                    aria-expanded="false"
+                    aria-controls="helpPanel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round"
+                     width="14" height="14" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                <span>Ajutor</span>
+                <svg class="help-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                     aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"/>
+                </svg>
+            </button>
+        </div><!-- /.help-bar -->
+    </div><!-- /.help-wrapper -->
+
+    <div class="content">
+
+        <div class="page-title-container">
+            <div class="page-title">
+                <h1>Echipe Teren</h1>
+                <p>Persoanele din teren: roluri, competențe pe tipuri de echipamente, disponibilitate și gestiunea virtuală.</p>
+            </div>
+            <button type="button" class="btn-secondary btn-add" id="btnAddStaff" onclick="ProStaff.openEdit(null)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>Adaugă persoană</span>
+            </button>
+        </div>
+
+        <!-- React: <KpiGrid items={[active, inField, unavailableToday, skillCoverage]} /> -->
+        <div class="calc-kpi-grid">
+            <div class="calc-kpi">
+                <span class="calc-kpi-label">Persoane active</span>
+                <div class="calc-kpi-value" id="kpiActive">8</div>
+                <span class="pro-kpi-meta">din <span id="kpiTotal">8</span> înregistrate</span>
+            </div>
+            <div class="calc-kpi">
+                <span class="calc-kpi-label">În teren acum</span>
+                <div class="calc-kpi-value" id="kpiField">6</div>
+                <span class="pro-kpi-meta">conform aplicației mobile</span>
+            </div>
+            <div class="calc-kpi">
+                <span class="calc-kpi-label">Indisponibile azi</span>
+                <div class="calc-kpi-value" id="kpiUnavail">1</div>
+                <span class="pro-kpi-meta">concediu / alte sarcini / medical / formare</span>
+            </div>
+            <div class="calc-kpi">
+                <span class="calc-kpi-label">Acoperire competențe</span>
+                <div class="calc-kpi-value"><span id="kpiCovered">5</span> <span class="calc-kpi-unit">/ 5 tipuri</span></div>
+                <span class="pro-kpi-meta" id="kpiWeak">Atenție – Senzor: 1 persoană</span>
+            </div>
+        </div>
+
+        <!-- ── Formular de Filtrare ───────────────────────────────────── -->
+        <!-- React: <FilterCard fields={[name, role, skill, availability]} onSearch={setFilters} /> -->
+        <div class="card filter-card">
+            <div class="filter-card-head">
+                <span class="filter-card-title">Filtrare Avansată</span>
+            </div>
+            <form method="GET" action="pro-echipe.html" id="filterForm">
+                <div class="filter-grid">
+                    <div class="form-group">
+                        <label class="form-label" for="txtStaffName">Nume</label>
+                        <input name="name" type="text" id="txtStaffName" class="input-control" maxlength="100" value="">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="ddlRole">Rol</label>
+                        <select name="role" id="ddlRole" class="input-control">
+                            <option value="">-</option>
+                                                            <option value="Cititor" >Cititor</option>
+                                                            <option value="Montator" >Montator</option>
+                                                            <option value="Service" >Service</option>
+                                                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="ddlSkill">Competență</label>
+                        <select name="skill" id="ddlSkill" class="input-control">
+                            <option value="">-</option>
+                                                            <option value="apa" >Contor apă</option>
+                                                            <option value="et" >Contor energie termică</option>
+                                                            <option value="rep" >Repartitor</option>
+                                                            <option value="gw" >Gateway</option>
+                                                            <option value="senzor" >Senzor (fum / inundație / temperatură)</option>
+                                                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="ddlAvailability">Disponibilitate azi</label>
+                        <select name="avail" id="ddlAvailability" class="input-control">
+                            <option value="">-</option>
+                            <option value="1" >Disponibil</option>
+                            <option value="0" >Indisponibil</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="filter-actions">
+                    <div class="filter-per-page">
+                        <label class="filter-per-page-label" for="ddlPerPage">Înreg / pag</label>
+                        <select name="per_page" id="ddlPerPage" class="input-control select-per-page">
+                                                            <option value="10" >10</option>
+                                                            <option value="15" >15</option>
+                                                            <option value="25" >25</option>
+                                                            <option value="50" >50</option>
+                                                            <option value="100" selected>100</option>
+                                                    </select>
+                    </div>
+                    <a href="pro-echipe.html" class="btn-secondary">Resetează</a>
+                    <button type="submit" class="btn-primary">Caută</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- ── Tabel persoane ──────────────────────────────────────────── -->
+        <!-- React: <StaffTable rows={filteredStaff} onEdit={openEdit} onStock={openStock} onToggleActive={toggleActive} /> -->
+        <div class="table-container">
+            <div class="table-toolbar">
+                <div class="table-toolbar-left">
+                    <span class="table-count">
+                        Afișare <strong id="visibleCount">8</strong> din <strong id="totalCount">8</strong> înregistrări
+                    </span>
+                </div>
+                <div class="table-toolbar-right">
+                    <div class="live-search-wrapper" title="Filtrare locală după nume, telefon sau gestiune">
+                        <span class="live-search-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </span>
+                        <input type="text" id="tableStaffSearch" class="input-control" placeholder="Căutare dinamică nume, telefon, gestiune...">
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-scroll">
+                <table class="partners-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 18%;">Persoană</th>
+                            <th style="width: 12%;">Roluri</th>
+                            <th style="width: 18%;">Competențe</th>
+                            <th style="width: 8%;">Gestiune</th>
+                            <th style="width: 8%; text-align: center;">Intervenții azi</th>
+                            <th style="width: 10%; text-align: center;">Disponibilitate azi</th>
+                            <th style="width: 14%;">Următoarea indisponibilitate</th>
+                            <th style="width: 12%; text-align: center;">Acțiuni</th>
+                        </tr>
+                    </thead>
+                    <tbody id="staffTableBody">
+                                                <tr data-staff="s1"
+                            data-first="Teodor"
+                            data-last="Milian"
+                            data-phone="0722 100 201"
+                            data-warehouse="G-01"
+                            data-roles="Cititor,Service"
+                            data-skills="apa,rep"
+                            data-status="teren"
+                            data-status-label="În teren"
+                            data-available="1"
+                            data-active="1">
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar" data-status="teren" data-cell="initials">TM</span>
+                                    <div>
+                                        <div class="pro-person-name" data-cell="name">Teodor Milian</div>
+                                        <div class="pro-person-meta" data-cell="meta">0722 100 201 · În teren</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pro-chips" data-cell="roles">
+                                    <span class="pro-chip pro-chip--dark">Cititor</span><span class="pro-chip pro-chip--dark">Service</span>                                </div>
+                            </td>
+                            <td>
+                                <div class="pro-chips" data-cell="skills">
+                                    <span class="pro-chip">Contor apă</span><span class="pro-chip">Repartitor</span>                                </div>
+                            </td>
+                            <td class="td-code" data-cell="warehouse">G-01</td>
+                            <td style="text-align: center;" data-cell="iv">2</td>
+                            <td style="text-align: center;" data-cell="avail">
+                                                                    <span class="status-badge status-online">Disponibil</span>
+                                                            </td>
+                            <td data-cell="next">02.11 – 04.11 (Alte sarcini)</td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Editează roluri și competențe" onclick="ProStaff.openEdit(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
+                                <a href="pro-calendar.html?staff=s1" class="btn-action-icon" title="Calendar disponibilitate" data-cell="calendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
+                                <button type="button" class="btn-action-icon" title="Stoc în gestiune" onclick="ProStaff.openStock(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></button>
+                                <button type="button" class="btn-action-icon" title="Dezactivează" onclick="ProStaff.toggleActive(this)" data-cell="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg></button>
+                            </td>
+                        </tr>
+                                                <tr data-staff="s2"
+                            data-first="Bogdan"
+                            data-last="Antal"
+                            data-phone="0722 100 202"
+                            data-warehouse="G-02"
+                            data-roles="Montator,Service"
+                            data-skills="apa,et"
+                            data-status="teren"
+                            data-status-label="În teren"
+                            data-available="1"
+                            data-active="1">
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar" data-status="teren" data-cell="initials">BA</span>
+                                    <div>
+                                        <div class="pro-person-name" data-cell="name">Bogdan Antal</div>
+                                        <div class="pro-person-meta" data-cell="meta">0722 100 202 · În teren</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pro-chips" data-cell="roles">
+                                    <span class="pro-chip pro-chip--dark">Montator</span><span class="pro-chip pro-chip--dark">Service</span>                                </div>
+                            </td>
+                            <td>
+                                <div class="pro-chips" data-cell="skills">
+                                    <span class="pro-chip">Contor apă</span><span class="pro-chip">Contor energie termică</span>                                </div>
+                            </td>
+                            <td class="td-code" data-cell="warehouse">G-02</td>
+                            <td style="text-align: center;" data-cell="iv">3</td>
+                            <td style="text-align: center;" data-cell="avail">
+                                                                    <span class="status-badge status-online">Disponibil</span>
+                                                            </td>
+                            <td data-cell="next">—</td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Editează roluri și competențe" onclick="ProStaff.openEdit(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
+                                <a href="pro-calendar.html?staff=s2" class="btn-action-icon" title="Calendar disponibilitate" data-cell="calendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
+                                <button type="button" class="btn-action-icon" title="Stoc în gestiune" onclick="ProStaff.openStock(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></button>
+                                <button type="button" class="btn-action-icon" title="Dezactivează" onclick="ProStaff.toggleActive(this)" data-cell="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg></button>
+                            </td>
+                        </tr>
+                                                <tr data-staff="s3"
+                            data-first="Mihai"
+                            data-last="Dobre"
+                            data-phone="0722 100 203"
+                            data-warehouse="G-03"
+                            data-roles="Montator"
+                            data-skills="rep,apa"
+                            data-status="teren"
+                            data-status-label="În teren"
+                            data-available="1"
+                            data-active="1">
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar" data-status="teren" data-cell="initials">MD</span>
+                                    <div>
+                                        <div class="pro-person-name" data-cell="name">Mihai Dobre</div>
+                                        <div class="pro-person-meta" data-cell="meta">0722 100 203 · În teren</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pro-chips" data-cell="roles">
+                                    <span class="pro-chip pro-chip--dark">Montator</span>                                </div>
+                            </td>
+                            <td>
+                                <div class="pro-chips" data-cell="skills">
+                                    <span class="pro-chip">Repartitor</span><span class="pro-chip">Contor apă</span>                                </div>
+                            </td>
+                            <td class="td-code" data-cell="warehouse">G-03</td>
+                            <td style="text-align: center;" data-cell="iv">1</td>
+                            <td style="text-align: center;" data-cell="avail">
+                                                                    <span class="status-badge status-online">Disponibil</span>
+                                                            </td>
+                            <td data-cell="next">05.11 (Medical)</td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Editează roluri și competențe" onclick="ProStaff.openEdit(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
+                                <a href="pro-calendar.html?staff=s3" class="btn-action-icon" title="Calendar disponibilitate" data-cell="calendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
+                                <button type="button" class="btn-action-icon" title="Stoc în gestiune" onclick="ProStaff.openStock(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></button>
+                                <button type="button" class="btn-action-icon" title="Dezactivează" onclick="ProStaff.toggleActive(this)" data-cell="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg></button>
+                            </td>
+                        </tr>
+                                                <tr data-staff="s4"
+                            data-first="Cristian"
+                            data-last="Pană"
+                            data-phone="0722 100 204"
+                            data-warehouse="G-04"
+                            data-roles="Service"
+                            data-skills="gw,senzor,rep"
+                            data-status="teren"
+                            data-status-label="În teren"
+                            data-available="1"
+                            data-active="1">
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar" data-status="teren" data-cell="initials">CP</span>
+                                    <div>
+                                        <div class="pro-person-name" data-cell="name">Cristian Pană</div>
+                                        <div class="pro-person-meta" data-cell="meta">0722 100 204 · În teren</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pro-chips" data-cell="roles">
+                                    <span class="pro-chip pro-chip--dark">Service</span>                                </div>
+                            </td>
+                            <td>
+                                <div class="pro-chips" data-cell="skills">
+                                    <span class="pro-chip">Gateway</span><span class="pro-chip">Senzor</span><span class="pro-chip">Repartitor</span>                                </div>
+                            </td>
+                            <td class="td-code" data-cell="warehouse">G-04</td>
+                            <td style="text-align: center;" data-cell="iv">3</td>
+                            <td style="text-align: center;" data-cell="avail">
+                                                                    <span class="status-badge status-online">Disponibil</span>
+                                                            </td>
+                            <td data-cell="next">—</td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Editează roluri și competențe" onclick="ProStaff.openEdit(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
+                                <a href="pro-calendar.html?staff=s4" class="btn-action-icon" title="Calendar disponibilitate" data-cell="calendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
+                                <button type="button" class="btn-action-icon" title="Stoc în gestiune" onclick="ProStaff.openStock(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></button>
+                                <button type="button" class="btn-action-icon" title="Dezactivează" onclick="ProStaff.toggleActive(this)" data-cell="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg></button>
+                            </td>
+                        </tr>
+                                                <tr data-staff="s5"
+                            data-first="Andrei"
+                            data-last="Voicu"
+                            data-phone="0722 100 205"
+                            data-warehouse=""
+                            data-roles="Cititor"
+                            data-skills="apa,rep"
+                            data-status="indisponibil"
+                            data-status-label="Concediu"
+                            data-available="0"
+                            data-active="1">
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar" data-status="indisponibil" data-cell="initials">AV</span>
+                                    <div>
+                                        <div class="pro-person-name" data-cell="name">Andrei Voicu</div>
+                                        <div class="pro-person-meta" data-cell="meta">0722 100 205 · Concediu</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pro-chips" data-cell="roles">
+                                    <span class="pro-chip pro-chip--dark">Cititor</span>                                </div>
+                            </td>
+                            <td>
+                                <div class="pro-chips" data-cell="skills">
+                                    <span class="pro-chip">Contor apă</span><span class="pro-chip">Repartitor</span>                                </div>
+                            </td>
+                            <td class="td-code" data-cell="warehouse">—</td>
+                            <td style="text-align: center;" data-cell="iv">0</td>
+                            <td style="text-align: center;" data-cell="avail">
+                                                                    <span class="status-badge status-warning">Concediu</span>
+                                                            </td>
+                            <td data-cell="next">26.10 – 06.11 (Concediu)</td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Editează roluri și competențe" onclick="ProStaff.openEdit(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
+                                <a href="pro-calendar.html?staff=s5" class="btn-action-icon" title="Calendar disponibilitate" data-cell="calendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
+                                <button type="button" class="btn-action-icon" title="Stoc în gestiune" onclick="ProStaff.openStock(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></button>
+                                <button type="button" class="btn-action-icon" title="Dezactivează" onclick="ProStaff.toggleActive(this)" data-cell="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg></button>
+                            </td>
+                        </tr>
+                                                <tr data-staff="s6"
+                            data-first="Florin"
+                            data-last="Stoica"
+                            data-phone="0722 100 206"
+                            data-warehouse="G-06"
+                            data-roles="Montator,Service"
+                            data-skills="gw,apa"
+                            data-status="teren"
+                            data-status-label="În teren"
+                            data-available="1"
+                            data-active="1">
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar" data-status="teren" data-cell="initials">FS</span>
+                                    <div>
+                                        <div class="pro-person-name" data-cell="name">Florin Stoica</div>
+                                        <div class="pro-person-meta" data-cell="meta">0722 100 206 · În teren</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pro-chips" data-cell="roles">
+                                    <span class="pro-chip pro-chip--dark">Montator</span><span class="pro-chip pro-chip--dark">Service</span>                                </div>
+                            </td>
+                            <td>
+                                <div class="pro-chips" data-cell="skills">
+                                    <span class="pro-chip">Gateway</span><span class="pro-chip">Contor apă</span>                                </div>
+                            </td>
+                            <td class="td-code" data-cell="warehouse">G-06</td>
+                            <td style="text-align: center;" data-cell="iv">2</td>
+                            <td style="text-align: center;" data-cell="avail">
+                                                                    <span class="status-badge status-online">Disponibil</span>
+                                                            </td>
+                            <td data-cell="next">—</td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Editează roluri și competențe" onclick="ProStaff.openEdit(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
+                                <a href="pro-calendar.html?staff=s6" class="btn-action-icon" title="Calendar disponibilitate" data-cell="calendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
+                                <button type="button" class="btn-action-icon" title="Stoc în gestiune" onclick="ProStaff.openStock(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></button>
+                                <button type="button" class="btn-action-icon" title="Dezactivează" onclick="ProStaff.toggleActive(this)" data-cell="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg></button>
+                            </td>
+                        </tr>
+                                                <tr data-staff="s7"
+                            data-first="Daniel"
+                            data-last="Ene"
+                            data-phone="0722 100 207"
+                            data-warehouse="G-07"
+                            data-roles="Service"
+                            data-skills="et,apa"
+                            data-status="birou"
+                            data-status-label="La birou"
+                            data-available="1"
+                            data-active="1">
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar" data-status="birou" data-cell="initials">DE</span>
+                                    <div>
+                                        <div class="pro-person-name" data-cell="name">Daniel Ene</div>
+                                        <div class="pro-person-meta" data-cell="meta">0722 100 207 · La birou</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pro-chips" data-cell="roles">
+                                    <span class="pro-chip pro-chip--dark">Service</span>                                </div>
+                            </td>
+                            <td>
+                                <div class="pro-chips" data-cell="skills">
+                                    <span class="pro-chip">Contor energie termică</span><span class="pro-chip">Contor apă</span>                                </div>
+                            </td>
+                            <td class="td-code" data-cell="warehouse">G-07</td>
+                            <td style="text-align: center;" data-cell="iv">0</td>
+                            <td style="text-align: center;" data-cell="avail">
+                                                                    <span class="status-badge status-online">Disponibil</span>
+                                                            </td>
+                            <td data-cell="next">30.10 (Formare)</td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Editează roluri și competențe" onclick="ProStaff.openEdit(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
+                                <a href="pro-calendar.html?staff=s7" class="btn-action-icon" title="Calendar disponibilitate" data-cell="calendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
+                                <button type="button" class="btn-action-icon" title="Stoc în gestiune" onclick="ProStaff.openStock(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></button>
+                                <button type="button" class="btn-action-icon" title="Dezactivează" onclick="ProStaff.toggleActive(this)" data-cell="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg></button>
+                            </td>
+                        </tr>
+                                                <tr data-staff="s8"
+                            data-first="Radu"
+                            data-last="Marinescu"
+                            data-phone="0722 100 208"
+                            data-warehouse="G-08"
+                            data-roles="Cititor,Montator"
+                            data-skills="rep"
+                            data-status="teren"
+                            data-status-label="În teren"
+                            data-available="1"
+                            data-active="1">
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar" data-status="teren" data-cell="initials">RM</span>
+                                    <div>
+                                        <div class="pro-person-name" data-cell="name">Radu Marinescu</div>
+                                        <div class="pro-person-meta" data-cell="meta">0722 100 208 · În teren</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pro-chips" data-cell="roles">
+                                    <span class="pro-chip pro-chip--dark">Cititor</span><span class="pro-chip pro-chip--dark">Montator</span>                                </div>
+                            </td>
+                            <td>
+                                <div class="pro-chips" data-cell="skills">
+                                    <span class="pro-chip">Repartitor</span>                                </div>
+                            </td>
+                            <td class="td-code" data-cell="warehouse">G-08</td>
+                            <td style="text-align: center;" data-cell="iv">1</td>
+                            <td style="text-align: center;" data-cell="avail">
+                                                                    <span class="status-badge status-online">Disponibil</span>
+                                                            </td>
+                            <td data-cell="next">29.10 – 30.10 (Alte sarcini)</td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Editează roluri și competențe" onclick="ProStaff.openEdit(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
+                                <a href="pro-calendar.html?staff=s8" class="btn-action-icon" title="Calendar disponibilitate" data-cell="calendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
+                                <button type="button" class="btn-action-icon" title="Stoc în gestiune" onclick="ProStaff.openStock(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></button>
+                                <button type="button" class="btn-action-icon" title="Dezactivează" onclick="ProStaff.toggleActive(this)" data-cell="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg></button>
+                            </td>
+                        </tr>
+                        
+                        <tr id="noResultsRow" style="display: none;">
+                            <td colspan="8" class="table-empty">Nicio persoană găsită pentru criteriile alese.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-pagination">
+                <div class="pagination-info">
+                    Afișare <strong id="paginationStart">1</strong> - <strong id="paginationEnd">8</strong> din <strong id="paginationTotal">8</strong> înregistrări
+                </div>
+                <div class="pagination-controls">
+                    <button type="button" class="btn-secondary btn-page-nav" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        <span>Anterior</span>
+                    </button>
+                    <div class="pagination-pages">
+                        <button type="button" class="btn-secondary btn-page active">1</button>
+                    </div>
+                    <button type="button" class="btn-secondary btn-page-nav" disabled>
+                        <span>Următor</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ Modal Roluri și competențe ════════════════════════════════════
+             React: <StaffSkillsModal isOpen person={person} roles={roles} equipmentTypes={types} onSave={save} />
+        ═══════════════════════════════════════════════════════════════════ -->
+        <div class="modal-overlay" id="staffModal" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="staffModal-title">
+            <div class="modal-card" style="max-width: 640px; width: 95%;">
+                <div class="modal-header">
+                    <h3 id="staffModal-title">Roluri și competențe</h3>
+                    <button type="button" class="btn-close" title="Închide fereastra" data-modal-close>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="calc-alert calc-alert--danger" id="staffModalErrors" style="display:none;"></div>
+                    <input type="hidden" id="staffId" value="">
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label class="form-label" for="txtLastName">Nume <span class="required-star">*</span></label>
+                            <input type="text" id="txtLastName" class="input-control" maxlength="50">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="txtFirstName">Prenume <span class="required-star">*</span></label>
+                            <input type="text" id="txtFirstName" class="input-control" maxlength="50">
+                        </div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label class="form-label" for="txtPhone">Telefon</label>
+                            <input type="text" id="txtPhone" class="input-control" maxlength="20">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="txtWarehouse">Gestiune virtuală</label>
+                            <input type="text" id="txtWarehouse" class="input-control" maxlength="10">
+                        </div>
+                    </div>
+
+                    <div class="modal-section-title">Roluri <span class="required-star">*</span></div>
+                    <div class="pro-check-grid" id="roleChecks">
+                                                    <label class="pro-check-tile"><input type="checkbox" name="staffRole" value="Cititor"> Cititor</label>
+                                                    <label class="pro-check-tile"><input type="checkbox" name="staffRole" value="Montator"> Montator</label>
+                                                    <label class="pro-check-tile"><input type="checkbox" name="staffRole" value="Service"> Service</label>
+                                            </div>
+
+                    <div class="modal-section-title">Competențe – tipuri de echipamente</div>
+                    <div class="pro-check-grid" id="skillChecks">
+                                                    <label class="pro-check-tile"><input type="checkbox" name="staffSkill" value="apa"> Contor apă</label>
+                                                    <label class="pro-check-tile"><input type="checkbox" name="staffSkill" value="et"> Contor energie termică</label>
+                                                    <label class="pro-check-tile"><input type="checkbox" name="staffSkill" value="rep"> Repartitor</label>
+                                                    <label class="pro-check-tile"><input type="checkbox" name="staffSkill" value="gw"> Gateway</label>
+                                                    <label class="pro-check-tile"><input type="checkbox" name="staffSkill" value="senzor"> Senzor (fum / inundație / temperatură)</label>
+                                            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" data-modal-close>Renunță</button>
+                    <button type="button" class="btn-primary" id="btnSaveStaff" onclick="ProStaff.save()">Salvează</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ Modal Stoc în gestiune ════════════════════════════════════════
+             React: <WarehouseStockModal isOpen person={person} warehouse={code} items={stock} />
+        ═══════════════════════════════════════════════════════════════════ -->
+        <div class="modal-overlay" id="stockModal" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="stockModal-title">
+            <div class="modal-card" style="max-width: 620px; width: 95%;">
+                <div class="modal-header">
+                    <h3 id="stockModal-title">Stoc în gestiune</h3>
+                    <button type="button" class="btn-close" title="Închide fereastra" data-modal-close>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="utility-context-strip">
+                        <div class="context-items">
+                            <div class="context-item"><span class="context-label">Persoană:</span><strong class="context-value" id="stockPerson">—</strong></div>
+                            <div class="context-sep"></div>
+                            <div class="context-item"><span class="context-label">Gestiune:</span><strong class="context-value context-code" id="stockWarehouse">—</strong></div>
+                        </div>
+                        <div><span class="status-badge status-offline" id="stockTotal">0 produse</span></div>
+                    </div>
+                    <table class="modal-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 18%;">Cod</th>
+                                <th>Produs</th>
+                                <th style="width: 18%; text-align: right;">Cantitate</th>
+                                <th style="width: 12%;">UM</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stockTableBody"></tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" data-modal-close>Închide</button>
+                </div>
+            </div>
+        </div>
+
+<script>
+/* Echipe Teren – filtrare client-side, KPI-uri, modal roluri și competențe, stoc în gestiune, dezactivare.
+   În producție: GET/POST/PUT/PATCH /api/pro/staff, GET /api/pro/warehouses/{code}/stock. */
+const ProStaff = (function () {
+    const SKILLS = {"apa":"Contor apă","et":"Contor energie termică","rep":"Repartitor","gw":"Gateway","senzor":"Senzor"};
+    const STOCK = {"G-01":[{"code":"REP-30","name":"Repartitor E-ITN 30.4","qty":12,"unit":"buc"},{"code":"APA-AR","name":"Contor apă rece E-RM 30 AR","qty":4,"unit":"buc"},{"code":"APA-AC","name":"Contor apă caldă E-RM 30 AC","qty":3,"unit":"buc"},{"code":"SIG-01","name":"Sigilii","qty":80,"unit":"buc"}],"G-02":[{"code":"APA-AR","name":"Contor apă rece E-RM 30 AR","qty":6,"unit":"buc"},{"code":"APA-AC","name":"Contor apă caldă E-RM 30 AC","qty":6,"unit":"buc"},{"code":"ET-US","name":"Contor energie termică US","qty":2,"unit":"buc"},{"code":"SIG-01","name":"Sigilii","qty":60,"unit":"buc"}],"G-03":[{"code":"REP-30","name":"Repartitor E-ITN 30.4","qty":28,"unit":"buc"},{"code":"APA-AR","name":"Contor apă rece E-RM 30 AR","qty":8,"unit":"buc"},{"code":"APA-AC","name":"Contor apă caldă E-RM 30 AC","qty":8,"unit":"buc"},{"code":"SIG-01","name":"Sigilii","qty":150,"unit":"buc"}],"G-04":[{"code":"GW-LR","name":"Gateway LoRa \/ wM-Bus","qty":2,"unit":"buc"},{"code":"SZ-FL","name":"Senzor inundație","qty":5,"unit":"buc"},{"code":"REP-30","name":"Repartitor E-ITN 30.4","qty":6,"unit":"buc"},{"code":"SIG-01","name":"Sigilii","qty":40,"unit":"buc"}],"G-06":[{"code":"GW-LR","name":"Gateway LoRa \/ wM-Bus","qty":1,"unit":"buc"},{"code":"APA-AR","name":"Contor apă rece E-RM 30 AR","qty":5,"unit":"buc"},{"code":"APA-AC","name":"Contor apă caldă E-RM 30 AC","qty":4,"unit":"buc"},{"code":"SIG-01","name":"Sigilii","qty":50,"unit":"buc"}],"G-07":[{"code":"ET-US","name":"Contor energie termică US","qty":4,"unit":"buc"},{"code":"APA-AR","name":"Contor apă rece E-RM 30 AR","qty":3,"unit":"buc"},{"code":"APA-AC","name":"Contor apă caldă E-RM 30 AC","qty":3,"unit":"buc"},{"code":"SIG-01","name":"Sigilii","qty":30,"unit":"buc"}],"G-08":[{"code":"REP-30","name":"Repartitor E-ITN 30.4","qty":18,"unit":"buc"},{"code":"SIG-01","name":"Sigilii","qty":200,"unit":"buc"}]};
+    const ICON_OFF = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>';
+    const ICON_ON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>';
+
+    const tbody = document.getElementById('staffTableBody');
+    const noResults = document.getElementById('noResultsRow');
+    const modal = document.getElementById('staffModal');
+    const stockModal = document.getElementById('stockModal');
+    const errBox = document.getElementById('staffModalErrors');
+    let nextId = 100;
+
+    const rows = () => Array.from(tbody.querySelectorAll('tr[data-staff]'));
+    const norm = s => (s || '').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    const list = s => (s || '').split(',').filter(Boolean);
+
+    function initials(first, last) {
+        return ((first[0] || '') + (last[0] || '')).toUpperCase();
+    }
+
+    /* ── Filtrare ─────────────────────────────────────────── */
+    function applyFilters() {
+        const name = norm(document.getElementById('txtStaffName').value.trim());
+        const role = document.getElementById('ddlRole').value;
+        const skill = document.getElementById('ddlSkill').value;
+        const avail = document.getElementById('ddlAvailability').value;
+        const live = norm(document.getElementById('tableStaffSearch').value.trim());
+        let visible = 0;
+        rows().forEach(tr => {
+            const d = tr.dataset;
+            const full = norm(d.first + ' ' + d.last);
+            const isAvail = d.available === '1' && d.active === '1';
+            let ok = (!name || full.includes(name))
+                && (!role || list(d.roles).includes(role))
+                && (!skill || list(d.skills).includes(skill))
+                && (avail === '' || (avail === '1') === isAvail)
+                && (!live || norm(full + ' ' + d.phone + ' ' + d.warehouse).includes(live));
+            tr.style.display = ok ? '' : 'none';
+            if (ok) visible++;
+        });
+        noResults.style.display = visible ? 'none' : '';
+        document.getElementById('visibleCount').textContent = visible;
+        document.getElementById('paginationStart').textContent = visible ? 1 : 0;
+        document.getElementById('paginationEnd').textContent = visible;
+    }
+
+    /* ── KPI-uri ──────────────────────────────────────────── */
+    function updateKpis() {
+        const all = rows();
+        const active = all.filter(tr => tr.dataset.active === '1');
+        document.getElementById('kpiTotal').textContent = all.length;
+        document.getElementById('totalCount').textContent = all.length;
+        document.getElementById('paginationTotal').textContent = all.length;
+        document.getElementById('kpiActive').textContent = active.length;
+        document.getElementById('kpiField').textContent = active.filter(tr => tr.dataset.status === 'teren').length;
+        document.getElementById('kpiUnavail').textContent = active.filter(tr => tr.dataset.available !== '1').length;
+        let covered = 0, weakKey = null, weakCount = Infinity;
+        Object.keys(SKILLS).forEach(k => {
+            const n = active.filter(tr => list(tr.dataset.skills).includes(k)
+                && list(tr.dataset.roles).some(r => r === 'Montator' || r === 'Service')).length;
+            if (n > 0) covered++;
+            if (n < weakCount) { weakCount = n; weakKey = k; }
+        });
+        document.getElementById('kpiCovered').textContent = covered;
+        document.getElementById('kpiWeak').textContent = 'Atenție – ' + SKILLS[weakKey] + ': ' + weakCount + ' ' + (weakCount === 1 ? 'persoană' : 'persoane');
+    }
+
+    /* ── Rând: actualizare din date ───────────────────────── */
+    function chip(text, dark) {
+        const s = document.createElement('span');
+        s.className = 'pro-chip' + (dark ? ' pro-chip--dark' : '');
+        s.textContent = text;
+        return s;
+    }
+
+    function fillRow(tr, p) {
+        Object.assign(tr.dataset, {
+            first: p.first, last: p.last, phone: p.phone, warehouse: p.warehouse,
+            roles: p.roles.join(','), skills: p.skills.join(',')
+        });
+        const cell = n => tr.querySelector('[data-cell="' + n + '"]');
+        cell('initials').textContent = initials(p.first, p.last);
+        cell('name').textContent = p.first + ' ' + p.last;
+        cell('meta').textContent = (p.phone || '—') + ' · ' + tr.dataset.statusLabel;
+        const r = cell('roles'); r.innerHTML = ''; p.roles.forEach(x => r.appendChild(chip(x, true)));
+        const s = cell('skills'); s.innerHTML = ''; p.skills.forEach(x => s.appendChild(chip(SKILLS[x] || x, false)));
+        cell('warehouse').textContent = p.warehouse || '—';
+    }
+
+    /* ── Modal roluri și competențe ───────────────────────── */
+    function open(m) { m.style.display = 'flex'; }
+    function close(m) { m.style.display = 'none'; }
+
+    function openEdit(btn) {
+        const tr = btn ? btn.closest('tr') : null;
+        errBox.style.display = 'none';
+        document.getElementById('staffId').value = tr ? tr.dataset.staff : '';
+        document.getElementById('txtLastName').value = tr ? tr.dataset.last : '';
+        document.getElementById('txtFirstName').value = tr ? tr.dataset.first : '';
+        document.getElementById('txtPhone').value = tr ? tr.dataset.phone : '';
+        document.getElementById('txtWarehouse').value = tr ? tr.dataset.warehouse : '';
+        const roles = tr ? list(tr.dataset.roles) : [];
+        const skills = tr ? list(tr.dataset.skills) : [];
+        modal.querySelectorAll('input[name="staffRole"]').forEach(c => c.checked = roles.includes(c.value));
+        modal.querySelectorAll('input[name="staffSkill"]').forEach(c => c.checked = skills.includes(c.value));
+        open(modal);
+        document.getElementById('txtLastName').focus();
+    }
+
+    function save() {
+        const p = {
+            last: document.getElementById('txtLastName').value.trim(),
+            first: document.getElementById('txtFirstName').value.trim(),
+            phone: document.getElementById('txtPhone').value.trim(),
+            warehouse: document.getElementById('txtWarehouse').value.trim().toUpperCase(),
+            roles: Array.from(modal.querySelectorAll('input[name="staffRole"]:checked')).map(c => c.value),
+            skills: Array.from(modal.querySelectorAll('input[name="staffSkill"]:checked')).map(c => c.value)
+        };
+        const errors = [];
+        if (!p.last || !p.first) errors.push('Completați numele și prenumele.');
+        if (!p.roles.length) errors.push('Selectați cel puțin un rol.');
+        if ((p.roles.includes('Montator') || p.roles.includes('Service')) && !p.skills.length) {
+            errors.push('Selectați cel puțin o competență pentru rolurile Montator / Service.');
+        }
+        if (errors.length) {
+            errBox.innerHTML = errors.map(e => '<div>' + e + '</div>').join('');
+            errBox.style.display = 'block';
+            return;
+        }
+
+        const id = document.getElementById('staffId').value;
+        let tr = id ? tbody.querySelector('tr[data-staff="' + id + '"]') : null;
+        if (!tr) {
+            // Persoană nouă: se clonează structura unui rând existent (în producție: POST /api/pro/staff)
+            tr = rows()[0].cloneNode(true);
+            const newId = 'n' + (nextId++);
+            Object.assign(tr.dataset, { staff: newId, status: 'birou', statusLabel: 'La birou', available: '1', active: '1' });
+            tr.style.display = '';
+            tr.querySelector('[data-cell="initials"]').dataset.status = 'birou';
+            tr.querySelector('[data-cell="iv"]').textContent = '0';
+            tr.querySelector('[data-cell="avail"]').innerHTML = '<span class="status-badge status-online">Disponibil</span>';
+            tr.querySelector('[data-cell="next"]').textContent = '—';
+            tr.querySelector('[data-cell="calendar"]').href = 'pro-calendar.html?staff=' + newId;
+            const t = tr.querySelector('[data-cell="toggle"]');
+            t.innerHTML = ICON_OFF; t.title = 'Dezactivează';
+            tbody.insertBefore(tr, noResults);
+        }
+        fillRow(tr, p);
+        close(modal);
+        updateKpis();
+        applyFilters();
+    }
+
+    /* ── Stoc în gestiune ─────────────────────────────────── */
+    function openStock(btn) {
+        const tr = btn.closest('tr');
+        const wh = tr.dataset.warehouse;
+        const items = STOCK[wh] || [];
+        document.getElementById('stockPerson').textContent = tr.dataset.first + ' ' + tr.dataset.last;
+        document.getElementById('stockWarehouse').textContent = wh || '—';
+        document.getElementById('stockTotal').textContent = items.length + (items.length === 1 ? ' produs' : ' produse');
+        const body = document.getElementById('stockTableBody');
+        body.innerHTML = '';
+        if (!items.length) {
+            const row = body.insertRow();
+            const td = row.insertCell();
+            td.colSpan = 4;
+            td.className = 'table-empty';
+            td.textContent = wh ? 'Nu există produse în gestiunea ' + wh + '.' : 'Persoana nu are gestiune virtuală.';
+        }
+        items.forEach(it => {
+            const row = body.insertRow();
+            const c1 = row.insertCell(); c1.className = 'td-code'; c1.textContent = it.code;
+            const c2 = row.insertCell(); c2.className = 'td-name'; c2.textContent = it.name;
+            const c3 = row.insertCell(); c3.style.textAlign = 'right'; c3.textContent = it.qty.toLocaleString('ro-RO');
+            const c4 = row.insertCell(); c4.textContent = it.unit;
+        });
+        open(stockModal);
+    }
+
+    /* ── Dezactivare / activare (persoanele nu se șterg) ──── */
+    function toggleActive(btn) {
+        const tr = btn.closest('tr');
+        const name = tr.dataset.first + ' ' + tr.dataset.last;
+        const availCell = tr.querySelector('[data-cell="avail"]');
+        if (tr.dataset.active === '1') {
+            if (!confirm('Dezactivați persoana „' + name + '”? Nu va mai fi propusă la programarea intervențiilor.')) return;
+            tr.dataset.active = '0';
+            tr.dataset.availHtml = availCell.innerHTML;
+            availCell.innerHTML = '<span class="status-badge status-offline">Inactiv</span>';
+            btn.innerHTML = ICON_ON;
+            btn.title = 'Activează';
+        } else {
+            if (!confirm('Activați persoana „' + name + '”?')) return;
+            tr.dataset.active = '1';
+            availCell.innerHTML = tr.dataset.availHtml || '<span class="status-badge status-online">Disponibil</span>';
+            btn.innerHTML = ICON_OFF;
+            btn.title = 'Dezactivează';
+        }
+        updateKpis();
+        applyFilters();
+    }
+
+    /* ── Evenimente ───────────────────────────────────────── */
+    document.getElementById('filterForm').addEventListener('submit', e => { e.preventDefault(); applyFilters(); });
+    document.getElementById('tableStaffSearch').addEventListener('input', applyFilters);
+    [modal, stockModal].forEach(m => {
+        m.addEventListener('click', e => { if (e.target === m || e.target.closest('[data-modal-close]')) close(m); });
+    });
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') { close(modal); close(stockModal); }
+    });
+    applyFilters();
+
+    return { openEdit, save, openStock, toggleActive };
+})();
+</script>
+
+    </div><!-- /.content -->
+    <footer class="app-footer">
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
+    </footer>
+</div><!-- /.main -->
+
+<script src="assets/js/sidebar.js?v=1.0.1"></script>
+</body>
+</html>

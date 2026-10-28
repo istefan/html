@@ -532,9 +532,11 @@ body {
 
 /* ══════════════════════════════════════════════════════════════════════
    SIDEBAR TOOLTIP  (position:fixed – not clipped by sidebar overflow)
+   Același aspect pentru tooltip-ul butoanelor de acțiune (.action-tooltip, mai jos).
    React: replace with <Tooltip> portal (Floating UI / Radix)
    ============================================================ */
-.sidebar-tooltip {
+.sidebar-tooltip,
+.action-tooltip {
     position: fixed;
     z-index: 9999;
     background: #1e2330;
@@ -554,7 +556,8 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
 }
 
-.sidebar-tooltip.visible {
+.sidebar-tooltip.visible,
+.action-tooltip.visible {
     opacity: 1;
 }
 
@@ -567,6 +570,41 @@ body {
     transform: translateY(-50%);
     border: 5px solid transparent;
     border-right-color: #1e2330;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   ACTION TOOLTIP  (butoanele .btn-action-icon – tabele, filtre, modale)
+   Un singur element pe pagină, creat de assets/js/action-tooltip.js din
+   atributul title al butonului. Implicit deasupra butonului (săgeată în jos);
+   .is-below = sub buton când nu există spațiu sus. --tip-arrow-x mută săgeata
+   când tooltip-ul este împins înapoi în ecran la margini.
+   React: <Tooltip content={title}><IconButton … /></Tooltip>
+   ============================================================ */
+.action-tooltip {
+    z-index: 10060;              /* peste modale (9999) și datepicker (10050) */
+    transform: translate(-50%, -100%);
+    --tip-arrow-x: 0px;
+}
+
+.action-tooltip.is-below {
+    transform: translate(-50%, 0);
+}
+
+.action-tooltip::before {
+    content: '';
+    position: absolute;
+    left: calc(50% + var(--tip-arrow-x));
+    top: 100%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #1e2330;
+}
+
+.action-tooltip.is-below::before {
+    top: auto;
+    bottom: 100%;
+    border-top-color: transparent;
+    border-bottom-color: #1e2330;
 }
 
 /* ══════════════════════════════════════════════════════════════════════
@@ -1061,6 +1099,8 @@ body {
     font-size: 12px;
     color: var(--text-muted);
     font-weight: 400;
+    line-height: 1.4;
+    margin-top: 3px;
 }
 
 .list-value {
@@ -1160,9 +1200,10 @@ th {
     padding: 0 0 16px 0;
     border-bottom: 1px solid var(--border-color);
     color: var(--text-muted);
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 11.5px;
+    font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 0.4px;
 }
 
 td {
@@ -1970,6 +2011,41 @@ select.input-control {
     }
 }
 
+/* Grile echilibrate pentru caseta de filtrare – coloanele se aleg după numărul
+   de câmpuri (RULES §1.5, tabelul „Câte coloane”). Fără grid-template-columns inline. */
+.filter-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.filter-grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1200px) {
+    .filter-grid-5 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .filter-grid-5 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .filter-grid-2,
+    .filter-grid-5 {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 
 .filter-actions {
@@ -2256,10 +2332,11 @@ a.btn-secondary:active {
     background: #f8fafc;
     padding: 12px 14px;
     border-bottom: 1px solid var(--border-color);
-    font-size: 11px;
+    font-size: 11.5px;
     color: var(--text-muted);
     font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 0.4px;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -2311,6 +2388,113 @@ a.btn-secondary:active {
 .pagination-pages .btn-secondary.active:hover {
     background-color: var(--accent);
     border-color: var(--accent);
+}
+
+/* ── Pagini de listă – standard unic (model: parteneri.php) – RULES §1.5 ──
+   Toate paginile cu casetă de filtrare + listă folosesc DOAR aceste clase.
+   Nu se creează variante per pagină (ex: .xyz-count, .xyz-pager). */
+
+/* Caseta de filtrare */
+.filter-card {
+    margin-bottom: 24px;
+}
+
+.filter-card-head {
+    margin-bottom: 18px;
+}
+
+.filter-card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* Contor înregistrări din toolbar („Afișare X din Y înregistrări”) */
+.table-count {
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Wrapper scroll orizontal pentru tabel */
+.table-scroll {
+    overflow-x: auto;
+    width: 100%;
+}
+
+/* Celule standard */
+.td-code {
+    font-weight: 600;
+}
+
+.td-name {
+    font-weight: 500;
+}
+
+.td-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.td-link:hover {
+    text-decoration: underline;
+}
+
+.table-empty {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 32px;
+    font-style: italic;
+}
+
+td .status-badge {
+    padding: 4px 8px;
+    font-size: 11px;
+}
+
+/* Paginație („Afișare X - Y din Z înregistrări” + Anterior / pagini / Următor) */
+.pagination-info {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-secondary.btn-page-nav {
+    padding: 6px 12px;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-secondary.btn-page {
+    padding: 6px 12px;
+    font-size: 12px;
+    min-width: 34px;
+    justify-content: center;
+}
+
+.pagination-gap {
+    padding: 0 4px;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+/* Buton „Adaugă …” din page-title-container */
+.btn-secondary.btn-add {
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 10px 18px;
+}
+
+.btn-secondary.btn-add svg {
+    margin-right: 6px;
 }
 
 /* page-title flex settings when it contains actions */
@@ -2590,16 +2774,6 @@ a.btn-secondary:active {
 }
 
 /* ── Form Actions Row ────────────────────────────────────── */
-.form-actions-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 20px 28px;
-    border-top: 1px solid var(--border-color);
-    background: #f8fafc;
-    margin-top: 8px;
-}
-
 /* ── Partners Table (shared) ─────────────────────────────── */
 .partners-table {
     width: 100%;
@@ -2631,6 +2805,19 @@ a.btn-secondary:active {
 
 .partners-table tbody tr:hover td {
     background-color: #f9fafc;
+}
+
+/* Tabele de listă cu multe coloane (≥ 10 coloane, ex: consum-et-detaliat.php) –
+   aceeași tipografie standard (11.5px th / 13px td), padding orizontal compact
+   pentru ca toate coloanele să încapă fără trunchiere pe ecran */
+.partners-table.table-compact th {
+    padding: 10px 8px;
+    line-height: 1.25;
+}
+
+.partners-table.table-compact td {
+    padding: 10px 8px;
+    vertical-align: middle;
 }
 
 /* ── Flat (Apartamente) Filter Bar ──────────────────────── */
@@ -2836,11 +3023,20 @@ a.btn-secondary:active {
 .edit-actions-bar {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
     margin-top: 16px;
     padding-top: 0;
+}
+
+/* Grupul de butoane din dreapta barei (ex: Propagare stradă, Lista de apartamente, Salvează) */
+.edit-actions-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 /* ── Required Star ──────────────────────────────────────────────── */
@@ -3268,9 +3464,10 @@ a.btn-secondary:active {
 .services-mini-table th {
     background: #f8fafc;
     padding: 8px 12px;
-    font-size: 11px;
+    font-size: 11.5px;
     font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 0.4px;
     color: var(--text-muted);
     border-bottom: 1px solid var(--border-color);
     text-align: left;
@@ -3278,7 +3475,8 @@ a.btn-secondary:active {
 
 .services-mini-table td {
     padding: 8px 12px;
-    font-size: 12.5px;
+    font-size: 13px;
+    color: var(--text-main);
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -3354,17 +3552,87 @@ a.btn-secondary:active {
     margin-top: 0;
 }
 
+/* ── Casetă contextuală (NOD / Adresă / Perioadă / Proprietar) – standard unic, RULES §1.9 ──
+   <div class="utility-context-strip">
+       <div class="context-items">
+           <div class="context-item"><span class="context-label">NOD:</span><strong class="context-value context-code">81-001-0021</strong></div>
+           <div class="context-sep"></div>
+           <div class="context-item"><span class="context-label">Adresă:</span><span class="context-value">Str. …</span></div>
+       </div>
+       <div><span class="status-badge status-online">Utilitate Activă: Apă</span></div>
+   </div> */
 .utility-context-strip {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 12px;
-    background: var(--bg-hover);
+    background: var(--bg-sidebar);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 10px 14px;
     margin-bottom: 16px;
+}
+
+.context-items {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.context-item {
+    font-size: 13px;
+}
+
+.context-label {
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-right: 4px;
+}
+
+.context-label-block {
+    display: block;
+    margin: 0 0 2px 0;
+}
+
+.context-value {
+    color: var(--text-main);
+    font-size: 13px;
+    font-weight: 400;
+}
+
+strong.context-value,
+.context-code {
+    font-weight: 600;
+}
+
+.context-sep {
+    height: 14px;
+    width: 1px;
+    background: var(--border-color);
+}
+
+/* Variantă card cu grilă de câmpuri (ex: antet NOD în procesare-calcul.php) */
+.context-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 24px;
+}
+
+.context-meta {
+    margin-top: 6px;
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+    .context-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ── Spatii Comune ET (Tab CPET) ────────────────────────── */
@@ -3383,7 +3651,7 @@ a.btn-secondary:active {
     padding: 10px 12px;
     border-bottom: 1px solid var(--border-color);
     color: var(--text-muted);
-    font-size: 11px;
+    font-size: 11.5px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.4px;
@@ -3394,7 +3662,7 @@ a.btn-secondary:active {
 .cpet-table td {
     padding: 11px 12px;
     border-bottom: 1px solid var(--border-color);
-    font-size: 12.5px;
+    font-size: 13px;
     color: var(--text-main);
     vertical-align: middle;
 }
@@ -3407,34 +3675,19 @@ a.btn-secondary:active {
     background-color: #f9fafc;
 }
 
-.cpet-serial-badge {
+/* Serie echipament evidențiată – SINGURA excepție de la tipografia standard a tabelelor
+   (RULES §1.1, §3.4, §3.5): monospace, monocrom. Se folosește doar pentru serii. */
+.cpet-serial-badge,
+.serial-value {
     font-family: monospace;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
-    color: #b91c1c;
-    background: rgba(239, 68, 68, 0.08);
+    color: var(--text-main);
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
     padding: 2px 7px;
     border-radius: 4px;
     display: inline-block;
-}
-
-.cpet-bool-indicator {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-}
-
-.cpet-bool-indicator.yes {
-    color: #059669;
-    background: rgba(16, 185, 129, 0.12);
-}
-
-.cpet-bool-indicator.no {
-    color: var(--text-muted);
-    opacity: 0.35;
 }
 
 /* ── Date citire Apa (Tab Water Reading) ────────────────── */
@@ -3574,6 +3827,12 @@ a.btn-secondary:active {
     font-variant-numeric: tabular-nums;
 }
 
+.flat-table-input[readonly] {
+    background-color: var(--bg-main);
+    color: var(--text-muted);
+    cursor: default;
+}
+
 .flat-table-select {
     font-size: 12px;
     padding: 4px 8px;
@@ -3631,9 +3890,9 @@ a.btn-secondary:active {
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    padding: 3px 8px;
+    padding: 4px 8px;
     border-radius: 4px;
-    font-size: 11.5px;
+    font-size: 11px;
     font-weight: 500;
     background: #f1f5f9;
     color: #334155;
@@ -3644,9 +3903,9 @@ a.btn-secondary:active {
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    padding: 3px 8px;
+    padding: 4px 8px;
     border-radius: 4px;
-    font-size: 11.5px;
+    font-size: 11px;
     font-weight: 500;
     background: #f8fafc;
     color: #1e293b;
@@ -4158,4 +4417,1702 @@ a.btn-secondary:active {
 
 .sonic-module-card:hover .sonic-module-card__link {
     gap: 10px;
+}
+
+
+/* ============================================
+   Procesare Calcul – Progress Stepper
+   ============================================ */
+.calc-progress-stepper {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+}
+
+.calc-step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.calc-step__indicator {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.calc-step--done .calc-step__indicator {
+    background: var(--accent);
+    color: #fff;
+}
+
+.calc-step--current .calc-step__indicator {
+    background: #fff;
+    border: 2.5px solid var(--accent);
+    color: var(--accent);
+}
+
+.calc-step--pending .calc-step__indicator {
+    background: var(--bg-main);
+    border: 2px solid var(--border-color);
+    color: var(--text-muted);
+}
+
+.calc-step__pulse {
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: calcStepPulse 2s infinite;
+}
+
+@keyframes calcStepPulse {
+    0% { box-shadow: 0 0 0 0 rgba(45, 55, 72, 0.4); }
+    70% { box-shadow: 0 0 0 8px rgba(45, 55, 72, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(45, 55, 72, 0); }
+}
+
+.calc-step__number {
+    font-size: 12px;
+}
+
+.calc-step__label {
+    font-size: 12.5px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.calc-step--done .calc-step__label {
+    color: var(--text-main);
+}
+
+.calc-step--current .calc-step__label {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.calc-step--pending .calc-step__label {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.calc-step__connector {
+    flex: 1;
+    height: 2px;
+    min-width: 24px;
+    margin: 0 6px;
+}
+
+.calc-step__connector--done {
+    background: var(--accent);
+}
+
+.calc-step__connector--current {
+    background: linear-gradient(to right, var(--accent), var(--border-color));
+}
+
+.calc-step__connector--pending {
+    background: var(--border-color);
+}
+
+
+/* ============================================
+   Procesare Calcul – Timeline (Jurnal)
+   ============================================ */
+.calc-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    padding-left: 28px;
+}
+
+.calc-timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: var(--border-color);
+}
+
+.calc-timeline__item {
+    position: relative;
+    padding: 10px 0 10px 12px;
+}
+
+.calc-timeline__dot {
+    position: absolute;
+    left: -24px;
+    top: 14px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-color);
+    border: 2px solid #fff;
+    z-index: 1;
+}
+
+.calc-timeline__dot--latest {
+    background: var(--accent);
+    width: 12px;
+    height: 12px;
+    left: -25px;
+    top: 13px;
+}
+
+.calc-timeline__content {
+    padding: 10px 14px;
+    background: var(--bg-main);
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.calc-timeline__content:hover {
+    background: #e8eaee;
+}
+
+/* ==========================================================================
+   Lista Apartamente ET & Citire ET (lista-apartamente-et.php, citire-et.php)
+   ========================================================================== */
+.apt-reading-modal-card {
+    max-width: 760px;
+    width: 95%;
+}
+
+.apt-reading-input {
+    width: 100px;
+    text-align: right;
+    font-family: monospace;
+    font-weight: 600;
+    padding: 6px 8px;
+}
+
+/* Bară navigare între apartamente (btnFirst, btnPrev, btnNext, btnLast) */
+.apt-nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.apt-nav-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.apt-nav-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: var(--bg-sidebar);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.apt-nav-indicator strong {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.apt-info-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px 20px;
+    padding: 12px 16px;
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 18px;
+}
+
+.apt-info-strip .apt-info-address {
+    grid-column: span 3;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border-color);
+}
+
+@media (max-width: 768px) {
+    .apt-info-strip {
+        grid-template-columns: 1fr;
+    }
+    .apt-info-strip .apt-info-address {
+        grid-column: span 1;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DATEPICKER – standard unic pentru toate câmpurile de dată
+   (assets/js/datepicker.js, RULES §1.10)
+   ═══════════════════════════════════════════════════════════ */
+input[data-datepicker] {
+    padding-right: 36px;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23697386' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'/%3E%3Cline x1='16' y1='2' x2='16' y2='6'/%3E%3Cline x1='8' y1='2' x2='8' y2='6'/%3E%3Cline x1='3' y1='10' x2='21' y2='10'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 15px 15px;
+}
+
+input[data-datepicker][readonly],
+input[data-datepicker]:disabled {
+    background-image: none;
+    padding-right: 14px;
+}
+
+input[data-datepicker].water-date-input {
+    width: 112px;
+    padding-right: 24px;
+    background-position: right 7px center;
+    background-size: 12px 12px;
+}
+
+input[data-datepicker].is-invalid {
+    border-color: var(--red);
+}
+
+.datepicker {
+    position: fixed;
+    z-index: 10050;
+    width: 280px;
+    padding: 12px;
+    background: var(--bg-sidebar);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 12px 32px rgba(26, 31, 54, 0.14), 0 2px 6px rgba(26, 31, 54, 0.06);
+    font-family: var(--font-family);
+    font-size: 13px;
+    color: var(--text-main);
+    user-select: none;
+}
+
+.datepicker[hidden] {
+    display: none;
+}
+
+.datepicker.is-open {
+    animation: dpFadeIn 0.12s ease-out;
+}
+
+@keyframes dpFadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: none; }
+}
+
+.dp-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.dp-title,
+.dp-nav,
+.dp-cell,
+.dp-link {
+    border: 0;
+    background: none;
+    font-family: inherit;
+    color: var(--text-main);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.dp-title {
+    padding: 6px 10px;
+    font-size: 13.5px;
+    font-weight: 600;
+}
+
+.dp-title.is-static {
+    cursor: default;
+}
+
+.dp-nav {
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+}
+
+.dp-title:not(.is-static):hover,
+.dp-nav:hover,
+.dp-cell:hover,
+.dp-link:hover {
+    background: var(--bg-main);
+    color: var(--text-main);
+}
+
+.dp-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.dp-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+}
+
+.dp-weekday {
+    padding: 4px 0 6px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.dp-cell {
+    height: 34px;
+    font-size: 13px;
+}
+
+.dp-grid-3 .dp-cell {
+    height: 44px;
+}
+
+.dp-cell.is-out {
+    color: var(--text-muted);
+    opacity: 0.55;
+}
+
+.dp-cell.is-today {
+    box-shadow: inset 0 0 0 1px var(--accent);
+    font-weight: 600;
+}
+
+.dp-cell.is-selected,
+.dp-cell.is-selected:hover {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    opacity: 1;
+}
+
+.dp-title:focus-visible,
+.dp-nav:focus-visible,
+.dp-cell:focus-visible,
+.dp-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+}
+
+.dp-foot {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
+}
+
+.dp-link {
+    padding: 5px 10px;
+    font-size: 12.5px;
+    font-weight: 600;
+}
+
+.dp-link-muted {
+    color: var(--text-muted);
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   RAPOARTE – catalog cu căutare live (rapoarte.php)
+   Dale clicabile monocrome; .report-search lărgește căutarea din toolbar.
+   React: <ReportsCatalog> → <SearchInput /> + <ReportTile />
+   ============================================================ */
+.live-search-wrapper.report-search {
+    width: 420px;
+}
+
+.report-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+}
+
+.report-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background: var(--bg-sidebar);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.report-item:hover,
+.report-item:focus-visible {
+    border-color: var(--accent);
+    background: var(--bg-main);
+    box-shadow: 0 2px 8px rgba(26, 31, 54, 0.06);
+    outline: none;
+}
+
+.report-item-icon {
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+}
+
+.report-item-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.report-item:hover .report-item-icon,
+.report-item:focus-visible .report-item-icon {
+    color: var(--accent);
+    background: var(--bg-sidebar);
+}
+
+.report-item-body {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.report-item-name {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--text-main);
+    overflow-wrap: anywhere;
+}
+
+.report-item-tag {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+}
+
+.report-item-chevron {
+    flex: 0 0 14px;
+    width: 14px;
+    height: 14px;
+    color: var(--text-muted);
+    transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.report-item:hover .report-item-chevron {
+    color: var(--accent);
+    transform: translateX(2px);
+}
+
+.report-mark {
+    background: rgba(45, 55, 72, 0.14);
+    color: inherit;
+    border-radius: 3px;
+    padding: 0 1px;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .live-search-wrapper.report-search {
+        width: 100%;
+    }
+    .report-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   PROCES DE CALCUL – asistent pe pași (procesare-calcul.php),
+   inițiere (initiere-calcul.php), monitorizare (monitorizare-calcul.php),
+   note de calcul (gestiune-nod-edit.php → tab Note calcul)
+   Culorile semantice apar DOAR ca indicatori discreți (pastel), RULES §1.1.
+   React: <CalcWizard steps={steps} current={step} /> + <CalcKpiGrid /> + <ProgressBar />
+   ============================================================ */
+
+/* Stepper clicabil (extinde .calc-progress-stepper) */
+.calc-stepper-card {
+    padding: 18px 22px;
+    margin-bottom: 20px;
+}
+
+.calc-progress-stepper > .calc-step-wrap {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.calc-progress-stepper > .calc-step-wrap:last-child {
+    flex: 0 0 auto;
+}
+
+.calc-progress-stepper .calc-step__connector {
+    flex: 1 1 auto;
+}
+
+button.calc-step {
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    cursor: default;
+}
+
+button.calc-step.is-clickable {
+    cursor: pointer;
+}
+
+button.calc-step.is-clickable:hover .calc-step__label {
+    text-decoration: underline;
+}
+
+/* Antetul unui pas */
+.calc-step-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.calc-step-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0 0 4px;
+}
+
+.calc-step-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0;
+    max-width: 760px;
+}
+
+.calc-step-counter {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+/* Mesaje (informare / blocaj / succes) */
+.calc-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-main);
+    font-size: 13px;
+    color: var(--text-main);
+    margin-bottom: 14px;
+}
+
+.calc-alert svg {
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    margin-top: 1px;
+    color: var(--text-muted);
+}
+
+.calc-alert--warning { background: #fffbeb; border-color: #fde68a; }
+.calc-alert--warning svg { color: var(--orange); }
+.calc-alert--danger { background: #fef2f2; border-color: #fecaca; }
+.calc-alert--danger svg { color: var(--red); }
+.calc-alert--success { background: #ecfdf5; border-color: #a7f3d0; }
+.calc-alert--success svg { color: var(--green); }
+
+/* KPI-uri compacte */
+.calc-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.calc-kpi {
+    background: var(--bg-sidebar);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 14px;
+}
+
+.calc-kpi-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.calc-kpi-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.15;
+}
+
+.calc-kpi-unit {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+/* Bară de progres */
+.progress-bar {
+    width: 100%;
+    min-width: 80px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.progress-bar__fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 999px;
+}
+
+.progress-label {
+    display: block;
+    font-size: 11.5px;
+    color: var(--text-muted);
+    margin-top: 3px;
+}
+
+/* Legendă culori */
+.calc-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-bottom: 14px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.calc-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.calc-legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    border: 1px solid var(--border-color);
+}
+
+.calc-legend-dot--unread { background: #fde68a; border-color: #f59e0b; }
+.calc-legend-dot--negative { background: #fecaca; border-color: #ef4444; }
+.calc-legend-dot--exaggerated { background: #fed7aa; border-color: #f97316; }
+.calc-legend-dot--zero { background: #bfdbfe; border-color: #3b82f6; }
+.calc-legend-dot--ok { background: #a7f3d0; border-color: #10b981; }
+
+/* Rânduri evidențiate (necitite / plauzibilitate) */
+.partners-table tr.row-unread td { background: #fffbeb; }
+.partners-table tr.row-unread td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
+.partners-table tr.row-negative td { background: #fef2f2; }
+.partners-table tr.row-negative td:first-child { box-shadow: inset 3px 0 0 #ef4444; }
+.partners-table tr.row-exaggerated td { background: #fff7ed; }
+.partners-table tr.row-exaggerated td:first-child { box-shadow: inset 3px 0 0 #f97316; }
+.partners-table tr.row-zero td { background: #eff6ff; }
+.partners-table tr.row-zero td:first-child { box-shadow: inset 3px 0 0 #3b82f6; }
+.partners-table tr.row-resolved td { background: var(--bg-sidebar); }
+.partners-table tr.row-resolved td:first-child { box-shadow: inset 3px 0 0 #10b981; }
+.partners-table tr.is-clickable { cursor: pointer; }
+
+/* Note de calcul (pasul 1 din procesare) */
+.calc-note-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.calc-note {
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--orange);
+    border-radius: 8px;
+    padding: 14px 16px;
+    background: var(--bg-sidebar);
+}
+
+.calc-note.is-resolved {
+    border-left-color: var(--green);
+}
+
+.calc-note-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+}
+
+.calc-note-title {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.calc-note-text {
+    font-size: 13px;
+    color: var(--text-main);
+    margin: 0 0 6px;
+    line-height: 1.45;
+}
+
+.calc-note-meta {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.calc-note-resolution {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border-color);
+}
+
+/* Linie de verificare (pasul Calcul & verificare) */
+.calc-check-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 13px;
+    color: var(--text-main);
+}
+
+.calc-check-row:last-child {
+    border-bottom: 0;
+}
+
+.calc-check-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+/* Navigare între pași: explicația de ce nu se poate continua */
+.calc-next-hint {
+    font-size: 12.5px;
+    color: var(--text-muted);
+}
+
+.calc-actions-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+    .calc-kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .calc-note-resolution { grid-template-columns: 1fr; }
+    .calc-step-head { flex-direction: column; gap: 6px; }
+    .calc-progress-stepper .calc-step__label { display: none; }
+    .calc-progress-stepper .calc-step__connector { min-width: 10px; margin: 0 3px; }
+}
+
+/* Butoane dezactivate (ex. „Pasul următor” când pasul nu este complet) */
+.btn-primary:disabled,
+.btn-secondary:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+
+/* ==========================================================================
+   SONIC PRO – dispecerat, echipe teren, programări, hartă (Leaflet), stocuri
+   Folosit de: pro-dashboard, pro-programare, interventii, pro-calendar, pro-echipe,
+   pro-solicitari, pro-harta, pro-probleme-retea, pro-montaje, pro-baza-cunostinte.
+   KPI-urile refolosesc .calc-kpi-grid / .calc-kpi; barele refolosesc .progress-bar;
+   filtrele rapide refolosesc .water-filter-pill.
+   ========================================================================== */
+
+/* Panou de dashboard (card cu antet uppercase + acțiune în dreapta) */
+.card.pro-panel { padding: 18px 20px; margin-bottom: 20px; }
+.pro-panel .edit-section-header { margin-bottom: 14px; gap: 12px; }
+.pro-panel-link {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+}
+.pro-panel-link:hover { color: var(--text-main); }
+.pro-panel-link svg { width: 12px; height: 12px; }
+.pro-panel-flush { margin: 0 -20px -18px; }
+.pro-panel-flush .partners-table th:first-child,
+.pro-panel-flush .partners-table td:first-child { padding-left: 20px; }
+
+/* Grile de dashboard */
+.pro-grid-2-1 { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 20px; }
+.pro-grid-1-1 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.pro-grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.pro-stack > .card.pro-panel:last-child { margin-bottom: 0; }
+
+/* Bandă „centru de comandă” – antetul dashboard-ului */
+.pro-command {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 2fr);
+    gap: 24px;
+    align-items: center;
+    background: linear-gradient(135deg, #1a1f36 0%, #2d3748 100%);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.pro-command::after {
+    content: "";
+    position: absolute;
+    right: -60px;
+    top: -60px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 40px rgba(255, 255, 255, 0.02), 0 0 0 80px rgba(255, 255, 255, 0.015);
+    pointer-events: none;
+}
+.pro-command-clock { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.pro-command-date { font-size: 13px; color: rgba(255, 255, 255, 0.7); margin-top: 2px; }
+.pro-command-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 8px;
+}
+.pro-live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #34d399;
+    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.6);
+    animation: proLivePulse 2s infinite;
+}
+@keyframes proLivePulse {
+    0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.55); }
+    70% { box-shadow: 0 0 0 8px rgba(52, 211, 153, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+}
+.pro-command-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; position: relative; z-index: 1; }
+.pro-command-stat {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 10px 12px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: background 0.15s;
+}
+a.pro-command-stat:hover { background: rgba(255, 255, 255, 0.11); }
+.pro-command-stat-label { display: block; font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255, 255, 255, 0.6); }
+.pro-command-stat-value { display: block; font-size: 22px; font-weight: 700; margin-top: 2px; font-variant-numeric: tabular-nums; }
+.pro-command-stat-meta { display: block; font-size: 11.5px; color: rgba(255, 255, 255, 0.6); margin-top: 1px; }
+.pro-command-actions { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; position: relative; z-index: 1; }
+.pro-command .btn-primary, .pro-command .btn-primary:hover { background: #ffffff; color: var(--text-main) !important; border-color: #ffffff; }
+.pro-command .btn-primary:hover { background: #e4e7eb; }
+.pro-command .btn-secondary { background: transparent; color: #ffffff; border-color: rgba(255, 255, 255, 0.35); }
+.pro-command .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); }
+
+/* KPI – detaliu sub valoare */
+.pro-kpi-meta { display: block; font-size: 11.5px; color: var(--text-muted); margin-top: 2px; }
+
+/* Avatar (inițiale) */
+.pro-avatar {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    border-radius: 50%;
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    font-size: 11px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.pro-avatar--sm { width: 24px; height: 24px; flex-basis: 24px; font-size: 10px; }
+.pro-avatar[data-status]::after {
+    content: "";
+    position: absolute;
+    right: -1px;
+    bottom: -1px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    background: #9ca3af;
+}
+.pro-avatar[data-status="teren"]::after { background: var(--green); }
+.pro-avatar[data-status="birou"]::after { background: var(--accent); }
+.pro-avatar-stack { display: inline-flex; }
+.pro-avatar-stack .pro-avatar + .pro-avatar { margin-left: -8px; box-shadow: 0 0 0 2px #ffffff; }
+.pro-person { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.pro-person-name { font-size: 13px; font-weight: 600; color: var(--text-main); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pro-person-meta { font-size: 11.5px; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Etichete (roluri, competențe, canale) */
+.pro-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-main);
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    white-space: nowrap;
+}
+.pro-chip svg { width: 12px; height: 12px; color: var(--text-muted); }
+.pro-chip--dark { background: var(--accent); border-color: var(--accent); color: #ffffff; }
+.pro-chip--dark svg { color: #ffffff; }
+.pro-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+
+/* Bife de competențe (modal echipe / programare) */
+.pro-check-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.pro-check-tile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--text-main);
+    cursor: pointer;
+    background: #ffffff;
+    transition: border-color 0.15s, background 0.15s;
+}
+.pro-check-tile:hover { border-color: var(--text-muted); }
+.pro-check-tile:has(input:checked) { border-color: var(--accent); background: var(--bg-main); font-weight: 600; }
+.pro-check-tile input { accent-color: var(--accent); }
+
+/* ── Hartă (Leaflet) ───────────────────────────────────────── */
+.pro-map {
+    width: 100%;
+    height: 420px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-main);
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+.pro-map--sm { height: 300px; }
+.pro-map--tall { height: calc(100vh - 250px); min-height: 460px; }
+.pro-map-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+.pro-map .leaflet-tile-pane { filter: grayscale(1) contrast(0.92) brightness(1.06); }
+.pro-map .leaflet-control-attribution { font-size: 10px; }
+.pro-map .leaflet-popup-content-wrapper { border-radius: 8px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12); }
+.pro-map .leaflet-popup-content { margin: 12px 14px; font-family: 'Inter', sans-serif; font-size: 12.5px; color: var(--text-main); line-height: 1.45; }
+.pro-map-popup-title { font-weight: 600; font-size: 13px; margin-bottom: 2px; }
+.pro-map-popup-meta { color: var(--text-muted); font-size: 12px; }
+.pro-map-popup-actions { margin-top: 8px; display: flex; gap: 6px; }
+.pro-map-popup-actions a { font-size: 12px; font-weight: 600; color: var(--text-main); }
+
+.pro-pin {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid var(--accent);
+    color: var(--text-main);
+    font: 700 10.5px/26px 'Inter', sans-serif;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(26, 31, 54, 0.25);
+}
+.pro-pin--staff-off { border-style: dashed; border-color: #9ca3af; color: var(--text-muted); }
+.pro-pin--job {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 1px var(--accent), 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.pro-pin--job.is-done { background: #9ca3af; box-shadow: 0 0 0 1px #9ca3af; }
+.pro-pin--job.is-progress { background: var(--orange); box-shadow: 0 0 0 1px var(--orange); }
+.pro-pin--job.is-failed { background: var(--red); box-shadow: 0 0 0 1px var(--red); }
+.pro-pin--alert {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    transform: rotate(45deg);
+    background: var(--red);
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.5);
+    animation: proAlertPulse 1.8s infinite;
+}
+@keyframes proAlertPulse {
+    0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.5); }
+    70% { box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+.pro-pin--target {
+    width: 22px;
+    height: 22px;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    background: var(--text-main);
+    border: 3px solid #ffffff;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+}
+.pro-pin--nod { width: 10px; height: 10px; border-radius: 50%; background: #ffffff; border: 2px solid var(--text-muted); }
+
+.pro-map-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 10px; font-size: 12px; color: var(--text-muted); }
+.pro-map-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.pro-legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; background: var(--accent); }
+.pro-legend-dot--ring { background: #ffffff; border: 2px solid var(--accent); }
+.pro-legend-dot--progress { background: var(--orange); }
+.pro-legend-dot--done { background: #9ca3af; }
+.pro-legend-dot--failed { background: var(--red); }
+.pro-legend-dot--alert { border-radius: 2px; transform: rotate(45deg); background: var(--red); width: 9px; height: 9px; }
+
+/* Layout hartă + panou lateral (pro-harta) */
+.pro-map-layout { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 16px; }
+.pro-map-side { display: flex; flex-direction: column; gap: 12px; max-height: calc(100vh - 250px); min-height: 460px; overflow-y: auto; }
+.pro-layer-toggle { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 13px; color: var(--text-main); padding: 6px 0; cursor: pointer; }
+.pro-layer-toggle input { accent-color: var(--accent); }
+
+/* ── Plan zilnic pe echipe (Gantt) ─────────────────────────── */
+.pro-gantt { --pro-gantt-left: 190px; overflow-x: auto; }
+.pro-gantt-inner { min-width: 760px; }
+.pro-gantt-hours, .pro-gantt-row { display: grid; grid-template-columns: var(--pro-gantt-left) minmax(0, 1fr); align-items: center; }
+.pro-gantt-hours { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; padding-bottom: 6px; border-bottom: 1px solid var(--border-color); }
+.pro-gantt-scale { display: grid; grid-template-columns: repeat(10, 1fr); }
+.pro-gantt-row { border-bottom: 1px solid var(--border-color); min-height: 46px; }
+.pro-gantt-row:last-child { border-bottom: none; }
+.pro-gantt-person { padding: 7px 10px 7px 0; }
+.pro-gantt-track {
+    position: relative;
+    height: 46px;
+    background-image: repeating-linear-gradient(to right, transparent 0, transparent calc(10% - 1px), var(--border-color) calc(10% - 1px), var(--border-color) 10%);
+}
+.pro-gantt-track.is-off {
+    background-image: repeating-linear-gradient(-45deg, var(--bg-main) 0, var(--bg-main) 6px, #ffffff 6px, #ffffff 12px);
+}
+.pro-gantt-off-label { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-size: 12px; color: var(--text-muted); font-style: italic; }
+.pro-gantt-block {
+    position: absolute;
+    top: 7px;
+    bottom: 7px;
+    border-radius: 6px;
+    background: var(--accent);
+    color: #ffffff;
+    padding: 3px 8px;
+    font-size: 11px;
+    line-height: 1.25;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    border: 1px solid var(--accent);
+    text-decoration: none;
+    transition: transform 0.12s, box-shadow 0.12s;
+}
+.pro-gantt-block:hover { transform: translateY(-1px); box-shadow: 0 4px 10px rgba(26, 31, 54, 0.25); z-index: 2; }
+.pro-gantt-block strong { display: block; font-weight: 600; overflow: hidden; text-overflow: ellipsis; }
+.pro-gantt-block--done { background: #e4e7eb; border-color: #d1d5db; color: var(--text-muted); }
+.pro-gantt-block--progress { background: #ffffff; color: var(--text-main); border: 2px solid var(--accent); }
+.pro-gantt-block--failed { background: #fde8e8; border-color: #f8b4b4; color: #9b1c1c; }
+.pro-gantt-block--urgent { box-shadow: inset 3px 0 0 var(--red); }
+.pro-gantt-now { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--red); z-index: 3; pointer-events: none; }
+.pro-gantt-now::before { content: ""; position: absolute; top: 0; left: -3px; width: 8px; height: 8px; border-radius: 50%; background: var(--red); }
+
+/* ── Flux de evenimente (alerte, solicitări, activitate) ───── */
+.pro-feed { list-style: none; margin: 0; padding: 0; }
+.pro-feed-item { display: flex; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--border-color); align-items: flex-start; }
+.pro-feed-item:first-child { padding-top: 0; }
+.pro-feed-item:last-child { border-bottom: none; padding-bottom: 0; }
+.pro-feed-icon {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    border-radius: 8px;
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.pro-feed-icon svg { width: 15px; height: 15px; }
+.pro-feed-icon--alert { background: #fde8e8; border-color: #f8b4b4; color: #9b1c1c; }
+.pro-feed-icon--warn { background: #fef3c7; border-color: #fcd34d; color: #92400e; }
+.pro-feed-body { flex: 1; min-width: 0; }
+.pro-feed-title { font-size: 13px; font-weight: 600; color: var(--text-main); }
+.pro-feed-text { font-size: 12.5px; color: var(--text-main); margin-top: 1px; }
+.pro-feed-meta { font-size: 11.5px; color: var(--text-muted); margin-top: 2px; }
+.pro-feed-actions { display: flex; gap: 2px; flex: 0 0 auto; }
+
+/* Canal solicitare */
+.pro-channel { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--text-muted); white-space: nowrap; }
+.pro-channel svg { width: 14px; height: 14px; }
+
+/* Mini grafic cu bare (săptămână) */
+.pro-bars { display: flex; align-items: flex-end; gap: 8px; height: 120px; padding-top: 8px; }
+.pro-bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; height: 100%; justify-content: flex-end; }
+.pro-bar { width: 100%; max-width: 34px; border-radius: 5px 5px 2px 2px; background: var(--accent); min-height: 3px; position: relative; }
+.pro-bar--muted { background: #d1d5db; }
+.pro-bar-value { font-size: 11px; font-weight: 600; color: var(--text-main); }
+.pro-bar-label { font-size: 11px; color: var(--text-muted); }
+.pro-bar-col.is-today .pro-bar-label { color: var(--text-main); font-weight: 700; }
+
+/* Stocuri: bara necesar / disponibil */
+.pro-stock-row { display: grid; grid-template-columns: minmax(0, 1fr) 120px; gap: 4px 12px; padding: 9px 0; border-bottom: 1px solid var(--border-color); align-items: center; }
+.pro-stock-row:last-child { border-bottom: none; }
+.pro-stock-name { font-size: 13px; font-weight: 500; color: var(--text-main); }
+.pro-stock-nums { font-size: 12px; color: var(--text-muted); text-align: right; white-space: nowrap; }
+.pro-stock-row .progress-bar { grid-column: 1 / -1; }
+.progress-bar__fill.is-low { background: var(--orange); }
+.progress-bar__fill.is-out { background: var(--red); }
+
+/* Inel de procent (ex. gateway-uri online) */
+.pro-ring {
+    --pct: 0;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    background: conic-gradient(var(--accent) calc(var(--pct) * 1%), var(--border-color) 0);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 92px;
+}
+.pro-ring-inner { width: 72px; height: 72px; border-radius: 50%; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.pro-ring-value { font-size: 18px; font-weight: 700; color: var(--text-main); line-height: 1; }
+.pro-ring-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 3px; }
+.pro-ring-row { display: flex; align-items: center; gap: 18px; }
+.pro-ring-stats { display: grid; gap: 6px; font-size: 12.5px; color: var(--text-main); }
+.pro-ring-stats span { color: var(--text-muted); }
+
+/* ── Programare: pași, recomandări, rezumat ─────────────────── */
+.pro-steps { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.pro-step {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--text-muted);
+    padding: 6px 12px 6px 6px;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    background: #ffffff;
+}
+.pro-step-num { width: 22px; height: 22px; border-radius: 50%; background: var(--bg-main); border: 1px solid var(--border-color); display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; }
+.pro-step.is-active { color: var(--text-main); border-color: var(--accent); }
+.pro-step.is-active .pro-step-num, .pro-step.is-done .pro-step-num { background: var(--accent); border-color: var(--accent); color: #ffffff; }
+.pro-step.is-done { color: var(--text-main); }
+
+.pro-search-big { position: relative; }
+.pro-search-big .input-control { height: 46px; font-size: 15px; padding-left: 44px; }
+.pro-search-big > svg { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--text-muted); pointer-events: none; }
+.pro-suggest {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 4px);
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    z-index: 30;
+    max-height: 320px;
+    overflow-y: auto;
+    display: none;
+}
+.pro-suggest.is-open { display: block; }
+.pro-suggest-item { display: flex; gap: 12px; align-items: center; width: 100%; text-align: left; padding: 10px 14px; border: none; background: transparent; cursor: pointer; border-bottom: 1px solid var(--border-color); font-family: inherit; }
+.pro-suggest-item:last-child { border-bottom: none; }
+.pro-suggest-item:hover, .pro-suggest-item.is-focus { background: var(--bg-main); }
+.pro-suggest-main { font-size: 13px; color: var(--text-main); font-weight: 500; }
+.pro-suggest-sub { font-size: 12px; color: var(--text-muted); }
+.pro-suggest-empty { padding: 14px; font-size: 13px; color: var(--text-muted); font-style: italic; }
+mark.pro-hl { background: #fef3c7; color: inherit; padding: 0 1px; border-radius: 2px; }
+
+.pro-slot-list { display: grid; gap: 10px; }
+.pro-slot {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr) auto;
+    gap: 14px;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    padding: 12px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: #ffffff;
+    cursor: pointer;
+    font-family: inherit;
+    transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+.pro-slot:hover { border-color: var(--text-muted); }
+.pro-slot.is-selected { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); background: #fafbfc; }
+.pro-slot-rank { width: 38px; height: 38px; border-radius: 10px; background: var(--bg-main); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: var(--text-main); }
+.pro-slot.is-selected .pro-slot-rank { background: var(--accent); border-color: var(--accent); color: #ffffff; }
+.pro-slot-when { font-size: 14px; font-weight: 600; color: var(--text-main); }
+.pro-slot-meta { font-size: 12px; color: var(--text-muted); margin-top: 2px; display: flex; flex-wrap: wrap; gap: 4px 12px; }
+.pro-slot-meta span { display: inline-flex; align-items: center; gap: 4px; }
+.pro-slot-meta svg { width: 12px; height: 12px; }
+.pro-slot-side { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.pro-slot-warning { grid-column: 2 / -1; font-size: 12px; color: #92400e; background: #fef3c7; border: 1px solid #fcd34d; border-radius: 6px; padding: 6px 10px; }
+.pro-best-tag { font-size: 10.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-main); }
+
+.pro-summary { display: grid; gap: 10px; }
+.pro-summary-row { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; padding-bottom: 8px; border-bottom: 1px dashed var(--border-color); }
+.pro-summary-row:last-child { border-bottom: none; padding-bottom: 0; }
+.pro-summary-row span:first-child { color: var(--text-muted); }
+.pro-summary-row span:last-child { color: var(--text-main); font-weight: 600; text-align: right; }
+
+.pro-sms-preview {
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 14px 14px 14px 4px;
+    padding: 10px 12px;
+    font-size: 12.5px;
+    color: var(--text-main);
+    line-height: 1.45;
+}
+
+/* Garanție (în programare / echipamente) */
+.pro-warranty { display: flex; gap: 10px; align-items: center; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border-color); background: #ffffff; font-size: 12.5px; }
+.pro-warranty svg { width: 18px; height: 18px; flex: 0 0 18px; color: var(--text-muted); }
+.pro-warranty strong { display: block; font-size: 13px; color: var(--text-main); }
+
+/* ── Kanban (montaje, solicitări) ─────────────────────────── */
+.pro-board { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.pro-board-col { background: var(--bg-main); border: 1px solid var(--border-color); border-radius: 10px; padding: 12px; min-height: 160px; }
+.pro-board-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); }
+.pro-board-count { font-size: 11px; font-weight: 700; color: var(--text-main); background: #ffffff; border: 1px solid var(--border-color); border-radius: 999px; padding: 1px 8px; }
+.pro-board-card { background: #ffffff; border: 1px solid var(--border-color); border-radius: 8px; padding: 12px; margin-bottom: 10px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03); }
+.pro-board-card:last-child { margin-bottom: 0; }
+.pro-board-card-title { font-size: 13px; font-weight: 600; color: var(--text-main); }
+.pro-board-card-meta { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+.pro-board-card-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; gap: 8px; }
+
+/* ── Calendar disponibilitate ─────────────────────────────── */
+.pro-cal-scroll { overflow-x: auto; }
+.pro-cal-table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 980px; }
+.pro-cal-table th {
+    font-size: 11.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 8px 6px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    background: #ffffff;
+    white-space: nowrap;
+}
+.pro-cal-table th:first-child, .pro-cal-table td:first-child { text-align: left; position: sticky; left: 0; background: #ffffff; z-index: 1; min-width: 200px; padding-left: 0; }
+.pro-cal-table th small { display: block; font-size: 13px; font-weight: 700; color: var(--text-main); text-transform: none; }
+.pro-cal-table th.is-today small { background: var(--accent); color: #ffffff; border-radius: 6px; display: inline-block; padding: 0 7px; }
+.pro-cal-table td { border-bottom: 1px solid var(--border-color); border-left: 1px solid var(--border-color); padding: 4px; vertical-align: top; height: 58px; font-size: 13px; color: var(--text-main); }
+.pro-cal-table td.is-weekend, .pro-cal-table th.is-weekend { background: #fafbfc; }
+.pro-cal-cell { display: flex; flex-direction: column; gap: 3px; min-height: 48px; cursor: pointer; border-radius: 6px; padding: 2px; }
+.pro-cal-cell:hover { background: var(--bg-main); }
+.pro-cal-job { display: block; font-size: 10.5px; line-height: 1.3; padding: 2px 5px; border-radius: 4px; background: var(--accent); color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pro-cal-job.is-done { background: #e4e7eb; color: var(--text-muted); }
+.pro-cal-job.is-failed { background: #fde8e8; color: #9b1c1c; }
+.pro-cal-off {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    background-image: repeating-linear-gradient(-45deg, var(--bg-main) 0, var(--bg-main) 5px, #ffffff 5px, #ffffff 10px);
+    border: 1px dashed var(--border-color);
+}
+.pro-cal-free { font-size: 11px; color: #9ca3af; }
+.pro-cal-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: var(--text-muted); margin-top: 12px; }
+.pro-cal-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.pro-cal-swatch { width: 14px; height: 10px; border-radius: 3px; background: var(--accent); display: inline-block; }
+.pro-cal-swatch--done { background: #e4e7eb; }
+.pro-cal-swatch--failed { background: #fde8e8; border: 1px solid #f8b4b4; }
+.pro-cal-swatch--off { background-image: repeating-linear-gradient(-45deg, var(--bg-main) 0, var(--bg-main) 3px, #ffffff 3px, #ffffff 6px); border: 1px dashed #c4c9d0; }
+.pro-cal-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+.pro-cal-range { font-size: 14px; font-weight: 600; color: var(--text-main); }
+.pro-btn-group { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+
+/* ── Solicitări omnicanal (inbox + detaliu + răspuns AI) ─────── */
+.pro-inbox { display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 16px; align-items: start; }
+.pro-inbox-list { background: #ffffff; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; }
+.pro-inbox-tools { padding: 12px; border-bottom: 1px solid var(--border-color); display: grid; gap: 10px; }
+.pro-inbox-items { max-height: calc(100vh - 330px); min-height: 420px; overflow-y: auto; }
+.pro-inbox-item { display: block; width: 100%; text-align: left; padding: 12px 14px; border: none; border-bottom: 1px solid var(--border-color); background: #ffffff; cursor: pointer; font-family: inherit; position: relative; }
+.pro-inbox-item:hover { background: #fafbfc; }
+.pro-inbox-item.is-active { background: var(--bg-main); box-shadow: inset 3px 0 0 var(--accent); }
+.pro-inbox-item.is-unread .pro-inbox-subject { font-weight: 700; }
+.pro-inbox-top { display: flex; justify-content: space-between; align-items: center; gap: 6px 8px; flex-wrap: wrap; }
+.pro-inbox-subject { font-size: 13px; font-weight: 500; color: var(--text-main); margin-top: 4px; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+.pro-inbox-meta { font-size: 11.5px; color: var(--text-muted); margin-top: 3px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.pro-inbox-time { font-size: 11.5px; color: var(--text-muted); white-space: nowrap; }
+.pro-inbox-detail .card { padding: 20px; }
+.pro-message {
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--text-main);
+}
+.pro-ai-box { border: 1px solid var(--accent); border-radius: 10px; overflow: hidden; margin-top: 16px; }
+.pro-ai-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 14px; background: var(--accent); color: #ffffff; font-size: 12.5px; font-weight: 600; }
+.pro-ai-head svg { width: 15px; height: 15px; }
+.pro-ai-head span { display: inline-flex; align-items: center; gap: 8px; }
+.pro-ai-body { padding: 14px; }
+.pro-ai-body textarea.input-control { min-height: 220px; line-height: 1.55; font-size: 13px; resize: vertical; }
+.pro-ai-sources { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; align-items: center; font-size: 12px; color: var(--text-muted); }
+.pro-ai-typing { display: inline-flex; gap: 4px; align-items: center; font-size: 12.5px; color: var(--text-muted); padding: 8px 0; }
+.pro-ai-typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--text-muted); animation: proTyping 1.2s infinite; }
+.pro-ai-typing i:nth-child(2) { animation-delay: 0.15s; }
+.pro-ai-typing i:nth-child(3) { animation-delay: 0.3s; }
+@keyframes proTyping { 0%, 80%, 100% { opacity: 0.25; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-3px); } }
+.pro-detail-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 14px 0; }
+
+/* ── Notificare urgentă („cine ajunge primul”) ─────────────── */
+.pro-eta-list { display: grid; gap: 8px; }
+.pro-eta-item { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 12px; align-items: center; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 8px; }
+.pro-eta-item.is-accepted { border-color: var(--green); background: #f0fdf4; }
+.pro-eta-km { font-size: 12px; color: var(--text-muted); white-space: nowrap; text-align: right; }
+.pro-eta-km strong { display: block; font-size: 14px; color: var(--text-main); }
+
+/* Încărcare documente (baza de cunoștințe) */
+.pro-dropzone {
+    border: 2px dashed var(--border-color);
+    border-radius: 10px;
+    padding: 26px 20px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    background: #fafbfc;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+}
+.pro-dropzone:hover, .pro-dropzone.is-over { border-color: var(--accent); background: var(--bg-main); }
+.pro-dropzone svg { width: 28px; height: 28px; margin-bottom: 6px; color: var(--text-muted); }
+.pro-dropzone strong { color: var(--text-main); }
+
+@media (max-width: 1200px) {
+    .pro-command { grid-template-columns: minmax(0, 1fr); }
+    .pro-grid-2-1, .pro-grid-3 { grid-template-columns: minmax(0, 1fr); }
+    .pro-board { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .pro-inbox { grid-template-columns: 320px minmax(0, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .pro-command { padding: 16px; }
+    .pro-command-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .pro-grid-1-1 { grid-template-columns: minmax(0, 1fr); }
+    .pro-board { grid-template-columns: minmax(0, 1fr); }
+    .pro-map { height: 320px; }
+    .pro-map--tall { height: 420px; min-height: 0; }
+    .pro-map-layout { grid-template-columns: minmax(0, 1fr); }
+    .pro-map-side { max-height: none; min-height: 0; }
+    .pro-inbox { grid-template-columns: minmax(0, 1fr); }
+    .pro-inbox-items { max-height: 360px; min-height: 0; }
+    .pro-slot { grid-template-columns: 32px minmax(0, 1fr); }
+    .pro-slot-side { grid-column: 2; align-items: flex-start; text-align: left; }
+    .pro-slot-warning { grid-column: 1 / -1; }
+    .pro-detail-grid { grid-template-columns: 1fr; }
+    .pro-check-grid { grid-template-columns: 1fr; }
+    .pro-eta-item { grid-template-columns: minmax(0, 1fr) auto; }
+    .pro-gantt { --pro-gantt-left: 140px; }
+}
+
+/* SONIC PRO – completări (detaliu solicitare, selector ton AI) */
+.pro-detail-title { font-size: 16px; font-weight: 600; color: var(--text-main); margin: 10px 0 4px; line-height: 1.35; }
+.pro-ai-head .input-control { width: auto; height: 30px; padding: 2px 8px; font-size: 12px; }
+.pro-warranty > div > span:not(.pro-chips) { display: block; color: var(--text-muted); }
+.pro-warranty .pro-chips { margin-top: 4px; }
+.pro-cal-table tr.is-highlight td, .pro-cal-table tr.is-highlight td:first-child { background: #f7f8fa; }
+.pro-cal-table tr.is-highlight .pro-person-name { text-decoration: underline; text-underline-offset: 3px; }
+.pro-map-side .pro-feed-item { align-items: center; }
+
+
+/* ==========================================================================
+   DASHBOARD-URI LIVE – hartă întunecată cu rețeaua de gateway-uri (sonic-live-net.js)
+   Folosit de: sonic-dashboard, panoul-meu (GRID), market-dashboard, index (BILLING), fin-dashboard.
+   Componentele de sub hartă refolosesc .card.pro-panel, .pro-feed, .pro-bars, .pro-ring, .pro-stock-row,
+   .calc-kpi-* (componente generale de dashboard, definite în secțiunile SONIC PRO / PROCES DE CALCUL).
+   ========================================================================== */
+.live-hero {
+    position: relative;
+    height: 460px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0b0f1e;
+    color: #ffffff;
+    margin-bottom: 20px;
+    isolation: isolate;
+}
+.live-net { background: #0b0f1e; }
+.live-hero .live-net { position: absolute; inset: 0; }
+.live-net .leaflet-tile-pane { filter: grayscale(1) invert(1) brightness(0.72) contrast(1.15); }
+.live-net.leaflet-container { background: #0b0f1e; font-family: 'Inter', sans-serif; }
+.live-net .leaflet-control-attribution { background: rgba(11, 15, 30, 0.7); color: rgba(255, 255, 255, 0.55); font-size: 10px; }
+.live-net .leaflet-control-attribution a { color: rgba(255, 255, 255, 0.75); }
+.live-net .leaflet-control-zoom a { background: rgba(11, 15, 30, 0.85); color: #ffffff; border-color: rgba(255, 255, 255, 0.15); }
+.live-net .leaflet-control-zoom a:hover { background: rgba(45, 55, 72, 0.95); }
+.live-net--offline { background: radial-gradient(circle at 60% 50%, #182038 0%, #0b0f1e 70%); }
+.live-net-canvas { position: absolute; inset: 0; z-index: 450; pointer-events: none; }
+.live-net-tip { background: rgba(11, 15, 30, 0.92); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 6px; font-size: 11.5px; box-shadow: none; }
+.live-net-tip::before { display: none; }
+
+/* HQ – serverul SONIC */
+.live-hq { position: relative; width: 18px; height: 18px; }
+.live-hq b { position: absolute; inset: 4px; border-radius: 50%; background: #ffffff; box-shadow: 0 0 14px 4px rgba(255, 255, 255, 0.55); }
+.live-hq span { position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.7); animation: liveHqRing 2.4s infinite ease-out; }
+.live-hq span + span { animation-delay: 1.2s; }
+@keyframes liveHqRing { 0% { transform: scale(1); opacity: 0.9; } 100% { transform: scale(4.2); opacity: 0; } }
+
+/* Straturile peste hartă */
+.live-hero-shade {
+    position: absolute;
+    inset: 0;
+    z-index: 460;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg, rgba(11, 15, 30, 0.94) 0%, rgba(11, 15, 30, 0.72) 32%, rgba(11, 15, 30, 0) 60%),
+        linear-gradient(0deg, rgba(11, 15, 30, 0.7) 0%, rgba(11, 15, 30, 0) 30%);
+}
+.live-hero-content {
+    position: absolute;
+    z-index: 470;
+    left: 28px;
+    top: 24px;
+    bottom: 24px;
+    width: min(440px, calc(100% - 56px));
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+}
+.live-hero-content a, .live-hero-content button { pointer-events: auto; }
+.live-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255, 255, 255, 0.7); }
+.live-title { font-size: 26px; font-weight: 700; line-height: 1.2; letter-spacing: -0.3px; margin: 10px 0 8px; color: #ffffff; }
+.live-subtitle { font-size: 13.5px; line-height: 1.55; color: rgba(255, 255, 255, 0.72); margin: 0; }
+.live-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.live-hero .btn-primary, .live-hero .btn-primary:hover { background: #ffffff; color: var(--text-main) !important; border-color: #ffffff; }
+.live-hero .btn-secondary { background: rgba(255, 255, 255, 0.06); color: #ffffff; border-color: rgba(255, 255, 255, 0.3); }
+.live-hero .btn-secondary:hover { background: rgba(255, 255, 255, 0.14); border-color: rgba(255, 255, 255, 0.45); }
+.live-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: auto; }
+.live-stat { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 10px 12px; backdrop-filter: blur(6px); }
+.live-stat-label { display: block; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255, 255, 255, 0.58); }
+.live-stat-value { display: block; font-size: 21px; font-weight: 700; margin-top: 2px; font-variant-numeric: tabular-nums; color: #ffffff; white-space: nowrap; }
+.live-stat-value small { font-size: 12px; font-weight: 500; color: rgba(255, 255, 255, 0.6); }
+.live-stat-meta { display: block; font-size: 11px; color: rgba(255, 255, 255, 0.55); margin-top: 1px; }
+.live-corner {
+    position: absolute;
+    z-index: 470;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(11, 15, 30, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    font-variant-numeric: tabular-nums;
+    backdrop-filter: blur(6px);
+}
+.live-corner strong { color: #ffffff; font-weight: 600; }
+.live-ticker { position: absolute; z-index: 470; right: 16px; bottom: 26px; width: 310px; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; pointer-events: none; }
+.live-ticker-item {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    padding: 7px 10px;
+    border-radius: 8px;
+    background: rgba(11, 15, 30, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(6px);
+    animation: liveTickerIn 0.35s ease-out;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.live-ticker-item:nth-child(n+4) { opacity: 0.6; }
+.live-ticker-item b { color: #ffffff; font-weight: 600; }
+.live-ticker-item time { color: rgba(255, 255, 255, 0.45); font-size: 11px; flex: 0 0 auto; }
+.live-ticker-item.is-alert { border-color: rgba(248, 113, 113, 0.5); }
+.live-ticker-item.is-alert b { color: #fca5a5; }
+@keyframes liveTickerIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* Carduri sumar (cifră mare + link) */
+.dash-stat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-bottom: 20px; }
+.dash-stat {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+a.dash-stat:hover { border-color: var(--text-muted); box-shadow: 0 6px 16px rgba(26, 31, 54, 0.06); transform: translateY(-1px); text-decoration: none; }
+.dash-stat-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.dash-stat-icon { width: 34px; height: 34px; border-radius: 8px; background: var(--bg-main); border: 1px solid var(--border-color); display: inline-flex; align-items: center; justify-content: center; color: var(--text-main); }
+.dash-stat-icon svg { width: 16px; height: 16px; }
+.dash-stat-value { font-size: 26px; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.dash-stat-label { font-size: 13px; color: var(--text-muted); }
+.dash-stat-link { font-size: 12.5px; font-weight: 500; color: var(--text-main); margin-top: 8px; display: inline-flex; align-items: center; gap: 4px; }
+.dash-stat-link svg { width: 12px; height: 12px; }
+
+/* Funcționalități (dale) și locații active – SONIC GRID */
+.dash-features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 14px 0; }
+.dash-feature { background: var(--bg-main); border-radius: 8px; padding: 14px; }
+.dash-feature-title { display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--text-main); margin: 0 0 4px; }
+.dash-feature-title svg { width: 16px; height: 16px; color: var(--text-main); }
+.dash-feature p { font-size: 12.5px; line-height: 1.5; color: var(--text-muted); margin: 0; }
+.dash-text { font-size: 13.5px; line-height: 1.55; color: var(--text-muted); margin: 0; }
+.dash-text strong, .dash-text a { color: var(--text-main); }
+.dash-location-title { display: flex; gap: 8px; align-items: flex-start; font-size: 14px; font-weight: 600; line-height: 1.4; color: var(--text-main); margin: 0 0 6px; }
+.dash-location-title svg { width: 16px; height: 16px; flex: 0 0 16px; margin-top: 2px; }
+.dash-location .btn-secondary { width: 100%; justify-content: center; margin-top: 12px; }
+
+/* Ghid interactiv */
+.dash-tour {
+    position: fixed;
+    z-index: 3000;
+    width: 320px;
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(11, 15, 30, 0.25);
+    padding: 16px 18px;
+    display: none;
+}
+.dash-tour.is-open { display: block; }
+.dash-tour-step { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
+.dash-tour-title { font-size: 15px; font-weight: 600; color: var(--text-main); margin: 4px 0 6px; }
+.dash-tour-text { font-size: 13px; line-height: 1.5; color: var(--text-muted); margin: 0 0 14px; }
+.dash-tour-actions { display: flex; justify-content: space-between; gap: 8px; }
+.is-tour-focus { position: relative; z-index: 2999; box-shadow: 0 0 0 3px #ffffff, 0 0 0 6px var(--accent), 0 0 0 9999px rgba(11, 15, 30, 0.45) !important; border-radius: 10px; }
+
+/* Flux pe etape (cerculețe legate) */
+.dash-flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin: 4px 0 6px; }
+.dash-flow-step { position: relative; text-align: center; padding: 0 6px; text-decoration: none; color: var(--text-main); }
+.dash-flow-step::before { content: ""; position: absolute; top: 21px; left: -50%; width: 100%; height: 2px; background: var(--border-color); z-index: 0; }
+.dash-flow-step:first-child::before { display: none; }
+.dash-flow-num { position: relative; z-index: 1; width: 44px; height: 44px; border-radius: 50%; margin: 0 auto 8px; background: #ffffff; border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; transition: transform 0.15s; }
+a.dash-flow-step:hover .dash-flow-num { transform: scale(1.06); }
+.dash-flow-step.is-done .dash-flow-num { background: var(--accent); color: #ffffff; }
+.dash-flow-label { display: block; font-size: 12px; font-weight: 600; color: var(--text-main); }
+.dash-flow-meta { display: block; font-size: 11.5px; color: var(--text-muted); }
+
+@media (max-width: 1200px) {
+    .dash-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .live-ticker { display: none; }
+}
+@media (max-width: 768px) {
+    .live-hero { height: 560px; }
+    .live-hero-shade { background: linear-gradient(0deg, rgba(11, 15, 30, 0.95) 0%, rgba(11, 15, 30, 0.78) 55%, rgba(11, 15, 30, 0.35) 100%); }
+    .live-hero-content { left: 16px; width: calc(100% - 32px); top: 18px; bottom: 18px; }
+    .live-title { font-size: 21px; }
+    .live-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .live-corner { display: none; }
+    .dash-stat-grid, .dash-features { grid-template-columns: minmax(0, 1fr); }
+    .dash-flow { grid-template-columns: repeat(5, minmax(64px, 1fr)); overflow-x: auto; padding-bottom: 4px; }
+    .dash-tour { left: 16px !important; width: calc(100% - 32px); bottom: 16px; top: auto !important; }
+}
+.live-actions svg { width: 16px; height: 16px; }
+.live-hero--tall { height: 520px; }
+.dash-flow-num--wide { width: auto; min-width: 56px; padding: 0 12px; border-radius: 22px; display: inline-flex; }
+.dash-bar-pair { display: flex; align-items: flex-end; justify-content: center; gap: 3px; width: 100%; height: 100%; }
+.dash-bar-pair .pro-bar { max-width: 18px; }
+.progress-bar__fill.is-ok { background: var(--accent); }
+@media (max-width: 768px) { .live-hero--tall { height: 580px; } }
+.pro-bar-col { min-width: 0; }
+.pro-bar-label, .pro-bar-value { white-space: nowrap; }
+@media (max-width: 768px) {
+    .pro-bars--dense { gap: 3px; }
+    .pro-bars--dense .pro-bar-value, .pro-bars--dense .pro-bar-col:nth-child(even) .pro-bar-label { visibility: hidden; }
+    .pro-bars--dense .pro-bar-col.is-today .pro-bar-value, .pro-bars--dense .pro-bar-col.is-today .pro-bar-label { visibility: visible; }
+    .pro-bars--dense .pro-bar-label { font-size: 10px; }
 }

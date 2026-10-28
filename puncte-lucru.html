@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Puncte de Lucru – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Puncte de Lucru – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
 </head>
 <body>
 
@@ -179,7 +182,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +190,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +327,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +569,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-billing-logo.svg" alt="SONIC BILLING" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Puncte de Lucru</div>
 
             <!-- User profile avatar (always visible) -->
@@ -633,7 +678,7 @@
             React: <PageTitleContainer
                 title="Puncte de Lucru"
                 subtitle="Vizualizează, filtrează și administrează punctele de lucru din sistem."
-                addButton={{ label: 'Adaugă Punct de Lucru', href: 'puncte-lucru-edit.php' }}
+                addButton={{ label: 'Adaugă Punct de Lucru', href: 'puncte-lucru-edit.html' }}
             />
         -->
         <div class="page-title-container">
@@ -641,8 +686,8 @@
                 <h1>Puncte de Lucru</h1>
                 <p>Vizualizează, filtrează și administrează punctele de lucru înregistrate în sistem.</p>
             </div>
-            <a href="puncte-lucru-edit.html" class="btn-secondary" style="border-color: var(--accent); color: var(--accent); font-weight: 600; padding: 10px 18px;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="margin-right: 6px;"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <a href="puncte-lucru-edit.html" class="btn-secondary btn-add">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                 <span>Adaugă Punct de Lucru</span>
             </a>
         </div>
@@ -658,12 +703,12 @@
                 onReset={handleReset}
             />
         -->
-        <div class="card" style="margin-bottom: 24px;">
-            <div style="margin-bottom: 18px;">
-                <span class="chart-title" style="font-size: 14px; font-weight: 600;">Filtrare Avansată</span>
+        <div class="card filter-card">
+            <div class="filter-card-head">
+                <span class="filter-card-title">Filtrare Avansată</span>
             </div>
             <form method="GET" action="puncte-lucru.html" id="filterForm">
-                <div class="filter-grid">
+                <div class="filter-grid-3">
                     <!-- Denumire -->
                     <div class="form-group">
                         <label class="form-label" for="txtBranchName">Denumire</label>
@@ -763,7 +808,7 @@
         <div class="table-container">
             <div class="table-toolbar">
                 <div class="table-toolbar-left">
-                    <span style="color: var(--text-muted); font-size: 13px; font-weight: 500;">
+                    <span class="table-count">
                         Afișare <strong id="visibleCount">21</strong> din <strong>21</strong> înregistrări
                     </span>
                 </div>
@@ -777,7 +822,7 @@
                 </div>
             </div>
 
-            <div style="overflow-x: auto; width: 100%;">
+            <div class="table-scroll">
                 <!--
                     React: <table> → map(branches, (branch, idx) =>
                         <BranchRow key={branch.name} branch={branch} index={idx} />
@@ -795,13 +840,13 @@
                     </thead>
                     <tbody id="branchesTableBody">
                                                 <tr data-name="aaaaa">
-                            <td style="font-weight: 600;">aaaaa</td>
+                            <td class="td-code">aaaaa</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(99, 102, 241, 0.08); color: #6366f1; border: 1px solid rgba(99, 102, 241, 0.18); border-radius: 6px;">Departament de calcul</span>
+                                                                    <span class="status-badge status-offline">Departament de calcul</span>
                                                             </td>
                             <td>Bucuresti</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=aaaaa" class="btn-action-icon" title="Editează punct de lucru">
@@ -810,13 +855,13 @@
                             </td>
                         </tr>
                                                 <tr data-name="capital">
-                            <td style="font-weight: 600;">Capital</td>
+                            <td class="td-code">Capital</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(16, 185, 129, 0.08); color: #059669; border: 1px solid rgba(16, 185, 129, 0.18); border-radius: 6px;">Punct de lucru</span>
+                                                                    <span class="status-badge status-offline">Punct de lucru</span>
                                                             </td>
                             <td>Bucuresti_</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=Capital" class="btn-action-icon" title="Editează punct de lucru">
@@ -825,13 +870,13 @@
                             </td>
                         </tr>
                                                 <tr data-name="check">
-                            <td style="font-weight: 600;">Check</td>
+                            <td class="td-code">Check</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(16, 185, 129, 0.08); color: #059669; border: 1px solid rgba(16, 185, 129, 0.18); border-radius: 6px;">Punct de lucru</span>
+                                                                    <span class="status-badge status-offline">Punct de lucru</span>
                                                             </td>
                             <td>Tulcea</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=Check" class="btn-action-icon" title="Editează punct de lucru">
@@ -840,13 +885,13 @@
                             </td>
                         </tr>
                                                 <tr data-name="dc bucuresti">
-                            <td style="font-weight: 600;">DC Bucuresti</td>
+                            <td class="td-code">DC Bucuresti</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(99, 102, 241, 0.08); color: #6366f1; border: 1px solid rgba(99, 102, 241, 0.18); border-radius: 6px;">Departament de calcul</span>
+                                                                    <span class="status-badge status-offline">Departament de calcul</span>
                                                             </td>
                             <td>Bucuresti</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=DC+Bucuresti" class="btn-action-icon" title="Editează punct de lucru">
@@ -855,13 +900,13 @@
                             </td>
                         </tr>
                                                 <tr data-name="deservcom">
-                            <td style="font-weight: 600;">Deservcom</td>
+                            <td class="td-code">Deservcom</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(16, 185, 129, 0.08); color: #059669; border: 1px solid rgba(16, 185, 129, 0.18); border-radius: 6px;">Punct de lucru</span>
+                                                                    <span class="status-badge status-offline">Punct de lucru</span>
                                                             </td>
                             <td>Târgu Mures</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=Deservcom" class="btn-action-icon" title="Editează punct de lucru">
@@ -870,13 +915,13 @@
                             </td>
                         </tr>
                                                 <tr data-name="deservcom3">
-                            <td style="font-weight: 600;">Deservcom3</td>
+                            <td class="td-code">Deservcom3</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(16, 185, 129, 0.08); color: #059669; border: 1px solid rgba(16, 185, 129, 0.18); border-radius: 6px;">Punct de lucru</span>
+                                                                    <span class="status-badge status-offline">Punct de lucru</span>
                                                             </td>
                             <td>Singeorgiu de Mures</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=Deservcom3" class="btn-action-icon" title="Editează punct de lucru">
@@ -885,13 +930,13 @@
                             </td>
                         </tr>
                                                 <tr data-name="deservcom4">
-                            <td style="font-weight: 600;">Deservcom4</td>
+                            <td class="td-code">Deservcom4</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(16, 185, 129, 0.08); color: #059669; border: 1px solid rgba(16, 185, 129, 0.18); border-radius: 6px;">Punct de lucru</span>
+                                                                    <span class="status-badge status-offline">Punct de lucru</span>
                                                             </td>
                             <td>Ungheni</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=Deservcom4" class="btn-action-icon" title="Editează punct de lucru">
@@ -900,13 +945,13 @@
                             </td>
                         </tr>
                                                 <tr data-name="iton">
-                            <td style="font-weight: 600;">Iton</td>
+                            <td class="td-code">Iton</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(16, 185, 129, 0.08); color: #059669; border: 1px solid rgba(16, 185, 129, 0.18); border-radius: 6px;">Punct de lucru</span>
+                                                                    <span class="status-badge status-offline">Punct de lucru</span>
                                                             </td>
                             <td>Calimanesti</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=Iton" class="btn-action-icon" title="Editează punct de lucru">
@@ -915,13 +960,13 @@
                             </td>
                         </tr>
                                                 <tr data-name="iton2">
-                            <td style="font-weight: 600;">Iton2</td>
+                            <td class="td-code">Iton2</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(16, 185, 129, 0.08); color: #059669; border: 1px solid rgba(16, 185, 129, 0.18); border-radius: 6px;">Punct de lucru</span>
+                                                                    <span class="status-badge status-offline">Punct de lucru</span>
                                                             </td>
                             <td>Râmnicu Vâlcea</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=Iton2" class="btn-action-icon" title="Editează punct de lucru">
@@ -930,13 +975,13 @@
                             </td>
                         </tr>
                                                 <tr data-name="pl bucuresti">
-                            <td style="font-weight: 600;">PL Bucuresti</td>
+                            <td class="td-code">PL Bucuresti</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(16, 185, 129, 0.08); color: #059669; border: 1px solid rgba(16, 185, 129, 0.18); border-radius: 6px;">Punct de lucru</span>
+                                                                    <span class="status-badge status-offline">Punct de lucru</span>
                                                             </td>
                             <td>Bucuresti</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=PL+Bucuresti" class="btn-action-icon" title="Editează punct de lucru">
@@ -945,13 +990,13 @@
                             </td>
                         </tr>
                                                 <tr data-name="pl iasi">
-                            <td style="font-weight: 600;">PL Iasi</td>
+                            <td class="td-code">PL Iasi</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(16, 185, 129, 0.08); color: #059669; border: 1px solid rgba(16, 185, 129, 0.18); border-radius: 6px;">Punct de lucru</span>
+                                                                    <span class="status-badge status-offline">Punct de lucru</span>
                                                             </td>
                             <td>Iasi</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=PL+Iasi" class="btn-action-icon" title="Editează punct de lucru">
@@ -960,13 +1005,13 @@
                             </td>
                         </tr>
                                                 <tr data-name="procontor">
-                            <td style="font-weight: 600;">Procontor</td>
+                            <td class="td-code">Procontor</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(16, 185, 129, 0.08); color: #059669; border: 1px solid rgba(16, 185, 129, 0.18); border-radius: 6px;">Punct de lucru</span>
+                                                                    <span class="status-badge status-offline">Punct de lucru</span>
                                                             </td>
                             <td>Sibiu</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=Procontor" class="btn-action-icon" title="Editează punct de lucru">
@@ -975,13 +1020,13 @@
                             </td>
                         </tr>
                                                 <tr data-name="procontor2">
-                            <td style="font-weight: 600;">Procontor2</td>
+                            <td class="td-code">Procontor2</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(16, 185, 129, 0.08); color: #059669; border: 1px solid rgba(16, 185, 129, 0.18); border-radius: 6px;">Punct de lucru</span>
+                                                                    <span class="status-badge status-offline">Punct de lucru</span>
                                                             </td>
                             <td>Sighisoara</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=Procontor2" class="btn-action-icon" title="Editează punct de lucru">
@@ -990,13 +1035,13 @@
                             </td>
                         </tr>
                                                 <tr data-name="procontor3">
-                            <td style="font-weight: 600;">Procontor3</td>
+                            <td class="td-code">Procontor3</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(16, 185, 129, 0.08); color: #059669; border: 1px solid rgba(16, 185, 129, 0.18); border-radius: 6px;">Punct de lucru</span>
+                                                                    <span class="status-badge status-offline">Punct de lucru</span>
                                                             </td>
                             <td>Cisnadie</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=Procontor3" class="btn-action-icon" title="Editează punct de lucru">
@@ -1005,13 +1050,13 @@
                             </td>
                         </tr>
                                                 <tr data-name="procontor4">
-                            <td style="font-weight: 600;">Procontor4</td>
+                            <td class="td-code">Procontor4</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(16, 185, 129, 0.08); color: #059669; border: 1px solid rgba(16, 185, 129, 0.18); border-radius: 6px;">Punct de lucru</span>
+                                                                    <span class="status-badge status-offline">Punct de lucru</span>
                                                             </td>
                             <td>Medias</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=Procontor4" class="btn-action-icon" title="Editează punct de lucru">
@@ -1020,13 +1065,13 @@
                             </td>
                         </tr>
                                                 <tr data-name="procontor5">
-                            <td style="font-weight: 600;">Procontor5</td>
+                            <td class="td-code">Procontor5</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(16, 185, 129, 0.08); color: #059669; border: 1px solid rgba(16, 185, 129, 0.18); border-radius: 6px;">Punct de lucru</span>
+                                                                    <span class="status-badge status-offline">Punct de lucru</span>
                                                             </td>
                             <td>Apold</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=Procontor5" class="btn-action-icon" title="Editează punct de lucru">
@@ -1035,13 +1080,13 @@
                             </td>
                         </tr>
                                                 <tr data-name="procontor6">
-                            <td style="font-weight: 600;">Procontor6</td>
+                            <td class="td-code">Procontor6</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(16, 185, 129, 0.08); color: #059669; border: 1px solid rgba(16, 185, 129, 0.18); border-radius: 6px;">Punct de lucru</span>
+                                                                    <span class="status-badge status-offline">Punct de lucru</span>
                                                             </td>
                             <td>Deva</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=Procontor6" class="btn-action-icon" title="Editează punct de lucru">
@@ -1050,13 +1095,13 @@
                             </td>
                         </tr>
                                                 <tr data-name="proton multiservice">
-                            <td style="font-weight: 600;">Proton Multiservice</td>
+                            <td class="td-code">Proton Multiservice</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(16, 185, 129, 0.08); color: #059669; border: 1px solid rgba(16, 185, 129, 0.18); border-radius: 6px;">Punct de lucru</span>
+                                                                    <span class="status-badge status-offline">Punct de lucru</span>
                                                             </td>
                             <td>Târgu Jiu</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=Proton+Multiservice" class="btn-action-icon" title="Editează punct de lucru">
@@ -1065,13 +1110,13 @@
                             </td>
                         </tr>
                                                 <tr data-name="recea">
-                            <td style="font-weight: 600;">Recea</td>
+                            <td class="td-code">Recea</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(16, 185, 129, 0.08); color: #059669; border: 1px solid rgba(16, 185, 129, 0.18); border-radius: 6px;">Punct de lucru</span>
+                                                                    <span class="status-badge status-offline">Punct de lucru</span>
                                                             </td>
                             <td>Targu Mures</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=Recea" class="btn-action-icon" title="Editează punct de lucru">
@@ -1080,13 +1125,13 @@
                             </td>
                         </tr>
                                                 <tr data-name="test1">
-                            <td style="font-weight: 600;">test1</td>
+                            <td class="td-code">test1</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(99, 102, 241, 0.08); color: #6366f1; border: 1px solid rgba(99, 102, 241, 0.18); border-radius: 6px;">Departament de calcul</span>
+                                                                    <span class="status-badge status-offline">Departament de calcul</span>
                                                             </td>
                             <td>Iasi</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=test1" class="btn-action-icon" title="Editează punct de lucru">
@@ -1095,13 +1140,13 @@
                             </td>
                         </tr>
                                                 <tr data-name="test3">
-                            <td style="font-weight: 600;">test3</td>
+                            <td class="td-code">test3</td>
                             <td>
-                                                                    <span class="status-badge" style="padding: 4px 10px; font-size: 11px; background: rgba(16, 185, 129, 0.08); color: #059669; border: 1px solid rgba(16, 185, 129, 0.18); border-radius: 6px;">Punct de lucru</span>
+                                                                    <span class="status-badge status-offline">Punct de lucru</span>
                                                             </td>
                             <td>Iasi</td>
                             <td style="text-align: center;">
-                                                                    <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                                                                    <span class="status-badge status-online">Da</span>
                                                             </td>
                             <td style="text-align: center;">
                                 <a href="puncte-lucru-edit.html?name=test3" class="btn-action-icon" title="Editează punct de lucru">
@@ -1112,7 +1157,7 @@
                         
                         <!-- No Results Row -->
                         <tr id="noResultsRow" style="display: none;">
-                            <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 32px; font-style: italic;">
+                            <td colspan="5" class="table-empty">
                                 Niciun punct de lucru găsit pentru criteriile de căutare.
                             </td>
                         </tr>
@@ -1132,18 +1177,18 @@
                 />
             -->
             <div class="table-pagination">
-                <div style="font-size: 13px; color: var(--text-muted);">
+                <div class="pagination-info">
                     Afișare <strong id="paginationStart">1</strong> - <strong id="paginationEnd">21</strong> din <strong>21</strong> înregistrări
                 </div>
-                <div style="display: flex; align-items: center; gap: 8px;">
-                    <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" disabled>
+                <div class="pagination-controls">
+                    <button type="button" class="btn-secondary btn-page-nav" disabled>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
                         <span>Anterior</span>
                     </button>
                     <div class="pagination-pages">
-                        <button type="button" class="btn-secondary active" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;">1</button>
+                        <button type="button" class="btn-secondary btn-page active">1</button>
                     </div>
-                    <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" disabled>
+                    <button type="button" class="btn-secondary btn-page-nav" disabled>
                         <span>Următor</span>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
@@ -1185,7 +1230,7 @@
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

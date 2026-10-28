@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Perioadă de Calcul – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Perioadă de Calcul – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
 </head>
 <body>
 
@@ -179,7 +182,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +190,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +327,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem active">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +569,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-billing-logo.svg" alt="SONIC BILLING" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Perioadă de Calcul</div>
 
             <!-- User profile avatar (always visible) -->
@@ -672,12 +717,12 @@
 <!-- === Formular de Filtrare ===
      React: <FilterCard onSearch={handleSearch} onReset={handleReset} fields={...} />
 -->
-<div class="card" style="margin-bottom: 24px;">
-    <div style="margin-bottom: 18px;">
-        <span class="chart-title" style="font-size: 14px; font-weight: 600;">Filtrare Avansată</span>
+<div class="card filter-card">
+    <div class="filter-card-head">
+        <span class="filter-card-title">Filtrare Avansată</span>
     </div>
     <form method="GET" action="perioda-calcul.html" id="filterFormCalcPeriod">
-        <div class="filter-grid">
+        <div class="filter-grid-5">
 
             <!-- Localitate -->
             <div class="form-group">
@@ -878,6 +923,26 @@
                                     </select>
             </div>
 
+            <!-- Autor -->
+            <div class="form-group">
+                <label class="form-label" for="ddlAuthor">Autor</label>
+                <select name="author" id="ddlAuthor" class="input-control">
+                    <option value="-1" selected>- Toți autorii -</option>
+                                            <option value="Bogdan Antal" >
+                            Bogdan Antal                        </option>
+                                            <option value="Georgiana Serban" >
+                            Georgiana Serban                        </option>
+                                            <option value="Manuel Tudorache" >
+                            Manuel Tudorache                        </option>
+                                            <option value="Nina Marcu" >
+                            Nina Marcu                        </option>
+                                            <option value="Stefania Chiran" >
+                            Stefania Chiran                        </option>
+                                            <option value="Teodor Milian" >
+                            Teodor Milian                        </option>
+                                    </select>
+            </div>
+
             <!-- Arhivat -->
             <div class="form-group">
                 <label class="form-label" for="ddlIsArchived">Arhivat</label>
@@ -915,7 +980,7 @@
     <!-- Bara de sus a tabelului -->
     <div class="table-toolbar">
         <div class="table-toolbar-left">
-            <span style="color: var(--text-muted); font-size: 13px; font-weight: 500;">
+            <span class="table-count">
                 Afișare <strong id="calcVisibleCount">23</strong>
                 din <strong>255.070</strong> înregistrări
             </span>
@@ -938,7 +1003,7 @@
     </div>
 
     <!-- Tabel propriu-zis -->
-    <div style="overflow-x: auto; width: 100%;">
+    <div class="table-scroll">
         <table class="partners-table" id="calcPeriodsTable">
             <thead>
                 <tr>
@@ -955,17 +1020,17 @@
             </thead>
             <tbody id="calcPeriodsTableBody">
                                 <tr data-search="81-011-0041 apă str. frasinului, nr. 3, bl. 3, sc. b, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian În pregătire">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-011-0041                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Apă                        </span>
                     </td>
                     <td>Str. Frasinului, Nr. 3, Bl. 3, Sc. B, Tulcea, Tulcea</td>
-                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">Asociația de Proprietari 55</td>
+                    <td style="text-align: center;">
                         01.08.2026 - 31.08.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Teodor Milian                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-warning">În Pregătire</span>                    </td>
@@ -997,17 +1062,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-011-0040 apă str. frasinului, nr. 3, bl. 3, sc. a, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-011-0040                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Apă                        </span>
                     </td>
                     <td>Str. Frasinului, Nr. 3, Bl. 3, Sc. A, Tulcea, Tulcea</td>
-                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">Asociația de Proprietari 55</td>
+                    <td style="text-align: center;">
                         01.08.2026 - 31.08.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Teodor Milian                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-online">Alocat</span>                    </td>
@@ -1039,17 +1104,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-011-0039 apă str. 1848, nr. 19, bl. 19, sc. d, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-011-0039                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Apă                        </span>
                     </td>
                     <td>Str. 1848, Nr. 19, Bl. 19, Sc. D, Tulcea, Tulcea</td>
-                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">Asociația de Proprietari 55</td>
+                    <td style="text-align: center;">
                         01.08.2026 - 31.08.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Teodor Milian                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-online">Alocat</span>                    </td>
@@ -1081,17 +1146,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-011-0038 apă str. 1848, nr. 19, bl. 19, sc. c, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-011-0038                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Apă                        </span>
                     </td>
                     <td>Str. 1848, Nr. 19, Bl. 19, Sc. C, Tulcea, Tulcea</td>
-                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">Asociația de Proprietari 55</td>
+                    <td style="text-align: center;">
                         01.08.2026 - 31.08.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Teodor Milian                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-online">Alocat</span>                    </td>
@@ -1123,17 +1188,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-011-0037 apă str. 1848, nr. 19, bl. 19, sc. b, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-011-0037                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Apă                        </span>
                     </td>
                     <td>Str. 1848, Nr. 19, Bl. 19, Sc. B, Tulcea, Tulcea</td>
-                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">Asociația de Proprietari 55</td>
+                    <td style="text-align: center;">
                         01.08.2026 - 31.08.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Teodor Milian                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-online">Alocat</span>                    </td>
@@ -1165,17 +1230,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-011-0036 apă str. 1848, nr. 19, bl. 19, sc. a, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-011-0036                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Apă                        </span>
                     </td>
                     <td>Str. 1848, Nr. 19, Bl. 19, Sc. A, Tulcea, Tulcea</td>
-                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">Asociația de Proprietari 55</td>
+                    <td style="text-align: center;">
                         01.08.2026 - 31.08.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Teodor Milian                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-online">Alocat</span>                    </td>
@@ -1207,17 +1272,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-011-0035 apă str. 1848, nr. 17, bl. 17, sc. c, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-011-0035                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Apă                        </span>
                     </td>
                     <td>Str. 1848, Nr. 17, Bl. 17, Sc. C, Tulcea, Tulcea</td>
-                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">Asociația de Proprietari 55</td>
+                    <td style="text-align: center;">
                         01.08.2026 - 31.08.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Teodor Milian                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-online">Alocat</span>                    </td>
@@ -1249,17 +1314,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-011-0034 apă str. 1848, nr. 17, bl. 17, sc. b, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-011-0034                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Apă                        </span>
                     </td>
                     <td>Str. 1848, Nr. 17, Bl. 17, Sc. B, Tulcea, Tulcea</td>
-                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">Asociația de Proprietari 55</td>
+                    <td style="text-align: center;">
                         01.08.2026 - 31.08.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Teodor Milian                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-online">Alocat</span>                    </td>
@@ -1291,17 +1356,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-011-0033 apă str. 1848, nr. 17, bl. 17, sc. a, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-011-0033                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Apă                        </span>
                     </td>
                     <td>Str. 1848, Nr. 17, Bl. 17, Sc. A, Tulcea, Tulcea</td>
-                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">Asociația de Proprietari 55</td>
+                    <td style="text-align: center;">
                         01.08.2026 - 31.08.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Teodor Milian                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-online">Alocat</span>                    </td>
@@ -1333,17 +1398,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-011-0032 apă str. 1848, nr. 15, bl. 15, sc. c, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-011-0032                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Apă                        </span>
                     </td>
                     <td>Str. 1848, Nr. 15, Bl. 15, Sc. C, Tulcea, Tulcea</td>
-                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">Asociația de Proprietari 55</td>
+                    <td style="text-align: center;">
                         01.08.2026 - 31.08.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Teodor Milian                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-online">Alocat</span>                    </td>
@@ -1375,17 +1440,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-011-0031 apă str. 1848, nr. 15, bl. 15, sc. b, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-011-0031                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Apă                        </span>
                     </td>
                     <td>Str. 1848, Nr. 15, Bl. 15, Sc. B, Tulcea, Tulcea</td>
-                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">Asociația de Proprietari 55</td>
+                    <td style="text-align: center;">
                         01.08.2026 - 31.08.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Teodor Milian                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-online">Alocat</span>                    </td>
@@ -1417,17 +1482,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-011-0030 apă str. 1848, nr. 15, bl. 15, sc. a, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-011-0030                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Apă                        </span>
                     </td>
                     <td>Str. 1848, Nr. 15, Bl. 15, Sc. A, Tulcea, Tulcea</td>
-                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">Asociația de Proprietari 55</td>
+                    <td style="text-align: center;">
                         01.08.2026 - 31.08.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Teodor Milian                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-online">Alocat</span>                    </td>
@@ -1459,17 +1524,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-011-0029 apă str. 1848, nr. 14, bl. 14, sc. d, tulcea, tulcea asociația de proprietari 55 01.08.2026 - 31.08.2026 teodor milian alocat">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-011-0029                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Apă                        </span>
                     </td>
                     <td>Str. 1848, Nr. 14, Bl. 14, Sc. D, Tulcea, Tulcea</td>
-                    <td style="font-weight: 500;">Asociația de Proprietari 55</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">Asociația de Proprietari 55</td>
+                    <td style="text-align: center;">
                         01.08.2026 - 31.08.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Teodor Milian                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-online">Alocat</span>                    </td>
@@ -1501,17 +1566,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-029-0030 apă str. viitorului, nr. 30, bl. b2, sc. a, orasul tulcea, tulcea asociatia de proprietari bloc 50 01.08.2026 - 31.08.2026 stefania chiran gata de facturare">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-029-0030                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Apă                        </span>
                     </td>
                     <td>Str. VIITORULUI, Nr. 30, Bl. B2, Sc. A, Orasul Tulcea, Tulcea</td>
-                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI BLOC 50</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC 50</td>
+                    <td style="text-align: center;">
                         01.08.2026 - 31.08.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Stefania Chiran                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-online">Gata de facturare</span>                    </td>
@@ -1543,17 +1608,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-029-0029 apă str. viitorului, nr. 30, bl. 50, sc. a, orasul tulcea, tulcea asociatia de proprietari bloc 50 01.08.2026 - 31.08.2026 stefania chiran gata de facturare">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-029-0029                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Apă                        </span>
                     </td>
                     <td>Str. VIITORULUI, Nr. 30, Bl. 50, Sc. A, Orasul Tulcea, Tulcea</td>
-                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI BLOC 50</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC 50</td>
+                    <td style="text-align: center;">
                         01.08.2026 - 31.08.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Stefania Chiran                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-online">Gata de facturare</span>                    </td>
@@ -1585,17 +1650,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-029-0003 apă str. eternitatii, nr. 36, bl. n9, sc. a+b+c, orasul tulcea, tulcea asociatia de proprietari bloc n7+n8+n9 01.08.2026 - 31.08.2026 stefania chiran gata de facturare">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-029-0003                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Apă                        </span>
                     </td>
                     <td>Str. ETERNITATII, Nr. 36, Bl. N9, Sc. A+B+C, Orasul Tulcea, Tulcea</td>
-                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI BLOC N7+N8+N9</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC N7+N8+N9</td>
+                    <td style="text-align: center;">
                         01.08.2026 - 31.08.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Stefania Chiran                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-online">Gata de facturare</span>                    </td>
@@ -1627,17 +1692,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-004-0847 energie termică str. p-ta victoriei, nr. 34, bl. 34, sc. -, târgu mures, mures p-ta victoriei 01.08.2026 - 31.08.2026 bogdan antal În pregătire">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-004-0847                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Energie Termică                        </span>
                     </td>
                     <td>Str. P-TA VICTORIEI, Nr. 34, Bl. 34, Sc. -, Târgu Mures, Mures</td>
-                    <td style="font-weight: 500;">P-TA VICTORIEI</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">P-TA VICTORIEI</td>
+                    <td style="text-align: center;">
                         01.08.2026 - 31.08.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Bogdan Antal                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-warning">În Pregătire</span>                    </td>
@@ -1669,17 +1734,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-001-2108 apă str. cremenita, nr. 5, bl. corp_a+b, sc. corp_b, distr. 2, bucuresti, bucuresti asociatia de proprietari cremenita 5 01.07.2026 - 31.07.2026 manuel tudorache În pregătire">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-001-2108                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Apă                        </span>
                     </td>
                     <td>Str. CREMENITA, Nr. 5, Bl. CORP_A+B, Sc. CORP_B, Distr. 2, Bucuresti, Bucuresti</td>
-                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI CREMENITA 5</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">ASOCIATIA DE PROPRIETARI CREMENITA 5</td>
+                    <td style="text-align: center;">
                         01.07.2026 - 31.07.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Manuel Tudorache                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-warning">În Pregătire</span>                    </td>
@@ -1709,17 +1774,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-001-2107 apă str. cremenita, nr. 5, bl. corp_a+b, sc. corp_a, distr. 2, bucuresti, bucuresti asociatia de proprietari cremenita 5 01.07.2026 - 31.07.2026 manuel tudorache În pregătire">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-001-2107                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Apă                        </span>
                     </td>
                     <td>Str. CREMENITA, Nr. 5, Bl. CORP_A+B, Sc. CORP_A, Distr. 2, Bucuresti, Bucuresti</td>
-                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI CREMENITA 5</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">ASOCIATIA DE PROPRIETARI CREMENITA 5</td>
+                    <td style="text-align: center;">
                         01.07.2026 - 31.07.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Manuel Tudorache                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-warning">În Pregătire</span>                    </td>
@@ -1749,17 +1814,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-004-0664 energie termică str. cetatii, nr. 11, bl. 11, sc. -, et. 0, târgu mures, mures cetatii 01.07.2026 - 31.07.2026 bogdan antal În pregătire">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-004-0664                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Energie Termică                        </span>
                     </td>
                     <td>Str. CETATII, Nr. 11, Bl. 11, Sc. -, Et. 0, Târgu Mures, Mures</td>
-                    <td style="font-weight: 500;">CETATII</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">CETATII</td>
+                    <td style="text-align: center;">
                         01.07.2026 - 31.07.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Bogdan Antal                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-warning">În Pregătire</span>                    </td>
@@ -1789,17 +1854,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-001-0467 apă str. aleea callatis, nr. 1, bl. a14a, sc. 7+8, distr. 6, bucuresti, bucuresti asociatia de proprietari bloc a14a 01.07.2026 - 31.07.2026 nina marcu gata de facturare">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-001-0467                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Apă                        </span>
                     </td>
                     <td>Str. ALEEA CALLATIS, Nr. 1, Bl. A14A, Sc. 7+8, Distr. 6, Bucuresti, Bucuresti</td>
-                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI BLOC A14A</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC A14A</td>
+                    <td style="text-align: center;">
                         01.07.2026 - 31.07.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Nina Marcu                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-online">Gata de facturare</span>                    </td>
@@ -1829,17 +1894,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-001-1503 energie termică str. aleea scolarilor, nr. 10, bl. s24, sc. 1, distr. 3, bucuresti, bucuresti asociatia de proprietari bl s24 01.07.2026 - 31.07.2026 georgiana serban gata de facturare">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-001-1503                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Energie Termică                        </span>
                     </td>
                     <td>Str. ALEEA SCOLARILOR, Nr. 10, Bl. S24, Sc. 1, Distr. 3, Bucuresti, Bucuresti</td>
-                    <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI BL S24</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">ASOCIATIA DE PROPRIETARI BL S24</td>
+                    <td style="text-align: center;">
                         01.07.2026 - 31.07.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Georgiana Serban                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-online">Gata de facturare</span>                    </td>
@@ -1869,17 +1934,17 @@
                     </td>
                 </tr>
                                 <tr data-search="81-004-1003 gaz str. bolyai farkas, nr. 1, bl. 1, sc. b, târgu mures, mures bolyai farkas 01.07.2026 - 31.07.2026 bogdan antal Încheiat">
-                    <td style="text-align: center; font-weight: 600; font-family: monospace; font-size: 12.5px;">
+                    <td class="td-code" style="text-align: center;">
                         81-004-1003                    </td>
                     <td style="text-align: center;">
                         <span style="font-weight: 500; font-size: 12.5px;">
                             Gaz                        </span>
                     </td>
                     <td>Str. BOLYAI FARKAS, Nr. 1, Bl. 1, Sc. B, Târgu Mures, Mures</td>
-                    <td style="font-weight: 500;">BOLYAI FARKAS</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--text-muted);">
+                    <td class="td-name">BOLYAI FARKAS</td>
+                    <td style="text-align: center;">
                         01.07.2026 - 31.07.2026                    </td>
-                    <td style="color: var(--text-muted); font-size: 12.5px;">
+                    <td>
                         Bogdan Antal                    </td>
                     <td style="text-align: center;">
                         <span class="status-badge status-draft">Încheiat</span>                    </td>
@@ -1914,22 +1979,22 @@
 
     <!-- === Paginație (Conformă cu parteneri.php) === -->
     <div class="table-pagination">
-        <div style="font-size: 13px; color: var(--text-muted);">
+        <div class="pagination-info">
             Afișare <strong>1</strong> - <strong id="calcPaginationVisible">23</strong> din <strong>255.070</strong> înregistrări
         </div>
-        <div style="display: flex; align-items: center; gap: 8px;">
-            <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" disabled>
+        <div class="pagination-controls">
+            <button type="button" class="btn-secondary btn-page-nav" disabled>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
                 <span>Anterior</span>
             </button>
             <div class="pagination-pages">
-                <button type="button" class="btn-secondary active" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;">1</button>
-                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 2')">2</button>
-                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 3')">3</button>
-                <span style="padding: 0 4px; color: var(--text-muted); font-size: 12px;">...</span>
-                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 2550')">2550</button>
+                <button type="button" class="btn-secondary btn-page active">1</button>
+                <button type="button" class="btn-secondary btn-page" onclick="alert('Pagina 2')">2</button>
+                <button type="button" class="btn-secondary btn-page" onclick="alert('Pagina 3')">3</button>
+                <span class="pagination-gap">…</span>
+                <button type="button" class="btn-secondary btn-page" onclick="alert('Pagina 2550')">2550</button>
             </div>
-            <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" onclick="alert('Pagina următoare')">
+            <button type="button" class="btn-secondary btn-page-nav" onclick="alert('Pagina următoare')">
                 <span>Următor</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </button>
@@ -2010,11 +2075,11 @@
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px;">
                     <div class="form-group">
                         <label class="form-label" for="modalAddPeriodStart">Dată Început <span class="required-star">*</span></label>
-                        <input type="date" id="modalAddPeriodStart" class="input-control" required value="2026-09-01">
+                        <input type="text" data-datepicker id="modalAddPeriodStart" class="input-control" required value="2026-09-01">
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="modalAddPeriodEnd">Dată Sfârșit <span class="required-star">*</span></label>
-                        <input type="date" id="modalAddPeriodEnd" class="input-control" required value="2026-09-30">
+                        <input type="text" data-datepicker id="modalAddPeriodEnd" class="input-control" required value="2026-09-30">
                     </div>
                 </div>
 
@@ -2162,10 +2227,10 @@
                     Afișare NOD-uri: <strong class="nod-picker-count" id="nodPickerModalCalc-count">0</strong>
                 </span>
                 <div class="nod-picker-page-btns">
-                    <button type="button" class="btn-action-icon nod-picker-prev" data-modal="nodPickerModalCalc" disabled>
+                    <button type="button" class="btn-action-icon nod-picker-prev" title="Pagina anterioară" data-modal="nodPickerModalCalc" disabled>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
                     </button>
-                    <button type="button" class="btn-action-icon nod-picker-next" data-modal="nodPickerModalCalc" disabled>
+                    <button type="button" class="btn-action-icon nod-picker-next" title="Pagina următoare" data-modal="nodPickerModalCalc" disabled>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
                 </div>
@@ -2315,7 +2380,7 @@ function handleAddPeriodSubmit(e) {
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

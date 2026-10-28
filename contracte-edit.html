@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Editare Contract – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Editare Contract – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
 </head>
 <body>
 
@@ -179,7 +182,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +190,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +327,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +569,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-logo.svg" alt="SONIC" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Editare Contract</div>
 
             <!-- User profile avatar (always visible) -->
@@ -653,16 +698,16 @@
 
 <!-- ══ Tab Navigation ═══════════════════════════════════════════════════ -->
 <div class="edit-tabs-wrapper">
-    <div class="edit-tabs-nav" role="tablist">
-        <button type="button" class="edit-tab-btn active" role="tab" aria-selected="true" aria-controls="tab-general" id="tabBtn-general" onclick="switchContractTab('general', this)">
+    <div class="edit-tabs-nav" role="tablist" aria-label="Secțiuni contract">
+        <button type="button" class="edit-tab-btn active" role="tab" aria-selected="true" aria-controls="tab-general" id="tabBtn-general" onclick="switchTab('general', this)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
             Date generale
         </button>
-        <button type="button" class="edit-tab-btn " role="tab" aria-selected="false" aria-controls="tab-services" id="tabBtn-services" onclick="switchContractTab('services', this)">
+        <button type="button" class="edit-tab-btn " role="tab" aria-selected="false" aria-controls="tab-services" id="tabBtn-services" onclick="switchTab('services', this)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
             Servicii
         </button>
-        <button type="button" class="edit-tab-btn " role="tab" aria-selected="false" aria-controls="tab-nods" id="tabBtn-nods" onclick="switchContractTab('nods', this)">
+        <button type="button" class="edit-tab-btn " role="tab" aria-selected="false" aria-controls="tab-nods" id="tabBtn-nods" onclick="switchTab('nods', this)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
             NOD-uri asociate
         </button>
@@ -691,7 +736,7 @@
 
                     <div class="form-group">
                         <label class="form-label" for="dtpContractDate">Data contract <span class="required-star">*</span></label>
-                        <input type="date" id="dtpContractDate" name="contract_date" class="input-control" value="2025-04-10" required>
+                        <input type="text" data-datepicker id="dtpContractDate" name="contract_date" class="input-control" value="2025-04-10" required>
                     </div>
                 </div>
 
@@ -726,7 +771,7 @@
 
                     <div class="form-group">
                         <label class="form-label" for="dtpInstallDate">Data începere montare <span class="required-star">*</span></label>
-                        <input type="date" id="dtpInstallDate" name="install_date" class="input-control" value="2026-01-26" required>
+                        <input type="text" data-datepicker id="dtpInstallDate" name="install_date" class="input-control" value="2026-01-26" required>
                     </div>
                 </div>
 
@@ -758,7 +803,7 @@
     <div class="table-container">
         <div class="table-toolbar">
             <div class="table-toolbar-left">
-                <span style="color: var(--text-muted); font-size: 13px; font-weight: 500;">
+                <span class="table-count">
                     Afișare <strong id="contractServicesCount">3</strong> servicii asociate contractului
                 </span>
             </div>
@@ -770,7 +815,7 @@
             </div>
         </div>
 
-        <div style="overflow-x: auto; width: 100%;">
+        <div class="table-scroll">
             <table class="partners-table">
                 <thead>
                     <tr>
@@ -785,51 +830,42 @@
                 </thead>
                 <tbody id="contractServicesTableBody">
                                         <tr data-code="SRV-ET-01">
-                        <td><span style="font-family: monospace; font-weight: 600; color: var(--accent);">SRV-ET-01</span></td>
-                        <td style="font-weight: 500;">Citire repartitoare energie termică radio</td>
+                        <td class="td-code">SRV-ET-01</td>
+                        <td class="td-name">Citire repartitoare energie termică radio</td>
                         <td>Energie Termică</td>
-                        <td style="color: var(--text-muted); font-size: 13px;">Cu repartitoare</td>
+                        <td>Cu repartitoare</td>
                         <td>RON</td>
                         <td style="text-align: center;">
                             <span class="service-active-badge status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
                         </td>
                         <td style="text-align: center;">
-                            <button type="button" class="btn-secondary" style="font-size: 11px; padding: 3px 8px; color: var(--red); border-color: rgba(239, 68, 68, 0.3); display: inline-flex; align-items: center; gap: 4px;" title="Dezactivează serviciu" onclick="toggleContractServiceActive(this, 'SRV-ET-01')">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
-                                <span>Dezactivează</span>
-                            </button>
+                            <button type="button" class="btn-action-icon" title="Dezactivează serviciu" onclick="toggleContractServiceActive(this, 'SRV-ET-01')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg></button>
                         </td>
                     </tr>
                                         <tr data-code="SRV-ET-02">
-                        <td><span style="font-family: monospace; font-weight: 600; color: var(--accent);">SRV-ET-02</span></td>
-                        <td style="font-weight: 500;">Calcul cotă comună și repartizare costuri încălzire</td>
+                        <td class="td-code">SRV-ET-02</td>
+                        <td class="td-name">Calcul cotă comună și repartizare costuri încălzire</td>
                         <td>Energie Termică</td>
-                        <td style="color: var(--text-muted); font-size: 13px;">Cotă comună</td>
+                        <td>Cotă comună</td>
                         <td>RON</td>
                         <td style="text-align: center;">
                             <span class="service-active-badge status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
                         </td>
                         <td style="text-align: center;">
-                            <button type="button" class="btn-secondary" style="font-size: 11px; padding: 3px 8px; color: var(--red); border-color: rgba(239, 68, 68, 0.3); display: inline-flex; align-items: center; gap: 4px;" title="Dezactivează serviciu" onclick="toggleContractServiceActive(this, 'SRV-ET-02')">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
-                                <span>Dezactivează</span>
-                            </button>
+                            <button type="button" class="btn-action-icon" title="Dezactivează serviciu" onclick="toggleContractServiceActive(this, 'SRV-ET-02')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg></button>
                         </td>
                     </tr>
                                         <tr data-code="SRV-APA-01">
-                        <td><span style="font-family: monospace; font-weight: 600; color: var(--accent);">SRV-APA-01</span></td>
-                        <td style="font-weight: 500;">Citire și bilanț apometre apă rece / caldă</td>
+                        <td class="td-code">SRV-APA-01</td>
+                        <td class="td-name">Citire și bilanț apometre apă rece / caldă</td>
                         <td>Apă</td>
-                        <td style="color: var(--text-muted); font-size: 13px;">Contor individual</td>
+                        <td>Contor individual</td>
                         <td>RON</td>
                         <td style="text-align: center;">
                             <span class="service-active-badge status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
                         </td>
                         <td style="text-align: center;">
-                            <button type="button" class="btn-secondary" style="font-size: 11px; padding: 3px 8px; color: var(--red); border-color: rgba(239, 68, 68, 0.3); display: inline-flex; align-items: center; gap: 4px;" title="Dezactivează serviciu" onclick="toggleContractServiceActive(this, 'SRV-APA-01')">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
-                                <span>Dezactivează</span>
-                            </button>
+                            <button type="button" class="btn-action-icon" title="Dezactivează serviciu" onclick="toggleContractServiceActive(this, 'SRV-APA-01')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg></button>
                         </td>
                     </tr>
                                     </tbody>
@@ -845,7 +881,7 @@
     <div class="table-container">
         <div class="table-toolbar">
             <div class="table-toolbar-left">
-                <span style="color: var(--text-muted); font-size: 13px; font-weight: 500;">
+                <span class="table-count">
                     Afișare <strong id="contractNodsCount">2</strong> NOD-uri asociate
                 </span>
             </div>
@@ -857,7 +893,7 @@
             </div>
         </div>
 
-        <div style="overflow-x: auto; width: 100%;">
+        <div class="table-scroll">
             <table class="partners-table">
                 <thead>
                     <tr>
@@ -871,29 +907,29 @@
                 </thead>
                 <tbody id="contractNodsTableBody">
                                         <tr data-code="NOD-0155-A">
-                        <td style="font-family: monospace; font-weight: 600; color: var(--accent);">NOD-0155-A</td>
+                        <td class="td-code">NOD-0155-A</td>
                         <td>Str. 11 Iunie, Nr. 102, Sc. 7, Brasov</td>
-                        <td style="font-weight: 500;">11 IUNIE BL 102 SC 7</td>
-                        <td style="text-align: center; font-weight: 600;">24</td>
+                        <td class="td-name">11 IUNIE BL 102 SC 7</td>
+                        <td class="td-code" style="text-align: center;">24</td>
                         <td style="text-align: center;">
-                            <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                            <span class="status-badge status-online">Da</span>
                         </td>
                         <td style="text-align: center;">
-                            <button type="button" class="btn-action-icon" title="Șterge asocierea NOD" style="color: var(--red);" onclick="removeNodAssociation(this, 'NOD-0155-A')">
+                            <button type="button" class="btn-action-icon" title="Șterge asocierea NOD" onclick="removeNodAssociation(this, 'NOD-0155-A')">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
                             </button>
                         </td>
                     </tr>
                                         <tr data-code="NOD-0155-B">
-                        <td style="font-family: monospace; font-weight: 600; color: var(--accent);">NOD-0155-B</td>
+                        <td class="td-code">NOD-0155-B</td>
                         <td>Str. 11 Iunie, Nr. 102, Sc. 8, Brasov</td>
-                        <td style="font-weight: 500;">11 IUNIE BL 102 SC 7</td>
-                        <td style="text-align: center; font-weight: 600;">20</td>
+                        <td class="td-name">11 IUNIE BL 102 SC 7</td>
+                        <td class="td-code" style="text-align: center;">20</td>
                         <td style="text-align: center;">
-                            <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
+                            <span class="status-badge status-online">Da</span>
                         </td>
                         <td style="text-align: center;">
-                            <button type="button" class="btn-action-icon" title="Șterge asocierea NOD" style="color: var(--red);" onclick="removeNodAssociation(this, 'NOD-0155-B')">
+                            <button type="button" class="btn-action-icon" title="Șterge asocierea NOD" onclick="removeNodAssociation(this, 'NOD-0155-B')">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
                             </button>
                         </td>
@@ -931,61 +967,61 @@
                     </thead>
                     <tbody id="partnerModalTableBody">
                                                 <tr data-search="0155 11 iunie bl 102 sc 7 str. 11 iunie, nr. 102, sc. 7">
-                            <td style="font-weight: 600; font-family: monospace;">0155</td>
-                            <td style="font-weight: 500;">11 IUNIE BL 102 SC 7</td>
-                            <td style="font-size: 12px; color: var(--text-muted);">Str. 11 Iunie, Nr. 102, Sc. 7</td>
+                            <td class="td-code">0155</td>
+                            <td class="td-name">11 IUNIE BL 102 SC 7</td>
+                            <td>Str. 11 Iunie, Nr. 102, Sc. 7</td>
                             <td style="text-align: center;">
-                                <button type="button" class="btn-action-icon" title="Alege partener" style="color: var(--green);" onclick="selectPartner('0155', '11 IUNIE BL 102 SC 7')">
+                                <button type="button" class="btn-action-icon" title="Alege partener" onclick="selectPartner('0155', '11 IUNIE BL 102 SC 7')">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 </button>
                             </td>
                         </tr>
                                                 <tr data-search="0102 1 decembrie 1918 bl 12 sc 1 bld. 1 decembrie 1918, nr. 12, sc. 1">
-                            <td style="font-weight: 600; font-family: monospace;">0102</td>
-                            <td style="font-weight: 500;">1 DECEMBRIE 1918 BL 12 SC 1</td>
-                            <td style="font-size: 12px; color: var(--text-muted);">Bld. 1 Decembrie 1918, Nr. 12, Sc. 1</td>
+                            <td class="td-code">0102</td>
+                            <td class="td-name">1 DECEMBRIE 1918 BL 12 SC 1</td>
+                            <td>Bld. 1 Decembrie 1918, Nr. 12, Sc. 1</td>
                             <td style="text-align: center;">
-                                <button type="button" class="btn-action-icon" title="Alege partener" style="color: var(--green);" onclick="selectPartner('0102', '1 DECEMBRIE 1918 BL 12 SC 1')">
+                                <button type="button" class="btn-action-icon" title="Alege partener" onclick="selectPartner('0102', '1 DECEMBRIE 1918 BL 12 SC 1')">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 </button>
                             </td>
                         </tr>
                                                 <tr data-search="0200 1 decembrie 1918 bl 71 sc 2 bld. 1 decembrie 1918, nr. 71, sc. 2">
-                            <td style="font-weight: 600; font-family: monospace;">0200</td>
-                            <td style="font-weight: 500;">1 DECEMBRIE 1918 BL 71 SC 2</td>
-                            <td style="font-size: 12px; color: var(--text-muted);">Bld. 1 Decembrie 1918, Nr. 71, Sc. 2</td>
+                            <td class="td-code">0200</td>
+                            <td class="td-name">1 DECEMBRIE 1918 BL 71 SC 2</td>
+                            <td>Bld. 1 Decembrie 1918, Nr. 71, Sc. 2</td>
                             <td style="text-align: center;">
-                                <button type="button" class="btn-action-icon" title="Alege partener" style="color: var(--green);" onclick="selectPartner('0200', '1 DECEMBRIE 1918 BL 71 SC 2')">
+                                <button type="button" class="btn-action-icon" title="Alege partener" onclick="selectPartner('0200', '1 DECEMBRIE 1918 BL 71 SC 2')">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 </button>
                             </td>
                         </tr>
                                                 <tr data-search="bv0125 asocia de proprietari trifoiasul str. trifoiului, nr. 6, bl. 1, sc. a">
-                            <td style="font-weight: 600; font-family: monospace;">BV0125</td>
-                            <td style="font-weight: 500;">ASOCIA DE PROPRIETARI TRIFOIASUL</td>
-                            <td style="font-size: 12px; color: var(--text-muted);">Str. Trifoiului, Nr. 6, Bl. 1, Sc. A</td>
+                            <td class="td-code">BV0125</td>
+                            <td class="td-name">ASOCIA DE PROPRIETARI TRIFOIASUL</td>
+                            <td>Str. Trifoiului, Nr. 6, Bl. 1, Sc. A</td>
                             <td style="text-align: center;">
-                                <button type="button" class="btn-action-icon" title="Alege partener" style="color: var(--green);" onclick="selectPartner('BV0125', 'ASOCIA DE PROPRIETARI TRIFOIASUL')">
+                                <button type="button" class="btn-action-icon" title="Alege partener" onclick="selectPartner('BV0125', 'ASOCIA DE PROPRIETARI TRIFOIASUL')">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 </button>
                             </td>
                         </tr>
                                                 <tr data-search="bv0085 asociatia de apartamente 152 str. lamaitei, nr. 76, bl. 76, sc. a">
-                            <td style="font-weight: 600; font-family: monospace;">BV0085</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE APARTAMENTE 152</td>
-                            <td style="font-size: 12px; color: var(--text-muted);">Str. Lamaitei, Nr. 76, Bl. 76, Sc. A</td>
+                            <td class="td-code">BV0085</td>
+                            <td class="td-name">ASOCIATIA DE APARTAMENTE 152</td>
+                            <td>Str. Lamaitei, Nr. 76, Bl. 76, Sc. A</td>
                             <td style="text-align: center;">
-                                <button type="button" class="btn-action-icon" title="Alege partener" style="color: var(--green);" onclick="selectPartner('BV0085', 'ASOCIATIA DE APARTAMENTE 152')">
+                                <button type="button" class="btn-action-icon" title="Alege partener" onclick="selectPartner('BV0085', 'ASOCIATIA DE APARTAMENTE 152')">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 </button>
                             </td>
                         </tr>
                                                 <tr data-search="0147 11 iunie bl 102 sc 3 str. 11 iunie, nr. 102, sc. 3">
-                            <td style="font-weight: 600; font-family: monospace;">0147</td>
-                            <td style="font-weight: 500;">11 IUNIE BL 102 SC 3</td>
-                            <td style="font-size: 12px; color: var(--text-muted);">Str. 11 Iunie, Nr. 102, Sc. 3</td>
+                            <td class="td-code">0147</td>
+                            <td class="td-name">11 IUNIE BL 102 SC 3</td>
+                            <td>Str. 11 Iunie, Nr. 102, Sc. 3</td>
                             <td style="text-align: center;">
-                                <button type="button" class="btn-action-icon" title="Alege partener" style="color: var(--green);" onclick="selectPartner('0147', '11 IUNIE BL 102 SC 3')">
+                                <button type="button" class="btn-action-icon" title="Alege partener" onclick="selectPartner('0147', '11 IUNIE BL 102 SC 3')">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 </button>
                             </td>
@@ -1032,15 +1068,15 @@
                             data-criteria="Contor Energie Termică"
                             data-currency="RON"
                             data-search="112 test energie termică debranșat sau ct sau inactiv">
-                            <td style="font-weight:600; font-family:monospace;">112</td>
-                            <td style="font-weight:500; font-size:13px; line-height:1.3;">test</td>
+                            <td class="td-code">112</td>
+                            <td class="td-name">test</td>
                             <td>
                                 <span class="badge" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">
                                     Energie Termică                                </span>
                             </td>
-                            <td><span style="font-size:12px; color:var(--text-muted);">Debranșat sau CT sau Inactiv</span></td>
-                            <td style="text-align:center;">
-                                <button type="button" class="btn-action-icon" title="Selectează acest serviciu" style="color:var(--green);"
+                            <td>Debranșat sau CT sau Inactiv</td>
+                            <td style="text-align: center;">
+                                <button type="button" class="btn-action-icon" title="Selectează acest serviciu"
                                         onclick="selectServicePickerItem('112', 'test', 'Energie Termică', 'Debranșat sau CT sau Inactiv', 'Contor Energie Termică', 'RON')">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 </button>
@@ -1053,15 +1089,15 @@
                             data-criteria="Repartitor sau contor"
                             data-currency="RON"
                             data-search="a100 exploatare instalatii c-tii - c+c contoare apa - lunar / contor apă contorizat">
-                            <td style="font-weight:600; font-family:monospace;">A100</td>
-                            <td style="font-weight:500; font-size:13px; line-height:1.3;">Exploatare Instalatii C-TII - C+C Contoare Apa - lunar / contor</td>
+                            <td class="td-code">A100</td>
+                            <td class="td-name">Exploatare Instalatii C-TII - C+C Contoare Apa - lunar / contor</td>
                             <td>
                                 <span class="badge" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">
                                     Apă                                </span>
                             </td>
-                            <td><span style="font-size:12px; color:var(--text-muted);">Contorizat</span></td>
-                            <td style="text-align:center;">
-                                <button type="button" class="btn-action-icon" title="Selectează acest serviciu" style="color:var(--green);"
+                            <td>Contorizat</td>
+                            <td style="text-align: center;">
+                                <button type="button" class="btn-action-icon" title="Selectează acest serviciu"
                                         onclick="selectServicePickerItem('A100', 'Exploatare Instalatii C-TII - C+C Contoare Apa - lunar / contor', 'Apă', 'Contorizat', 'Repartitor sau contor', 'RON')">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 </button>
@@ -1074,15 +1110,15 @@
                             data-criteria="Repartitor sau contor"
                             data-currency="RON"
                             data-search="a200 exploatare instalatii c-tii - c contoare apa - lunar / contor apă contorizat">
-                            <td style="font-weight:600; font-family:monospace;">A200</td>
-                            <td style="font-weight:500; font-size:13px; line-height:1.3;">Exploatare Instalatii C-TII - C Contoare Apa - lunar / contor</td>
+                            <td class="td-code">A200</td>
+                            <td class="td-name">Exploatare Instalatii C-TII - C Contoare Apa - lunar / contor</td>
                             <td>
                                 <span class="badge" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">
                                     Apă                                </span>
                             </td>
-                            <td><span style="font-size:12px; color:var(--text-muted);">Contorizat</span></td>
-                            <td style="text-align:center;">
-                                <button type="button" class="btn-action-icon" title="Selectează acest serviciu" style="color:var(--green);"
+                            <td>Contorizat</td>
+                            <td style="text-align: center;">
+                                <button type="button" class="btn-action-icon" title="Selectează acest serviciu"
                                         onclick="selectServicePickerItem('A200', 'Exploatare Instalatii C-TII - C Contoare Apa - lunar / contor', 'Apă', 'Contorizat', 'Repartitor sau contor', 'RON')">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 </button>
@@ -1095,15 +1131,15 @@
                             data-criteria="Repartitor sau contor"
                             data-currency="RON"
                             data-search="a250 exploatare instalatii c-tii - c&amp;nci contoare apa - lunar / contor apă contorizat">
-                            <td style="font-weight:600; font-family:monospace;">A250</td>
-                            <td style="font-weight:500; font-size:13px; line-height:1.3;">Exploatare Instalatii C-TII - C&amp;NCI Contoare Apa - lunar / contor</td>
+                            <td class="td-code">A250</td>
+                            <td class="td-name">Exploatare Instalatii C-TII - C&amp;NCI Contoare Apa - lunar / contor</td>
                             <td>
                                 <span class="badge" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">
                                     Apă                                </span>
                             </td>
-                            <td><span style="font-size:12px; color:var(--text-muted);">Contorizat</span></td>
-                            <td style="text-align:center;">
-                                <button type="button" class="btn-action-icon" title="Selectează acest serviciu" style="color:var(--green);"
+                            <td>Contorizat</td>
+                            <td style="text-align: center;">
+                                <button type="button" class="btn-action-icon" title="Selectează acest serviciu"
                                         onclick="selectServicePickerItem('A250', 'Exploatare Instalatii C-TII - C&amp;NCI Contoare Apa - lunar / contor', 'Apă', 'Contorizat', 'Repartitor sau contor', 'RON')">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 </button>
@@ -1116,15 +1152,15 @@
                             data-criteria="Apartament"
                             data-currency="RON"
                             data-search="a300 exploatare instalatii c-tii - c apa - lunar / apartament fara instalatie contorizare apă necontorizat sau restanțier">
-                            <td style="font-weight:600; font-family:monospace;">A300</td>
-                            <td style="font-weight:500; font-size:13px; line-height:1.3;">Exploatare Instalatii C-TII - C Apa - lunar / apartament fara instalatie contorizare</td>
+                            <td class="td-code">A300</td>
+                            <td class="td-name">Exploatare Instalatii C-TII - C Apa - lunar / apartament fara instalatie contorizare</td>
                             <td>
                                 <span class="badge" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">
                                     Apă                                </span>
                             </td>
-                            <td><span style="font-size:12px; color:var(--text-muted);">Necontorizat sau Restanțier</span></td>
-                            <td style="text-align:center;">
-                                <button type="button" class="btn-action-icon" title="Selectează acest serviciu" style="color:var(--green);"
+                            <td>Necontorizat sau Restanțier</td>
+                            <td style="text-align: center;">
+                                <button type="button" class="btn-action-icon" title="Selectează acest serviciu"
                                         onclick="selectServicePickerItem('A300', 'Exploatare Instalatii C-TII - C Apa - lunar / apartament fara instalatie contorizare', 'Apă', 'Necontorizat sau Restanțier', 'Apartament', 'RON')">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 </button>
@@ -1137,15 +1173,15 @@
                             data-criteria="Contor Părți Comune"
                             data-currency="RON"
                             data-search="a400 exploatare instalatii c-tii - c apa comune - lunar / contor apă contorizat">
-                            <td style="font-weight:600; font-family:monospace;">A400</td>
-                            <td style="font-weight:500; font-size:13px; line-height:1.3;">Exploatare Instalatii C-TII - C Apa Comune - lunar / contor</td>
+                            <td class="td-code">A400</td>
+                            <td class="td-name">Exploatare Instalatii C-TII - C Apa Comune - lunar / contor</td>
                             <td>
                                 <span class="badge" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">
                                     Apă                                </span>
                             </td>
-                            <td><span style="font-size:12px; color:var(--text-muted);">Contorizat</span></td>
-                            <td style="text-align:center;">
-                                <button type="button" class="btn-action-icon" title="Selectează acest serviciu" style="color:var(--green);"
+                            <td>Contorizat</td>
+                            <td style="text-align: center;">
+                                <button type="button" class="btn-action-icon" title="Selectează acest serviciu"
                                         onclick="selectServicePickerItem('A400', 'Exploatare Instalatii C-TII - C Apa Comune - lunar / contor', 'Apă', 'Contorizat', 'Contor Părți Comune', 'RON')">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 </button>
@@ -1158,15 +1194,15 @@
                             data-criteria="Repartitor sau contor"
                             data-currency="RON"
                             data-search="sc100 exploatare instalatii c-tii - repartizare incalzire radiatoare - lunar / repartitor energie termică contorizat">
-                            <td style="font-weight:600; font-family:monospace;">SC100</td>
-                            <td style="font-weight:500; font-size:13px; line-height:1.3;">Exploatare Instalatii C-TII - Repartizare Incalzire Radiatoare - lunar / repartitor</td>
+                            <td class="td-code">SC100</td>
+                            <td class="td-name">Exploatare Instalatii C-TII - Repartizare Incalzire Radiatoare - lunar / repartitor</td>
                             <td>
                                 <span class="badge" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">
                                     Energie Termică                                </span>
                             </td>
-                            <td><span style="font-size:12px; color:var(--text-muted);">Contorizat</span></td>
-                            <td style="text-align:center;">
-                                <button type="button" class="btn-action-icon" title="Selectează acest serviciu" style="color:var(--green);"
+                            <td>Contorizat</td>
+                            <td style="text-align: center;">
+                                <button type="button" class="btn-action-icon" title="Selectează acest serviciu"
                                         onclick="selectServicePickerItem('SC100', 'Exploatare Instalatii C-TII - Repartizare Incalzire Radiatoare - lunar / repartitor', 'Energie Termică', 'Contorizat', 'Repartitor sau contor', 'RON')">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 </button>
@@ -1179,15 +1215,15 @@
                             data-criteria="Corp de încălzire"
                             data-currency="RON"
                             data-search="sc102 sc pt. apartamentele contorizate cu repartitoare clasice lunar / corp incalzire energie termică contorizat">
-                            <td style="font-weight:600; font-family:monospace;">SC102</td>
-                            <td style="font-weight:500; font-size:13px; line-height:1.3;">SC pt. apartamentele contorizate cu repartitoare clasice lunar / corp incalzire</td>
+                            <td class="td-code">SC102</td>
+                            <td class="td-name">SC pt. apartamentele contorizate cu repartitoare clasice lunar / corp incalzire</td>
                             <td>
                                 <span class="badge" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">
                                     Energie Termică                                </span>
                             </td>
-                            <td><span style="font-size:12px; color:var(--text-muted);">Contorizat</span></td>
-                            <td style="text-align:center;">
-                                <button type="button" class="btn-action-icon" title="Selectează acest serviciu" style="color:var(--green);"
+                            <td>Contorizat</td>
+                            <td style="text-align: center;">
+                                <button type="button" class="btn-action-icon" title="Selectează acest serviciu"
                                         onclick="selectServicePickerItem('SC102', 'SC pt. apartamentele contorizate cu repartitoare clasice lunar / corp incalzire', 'Energie Termică', 'Contorizat', 'Corp de încălzire', 'RON')">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 </button>
@@ -1200,15 +1236,15 @@
                             data-criteria="Apartament"
                             data-currency="RON"
                             data-search="sd100 exploatare instalatii c-tii - repartizare consum comun incalzire - lunar / apartament debransat energie termică debranșat sau ct sau inactiv">
-                            <td style="font-weight:600; font-family:monospace;">SD100</td>
-                            <td style="font-weight:500; font-size:13px; line-height:1.3;">Exploatare Instalatii C-TII - Repartizare Consum Comun Incalzire - lunar / apartament debransat</td>
+                            <td class="td-code">SD100</td>
+                            <td class="td-name">Exploatare Instalatii C-TII - Repartizare Consum Comun Incalzire - lunar / apartament debransat</td>
                             <td>
                                 <span class="badge" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">
                                     Energie Termică                                </span>
                             </td>
-                            <td><span style="font-size:12px; color:var(--text-muted);">Debranșat sau CT sau Inactiv</span></td>
-                            <td style="text-align:center;">
-                                <button type="button" class="btn-action-icon" title="Selectează acest serviciu" style="color:var(--green);"
+                            <td>Debranșat sau CT sau Inactiv</td>
+                            <td style="text-align: center;">
+                                <button type="button" class="btn-action-icon" title="Selectează acest serviciu"
                                         onclick="selectServicePickerItem('SD100', 'Exploatare Instalatii C-TII - Repartizare Consum Comun Incalzire - lunar / apartament debransat', 'Energie Termică', 'Debranșat sau CT sau Inactiv', 'Apartament', 'RON')">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                 </button>
@@ -1391,10 +1427,10 @@ function selectServicePickerItem(code, name, utility, status, criteria, currency
                     Afișare NOD-uri: <strong class="nod-picker-count" id="contractNodModal-count">0</strong>
                 </span>
                 <div class="nod-picker-page-btns">
-                    <button type="button" class="btn-action-icon nod-picker-prev" data-modal="contractNodModal" disabled>
+                    <button type="button" class="btn-action-icon nod-picker-prev" title="Pagina anterioară" data-modal="contractNodModal" disabled>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
                     </button>
-                    <button type="button" class="btn-action-icon nod-picker-next" data-modal="contractNodModal" disabled>
+                    <button type="button" class="btn-action-icon nod-picker-next" title="Pagina următoare" data-modal="contractNodModal" disabled>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
                 </div>
@@ -1472,25 +1508,6 @@ function selectServicePickerItem(code, name, utility, status, criteria, currency
 
 <!-- ══ Scripturi Pagină ══════════════════════════════════════════════════ -->
 <script>
-function switchContractTab(tabKey, btnElement) {
-    document.querySelectorAll('.edit-tab-btn').forEach(btn => {
-        btn.classList.remove('active');
-        btn.setAttribute('aria-selected', 'false');
-    });
-    btnElement.classList.add('active');
-    btnElement.setAttribute('aria-selected', 'true');
-
-    document.querySelectorAll('.tab-pane').forEach(pane => {
-        pane.style.display = 'none';
-        pane.classList.remove('active');
-    });
-
-    const targetPane = document.getElementById('tab-' + tabKey);
-    if (targetPane) {
-        targetPane.style.display = 'block';
-        targetPane.classList.add('active');
-    }
-}
 
 function openPartnerModal() {
     const modal = document.getElementById('partnerPickerModal');
@@ -1567,19 +1584,16 @@ function selectContractService(code, name, utility, status, criteria, currency) 
     var tr = document.createElement('tr');
     tr.setAttribute('data-code', code);
     tr.innerHTML = `
-        <td><span style="font-family: monospace; font-weight: 600; color: var(--accent);">${escapeHtml(code)}</span></td>
-        <td style="font-weight: 500;">${escapeHtml(name)}</td>
+        <td class="td-code">${escapeHtml(code)}</td>
+        <td class="td-name">${escapeHtml(name)}</td>
         <td>${escapeHtml(utility)}</td>
-        <td style="color: var(--text-muted); font-size: 13px;">${escapeHtml(status || '—')}</td>
+        <td>${escapeHtml(status || '—')}</td>
         <td>${escapeHtml(currency || 'RON')}</td>
         <td style="text-align: center;">
             <span class="service-active-badge status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
         </td>
         <td style="text-align: center;">
-            <button type="button" class="btn-secondary" style="font-size: 11px; padding: 3px 8px; color: var(--red); border-color: rgba(239, 68, 68, 0.3); display: inline-flex; align-items: center; gap: 4px;" title="Dezactivează serviciu" onclick="toggleContractServiceActive(this, '${escapeHtml(code)}')">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
-                <span>Dezactivează</span>
-            </button>
+            <button type="button" class="btn-action-icon" title="Dezactivează serviciu" onclick="toggleContractServiceActive(this, '${escapeHtml(code)}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg></button>
         </td>
     `;
     tbody.appendChild(tr);
@@ -1598,12 +1612,7 @@ function toggleContractServiceActive(btn, code) {
                 badge.className = 'service-active-badge status-badge status-offline';
                 badge.textContent = 'Nu';
             }
-            btn.innerHTML = `
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Activează</span>
-            `;
-            btn.style.color = 'var(--green)';
-            btn.style.borderColor = 'rgba(16, 185, 129, 0.3)';
+            btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
             btn.title = 'Activează serviciul';
         }
     } else {
@@ -1612,12 +1621,7 @@ function toggleContractServiceActive(btn, code) {
                 badge.className = 'service-active-badge status-badge status-online';
                 badge.textContent = 'Da';
             }
-            btn.innerHTML = `
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
-                <span>Dezactivează</span>
-            `;
-            btn.style.color = 'var(--red)';
-            btn.style.borderColor = 'rgba(239, 68, 68, 0.3)';
+            btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>';
             btn.title = 'Dezactivează serviciul';
         }
     }
@@ -1651,15 +1655,15 @@ function associateNodToContractCallback(nodCode, nodItem) {
     var tr = document.createElement('tr');
     tr.setAttribute('data-code', nodCode);
     tr.innerHTML = `
-        <td style="font-family: monospace; font-weight: 600; color: var(--accent);">${escapeHtml(nodCode)}</td>
+        <td class="td-code">${escapeHtml(nodCode)}</td>
         <td>${escapeHtml(address)}</td>
-        <td style="font-weight: 500;">${escapeHtml(association)}</td>
-        <td style="text-align: center; font-weight: 600;">—</td>
+        <td class="td-name">${escapeHtml(association)}</td>
+        <td class="td-code" style="text-align: center;">—</td>
         <td style="text-align: center;">
             <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Da</span>
         </td>
         <td style="text-align: center;">
-            <button type="button" class="btn-action-icon" title="Șterge asocierea NOD" style="color: var(--red);" onclick="removeNodAssociation(this, '${escapeHtml(nodCode)}')">
+            <button type="button" class="btn-action-icon" title="Șterge asocierea NOD" onclick="removeNodAssociation(this, '${escapeHtml(nodCode)}')">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
             </button>
         </td>
@@ -1690,7 +1694,7 @@ function updateNodsCount() {
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

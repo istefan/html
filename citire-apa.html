@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Citiri Apă (AR, AC) – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
+    <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+<script>
+    (function() {
+        var sb = document.getElementById('sidebar');
+        var ls = localStorage.getItem('sb_collapsed');
+        if (ls === '1') sb.classList.add('collapsed');
+        else if (ls === '0') sb.classList.remove('collapsed');
+    })();
+</script>
+    <!-- ── Logo ─────────────────────────────────────────────────────── -->
+    <!-- React: <SidebarLogo activeApp={activeApp} /> -->
+    <div class="logo">
+        <a href="sonic-dashboard.html" title="SONIC – Acasă">
+            <img src="assets/images/sonic-logo.svg"
+                 alt="SONIC"
+                 class="logo-full"
+                 id="sidebarLogo">
+            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">S</span>
+        </a>
+    </div>
+
+    <!-- ── Nav ───────────────────────────────────────────────────────── -->
+    <!-- React: <SidebarNav activeApp={activeApp} onAppChange={setActiveApp} /> -->
+    <nav class="sidebar-nav" aria-label="Navigare principală">
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  1. SONIC GRID
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-grid"
+             data-logo="assets/images/sonic-grid-logo.svg"
+             data-logo-icon="SG">
+            <button class="app-section-header" type="button" title="SONIC GRID">
+                <img src="assets/images/sonic-grid-logo.svg" class="app-section-logo" alt="SONIC GRID">
+                <span class="app-section-badge">SG</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Panoul Meu -->
+                <a href="panoul-meu.html" class="nav-item " title="Panoul Meu">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </span>
+                    <span class="nav-label">Panoul Meu</span>
+                </a>
+
+                <!-- Adresele Mele -->
+                <a href="adresele-mele.html" class="nav-item " title="Adresele Mele">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </span>
+                    <span class="nav-label">Adresele Mele</span>
+                </a>
+
+                <!-- Regiuni / Zone -->
+                <a href="regiuni-zone.html" class="nav-item " title="Regiuni / Zone">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </span>
+                    <span class="nav-label">Regiuni / Zone</span>
+                </a>
+
+                <!-- Perioade Citiri -->
+                <a href="perioade-citiri.html" class="nav-item " title="Perioade Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </span>
+                    <span class="nav-label">Perioade Citiri</span>
+                </a>
+
+                <!-- Setări Alerte -->
+                <a href="setari-alerte.html" class="nav-item " title="Setări Alerte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </span>
+                    <span class="nav-label">Setări Alerte</span>
+                </a>
+
+                <!-- Info Center -->
+                <a href="info-center.html" class="nav-item " title="Info Center">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    <span class="nav-label">Info Center</span>
+                </a>
+
+                <!-- Contact -->
+                <a href="contact.html" class="nav-item " title="Contact">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </span>
+                    <span class="nav-label">Contact</span>
+                </a>
+
+                <!-- ── RAPOARTE (section label) ── -->
+                <div class="nav-section">Rapoarte</div>
+
+                <!-- Raport Citiri -->
+                <a href="raport-citiri.html" class="nav-item " title="Raport Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Raport Citiri</span>
+                </a>
+
+                <!-- Bilanț Neînchideri Apă -->
+                <a href="bilant-neinchideri.html" class="nav-item " title="Bilanț Neînchideri Apă">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                    </span>
+                    <span class="nav-label">Bilanț Neînchideri Apă</span>
+                </a>
+
+                <!-- Estimări Consum -->
+                <a href="estimari-consum.html" class="nav-item " title="Estimări Consum">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </span>
+                    <span class="nav-label">Estimări Consum</span>
+                </a>
+
+                <!-- Raport Alerte -->
+                <a href="raport-alerte.html" class="nav-item " title="Raport Alerte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Raport Alerte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  2. SONIC MARKET
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-market"
+             data-logo="assets/images/sonic-market-logo.svg"
+             data-logo-icon="SM">
+            <button class="app-section-header" type="button" title="SONIC MARKET">
+                <img src="assets/images/sonic-market-logo.svg" class="app-section-logo" alt="SONIC MARKET">
+                <span class="app-section-badge">SM</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard Market -->
+                <a href="market-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  3. SONIC PRO
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-pro"
+             data-logo="assets/images/sonic-pro-logo.svg"
+             data-logo-icon="SP">
+            <button class="app-section-header" type="button" title="SONIC PRO">
+                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+                <span class="app-section-badge">SP</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard PRO (dispecerat) -->
+                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  4. SONIC BILLING
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section open"
+             data-app="sonic-billing"
+             data-logo="assets/images/sonic-billing-logo.svg"
+             data-logo-icon="SB">
+            <button class="app-section-header" type="button" title="SONIC BILLING">
+                <img src="assets/images/sonic-billing-logo.svg" class="app-section-logo" alt="SONIC BILLING">
+                <span class="app-section-badge">SB</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard -->
+                <a href="index.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── ADMINISTRARE ─────────────────────────────────────────── -->
+                <div class="nav-group " data-group="administrare">
+                    <button class="nav-group-title" type="button" title="Administrare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                        </span>
+                        <span class="nav-label">Administrare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="utilizatori.html" class="nav-subitem ">Utilizatori</a>
+                        <a href="cititori.html" class="nav-subitem ">Cititori</a>
+                        <a href="parametri-sistem.html" class="nav-subitem ">Parametri Sistem</a>
+                        <a href="stergere-perioade.html" class="nav-subitem ">Ștergere Perioade Calcul</a>
+                    </div>
+                </div>
+
+                <!-- ── DICTIONARE ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="dictionare">
+                    <button class="nav-group-title" type="button" title="Dictionare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Dictionare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="localitati.html" class="nav-subitem ">Localități</a>
+                        <a href="puncte-lucru.html" class="nav-subitem ">Puncte de Lucru</a>
+                        <a href="producatori.html" class="nav-subitem ">Producători</a>
+                        <a href="furnizori.html" class="nav-subitem ">Furnizori Utilități</a>
+                        <a href="unitati-masura.html" class="nav-subitem ">Unități de Măsură</a>
+                        <a href="tipuri-servicii.html" class="nav-subitem ">Tipuri Servicii</a>
+                        <a href="companii.html" class="nav-subitem ">Companii</a>
+                    </div>
+                </div>
+
+                <!-- ── DATABANK MANAGEMENT ──────────────────────────────────── -->
+                <div class="nav-group " data-group="databank">
+                    <button class="nav-group-title" type="button" title="Databank Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                        </span>
+                        <span class="nav-label">Databank Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="tipuri-radiatoare.html" class="nav-subitem ">Tipuri Radiatoare</a>
+                        <a href="modele-radiatoare.html" class="nav-subitem ">Modele Radiatoare</a>
+                        <a href="modele-repartitoare.html" class="nav-subitem ">Modele Repartitoare</a>
+                        <a href="modele-contoare.html" class="nav-subitem ">Modele Contoare</a>
+                        <a href="serii-apometre.html" class="nav-subitem ">Serii Apometre Achiziționate</a>
+                    </div>
+                </div>
+
+                <!-- ── CALCUL ────────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="calcul">
+                    <button class="nav-group-title" type="button" title="Calcul">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </span>
+                        <span class="nav-label">Calcul</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
+                        <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
+                        <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
+                        <a href="tarife.html" class="nav-subitem ">Tarife</a>
+                    </div>
+                </div>
+
+                <!-- ── IMPORT / EXPORT CITIRI ───────────────────────────────── -->
+                <div class="nav-group open" data-group="import-export">
+                    <button class="nav-group-title" type="button" title="Import / Export Citiri">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </span>
+                        <span class="nav-label">Import / Export Citiri</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="citire-manuala-et.html" class="nav-subitem ">Citire Manuală ET</a>
+                        <a href="citire-manuala-apa.html" class="nav-subitem active">Citire Manuală Apă</a>
+                        <a href="citiri-brute-et.html" class="nav-subitem ">Citiri Brute Energie Termică</a>
+                        <a href="citiri-brute-apa.html" class="nav-subitem ">Citiri Brute Apă</a>
+                        <a href="export-pl.html" class="nav-subitem ">Export PL</a>
+                    </div>
+                </div>
+
+                <!-- ── CONSUM ENERGIE TERMICĂ ────────────────────────────────── -->
+                <div class="nav-group " data-group="consum-et">
+                    <button class="nav-group-title" type="button" title="Consum Energie Termică">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                        </span>
+                        <span class="nav-label">Consum Energie Termică</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="consum-et-detaliat.html" class="nav-subitem ">Introducere Detaliată</a>
+                        <a href="consum-et-cumulat.html" class="nav-subitem ">Introducere Cumulată</a>
+                    </div>
+                </div>
+
+                <!-- ── CONSUM APĂ ─────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="consum-apa">
+                    <button class="nav-group-title" type="button" title="Consum Apă">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L7 10a5 5 0 0 0 10 0L12 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Consum Apă</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="consum-apa-detaliat.html" class="nav-subitem ">Introducere Detaliată</a>
+                    </div>
+                </div>
+
+                <!-- ── VALIDARE CITIRE ───────────────────────────────────────── -->
+                <div class="nav-group " data-group="validare">
+                    <button class="nav-group-title" type="button" title="Validare Citire">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </span>
+                        <span class="nav-label">Validare Citire</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="validare-et.html" class="nav-subitem ">Validare Citire – ET</a>
+                        <a href="validare-apa.html" class="nav-subitem ">Validare Citire – Apă</a>
+                        <a href="cost-split-apa.html" class="nav-subitem ">Cost Split – Apă</a>
+                    </div>
+                </div>
+
+                <!-- ── GESTIUNE FACTURARE (standalone) ──────────────────────── -->
+                <a href="facturare.html" class="nav-item " title="Gestiune Facturare">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Gestiune Facturare</span>
+                </a>
+
+                <!-- ── GESTIUNE TIPĂRIRE ───────────────────────────────────────── -->
+                <div class="nav-group " data-group="tiparire">
+                    <button class="nav-group-title" type="button" title="Gestiune Tipărire">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                        </span>
+                        <span class="nav-label">Gestiune Tipărire</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="nod-tiparire.html" class="nav-subitem ">NOD pentru Tipărire</a>
+                        <a href="fise-citire.html" class="nav-subitem ">Fișe Citire</a>
+                    </div>
+                </div>
+
+                <!-- ── RAPOARTE (standalone) ──────────────────────────────────── -->
+                <a href="rapoarte.html" class="nav-item " title="Rapoarte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <span class="nav-label">Rapoarte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  5. SONIC FIN
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-fin"
+             data-logo="assets/images/sonic-fin-logo.svg"
+             data-logo-icon="SF">
+            <button class="app-section-header" type="button" title="SONIC FIN">
+                <img src="assets/images/sonic-fin-logo.svg" class="app-section-logo" alt="SONIC FIN">
+                <span class="app-section-badge">SF</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard FIN -->
+                <a href="fin-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  6. SONIC (Base – Ecosistem & Configurare)
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic"
+             data-logo="assets/images/sonic-logo.svg"
+             data-logo-icon="S">
+            <button class="app-section-header" type="button" title="SONIC">
+                <img src="assets/images/sonic-logo.svg" class="app-section-logo" alt="SONIC">
+                <span class="app-section-badge">S</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard SONIC -->
+                <a href="sonic-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <div class="nav-group " data-group="master-data">
+                    <button class="nav-group-title" type="button" title="Master Data Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Master Data Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
+                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
+                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
+                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
+                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
+                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- ── Sidebar Footer ─────────────────────────────────────────────── -->
+    <!-- React: <SidebarFooter /> -->
+    <div class="sidebar-footer">
+        <a href="contul-meu.html" class="nav-item " title="Contul Meu">
+            <span class="nav-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <span class="nav-label">Contul Meu</span>
+        </a>
+    </div>
+
+</aside>
+
+<!-- React: <main className="main"> -->
+<div class="main">
+
+    <!--
+        React: <Header
+            onToggleSidebar={toggleSidebar}
+            isCollapsed={isCollapsed}
+            isMobileOpen={isMobileOpen}
+            pageTitle={pageTitle}
+        />
+    -->
+    <div class="header">
+
+        <!-- LEFT: hamburger / sidebar-toggle + search (desktop) -->
+        <div class="header-left">
+            <!--
+                React: <SidebarToggleBtn
+                    onClick={onToggleSidebar}
+                    isCollapsed={isCollapsed}
+                    isMobile={isMobile}
+                />
+                Desktop: panel-left icon with collapse arrow
+                Mobile : hamburger icon
+            -->
+            <button class="sidebar-toggle-btn" id="sidebarToggle"
+                    title="Restrânge / Extinde meniu"
+                    aria-label="Toggle sidebar"
+                    data-collapsed="0">
+                <script>
+                    (function() {
+                        var btn = document.getElementById('sidebarToggle');
+                        var ls = localStorage.getItem('sb_collapsed');
+                        if (ls === '1') btn.setAttribute('data-collapsed', '1');
+                        else if (ls === '0') btn.setAttribute('data-collapsed', '0');
+                    })();
+                </script>
+                <!-- Mobile hamburger (hidden on desktop via CSS) -->
+                <svg class="icon-hamburger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+                <!-- Desktop panel icon (hidden on mobile via CSS) -->
+                <svg class="icon-panel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <line x1="9" y1="3" x2="9" y2="21"/>
+                    <polyline points="15 8 12 12 15 16" class="toggle-arrow"/>
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- CENTER: logo (mobile only, absolutely centered) -->
+        <!-- React: isMobile && <HeaderLogo /> -->
+        <div class="header-logo" aria-hidden="true">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-billing-logo.svg" alt="SONIC BILLING" id="headerLogo">
+            </a>
+        </div>
+
+        <!-- RIGHT: page title (desktop) + user + logout -->
+        <div class="header-actions">
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
+            <div class="header-page-title">Citiri Apă (AR, AC)</div>
+
+            <!-- User profile avatar (always visible) -->
+            <a href="contul-meu.html" class="user-profile" title="Contul meu">SI</a>
+
+            <!-- Logout button – icon only, always visible -->
+            <!-- React: <LogoutBtn onClick={handleLogout} /> -->
+            <a href="login.html" class="logout-btn" title="Deconectare" aria-label="Deconectare">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+            </a>
+        </div>
+
+    </div><!-- /.header -->
+
+    <!--
+        CONTEXTUAL HELP BAR (WordPress-style)
+        React: <HelpBar onToggle={toggleHelp} isOpen={isHelpOpen} />
+               <HelpPanel isOpen={isHelpOpen} tabs={helpTabs} />
+    -->
+    <div class="help-wrapper">
+        <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
+            <div class="help-panel-inner">
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Navigare &amp; Antet                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Tabel Contoare &amp; Calcul                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-3"
+                            aria-selected="false"
+                            aria-controls="help-pane-3"
+                            data-tab="3">
+                        Observații &amp; Validări                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Citiri Apă (AR, AC) – Apartament</h4>
+            <p>Această pagină permite vizualizarea și introducerea manuală a indecșilor contoarelor de apă rece și caldă la nivelul unui apartament individual.</p>
+            <p>Conține datele de identificare ale apartamentului, metadatele citirii (autor citire, dată citire, consum total, observații) și tabelul detaliat cu toate apometrele alocate apartamentului.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <h4>Trecerea de la un apartament la altul</h4>
+            <ul>
+                <li><strong>Primul / Anterior / Următor / Ultimul</strong> &ndash; butoanele din bara de navigare permit parcurgerea rapidă secvențială a tuturor apartamentelor din NOD fără a reveni la listă.</li>
+                <li><strong>Autor Citire</strong> (obligatoriu) &ndash; operatorul sau cititorul care a efectuat citirea pe teren.</li>
+                <li><strong>Data Citire</strong> &ndash; data la care s-au citit indecșii (format <code>ZZ.LL.AAAA</code>).</li>
+                <li><strong>Consum Total</strong> &ndash; suma consumurilor (m³) de pe toate contoarele de apă ale apartamentului (se actualizează automat sau prin butonul de recalculare).</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <h4>Calculul consumului de apă</h4>
+            <ul>
+                <li><strong>Index Vechi Direct / Index Nou Direct</strong> &ndash; indecșii pe sensul direct de curgere.</li>
+                <li><strong>Index Vechi Invers / Index Nou Invers</strong> &ndash; indecșii pe sensul invers (dacă apometrul înregistrează flux invers).</li>
+                <li><strong>Consum</strong> &ndash; calculat automat conform formulei oficiale: <code>Consum = (Index Nou Direct + Index Nou Invers) - (Index Vechi Direct + Index Vechi Invers)</code>.</li>
+                <li><strong>Tasta Enter</strong> &ndash; apăsarea tastei Enter într-o celulă de index mută automat cursorul pe următorul câmp editabil.</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-3"
+                         aria-labelledby="help-tab-3"
+                         data-pane="3">
+                        
+            <h4>Validări active</h4>
+            <ul>
+                <li>Toți indecșii introduși trebuie să fie numere pozitive (mesaj: <em>„Introduceti un numar pozitiv”</em>).</li>
+                <li>Dacă diferența rezultată este negativă, sistemul avertizează operatorul (<em>„Atentie! Diferenta negativa de indecsi!”</em>).</li>
+                <li><strong>Observații citire</strong> &ndash; permite marcarea anomaliilor: <em>Aparat defect, Aparat desigilat, Aparat imposibil de citit, Aparat programat gresit, Camera inchisa, Contor inlocuit, Contor montat invers, Lipsa aparat, Necontorizat, Pozitie de montaj incorecta, Serie gresita</em>.</li>
+            </ul>
+                            </div>
+                                    </div>
+                    </div><!-- /.help-panel-inner -->
+        </div><!-- /.help-panel -->
+        
+        <div class="help-bar">
+            <button class="help-toggle-btn" id="helpToggle"
+                    aria-expanded="false"
+                    aria-controls="helpPanel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round"
+                     width="14" height="14" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                <span>Ajutor</span>
+                <svg class="help-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                     aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"/>
+                </svg>
+            </button>
+        </div><!-- /.help-bar -->
+    </div><!-- /.help-wrapper -->
+
+    <div class="content">
+
+<!-- === Titlu pagină ===
+     React: <PageTitleContainer title="Citiri Apă (AR, AC)" backHref={backUrl} />
+-->
+<div class="page-title-container">
+    <div class="page-title">
+        <h1>Citiri Apă (AR, AC)</h1>
+        <p>Introducere și vizualizare citiri contoare apă caldă și rece pe apartament.</p>
+    </div>
+    <a href="lista-apartamente-apa.html?nod=81-033-0001&amp;period=01.09.2021+-+30.09.2021" class="btn-secondary" id="ctl00_phContent_btnTopBack">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        <span>Înapoi la Lista Apartamente</span>
+    </a>
+</div>
+
+<!-- === Casetă contextuală conform RULES.md §1.9 === -->
+<div class="utility-context-strip">
+    <div class="utility-context-left">
+        <div class="context-item">
+            <span class="context-label">NOD</span>
+            <strong class="context-value context-code" id="ctl00_phContent_ucHeaderInformation_lblUSCounter">81-033-0001</strong>
+        </div>
+        <div class="context-item">
+            <span class="context-label">Asociație</span>
+            <strong class="context-value">ASOCIATIA DE PROPRIETARI BL DE MIJLOC</strong>
+        </div>
+        <div class="context-item">
+            <span class="context-label">Perioadă calcul</span>
+            <strong class="context-value" id="ctl00_phContent_ucHeaderInformation_lblCP">01.09.2021 - 30.09.2021</strong>
+        </div>
+    </div>
+    <div>
+        <span class="status-badge status-online" id="ctl00_phContent_ucHeaderInformation_lblUS">Utilitate: Apa</span>
+    </div>
+</div>
+
+<form name="aspnetForm" method="post" action="citire-apa.html?nod=81-033-0001&period=01.09.2021+-+30.09.2021&code=0001" id="aspnetForm" novalidate>
+
+    <!-- === Sumar erori validare (ctl00_VS) === -->
+    <div id="ctl00_VS" class="card" style="display: none; border-color: var(--red); padding: 12px 16px; margin-bottom: 16px;"></div>
+
+    <!-- === Card Detalii Apartament & Antet Citire (formBox) ===
+         React: <ApartmentWaterReadingHeaderCard flat={currentFlat} readers={readers} />
+    -->
+    <div class="card edit-section-card" style="margin-bottom: 16px;">
+        <div class="edit-section-header">
+            <span class="edit-section-title">Detalii Apartament &amp; Citire</span>
+            <span class="status-badge status-online" id="ctl00_phContent_lblAddressStatus">Contorizat</span>
+        </div>
+
+        <div class="edit-section-body">
+            <!-- Rând 1 & 2 din sursă: Cod Apartament, Proprietar, Tip Contorizare, Adresa apartament -->
+            <div class="apt-info-strip" id="ctl00_phContent_trAppDetail1">
+                <div>
+                    <span class="context-label context-label-block">Cod Apartament</span>
+                    <strong class="context-value context-code" id="ctl00_phContent_lblCode">0001</strong>
+                </div>
+                <div>
+                    <span class="context-label context-label-block">Proprietar</span>
+                    <strong class="context-value" id="ctl00_phContent_lblOwner">POPA RAMONA</strong>
+                </div>
+                <div>
+                    <span class="context-label context-label-block">Tip Contorizare</span>
+                    <span class="context-value" id="lblAddressStatusText">Contorizat</span>
+                </div>
+                <div class="apt-info-address" id="ctl00_phContent_trAppDetail2">
+                    <span class="context-label">Adresă apartament:</span>
+                    <span class="context-value" id="ctl00_phContent_lblAddress">Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 1, Brasov</span>
+                </div>
+            </div>
+
+            <!-- Rând 3 & 4 din sursă: Autor Citire, Data Citire, Consum Total, Observații Citire -->
+            <div class="form-row-3" id="ctl00_phContent_trAppDetail3">
+                <!-- Autor Citire (ddlReader) -->
+                <div class="form-group">
+                    <label class="form-label" for="ctl00_phContent_ddlReader">
+                        Autor Citire <span class="required-star" id="ctl00_phContent_vldReader">*</span>
+                    </label>
+                    <select name="ctl00$phContent$ddlReader" id="ctl00_phContent_ddlReader" class="input-control" required>
+                                                    <option value="-1" >
+                                -                            </option>
+                                                    <option value="60" >
+                                1 Deservcom                            </option>
+                                                    <option value="75" >
+                                3 Deservcom                            </option>
+                                                    <option value="76" >
+                                4 Deservcom                            </option>
+                                                    <option value="39" >
+                                Adriana Popescu                            </option>
+                                                    <option value="30" >
+                                Alexandru Balanescu                            </option>
+                                                    <option value="3" >
+                                Aura Radut                            </option>
+                                                    <option value="34" >
+                                Aurica Paizan                            </option>
+                                                    <option value="89" selected="selected">
+                                Brasov 1                            </option>
+                                                    <option value="62" >
+                                BUC Sectorul 1                            </option>
+                                                    <option value="63" >
+                                BUC Sectorul 2a                            </option>
+                                                    <option value="97" >
+                                BUC Sectorul 2b                            </option>
+                                                    <option value="64" >
+                                BUC Sectorul 3a                            </option>
+                                                    <option value="72" >
+                                BUC Sectorul 3b                            </option>
+                                                    <option value="98" >
+                                BUC Sectorul 3c                            </option>
+                                                    <option value="99" >
+                                BUC Sectorul 3d                            </option>
+                                                    <option value="65" >
+                                BUC Sectorul 4a                            </option>
+                                                    <option value="77" >
+                                BUC Sectorul 4b                            </option>
+                                                    <option value="66" >
+                                BUC Sectorul 5                            </option>
+                                                    <option value="67" >
+                                BUC Sectorul 6a                            </option>
+                                                    <option value="80" >
+                                BUC Sectorul 6b                            </option>
+                                                    <option value="73" >
+                                BUC Sectorul nou                            </option>
+                                                    <option value="92" >
+                                Buftea 1                            </option>
+                                                    <option value="31" >
+                                Camelia Gurgu                            </option>
+                                                    <option value="17" >
+                                Carmen Malearic                            </option>
+                                                    <option value="2" >
+                                Cezar Miulescu                            </option>
+                                                    <option value="87" >
+                                Chiajna 1                            </option>
+                                                    <option value="91" >
+                                Chitila 1                            </option>
+                                                    <option value="1" >
+                                Citire Autor                            </option>
+                                                    <option value="70" >
+                                Constanta 1                            </option>
+                                                    <option value="26" >
+                                Constantin Sandulache                            </option>
+                                                    <option value="25" >
+                                Costica Dumitrescu                            </option>
+                                                    <option value="44" >
+                                Cristina Al Najar                            </option>
+                                                    <option value="81" >
+                                Dobroesti 1                            </option>
+                                                    <option value="35" >
+                                Doru Dadarlat                            </option>
+                                                    <option value="50" >
+                                Dumitru Ciobanu                            </option>
+                                                    <option value="42" >
+                                Elena Moise                            </option>
+                                                    <option value="20" >
+                                Elena Simion                            </option>
+                                                    <option value="52" >
+                                Elena Zaharia                            </option>
+                                                    <option value="5" >
+                                Elvira Grigorcea                            </option>
+                                                    <option value="47" >
+                                Florentina Stanciu                            </option>
+                                                    <option value="38" >
+                                Florin Ungurian                            </option>
+                                                    <option value="19" >
+                                Gabriel Benig                            </option>
+                                                    <option value="46" >
+                                Gabriel Dobreanu                            </option>
+                                                    <option value="40" >
+                                Gabriela Preda                            </option>
+                                                    <option value="27" >
+                                George Rozescu                            </option>
+                                                    <option value="29" >
+                                Georgiana Lotzcar                            </option>
+                                                    <option value="8" >
+                                Geta Obretin                            </option>
+                                                    <option value="21" >
+                                I. Gheorghe                            </option>
+                                                    <option value="18" >
+                                I. Ilie                            </option>
+                                                    <option value="54" >
+                                I. Popic                            </option>
+                                                    <option value="28" >
+                                Ilie Ciocarlan                            </option>
+                                                    <option value="49" >
+                                Ion Matei                            </option>
+                                                    <option value="14" >
+                                Ion Petcu                            </option>
+                                                    <option value="24" >
+                                Ion Stoian                            </option>
+                                                    <option value="51" >
+                                Ionel Costea                            </option>
+                                                    <option value="53" >
+                                Iulian Zaharia                            </option>
+                                                    <option value="79" >
+                                Jilava 1                            </option>
+                                                    <option value="23" >
+                                Klara Tanase                            </option>
+                                                    <option value="7" >
+                                Laurentiu Plesa                            </option>
+                                                    <option value="4" >
+                                Luminita Capan                            </option>
+                                                    <option value="11" >
+                                M. Baltag                            </option>
+                                                    <option value="90" >
+                                Magurele 1                            </option>
+                                                    <option value="41" >
+                                Maria Constantin                            </option>
+                                                    <option value="32" >
+                                Maria Dragulici                            </option>
+                                                    <option value="12" >
+                                Maria Iosu                            </option>
+                                                    <option value="36" >
+                                Marius Bacleseanu                            </option>
+                                                    <option value="94" >
+                                Medgidia 1                            </option>
+                                                    <option value="48" >
+                                Mihaela Ghitulescu                            </option>
+                                                    <option value="88" >
+                                Mihail Kogalniceanu 1                            </option>
+                                                    <option value="95" >
+                                Municipiul Târgu Mures 1                            </option>
+                                                    <option value="96" >
+                                Navodari 1                            </option>
+                                                    <option value="6" >
+                                Nela Ene                            </option>
+                                                    <option value="15" >
+                                Nina Ghizdavin                            </option>
+                                                    <option value="85" >
+                                Orasul Tulcea 1                            </option>
+                                                    <option value="45" >
+                                Paul Ene                            </option>
+                                                    <option value="10" >
+                                Petre Pana                            </option>
+                                                    <option value="22" >
+                                Petre Spanu                            </option>
+                                                    <option value="9" >
+                                Petre Turcus                            </option>
+                                                    <option value="69" >
+                                Ploiesti 1                            </option>
+                                                    <option value="74" >
+                                Popesti 1                            </option>
+                                                    <option value="93" >
+                                Predeal 1                            </option>
+                                                    <option value="13" >
+                                Radu Cheveresan                            </option>
+                                                    <option value="55" >
+                                Radu Murar                            </option>
+                                                    <option value="57" >
+                                Radu Murar 2                            </option>
+                                                    <option value="58" >
+                                Radu Murar 3                            </option>
+                                                    <option value="84" >
+                                Radu Murar 4                            </option>
+                                                    <option value="83" >
+                                Radu Murar 5                            </option>
+                                                    <option value="82" >
+                                Radu Murar 6                            </option>
+                                                    <option value="59" >
+                                Rodica Baluta                            </option>
+                                                    <option value="71" >
+                                Rodica Baluta 2                            </option>
+                                                    <option value="101" >
+                                Sinaia 1                            </option>
+                                                    <option value="43" >
+                                Stelian Rosu                            </option>
+                                                    <option value="61" >
+                                Szasz Balind                            </option>
+                                                    <option value="56" >
+                                Teodor Milian                            </option>
+                                                    <option value="100" >
+                                Tunari 1                            </option>
+                                                    <option value="78" >
+                                Valeriu George Nicola                            </option>
+                                                    <option value="68" >
+                                Vartolomeu Georgescu                            </option>
+                                                    <option value="33" >
+                                Vasile Oprea                            </option>
+                                                    <option value="16" >
+                                Viorica Radu                            </option>
+                                                    <option value="86" >
+                                Voluntari 1                            </option>
+                                                    <option value="37" >
+                                Zanfir Ene                            </option>
+                                            </select>
+                </div>
+
+                <!-- Data Citire (dtpReadingDate + clear_Date) -->
+                <div class="form-group">
+                    <label class="form-label" for="ctl00_phContent_dtpReadingDate">
+                        Data Citire <span class="field-hint">(ZZ.LL.AAAA)</span>
+                    </label>
+                    <div class="picker-group">
+                        <input type="text" data-datepicker name="ctl00$phContent$dtpReadingDate" id="ctl00_phContent_dtpReadingDate"
+                               class="input-control" value="01.10.2021"
+                               placeholder="ZZ.LL.AAAA" maxlength="10">
+                        <button type="button" class="btn-picker delete" id="btnClearReadingDate"
+                                title="Șterge data citirii" onclick="clear_Date('ctl00$phContent$dtpReadingDate')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        </button>
+                    </div>
+                    <span id="ctl00_phContent_dtpvEndDate" style="display: none;"></span>
+                </div>
+
+                <!-- Consum Total (txtTotalConsumption + btnRefreshConsumption) -->
+                <div class="form-group">
+                    <label class="form-label" for="ctl00_phContent_txtTotalConsumption">
+                        Consum Total
+                    </label>
+                    <div class="picker-group">
+                        <input name="ctl00$phContent$txtTotalConsumption" type="text"
+                               value="6.771"
+                               readonly="readonly" id="ctl00_phContent_txtTotalConsumption"
+                               class="input-control" style="font-weight: 600;">
+                        <button type="button" class="btn-picker" name="ctl00$phContent$btnRefreshConsumption"
+                                id="ctl00_phContent_btnRefreshConsumption" title="Actualizează consum total...">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Observații Citire (txtReadingNotes) -->
+            <div class="form-group" style="margin-top: 14px;">
+                <label class="form-label" for="ctl00_phContent_txtReadingNotes">Observații Citire Apartament</label>
+                <textarea name="ctl00$phContent$txtReadingNotes" rows="2" cols="25"
+                          id="ctl00_phContent_txtReadingNotes" class="input-control"
+                          placeholder="Observații generale privind citirea apartamentului..."></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- === Bară Navigare Apartamente & Acțiuni (btnFirst, btnPrev, btnNext, btnLast, btnBack, btnSave, btnSaveNext) ===
+         React: <ApartmentNavigationBar currentIndex={idx} total={total} onNavigate={...} onBack={...} />
+    -->
+    <div class="apt-nav-bar">
+        <div class="apt-nav-controls">
+            <button type="button" class="btn-secondary btn-page-nav" name="ctl00$phContent$btnFirst"
+                    id="ctl00_phContent_btnFirst" title="Primul apartament" disabled>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="19" x2="5" y2="5"></line></svg>
+                <span>Primul</span>
+            </button>
+            <button type="button" class="btn-secondary btn-page-nav" name="ctl00$phContent$btnPrev"
+                    id="ctl00_phContent_btnPrev" title="Apartamentul anterior" disabled>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                <span>Anterior</span>
+            </button>
+
+            <div class="apt-nav-indicator" id="aptNavIndicator">
+                <span>Cod <strong id="navIndCode">0001</strong> &bull; Ap. <strong id="navIndFlat">1</strong> (<span id="navIndIndex">1</span> / 100)</span>
+            </div>
+
+            <button type="button" class="btn-secondary btn-page-nav" name="ctl00$phContent$btnNext"
+                    id="ctl00_phContent_btnNext" title="Apartamentul următor" >
+                <span>Următor</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+            <button type="button" class="btn-secondary btn-page-nav" name="ctl00$phContent$btnLast"
+                    id="ctl00_phContent_btnLast" title="Ultimul apartament" >
+                <span>Ultimul</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19"></line></svg>
+            </button>
+        </div>
+
+        <div class="edit-actions-group">
+            <a href="lista-apartamente-apa.html?nod=81-033-0001&amp;period=01.09.2021+-+30.09.2021" class="btn-secondary" id="ctl00_phContent_btnBack">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                <span>Înapoi</span>
+            </a>
+            <button type="submit" class="btn-secondary" name="ctl00$phContent$btnSave" id="ctl00_phContent_btnSave">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                <span>Salvează</span>
+            </button>
+            <button type="button" class="btn-primary" name="ctl00$phContent$btnSaveNext" id="ctl00_phContent_btnSaveNext">
+                <span>Salvează și Următorul</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- === Tabel Contoare Apă Apartament (Area / rptApartments) ===
+         React: <WaterMetersReadingTable rows={meters} noteOptions={noteOptions} />
+    -->
+    <div class="table-container">
+        <div class="table-toolbar">
+            <div class="table-toolbar-left">
+                <span class="table-count">
+                    Afișare <strong id="metersCount">1</strong> contoare de apă în apartamentul <strong id="toolbarFlatCode">0001</strong>
+                </span>
+            </div>
+        </div>
+
+        <div class="table-scroll">
+            <table class="cpet-table" id="waterReadingTable">
+                <thead>
+                    <tr>
+                        <th style="width: 100px;">Tip contor</th>
+                        <th>Tip Încăpere</th>
+                        <th>Serie Contor Mecanic</th>
+                        <th>Serie Modul Radio</th>
+                        <th style="text-align: right;">Index Vechi Direct</th>
+                        <th style="text-align: right;">Index Nou Direct</th>
+                        <th style="text-align: center; width: 95px;">Data Citire</th>
+                        <th style="text-align: right;">Index Vechi Invers</th>
+                        <th style="text-align: right;">Index Nou Invers</th>
+                        <th style="text-align: right;">Consum</th>
+                        <th style="text-align: center;">Autor Introducere</th>
+                        <th style="width: 160px;">Observații citire</th>
+                    </tr>
+                </thead>
+                <tbody id="rptApartmentsBody">
+                                        <tr>
+                        <td>
+                            <span class="status-badge status-online">
+                                Apa rece                            </span>
+                        </td>
+                        <td class="td-name">
+                            <span id="ctl00_phContent_rptApartments_ctl01_lblRoomType">Baie</span>
+                        </td>
+                        <td>
+                            <span class="serial-value" id="ctl00_phContent_rptApartments_ctl01_lblSerialNo">70424639</span>
+                        </td>
+                        <td>
+                            <span class="serial-value" id="ctl00_phContent_rptApartments_ctl01_lblSerialNoModulRadio">302292236</span>
+                        </td>
+                        <td style="text-align: right;">
+                            <input name="ctl00$phContent$rptApartments$ctl01$txtOldIndex" type="text"
+                                   value="5.321" maxlength="8"
+                                   id="ctl00_phContent_rptApartments_ctl01_txtOldIndex" tabindex="100"
+                                   class="flat-table-input numeric"
+                                   onblur="setConsumption('ctl00_phContent_rptApartments_ctl01_txtOldIndex', 'ctl00_phContent_rptApartments_ctl01_txtNewIndex', 'ctl00_phContent_rptApartments_ctl01_txtOldIndexInvers', 'ctl00_phContent_rptApartments_ctl01_txtNewIndexInvers', 'ctl00_phContent_rptApartments_ctl01_txtConsumption')" onkeydown="disableEnterKey(event)">
+                            <span id="ctl00_phContent_rptApartments_ctl01_vldOldIndex" style="display: none; color: red;">*</span>
+                        </td>
+                        <td style="text-align: right;">
+                            <input name="ctl00$phContent$rptApartments$ctl01$txtNewIndex" type="text"
+                                   value="12.092" maxlength="8"
+                                   id="ctl00_phContent_rptApartments_ctl01_txtNewIndex" tabindex="1"
+                                   class="flat-table-input numeric"
+                                   onblur="setConsumption('ctl00_phContent_rptApartments_ctl01_txtOldIndex', 'ctl00_phContent_rptApartments_ctl01_txtNewIndex', 'ctl00_phContent_rptApartments_ctl01_txtOldIndexInvers', 'ctl00_phContent_rptApartments_ctl01_txtNewIndexInvers', 'ctl00_phContent_rptApartments_ctl01_txtConsumption')" onkeydown="disableEnterKey(event)">
+                        </td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            29.09.2021                        </td>
+                        <td style="text-align: right;">
+                            <input name="ctl00$phContent$rptApartments$ctl01$txtOldIndexInvers" type="text"
+                                   value="0.000" maxlength="8"
+                                   id="ctl00_phContent_rptApartments_ctl01_txtOldIndexInvers" tabindex="500"
+                                   class="flat-table-input numeric"
+                                   onblur="setConsumption('ctl00_phContent_rptApartments_ctl01_txtOldIndex', 'ctl00_phContent_rptApartments_ctl01_txtNewIndex', 'ctl00_phContent_rptApartments_ctl01_txtOldIndexInvers', 'ctl00_phContent_rptApartments_ctl01_txtNewIndexInvers', 'ctl00_phContent_rptApartments_ctl01_txtConsumption')" onkeydown="disableEnterKey(event)">
+                            <span id="ctl00_phContent_rptApartments_ctl01_vldOldIndexInvers" style="display: none; color: red;">*</span>
+                        </td>
+                        <td style="text-align: right;">
+                            <input name="ctl00$phContent$rptApartments$ctl01$txtNewIndexInvers" type="text"
+                                   value="0.000" maxlength="8"
+                                   id="ctl00_phContent_rptApartments_ctl01_txtNewIndexInvers" tabindex="400"
+                                   class="flat-table-input numeric"
+                                   onblur="setConsumption('ctl00_phContent_rptApartments_ctl01_txtOldIndex', 'ctl00_phContent_rptApartments_ctl01_txtNewIndex', 'ctl00_phContent_rptApartments_ctl01_txtOldIndexInvers', 'ctl00_phContent_rptApartments_ctl01_txtNewIndexInvers', 'ctl00_phContent_rptApartments_ctl01_txtConsumption')" onkeydown="disableEnterKey(event)">
+                        </td>
+                        <td style="text-align: right;">
+                            <input name="ctl00$phContent$rptApartments$ctl01$txtConsumption" type="text"
+                                   value="6.771" readonly="readonly"
+                                   id="ctl00_phContent_rptApartments_ctl01_txtConsumption" tabindex="300"
+                                   class="flat-table-input numeric js-meter-consumption" onkeydown="disableEnterKey(event)">
+                        </td>
+                        <td style="text-align: center;">
+                            <span id="ctl00_phContent_rptApartments_ctl01_lblReadByEmployee">–</span>
+                        </td>
+                        <td>
+                            <select name="ctl00$phContent$rptApartments$ctl01$ddlNotes" id="ctl00_phContent_rptApartments_ctl01_ddlNotes"
+                                    tabindex="600" class="flat-table-select" onkeydown="disableEnterKey(event)">
+                                                                    <option value="-1" selected="selected">
+                                        -                                    </option>
+                                                                    <option value="7" >
+                                        Aparat defect                                    </option>
+                                                                    <option value="8" >
+                                        Aparat desigilat                                    </option>
+                                                                    <option value="31" >
+                                        Aparat imposibil de citit                                    </option>
+                                                                    <option value="27" >
+                                        Aparat programat gresit                                    </option>
+                                                                    <option value="22" >
+                                        Camera inchisa                                    </option>
+                                                                    <option value="10" >
+                                        Contor inlocuit                                    </option>
+                                                                    <option value="9" >
+                                        Contor montat invers                                    </option>
+                                                                    <option value="29" >
+                                        Lipsa aparat                                    </option>
+                                                                    <option value="20" >
+                                        Necontorizat                                    </option>
+                                                                    <option value="26" >
+                                        Pozitie de montaj incorecta                                    </option>
+                                                                    <option value="33" >
+                                        Serie gresita                                    </option>
+                                                            </select>
+                        </td>
+                    </tr>
+                                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <span id="ctl00_phContent_cv" style="display: none;"></span>
+
+</form>
+
+<script>
+/**
+ * Logica paginii Citiri Apă (AR, AC) (WaterReading.aspx)
+ * Păstrează funcțiile 1:1 din sursa ASP.NET (setConsumption, clear_Date, disableEnterKey)
+ * și adaugă navigarea între apartamente (btnFirst, btnPrev, btnNext, btnLast).
+ */
+var apartmentsData = [{"code":"0001","flat_no":"1","owner":"POPA RAMONA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 1, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"6.771","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70424639","serial_radio":"302292236","old_index":"5.321","new_index":"12.092","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"6.771","employee":"","note_id":"-1"}]},{"code":"0002","flat_no":"2","owner":"NALLY ANAMARIA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 2, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"4.100","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420007","serial_radio":"302200011","old_index":"13.100","new_index":"15.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.900","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430007","serial_radio":"302300011","old_index":"17.800","new_index":"20.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.200","employee":"","note_id":"-1"}]},{"code":"0003","flat_no":"3","owner":"LUNCA GABRIELA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 3, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"8.700","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420014","serial_radio":"302200022","old_index":"16.200","new_index":"18.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.600","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430014","serial_radio":"302300022","old_index":"20.900","new_index":"23.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.900","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440014","serial_radio":"302400022","old_index":"25.600","new_index":"28.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.200","employee":"","note_id":"-1"}]},{"code":"0004","flat_no":"4","owner":"SARLA ORTANTZA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 4, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"3.300","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420021","serial_radio":"302200033","old_index":"19.300","new_index":"22.600","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.300","employee":"","note_id":"-1"}]},{"code":"0005","flat_no":"5","owner":"ANDREI ENE","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 5, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"8.300","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420028","serial_radio":"302200044","old_index":"22.400","new_index":"26.400","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.000","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430028","serial_radio":"302300044","old_index":"27.100","new_index":"31.400","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.300","employee":"","note_id":"-1"}]},{"code":"0006","flat_no":"6","owner":"WEITRELL SAROLTA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 6, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"15.000","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420035","serial_radio":"302200055","old_index":"25.500","new_index":"30.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.700","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430035","serial_radio":"302300055","old_index":"30.200","new_index":"35.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.000","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440035","serial_radio":"302400055","old_index":"34.900","new_index":"40.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.300","employee":"","note_id":"-1"}]},{"code":"0007","flat_no":"7","owner":"BIRO ANETA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 7, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"5.400","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420042","serial_radio":"302200066","old_index":"28.600","new_index":"34.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.400","employee":"","note_id":"-1"}]},{"code":"0008","flat_no":"8","owner":"LACATUS MARIA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 8, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"3.500","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420049","serial_radio":"302200077","old_index":"31.700","new_index":"33.300","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.600","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430049","serial_radio":"302300077","old_index":"36.400","new_index":"38.300","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.900","employee":"","note_id":"-1"}]},{"code":"0009","flat_no":"9","owner":"PARASCHIV GEORGICA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 9, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"7.800","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420056","serial_radio":"302200088","old_index":"34.800","new_index":"37.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.300","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430056","serial_radio":"302300088","old_index":"39.500","new_index":"42.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.600","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440056","serial_radio":"302400088","old_index":"44.200","new_index":"47.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.900","employee":"","note_id":"-1"}]},{"code":"0010","flat_no":"10","owner":"SCHENKER ALFRED","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 10, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"3.000","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420063","serial_radio":"302200099","old_index":"37.900","new_index":"40.900","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.000","employee":"","note_id":"-1"}]},{"code":"0011","flat_no":"11","owner":"NUTU CRISTINA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 11, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"Citire regulată","total_consumption":"7.700","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420070","serial_radio":"302200110","old_index":"41.000","new_index":"44.700","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.700","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430070","serial_radio":"302300110","old_index":"45.700","new_index":"49.700","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.000","employee":"","note_id":"-1"}]},{"code":"0012","flat_no":"12","owner":"VELICU PETREA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 12, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"14.100","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420077","serial_radio":"302200121","old_index":"44.100","new_index":"48.500","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.400","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430077","serial_radio":"302300121","old_index":"48.800","new_index":"53.500","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.700","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440077","serial_radio":"302400121","old_index":"53.500","new_index":"58.500","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.000","employee":"","note_id":"-1"}]},{"code":"0013","flat_no":"13","owner":"SZZAKACS GABRIELA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 13, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"5.100","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420084","serial_radio":"302200132","old_index":"47.200","new_index":"52.300","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.100","employee":"","note_id":"-1"}]},{"code":"0014","flat_no":"14","owner":"PAVLOVSCHI ELENA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 14, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"2.900","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420091","serial_radio":"302200143","old_index":"50.300","new_index":"51.600","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.300","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430091","serial_radio":"302300143","old_index":"55.000","new_index":"56.600","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.600","employee":"","note_id":"-1"}]},{"code":"0015","flat_no":"15","owner":"HALAS PARASCHIVA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 15, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"6.900","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420098","serial_radio":"302200154","old_index":"53.400","new_index":"55.400","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.000","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430098","serial_radio":"302300154","old_index":"58.100","new_index":"60.400","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.300","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440098","serial_radio":"302400154","old_index":"62.800","new_index":"65.400","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.600","employee":"","note_id":"-1"}]},{"code":"0016","flat_no":"16","owner":"ACHIM ALEXANDRA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 16, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"2.700","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420105","serial_radio":"302200165","old_index":"56.500","new_index":"59.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.700","employee":"","note_id":"-1"}]},{"code":"0017","flat_no":"17","owner":"PETRE TEODORA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 17, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"7.100","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420112","serial_radio":"302200176","old_index":"59.600","new_index":"63.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.400","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430112","serial_radio":"302300176","old_index":"64.300","new_index":"68.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.700","employee":"","note_id":"-1"}]},{"code":"0018","flat_no":"18","owner":"NOVAK ANA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 18, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"13.200","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420119","serial_radio":"302200187","old_index":"62.700","new_index":"66.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.100","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430119","serial_radio":"302300187","old_index":"67.400","new_index":"71.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.400","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440119","serial_radio":"302400187","old_index":"72.100","new_index":"76.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.700","employee":"","note_id":"-1"}]},{"code":"0019","flat_no":"19","owner":"CONSTANTINESCU LAURENTIU","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 19, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"4.800","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420126","serial_radio":"302200198","old_index":"65.800","new_index":"70.600","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.800","employee":"","note_id":"-1"}]},{"code":"0020","flat_no":"20","owner":"BUCUR VICTOR","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 20, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"6.800","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420133","serial_radio":"302200209","old_index":"68.900","new_index":"74.400","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.500","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430133","serial_radio":"302300209","old_index":"73.600","new_index":"74.900","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.300","employee":"","note_id":"-1"}]},{"code":"0021","flat_no":"21","owner":"OPREA ZOLTAN","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 21, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"Citire regulată","total_consumption":"6.000","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420140","serial_radio":"302200220","old_index":"72.000","new_index":"73.700","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.700","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430140","serial_radio":"302300220","old_index":"76.700","new_index":"78.700","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.000","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440140","serial_radio":"302400220","old_index":"81.400","new_index":"83.700","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.300","employee":"","note_id":"-1"}]},{"code":"0022","flat_no":"22","owner":"HAJNAKA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 22, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"2.400","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420147","serial_radio":"302200231","old_index":"75.100","new_index":"77.500","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.400","employee":"","note_id":"-1"}]},{"code":"0023","flat_no":"23","owner":"BURUIANA CORNELIA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 23, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"6.500","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420154","serial_radio":"302200242","old_index":"78.200","new_index":"81.300","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.100","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430154","serial_radio":"302300242","old_index":"82.900","new_index":"86.300","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.400","employee":"","note_id":"-1"}]},{"code":"0024","flat_no":"24","owner":"POP DOINA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 24, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"12.300","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420161","serial_radio":"302200253","old_index":"81.300","new_index":"85.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.800","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430161","serial_radio":"302300253","old_index":"86.000","new_index":"90.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.100","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440161","serial_radio":"302400253","old_index":"90.700","new_index":"95.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.400","employee":"","note_id":"-1"}]},{"code":"0025","flat_no":"25","owner":"STREZA NICOLAE","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 25, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"4.500","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420168","serial_radio":"302200264","old_index":"84.400","new_index":"88.900","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.500","employee":"","note_id":"-1"}]},{"code":"0026","flat_no":"26","owner":"BURCEA MARIA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 26, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"10.700","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420175","serial_radio":"302200275","old_index":"87.500","new_index":"92.700","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.200","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430175","serial_radio":"302300275","old_index":"92.200","new_index":"97.700","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.500","employee":"","note_id":"-1"}]},{"code":"0027","flat_no":"27","owner":"FAGARASAN NICOLAIE","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 27, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"5.100","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420182","serial_radio":"302200286","old_index":"90.600","new_index":"92.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.400","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430182","serial_radio":"302300286","old_index":"10.300","new_index":"12.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.700","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440182","serial_radio":"302400286","old_index":"15.000","new_index":"17.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.000","employee":"","note_id":"-1"}]},{"code":"0028","flat_no":"28","owner":"ALBU BOGDAN","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 28, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"2.100","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420189","serial_radio":"302200297","old_index":"93.700","new_index":"95.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.100","employee":"","note_id":"-1"}]},{"code":"0030","flat_no":"30","owner":"SOLOY MONICA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 30, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"5.900","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420196","serial_radio":"302200308","old_index":"11.800","new_index":"14.600","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.800","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430196","serial_radio":"302300308","old_index":"16.500","new_index":"19.600","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.100","employee":"","note_id":"-1"}]},{"code":"0031","flat_no":"31","owner":"STRASNIC OLEG","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 31, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"11.400","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420203","serial_radio":"302200319","old_index":"14.900","new_index":"18.400","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.500","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430203","serial_radio":"302300319","old_index":"19.600","new_index":"23.400","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.800","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440203","serial_radio":"302400319","old_index":"24.300","new_index":"28.400","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.100","employee":"","note_id":"-1"}]},{"code":"0032","flat_no":"32","owner":"BATIU FLORIN","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 32, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"Citire regulată","total_consumption":"4.200","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420210","serial_radio":"302200330","old_index":"18.000","new_index":"22.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.200","employee":"","note_id":"-1"}]},{"code":"0033","flat_no":"33","owner":"IANEJ IOHAN","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 33, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"10.100","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420217","serial_radio":"302200341","old_index":"21.100","new_index":"26.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.900","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430217","serial_radio":"302300341","old_index":"25.800","new_index":"31.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.200","employee":"","note_id":"-1"}]},{"code":"0034","flat_no":"34","owner":"PARADINA MIRCEA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 34, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"8.700","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420224","serial_radio":"302200352","old_index":"24.200","new_index":"29.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.600","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430224","serial_radio":"302300352","old_index":"28.900","new_index":"30.300","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.400","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440224","serial_radio":"302400352","old_index":"33.600","new_index":"35.300","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.700","employee":"","note_id":"-1"}]},{"code":"0035","flat_no":"35","owner":"BARDAG MELANIA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 35, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"1.800","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420231","serial_radio":"302200363","old_index":"27.300","new_index":"29.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.800","employee":"","note_id":"-1"}]},{"code":"0036","flat_no":"36","owner":"IONESCU IOAN","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 36, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"5.300","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420238","serial_radio":"302200374","old_index":"30.400","new_index":"32.900","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.500","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430238","serial_radio":"302300374","old_index":"35.100","new_index":"37.900","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.800","employee":"","note_id":"-1"}]},{"code":"0037","flat_no":"201","owner":"MIHAILESCU EMILIAN","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 201, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"10.500","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420245","serial_radio":"302200385","old_index":"33.500","new_index":"36.700","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.200","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430245","serial_radio":"302300385","old_index":"38.200","new_index":"41.700","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.500","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440245","serial_radio":"302400385","old_index":"42.900","new_index":"46.700","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.800","employee":"","note_id":"-1"}]},{"code":"0038","flat_no":"202","owner":"COMSA BENIAMIN","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 202, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"3.900","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420252","serial_radio":"302200396","old_index":"36.600","new_index":"40.500","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.900","employee":"","note_id":"-1"}]},{"code":"0039","flat_no":"203","owner":"TOHANEAN VIORICA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 203, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"9.500","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420259","serial_radio":"302200407","old_index":"39.700","new_index":"44.300","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.600","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430259","serial_radio":"302300407","old_index":"44.400","new_index":"49.300","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.900","employee":"","note_id":"-1"}]},{"code":"0040","flat_no":"204","owner":"BABO GHEORGHE","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 204, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"12.300","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420266","serial_radio":"302200418","old_index":"42.800","new_index":"48.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.300","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430266","serial_radio":"302300418","old_index":"47.500","new_index":"53.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.600","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440266","serial_radio":"302400418","old_index":"52.200","new_index":"53.600","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.400","employee":"","note_id":"-1"}]},{"code":"0041","flat_no":"205","owner":"AVASILCAI NELU","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 205, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"1.500","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420273","serial_radio":"302200429","old_index":"45.900","new_index":"47.400","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.500","employee":"","note_id":"-1"}]},{"code":"0042","flat_no":"206","owner":"ARMENCIU MARIA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 206, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"Citire regulată","total_consumption":"4.700","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420280","serial_radio":"302200440","old_index":"49.000","new_index":"51.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.200","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430280","serial_radio":"302300440","old_index":"53.700","new_index":"56.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.500","employee":"","note_id":"-1"}]},{"code":"0043","flat_no":"207","owner":"HARMANEAN VIORICA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 207, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"9.600","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420287","serial_radio":"302200451","old_index":"52.100","new_index":"55.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.900","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430287","serial_radio":"302300451","old_index":"56.800","new_index":"60.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.200","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440287","serial_radio":"302400451","old_index":"61.500","new_index":"65.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.500","employee":"","note_id":"-1"}]},{"code":"0044","flat_no":"208","owner":"FAGARASEANU ELENA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 208, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"3.600","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420294","serial_radio":"302200462","old_index":"55.200","new_index":"58.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.600","employee":"","note_id":"-1"}]},{"code":"0045","flat_no":"209","owner":"PLUGAR SONIA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 209, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"8.900","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420301","serial_radio":"302200473","old_index":"58.300","new_index":"62.600","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.300","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430301","serial_radio":"302300473","old_index":"63.000","new_index":"67.600","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.600","employee":"","note_id":"-1"}]},{"code":"0046","flat_no":"210","owner":"VISINESCU VIORICA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 210, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"15.900","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420308","serial_radio":"302200484","old_index":"61.400","new_index":"66.400","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.000","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430308","serial_radio":"302300484","old_index":"66.100","new_index":"71.400","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.300","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440308","serial_radio":"302400484","old_index":"70.800","new_index":"76.400","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.600","employee":"","note_id":"-1"}]},{"code":"0047","flat_no":"211","owner":"IVANUS ILIE","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 211, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"1.200","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420315","serial_radio":"302200495","old_index":"64.500","new_index":"65.700","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.200","employee":"","note_id":"-1"}]},{"code":"0048","flat_no":"212","owner":"TUDOR SIMONA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 212, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"4.100","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420322","serial_radio":"302200506","old_index":"67.600","new_index":"69.500","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.900","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430322","serial_radio":"302300506","old_index":"72.300","new_index":"74.500","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.200","employee":"","note_id":"-1"}]},{"code":"0049","flat_no":"213","owner":"TIPA MARIA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 213, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"8.700","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420329","serial_radio":"302200517","old_index":"70.700","new_index":"73.300","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.600","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430329","serial_radio":"302300517","old_index":"75.400","new_index":"78.300","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.900","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440329","serial_radio":"302400517","old_index":"80.100","new_index":"83.300","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.200","employee":"","note_id":"-1"}]},{"code":"0050","flat_no":"214","owner":"TOMA TANASE","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 214, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"3.300","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420336","serial_radio":"302200528","old_index":"73.800","new_index":"77.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.300","employee":"","note_id":"-1"}]},{"code":"0051","flat_no":"215","owner":"RUSU TEODOR","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 215, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"8.300","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420343","serial_radio":"302200539","old_index":"76.900","new_index":"80.900","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.000","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430343","serial_radio":"302300539","old_index":"81.600","new_index":"85.900","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.300","employee":"","note_id":"-1"}]},{"code":"0052","flat_no":"216","owner":"KORODI DOINA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 216, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"Citire regulată","total_consumption":"15.000","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420350","serial_radio":"302200550","old_index":"80.000","new_index":"84.700","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.700","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430350","serial_radio":"302300550","old_index":"84.700","new_index":"89.700","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.000","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440350","serial_radio":"302400550","old_index":"89.400","new_index":"94.700","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.300","employee":"","note_id":"-1"}]},{"code":"0053","flat_no":"217","owner":"BLAJU AURORA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 217, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"5.400","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420357","serial_radio":"302200561","old_index":"83.100","new_index":"88.500","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.400","employee":"","note_id":"-1"}]},{"code":"0054","flat_no":"218","owner":"TODOR BOER BENEDEK","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 218, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"3.500","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420364","serial_radio":"302200572","old_index":"86.200","new_index":"87.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.600","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430364","serial_radio":"302300572","old_index":"90.900","new_index":"92.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.900","employee":"","note_id":"-1"}]},{"code":"0055","flat_no":"219","owner":"NEGULICI","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 219, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"7.800","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420371","serial_radio":"302200583","old_index":"89.300","new_index":"91.600","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.300","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430371","serial_radio":"302300583","old_index":"94.000","new_index":"96.600","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.600","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440371","serial_radio":"302400583","old_index":"13.700","new_index":"16.600","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.900","employee":"","note_id":"-1"}]},{"code":"0056","flat_no":"220","owner":"LUCA MARIA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 220, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"3.000","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420378","serial_radio":"302200594","old_index":"92.400","new_index":"95.400","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.000","employee":"","note_id":"-1"}]},{"code":"0057","flat_no":"221","owner":"BOLDEA VICTOR","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 221, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"7.700","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420385","serial_radio":"302200605","old_index":"10.500","new_index":"14.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.700","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430385","serial_radio":"302300605","old_index":"15.200","new_index":"19.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.000","employee":"","note_id":"-1"}]},{"code":"0058","flat_no":"222","owner":"LASZLO LADISLAU","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 222, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"14.100","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420392","serial_radio":"302200616","old_index":"13.600","new_index":"18.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.400","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430392","serial_radio":"302300616","old_index":"18.300","new_index":"23.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.700","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440392","serial_radio":"302400616","old_index":"23.000","new_index":"28.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.000","employee":"","note_id":"-1"}]},{"code":"0059","flat_no":"223","owner":"BOLDEA GEORGE","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 223, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"5.100","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420399","serial_radio":"302200627","old_index":"16.700","new_index":"21.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.100","employee":"","note_id":"-1"}]},{"code":"0060","flat_no":"224","owner":"RAUTA MARIA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 224, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"2.900","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420406","serial_radio":"302200638","old_index":"19.800","new_index":"21.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.300","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430406","serial_radio":"302300638","old_index":"24.500","new_index":"26.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.600","employee":"","note_id":"-1"}]},{"code":"0062","flat_no":"226","owner":"TODEA AUREL","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 226, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"6.900","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420413","serial_radio":"302200649","old_index":"22.900","new_index":"24.900","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.000","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430413","serial_radio":"302300649","old_index":"27.600","new_index":"29.900","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.300","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440413","serial_radio":"302400649","old_index":"32.300","new_index":"34.900","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.600","employee":"","note_id":"-1"}]},{"code":"0063","flat_no":"227","owner":"NEMES SILVIU","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 227, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"Citire regulată","total_consumption":"2.700","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420420","serial_radio":"302200660","old_index":"26.000","new_index":"28.700","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.700","employee":"","note_id":"-1"}]},{"code":"0064","flat_no":"228","owner":"KUL GHEORGHE","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 228, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"7.100","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420427","serial_radio":"302200671","old_index":"29.100","new_index":"32.500","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.400","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430427","serial_radio":"302300671","old_index":"33.800","new_index":"37.500","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.700","employee":"","note_id":"-1"}]},{"code":"0065","flat_no":"229","owner":"RUNCEANU NICOLAIE","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 229, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"13.200","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420434","serial_radio":"302200682","old_index":"32.200","new_index":"36.300","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.100","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430434","serial_radio":"302300682","old_index":"36.900","new_index":"41.300","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.400","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440434","serial_radio":"302400682","old_index":"41.600","new_index":"46.300","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.700","employee":"","note_id":"-1"}]},{"code":"0066","flat_no":"230","owner":"LUPU IANCU","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 230, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"4.800","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420441","serial_radio":"302200693","old_index":"35.300","new_index":"40.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.800","employee":"","note_id":"-1"}]},{"code":"0067","flat_no":"231","owner":"SZABO ARON","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 231, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"6.800","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420448","serial_radio":"302200704","old_index":"38.400","new_index":"43.900","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.500","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430448","serial_radio":"302300704","old_index":"43.100","new_index":"44.400","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.300","employee":"","note_id":"-1"}]},{"code":"0068","flat_no":"232","owner":"MOLDOVAN ELENA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 232, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"6.000","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420455","serial_radio":"302200715","old_index":"41.500","new_index":"43.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.700","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430455","serial_radio":"302300715","old_index":"46.200","new_index":"48.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.000","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440455","serial_radio":"302400715","old_index":"50.900","new_index":"53.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.300","employee":"","note_id":"-1"}]},{"code":"0069","flat_no":"233","owner":"KUNZ SONIA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 233, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"2.400","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420462","serial_radio":"302200726","old_index":"44.600","new_index":"47.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.400","employee":"","note_id":"-1"}]},{"code":"0070","flat_no":"234","owner":"LORENTZ BEATRIX","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 234, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"6.500","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420469","serial_radio":"302200737","old_index":"47.700","new_index":"50.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.100","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430469","serial_radio":"302300737","old_index":"52.400","new_index":"55.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.400","employee":"","note_id":"-1"}]},{"code":"0071","flat_no":"235","owner":"SZABO ENIKO","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 235, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"12.300","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420476","serial_radio":"302200748","old_index":"50.800","new_index":"54.600","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.800","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430476","serial_radio":"302300748","old_index":"55.500","new_index":"59.600","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.100","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440476","serial_radio":"302400748","old_index":"60.200","new_index":"64.600","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.400","employee":"","note_id":"-1"}]},{"code":"0072","flat_no":"236","owner":"BAROSAN NICOLAIE","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 236, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"4.500","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420483","serial_radio":"302200759","old_index":"53.900","new_index":"58.400","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.500","employee":"","note_id":"-1"}]},{"code":"0073","flat_no":"301","owner":"GIURCAU RODICA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 301, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"Citire regulată","total_consumption":"10.700","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420490","serial_radio":"302200770","old_index":"57.000","new_index":"62.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.200","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430490","serial_radio":"302300770","old_index":"61.700","new_index":"67.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.500","employee":"","note_id":"-1"}]},{"code":"0074","flat_no":"302","owner":"DELIA GOICEA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 302, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"5.100","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420497","serial_radio":"302200781","old_index":"60.100","new_index":"61.500","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.400","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430497","serial_radio":"302300781","old_index":"64.800","new_index":"66.500","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.700","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440497","serial_radio":"302400781","old_index":"69.500","new_index":"71.500","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.000","employee":"","note_id":"-1"}]},{"code":"0075","flat_no":"303","owner":"COLEA MARIA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 303, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"2.100","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420504","serial_radio":"302200792","old_index":"63.200","new_index":"65.300","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.100","employee":"","note_id":"-1"}]},{"code":"0076","flat_no":"304","owner":"SIMON NORBERT","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 304, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"5.900","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420511","serial_radio":"302200803","old_index":"66.300","new_index":"69.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.800","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430511","serial_radio":"302300803","old_index":"71.000","new_index":"74.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.100","employee":"","note_id":"-1"}]},{"code":"0077","flat_no":"305","owner":"NEAGU COSMIN","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 305, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"11.400","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420518","serial_radio":"302200814","old_index":"69.400","new_index":"72.900","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.500","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430518","serial_radio":"302300814","old_index":"74.100","new_index":"77.900","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.800","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440518","serial_radio":"302400814","old_index":"78.800","new_index":"82.900","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.100","employee":"","note_id":"-1"}]},{"code":"0078","flat_no":"306","owner":"COSTEA ALEXANDRA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 306, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"4.200","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420525","serial_radio":"302200825","old_index":"72.500","new_index":"76.700","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.200","employee":"","note_id":"-1"}]},{"code":"0079","flat_no":"307","owner":"CIRICA MARIA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 307, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"10.100","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420532","serial_radio":"302200836","old_index":"75.600","new_index":"80.500","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.900","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430532","serial_radio":"302300836","old_index":"80.300","new_index":"85.500","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.200","employee":"","note_id":"-1"}]},{"code":"0080","flat_no":"308","owner":"BALLA ION","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 308, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"8.700","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420539","serial_radio":"302200847","old_index":"78.700","new_index":"84.300","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.600","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430539","serial_radio":"302300847","old_index":"83.400","new_index":"84.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.400","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440539","serial_radio":"302400847","old_index":"88.100","new_index":"89.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.700","employee":"","note_id":"-1"}]},{"code":"0081","flat_no":"309","owner":"HARAGA GABRIELA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 309, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"1.800","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420546","serial_radio":"302200858","old_index":"81.800","new_index":"83.600","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.800","employee":"","note_id":"-1"}]},{"code":"0082","flat_no":"310","owner":"ALBU NICOLAIE","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 310, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"5.300","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420553","serial_radio":"302200869","old_index":"84.900","new_index":"87.400","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.500","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430553","serial_radio":"302300869","old_index":"89.600","new_index":"92.400","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.800","employee":"","note_id":"-1"}]},{"code":"0083","flat_no":"311","owner":"AGURIDA STAN","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 311, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"Citire regulată","total_consumption":"10.500","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420560","serial_radio":"302200880","old_index":"88.000","new_index":"91.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.200","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430560","serial_radio":"302300880","old_index":"92.700","new_index":"96.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.500","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440560","serial_radio":"302400880","old_index":"12.400","new_index":"16.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.800","employee":"","note_id":"-1"}]},{"code":"0084","flat_no":"312","owner":"PAUN MIHAI","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 312, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"3.900","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420567","serial_radio":"302200891","old_index":"91.100","new_index":"95.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.900","employee":"","note_id":"-1"}]},{"code":"0085","flat_no":"313","owner":"DRACEA DACIANA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 313, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"9.500","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420574","serial_radio":"302200902","old_index":"94.200","new_index":"98.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.600","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430574","serial_radio":"302300902","old_index":"13.900","new_index":"18.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.900","employee":"","note_id":"-1"}]},{"code":"0086","flat_no":"314","owner":"PADINEANU GELU","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 314, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"12.300","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420581","serial_radio":"302200913","old_index":"12.300","new_index":"17.600","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.300","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430581","serial_radio":"302300913","old_index":"17.000","new_index":"22.600","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.600","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440581","serial_radio":"302400913","old_index":"21.700","new_index":"23.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.400","employee":"","note_id":"-1"}]},{"code":"0087","flat_no":"315","owner":"ALBOTA ALINA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 315, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"1.500","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420588","serial_radio":"302200924","old_index":"15.400","new_index":"16.900","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.500","employee":"","note_id":"-1"}]},{"code":"0088","flat_no":"316","owner":"ANTAL MATILD","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 316, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"4.700","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420595","serial_radio":"302200935","old_index":"18.500","new_index":"20.700","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.200","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430595","serial_radio":"302300935","old_index":"23.200","new_index":"25.700","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.500","employee":"","note_id":"-1"}]},{"code":"0089","flat_no":"317","owner":"PARVI GABRIELA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 317, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"9.600","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420602","serial_radio":"302200946","old_index":"21.600","new_index":"24.500","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.900","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430602","serial_radio":"302300946","old_index":"26.300","new_index":"29.500","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.200","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440602","serial_radio":"302400946","old_index":"31.000","new_index":"34.500","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.500","employee":"","note_id":"-1"}]},{"code":"0090","flat_no":"318","owner":"MARZA ANDREI","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 318, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"3.600","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420609","serial_radio":"302200957","old_index":"24.700","new_index":"28.300","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.600","employee":"","note_id":"-1"}]},{"code":"0091","flat_no":"319","owner":"MOGOS EUGENIA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 319, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"8.900","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420616","serial_radio":"302200968","old_index":"27.800","new_index":"32.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.300","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430616","serial_radio":"302300968","old_index":"32.500","new_index":"37.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.600","employee":"","note_id":"-1"}]},{"code":"0092","flat_no":"320","owner":"DRAGOIU PAUL","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 320, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"15.900","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420623","serial_radio":"302200979","old_index":"30.900","new_index":"35.900","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.000","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430623","serial_radio":"302300979","old_index":"35.600","new_index":"40.900","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.300","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440623","serial_radio":"302400979","old_index":"40.300","new_index":"45.900","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.600","employee":"","note_id":"-1"}]},{"code":"0093","flat_no":"321","owner":"HERMENEAN","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 321, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"Citire regulată","total_consumption":"1.200","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420630","serial_radio":"302200990","old_index":"34.000","new_index":"35.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.200","employee":"","note_id":"-1"}]},{"code":"0094","flat_no":"322","owner":"SPIRIDON GRIGORE","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 322, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"4.100","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420637","serial_radio":"302201001","old_index":"37.100","new_index":"39.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.900","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430637","serial_radio":"302301001","old_index":"41.800","new_index":"44.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.200","employee":"","note_id":"-1"}]},{"code":"0095","flat_no":"323","owner":"BONA DANIELA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 323, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"8.700","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420644","serial_radio":"302201012","old_index":"40.200","new_index":"42.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.600","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430644","serial_radio":"302301012","old_index":"44.900","new_index":"47.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.900","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440644","serial_radio":"302401012","old_index":"49.600","new_index":"52.800","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.200","employee":"","note_id":"-1"}]},{"code":"0096","flat_no":"324","owner":"STEFAN VASILICA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 324, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"3.300","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420651","serial_radio":"302201023","old_index":"43.300","new_index":"46.600","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.300","employee":"","note_id":"-1"}]},{"code":"0097","flat_no":"325","owner":"PAIU POMPILIU","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 325, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"8.300","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420658","serial_radio":"302201034","old_index":"46.400","new_index":"50.400","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.000","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430658","serial_radio":"302301034","old_index":"51.100","new_index":"55.400","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.300","employee":"","note_id":"-1"}]},{"code":"0098","flat_no":"326","owner":"NECHITA IOAN","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 326, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"15.000","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420665","serial_radio":"302201045","old_index":"49.500","new_index":"54.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"4.700","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430665","serial_radio":"302301045","old_index":"54.200","new_index":"59.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.000","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440665","serial_radio":"302401045","old_index":"58.900","new_index":"64.200","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.300","employee":"","note_id":"-1"}]},{"code":"0099","flat_no":"327","owner":"PELEANU CRISTIAN","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 327, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"5.400","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420672","serial_radio":"302201056","old_index":"52.600","new_index":"58.000","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"5.400","employee":"","note_id":"-1"}]},{"code":"0100","flat_no":"328","owner":"PETERCA MARIA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 328, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"3.500","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420679","serial_radio":"302201067","old_index":"55.700","new_index":"57.300","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.600","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430679","serial_radio":"302301067","old_index":"60.400","new_index":"62.300","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"1.900","employee":"","note_id":"-1"}]},{"code":"0101","flat_no":"329","owner":"TERCIU DIANA IOANA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 329, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"7.800","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420686","serial_radio":"302201078","old_index":"58.800","new_index":"61.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.300","employee":"","note_id":"-1"},{"ctl":"ctl02","type":"Apa calda","room_type":"Baie","serial_mech":"70430686","serial_radio":"302301078","old_index":"63.500","new_index":"66.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.600","employee":"","note_id":"-1"},{"ctl":"ctl03","type":"Apa rece","room_type":"Bucatarie","serial_mech":"70440686","serial_radio":"302401078","old_index":"68.200","new_index":"71.100","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"2.900","employee":"","note_id":"-1"}]},{"code":"0102","flat_no":"330","owner":"SINCAN VICTORIA","status":"Contorizat","address":"Str. DE MIJLOC, Nr. 146, Bl. 10A, Sc. 1+2+3, Et.0, Ap. 330, Brasov","reader_id":"89","reading_date":"01.10.2021","reading_notes":"","total_consumption":"3.000","meters":[{"ctl":"ctl01","type":"Apa rece","room_type":"Baie","serial_mech":"70420693","serial_radio":"302201089","old_index":"61.900","new_index":"64.900","reading_date":"29.09.2021","old_index_invers":"0.000","new_index_invers":"0.000","consumption":"3.000","employee":"","note_id":"-1"}]}];
+var noteOptions    = {"-1":"-","7":"Aparat defect","8":"Aparat desigilat","31":"Aparat imposibil de citit","27":"Aparat programat gresit","22":"Camera inchisa","10":"Contor inlocuit","9":"Contor montat invers","29":"Lipsa aparat","20":"Necontorizat","26":"Pozitie de montaj incorecta","33":"Serie gresita"};
+var currentAptIdx  = 0;
+
+function getControl(idOrName) {
+    return document.getElementById(idOrName) || document.getElementsByName(idOrName)[0] || null;
+}
+
+function clear_Date(obj) {
+    var el = getControl(obj);
+    if (el) el.value = '';
+    var ticks = document.getElementsByName(obj + 'Ticks');
+    if (ticks.length !== 0) ticks[0].value = '0';
+}
+
+function recalculateTotalConsumption() {
+    var total = 0;
+    var hasAny = false;
+    document.querySelectorAll('.js-meter-consumption').forEach(function (inp) {
+        var v = parseFloat(inp.value);
+        if (!isNaN(v)) {
+            total += v;
+            hasAny = true;
+        }
+    });
+    var totalInput = document.getElementById('ctl00_phContent_txtTotalConsumption');
+    if (totalInput) {
+        totalInput.value = hasAny ? (Math.round(total * 1000) / 1000).toFixed(3) : '0.000';
+    }
+}
+
+/**
+ * Calcul consum contor apă (1:1 conform WaterReading.aspx):
+ * Consum = (NewIndex + NewIndexInvers) - (OldIndex + OldIndexInvers)
+ */
+function setConsumption(oldIndex, newIndex, oldIndexInvers, newIndexInvers, consumption) {
+    var oldEl     = getControl(oldIndex);
+    var newEl     = getControl(newIndex);
+    var oldInvEl  = getControl(oldIndexInvers);
+    var newInvEl  = getControl(newIndexInvers);
+    var consEl    = getControl(consumption);
+
+    if (!oldEl || !newEl || !consEl) return;
+
+    var oldinvers = (!oldInvEl || isNaN(oldInvEl.value) || oldInvEl.value === '') ? 0 : Number(oldInvEl.value);
+    var newinvers = (!newInvEl || isNaN(newInvEl.value) || newInvEl.value === '') ? 0 : Number(newInvEl.value);
+
+    if (isNaN(oldEl.value) || Number(oldEl.value) < 0) {
+        alert('Introduceti un numar pozitiv');
+        oldEl.focus();
+    } else if (isNaN(newEl.value) || Number(newEl.value) < 0) {
+        alert('Introduceti un numar pozitiv');
+        newEl.focus();
+    } else {
+        if (newEl.value !== '') {
+            consEl.value = (Math.round((Number(newEl.value) + newinvers - Number(oldEl.value) - oldinvers) * 1000) / 1000).toFixed(3);
+        } else {
+            consEl.value = '';
+        }
+    }
+
+    if (parseFloat(consEl.value) < 0) {
+        alert('Atentie! Diferenta negativa de indecsi!');
+    }
+
+    recalculateTotalConsumption();
+}
+
+function disableEnterKey(e) {
+    var ev = e || window.event;
+    if (ev && ev.keyCode === 13) {
+        ev.preventDefault();
+        var focusable = Array.prototype.slice.call(
+            document.querySelectorAll('#waterReadingTable input:not([readonly]), #waterReadingTable select')
+        );
+        var idx = focusable.indexOf(ev.target);
+        if (idx !== -1 && idx + 1 < focusable.length) {
+            focusable[idx + 1].focus();
+            if (focusable[idx + 1].select) focusable[idx + 1].select();
+        }
+    }
+}
+
+(function () {
+    'use strict';
+
+    var btnFirst    = document.getElementById('ctl00_phContent_btnFirst');
+    var btnPrev     = document.getElementById('ctl00_phContent_btnPrev');
+    var btnNext     = document.getElementById('ctl00_phContent_btnNext');
+    var btnLast     = document.getElementById('ctl00_phContent_btnLast');
+    var btnRefresh  = document.getElementById('ctl00_phContent_btnRefreshConsumption');
+    var btnSaveNext = document.getElementById('ctl00_phContent_btnSaveNext');
+    var form        = document.getElementById('aspnetForm');
+
+    function escapeHtml(str) {
+        return String(str == null ? '' : str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+
+    function renderApartment(index, updateHistory) {
+        if (index < 0 || index >= apartmentsData.length) return;
+        currentAptIdx = index;
+        var apt = apartmentsData[index];
+
+        // Actualizare câmpuri antet apartament
+        document.getElementById('ctl00_phContent_lblCode').textContent = apt.code;
+        document.getElementById('ctl00_phContent_lblOwner').textContent = apt.owner;
+        document.getElementById('ctl00_phContent_lblAddressStatus').textContent = apt.status;
+        document.getElementById('lblAddressStatusText').textContent = apt.status;
+        document.getElementById('ctl00_phContent_lblAddress').textContent = apt.address;
+
+        document.getElementById('ctl00_phContent_ddlReader').value = apt.reader_id;
+        document.getElementById('ctl00_phContent_dtpReadingDate').value = apt.reading_date;
+        document.getElementById('ctl00_phContent_txtReadingNotes').value = apt.reading_notes;
+        document.getElementById('ctl00_phContent_txtTotalConsumption').value = apt.total_consumption;
+
+        // Actualizare indicator navigare și butoane
+        document.getElementById('navIndCode').textContent = apt.code;
+        document.getElementById('navIndFlat').textContent = apt.flat_no;
+        document.getElementById('navIndIndex').textContent = (index + 1);
+        document.getElementById('metersCount').textContent = apt.meters.length;
+        document.getElementById('toolbarFlatCode').textContent = apt.code;
+
+        btnFirst.disabled = (index === 0);
+        btnPrev.disabled  = (index === 0);
+        btnNext.disabled  = (index >= apartmentsData.length - 1);
+        btnLast.disabled  = (index >= apartmentsData.length - 1);
+
+        // Reconstruire tabel contoare apă
+        var tbody = document.getElementById('rptApartmentsBody');
+        var rowsHtml = '';
+        apt.meters.forEach(function (meter, mIdx) {
+            var ctl = meter.ctl;
+            var idPrefix = 'ctl00_phContent_rptApartments_' + ctl + '_';
+            var namePrefix = 'ctl00$phContent$rptApartments$' + ctl + '$';
+            var blurCall = "setConsumption('" + idPrefix + "txtOldIndex', '" + idPrefix + "txtNewIndex', '" + idPrefix + "txtOldIndexInvers', '" + idPrefix + "txtNewIndexInvers', '" + idPrefix + "txtConsumption')";
+            var typeBadgeClass = (meter.type === 'Apa rece') ? 'status-online' : 'status-pending';
+
+            var optionsHtml = '';
+            for (var key in noteOptions) {
+                if (noteOptions.hasOwnProperty(key)) {
+                    var sel = (String(meter.note_id) === String(key)) ? ' selected="selected"' : '';
+                    optionsHtml += '<option value="' + escapeHtml(key) + '"' + sel + '>' + escapeHtml(noteOptions[key]) + '</option>';
+                }
+            }
+
+            rowsHtml += '<tr>' +
+                '<td><span class="status-badge ' + typeBadgeClass + '">' + escapeHtml(meter.type) + '</span></td>' +
+                '<td class="td-name"><span id="' + idPrefix + 'lblRoomType">' + escapeHtml(meter.room_type) + '</span></td>' +
+                '<td><span class="serial-value" id="' + idPrefix + 'lblSerialNo">' + escapeHtml(meter.serial_mech) + '</span></td>' +
+                '<td><span class="serial-value" id="' + idPrefix + 'lblSerialNoModulRadio">' + escapeHtml(meter.serial_radio) + '</span></td>' +
+                '<td style="text-align: right;">' +
+                    '<input name="' + namePrefix + 'txtOldIndex" type="text" value="' + escapeHtml(meter.old_index) + '" maxlength="8" id="' + idPrefix + 'txtOldIndex" tabindex="' + (100 + mIdx) + '" class="flat-table-input numeric" onblur="' + blurCall + '" onkeydown="disableEnterKey(event)">' +
+                    '<span id="' + idPrefix + 'vldOldIndex" style="display: none; color: red;">*</span>' +
+                '</td>' +
+                '<td style="text-align: right;">' +
+                    '<input name="' + namePrefix + 'txtNewIndex" type="text" value="' + escapeHtml(meter.new_index) + '" maxlength="8" id="' + idPrefix + 'txtNewIndex" tabindex="' + (1 + mIdx) + '" class="flat-table-input numeric" onblur="' + blurCall + '" onkeydown="disableEnterKey(event)">' +
+                '</td>' +
+                '<td style="text-align: center; white-space: nowrap;">' + escapeHtml(meter.reading_date) + '</td>' +
+                '<td style="text-align: right;">' +
+                    '<input name="' + namePrefix + 'txtOldIndexInvers" type="text" value="' + escapeHtml(meter.old_index_invers) + '" maxlength="8" id="' + idPrefix + 'txtOldIndexInvers" tabindex="' + (500 + mIdx) + '" class="flat-table-input numeric" onblur="' + blurCall + '" onkeydown="disableEnterKey(event)">' +
+                    '<span id="' + idPrefix + 'vldOldIndexInvers" style="display: none; color: red;">*</span>' +
+                '</td>' +
+                '<td style="text-align: right;">' +
+                    '<input name="' + namePrefix + 'txtNewIndexInvers" type="text" value="' + escapeHtml(meter.new_index_invers) + '" maxlength="8" id="' + idPrefix + 'txtNewIndexInvers" tabindex="' + (400 + mIdx) + '" class="flat-table-input numeric" onblur="' + blurCall + '" onkeydown="disableEnterKey(event)">' +
+                '</td>' +
+                '<td style="text-align: right;">' +
+                    '<input name="' + namePrefix + 'txtConsumption" type="text" value="' + escapeHtml(meter.consumption) + '" readonly="readonly" id="' + idPrefix + 'txtConsumption" tabindex="' + (300 + mIdx) + '" class="flat-table-input numeric js-meter-consumption" onkeydown="disableEnterKey(event)">' +
+                '</td>' +
+                '<td style="text-align: center;">' +
+                    '<span id="' + idPrefix + 'lblReadByEmployee">' + escapeHtml(meter.employee || '–') + '</span>' +
+                '</td>' +
+                '<td>' +
+                    '<select name="' + namePrefix + 'ddlNotes" id="' + idPrefix + 'ddlNotes" tabindex="' + (600 + mIdx) + '" class="flat-table-select" onkeydown="disableEnterKey(event)">' +
+                        optionsHtml +
+                    '</select>' +
+                '</td>' +
+            '</tr>';
+        });
+        tbody.innerHTML = rowsHtml;
+
+        // Actualizare action form
+        if (form) {
+            form.action = 'citire-apa.html?nod=' + encodeURIComponent('81-033-0001') +
+                          '&period=' + encodeURIComponent('01.09.2021 - 30.09.2021') +
+                          '&code=' + encodeURIComponent(apt.code);
+        }
+
+        if (updateHistory && window.history && window.history.replaceState) {
+            var newUrl = 'citire-apa.html?nod=' + encodeURIComponent('81-033-0001') +
+                         '&period=' + encodeURIComponent('01.09.2021 - 30.09.2021') +
+                         '&code=' + encodeURIComponent(apt.code);
+            window.history.replaceState({ code: apt.code, index: index }, '', newUrl);
+        }
+
+        // Focus pe primul input de index nou din tabel
+        var firstNew = document.querySelector('#waterReadingTable tbody input[name$="txtNewIndex"]');
+        if (firstNew) {
+            firstNew.focus();
+            if (firstNew.select) firstNew.select();
+        }
+    }
+
+    if (btnFirst) btnFirst.addEventListener('click', function () { renderApartment(0, true); });
+    if (btnPrev)  btnPrev.addEventListener('click', function () { renderApartment(currentAptIdx - 1, true); });
+    if (btnNext)  btnNext.addEventListener('click', function () { renderApartment(currentAptIdx + 1, true); });
+    if (btnLast)  btnLast.addEventListener('click', function () { renderApartment(apartmentsData.length - 1, true); });
+
+    if (btnRefresh) {
+        btnRefresh.addEventListener('click', function (e) {
+            e.preventDefault();
+            recalculateTotalConsumption();
+        });
+    }
+
+    if (btnSaveNext) {
+        btnSaveNext.addEventListener('click', function (e) {
+            e.preventDefault();
+            // Salvare locală a valorilor curente în obiect
+            var apt = apartmentsData[currentAptIdx];
+            apt.reader_id = document.getElementById('ctl00_phContent_ddlReader').value;
+            apt.reading_date = document.getElementById('ctl00_phContent_dtpReadingDate').value;
+            apt.reading_notes = document.getElementById('ctl00_phContent_txtReadingNotes').value;
+            apt.total_consumption = document.getElementById('ctl00_phContent_txtTotalConsumption').value;
+
+            // Actualizare metri din DOM
+            apt.meters.forEach(function (meter) {
+                var ctl = meter.ctl;
+                var idPrefix = 'ctl00_phContent_rptApartments_' + ctl + '_';
+                var elOld = document.getElementById(idPrefix + 'txtOldIndex');
+                var elNew = document.getElementById(idPrefix + 'txtNewIndex');
+                var elOldInv = document.getElementById(idPrefix + 'txtOldIndexInvers');
+                var elNewInv = document.getElementById(idPrefix + 'txtNewIndexInvers');
+                var elCons = document.getElementById(idPrefix + 'txtConsumption');
+                var elNote = document.getElementById(idPrefix + 'ddlNotes');
+                if (elOld) meter.old_index = elOld.value;
+                if (elNew) meter.new_index = elNew.value;
+                if (elOldInv) meter.old_index_invers = elOldInv.value;
+                if (elNewInv) meter.new_index_invers = elNewInv.value;
+                if (elCons) meter.consumption = elCons.value;
+                if (elNote) meter.note_id = elNote.value;
+            });
+
+            if (currentAptIdx < apartmentsData.length - 1) {
+                renderApartment(currentAptIdx + 1, true);
+            } else {
+                alert('Ați ajuns la ultimul apartament din acest NOD.');
+            }
+        });
+    }
+
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var readerEl = document.getElementById('ctl00_phContent_ddlReader');
+            if (readerEl && (!readerEl.value || readerEl.value === '-1')) {
+                alert('Vă rugăm să selectați un Autor Citire.');
+                readerEl.focus();
+                return;
+            }
+            alert('Datele apartamentului au fost salvate cu succes.');
+        });
+    }
+
+    // Navigare cu taste rapide Alt+Left / Alt+Right
+    window.addEventListener('keydown', function (e) {
+        if (e.altKey && e.keyCode === 37) { // Alt + Stânga -> Anterior
+            e.preventDefault();
+            if (currentAptIdx > 0) renderApartment(currentAptIdx - 1, true);
+        } else if (e.altKey && e.keyCode === 39) { // Alt + Dreapta -> Următor
+            e.preventDefault();
+            if (currentAptIdx < apartmentsData.length - 1) renderApartment(currentAptIdx + 1, true);
+        }
+    });
+
+})();
+</script>
+
+    </div><!-- /.content -->
+    <footer class="app-footer">
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
+    </footer>
+</div><!-- /.main -->
+
+<script src="assets/js/sidebar.js?v=1.0.1"></script>
+</body>
+</html>

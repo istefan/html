@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Montaje și Stocuri – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
+    <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+<script>
+    (function() {
+        var sb = document.getElementById('sidebar');
+        var ls = localStorage.getItem('sb_collapsed');
+        if (ls === '1') sb.classList.add('collapsed');
+        else if (ls === '0') sb.classList.remove('collapsed');
+    })();
+</script>
+    <!-- ── Logo ─────────────────────────────────────────────────────── -->
+    <!-- React: <SidebarLogo activeApp={activeApp} /> -->
+    <div class="logo">
+        <a href="sonic-dashboard.html" title="SONIC – Acasă">
+            <img src="assets/images/sonic-logo.svg"
+                 alt="SONIC"
+                 class="logo-full"
+                 id="sidebarLogo">
+            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">S</span>
+        </a>
+    </div>
+
+    <!-- ── Nav ───────────────────────────────────────────────────────── -->
+    <!-- React: <SidebarNav activeApp={activeApp} onAppChange={setActiveApp} /> -->
+    <nav class="sidebar-nav" aria-label="Navigare principală">
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  1. SONIC GRID
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-grid"
+             data-logo="assets/images/sonic-grid-logo.svg"
+             data-logo-icon="SG">
+            <button class="app-section-header" type="button" title="SONIC GRID">
+                <img src="assets/images/sonic-grid-logo.svg" class="app-section-logo" alt="SONIC GRID">
+                <span class="app-section-badge">SG</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Panoul Meu -->
+                <a href="panoul-meu.html" class="nav-item " title="Panoul Meu">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </span>
+                    <span class="nav-label">Panoul Meu</span>
+                </a>
+
+                <!-- Adresele Mele -->
+                <a href="adresele-mele.html" class="nav-item " title="Adresele Mele">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </span>
+                    <span class="nav-label">Adresele Mele</span>
+                </a>
+
+                <!-- Regiuni / Zone -->
+                <a href="regiuni-zone.html" class="nav-item " title="Regiuni / Zone">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </span>
+                    <span class="nav-label">Regiuni / Zone</span>
+                </a>
+
+                <!-- Perioade Citiri -->
+                <a href="perioade-citiri.html" class="nav-item " title="Perioade Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </span>
+                    <span class="nav-label">Perioade Citiri</span>
+                </a>
+
+                <!-- Setări Alerte -->
+                <a href="setari-alerte.html" class="nav-item " title="Setări Alerte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </span>
+                    <span class="nav-label">Setări Alerte</span>
+                </a>
+
+                <!-- Info Center -->
+                <a href="info-center.html" class="nav-item " title="Info Center">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    <span class="nav-label">Info Center</span>
+                </a>
+
+                <!-- Contact -->
+                <a href="contact.html" class="nav-item " title="Contact">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </span>
+                    <span class="nav-label">Contact</span>
+                </a>
+
+                <!-- ── RAPOARTE (section label) ── -->
+                <div class="nav-section">Rapoarte</div>
+
+                <!-- Raport Citiri -->
+                <a href="raport-citiri.html" class="nav-item " title="Raport Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Raport Citiri</span>
+                </a>
+
+                <!-- Bilanț Neînchideri Apă -->
+                <a href="bilant-neinchideri.html" class="nav-item " title="Bilanț Neînchideri Apă">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                    </span>
+                    <span class="nav-label">Bilanț Neînchideri Apă</span>
+                </a>
+
+                <!-- Estimări Consum -->
+                <a href="estimari-consum.html" class="nav-item " title="Estimări Consum">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </span>
+                    <span class="nav-label">Estimări Consum</span>
+                </a>
+
+                <!-- Raport Alerte -->
+                <a href="raport-alerte.html" class="nav-item " title="Raport Alerte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Raport Alerte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  2. SONIC MARKET
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-market"
+             data-logo="assets/images/sonic-market-logo.svg"
+             data-logo-icon="SM">
+            <button class="app-section-header" type="button" title="SONIC MARKET">
+                <img src="assets/images/sonic-market-logo.svg" class="app-section-logo" alt="SONIC MARKET">
+                <span class="app-section-badge">SM</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard Market -->
+                <a href="market-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  3. SONIC PRO
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section open"
+             data-app="sonic-pro"
+             data-logo="assets/images/sonic-pro-logo.svg"
+             data-logo-icon="SP">
+            <button class="app-section-header" type="button" title="SONIC PRO">
+                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+                <span class="app-section-badge">SP</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard PRO (dispecerat) -->
+                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group open" data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem active">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  4. SONIC BILLING
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-billing"
+             data-logo="assets/images/sonic-billing-logo.svg"
+             data-logo-icon="SB">
+            <button class="app-section-header" type="button" title="SONIC BILLING">
+                <img src="assets/images/sonic-billing-logo.svg" class="app-section-logo" alt="SONIC BILLING">
+                <span class="app-section-badge">SB</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard -->
+                <a href="index.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── ADMINISTRARE ─────────────────────────────────────────── -->
+                <div class="nav-group " data-group="administrare">
+                    <button class="nav-group-title" type="button" title="Administrare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                        </span>
+                        <span class="nav-label">Administrare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="utilizatori.html" class="nav-subitem ">Utilizatori</a>
+                        <a href="cititori.html" class="nav-subitem ">Cititori</a>
+                        <a href="parametri-sistem.html" class="nav-subitem ">Parametri Sistem</a>
+                        <a href="stergere-perioade.html" class="nav-subitem ">Ștergere Perioade Calcul</a>
+                    </div>
+                </div>
+
+                <!-- ── DICTIONARE ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="dictionare">
+                    <button class="nav-group-title" type="button" title="Dictionare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Dictionare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="localitati.html" class="nav-subitem ">Localități</a>
+                        <a href="puncte-lucru.html" class="nav-subitem ">Puncte de Lucru</a>
+                        <a href="producatori.html" class="nav-subitem ">Producători</a>
+                        <a href="furnizori.html" class="nav-subitem ">Furnizori Utilități</a>
+                        <a href="unitati-masura.html" class="nav-subitem ">Unități de Măsură</a>
+                        <a href="tipuri-servicii.html" class="nav-subitem ">Tipuri Servicii</a>
+                        <a href="companii.html" class="nav-subitem ">Companii</a>
+                    </div>
+                </div>
+
+                <!-- ── DATABANK MANAGEMENT ──────────────────────────────────── -->
+                <div class="nav-group " data-group="databank">
+                    <button class="nav-group-title" type="button" title="Databank Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                        </span>
+                        <span class="nav-label">Databank Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="tipuri-radiatoare.html" class="nav-subitem ">Tipuri Radiatoare</a>
+                        <a href="modele-radiatoare.html" class="nav-subitem ">Modele Radiatoare</a>
+                        <a href="modele-repartitoare.html" class="nav-subitem ">Modele Repartitoare</a>
+                        <a href="modele-contoare.html" class="nav-subitem ">Modele Contoare</a>
+                        <a href="serii-apometre.html" class="nav-subitem ">Serii Apometre Achiziționate</a>
+                    </div>
+                </div>
+
+                <!-- ── CALCUL ────────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="calcul">
+                    <button class="nav-group-title" type="button" title="Calcul">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </span>
+                        <span class="nav-label">Calcul</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
+                        <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
+                        <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
+                        <a href="tarife.html" class="nav-subitem ">Tarife</a>
+                    </div>
+                </div>
+
+                <!-- ── IMPORT / EXPORT CITIRI ───────────────────────────────── -->
+                <div class="nav-group " data-group="import-export">
+                    <button class="nav-group-title" type="button" title="Import / Export Citiri">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </span>
+                        <span class="nav-label">Import / Export Citiri</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="citire-manuala-et.html" class="nav-subitem ">Citire Manuală ET</a>
+                        <a href="citire-manuala-apa.html" class="nav-subitem ">Citire Manuală Apă</a>
+                        <a href="citiri-brute-et.html" class="nav-subitem ">Citiri Brute Energie Termică</a>
+                        <a href="citiri-brute-apa.html" class="nav-subitem ">Citiri Brute Apă</a>
+                        <a href="export-pl.html" class="nav-subitem ">Export PL</a>
+                    </div>
+                </div>
+
+                <!-- ── CONSUM ENERGIE TERMICĂ ────────────────────────────────── -->
+                <div class="nav-group " data-group="consum-et">
+                    <button class="nav-group-title" type="button" title="Consum Energie Termică">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                        </span>
+                        <span class="nav-label">Consum Energie Termică</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="consum-et-detaliat.html" class="nav-subitem ">Introducere Detaliată</a>
+                        <a href="consum-et-cumulat.html" class="nav-subitem ">Introducere Cumulată</a>
+                    </div>
+                </div>
+
+                <!-- ── CONSUM APĂ ─────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="consum-apa">
+                    <button class="nav-group-title" type="button" title="Consum Apă">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L7 10a5 5 0 0 0 10 0L12 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Consum Apă</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="consum-apa-detaliat.html" class="nav-subitem ">Introducere Detaliată</a>
+                    </div>
+                </div>
+
+                <!-- ── VALIDARE CITIRE ───────────────────────────────────────── -->
+                <div class="nav-group " data-group="validare">
+                    <button class="nav-group-title" type="button" title="Validare Citire">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </span>
+                        <span class="nav-label">Validare Citire</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="validare-et.html" class="nav-subitem ">Validare Citire – ET</a>
+                        <a href="validare-apa.html" class="nav-subitem ">Validare Citire – Apă</a>
+                        <a href="cost-split-apa.html" class="nav-subitem ">Cost Split – Apă</a>
+                    </div>
+                </div>
+
+                <!-- ── GESTIUNE FACTURARE (standalone) ──────────────────────── -->
+                <a href="facturare.html" class="nav-item " title="Gestiune Facturare">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Gestiune Facturare</span>
+                </a>
+
+                <!-- ── GESTIUNE TIPĂRIRE ───────────────────────────────────────── -->
+                <div class="nav-group " data-group="tiparire">
+                    <button class="nav-group-title" type="button" title="Gestiune Tipărire">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                        </span>
+                        <span class="nav-label">Gestiune Tipărire</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="nod-tiparire.html" class="nav-subitem ">NOD pentru Tipărire</a>
+                        <a href="fise-citire.html" class="nav-subitem ">Fișe Citire</a>
+                    </div>
+                </div>
+
+                <!-- ── RAPOARTE (standalone) ──────────────────────────────────── -->
+                <a href="rapoarte.html" class="nav-item " title="Rapoarte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <span class="nav-label">Rapoarte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  5. SONIC FIN
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-fin"
+             data-logo="assets/images/sonic-fin-logo.svg"
+             data-logo-icon="SF">
+            <button class="app-section-header" type="button" title="SONIC FIN">
+                <img src="assets/images/sonic-fin-logo.svg" class="app-section-logo" alt="SONIC FIN">
+                <span class="app-section-badge">SF</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard FIN -->
+                <a href="fin-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  6. SONIC (Base – Ecosistem & Configurare)
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic"
+             data-logo="assets/images/sonic-logo.svg"
+             data-logo-icon="S">
+            <button class="app-section-header" type="button" title="SONIC">
+                <img src="assets/images/sonic-logo.svg" class="app-section-logo" alt="SONIC">
+                <span class="app-section-badge">S</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard SONIC -->
+                <a href="sonic-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <div class="nav-group " data-group="master-data">
+                    <button class="nav-group-title" type="button" title="Master Data Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Master Data Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
+                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
+                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
+                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
+                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
+                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- ── Sidebar Footer ─────────────────────────────────────────────── -->
+    <!-- React: <SidebarFooter /> -->
+    <div class="sidebar-footer">
+        <a href="contul-meu.html" class="nav-item " title="Contul Meu">
+            <span class="nav-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <span class="nav-label">Contul Meu</span>
+        </a>
+    </div>
+
+</aside>
+
+<!-- React: <main className="main"> -->
+<div class="main">
+
+    <!--
+        React: <Header
+            onToggleSidebar={toggleSidebar}
+            isCollapsed={isCollapsed}
+            isMobileOpen={isMobileOpen}
+            pageTitle={pageTitle}
+        />
+    -->
+    <div class="header">
+
+        <!-- LEFT: hamburger / sidebar-toggle + search (desktop) -->
+        <div class="header-left">
+            <!--
+                React: <SidebarToggleBtn
+                    onClick={onToggleSidebar}
+                    isCollapsed={isCollapsed}
+                    isMobile={isMobile}
+                />
+                Desktop: panel-left icon with collapse arrow
+                Mobile : hamburger icon
+            -->
+            <button class="sidebar-toggle-btn" id="sidebarToggle"
+                    title="Restrânge / Extinde meniu"
+                    aria-label="Toggle sidebar"
+                    data-collapsed="0">
+                <script>
+                    (function() {
+                        var btn = document.getElementById('sidebarToggle');
+                        var ls = localStorage.getItem('sb_collapsed');
+                        if (ls === '1') btn.setAttribute('data-collapsed', '1');
+                        else if (ls === '0') btn.setAttribute('data-collapsed', '0');
+                    })();
+                </script>
+                <!-- Mobile hamburger (hidden on desktop via CSS) -->
+                <svg class="icon-hamburger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+                <!-- Desktop panel icon (hidden on mobile via CSS) -->
+                <svg class="icon-panel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <line x1="9" y1="3" x2="9" y2="21"/>
+                    <polyline points="15 8 12 12 15 16" class="toggle-arrow"/>
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- CENTER: logo (mobile only, absolutely centered) -->
+        <!-- React: isMobile && <HeaderLogo /> -->
+        <div class="header-logo" aria-hidden="true">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-pro-logo.svg" alt="SONIC PRO" id="headerLogo">
+            </a>
+        </div>
+
+        <!-- RIGHT: page title (desktop) + user + logout -->
+        <div class="header-actions">
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
+            <div class="header-page-title">Montaje și Stocuri</div>
+
+            <!-- User profile avatar (always visible) -->
+            <a href="contul-meu.html" class="user-profile" title="Contul meu">SI</a>
+
+            <!-- Logout button – icon only, always visible -->
+            <!-- React: <LogoutBtn onClick={handleLogout} /> -->
+            <a href="login.html" class="logout-btn" title="Deconectare" aria-label="Deconectare">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+            </a>
+        </div>
+
+    </div><!-- /.header -->
+
+    <!--
+        CONTEXTUAL HELP BAR (WordPress-style)
+        React: <HelpBar onToggle={toggleHelp} isOpen={isHelpOpen} />
+               <HelpPanel isOpen={isHelpOpen} tabs={helpTabs} />
+    -->
+    <div class="help-wrapper">
+        <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
+            <div class="help-panel-inner">
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Montaje și echipe                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Stoc și gestiuni virtuale                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Montaje și Stocuri</h4>
+            <p>Pagina reunește planificarea montajelor din contracte și situația stocurilor de echipamente.</p>
+            <ul>
+                <li><strong>KPI-urile</strong> arată montajele neprogramate, montajele în curs (cu procentul de apartamente realizate), apartamentele de montat în următoarele 30 de zile și produsele al căror stoc nu acoperă montajele programate.</li>
+                <li><strong>Montaje</strong> – tabla montajelor pe stări: Neprogramat, Programat, În curs, Finalizat.</li>
+                <li><strong>Necesar vs stoc</strong> – compară stocul din magazia centrală cu cantitățile rezervate pentru montaje.</li>
+                <li><strong>Gestiuni</strong> – gestiunile virtuale ale persoanelor din teren și transferurile din magazia centrală.</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <h4>Programarea unui montaj</h4>
+            <p>Montajele noi apar în coloana <strong>Neprogramat</strong> imediat după semnarea contractului (NOD-ul poate fi încă nealocat). Apăsați <em>„Programează montaj”</em> pe card și completați:</p>
+            <ul>
+                <li><strong>Perioadă montaj</strong> (de la – până la) – obligatorie.</li>
+                <li><strong>Echipa</strong> – cel puțin o persoană cu rolul Montator. Dacă un montator are o indisponibilitate (concediu, alte sarcini, formare) în perioada aleasă, aceasta apare sub numele lui.</li>
+                <li><strong>Responsabil montaj</strong> – se alege dintre persoanele bifate în echipă.</li>
+                <li><strong>Observații</strong> – opțional.</li>
+            </ul>
+            <p>Butonul <em>„Verifică stoc”</em> compară necesarul montajului cu stocul liber (magazie centrală minus cantitățile rezervate). Dacă montajul începe după data unei intrări de marfă, intrarea este luată în calcul. Lipsurile sunt afișate ca avertizare – puteți continua cu <em>„Programează oricum”</em>.</p>
+            <p>După salvare, montajul trece în coloana <strong>Programat</strong>. Butonul <em>„Detalii”</em> afișează perioada, echipa, responsabilul, progresul și necesarul.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <h4>Necesar vs stoc</h4>
+            <ul>
+                <li><strong>Magazie centrală</strong> – stocul fizic din depozit; <strong>În gestiuni</strong> – echipamentele aflate la persoanele din teren.</li>
+                <li><strong>Rezervat montaje</strong> – cantitățile blocate pentru montajele programate în următoarele 14 zile.</li>
+                <li><strong>Liber</strong> = Magazie centrală − Rezervat montaje.</li>
+                <li><strong>Stare:</strong> <em>Lipsă</em> – stocul liber este negativ (nu acoperă montajele programate); <em>Sub necesar</em> – stocul liber este sub 10% din stocul central; <em>Suficient</em> – în rest.</li>
+            </ul>
+            <p>Pentru fiecare produs în lipsă se afișează un avertisment cu data următoarei intrări; programările de service care necesită acel produs se recomandă după această dată.</p>
+            <h4>Gestiuni virtuale</h4>
+            <p>Fiecare persoană din teren are o gestiune virtuală (ex. G-03). Cu <em>„Transfer din magazia centrală”</em> alegeți produsul și cantitatea (număr întreg, mai mare decât 0 și cel mult stocul central). Dacă transferul reduce stocul liber sub cantitatea rezervată pentru montaje, se cere confirmare. <em>„Fișa gestiunii”</em> generează documentul cu echipamentele aflate la persoana respectivă. Persoanele fără gestiune nu apar în listă.</p>
+                            </div>
+                                    </div>
+                    </div><!-- /.help-panel-inner -->
+        </div><!-- /.help-panel -->
+        
+        <div class="help-bar">
+            <button class="help-toggle-btn" id="helpToggle"
+                    aria-expanded="false"
+                    aria-controls="helpPanel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round"
+                     width="14" height="14" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                <span>Ajutor</span>
+                <svg class="help-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                     aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"/>
+                </svg>
+            </button>
+        </div><!-- /.help-bar -->
+    </div><!-- /.help-wrapper -->
+
+    <div class="content">
+
+        <!-- React: <PageTitle title="Montaje și Stocuri" /> -->
+        <div class="page-title-container">
+            <div class="page-title">
+                <h1>Montaje și Stocuri</h1>
+                <p>Planificarea montajelor din contracte și corelarea necesarului de echipamente cu stocul din magazia centrală și din gestiunile echipelor.</p>
+            </div>
+        </div>
+
+        <!-- React: <KpiGrid items={kpis} /> -->
+        <div class="calc-kpi-grid">
+            <div class="calc-kpi">
+                <span class="calc-kpi-label">Montaje neprogramate</span>
+                <span class="calc-kpi-value" id="kpiUnscheduled">2</span>
+                <span class="pro-kpi-meta" id="kpiUnscheduledMeta">105 apartamente în așteptare</span>
+            </div>
+            <div class="calc-kpi">
+                <span class="calc-kpi-label">Montaje în curs</span>
+                <span class="calc-kpi-value">1</span>
+                <span class="pro-kpi-meta">63% apartamente realizate (22 / 35)</span>
+            </div>
+            <div class="calc-kpi">
+                <span class="calc-kpi-label">Apartamente de montat în 30 zile</span>
+                <span class="calc-kpi-value" id="kpi30">101</span>
+                <span class="pro-kpi-meta" id="kpi30Meta">din 3 montaje programate / în curs</span>
+            </div>
+            <div class="calc-kpi">
+                <span class="calc-kpi-label">Produse sub necesar</span>
+                <span class="calc-kpi-value" id="kpiStock">2</span>
+                <span class="pro-kpi-meta" id="kpiStockMeta">2 în lipsă · 0 aproape de limită</span>
+            </div>
+        </div>
+
+        <!-- React: <Tabs activeTab={tab} onChange={setTab} /> -->
+        <div class="edit-tabs-wrapper">
+            <div class="edit-tabs-nav" role="tablist" aria-label="Secțiuni montaje și stocuri">
+                <button type="button" class="edit-tab-btn active" role="tab" aria-selected="true"
+                        aria-controls="tab-montaje" id="tabBtn-montaje" onclick="switchTab('montaje', this)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                    Montaje
+                </button>
+                <button type="button" class="edit-tab-btn" role="tab" aria-selected="false"
+                        aria-controls="tab-stoc" id="tabBtn-stoc" onclick="switchTab('stoc', this)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    Necesar vs stoc
+                </button>
+                <button type="button" class="edit-tab-btn" role="tab" aria-selected="false"
+                        aria-controls="tab-gestiuni" id="tabBtn-gestiuni" onclick="switchTab('gestiuni', this)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    Gestiuni
+                </button>
+            </div>
+        </div>
+
+        <!-- ══ TAB 1 – Montaje (kanban) ═══════════════════════════════════ -->
+        <!-- React: <InstallBoard installs={installs} onSchedule={openSchedule} onDetails={openDetails} /> -->
+        <div id="tab-montaje" class="tab-pane active" role="tabpanel" aria-labelledby="tabBtn-montaje">
+                        <div class="calc-alert calc-alert--warning" id="boardStockAlert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg><div>Stocul liber nu acoperă montajele programate pentru <strong id="boardStockCount">2</strong> produse. Detalii în tabul <a href="#" class="td-link" onclick="switchTab('stoc'); return false;">Necesar vs stoc</a>.</div></div>
+                        <div class="calc-alert calc-alert--success" id="boardNotice" style="display: none;"></div>
+
+            <div class="pro-board">
+                                <div class="pro-board-col" data-status="Neprogramat">
+                    <div class="pro-board-head"><span>Neprogramat</span><span class="pro-board-count" id="count-neprogramat">2</span></div>
+                    <div class="js-board-list" id="col-neprogramat">
+                        <div class="pro-board-card" data-install="M-304" data-from=""><div class="pro-board-card-title">Asociația de Proprietari Bloc M12 (nemontat)</div><div class="pro-board-card-meta">M-304 · Contract C-2026-127 · NOD nealocat</div><div class="pro-board-card-meta">Perioadă neprogramată</div><div class="pro-chips" style="margin-top: 8px;"><span class="pro-chip">Repartitor × 180</span><span class="pro-chip">Contor apă × 90</span><span class="pro-chip">Gateway × 2</span></div><div style="margin-top: 10px;"><div class="progress-bar" aria-label="Apartamente realizate 0%"><div class="progress-bar__fill" style="width: 0%;"></div></div><span class="progress-label">0 / 45 apartamente (0%)</span></div><div class="pro-board-card-foot"><span class="pro-person-meta">Fără echipă</span><button type="button" class="btn-secondary" onclick="ProMontaje.openSchedule('M-304')">Programează montaj</button></div></div><div class="pro-board-card" data-install="M-305" data-from=""><div class="pro-board-card-title">Asociația de Proprietari Bloc 7 Drumul Taberei</div><div class="pro-board-card-meta">M-305 · Contract C-2026-129 · NOD nealocat</div><div class="pro-board-card-meta">Perioadă neprogramată</div><div class="pro-chips" style="margin-top: 8px;"><span class="pro-chip">Contor apă × 120</span><span class="pro-chip">Contor ET × 30</span></div><div style="margin-top: 10px;"><div class="progress-bar" aria-label="Apartamente realizate 0%"><div class="progress-bar__fill" style="width: 0%;"></div></div><span class="progress-label">0 / 60 apartamente (0%)</span></div><div class="pro-board-card-foot"><span class="pro-person-meta">Fără echipă</span><button type="button" class="btn-secondary" onclick="ProMontaje.openSchedule('M-305')">Programează montaj</button></div></div>                        <div class="table-empty js-board-empty" style="display: none;">Niciun montaj.</div>
+                    </div>
+                </div>
+                                <div class="pro-board-col" data-status="Programat">
+                    <div class="pro-board-head"><span>Programat</span><span class="pro-board-count" id="count-programat">2</span></div>
+                    <div class="js-board-list" id="col-programat">
+                        <div class="pro-board-card" data-install="M-302" data-from="2026-11-02"><div class="pro-board-card-title">Asociația de Proprietari Bloc 32</div><div class="pro-board-card-meta">M-302 · Contract C-2026-121 · NOD 81-001-0020</div><div class="pro-board-card-meta">02.11.2026 – 06.11.2026</div><div class="pro-chips" style="margin-top: 8px;"><span class="pro-chip">Repartitor × 160</span><span class="pro-chip">Contor apă × 80</span></div><div style="margin-top: 10px;"><div class="progress-bar" aria-label="Apartamente realizate 0%"><div class="progress-bar__fill" style="width: 0%;"></div></div><span class="progress-label">0 / 40 apartamente (0%)</span></div><div class="pro-board-card-foot"><div class="pro-person"><span class="pro-avatar-stack"><span class="pro-avatar pro-avatar--sm" title="Mihai Dobre">MD</span><span class="pro-avatar pro-avatar--sm" title="Bogdan Antal">BA</span></span><span class="pro-person-meta">Resp.: Mihai Dobre</span></div><button type="button" class="btn-action-icon" title="Detalii montaj" onclick="ProMontaje.openDetails('M-302')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></button></div></div><div class="pro-board-card" data-install="M-303" data-from="2026-11-09"><div class="pro-board-card-title">Asociația de Proprietari Bloc S1 Sc. 2</div><div class="pro-board-card-meta">M-303 · Contract C-2026-124 · NOD 81-001-0007</div><div class="pro-board-card-meta">09.11.2026 – 13.11.2026</div><div class="pro-chips" style="margin-top: 8px;"><span class="pro-chip">Repartitor × 220</span><span class="pro-chip">Gateway × 2</span></div><div style="margin-top: 10px;"><div class="progress-bar" aria-label="Apartamente realizate 0%"><div class="progress-bar__fill" style="width: 0%;"></div></div><span class="progress-label">0 / 48 apartamente (0%)</span></div><div class="pro-board-card-foot"><div class="pro-person"><span class="pro-avatar-stack"><span class="pro-avatar pro-avatar--sm" title="Mihai Dobre">MD</span><span class="pro-avatar pro-avatar--sm" title="Florin Stoica">FS</span></span><span class="pro-person-meta">Resp.: Florin Stoica</span></div><button type="button" class="btn-action-icon" title="Detalii montaj" onclick="ProMontaje.openDetails('M-303')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></button></div></div>                        <div class="table-empty js-board-empty" style="display: none;">Niciun montaj.</div>
+                    </div>
+                </div>
+                                <div class="pro-board-col" data-status="În curs">
+                    <div class="pro-board-head"><span>În curs</span><span class="pro-board-count" id="count-incurs">1</span></div>
+                    <div class="js-board-list" id="col-incurs">
+                        <div class="pro-board-card" data-install="M-301" data-from="2026-10-26"><div class="pro-board-card-title">Asociația de Proprietari Cremenița 5</div><div class="pro-board-card-meta">M-301 · Contract C-2026-118 · NOD 81-001-2108</div><div class="pro-board-card-meta">26.10.2026 – 30.10.2026</div><div class="pro-chips" style="margin-top: 8px;"><span class="pro-chip">Repartitor × 140</span><span class="pro-chip">Contor apă × 70</span></div><div style="margin-top: 10px;"><div class="progress-bar" aria-label="Apartamente realizate 63%"><div class="progress-bar__fill" style="width: 63%;"></div></div><span class="progress-label">22 / 35 apartamente (63%)</span></div><div class="pro-board-card-foot"><div class="pro-person"><span class="pro-avatar-stack"><span class="pro-avatar pro-avatar--sm" title="Mihai Dobre">MD</span><span class="pro-avatar pro-avatar--sm" title="Radu Marinescu">RM</span></span><span class="pro-person-meta">Resp.: Mihai Dobre</span></div><button type="button" class="btn-action-icon" title="Detalii montaj" onclick="ProMontaje.openDetails('M-301')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></button></div></div>                        <div class="table-empty js-board-empty" style="display: none;">Niciun montaj.</div>
+                    </div>
+                </div>
+                                <div class="pro-board-col" data-status="Finalizat">
+                    <div class="pro-board-head"><span>Finalizat</span><span class="pro-board-count" id="count-finalizat">1</span></div>
+                    <div class="js-board-list" id="col-finalizat">
+                        <div class="pro-board-card" data-install="M-306" data-from="2026-10-12"><div class="pro-board-card-title">Asociația de Proprietari Bloc 47</div><div class="pro-board-card-meta">M-306 · Contract C-2026-102 · NOD 81-001-0040</div><div class="pro-board-card-meta">12.10.2026 – 16.10.2026</div><div class="pro-chips" style="margin-top: 8px;"><span class="pro-chip">Repartitor × 190</span><span class="pro-chip">Contor apă × 96</span><span class="pro-chip">Gateway × 3</span></div><div style="margin-top: 10px;"><div class="progress-bar" aria-label="Apartamente realizate 94%"><div class="progress-bar__fill" style="width: 94%;"></div></div><span class="progress-label">45 / 48 apartamente (94%)</span></div><div class="pro-board-card-foot"><div class="pro-person"><span class="pro-avatar-stack"><span class="pro-avatar pro-avatar--sm" title="Bogdan Antal">BA</span><span class="pro-avatar pro-avatar--sm" title="Florin Stoica">FS</span></span><span class="pro-person-meta">Resp.: Bogdan Antal</span></div><button type="button" class="btn-action-icon" title="Detalii montaj" onclick="ProMontaje.openDetails('M-306')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></button></div></div>                        <div class="table-empty js-board-empty" style="display: none;">Niciun montaj.</div>
+                    </div>
+                </div>
+                            </div>
+        </div><!-- end tab-montaje -->
+
+        <!-- ══ TAB 2 – Necesar vs stoc ════════════════════════════════════ -->
+        <!-- React: <StockShortageAlerts stock={stock} /> + <StockCoverageTable stock={stock} /> -->
+        <div id="tab-stoc" class="tab-pane" role="tabpanel" aria-labelledby="tabBtn-stoc" style="display:none;">
+            <div id="stockAlerts">
+                                <div class="calc-alert calc-alert--warning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg><div><strong>Repartitor E-ITN 30.4</strong>: lipsă 20 buc. pentru montajele programate;
+                    intrare 800 buc. pe 12.11.2026. Programările de service care necesită acest produs sunt recomandate după această dată.</div></div>
+                                <div class="calc-alert calc-alert--warning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg><div><strong>Contor energie termică US</strong>: lipsă 4 buc. pentru montajele programate;
+                    intrare 40 buc. pe 04.11.2026. Programările de service care necesită acest produs sunt recomandate după această dată.</div></div>
+                            </div>
+
+            <div class="table-container">
+                <div class="table-toolbar">
+                    <div class="table-toolbar-left">
+                        <span class="table-count">Afișare <strong id="stockVisible">7</strong> din <strong>7</strong> produse</span>
+                    </div>
+                    <div class="table-toolbar-right">
+                        <div class="live-search-wrapper" title="Filtrare locală după cod sau produs">
+                            <span class="live-search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+                            <input type="text" id="stockSearch" class="input-control" placeholder="Căutare dinamică produs...">
+                        </div>
+                    </div>
+                </div>
+                <div class="table-scroll">
+                    <table class="partners-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 8%;">Cod</th>
+                                <th style="width: 20%;">Produs</th>
+                                <th style="text-align: right;">Magazie centrală</th>
+                                <th style="text-align: right;">În gestiuni</th>
+                                <th style="text-align: right;">Rezervat montaje</th>
+                                <th style="text-align: right;">Liber</th>
+                                <th>Intrări</th>
+                                <th style="width: 14%;">Acoperire</th>
+                                <th style="text-align: center;">Stare</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stockTableBody">
+                                                        <tr data-code="REP-30" data-search="rep-30 repartitor e-itn 30.4">
+                                <td class="td-code">REP-30</td>
+                                <td class="td-name">Repartitor E-ITN 30.4</td>
+                                <td style="text-align: right;" class="js-central">500</td>
+                                <td style="text-align: right;" class="js-field">64</td>
+                                <td style="text-align: right;">520</td>
+                                <td style="text-align: right;" class="js-free">-20</td>
+                                <td>800 buc.<span class="list-sublabel">12.11.2026</span></td>
+                                <td class="js-cover">
+                                    <div class="progress-bar" aria-label="Acoperire 96%"><div class="progress-bar__fill is-out" style="width: 96%;"></div></div>
+                                    <span class="progress-label">96% din rezervat</span>
+                                </td>
+                                <td style="text-align: center;" class="js-state"><span class="status-badge status-error">Lipsă</span></td>
+                            </tr>
+                                                        <tr data-code="APA-AR" data-search="apa-ar contor apă rece e-rm 30 ar">
+                                <td class="td-code">APA-AR</td>
+                                <td class="td-name">Contor apă rece E-RM 30 AR</td>
+                                <td style="text-align: right;" class="js-central">340</td>
+                                <td style="text-align: right;" class="js-field">41</td>
+                                <td style="text-align: right;">180</td>
+                                <td style="text-align: right;" class="js-free">160</td>
+                                <td>—</td>
+                                <td class="js-cover">
+                                    <div class="progress-bar" aria-label="Acoperire 100%"><div class="progress-bar__fill " style="width: 100%;"></div></div>
+                                    <span class="progress-label">100% din rezervat</span>
+                                </td>
+                                <td style="text-align: center;" class="js-state"><span class="status-badge status-online">Suficient</span></td>
+                            </tr>
+                                                        <tr data-code="APA-AC" data-search="apa-ac contor apă caldă e-rm 30 ac">
+                                <td class="td-code">APA-AC</td>
+                                <td class="td-name">Contor apă caldă E-RM 30 AC</td>
+                                <td style="text-align: right;" class="js-central">290</td>
+                                <td style="text-align: right;" class="js-field">37</td>
+                                <td style="text-align: right;">160</td>
+                                <td style="text-align: right;" class="js-free">130</td>
+                                <td>—</td>
+                                <td class="js-cover">
+                                    <div class="progress-bar" aria-label="Acoperire 100%"><div class="progress-bar__fill " style="width: 100%;"></div></div>
+                                    <span class="progress-label">100% din rezervat</span>
+                                </td>
+                                <td style="text-align: center;" class="js-state"><span class="status-badge status-online">Suficient</span></td>
+                            </tr>
+                                                        <tr data-code="ET-US" data-search="et-us contor energie termică us">
+                                <td class="td-code">ET-US</td>
+                                <td class="td-name">Contor energie termică US</td>
+                                <td style="text-align: right;" class="js-central">26</td>
+                                <td style="text-align: right;" class="js-field">6</td>
+                                <td style="text-align: right;">30</td>
+                                <td style="text-align: right;" class="js-free">-4</td>
+                                <td>40 buc.<span class="list-sublabel">04.11.2026</span></td>
+                                <td class="js-cover">
+                                    <div class="progress-bar" aria-label="Acoperire 87%"><div class="progress-bar__fill is-out" style="width: 87%;"></div></div>
+                                    <span class="progress-label">87% din rezervat</span>
+                                </td>
+                                <td style="text-align: center;" class="js-state"><span class="status-badge status-error">Lipsă</span></td>
+                            </tr>
+                                                        <tr data-code="GW-LR" data-search="gw-lr gateway lora / wm-bus">
+                                <td class="td-code">GW-LR</td>
+                                <td class="td-name">Gateway LoRa / wM-Bus</td>
+                                <td style="text-align: right;" class="js-central">18</td>
+                                <td style="text-align: right;" class="js-field">3</td>
+                                <td style="text-align: right;">6</td>
+                                <td style="text-align: right;" class="js-free">12</td>
+                                <td>—</td>
+                                <td class="js-cover">
+                                    <div class="progress-bar" aria-label="Acoperire 100%"><div class="progress-bar__fill " style="width: 100%;"></div></div>
+                                    <span class="progress-label">100% din rezervat</span>
+                                </td>
+                                <td style="text-align: center;" class="js-state"><span class="status-badge status-online">Suficient</span></td>
+                            </tr>
+                                                        <tr data-code="SZ-FL" data-search="sz-fl senzor inundație">
+                                <td class="td-code">SZ-FL</td>
+                                <td class="td-name">Senzor inundație</td>
+                                <td style="text-align: right;" class="js-central">45</td>
+                                <td style="text-align: right;" class="js-field">5</td>
+                                <td style="text-align: right;">0</td>
+                                <td style="text-align: right;" class="js-free">45</td>
+                                <td>—</td>
+                                <td class="js-cover">
+                                    <div class="progress-bar" aria-label="Acoperire 100%"><div class="progress-bar__fill " style="width: 100%;"></div></div>
+                                    <span class="progress-label">Fără rezervări</span>
+                                </td>
+                                <td style="text-align: center;" class="js-state"><span class="status-badge status-online">Suficient</span></td>
+                            </tr>
+                                                        <tr data-code="SIG-01" data-search="sig-01 sigilii">
+                                <td class="td-code">SIG-01</td>
+                                <td class="td-name">Sigilii</td>
+                                <td style="text-align: right;" class="js-central">4.200</td>
+                                <td style="text-align: right;" class="js-field">610</td>
+                                <td style="text-align: right;">1.300</td>
+                                <td style="text-align: right;" class="js-free">2.900</td>
+                                <td>—</td>
+                                <td class="js-cover">
+                                    <div class="progress-bar" aria-label="Acoperire 100%"><div class="progress-bar__fill " style="width: 100%;"></div></div>
+                                    <span class="progress-label">100% din rezervat</span>
+                                </td>
+                                <td style="text-align: center;" class="js-state"><span class="status-badge status-online">Suficient</span></td>
+                            </tr>
+                                                        <tr id="stockNoResults" style="display: none;"><td colspan="9" class="table-empty">Niciun produs găsit pentru căutarea introdusă.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-pagination">
+                    <div class="pagination-info">Afișare <strong>1</strong> - <strong>7</strong> din <strong>7</strong> înregistrări</div>
+                    <div class="pagination-controls">
+                        <button type="button" class="btn-secondary btn-page-nav" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg><span>Anterior</span></button>
+                        <div class="pagination-pages"><button type="button" class="btn-secondary btn-page active">1</button></div>
+                        <button type="button" class="btn-secondary btn-page-nav" disabled><span>Următor</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end tab-stoc -->
+
+        <!-- ══ TAB 3 – Gestiuni ═══════════════════════════════════════════ -->
+        <!-- React: <WarehouseTable warehouses={warehouses} onTransfer={openTransfer} onSheet={downloadSheet} /> -->
+        <div id="tab-gestiuni" class="tab-pane" role="tabpanel" aria-labelledby="tabBtn-gestiuni" style="display:none;">
+                        <div class="table-container">
+                <div class="table-toolbar">
+                    <div class="table-toolbar-left">
+                        <span class="table-count">Afișare <strong id="whVisible">8</strong> din <strong>8</strong> gestiuni</span>
+                    </div>
+                    <div class="table-toolbar-right">
+                        <div class="live-search-wrapper" title="Filtrare locală după cod gestiune sau persoană">
+                            <span class="live-search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+                            <input type="text" id="whSearch" class="input-control" placeholder="Căutare dinamică gestiune...">
+                        </div>
+                    </div>
+                </div>
+                <div class="table-scroll">
+                    <table class="partners-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 9%;">Cod gestiune</th>
+                                <th style="width: 18%;">Persoană</th>
+                                <th>Roluri</th>
+                                <th style="text-align: right;">Repartitor</th><th style="text-align: right;">Contor AR</th><th style="text-align: right;">Contor AC</th><th style="text-align: right;">Gateway</th>                                <th style="text-align: right;">Total</th>
+                                <th style="text-align: center;">Acțiuni</th>
+                            </tr>
+                        </thead>
+                        <tbody id="whTableBody">
+                            <!-- Rândul magaziei centrale – primul -->
+                            <tr data-wh="MC" data-search="mc magazie centrală">
+                                <td class="td-code">MC</td>
+                                <td class="td-name">Magazie centrală</td>
+                                <td>—</td>
+                                                                <td style="text-align: right;" data-product="REP-30">500</td>
+                                                                <td style="text-align: right;" data-product="APA-AR">340</td>
+                                                                <td style="text-align: right;" data-product="APA-AC">290</td>
+                                                                <td style="text-align: right;" data-product="GW-LR">18</td>
+                                                                <td style="text-align: right;" class="td-code js-total">1.148</td>
+                                <td style="text-align: center; white-space: nowrap;">
+                                    <button type="button" class="btn-action-icon" title="Fișa gestiunii" onclick="ProMontaje.sheet('MC')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg></button>
+                                </td>
+                            </tr>
+                                                        <tr data-wh="G-01" data-search="g-01 teodor milian cititor service">
+                                <td class="td-code">G-01</td>
+                                <td>Teodor Milian</td>
+                                <td><div class="pro-chips"><span class="pro-chip">Cititor</span><span class="pro-chip">Service</span></div></td>
+                                                                <td style="text-align: right;" data-product="REP-30">8</td>
+                                                                <td style="text-align: right;" data-product="APA-AR">6</td>
+                                                                <td style="text-align: right;" data-product="APA-AC">5</td>
+                                                                <td style="text-align: right;" data-product="GW-LR">0</td>
+                                                                <td style="text-align: right;" class="td-code js-total">19</td>
+                                <td style="text-align: center; white-space: nowrap;">
+                                    <button type="button" class="btn-action-icon" title="Transfer din magazia centrală" onclick="ProMontaje.openTransfer('G-01')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg></button>
+                                    <button type="button" class="btn-action-icon" title="Fișa gestiunii" onclick="ProMontaje.sheet('G-01')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg></button>
+                                </td>
+                            </tr>
+                                                        <tr data-wh="G-02" data-search="g-02 bogdan antal montator service">
+                                <td class="td-code">G-02</td>
+                                <td>Bogdan Antal</td>
+                                <td><div class="pro-chips"><span class="pro-chip">Montator</span><span class="pro-chip">Service</span></div></td>
+                                                                <td style="text-align: right;" data-product="REP-30">6</td>
+                                                                <td style="text-align: right;" data-product="APA-AR">9</td>
+                                                                <td style="text-align: right;" data-product="APA-AC">8</td>
+                                                                <td style="text-align: right;" data-product="GW-LR">0</td>
+                                                                <td style="text-align: right;" class="td-code js-total">23</td>
+                                <td style="text-align: center; white-space: nowrap;">
+                                    <button type="button" class="btn-action-icon" title="Transfer din magazia centrală" onclick="ProMontaje.openTransfer('G-02')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg></button>
+                                    <button type="button" class="btn-action-icon" title="Fișa gestiunii" onclick="ProMontaje.sheet('G-02')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg></button>
+                                </td>
+                            </tr>
+                                                        <tr data-wh="G-03" data-search="g-03 mihai dobre montator">
+                                <td class="td-code">G-03</td>
+                                <td>Mihai Dobre</td>
+                                <td><div class="pro-chips"><span class="pro-chip">Montator</span></div></td>
+                                                                <td style="text-align: right;" data-product="REP-30">22</td>
+                                                                <td style="text-align: right;" data-product="APA-AR">8</td>
+                                                                <td style="text-align: right;" data-product="APA-AC">7</td>
+                                                                <td style="text-align: right;" data-product="GW-LR">0</td>
+                                                                <td style="text-align: right;" class="td-code js-total">37</td>
+                                <td style="text-align: center; white-space: nowrap;">
+                                    <button type="button" class="btn-action-icon" title="Transfer din magazia centrală" onclick="ProMontaje.openTransfer('G-03')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg></button>
+                                    <button type="button" class="btn-action-icon" title="Fișa gestiunii" onclick="ProMontaje.sheet('G-03')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg></button>
+                                </td>
+                            </tr>
+                                                        <tr data-wh="G-04" data-search="g-04 cristian pană service">
+                                <td class="td-code">G-04</td>
+                                <td>Cristian Pană</td>
+                                <td><div class="pro-chips"><span class="pro-chip">Service</span></div></td>
+                                                                <td style="text-align: right;" data-product="REP-30">6</td>
+                                                                <td style="text-align: right;" data-product="APA-AR">0</td>
+                                                                <td style="text-align: right;" data-product="APA-AC">0</td>
+                                                                <td style="text-align: right;" data-product="GW-LR">2</td>
+                                                                <td style="text-align: right;" class="td-code js-total">8</td>
+                                <td style="text-align: center; white-space: nowrap;">
+                                    <button type="button" class="btn-action-icon" title="Transfer din magazia centrală" onclick="ProMontaje.openTransfer('G-04')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg></button>
+                                    <button type="button" class="btn-action-icon" title="Fișa gestiunii" onclick="ProMontaje.sheet('G-04')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg></button>
+                                </td>
+                            </tr>
+                                                        <tr data-wh="G-06" data-search="g-06 florin stoica montator service">
+                                <td class="td-code">G-06</td>
+                                <td>Florin Stoica</td>
+                                <td><div class="pro-chips"><span class="pro-chip">Montator</span><span class="pro-chip">Service</span></div></td>
+                                                                <td style="text-align: right;" data-product="REP-30">4</td>
+                                                                <td style="text-align: right;" data-product="APA-AR">10</td>
+                                                                <td style="text-align: right;" data-product="APA-AC">9</td>
+                                                                <td style="text-align: right;" data-product="GW-LR">1</td>
+                                                                <td style="text-align: right;" class="td-code js-total">24</td>
+                                <td style="text-align: center; white-space: nowrap;">
+                                    <button type="button" class="btn-action-icon" title="Transfer din magazia centrală" onclick="ProMontaje.openTransfer('G-06')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg></button>
+                                    <button type="button" class="btn-action-icon" title="Fișa gestiunii" onclick="ProMontaje.sheet('G-06')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg></button>
+                                </td>
+                            </tr>
+                                                        <tr data-wh="G-07" data-search="g-07 daniel ene service">
+                                <td class="td-code">G-07</td>
+                                <td>Daniel Ene</td>
+                                <td><div class="pro-chips"><span class="pro-chip">Service</span></div></td>
+                                                                <td style="text-align: right;" data-product="REP-30">0</td>
+                                                                <td style="text-align: right;" data-product="APA-AR">5</td>
+                                                                <td style="text-align: right;" data-product="APA-AC">6</td>
+                                                                <td style="text-align: right;" data-product="GW-LR">0</td>
+                                                                <td style="text-align: right;" class="td-code js-total">11</td>
+                                <td style="text-align: center; white-space: nowrap;">
+                                    <button type="button" class="btn-action-icon" title="Transfer din magazia centrală" onclick="ProMontaje.openTransfer('G-07')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg></button>
+                                    <button type="button" class="btn-action-icon" title="Fișa gestiunii" onclick="ProMontaje.sheet('G-07')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg></button>
+                                </td>
+                            </tr>
+                                                        <tr data-wh="G-08" data-search="g-08 radu marinescu cititor montator">
+                                <td class="td-code">G-08</td>
+                                <td>Radu Marinescu</td>
+                                <td><div class="pro-chips"><span class="pro-chip">Cititor</span><span class="pro-chip">Montator</span></div></td>
+                                                                <td style="text-align: right;" data-product="REP-30">18</td>
+                                                                <td style="text-align: right;" data-product="APA-AR">3</td>
+                                                                <td style="text-align: right;" data-product="APA-AC">2</td>
+                                                                <td style="text-align: right;" data-product="GW-LR">0</td>
+                                                                <td style="text-align: right;" class="td-code js-total">23</td>
+                                <td style="text-align: center; white-space: nowrap;">
+                                    <button type="button" class="btn-action-icon" title="Transfer din magazia centrală" onclick="ProMontaje.openTransfer('G-08')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg></button>
+                                    <button type="button" class="btn-action-icon" title="Fișa gestiunii" onclick="ProMontaje.sheet('G-08')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg></button>
+                                </td>
+                            </tr>
+                                                        <tr id="whNoResults" style="display: none;"><td colspan="9" class="table-empty">Nicio gestiune găsită pentru căutarea introdusă.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-pagination">
+                    <div class="pagination-info">Afișare <strong>1</strong> - <strong>8</strong> din <strong>8</strong> înregistrări</div>
+                    <div class="pagination-controls">
+                        <button type="button" class="btn-secondary btn-page-nav" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg><span>Anterior</span></button>
+                        <div class="pagination-pages"><button type="button" class="btn-secondary btn-page active">1</button></div>
+                        <button type="button" class="btn-secondary btn-page-nav" disabled><span>Următor</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end tab-gestiuni -->
+
+        <!-- ══ MODAL – Programează montaj ═════════════════════════════════ -->
+        <!-- React: <ScheduleInstallModal install={install} montatori={montatori} onCheckStock={checkStock} onSave={schedule} /> -->
+        <div class="modal-overlay" id="scheduleModal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="scheduleModalTitle">
+            <div class="modal-card" style="max-width: 680px;">
+                <div class="modal-header">
+                    <h3 id="scheduleModalTitle">Programează montaj</h3>
+                    <button type="button" class="btn-close" onclick="ProMontaje.close('scheduleModal')" title="Închide" aria-label="Închide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+                </div>
+                <div class="modal-body">
+                    <div class="calc-alert calc-alert--danger" id="scheduleErrors" style="display: none;"></div>
+
+                    <div class="utility-context-strip">
+                        <div class="context-items">
+                            <div class="context-item"><span class="context-label">Partener:</span><span class="context-value" id="schPartner">—</span></div>
+                            <div class="context-sep"></div>
+                            <div class="context-item"><span class="context-label">Contract:</span><strong class="context-value context-code" id="schContract">—</strong></div>
+                            <div class="context-sep"></div>
+                            <div class="context-item"><span class="context-label">Apartamente:</span><span class="context-value" id="schFlats">—</span></div>
+                        </div>
+                        <div><span class="status-badge status-offline">Neprogramat</span></div>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="form-label">Necesar echipamente</span>
+                        <div class="pro-chips" id="schNeeds"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="dtpInstallFrom">Perioadă montaj <span class="required-star">*</span></label>
+                        <div class="date-range-group">
+                            <input type="text" id="dtpInstallFrom" class="input-control" data-datepicker>
+                            <span class="date-range-separator">&ndash;</span>
+                            <input type="text" id="dtpInstallTo" class="input-control" data-datepicker>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="form-label">Echipa (montatori) <span class="required-star">*</span></span>
+                        <div class="pro-check-grid" id="schTeam">
+                                                        <label class="pro-check-tile">
+                                <input type="checkbox" value="s2" onchange="ProMontaje.teamChanged()">
+                                <span class="pro-avatar pro-avatar--sm">BA</span>
+                                <span style="min-width: 0;">
+                                    <span class="pro-person-name" style="display: block;">Bogdan Antal</span>
+                                    <span class="pro-person-meta js-avail" style="display: block;" data-skills="Contor apă, Contor ET">Contor apă, Contor ET</span>
+                                </span>
+                            </label>
+                                                        <label class="pro-check-tile">
+                                <input type="checkbox" value="s3" onchange="ProMontaje.teamChanged()">
+                                <span class="pro-avatar pro-avatar--sm">MD</span>
+                                <span style="min-width: 0;">
+                                    <span class="pro-person-name" style="display: block;">Mihai Dobre</span>
+                                    <span class="pro-person-meta js-avail" style="display: block;" data-skills="Repartitor, Contor apă">Repartitor, Contor apă</span>
+                                </span>
+                            </label>
+                                                        <label class="pro-check-tile">
+                                <input type="checkbox" value="s6" onchange="ProMontaje.teamChanged()">
+                                <span class="pro-avatar pro-avatar--sm">FS</span>
+                                <span style="min-width: 0;">
+                                    <span class="pro-person-name" style="display: block;">Florin Stoica</span>
+                                    <span class="pro-person-meta js-avail" style="display: block;" data-skills="Gateway, Contor apă">Gateway, Contor apă</span>
+                                </span>
+                            </label>
+                                                        <label class="pro-check-tile">
+                                <input type="checkbox" value="s8" onchange="ProMontaje.teamChanged()">
+                                <span class="pro-avatar pro-avatar--sm">RM</span>
+                                <span style="min-width: 0;">
+                                    <span class="pro-person-name" style="display: block;">Radu Marinescu</span>
+                                    <span class="pro-person-meta js-avail" style="display: block;" data-skills="Repartitor">Repartitor</span>
+                                </span>
+                            </label>
+                                                    </div>
+                    </div>
+
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label class="form-label" for="ddlResponsible">Responsabil montaj <span class="required-star">*</span></label>
+                            <select id="ddlResponsible" class="input-control"><option value="">-</option></select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="txtInstallNote">Observații</label>
+                        <textarea id="txtInstallNote" class="input-control" rows="3" maxlength="500"></textarea>
+                    </div>
+
+                    <div id="scheduleStock"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" onclick="ProMontaje.close('scheduleModal')">Renunță</button>
+                    <button type="button" class="btn-secondary" onclick="ProMontaje.checkStockUI()">Verifică stoc</button>
+                    <button type="button" class="btn-primary" id="btnScheduleSave" onclick="ProMontaje.save()">Programează</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ MODAL – Detalii montaj (read-only) ═════════════════════════ -->
+        <!-- React: <InstallDetailsModal install={install} /> -->
+        <div class="modal-overlay" id="detailsModal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="detailsModalTitle">
+            <div class="modal-card" style="max-width: 560px;">
+                <div class="modal-header">
+                    <h3 id="detailsModalTitle">Detalii montaj</h3>
+                    <button type="button" class="btn-close" onclick="ProMontaje.close('detailsModal')" title="Închide" aria-label="Închide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+                </div>
+                <div class="modal-body">
+                    <div class="utility-context-strip">
+                        <div class="context-items">
+                            <div class="context-item"><span class="context-label">Contract:</span><strong class="context-value context-code" id="detContract">—</strong></div>
+                            <div class="context-sep"></div>
+                            <div class="context-item"><span class="context-label">NOD:</span><strong class="context-value context-code" id="detNod">—</strong></div>
+                        </div>
+                        <div id="detStatus"></div>
+                    </div>
+                    <div class="pro-summary" id="detSummary"></div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn-secondary" id="detNodLink" style="display: none;">Gestiune NOD</a>
+                    <button type="button" class="btn-primary" onclick="ProMontaje.close('detailsModal')">Închide</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ MODAL – Transfer din magazia centrală ══════════════════════ -->
+        <!-- React: <WarehouseTransferModal warehouse={wh} stock={stock} onSave={transfer} /> -->
+        <div class="modal-overlay" id="transferModal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="transferModalTitle">
+            <div class="modal-card" style="max-width: 540px;">
+                <div class="modal-header">
+                    <h3 id="transferModalTitle">Transfer din magazia centrală</h3>
+                    <button type="button" class="btn-close" onclick="ProMontaje.close('transferModal')" title="Închide" aria-label="Închide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+                </div>
+                <div class="modal-body">
+                    <div class="calc-alert calc-alert--danger" id="transferErrors" style="display: none;"></div>
+                    <div class="utility-context-strip">
+                        <div class="context-items">
+                            <div class="context-item"><span class="context-label">Gestiune:</span><strong class="context-value context-code" id="trWh">—</strong></div>
+                            <div class="context-sep"></div>
+                            <div class="context-item"><span class="context-label">Persoană:</span><span class="context-value" id="trPerson">—</span></div>
+                        </div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label class="form-label" for="ddlTransferProduct">Produs <span class="required-star">*</span></label>
+                            <select id="ddlTransferProduct" class="input-control" onchange="ProMontaje.transferInfo()">
+                                <option value="REP-30">Repartitor E-ITN 30.4</option><option value="APA-AR">Contor apă rece E-RM 30 AR</option><option value="APA-AC">Contor apă caldă E-RM 30 AC</option><option value="GW-LR">Gateway LoRa / wM-Bus</option>                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="txtTransferQty">Cantitate <span class="required-star">*</span></label>
+                            <input type="number" id="txtTransferQty" class="input-control" min="1" step="1">
+                        </div>
+                    </div>
+                    <p class="pro-kpi-meta" id="transferStockInfo"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" onclick="ProMontaje.close('transferModal')">Renunță</button>
+                    <button type="button" class="btn-primary" onclick="ProMontaje.transfer()">Transferă</button>
+                </div>
+            </div>
+        </div>
+
+<script>
+/* Montaje și Stocuri – logica paginii (date demo; în producție: /api/pro/installs, /api/pro/stock, /api/pro/warehouses) */
+var ProMontaje = (function () {
+    var TODAY = "2026-10-28";
+    var TYPE_SHORT = {"rep":"Repartitor","apa":"Contor apă","et":"Contor ET","gw":"Gateway","senzor":"Senzor"};
+    var STAFF = [{"id":"s1","name":"Teodor Milian","initials":"TM","warehouse":"G-01"},{"id":"s2","name":"Bogdan Antal","initials":"BA","warehouse":"G-02"},{"id":"s3","name":"Mihai Dobre","initials":"MD","warehouse":"G-03"},{"id":"s4","name":"Cristian Pană","initials":"CP","warehouse":"G-04"},{"id":"s5","name":"Andrei Voicu","initials":"AV","warehouse":""},{"id":"s6","name":"Florin Stoica","initials":"FS","warehouse":"G-06"},{"id":"s7","name":"Daniel Ene","initials":"DE","warehouse":"G-07"},{"id":"s8","name":"Radu Marinescu","initials":"RM","warehouse":"G-08"}];
+    var UNAVAIL = [{"staff":"s5","from":"2026-10-26","to":"2026-11-06","reason":"Concediu","note":"Concediu de odihnă"},{"staff":"s1","from":"2026-11-02","to":"2026-11-04","reason":"Alte sarcini","note":"Citiri walk-by NOD-uri sector 2"},{"staff":"s7","from":"2026-10-30","to":"2026-10-30","reason":"Formare","note":"Instruire contoare ultrasonice"},{"staff":"s3","from":"2026-11-05","to":"2026-11-05","reason":"Medical","note":""},{"staff":"s8","from":"2026-10-29","to":"2026-10-30","reason":"Alte sarcini","note":"Citiri walk-by Lacul Tei"}];
+    var INSTALLS = {};
+    INSTALLS = {"M-301":{"id":"M-301","contract":"C-2026-118","nod":"81-001-2108","partner":"Asociația de Proprietari Cremenița 5","from":"2026-10-26","to":"2026-10-30","team":["s3","s8"],"responsible":"s3","needs":{"rep":140,"apa":70},"flats":35,"done":22,"status":"În curs"},"M-302":{"id":"M-302","contract":"C-2026-121","nod":"81-001-0020","partner":"Asociația de Proprietari Bloc 32","from":"2026-11-02","to":"2026-11-06","team":["s3","s2"],"responsible":"s3","needs":{"rep":160,"apa":80},"flats":40,"done":0,"status":"Programat"},"M-303":{"id":"M-303","contract":"C-2026-124","nod":"81-001-0007","partner":"Asociația de Proprietari Bloc S1 Sc. 2","from":"2026-11-09","to":"2026-11-13","team":["s3","s6"],"responsible":"s6","needs":{"rep":220,"gw":2},"flats":48,"done":0,"status":"Programat"},"M-304":{"id":"M-304","contract":"C-2026-127","nod":"","partner":"Asociația de Proprietari Bloc M12 (nemontat)","from":"","to":"","team":[],"responsible":"","needs":{"rep":180,"apa":90,"gw":2},"flats":45,"done":0,"status":"Neprogramat"},"M-305":{"id":"M-305","contract":"C-2026-129","nod":"","partner":"Asociația de Proprietari Bloc 7 Drumul Taberei","from":"","to":"","team":[],"responsible":"","needs":{"apa":120,"et":30},"flats":60,"done":0,"status":"Neprogramat"},"M-306":{"id":"M-306","contract":"C-2026-102","nod":"81-001-0040","partner":"Asociația de Proprietari Bloc 47","from":"2026-10-12","to":"2026-10-16","team":["s2","s6"],"responsible":"s2","needs":{"rep":190,"apa":96,"gw":3},"flats":48,"done":45,"status":"Finalizat"}};
+    var STOCK = {"REP-30":{"code":"REP-30","name":"Repartitor E-ITN 30.4","type":"rep","central":500,"field":64,"reserved":520,"incoming":800,"incoming_date":"2026-11-12","unit":"buc"},"APA-AR":{"code":"APA-AR","name":"Contor apă rece E-RM 30 AR","type":"apa","central":340,"field":41,"reserved":180,"incoming":0,"incoming_date":"","unit":"buc"},"APA-AC":{"code":"APA-AC","name":"Contor apă caldă E-RM 30 AC","type":"apa","central":290,"field":37,"reserved":160,"incoming":0,"incoming_date":"","unit":"buc"},"ET-US":{"code":"ET-US","name":"Contor energie termică US","type":"et","central":26,"field":6,"reserved":30,"incoming":40,"incoming_date":"2026-11-04","unit":"buc"},"GW-LR":{"code":"GW-LR","name":"Gateway LoRa \/ wM-Bus","type":"gw","central":18,"field":3,"reserved":6,"incoming":0,"incoming_date":"","unit":"buc"},"SZ-FL":{"code":"SZ-FL","name":"Senzor inundație","type":"senzor","central":45,"field":5,"reserved":0,"incoming":0,"incoming_date":"","unit":"buc"},"SIG-01":{"code":"SIG-01","name":"Sigilii","type":"","central":4200,"field":610,"reserved":1300,"incoming":0,"incoming_date":"","unit":"buc"}};
+    var WH = {"G-01":{"REP-30":8,"APA-AR":6,"APA-AC":5,"GW-LR":0},"G-02":{"REP-30":6,"APA-AR":9,"APA-AC":8,"GW-LR":0},"G-03":{"REP-30":22,"APA-AR":8,"APA-AC":7,"GW-LR":0},"G-04":{"REP-30":6,"APA-AR":0,"APA-AC":0,"GW-LR":2},"G-06":{"REP-30":4,"APA-AR":10,"APA-AC":9,"GW-LR":1},"G-07":{"REP-30":0,"APA-AR":5,"APA-AC":6,"GW-LR":0},"G-08":{"REP-30":18,"APA-AR":3,"APA-AC":2,"GW-LR":0}};
+    var ICON_DETAILS = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"><\/circle><line x1=\"12\" y1=\"16\" x2=\"12\" y2=\"12\"><\/line><line x1=\"12\" y1=\"8\" x2=\"12.01\" y2=\"8\"><\/line><\/svg>";
+    var ICON_WARN = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z\"><\/path><line x1=\"12\" y1=\"9\" x2=\"12\" y2=\"13\"><\/line><line x1=\"12\" y1=\"17\" x2=\"12.01\" y2=\"17\"><\/line><\/svg>";
+    var ICON_OK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+    var COLS = { 'Neprogramat': 'neprogramat', 'Programat': 'programat', 'În curs': 'incurs', 'Finalizat': 'finalizat' };
+    var current = null, acknowledged = false, currentWh = null;
+
+    function el(id) { return document.getElementById(id); }
+    function staff(id) { for (var i = 0; i < STAFF.length; i++) if (STAFF[i].id === id) return STAFF[i]; return null; }
+    function num(n) { return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
+    function fmt(iso) { return iso ? iso.split('-').reverse().join('.') : '—'; }
+    function esc(s) { var d = document.createElement('div'); d.textContent = s == null ? '' : s; return d.innerHTML; }
+    function addDays(iso, n) { var d = new Date(iso + 'T00:00:00'); d.setDate(d.getDate() + n); return d.toISOString().slice(0, 10); }
+
+    /* ── Stoc ─────────────────────────────────────────────────── */
+    function stockState(s) {
+        var free = s.central - s.reserved;
+        var cover = s.reserved > 0 ? Math.min(100, Math.round(s.central / s.reserved * 100)) : 100;
+        if (free < 0) return { label: 'Lipsă', badge: 'status-error', bar: 'is-out', free: free, cover: cover };
+        if (s.reserved > 0 && free < 0.1 * s.central) return { label: 'Sub necesar', badge: 'status-warning', bar: 'is-low', free: free, cover: cover };
+        return { label: 'Suficient', badge: 'status-online', bar: '', free: free, cover: cover };
+    }
+
+    /** Stocul agregat pe tip de echipament (ex. apa = AR + AC). */
+    function stockForType(type) {
+        var r = { central: 0, reserved: 0, incoming: 0, date: '', names: [] };
+        Object.keys(STOCK).forEach(function (c) {
+            var s = STOCK[c];
+            if (s.type !== type) return;
+            r.central += s.central; r.reserved += s.reserved; r.incoming += s.incoming; r.names.push(s.name);
+            if (s.incoming_date && (!r.date || s.incoming_date < r.date)) r.date = s.incoming_date;
+        });
+        r.name = type === 'apa' ? 'Contoare apă (AR + AC)' : (r.names[0] || TYPE_SHORT[type]);
+        return r;
+    }
+
+    /** Compară necesarul montajului cu stocul liber; intrarea se ia în calcul dacă montajul începe după data ei. */
+    function checkStock(m, fromISO) {
+        var res = { shortages: [], covered: [] };
+        Object.keys(m.needs).forEach(function (t) {
+            var need = m.needs[t], s = stockForType(t), free = s.central - s.reserved;
+            var withIncoming = s.date && fromISO && fromISO >= s.date;
+            var eff = free + (withIncoming ? s.incoming : 0);
+            if (need > eff) {
+                var msg = '<strong>' + esc(s.name) + '</strong>: necesar ' + num(need) + ' buc., stoc liber ' + num(free) + ' buc. – lipsă ' + num(need - eff) + ' buc.';
+                if (s.incoming && s.date && !withIncoming) msg += '; intrare ' + num(s.incoming) + ' buc. pe ' + fmt(s.date) + (s.incoming >= need - free ? ' – stocul este acoperit dacă montajul începe de la această dată.' : ' (nu acoperă integral lipsa).');
+                else msg += '; nu există alte intrări programate.';
+                res.shortages.push(msg);
+            } else if (need > free) {
+                res.covered.push('<strong>' + esc(s.name) + '</strong>: acoperit de intrarea de ' + num(s.incoming) + ' buc. din ' + fmt(s.date) + '.');
+            }
+        });
+        return res;
+    }
+
+    function renderStockResult(r) {
+        var box = el('scheduleStock');
+        if (r.shortages.length) {
+            box.innerHTML = '<div class="calc-alert calc-alert--warning">' + ICON_WARN + '<div>Stocul liber nu acoperă necesarul acestui montaj:<ul style="margin: 6px 0 0 18px;">' +
+                r.shortages.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ul>' +
+                (r.covered.length ? '<div style="margin-top: 6px;">' + r.covered.join('<br>') + '</div>' : '') +
+                '<div style="margin-top: 6px;">Puteți programa montajul oricum; lipsurile rămân semnalate în tabul „Necesar vs stoc”.</div></div></div>';
+        } else {
+            box.innerHTML = '<div class="calc-alert calc-alert--success">' + ICON_OK + '<div>Stocul liber acoperă necesarul montajului.' + (r.covered.length ? '<br>' + r.covered.join('<br>') : '') + '</div></div>';
+        }
+    }
+
+    /* ── Tabla Montaje ────────────────────────────────────────── */
+    function cardHtml(m) {
+        var pct = m.flats ? Math.round(m.done / m.flats * 100) : 0;
+        var h = '<div class="pro-board-card" data-install="' + m.id + '" data-from="' + (m.from || '') + '">' +
+            '<div class="pro-board-card-title">' + esc(m.partner) + '</div>' +
+            '<div class="pro-board-card-meta">' + m.id + ' · Contract ' + esc(m.contract) + ' · ' + (m.nod ? 'NOD ' + m.nod : 'NOD nealocat') + '</div>' +
+            '<div class="pro-board-card-meta">' + (m.from ? fmt(m.from) + ' – ' + fmt(m.to) : 'Perioadă neprogramată') + '</div>' +
+            '<div class="pro-chips" style="margin-top: 8px;">' + Object.keys(m.needs).map(function (t) { return '<span class="pro-chip">' + (TYPE_SHORT[t] || t) + ' × ' + num(m.needs[t]) + '</span>'; }).join('') + '</div>' +
+            '<div style="margin-top: 10px;"><div class="progress-bar" aria-label="Apartamente realizate ' + pct + '%"><div class="progress-bar__fill" style="width: ' + pct + '%;"></div></div>' +
+            '<span class="progress-label">' + m.done + ' / ' + m.flats + ' apartamente (' + pct + '%)</span></div><div class="pro-board-card-foot">';
+        if (m.team.length) {
+            h += '<div class="pro-person"><span class="pro-avatar-stack">' + m.team.map(function (id) { var s = staff(id); return '<span class="pro-avatar pro-avatar--sm" title="' + esc(s.name) + '">' + s.initials + '</span>'; }).join('') +
+                '</span><span class="pro-person-meta">Resp.: ' + esc(staff(m.responsible).name) + '</span></div>';
+        } else h += '<span class="pro-person-meta">Fără echipă</span>';
+        h += m.status === 'Neprogramat'
+            ? '<button type="button" class="btn-secondary" onclick="ProMontaje.openSchedule(\'' + m.id + '\')">Programează montaj</button>'
+            : '<button type="button" class="btn-action-icon" title="Detalii montaj" onclick="ProMontaje.openDetails(\'' + m.id + '\')">' + ICON_DETAILS + '</button>';
+        return h + '</div></div>';
+    }
+
+    function refreshBoardCounts() {
+        Object.keys(COLS).forEach(function (st) {
+            var list = el('col-' + COLS[st]), n = list.querySelectorAll('.pro-board-card').length;
+            el('count-' + COLS[st]).textContent = n;
+            list.querySelector('.js-board-empty').style.display = n ? 'none' : '';
+        });
+    }
+
+    function refreshKpis() {
+        var un = 0, unFlats = 0, f30 = 0, c30 = 0, limit = addDays(TODAY, 30);
+        Object.keys(INSTALLS).forEach(function (id) {
+            var m = INSTALLS[id];
+            if (m.status === 'Neprogramat') { un++; unFlats += m.flats; }
+            if ((m.status === 'Programat' || m.status === 'În curs') && m.from && m.from <= limit && m.to >= TODAY) { f30 += m.flats - m.done; c30++; }
+        });
+        el('kpiUnscheduled').textContent = un;
+        el('kpiUnscheduledMeta').textContent = num(unFlats) + ' apartamente în așteptare';
+        el('kpi30').textContent = num(f30);
+        el('kpi30Meta').textContent = 'din ' + c30 + ' montaje programate / în curs';
+    }
+
+    /* ── Modal Programează montaj ─────────────────────────────── */
+    function selectedTeam() {
+        return Array.prototype.map.call(document.querySelectorAll('#schTeam input:checked'), function (c) { return c.value; });
+    }
+
+    function refreshAvailability() {
+        var from = SonicDatepicker.getISO(el('dtpInstallFrom')), to = SonicDatepicker.getISO(el('dtpInstallTo')) || from;
+        document.querySelectorAll('#schTeam .pro-check-tile').forEach(function (tile) {
+            var id = tile.querySelector('input').value, meta = tile.querySelector('.js-avail'), txt = meta.getAttribute('data-skills');
+            if (from) {
+                UNAVAIL.forEach(function (u) {
+                    if (u.staff === id && u.from <= to && u.to >= from) txt += ' · Indisponibil ' + fmt(u.from) + (u.to !== u.from ? ' – ' + fmt(u.to) : '') + ' (' + u.reason + ')';
+                });
+            }
+            meta.textContent = txt;
+        });
+    }
+
+    function resetAck() { acknowledged = false; el('btnScheduleSave').textContent = 'Programează'; }
+
+    function validate() {
+        var errs = [], fIn = el('dtpInstallFrom'), tIn = el('dtpInstallTo');
+        var from = SonicDatepicker.getISO(fIn), to = SonicDatepicker.getISO(tIn);
+        if ((fIn.value && !from) || (tIn.value && !to)) errs.push('Data introdusă nu este validă.');
+        else if (!from || !to) errs.push('Perioada de montaj este obligatorie (de la – până la).');
+        else if (from > to) errs.push('Data de început nu poate fi după data de sfârșit.');
+        if (!selectedTeam().length) errs.push('Selectați cel puțin un montator în echipă.');
+        if (!el('ddlResponsible').value) errs.push('Responsabilul montajului este obligatoriu.');
+        var box = el('scheduleErrors');
+        if (errs.length) {
+            box.innerHTML = ICON_WARN + '<div>' + errs.join('<br>') + '</div>';
+            box.style.display = 'flex';
+            el('scheduleModal').querySelector('.modal-body').scrollTop = 0;
+        } else box.style.display = 'none';
+        return !errs.length;
+    }
+
+    function commit() {
+        var m = current;
+        m.from = SonicDatepicker.getISO(el('dtpInstallFrom'));
+        m.to = SonicDatepicker.getISO(el('dtpInstallTo'));
+        m.team = selectedTeam();
+        m.responsible = el('ddlResponsible').value;
+        m.note = el('txtInstallNote').value.trim();
+        m.status = 'Programat';
+        m.shortageAcknowledged = acknowledged;
+
+        var old = document.querySelector('.pro-board-card[data-install="' + m.id + '"]');
+        if (old) old.parentNode.removeChild(old);
+        var tmp = document.createElement('div'); tmp.innerHTML = cardHtml(m);
+        var card = tmp.firstChild, list = el('col-programat'), before = null;
+        list.querySelectorAll('.pro-board-card').forEach(function (c) { if (!before && (c.getAttribute('data-from') || '') > m.from) before = c; });
+        list.insertBefore(card, before || list.querySelector('.js-board-empty'));
+        refreshBoardCounts();
+        refreshKpis();
+
+        var n = el('boardNotice');
+        n.innerHTML = ICON_OK + '<div>Montajul <strong>' + m.id + '</strong> (' + esc(m.partner) + ') a fost programat în perioada ' + fmt(m.from) + ' – ' + fmt(m.to) + ', responsabil ' + esc(staff(m.responsible).name) + '.' + (acknowledged ? ' Atenție: stocul liber nu acoperă integral necesarul.' : '') + '</div>';
+        n.style.display = 'flex';
+        close('scheduleModal');
+    }
+
+    function close(id) { el(id).style.display = 'none'; }
+
+    /* ── Gestiuni ─────────────────────────────────────────────── */
+    function refreshStockRow(code) {
+        var s = STOCK[code], st = stockState(s), row = document.querySelector('#stockTableBody tr[data-code="' + code + '"]');
+        if (!row) return;
+        row.querySelector('.js-central').textContent = num(s.central);
+        row.querySelector('.js-field').textContent = num(s.field);
+        row.querySelector('.js-free').textContent = num(st.free);
+        row.querySelector('.js-cover').innerHTML = '<div class="progress-bar" aria-label="Acoperire ' + st.cover + '%"><div class="progress-bar__fill ' + st.bar + '" style="width: ' + st.cover + '%;"></div></div>' +
+            '<span class="progress-label">' + (s.reserved ? st.cover + '% din rezervat' : 'Fără rezervări') + '</span>';
+        row.querySelector('.js-state').innerHTML = '<span class="status-badge ' + st.badge + '">' + st.label + '</span>';
+    }
+
+    function refreshStockAlerts() {
+        var out = 0, low = 0, html = '';
+        Object.keys(STOCK).forEach(function (c) {
+            var s = STOCK[c], st = stockState(s);
+            if (st.label === 'Sub necesar') low++;
+            if (st.label !== 'Lipsă') return;
+            out++;
+            html += '<div class="calc-alert calc-alert--warning">' + ICON_WARN + '<div><strong>' + esc(s.name) + '</strong>: lipsă ' + num(-st.free) + ' ' + s.unit + '. pentru montajele programate; ' +
+                (s.incoming ? 'intrare ' + num(s.incoming) + ' ' + s.unit + '. pe ' + fmt(s.incoming_date) + '. Programările de service care necesită acest produs sunt recomandate după această dată.' : 'nu există intrări programate.') + '</div></div>';
+        });
+        el('stockAlerts').innerHTML = html;
+        el('kpiStock').textContent = out + low;
+        el('kpiStockMeta').textContent = out + ' în lipsă · ' + low + ' aproape de limită';
+        var bc = el('boardStockCount'), ba = el('boardStockAlert');
+        if (bc) bc.textContent = out;
+        if (ba) ba.style.display = out ? 'flex' : 'none';
+    }
+
+    function refreshWhRow(code) {
+        var row = document.querySelector('#whTableBody tr[data-wh="' + code + '"]'), tot = 0;
+        row.querySelectorAll('td[data-product]').forEach(function (td) {
+            var p = td.getAttribute('data-product'), q = code === 'MC' ? STOCK[p].central : (WH[code][p] || 0);
+            td.textContent = num(q); tot += q;
+        });
+        row.querySelector('.js-total').textContent = num(tot);
+    }
+
+    function liveSearch(inputId, bodyId, emptyId, countId) {
+        el(inputId).addEventListener('input', function () {
+            var q = this.value.trim().toLowerCase(), n = 0;
+            document.querySelectorAll('#' + bodyId + ' tr[data-search]').forEach(function (tr) {
+                var ok = !q || tr.getAttribute('data-search').indexOf(q) !== -1;
+                tr.style.display = ok ? '' : 'none'; if (ok) n++;
+            });
+            el(emptyId).style.display = n ? 'none' : '';
+            el(countId).textContent = n;
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        liveSearch('stockSearch', 'stockTableBody', 'stockNoResults', 'stockVisible');
+        liveSearch('whSearch', 'whTableBody', 'whNoResults', 'whVisible');
+        ['dtpInstallFrom', 'dtpInstallTo'].forEach(function (id) {
+            el(id).addEventListener('change', function () { refreshAvailability(); resetAck(); el('scheduleStock').innerHTML = ''; });
+        });
+        el('ddlTransferProduct').addEventListener('change', function () { el('transferErrors').style.display = 'none'; });
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.key !== 'Escape') return;
+        ['scheduleModal', 'detailsModal', 'transferModal'].forEach(function (id) { if (el(id).style.display === 'flex') close(id); });
+    });
+
+    return {
+        close: close,
+
+        openSchedule: function (id) {
+            current = INSTALLS[id];
+            if (!current) return;
+            el('schPartner').textContent = current.partner;
+            el('schContract').textContent = current.contract;
+            el('schFlats').textContent = current.flats;
+            el('schNeeds').innerHTML = Object.keys(current.needs).map(function (t) { return '<span class="pro-chip">' + (TYPE_SHORT[t] || t) + ' × ' + num(current.needs[t]) + '</span>'; }).join('');
+            SonicDatepicker.setValue(el('dtpInstallFrom'), '');
+            SonicDatepicker.setValue(el('dtpInstallTo'), '');
+            document.querySelectorAll('#schTeam input').forEach(function (c) { c.checked = false; });
+            el('ddlResponsible').innerHTML = '<option value="">-</option>';
+            el('txtInstallNote').value = '';
+            el('scheduleErrors').style.display = 'none';
+            el('scheduleStock').innerHTML = '';
+            el('scheduleModalTitle').textContent = 'Programează montaj – ' + current.id;
+            refreshAvailability();
+            resetAck();
+            el('scheduleModal').style.display = 'flex';
+        },
+
+        teamChanged: function () {
+            var sel = el('ddlResponsible'), prev = sel.value, team = selectedTeam();
+            sel.innerHTML = '<option value="">-</option>' + team.map(function (id) { return '<option value="' + id + '">' + esc(staff(id).name) + '</option>'; }).join('');
+            if (team.indexOf(prev) !== -1) sel.value = prev; else if (team.length === 1) sel.value = team[0];
+        },
+
+        checkStockUI: function () {
+            if (!current) return;
+            var r = checkStock(current, SonicDatepicker.getISO(el('dtpInstallFrom')));
+            renderStockResult(r);
+            return r;
+        },
+
+        save: function () {
+            if (!current || !validate()) return;
+            var r = checkStock(current, SonicDatepicker.getISO(el('dtpInstallFrom')));
+            if (r.shortages.length && !acknowledged) {
+                renderStockResult(r);
+                acknowledged = true;
+                el('btnScheduleSave').textContent = 'Programează oricum';
+                return;
+            }
+            commit();
+        },
+
+        openDetails: function (id) {
+            var m = INSTALLS[id];
+            if (!m) return;
+            var pct = m.flats ? Math.round(m.done / m.flats * 100) : 0;
+            el('detailsModalTitle').textContent = 'Detalii montaj – ' + m.id;
+            el('detContract').textContent = m.contract;
+            el('detNod').textContent = m.nod || 'NOD nealocat';
+            var badge = { 'Programat': 'status-online', 'În curs': 'status-warning', 'Finalizat': 'status-online' }[m.status] || 'status-offline';
+            el('detStatus').innerHTML = '<span class="status-badge ' + badge + '">' + m.status + '</span>';
+            var rows = [
+                ['Partener', esc(m.partner)],
+                ['Perioadă montaj', m.from ? fmt(m.from) + ' – ' + fmt(m.to) : '—'],
+                ['Responsabil', m.responsible ? esc(staff(m.responsible).name) : '—'],
+                ['Echipa', m.team.length ? m.team.map(function (s) { return esc(staff(s).name); }).join(', ') : '—'],
+                ['Apartamente realizate', m.done + ' / ' + m.flats + ' (' + pct + '%)'],
+                ['Necesar echipamente', Object.keys(m.needs).map(function (t) { return (TYPE_SHORT[t] || t) + ' × ' + num(m.needs[t]); }).join(', ')]
+            ];
+            if (m.note) rows.push(['Observații', esc(m.note)]);
+            el('detSummary').innerHTML = rows.map(function (r) { return '<div class="pro-summary-row"><span>' + r[0] + '</span><span>' + r[1] + '</span></div>'; }).join('');
+            var link = el('detNodLink');
+            if (m.nod) { link.href = 'gestiune-nod-edit.html?nod=' + encodeURIComponent(m.nod); link.style.display = ''; } else link.style.display = 'none';
+            el('detailsModal').style.display = 'flex';
+        },
+
+        openTransfer: function (code) {
+            currentWh = code;
+            var person = STAFF.filter(function (s) { return s.warehouse === code; })[0];
+            el('trWh').textContent = code;
+            el('trPerson').textContent = person ? person.name : '—';
+            el('txtTransferQty').value = '';
+            el('transferErrors').style.display = 'none';
+            this.transferInfo();
+            el('transferModal').style.display = 'flex';
+            el('txtTransferQty').focus();
+        },
+
+        transferInfo: function () {
+            var s = STOCK[el('ddlTransferProduct').value];
+            el('transferStockInfo').textContent = 'Stoc în magazia centrală: ' + num(s.central) + ' ' + s.unit + '. · rezervat pentru montaje: ' + num(s.reserved) + ' ' + s.unit + '. · liber: ' + num(s.central - s.reserved) + ' ' + s.unit + '.';
+        },
+
+        transfer: function () {
+            var p = el('ddlTransferProduct').value, s = STOCK[p], raw = el('txtTransferQty').value.trim(), q = Number(raw), err = '';
+            if (!raw || !/^\d+$/.test(raw) || q <= 0) err = 'Cantitatea trebuie să fie un număr întreg mai mare decât 0.';
+            else if (q > s.central) err = 'Cantitatea depășește stocul din magazia centrală (' + num(s.central) + ' ' + s.unit + '. disponibile pentru ' + s.name + ').';
+            if (err) { el('transferErrors').innerHTML = ICON_WARN + '<div>' + err + '</div>'; el('transferErrors').style.display = 'flex'; return; }
+            if (s.central - q < s.reserved && !confirm('După transfer, stocul central pentru ' + s.name + ' (' + num(s.central - q) + ' ' + s.unit + '.) va fi sub cantitatea rezervată pentru montaje (' + num(s.reserved) + ' ' + s.unit + '.). Doriți să continuați?')) return;
+            s.central -= q; s.field += q;
+            WH[currentWh][p] = (WH[currentWh][p] || 0) + q;
+            refreshWhRow(currentWh); refreshWhRow('MC');
+            refreshStockRow(p); refreshStockAlerts();
+            close('transferModal');
+            alert('Transfer înregistrat: ' + num(q) + ' ' + s.unit + '. ' + s.name + ' din magazia centrală în gestiunea ' + currentWh + '.');
+        },
+
+        sheet: function (code) {
+            var person = STAFF.filter(function (s) { return s.warehouse === code; })[0];
+            alert('Se generează fișa gestiunii ' + code + (code === 'MC' ? ' (Magazie centrală)' : ' – ' + (person ? person.name : '')) + ' cu echipamentele aflate în gestiune (PDF).');
+        }
+    };
+})();
+</script>
+
+    </div><!-- /.content -->
+    <footer class="app-footer">
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
+    </footer>
+</div><!-- /.main -->
+
+<script src="assets/js/sidebar.js?v=1.0.1"></script>
+</body>
+</html>

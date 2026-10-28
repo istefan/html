@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Rapoarte – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Rapoarte – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
 </head>
 <body>
 
@@ -179,7 +182,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +190,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +327,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +569,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-billing-logo.svg" alt="SONIC BILLING" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Rapoarte</div>
 
             <!-- User profile avatar (always visible) -->
@@ -558,7 +603,71 @@
     <div class="help-wrapper">
         <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
             <div class="help-panel-inner">
-                                <p class="help-empty">Nu există informații de ajutor disponibile pentru această pagină.</p>
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Căutare                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Categorii                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Rapoarte</h4>
+            <p>Pagina reunește toate rapoartele modulului <strong>SONIC BILLING</strong>: rapoarte de apă, de energie termică (încălzire) și rapoarte generale (adrese, echipamente, facturi, productivitate).</p>
+            <p>Apăsați pe un raport pentru a-l deschide; în pagina raportului se aleg criteriile și formatul de export.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <h4>Căutarea rapidă</h4>
+            <ul>
+                <li>Tastați în câmpul <strong>Caută raport</strong> &ndash; lista se filtrează imediat, la fiecare literă.</li>
+                <li>Nu contează diacriticele sau majusculele: <em>incalzire</em> găsește și <em>Încălzire</em>.</li>
+                <li>Puteți scrie mai multe cuvinte, în orice ordine: <em>ncg vechi</em> găsește toate centralizatoarele NCG vechi.</li>
+                <li>Căutarea include și categoria: <em>apa</em>, <em>energie termica</em>, <em>general</em>.</li>
+                <li><strong>Enter</strong> deschide primul raport găsit, iar <strong>Esc</strong> golește căutarea.</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <h4>Categoriile rapoartelor</h4>
+            <ul>
+                <li><strong>Apă</strong> &ndash; rapoartele cu prefixul <em>A-</em> (contorizare apă, NCG/NCI apă, apometre).</li>
+                <li><strong>Energie Termică</strong> &ndash; rapoartele cu prefixul <em>IC-</em> (încălzire, repartitoare, fișe de citire).</li>
+                <li><strong>General</strong> &ndash; rapoartele fără prefix (adrese, echipamente, facturi servicii, productivitate).</li>
+            </ul>
+                            </div>
+                                    </div>
                     </div><!-- /.help-panel-inner -->
         </div><!-- /.help-panel -->
         
@@ -585,26 +694,1060 @@
 
     <div class="content">
 
+<!-- ===================================================================
+     React: <ReportsCatalogPage />
+     =================================================================== -->
+
+<!-- === Titlu pagină (RULES §1.11) ===
+     React: <PageTitleContainer title="Rapoarte" />
+-->
 <div class="page-title-container">
     <div class="page-title">
         <h1>Rapoarte</h1>
-        <p>Pagina este în construcție.</p>
+        <p>Catalogul rapoartelor de apă, energie termică și generale. Căutați un raport și deschideți-l cu un click.</p>
     </div>
 </div>
 
-<div class="card" style="padding: 60px 40px; text-align: center; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; margin-top: 24px;">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="64" height="64" style="margin-bottom: 20px; opacity: 0.3; color: var(--accent);">
-        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-        <polyline points="2 17 12 22 22 17"></polyline>
-        <polyline points="2 12 12 17 22 12"></polyline>
-    </svg>
-    <h2 style="color: var(--text-main); margin-bottom: 12px; font-weight: 600;">În curând</h2>
-    <p style="font-size: 15px;">Interfața pentru <strong>Rapoarte</strong> nu a fost încă generată în acest demo.</p>
+<!-- === Sumar validare (ctl00_VS) === -->
+<div id="ctl00_VS" class="card" style="display: none; border-color: var(--red); padding: 12px 16px; margin-bottom: 16px;"></div>
+
+<!-- === Catalog rapoarte: căutare live + listă (ctl00_phContent_dgReport) ===
+     React: <ReportsCatalog reports={reports} query={query} onQueryChange={setQuery} />
+-->
+<div class="table-container">
+    <div class="table-toolbar">
+        <div class="table-toolbar-left">
+            <span class="table-count">
+                Afișare <strong id="reportVisibleCount">61</strong> din <strong>61</strong> rapoarte
+            </span>
+        </div>
+        <div class="table-toolbar-right">
+            <div class="live-search-wrapper report-search">
+                <span class="live-search-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </span>
+                <input type="search" id="reportSearch" class="input-control" autocomplete="off"
+                       placeholder="Caută raport (ex.: NCG apă, repartitoare, facturi)..."
+                       aria-label="Caută raport" aria-controls="reportList">
+            </div>
+        </div>
+    </div>
+
+    <div class="report-list" id="reportList" role="list">
+                    <a href="raport.html?id=0"
+               id="lnkModel"
+               class="report-item"
+               role="listitem"
+               data-name="Raport model"
+               data-category="General">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">Raport model</span>
+                    <span class="report-item-tag">General</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=1"
+               id="ctl00_phContent_dgReport_ctl02_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Apartamente contorizate pe regiuni Apa"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Apartamente contorizate pe regiuni Apa</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=2"
+               id="ctl00_phContent_dgReport_ctl03_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Apartamente contorizate pe regiuni Detalii Apa"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Apartamente contorizate pe regiuni Detalii Apa</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=3"
+               id="ctl00_phContent_dgReport_ctl04_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Date raportari periodice"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Date raportari periodice</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=4"
+               id="ctl00_phContent_dgReport_ctl05_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Fisa Tehnica Pentru Revizie Contorizare Apa"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Fisa Tehnica Pentru Revizie Contorizare Apa</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=5"
+               id="ctl00_phContent_dgReport_ctl06_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Informatii echipari dupa serie Apa"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Informatii echipari dupa serie Apa</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=6"
+               id="ctl00_phContent_dgReport_ctl07_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Istoric Perioade Citiri Apa"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Istoric Perioade Citiri Apa</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=7"
+               id="ctl00_phContent_dgReport_ctl08_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-NCG Centralizator Consum Apa detaliat"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-NCG Centralizator Consum Apa detaliat</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=8"
+               id="ctl00_phContent_dgReport_ctl09_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-NCG Centralizator Consum Apa detaliat Vechi"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-NCG Centralizator Consum Apa detaliat Vechi</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=9"
+               id="ctl00_phContent_dgReport_ctl10_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-NCG Centralizator Consum Apa prescurtat"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-NCG Centralizator Consum Apa prescurtat</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=10"
+               id="ctl00_phContent_dgReport_ctl11_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-NCG Centralizator Consum Apa prescurtat Vechi"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-NCG Centralizator Consum Apa prescurtat Vechi</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=11"
+               id="ctl00_phContent_dgReport_ctl12_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-NCI Nota de Consum Individuala Apa Calcul"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-NCI Nota de Consum Individuala Apa Calcul</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=12"
+               id="ctl00_phContent_dgReport_ctl13_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-NCI Nota de Consum Individuala Apa Calcul Vechi"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-NCI Nota de Consum Individuala Apa Calcul Vechi</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=13"
+               id="ctl00_phContent_dgReport_ctl14_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-NCI Nota de Consum Individuala Apa Citiri"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-NCI Nota de Consum Individuala Apa Citiri</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=14"
+               id="ctl00_phContent_dgReport_ctl15_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Raport Anomalii Citiri"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Raport Anomalii Citiri</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=15"
+               id="ctl00_phContent_dgReport_ctl16_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Raport Anomalii Consum"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Raport Anomalii Consum</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=16"
+               id="ctl00_phContent_dgReport_ctl17_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Raport Apartamente Excluse de la Plata Partilor Comune Apa"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Raport Apartamente Excluse de la Plata Partilor Comune Apa</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=17"
+               id="ctl00_phContent_dgReport_ctl18_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Raport Apometre Necitite"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Raport Apometre Necitite</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=18"
+               id="ctl00_phContent_dgReport_ctl19_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Raport Bilant Consumuri Apa"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Raport Bilant Consumuri Apa</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=19"
+               id="ctl00_phContent_dgReport_ctl20_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Raport Citiri Brute Apa"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Raport Citiri Brute Apa</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=20"
+               id="ctl00_phContent_dgReport_ctl21_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Raport Detalii Tehnice Imobil - Apa"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Raport Detalii Tehnice Imobil - Apa</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=21"
+               id="ctl00_phContent_dgReport_ctl22_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Raport Dubluri SerialNo Apa"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Raport Dubluri SerialNo Apa</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=22"
+               id="ctl00_phContent_dgReport_ctl23_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Raport facturare individuala AC"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Raport facturare individuala AC</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=23"
+               id="ctl00_phContent_dgReport_ctl24_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Raport istoric apartament - citiri apa"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Raport istoric apartament - citiri apa</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=24"
+               id="ctl00_phContent_dgReport_ctl25_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Raport istoric apartament - citiri si calcul apa"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Raport istoric apartament - citiri si calcul apa</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=25"
+               id="ctl00_phContent_dgReport_ctl26_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Raport Programator Citiri"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Raport Programator Citiri</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=26"
+               id="ctl00_phContent_dgReport_ctl27_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Raport serii apometre achizitionate"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Raport serii apometre achizitionate</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=27"
+               id="ctl00_phContent_dgReport_ctl28_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Raport Tarife Citire Contoare Apa"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Raport Tarife Citire Contoare Apa</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=28"
+               id="ctl00_phContent_dgReport_ctl29_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="A-Raport Tarife Contracte Active"
+               data-category="Apă">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">A-Raport Tarife Contracte Active</span>
+                    <span class="report-item-tag">Apă</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=29"
+               id="ctl00_phContent_dgReport_ctl30_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Apartamente contorizate pe regiuni"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Apartamente contorizate pe regiuni</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=30"
+               id="ctl00_phContent_dgReport_ctl31_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Apartamente contorizate pe regiuni aparate"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Apartamente contorizate pe regiuni aparate</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=31"
+               id="ctl00_phContent_dgReport_ctl32_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Apartamente contorizate pe regiuni detalii"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Apartamente contorizate pe regiuni detalii</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=32"
+               id="ctl00_phContent_dgReport_ctl33_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Apartamente contorizate pe regiuni detalii aparate"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Apartamente contorizate pe regiuni detalii aparate</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=33"
+               id="ctl00_phContent_dgReport_ctl34_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Breviar calcul parti comune"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Breviar calcul parti comune</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=34"
+               id="ctl00_phContent_dgReport_ctl35_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Date generale asociatii"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Date generale asociatii</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=35"
+               id="ctl00_phContent_dgReport_ctl36_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Date raportari periodice"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Date raportari periodice</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=36"
+               id="ctl00_phContent_dgReport_ctl37_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Fisa citiri incalzire"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Fisa citiri incalzire</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=37"
+               id="ctl00_phContent_dgReport_ctl38_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Fisa citiri incalzire 2"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Fisa citiri incalzire 2</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=38"
+               id="ctl00_phContent_dgReport_ctl39_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Fisa tehnica imobil"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Fisa tehnica imobil</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=39"
+               id="ctl00_phContent_dgReport_ctl40_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Informatii echipari dupa serie"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Informatii echipari dupa serie</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=40"
+               id="ctl00_phContent_dgReport_ctl41_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Istoric Perioade IC"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Istoric Perioade IC</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=41"
+               id="ctl00_phContent_dgReport_ctl42_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-NCG Centralizator Consum"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-NCG Centralizator Consum</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=42"
+               id="ctl00_phContent_dgReport_ctl43_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-NCG Centralizator Consum Vechi"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-NCG Centralizator Consum Vechi</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=43"
+               id="ctl00_phContent_dgReport_ctl44_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-NCI Nota de consum Individuala"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-NCI Nota de consum Individuala</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=44"
+               id="ctl00_phContent_dgReport_ctl45_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-NCI Nota de consum Individuala Vechi"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-NCI Nota de consum Individuala Vechi</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=45"
+               id="ctl00_phContent_dgReport_ctl46_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Productivitate calcul"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Productivitate calcul</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=46"
+               id="ctl00_phContent_dgReport_ctl47_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Productivitate calcul detaliat"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Productivitate calcul detaliat</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=47"
+               id="ctl00_phContent_dgReport_ctl48_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Raport Cititor"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Raport Cititor</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=48"
+               id="ctl00_phContent_dgReport_ctl49_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Raport Dubluri SerialNo"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Raport Dubluri SerialNo</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=49"
+               id="ctl00_phContent_dgReport_ctl50_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Raport Introducere Citiri"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Raport Introducere Citiri</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=50"
+               id="ctl00_phContent_dgReport_ctl51_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Raport Repartitoare Necitite"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Raport Repartitoare Necitite</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=51"
+               id="ctl00_phContent_dgReport_ctl52_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Raport Tarife Contracte Active"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Raport Tarife Contracte Active</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=52"
+               id="ctl00_phContent_dgReport_ctl53_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Raport Valori Referinta"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Raport Valori Referinta</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=53"
+               id="ctl00_phContent_dgReport_ctl54_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="IC-Raport Verificare Lunara"
+               data-category="Energie Termică">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">IC-Raport Verificare Lunara</span>
+                    <span class="report-item-tag">Energie Termică</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=54"
+               id="ctl00_phContent_dgReport_ctl55_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="Raport Adrese Conta"
+               data-category="General">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">Raport Adrese Conta</span>
+                    <span class="report-item-tag">General</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=55"
+               id="ctl00_phContent_dgReport_ctl56_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="Raport Echipamente Per Partener"
+               data-category="General">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">Raport Echipamente Per Partener</span>
+                    <span class="report-item-tag">General</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=56"
+               id="ctl00_phContent_dgReport_ctl57_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="Raport Facturi Servicii"
+               data-category="General">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">Raport Facturi Servicii</span>
+                    <span class="report-item-tag">General</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=57"
+               id="ctl00_phContent_dgReport_ctl58_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="Raport Productivitate Calcul 2"
+               data-category="General">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">Raport Productivitate Calcul 2</span>
+                    <span class="report-item-tag">General</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=58"
+               id="ctl00_phContent_dgReport_ctl59_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="Raport Programator Citiri"
+               data-category="General">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">Raport Programator Citiri</span>
+                    <span class="report-item-tag">General</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=59"
+               id="ctl00_phContent_dgReport_ctl60_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="Raport Verificari Strutz"
+               data-category="General">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">Raport Verificari Strutz</span>
+                    <span class="report-item-tag">General</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+                    <a href="raport.html?id=60"
+               id="ctl00_phContent_dgReport_ctl61_lnkView"
+               class="report-item"
+               role="listitem"
+               data-name="Raport_Apartamente Excluse de la Facturarea Automata a Serviciilor"
+               data-category="General">
+                <span class="report-item-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>
+                </span>
+                <span class="report-item-body">
+                    <span class="report-item-name">Raport_Apartamente Excluse de la Facturarea Automata a Serviciilor</span>
+                    <span class="report-item-tag">General</span>
+                </span>
+                <svg class="report-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+            </div>
+
+    <div class="table-empty" id="reportNoResults" style="display: none;">
+        Niciun raport nu corespunde căutării „<span id="reportNoResultsQuery"></span>”.
+    </div>
 </div>
+
+<span id="ctl00_phContent_cv" style="display: none;"></span>
+
+<script>
+/**
+ * Căutare live în catalogul de rapoarte: filtrează la fiecare tastă, ignoră diacriticele și majusculele,
+ * toate cuvintele căutate trebuie să apară (în denumire sau în categorie), evidențiază potrivirile.
+ * Enter = deschide primul raport vizibil, Esc = golește căutarea.
+ */
+(function () {
+    'use strict';
+
+    var input   = document.getElementById('reportSearch');
+    var items   = Array.prototype.slice.call(document.querySelectorAll('#reportList .report-item'));
+    var countEl = document.getElementById('reportVisibleCount');
+    var emptyEl = document.getElementById('reportNoResults');
+    var emptyQ  = document.getElementById('reportNoResultsQuery');
+
+    function fold(s) {
+        return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+    }
+
+    function escapeHtml(s) {
+        return s.replace(/[&<>"']/g, function (c) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+    }
+
+    // Evidențiază potrivirile pe textul original (pozițiile se găsesc pe varianta fără diacritice – aceeași lungime).
+    function highlight(text, tokens) {
+        if (!tokens.length) return escapeHtml(text);
+        var folded = fold(text);
+        var marks  = new Array(text.length).fill(false);
+        tokens.forEach(function (t) {
+            var from = 0, at;
+            while ((at = folded.indexOf(t, from)) !== -1) {
+                for (var k = at; k < at + t.length; k++) marks[k] = true;
+                from = at + t.length;
+            }
+        });
+        var out = '', open = false;
+        for (var i = 0; i < text.length; i++) {
+            if (marks[i] && !open) { out += '<mark class="report-mark">'; open = true; }
+            if (!marks[i] && open) { out += '</mark>'; open = false; }
+            out += escapeHtml(text[i]);
+        }
+        return out + (open ? '</mark>' : '');
+    }
+
+    items.forEach(function (item) {
+        item._name     = item.getAttribute('data-name');
+        item._haystack = fold(item._name + ' ' + item.getAttribute('data-category'));
+        item._nameEl   = item.querySelector('.report-item-name');
+    });
+
+    function applyFilter() {
+        var query  = input.value.trim();
+        var tokens = fold(query).split(/\s+/).filter(Boolean);
+        var visible = 0;
+
+        items.forEach(function (item) {
+            var show = tokens.every(function (t) { return item._haystack.indexOf(t) !== -1; });
+            item.style.display = show ? '' : 'none';
+            if (show) {
+                visible++;
+                item._nameEl.innerHTML = highlight(item._name, tokens);
+            }
+        });
+
+        countEl.textContent   = visible;
+        emptyQ.textContent    = query;
+        emptyEl.style.display = visible === 0 ? '' : 'none';
+    }
+
+    input.addEventListener('input', applyFilter);
+    input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+            var first = items.filter(function (it) { return it.style.display !== 'none'; })[0];
+            if (first) { e.preventDefault(); window.location.href = first.getAttribute('href'); }
+        } else if (e.key === 'Escape') {
+            input.value = '';
+            applyFilter();
+        }
+    });
+
+    // Cursorul în căutare la încărcare doar pe desktop (pe telefon ar deschide tastatura).
+    if (window.matchMedia && window.matchMedia('(hover: hover)').matches) input.focus();
+})();
+</script>
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

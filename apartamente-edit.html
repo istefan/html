@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Editare Apartament – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Editare Apartament – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
 </head>
 <body>
 
@@ -179,7 +182,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +190,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +327,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +569,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-logo.svg" alt="SONIC" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Editare Apartament</div>
 
             <!-- User profile avatar (always visible) -->
@@ -601,7 +646,7 @@
                          data-pane="1">
                         
             <h4>Configurare Energie Termică</h4>
-            <p>Setați tipul de contorizare pentru încălzire (ex: Contorizat, CT, Inactiv), suprafața utilă (SUT) și suprafața încălzită (SIT), precum și repartitoarele instalate.</p>
+            <p>Setați tipul de contorizare pentru încălzire (ex: Contorizat, CT, Inactiv), suprafața utilă a apartamentului, dacă apartamentul plătește părți comune din țevi și din spații comune și data montării încălzirii.</p><p>În <strong>Echipare încălzire</strong> gestionați corpurile de încălzire și repartitoarele (model radiator, dimensiuni, serie, factori, Kq, Kc, SET). Echipamentele nu se șterg: se dezactivează și se pot reactiva.</p>
                             </div>
                                         <div class="help-tab-pane "
                          role="tabpanel"
@@ -654,20 +699,29 @@
 
 <!-- ══ Tab Navigation ═══════════════════════════════════════════════════ -->
 <div class="edit-tabs-wrapper">
-    <div class="edit-tabs-nav" role="tablist">
-        <button type="button" class="edit-tab-btn active" role="tab" aria-selected="true" aria-controls="tab-general" id="tabBtn-general" onclick="switchApartamentTab('general', this)">
+    <div class="edit-tabs-nav" role="tablist" aria-label="Secțiuni apartament">
+        <button type="button" class="edit-tab-btn active" role="tab" aria-selected="true" aria-controls="tab-general" id="tabBtn-general" onclick="switchTab('general', this)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
             Generalități &amp; Adresă
         </button>
-        <button type="button" class="edit-tab-btn " role="tab" aria-selected="false" aria-controls="tab-heating" id="tabBtn-heating" onclick="switchApartamentTab('heating', this)">
+        <button type="button" class="edit-tab-btn " role="tab" aria-selected="false" aria-controls="tab-heating" id="tabBtn-heating" onclick="switchTab('heating', this)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
             Încălzire
         </button>
-        <button type="button" class="edit-tab-btn " role="tab" aria-selected="false" aria-controls="tab-water" id="tabBtn-water" onclick="switchApartamentTab('water', this)">
+        <button type="button" class="edit-tab-btn " role="tab" aria-selected="false" aria-controls="tab-water" id="tabBtn-water" onclick="switchTab('water', this)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
             Apă
         </button>
     </div>
+</div>
+
+<!-- ══ Navigare între apartamente (ucHeader: btnFirst / btnPrev / btnNext / btnLast) ══
+     React: <ApartmentNavBar first prev next last current={id} tab={tab} />
+-->
+<div class="apt-nav-bar">
+    <div class="apt-nav-controls">
+        <button type="button" class="btn-secondary btn-page-nav" id="ctl00_phContent_ucHeader_btnFirst" title="Primul apartament" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="19" x2="5" y2="5"></line></svg><span>Primul</span></button><button type="button" class="btn-secondary btn-page-nav" id="ctl00_phContent_ucHeader_btnPrev" title="Apartamentul anterior" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg><span>Anterior</span></button>        <div class="apt-nav-indicator"><span>Cod <strong>0001</strong> &bull; Ap. <strong>1</strong> (1 / 3)</span></div>
+        <a href="apartamente-edit.html?id=2&tab=general" class="btn-secondary btn-page-nav" id="ctl00_phContent_ucHeader_btnNext" title="Apartamentul următor"><span>Următor</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a href="apartamente-edit.html?id=50&tab=general" class="btn-secondary btn-page-nav" id="ctl00_phContent_ucHeader_btnLast" title="Ultimul apartament"><span>Ultimul</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19"></line></svg></a>    </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════════════════════════
@@ -730,9 +784,7 @@
                         <input name="floor" type="text" id="txtFloor" class="input-control" maxlength="4" placeholder="Et." value="1">
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="txtFlat">
-                            Apartament <span class="required-star">*</span>
-                        </label>
+                        <label class="form-label" for="txtFlat">Ap.</label>
                         <input name="flat" type="text" id="txtFlat" class="input-control" maxlength="20" placeholder="Ap." value="1">
                     </div>
                     <div class="form-group">
@@ -757,46 +809,43 @@
                     </div>
                 </div>
 
-                <!-- Rând 4: Nivel 1 - Nivel 6 (Structură ierarhică locație) -->
-                <div style="margin-top: 10px; padding-top: 14px; border-top: 1px dashed var(--border-color);">
-                    <div style="margin-bottom: 8px;">
-                        <span style="font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Structură Nivele (0 - 255)</span>
+                <!-- Rând 4–5: Nivel 1 - Nivel 6 (rvLevel1..6: „Campul Nivel N nu este valid. (numar intre 0 si 255)”) -->
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label class="form-label" for="txtLevel1">Nivel 1</label>
+                        <input name="level1" type="text" inputmode="numeric" maxlength="3" id="txtLevel1" class="input-control js-level" data-level="1" value="0">
                     </div>
-                    <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px;">
-                        <div class="form-group">
-                            <label class="form-label" for="txtLevel1">Nivel 1</label>
-                            <input name="level1" type="number" min="0" max="255" id="txtLevel1" class="input-control" value="0">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="txtLevel2">Nivel 2</label>
-                            <input name="level2" type="number" min="0" max="255" id="txtLevel2" class="input-control" value="0">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="txtLevel3">Nivel 3</label>
-                            <input name="level3" type="number" min="0" max="255" id="txtLevel3" class="input-control" value="0">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="txtLevel4">Nivel 4</label>
-                            <input name="level4" type="number" min="0" max="255" id="txtLevel4" class="input-control" value="0">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="txtLevel5">Nivel 5</label>
-                            <input name="level5" type="number" min="0" max="255" id="txtLevel5" class="input-control" value="0">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="txtLevel6">Nivel 6</label>
-                            <input name="level6" type="number" min="0" max="255" id="txtLevel6" class="input-control" value="0">
-                        </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtLevel2">Nivel 2</label>
+                        <input name="level2" type="text" inputmode="numeric" maxlength="3" id="txtLevel2" class="input-control js-level" data-level="2" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtLevel3">Nivel 3</label>
+                        <input name="level3" type="text" inputmode="numeric" maxlength="3" id="txtLevel3" class="input-control js-level" data-level="3" value="0">
+                    </div>
+                </div>
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label class="form-label" for="txtLevel4">Nivel 4</label>
+                        <input name="level4" type="text" inputmode="numeric" maxlength="3" id="txtLevel4" class="input-control js-level" data-level="4" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtLevel5">Nivel 5</label>
+                        <input name="level5" type="text" inputmode="numeric" maxlength="3" id="txtLevel5" class="input-control js-level" data-level="5" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtLevel6">Nivel 6</label>
+                        <input name="level6" type="text" inputmode="numeric" maxlength="3" id="txtLevel6" class="input-control js-level" data-level="6" value="0">
                     </div>
                 </div>
 
             </div>
         </div>
 
-        <!-- ── Card 2: Generalități Apartament ──────────────────────── -->
+        <!-- ── Card 2: Generalități ──────────────────────────────────── -->
         <div class="card edit-section-card" style="margin-bottom: 20px;">
             <div class="edit-section-header">
-                <span class="edit-section-title">Generalități Apartament</span>
+                <span class="edit-section-title">Generalități</span>
             </div>
             
             <div class="edit-section-body" style="padding-top: 16px;">
@@ -827,51 +876,64 @@
                         <label class="form-label" for="ddlOwnerType">
                             Tip proprietar <span class="required-star">*</span>
                         </label>
-                        <select name="owner_type" id="ddlOwnerType" class="input-control">
-                            <option value="1" selected>Locatar</option>
+                        <select name="owner_type" id="ddlOwnerType" class="input-control" required>
+                            <option value="-1" >-</option>
                             <option value="2" >Agent economic</option>
+                            <option value="1" selected>Locatar</option>
                         </select>
                     </div>
                 </div>
 
-                <!-- Rând 3: Perioadă valabilitate, TVA, Factură separată -->
-                <div class="form-row-3">
+                <!-- Rând 3: Perioadă valabilitate (dtpStartDate – dtpEndDate, cu clear_Date; „Data introdusa nu este valida”) -->
+                <div class="form-row-2">
                     <div class="form-group">
-                        <label class="form-label" for="dtpStartDate">Perioadă valabilitate (Început)</label>
-                        <input name="start_date" type="date" id="dtpStartDate" class="input-control" value="2023-01-01">
+                        <label class="form-label" for="dtpStartDate">Perioadă valabilitate – început</label>
+                        <div class="picker-group">
+                            <input name="start_date" type="text" data-datepicker id="dtpStartDate" class="input-control" value="2023-01-01">
+                            <button type="button" class="btn-picker delete" title="Șterge data" onclick="SonicDatepicker.setValue(document.getElementById('dtpStartDate'), '')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="dtpEndDate">Perioadă valabilitate (Sfârșit)</label>
-                        <input name="end_date" type="date" id="dtpEndDate" class="input-control" value="">
+                        <label class="form-label" for="dtpEndDate">Perioadă valabilitate – sfârșit</label>
+                        <div class="picker-group">
+                            <input name="end_date" type="text" data-datepicker id="dtpEndDate" class="input-control" value="">
+                            <button type="button" class="btn-picker delete" title="Șterge data" onclick="SonicDatepicker.setValue(document.getElementById('dtpEndDate'), '')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rând 4: Procent TVA (max. 5; activ doar cu factură separată – în sursă ddlOwnInvoice face postback) & Are factură separată -->
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label class="form-label" for="txtVATPercent">Procent TVA</label>
+                        <input name="vat_percent" type="text" id="txtVATPercent" class="input-control" maxlength="5" value="19" disabled>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="ddlOwnInvoice">Are factură separată</label>
-                        <select name="own_invoice" id="ddlOwnInvoice" class="input-control">
-                            <option value="0" selected>Nu</option>
+                        <label class="form-label" for="ddlOwnInvoice">Are factură separată <span class="required-star">*</span></label>
+                        <select name="own_invoice" id="ddlOwnInvoice" class="input-control" required onchange="document.getElementById('txtVATPercent').disabled = (this.value !== '1');">
                             <option value="1" >Da</option>
+                            <option value="0" selected>Nu</option>
                         </select>
                     </div>
                 </div>
 
-                <!-- Rând 4: Procent TVA & Opțiuni Checkbox -->
-                <div class="form-row-2" style="align-items: center;">
+                <!-- Rând 5: chkIgnoreOwnershipWeight & chkExclusDeLaPlataServiciilor -->
+                <div class="form-row-2">
                     <div class="form-group">
-                        <label class="form-label" for="txtVATPercent">Procent TVA (%)</label>
-                        <input name="vat_percent" type="text" id="txtVATPercent" class="input-control" value="19" style="width: 120px;" placeholder="19">
-                    </div>
-                    <div style="display: flex; gap: 24px; padding-top: 18px;">
-                        <label class="checkbox-label" style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 13.5px; font-weight: 500;">
-                            <input type="checkbox" name="ignore_ownership_weight" value="1" >
+                        <label class="heating-checkbox-item">
+                            <input type="checkbox" name="ignore_ownership_weight" id="chkIgnoreOwnershipWeight" value="1" >
                             <span>Ignoră ponderea de proprietate</span>
                         </label>
-                        <label class="checkbox-label" style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 13.5px; font-weight: 500;">
-                            <input type="checkbox" name="exclude_services" value="1" >
+                    </div>
+                    <div class="form-group">
+                        <label class="heating-checkbox-item">
+                            <input type="checkbox" name="exclude_services" id="chkExclusDeLaPlataServiciilor" value="1" >
                             <span>Exclus de la plata serviciilor</span>
                         </label>
                     </div>
                 </div>
 
-                <!-- Rând 5: Observații -->
+                <!-- Rând 6: Observații DC -->
                 <div class="form-group" style="margin-top: 14px;">
                     <label class="form-label" for="txtObservations">Observații DC</label>
                     <textarea name="observations" id="txtObservations" class="input-control" rows="3" placeholder="Observații departament calcul / administrare...">Client titular de contract. Apartament standard 2 camere.</textarea>
@@ -879,19 +941,20 @@
 
             </div>
 
-            <!-- Butoane Acțiune (Înapoi stânga / Salvează dreapta) -->
-            <div class="form-actions-row" style="display: flex; justify-content: space-between; align-items: center;">
+
+        </div>
+
+        <!-- Butoane Acțiune (Înapoi stânga / Salvează dreapta) -->
+        <div class="edit-actions-bar">
                 <a href="apartamente.html" class="btn-secondary">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="15 18 9 12 15 6"></polyline></svg>
                     <span>Înapoi la listă</span>
                 </a>
                 <button type="submit" class="btn-primary">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
-                    <span>Salvează Apartament</span>
+                    <span>Salvează</span>
                 </button>
             </div>
-
-        </div>
     </form>
 </div>
 
@@ -900,75 +963,120 @@
 ══════════════════════════════════════════════════════════════════════ -->
 <div id="tab-heating" class="tab-pane " role="tabpanel" aria-labelledby="tabBtn-heating" style="display: none;">
     
-    <!-- ── Card 1: Parametri Tehnici Încălzire ──────────────────────── -->
+    <!-- ── Detalii apartament (ucHeader, RULES §1.9) ─────────────────
+         React: <ApartmentContextStrip apartment={flat} />
+    -->
+    <div class="utility-context-strip">
+        <div class="context-items">
+                                            <div class="context-item">
+                    <span class="context-label">Proprietar:</span>
+                    <strong class="context-value">TOMA BARBU ELENA</strong>                </div>
+                            <div class="context-sep"></div>                <div class="context-item">
+                    <span class="context-label">Adresă:</span>
+                    <span class="context-value">Str. STEFAN CEL MARE, Nr. 27, Bloc 27, Scara 1, Etaj 1, Ap. 1</span>                </div>
+                            <div class="context-sep"></div>                <div class="context-item">
+                    <span class="context-label">Localitate:</span>
+                    <span class="context-value">Bucuresti, Sector 2, Județ Bucuresti, Regiune Romania, Țară Romania</span>                </div>
+                            <div class="context-sep"></div>                <div class="context-item">
+                    <span class="context-label">Cod poștal:</span>
+                    <span class="context-value">020125</span>                </div>
+                            <div class="context-sep"></div>                <div class="context-item">
+                    <span class="context-label">Tel:</span>
+                    <span class="context-value">0722123456</span>                </div>
+                    </div>
+        <div>
+            <span class="status-badge status-online">Utilitate Activă: Energie Termică</span>
+        </div>
+    </div>
+
+    <!-- ── Card 1: Informații calcul încălzire (FlatHeatingEdit.aspx) ─── -->
     <div class="card edit-section-card" style="margin-bottom: 20px;">
         <div class="edit-section-header">
-            <span class="edit-section-title">Parametri Tehnici Încălzire</span>
+            <span class="edit-section-title">Informații calcul încălzire</span>
         </div>
-        
         <div class="edit-section-body" style="padding-top: 16px;">
-            <div class="form-row-3">
-                <div class="form-group">
-                    <label class="form-label" for="ddlHeatingType">Tip contorizare încălzire</label>
-                    <select name="heating_type" id="ddlHeatingType" class="input-control">
-                        <option value="2" selected>Contorizat</option>
-                        <option value="8" >CititAsociatie</option>
-                        <option value="4" >CT (Centrală proprie)</option>
-                        <option value="3" >Debranșat</option>
-                        <option value="6" >Inactiv</option>
-                        <option value="1" >Necontorizat</option>
-                        <option value="9" >NecontorizatFaraAC</option>
-                        <option value="7" >NecontorizatFaraSet</option>
-                        <option value="5" >Restanțier</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="txtSUT">Suprafață utilă – SUT (mp)</label>
-                    <input name="sut" type="text" id="txtSUT" class="input-control" value="32.400" placeholder="Ex: 32.400">
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="txtSIT">Suprafață încălzită – SIT (mp)</label>
-                    <input name="sit" type="text" id="txtSIT" class="input-control" value="32.400" placeholder="Ex: 32.400">
-                </div>
-            </div>
-
             <div class="form-row-2">
                 <div class="form-group">
-                    <label class="form-label" for="txtCotaIndiviza">Cotă parte indiviză (%)</label>
-                    <input name="cota_indiviza" type="text" id="txtCotaIndiviza" class="input-control" value="2.15" placeholder="Ex: 2.15">
+                    <label class="form-label" for="ddlHeatingType">Tip contorizare încălzire <span class="required-star">*</span></label>
+                    <select name="heating_type" id="ddlHeatingType" class="input-control" required>
+                                                <option value="-1" >-</option>
+                                                <option value="8" >CititAsociatie</option>
+                                                <option value="2" selected>Contorizat</option>
+                                                <option value="4" >CT</option>
+                                                <option value="3" >Debransat</option>
+                                                <option value="6" >Inactiv</option>
+                                                <option value="1" >Necontorizat</option>
+                                                <option value="9" >NecontorizatFaraAC</option>
+                                                <option value="7" >NecontorizatFaraSet</option>
+                                                <option value="5" >Restantier</option>
+                                            </select>
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="txtCoefAmplasare">Coeficient de amplasament</label>
-                    <input name="coef_amplasare" type="text" id="txtCoefAmplasare" class="input-control" value="1.00" placeholder="Ex: 1.00">
+                    <label class="form-label" for="txtSUT">Suprafață utilă apartament <span class="required-star">*</span></label>
+                    <input name="sut" type="text" id="txtSUT" class="input-control" maxlength="8" value="32.400" required>
+                </div>
+            </div>
+            <div class="form-row-2">
+                <div class="form-group">
+                    <label class="form-label">Plătește PC din țevi</label>
+                    <div class="heating-radio-group">
+                        <label class="heating-radio-item"><input type="radio" name="heating_pays_pipes" value="1" checked><span>Da</span></label>
+                        <label class="heating-radio-item"><input type="radio" name="heating_pays_pipes" value="0" ><span>Nu</span></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Plătește PC din spații comune</label>
+                    <div class="heating-radio-group">
+                        <label class="heating-radio-item"><input type="radio" name="heating_pays_common" value="1" checked><span>Da</span></label>
+                        <label class="heating-radio-item"><input type="radio" name="heating_pays_common" value="0" ><span>Nu</span></label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row-2">
+                <div class="form-group">
+                    <label class="form-label" for="dtpHeatingInstallDate">Data montare încălzire</label>
+                    <div class="picker-group">
+                        <input type="text" name="heating_install_date" id="dtpHeatingInstallDate" class="input-control" data-datepicker value="2013-05-29">
+                        <button type="button" class="btn-picker delete" title="Șterge data" onclick="SonicDatepicker.setValue(document.getElementById('dtpHeatingInstallDate'), '')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ── Card 2: Repartitoare / Corpuri de Încălzire ───────────────── -->
+    <!-- ── Card 2: Echipare încălzire (rptRadiator) ───────────────────── -->
     <div class="card edit-section-card" style="margin-bottom: 20px;">
         <div class="edit-section-header" style="display: flex; justify-content: space-between; align-items: center;">
-            <span class="edit-section-title">Repartitoare &amp; Corpuri de Încălzire</span>
-            <button type="button" class="btn-secondary" style="font-size: 12.5px; padding: 6px 12px;" onclick="openAddRadiatorModal()">
+            <span class="edit-section-title">Echipare încălzire</span>
+            <button type="button" class="btn-secondary" id="ctl00_phContent_btnAddRadiator" onclick="openAddRadiatorModal()">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                <span>Adaugă Corp</span>
+                <span>Adaugă</span>
             </button>
         </div>
 
         <div class="table-container" style="border: none; border-radius: 0; box-shadow: none;">
-            <div style="overflow-x: auto; width: 100%;">
-                <table class="partners-table">
+            <div class="table-scroll">
+                <table class="partners-table table-compact" id="ctl00_phContent_rptRadiator">
                     <thead>
                         <tr>
-                            <th style="width: 14%;">Încăpere / Cameră</th>
-                            <th style="width: 20%;">Tip Radiator</th>
-                            <th style="width: 14%;">Dimensiuni</th>
-                            <th style="width: 9%; text-align: right;">Dim. spec.</th>
-                            <th style="width: 8%; text-align: right;">SET</th>
-                            <th style="width: 12%;">Model Repartitor</th>
-                            <th style="width: 12%;">Serie Repartitor</th>
-                            <th style="width: 5%; text-align: center;">Stare</th>
-                            <th style="width: 6%; text-align: center;">Acțiuni</th>
+                            <th style="text-align: center;">Nr. ord.</th>
+                            <th style="text-align: center;">Nr. încăpere</th>
+                            <th>Tip încăpere</th>
+                            <th style="text-align: center;">PC</th>
+                            <th>Model radiator</th>
+                            <th>Dimensiuni</th>
+                            <th style="text-align: center;">Folosește rep. etalon</th>
+                            <th>Serie repartitor</th>
+                            <th style="text-align: center;">Se fact.</th>
+                            <th style="text-align: right;">Fact. amplasare</th>
+                            <th style="text-align: right;">Kq</th>
+                            <th style="text-align: right;">Kc</th>
+                            <th style="text-align: right;">SET</th>
+                            <th style="text-align: right;">Coef. eval.</th>
+                            <th style="text-align: center;">Este rep. etalon</th>
+                            <th style="text-align: center;">Acțiuni</th>
                         </tr>
                     </thead>
                     <tbody id="radiatorsTableBody">
@@ -977,19 +1085,19 @@
                 </table>
             </div>
         </div>
+    </div>
 
-        <!-- Butoane Acțiune Tab Încălzire -->
-        <div class="form-actions-row" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-top: 1px solid var(--border-color); background: #fafbfc; border-radius: 0 0 8px 8px;">
+    <!-- Butoane Acțiune Tab Încălzire -->
+    <div class="edit-actions-bar">
             <a href="apartamente.html" class="btn-secondary">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="15 18 9 12 15 6"></polyline></svg>
                 <span>Înapoi la listă</span>
             </a>
             <button type="button" class="btn-primary" onclick="handleApartamentSubmit(event)">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
-                <span>Salvează Date Încălzire</span>
+                <span>Salvează</span>
             </button>
         </div>
-    </div>
 
 </div>
 
@@ -998,19 +1106,27 @@
 ══════════════════════════════════════════════════════════════════════ -->
 <div id="tab-water" class="tab-pane " role="tabpanel" aria-labelledby="tabBtn-water" style="display: none;">
 
-    <!-- ── Casetă Contextuală Apartament ─────────────────────────── -->
+    <!-- ── Detalii apartament (ucHeader, RULES §1.9) ─────────────────
+         React: <ApartmentContextStrip apartment={flat} />
+    -->
     <div class="utility-context-strip">
-        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
-            <div style="font-size: 13px;">
-                <span style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; margin-right: 4px;">Proprietar:</span>
-                <strong style="color: var(--text-main);">TOMA BARBU ELENA</strong>
-            </div>
-            <div style="height: 14px; width: 1px; background: var(--border-color);"></div>
-            <div style="font-size: 13px;">
-                <span style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; margin-right: 4px;">Adresă:</span>
-                <span style="color: var(--text-main);">Str. STEFAN CEL MARE, Nr. 27, Bl. 27, Sc. 1, Et. 1, Ap. 1, Sector 2, Bucuresti</span>
-            </div>
-        </div>
+        <div class="context-items">
+                                            <div class="context-item">
+                    <span class="context-label">Proprietar:</span>
+                    <strong class="context-value">TOMA BARBU ELENA</strong>                </div>
+                            <div class="context-sep"></div>                <div class="context-item">
+                    <span class="context-label">Adresă:</span>
+                    <span class="context-value">Str. STEFAN CEL MARE, Nr. 27, Bloc 27, Scara 1, Etaj 1, Ap. 1</span>                </div>
+                            <div class="context-sep"></div>                <div class="context-item">
+                    <span class="context-label">Localitate:</span>
+                    <span class="context-value">Bucuresti, Sector 2, Județ Bucuresti, Regiune Romania, Țară Romania</span>                </div>
+                            <div class="context-sep"></div>                <div class="context-item">
+                    <span class="context-label">Cod poștal:</span>
+                    <span class="context-value">020125</span>                </div>
+                            <div class="context-sep"></div>                <div class="context-item">
+                    <span class="context-label">Tel:</span>
+                    <span class="context-value">0722123456</span>                </div>
+                    </div>
         <div>
             <span class="status-badge status-online">Utilitate Activă: Apă</span>
         </div>
@@ -1045,7 +1161,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="dtpWaterInstallDate">Data montaj apă</label>
-                    <input name="water_install_date" type="date" id="dtpWaterInstallDate" class="input-control" value="2015-03-16">
+                    <input name="water_install_date" type="text" data-datepicker id="dtpWaterInstallDate" class="input-control" value="2015-03-16">
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="txtColdProviderCode">Cod regie apă rece</label>
@@ -1071,7 +1187,7 @@
                     <label class="form-label" for="txtPersNo">
                         Număr persoane <span class="required-star">*</span>
                     </label>
-                    <input name="pers_no" type="number" min="0" max="999" id="txtPersNo" class="input-control" value="2" required>
+                    <input name="pers_no" type="text" inputmode="numeric" maxlength="3" id="txtPersNo" class="input-control" value="2" required>
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="txtHotProviderCode">Cod regie apă caldă</label>
@@ -1096,7 +1212,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="txtWaterSurface">
-                        Suprafață utilă apartament (mp) <span class="required-star">*</span>
+                        Suprafață utilă apartament <span class="required-star">*</span>
                     </label>
                     <input name="water_surface" type="text" id="txtWaterSurface" class="input-control" maxlength="8" value="32.400" placeholder="Ex: 1.000" required>
                 </div>
@@ -1118,7 +1234,7 @@
             <!-- Rând 4: Spații cu altă destinație decât locuință (SAD) & Bucăți -->
             <div class="form-row-2">
                 <div class="form-group">
-                    <label class="form-label" for="ddlSysOtherRoomType">Spații cu altă destinație decât locuință (SAD)</label>
+                    <label class="form-label" for="ddlSysOtherRoomType">Spații cu altă destinație decât locuință</label>
                     <select name="other_room_type" id="ddlSysOtherRoomType" class="input-control" onchange="toggleOtherRoomUnits(this.value)">
                                                 <option value="-1" selected>-</option>
                                                 <option value="20" >Atelier fotografic</option>
@@ -1148,7 +1264,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="txtOtherRoomUnits">Bucăți</label>
-                    <input name="other_room_units" type="number" min="0" max="999" id="txtOtherRoomUnits" class="input-control" maxlength="3" placeholder="Număr unități..." value="" disabled>
+                    <input name="other_room_units" type="text" inputmode="numeric" id="txtOtherRoomUnits" class="input-control" maxlength="3" placeholder="Număr unități..." value="" disabled>
                 </div>
             </div>
 
@@ -1164,12 +1280,12 @@
             </div>
             <button type="button" class="btn-secondary" style="font-size: 12.5px; padding: 6px 12px;" onclick="openAddWaterCounterModal()">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                <span>Adaugă Contor</span>
+                <span>Adaugă</span>
             </button>
         </div>
 
         <div class="table-container" style="border: none; border-radius: 0; box-shadow: none;">
-            <div style="overflow-x: auto; width: 100%;">
+            <div class="table-scroll">
                 <table class="partners-table" id="waterCountersTable">
                     <thead>
                         <tr>
@@ -1177,7 +1293,6 @@
                             <th style="width: 85px; text-align: center;">Nr. încăpere</th>
                             <th style="width: 16%;">Tip încăpere</th>
                             <th style="width: 13%;">Tip contor</th>
-                            <th style="width: 16%;">Model contor</th>
                             <th style="width: 18%;">Serie contor mecanic</th>
                             <th style="width: 18%;">Serie modul radio</th>
                             <th style="width: 75px; text-align: center;">Acțiuni</th>
@@ -1193,18 +1308,19 @@
             </div>
         </div>
 
-        <!-- Butoane Acțiune Tab Apă -->
-        <div class="form-actions-row" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-top: 1px solid var(--border-color); background: #fafbfc; border-radius: 0 0 8px 8px;">
+    </div>
+
+    <!-- Butoane Acțiune Tab Apă -->
+    <div class="edit-actions-bar">
             <a href="apartamente.html" class="btn-secondary">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="15 18 9 12 15 6"></polyline></svg>
                 <span>Înapoi la listă</span>
             </a>
             <button type="button" class="btn-primary" onclick="handleApartamentWaterSubmit(event)">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
-                <span>Salvează Date Apă</span>
+                <span>Salvează</span>
             </button>
         </div>
-    </div>
 
 </div>
 
@@ -1334,33 +1450,35 @@
                     <div class="form-group">
                         <label class="form-label" for="modalCounterRoomType">Tip camera</label>
                         <select id="modalCounterRoomType" class="input-control" required>
-                                                        <option value="Bucătărie">Bucătărie</option>
+                                                        <option value="-">-</option>
+                                                        <option value="Administratie">Administratie</option>
                                                         <option value="Baie">Baie</option>
                                                         <option value="Balcon">Balcon</option>
                                                         <option value="Bazin WC">Bazin WC</option>
-                                                        <option value="Cameră">Cameră</option>
-                                                        <option value="Casă scării">Casă scării</option>
-                                                        <option value="Chiuvetă">Chiuvetă</option>
+                                                        <option value="Bucatarie">Bucatarie</option>
+                                                        <option value="Camera">Camera</option>
+                                                        <option value="Casa scarii">Casa scarii</option>
+                                                        <option value="Chiuveta">Chiuveta</option>
                                                         <option value="Dormitor">Dormitor</option>
                                                         <option value="Garaj">Garaj</option>
-                                                        <option value="Ghenă">Ghenă</option>
-                                                        <option value="Grădină">Grădină</option>
+                                                        <option value="Ghena">Ghena</option>
+                                                        <option value="Gradina">Gradina</option>
                                                         <option value="Hol">Hol</option>
-                                                        <option value="Mașină de spălat">Mașină de spălat</option>
+                                                        <option value="Masina de spalat">Masina de spalat</option>
                                                         <option value="Pisoar">Pisoar</option>
                                                         <option value="Subsol">Subsol</option>
                                                         <option value="Sufragerie">Sufragerie</option>
-                                                        <option value="Uscătorie">Uscătorie</option>
+                                                        <option value="Uscatorie">Uscatorie</option>
                                                         <option value="WC Serviciu">WC Serviciu</option>
                                                     </select>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="modalCounterRoomNo">Nr. incapere</label>
-                        <input type="text" id="modalCounterRoomNo" class="input-control" placeholder="">
+                        <input type="text" inputmode="numeric" id="modalCounterRoomNo" class="input-control">
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="modalCounterSealSerial">Serie sigiliu</label>
-                        <input type="text" id="modalCounterSealSerial" class="input-control" placeholder="">
+                        <input type="text" id="modalCounterSealSerial" class="input-control" maxlength="30">
                     </div>
                 </div>
 
@@ -1369,17 +1487,18 @@
                     <div class="form-group">
                         <label class="form-label" for="modalCounterType">Tip contor</label>
                         <select id="modalCounterType" class="input-control" required onchange="handleCounterTypeChange(this.value)">
+                            <option value="-">-</option>
                             <option value="Apa rece">Apa rece</option>
                             <option value="Apa calda">Apa calda</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="modalCounterMechSerial">Serie contor mecanic</label>
-                        <input type="text" id="modalCounterMechSerial" class="input-control" placeholder="54977800" required>
+                        <input type="text" id="modalCounterMechSerial" class="input-control" maxlength="30" required>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="modalCounterMechInstallDate">Data instalare contor mecanic</label>
-                        <input type="date" id="modalCounterMechInstallDate" class="input-control" value="2015-03-05">
+                        <input type="text" data-datepicker id="modalCounterMechInstallDate" class="input-control" value="2015-03-05">
                     </div>
                 </div>
 
@@ -1387,17 +1506,17 @@
                 <div class="form-row-3">
                     <div class="form-group">
                         <label class="form-label" for="modalCounterModel">Model contor apa:</label>
-                        <select id="modalCounterModel" class="input-control" required>
+                        <select id="modalCounterModel" class="input-control">
                             <!-- Populat dinamic în funcție de Tip contor -->
                         </select>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="modalCounterRadioSerial">Serie modul radio</label>
-                        <input type="text" id="modalCounterRadioSerial" class="input-control" placeholder="302653646">
+                        <input type="text" id="modalCounterRadioSerial" class="input-control" maxlength="30">
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="modalCounterRadioInstallDate">Data instalare modul radio</label>
-                        <input type="date" id="modalCounterRadioInstallDate" class="input-control" value="2026-07-01">
+                        <input type="text" data-datepicker id="modalCounterRadioInstallDate" class="input-control" value="2026-07-01">
                     </div>
                 </div>
 
@@ -1405,11 +1524,11 @@
                 <div class="form-row-3" style="margin-bottom: 0;">
                     <div class="form-group">
                         <label class="form-label" for="modalCounterDirectIndex">Index direct 0</label>
-                        <input type="text" id="modalCounterDirectIndex" class="input-control" placeholder="47.789" value="0.000">
+                        <input type="text" id="modalCounterDirectIndex" class="input-control" maxlength="30" value="0">
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="modalCounterInverseIndex">Index invers 0</label>
-                        <input type="text" id="modalCounterInverseIndex" class="input-control" placeholder="0.000" value="0.000">
+                        <input type="text" id="modalCounterInverseIndex" class="input-control" maxlength="30" value="0">
                     </div>
                     <div class="form-group">
                         <!-- Spațiu liber pentru alinierea pe 3 coloane -->
@@ -1445,8 +1564,9 @@
                     <div class="form-group">
                         <label class="form-label" for="modalHeatingModel">Model repartitor</label>
                         <select id="modalHeatingModel" class="input-control" required>
-                                                        <option value="E-ITN 30.4">E-ITN 30.4</option>
+                                                        <option value="-">-</option>
                                                         <option value="E-ITN 10.5">E-ITN 10.5</option>
+                                                        <option value="E-ITN 30.4">E-ITN 30.4</option>
                                                         <option value="E-ITN 40L">E-ITN 40L</option>
                                                         <option value="Programat">Programat</option>
                                                         <option value="SET">SET</option>
@@ -1456,18 +1576,23 @@
                     <div class="form-group">
                         <label class="form-label" for="modalHeatingRadiatorType">Tip radiator</label>
                         <select id="modalHeatingRadiatorType" class="input-control" required>
-                                                        <option value="Fonta Calan">Fonta Calan</option>
-                                                        <option value="Fonta Bucuresti">Fonta Bucuresti</option>
-                                                        <option value="Fonta Tip Nou">Fonta Tip Nou</option>
-                                                        <option value="Fonta URSS">Fonta URSS</option>
+                                                        <option value="-">-</option>
                                                         <option value="Aluminiu Alurad">Aluminiu Alurad</option>
                                                         <option value="Aluminiu Seven">Aluminiu Seven</option>
                                                         <option value="Aluminiu Titan Kristal">Aluminiu Titan Kristal</option>
+                                                        <option value="C.R.P.">C.R.P.</option>
+                                                        <option value="C.R.-S.P.">C.R.-S.P.</option>
                                                         <option value="Coloana Otel">Coloana Otel</option>
                                                         <option value="Coloana PP/Pexal">Coloana PP/Pexal</option>
+                                                        <option value="Fonta Bucuresti">Fonta Bucuresti</option>
+                                                        <option value="Fonta Calan">Fonta Calan</option>
+                                                        <option value="Fonta Tip Nou">Fonta Tip Nou</option>
+                                                        <option value="Fonta URSS">Fonta URSS</option>
                                                         <option value="Otel cu Coloane">Otel cu Coloane</option>
                                                         <option value="Otel Panou Korado Radik Clasic">Otel Panou Korado Radik Clasic</option>
                                                         <option value="Portprosop">Portprosop</option>
+                                                        <option value="Programat REP.">Programat REP.</option>
+                                                        <option value="R.P.U. (Radal)">R.P.U. (Radal)</option>
                                                         <option value="Registru Tevi">Registru Tevi</option>
                                                         <option value="ROTERM RT">ROTERM RT</option>
                                                         <option value="Aluminiu Geniale">Aluminiu Geniale</option>
@@ -1477,19 +1602,16 @@
                                                         <option value="Otel cu Elementi Zehnder">Otel cu Elementi Zehnder</option>
                                                         <option value="Otel Panou Vertical Plan">Otel Panou Vertical Plan</option>
                                                         <option value="Otel Panou Vogel &amp; Noot">Otel Panou Vogel &amp; Noot</option>
+                                                        <option value="test">test</option>
                                                     </select>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="modalHeatingDimensions">Dimensiuni</label>
                         <select id="modalHeatingDimensions" class="input-control">
+                                                        <option value="-">-</option>
                                                         <option value="624-4-50-142---">624-4-50-142---</option>
-                                                        <option value="600/1000">600/1000</option>
-                                                        <option value="22-600/800">22-600/800</option>
-                                                        <option value="22-600/600">22-600/600</option>
-                                                        <option value="500-2-60-100---">500-2-60-100---</option>
-                                                        <option value="254-1-75-62---">254-1-75-62---</option>
-                                                        <option value="454-1-75-62---">454-1-75-62---</option>
-                                                        <option value="554-1-75-62---">554-1-75-62---</option>
+                                                        <option value="600-22-1-100---">600-22-1-100---</option>
+                                                        <option value="1-1-40----">1-1-40----</option>
                                                     </select>
                     </div>
                 </div>
@@ -1517,11 +1639,11 @@
                         <label class="form-label">Foloseste etalon</label>
                         <div class="heating-radio-group">
                             <label class="heating-radio-item">
-                                <input type="radio" name="modalHeatingUseStandard" value="1">
+                                <input type="radio" name="modalHeatingUseStandard" value="1" onchange="toggleStandardSerial()">
                                 <span>Da</span>
                             </label>
                             <label class="heating-radio-item">
-                                <input type="radio" name="modalHeatingUseStandard" value="0" checked>
+                                <input type="radio" name="modalHeatingUseStandard" value="0" checked onchange="toggleStandardSerial()">
                                 <span>Nu</span>
                             </label>
                         </div>
@@ -1539,9 +1661,26 @@
                             </label>
                         </div>
                     </div>
+                    <div class="form-group" id="modalHeatingStdSerialGroup" style="display:none;">
+                        <label class="form-label" for="modalHeatingStdSerial">Serie repartitor etalon</label>
+                        <select id="modalHeatingStdSerial" class="input-control">
+                                                        <option value="-1">-</option>
+                                                        <option value="10552">34131622</option>
+                                                        <option value="9">34063386</option>
+                                                        <option value="945">34131622</option>
+                                                        <option value="946">34461402</option>
+                                                        <option value="947">34461352</option>
+                                                        <option value="948">34461375</option>
+                                                        <option value="949">34324256</option>
+                                                        <option value="950">34491766</option>
+                                                        <option value="951">34491817</option>
+                                                        <option value="952">34491765</option>
+                                                        <option value="953">34491818</option>
+                                                    </select>
+                    </div>
                     <div class="form-group">
                         <label class="form-label" for="modalHeatingSerial">Serie repartitor</label>
-                        <input type="text" id="modalHeatingSerial" class="input-control" placeholder="34060979" required>
+                        <input type="text" id="modalHeatingSerial" class="input-control" required>
                     </div>
                 </div>
 
@@ -1550,23 +1689,25 @@
                     <div class="form-group">
                         <label class="form-label" for="modalHeatingRoom">Tip camera</label>
                         <select id="modalHeatingRoom" class="input-control">
-                                                        <option value="Bucatarie">Bucătărie</option>
+                                                        <option value="-">-</option>
+                                                        <option value="Administratie">Administratie</option>
                                                         <option value="Baie">Baie</option>
                                                         <option value="Balcon">Balcon</option>
                                                         <option value="Bazin WC">Bazin WC</option>
-                                                        <option value="Camera">Cameră</option>
-                                                        <option value="Casa scarii">Casă scării</option>
-                                                        <option value="Chiuveta">Chiuvetă</option>
+                                                        <option value="Bucatarie">Bucatarie</option>
+                                                        <option value="Camera">Camera</option>
+                                                        <option value="Casa scarii">Casa scarii</option>
+                                                        <option value="Chiuveta">Chiuveta</option>
                                                         <option value="Dormitor">Dormitor</option>
                                                         <option value="Garaj">Garaj</option>
-                                                        <option value="Ghena">Ghenă</option>
-                                                        <option value="Gradina">Grădină</option>
+                                                        <option value="Ghena">Ghena</option>
+                                                        <option value="Gradina">Gradina</option>
                                                         <option value="Hol">Hol</option>
-                                                        <option value="Masina de spalat">Mașină de spălat</option>
+                                                        <option value="Masina de spalat">Masina de spalat</option>
                                                         <option value="Pisoar">Pisoar</option>
                                                         <option value="Subsol">Subsol</option>
                                                         <option value="Sufragerie">Sufragerie</option>
-                                                        <option value="Uscatorie">Uscătorie</option>
+                                                        <option value="Uscatorie">Uscatorie</option>
                                                         <option value="WC Serviciu">WC Serviciu</option>
                                                     </select>
                     </div>
@@ -1586,12 +1727,16 @@
                     <div class="form-group">
                         <div class="heating-pipe-room-group">
                             <label class="heating-checkbox-item">
-                                <input type="checkbox" id="modalHeatingIsPipe" value="1">
+                                <input type="checkbox" id="modalHeatingIsPipe" value="1" onchange="SetVisibilitytxtFactorIzolare()">
                                 <span>Este teava</span>
                             </label>
+                            <div id="modalHeatingFactorIzolareGroup" style="display: none; align-items: center; gap: 8px;">
+                                <label class="form-label" for="modalHeatingFactorIzolare" id="lblFactorIzolare" style="margin-bottom: 0; white-space: nowrap;">Factor izolare</label>
+                                <input type="text" id="modalHeatingFactorIzolare" class="input-control" style="width: 80px;">
+                            </div>
                             <div style="display: flex; align-items: center; gap: 8px;">
                                 <label class="form-label" for="modalHeatingRoomNo" style="margin-bottom: 0; white-space: nowrap;">Nr. incapere</label>
-                                <input type="text" id="modalHeatingRoomNo" class="input-control" style="width: 80px;" placeholder="">
+                                <input type="text" inputmode="numeric" id="modalHeatingRoomNo" class="input-control" style="width: 80px;">
                             </div>
                         </div>
                     </div>
@@ -1604,13 +1749,19 @@
                     <label class="heating-factor-label" for="modalHeatingFactorLocation">Factori de amplasare la repartizarea costurilor pe baza repartitoarelor de costuri</label>
                     <div class="heating-factor-control">
                         <select id="modalHeatingFactorLocation" class="input-control">
-                                                        <option value="01 Camera de mijloc etaj curent">01 Camera de mijloc etaj curent</option>
-                                                        <option value="02 Camera de colt etaj curent">02 Camera de colt etaj curent</option>
-                                                        <option value="03 Camera de mijloc ultimul etaj">03 Camera de mijloc ultimul etaj</option>
-                                                        <option value="04 Camera de colt ultimul etaj">04 Camera de colt ultimul etaj</option>
-                                                        <option value="05 Camera de mijloc parter">05 Camera de mijloc parter</option>
-                                                        <option value="06 Camera de colt parter">06 Camera de colt parter</option>
-                                                        <option value="07 Spatii comune">07 Spatii comune</option>
+                                                        <option value="-1">-</option>
+                                                        <option value="5">01 Camera de mijloc etaj curent</option>
+                                                        <option value="6">02 Camera de colt etaj curent</option>
+                                                        <option value="3">03 Camera de mijloc la parter peste subsol neincalzit</option>
+                                                        <option value="4">04 Camera de colt la partere peste subsol neincalzit</option>
+                                                        <option value="7">05 Camera de mijloc ultim etaj nivel sub terasa</option>
+                                                        <option value="8">06 Camera de colt ultim nivel sub terasa</option>
+                                                        <option value="9">07 Camera de mijloc la ultimul nivel sub sarpanta</option>
+                                                        <option value="10">08 Camera de colt la ultimul nivel sub sarpanta</option>
+                                                        <option value="11">09 Camera de mijloc la ultimul nivel sub pod incalzit</option>
+                                                        <option value="12">10 Camera de colt la ultimul nivel sub pod neincalzit</option>
+                                                        <option value="1">11 Camera de mijloc la parter peste sol</option>
+                                                        <option value="2">12 Camera de colt la parter peste sol</option>
                                                     </select>
                     </div>
                 </div>
@@ -1619,14 +1770,12 @@
                     <label class="heating-factor-label" for="modalHeatingFactorCardinal">Factori de corectie fata de punctele cardinale</label>
                     <div class="heating-factor-control">
                         <select id="modalHeatingFactorCardinal" class="input-control">
-                                                        <option value="Directia Nord">Directia Nord</option>
-                                                        <option value="Directia Sud">Directia Sud</option>
-                                                        <option value="Directia Est">Directia Est</option>
-                                                        <option value="Directia Vest">Directia Vest</option>
-                                                        <option value="Directia Nord-Est">Directia Nord-Est</option>
-                                                        <option value="Directia Nord-Vest">Directia Nord-Vest</option>
-                                                        <option value="Directia Sud-Est">Directia Sud-Est</option>
-                                                        <option value="Directia Sud-Vest">Directia Sud-Vest</option>
+                                                        <option value="-1">-</option>
+                                                        <option value="1">Directia Nord</option>
+                                                        <option value="2">Directia Nord-Est si Nord-Vest</option>
+                                                        <option value="3">Directia Sud</option>
+                                                        <option value="4">Directia Sud-Est si Sud-Vest</option>
+                                                        <option value="5">Est si Vest</option>
                                                     </select>
                     </div>
                 </div>
@@ -1635,11 +1784,11 @@
                     <label class="heating-factor-label" for="modalHeatingFactorCorrection">Factori de corectie de amplasare</label>
                     <div class="heating-factor-control">
                         <select id="modalHeatingFactorCorrection" class="input-control">
-                                                        <option value="Incaperi normale">Incaperi normale</option>
-                                                        <option value="Incaperi defavorizate">Incaperi defavorizate</option>
-                                                        <option value="Incaperi puternic defavorizate">Incaperi puternic defavorizate</option>
-                                                        <option value="Incaperi favorizate">Incaperi favorizate</option>
-                                                        <option value="Fara corectie">Fara corectie</option>
+                                                        <option value="-1">-</option>
+                                                        <option value="4">Incaperi cu 3 pereti exteriori</option>
+                                                        <option value="1">Incaperi normale</option>
+                                                        <option value="2">Incaperi peste sau langa ganguri</option>
+                                                        <option value="3">Incaperi peste sau langa spatii interioare neincalzite</option>
                                                     </select>
                     </div>
                 </div>
@@ -1657,81 +1806,82 @@
  * Logica de navigare între tab-uri, modal oraș și tab-ul Apă.
  * React conversion: se mută în starea componentei <ApartamentEditPage />
  */
-function switchApartamentTab(tabId, btn) {
-    document.querySelectorAll('.tab-pane').forEach(function(pane) {
-        pane.style.display = 'none';
-        pane.classList.remove('active');
-    });
-    document.querySelectorAll('.edit-tab-btn').forEach(function(b) {
-        b.classList.remove('active');
-        b.setAttribute('aria-selected', 'false');
-    });
-
-    var targetPane = document.getElementById('tab-' + tabId);
-    if (targetPane) {
-        targetPane.style.display = 'block';
-        targetPane.classList.add('active');
-    }
-    if (btn) {
-        btn.classList.add('active');
-        btn.setAttribute('aria-selected', 'true');
-    }
-
-    // Sincronizare parametru URL tab fără reîncărcare pagină
-    try {
-        var url = new URL(window.location);
-        url.searchParams.set('tab', tabId);
-        window.history.replaceState({}, '', url);
-    } catch (e) {}
-}
 
 function handleApartamentSubmit(e) {
     if (e && e.preventDefault) e.preventDefault();
+    if (document.getElementById('tab-general').style.display !== 'none') {
+        var lv = document.querySelectorAll('.js-level');
+        for (var i = 0; i < lv.length; i++) {
+            var v = lv[i].value.trim();
+            if (v !== '' && (!/^\d+$/.test(v) || parseInt(v, 10) > 255)) {
+                alert('Campul Nivel ' + lv[i].getAttribute('data-level') + ' nu este valid. (numar intre 0 si 255)');
+                lv[i].focus();
+                return false;
+            }
+        }
+        var dts = ['dtpStartDate', 'dtpEndDate'];
+        for (var j = 0; j < dts.length; j++) {
+            var d = document.getElementById(dts[j]);
+            if (d.value && !SonicDatepicker.getISO(d)) { alert('Data introdusa nu este valida'); d.focus(); return false; }
+        }
+    }
+    var hd = document.getElementById('dtpHeatingInstallDate');
+    if (hd && document.getElementById('tab-heating').style.display !== 'none' && hd.value && !SonicDatepicker.getISO(hd)) {
+        alert('Data  montare incalzire nu este valida.');
+        hd.focus();
+        return false;
+    }
     alert('Datele apartamentului au fost salvate cu succes!');
     window.location.href = 'apartamente.html';
     return false;
 }
 
 // ── State și logica pentru Tab-ul Încălzire (Repartitoare) ─────────────
-var radiatorsData = [{"id":1,"room":"Dormitor","room_no":"","allocator_model":"E-ITN 30.4","radiator_type":"Fonta Calan","dimensions":"624-4-50-142---","dim_spec":"17.00","set_val":"0.282","use_standard":"0","is_standard":"0","allocator_serial":"34060979","is_active":"1","is_pipe":"0","factor_location":"01 Camera de mijloc etaj curent","factor_cardinal":"Directia Nord","factor_correction":"Incaperi normale"},{"id":2,"room":"Sufragerie","room_no":"","allocator_model":"E-ITN 30.4","radiator_type":"Fonta Calan","dimensions":"600\/1000","dim_spec":"14.00","set_val":"0.350","use_standard":"0","is_standard":"0","allocator_serial":"74829101","is_active":"1","is_pipe":"0","factor_location":"01 Camera de mijloc etaj curent","factor_cardinal":"Directia Sud","factor_correction":"Incaperi normale"},{"id":3,"room":"Buc\u0103t\u0103rie","room_no":"","allocator_model":"E-ITN 30.4","radiator_type":"Otel Panou Korado Radik Clasic","dimensions":"22-600\/600","dim_spec":"10.00","set_val":"0.210","use_standard":"0","is_standard":"0","allocator_serial":"74829103","is_active":"1","is_pipe":"0","factor_location":"01 Camera de mijloc etaj curent","factor_cardinal":"Directia Nord","factor_correction":"Incaperi normale"}];
+var radiatorsData = [{"id":10384,"nr_ord":"01","room_no":"","room":"Dormitor","pc":"0","radiator_type":"Fonta Calan","dimensions":"624-4-50-142---","dim_spec":"","use_standard":"0","standard_serial":"-1","allocator_serial":"34060979","billed":"1","fact_amplasare":"0.9500","kq":"2.417135","kc":"1.0343","set_val":"0.282","coef_eval":"2.500042","is_standard":"0","is_active":"1","allocator_model":"E-ITN 30.4","is_pipe":"0","factor_izolare":"","factor_location":"5","factor_cardinal":"1","factor_correction":"1"},{"id":10385,"nr_ord":"02","room_no":"","room":"Sufragerie","pc":"0","radiator_type":"Otel Panou Korado Radik Clasic","dimensions":"600-22-1-100---","dim_spec":"","use_standard":"0","standard_serial":"-1","allocator_serial":"34061227","billed":"1","fact_amplasare":"0.9500","kq":"2.115623","kc":"1.0000","set_val":"4.196","coef_eval":"2.115623","is_standard":"0","is_active":"1","allocator_model":"E-ITN 30.4","is_pipe":"0","factor_izolare":"","factor_location":"5","factor_cardinal":"3","factor_correction":"1"},{"id":10386,"nr_ord":"03","room_no":"","room":"Bucatarie","pc":"0","radiator_type":"Fonta Calan","dimensions":"624-4-50-142---","dim_spec":"","use_standard":"0","standard_serial":"-1","allocator_serial":"34722225","billed":"1","fact_amplasare":"0.9500","kq":"0.710922","kc":"1.0343","set_val":"0.282","coef_eval":"0.735307","is_standard":"0","is_active":"1","allocator_model":"E-ITN 30.4","is_pipe":"0","factor_izolare":"","factor_location":"5","factor_cardinal":"1","factor_correction":"1"},{"id":10387,"nr_ord":"04","room_no":"","room":"Baie","pc":"0","radiator_type":"Coloana Otel","dimensions":"1-1-40----","dim_spec":"","use_standard":"1","standard_serial":"10552","allocator_serial":"34131622","billed":"1","fact_amplasare":"1.0000","kq":"0.457410","kc":"1.0569","set_val":"0.189","coef_eval":"0.473100","is_standard":"0","is_active":"0","allocator_model":"E-ITN 30.4","is_pipe":"1","factor_izolare":"1.00","factor_location":"5","factor_cardinal":"1","factor_correction":"1"}];
+
+var FACTOR_LOCATION = {"-1":"-","5":"01 Camera de mijloc etaj curent","6":"02 Camera de colt etaj curent","3":"03 Camera de mijloc la parter peste subsol neincalzit","4":"04 Camera de colt la partere peste subsol neincalzit","7":"05 Camera de mijloc ultim etaj nivel sub terasa","8":"06 Camera de colt ultim nivel sub terasa","9":"07 Camera de mijloc la ultimul nivel sub sarpanta","10":"08 Camera de colt la ultimul nivel sub sarpanta","11":"09 Camera de mijloc la ultimul nivel sub pod incalzit","12":"10 Camera de colt la ultimul nivel sub pod neincalzit","1":"11 Camera de mijloc la parter peste sol","2":"12 Camera de colt la parter peste sol"};
+
+function daNu(v) {
+    return (v == '1' || v === true)
+        ? '<span class="status-badge status-online">Da</span>'
+        : '<span class="status-badge status-offline">Nu</span>';
+}
 
 function renderRadiatorsTable() {
     var tbody = document.getElementById('radiatorsTableBody');
     if (!tbody) return;
 
     if (!radiatorsData || radiatorsData.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="9" style="text-align: center; color: var(--text-muted); padding: 24px;">Nu există corpuri de încălzire înregistrate.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="16" class="table-empty">Nu există echipare de încălzire înregistrată.</td></tr>';
         return;
     }
 
+    var editIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>';
+    var offIcon  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>';
+    var onIcon   = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+
     var html = '';
     radiatorsData.forEach(function(r) {
-        var isActive = (r.is_active == '1' || r.is_active === true || r.is_active === 'Activ');
-        var trClass = isActive ? '' : ' class="radiator-row-inactive"';
-        var statusBadge = isActive
-            ? '<span class="status-badge status-online" style="font-size: 11px; padding: 2px 7px;">Activ</span>'
-            : '<span class="status-badge status-offline" style="font-size: 11px; padding: 2px 7px;">Inactiv</span>';
-
-        var deactivateTitle = isActive ? 'Dezactivează echipament (marchează inactiv)' : 'Activează echipament';
-
-        html += '<tr' + trClass + '>' +
-            '<td style="font-weight: 600; color: var(--text-main);">' + escapeHtml(r.room) + (r.room_no ? ' (' + escapeHtml(r.room_no) + ')' : '') + (r.is_pipe == '1' ? ' <span style="font-size: 10.5px; color: var(--text-muted); font-weight: 400;">[Țeavă]</span>' : '') + '</td>' +
+        var isActive = (r.is_active == '1');
+        html += '<tr' + (isActive ? '' : ' class="radiator-row-inactive"') + '>' +
+            '<td class="td-code" style="text-align: center;">' + escapeHtml(r.nr_ord) + '</td>' +
+            '<td style="text-align: center;">' + escapeHtml(r.room_no || '') + '</td>' +
+            '<td class="td-name">' + escapeHtml(r.room) + '</td>' +
+            '<td style="text-align: center;">' + daNu(r.pc) + '</td>' +
             '<td>' + escapeHtml(r.radiator_type) + '</td>' +
-            '<td><span style="font-family: monospace; font-size: 12px;">' + escapeHtml(r.dimensions || '&ndash;') + '</span></td>' +
-            '<td style="text-align: right; font-variant-numeric: tabular-nums;">' + escapeHtml(r.dim_spec || '&ndash;') + '</td>' +
-            '<td style="text-align: right; font-variant-numeric: tabular-nums; font-weight: 600;">' + escapeHtml(r.set_val || '&ndash;') + '</td>' +
-            '<td><span style="font-size: 12px; font-weight: 500;">' + escapeHtml(r.allocator_model || '&ndash;') + '</span></td>' +
-            '<td><span style="font-family: monospace; font-size: 12.5px; font-weight: 600; color: var(--text-main);">' + escapeHtml(r.allocator_serial) + '</span></td>' +
-            '<td style="text-align: center;">' + statusBadge + '</td>' +
-            '<td style="text-align: center;">' +
-                '<div style="display: inline-flex; align-items: center; gap: 4px;">' +
-                    '<button type="button" class="btn-action-icon" title="Editează corp" onclick="openEditRadiatorModal(' + r.id + ')">' +
-                        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>' +
-                    '</button>' +
-                    '<button type="button" class="btn-action-icon" title="' + deactivateTitle + '" onclick="toggleRadiatorActive(' + r.id + ')">' +
-                        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>' +
-                    '</button>' +
-                '</div>' +
+            '<td>' + escapeHtml(r.dimensions) + '</td>' +
+            '<td style="text-align: center;">' + daNu(r.use_standard) + '</td>' +
+            '<td><span class="serial-value">' + escapeHtml(r.allocator_serial) + '</span></td>' +
+            '<td style="text-align: center;">' + daNu(r.billed) + '</td>' +
+            '<td style="text-align: right;">' + escapeHtml(r.fact_amplasare) + '</td>' +
+            '<td style="text-align: right;">' + escapeHtml(r.kq) + '</td>' +
+            '<td style="text-align: right;">' + escapeHtml(r.kc) + '</td>' +
+            '<td class="td-code" style="text-align: right;">' + escapeHtml(r.set_val) + '</td>' +
+            '<td style="text-align: right;">' + escapeHtml(r.coef_eval) + '</td>' +
+            '<td style="text-align: center;">' + daNu(r.is_standard) + '</td>' +
+            '<td style="text-align: center; white-space: nowrap;">' +
+                '<button type="button" class="btn-action-icon" title="Editează" onclick="openEditRadiatorModal(' + r.id + ')">' + editIcon + '</button>' +
+                '<button type="button" class="btn-action-icon" title="' + (isActive ? 'Dezactivează' : 'Activează') + '" onclick="toggleRadiatorActive(' + r.id + ')">' + (isActive ? offIcon : onIcon) + '</button>' +
             '</td>' +
         '</tr>';
     });
@@ -1742,105 +1892,68 @@ function renderRadiatorsTable() {
 function toggleRadiatorActive(id) {
     var item = radiatorsData.find(function(r) { return r.id === id; });
     if (!item) return;
-
-    var isActive = (item.is_active == '1' || item.is_active === true || item.is_active === 'Activ');
-    if (isActive) {
-        if (!confirm('Doriți să dezactivați acest echipament (repartitor)? Echipamentul va fi marcat ca inactiv și nu va fi șters din evidență.')) {
-            return;
-        }
+    if (item.is_active == '1') {
+        if (!confirm('Doriți să dezactivați acest echipament (repartitor)? Echipamentul va fi marcat ca inactiv și nu va fi șters din evidență.')) return;
         item.is_active = '0';
     } else {
-        if (!confirm('Doriți să reactivați acest echipament (repartitor)?')) {
-            return;
-        }
+        if (!confirm('Doriți să reactivați acest echipament (repartitor)?')) return;
         item.is_active = '1';
     }
     renderRadiatorsTable();
 }
 
-function openAddRadiatorModal() {
-    document.getElementById('modalRadiatorId').value = '';
-    document.getElementById('heatingRadiatorModalTitle').textContent = 'Echipare incalzire – Adaugare';
-    document.getElementById('modalHeatingModel').value = 'E-ITN 30.4';
-    document.getElementById('modalHeatingRadiatorType').value = 'Fonta Calan';
-    document.getElementById('modalHeatingDimensions').value = '624-4-50-142---';
-    document.getElementById('modalHeatingDimSpec').value = '17.00';
-    document.getElementById('modalHeatingSet').value = '0.282';
+/* Sursă: SetVisibilitytxtFactorIzolare() – „Factor izolare” vizibil doar pentru „Este teava”. */
+function SetVisibilitytxtFactorIzolare() {
+    var on = document.getElementById('modalHeatingIsPipe').checked;
+    document.getElementById('modalHeatingFactorIzolareGroup').style.display = on ? 'flex' : 'none';
+}
 
-    var useStdNu = document.querySelector('input[name="modalHeatingUseStandard"][value="0"]');
-    if (useStdNu) useStdNu.checked = true;
+/* „Serie repartitor etalon” vizibil doar când „Foloseste etalon” = Da. */
+function toggleStandardSerial() {
+    var el = document.querySelector('input[name="modalHeatingUseStandard"]:checked');
+    document.getElementById('modalHeatingStdSerialGroup').style.display = (el && el.value === '1') ? '' : 'none';
+}
 
-    var isStdNu = document.querySelector('input[name="modalHeatingIsStandard"][value="0"]');
-    if (isStdNu) isStdNu.checked = true;
+function setRadio(name, value) {
+    var el = document.querySelector('input[name="' + name + '"][value="' + value + '"]');
+    if (el) el.checked = true;
+}
 
-    document.getElementById('modalHeatingSerial').value = '';
-    document.getElementById('modalHeatingRoom').value = 'Dormitor';
-
-    var isActDa = document.querySelector('input[name="modalHeatingIsActive"][value="1"]');
-    if (isActDa) isActDa.checked = true;
-
-    var chkPipe = document.getElementById('modalHeatingIsPipe');
-    if (chkPipe) chkPipe.checked = false;
-    document.getElementById('modalHeatingRoomNo').value = '';
-
-    document.getElementById('modalHeatingFactorLocation').value = '01 Camera de mijloc etaj curent';
-    document.getElementById('modalHeatingFactorCardinal').value = 'Directia Nord';
-    document.getElementById('modalHeatingFactorCorrection').value = 'Incaperi normale';
-
+function fillRadiatorModal(item) {
+    document.getElementById('modalRadiatorId').value = item.id || '';
+    document.getElementById('modalHeatingModel').value = item.allocator_model || '-';
+    document.getElementById('modalHeatingRadiatorType').value = item.radiator_type || '-';
+    document.getElementById('modalHeatingDimensions').value = item.dimensions || '-';
+    document.getElementById('modalHeatingDimSpec').value = item.dim_spec || '';
+    document.getElementById('modalHeatingSet').value = item.set_val || '';
+    setRadio('modalHeatingUseStandard', item.use_standard == '1' ? '1' : '0');
+    document.getElementById('modalHeatingStdSerial').value = item.standard_serial || '-1';
+    setRadio('modalHeatingIsStandard', item.is_standard == '1' ? '1' : '0');
+    document.getElementById('modalHeatingSerial').value = item.allocator_serial || '';
+    document.getElementById('modalHeatingRoom').value = item.room || '-';
+    setRadio('modalHeatingIsActive', item.is_active == '0' ? '0' : '1');
+    document.getElementById('modalHeatingIsPipe').checked = (item.is_pipe == '1');
+    document.getElementById('modalHeatingFactorIzolare').value = item.factor_izolare || '';
+    document.getElementById('modalHeatingRoomNo').value = item.room_no || '';
+    document.getElementById('modalHeatingFactorLocation').value = item.factor_location || '-1';
+    document.getElementById('modalHeatingFactorCardinal').value = item.factor_cardinal || '-1';
+    document.getElementById('modalHeatingFactorCorrection').value = item.factor_correction || '-1';
+    toggleStandardSerial();
+    SetVisibilitytxtFactorIzolare();
     document.getElementById('heatingRadiatorModal').style.display = 'flex';
-    setTimeout(function() {
-        document.getElementById('modalHeatingSerial').focus();
-    }, 100);
+}
+
+function openAddRadiatorModal() {
+    document.getElementById('heatingRadiatorModalTitle').textContent = 'Echipare incalzire – Adaugare';
+    fillRadiatorModal({});
+    setTimeout(function() { document.getElementById('modalHeatingModel').focus(); }, 100);
 }
 
 function openEditRadiatorModal(id) {
     var item = radiatorsData.find(function(r) { return r.id === id; });
     if (!item) return;
-
-    document.getElementById('modalRadiatorId').value = item.id;
     document.getElementById('heatingRadiatorModalTitle').textContent = 'Echipare incalzire';
-    document.getElementById('modalHeatingModel').value = item.allocator_model || 'E-ITN 30.4';
-    document.getElementById('modalHeatingRadiatorType').value = item.radiator_type || 'Fonta Calan';
-    document.getElementById('modalHeatingDimensions').value = item.dimensions || '624-4-50-142---';
-    document.getElementById('modalHeatingDimSpec').value = (item.dim_spec !== undefined) ? item.dim_spec : '17.00';
-    document.getElementById('modalHeatingSet').value = (item.set_val !== undefined) ? item.set_val : '0.282';
-
-    var useStdDa = document.querySelector('input[name="modalHeatingUseStandard"][value="1"]');
-    var useStdNu = document.querySelector('input[name="modalHeatingUseStandard"][value="0"]');
-    if (item.use_standard == '1' || item.use_standard === true) {
-        if (useStdDa) useStdDa.checked = true;
-    } else {
-        if (useStdNu) useStdNu.checked = true;
-    }
-
-    var isStdDa = document.querySelector('input[name="modalHeatingIsStandard"][value="1"]');
-    var isStdNu = document.querySelector('input[name="modalHeatingIsStandard"][value="0"]');
-    if (item.is_standard == '1' || item.is_standard === true) {
-        if (isStdDa) isStdDa.checked = true;
-    } else {
-        if (isStdNu) isStdNu.checked = true;
-    }
-
-    document.getElementById('modalHeatingSerial').value = item.allocator_serial || '';
-    document.getElementById('modalHeatingRoom').value = item.room || 'Dormitor';
-
-    var isActDa = document.querySelector('input[name="modalHeatingIsActive"][value="1"]');
-    var isActNu = document.querySelector('input[name="modalHeatingIsActive"][value="0"]');
-    if (item.is_active == '1' || item.is_active === true || item.is_active === 'Activ') {
-        if (isActDa) isActDa.checked = true;
-    } else {
-        if (isActNu) isActNu.checked = true;
-    }
-
-    var chkPipe = document.getElementById('modalHeatingIsPipe');
-    if (chkPipe) chkPipe.checked = (item.is_pipe == '1' || item.is_pipe === true);
-    document.getElementById('modalHeatingRoomNo').value = item.room_no || '';
-
-    document.getElementById('modalHeatingFactorLocation').value = item.factor_location || '01 Camera de mijloc etaj curent';
-    document.getElementById('modalHeatingFactorCardinal').value = item.factor_cardinal || 'Directia Nord';
-    document.getElementById('modalHeatingFactorCorrection').value = item.factor_correction || 'Incaperi normale';
-
-    document.getElementById('heatingRadiatorModal').style.display = 'flex';
+    fillRadiatorModal(item);
 }
 
 function closeHeatingRadiatorModal() {
@@ -1850,79 +1963,51 @@ function closeHeatingRadiatorModal() {
 
 function saveHeatingRadiator(e) {
     if (e && e.preventDefault) e.preventDefault();
+    var $ = function (id) { return document.getElementById(id); };
+    var num = /^-?\d+([.,]\d+)?$/;
 
-    var idVal = document.getElementById('modalRadiatorId').value;
-    var model = document.getElementById('modalHeatingModel').value;
-    var radType = document.getElementById('modalHeatingRadiatorType').value;
-    var dims = document.getElementById('modalHeatingDimensions').value;
-    var dimSpec = document.getElementById('modalHeatingDimSpec').value.trim();
-    var setVal = document.getElementById('modalHeatingSet').value.trim();
+    var data = {
+        allocator_model:   $('modalHeatingModel').value,
+        radiator_type:     $('modalHeatingRadiatorType').value,
+        dimensions:        $('modalHeatingDimensions').value,
+        dim_spec:          $('modalHeatingDimSpec').value.trim(),
+        set_val:           $('modalHeatingSet').value.trim(),
+        use_standard:      document.querySelector('input[name="modalHeatingUseStandard"]:checked').value,
+        standard_serial:   $('modalHeatingStdSerial').value,
+        is_standard:       document.querySelector('input[name="modalHeatingIsStandard"]:checked').value,
+        allocator_serial:  $('modalHeatingSerial').value.trim(),
+        room:              $('modalHeatingRoom').value,
+        is_active:         document.querySelector('input[name="modalHeatingIsActive"]:checked').value,
+        is_pipe:           $('modalHeatingIsPipe').checked ? '1' : '0',
+        factor_izolare:    $('modalHeatingFactorIzolare').value.trim(),
+        room_no:           $('modalHeatingRoomNo').value.trim(),
+        factor_location:   $('modalHeatingFactorLocation').value,
+        factor_cardinal:   $('modalHeatingFactorCardinal').value,
+        factor_correction: $('modalHeatingFactorCorrection').value
+    };
 
-    var useStdEl = document.querySelector('input[name="modalHeatingUseStandard"]:checked');
-    var useStd = useStdEl ? useStdEl.value : '0';
-
-    var isStdEl = document.querySelector('input[name="modalHeatingIsStandard"]:checked');
-    var isStd = isStdEl ? isStdEl.value : '0';
-
-    var serial = document.getElementById('modalHeatingSerial').value.trim();
-    var room = document.getElementById('modalHeatingRoom').value;
-
-    var isActEl = document.querySelector('input[name="modalHeatingIsActive"]:checked');
-    var isActive = isActEl ? isActEl.value : '1';
-
-    var isPipe = document.getElementById('modalHeatingIsPipe').checked ? '1' : '0';
-    var roomNo = document.getElementById('modalHeatingRoomNo').value.trim();
-
-    var factLoc = document.getElementById('modalHeatingFactorLocation').value;
-    var factCard = document.getElementById('modalHeatingFactorCardinal').value;
-    var factCorr = document.getElementById('modalHeatingFactorCorrection').value;
-
-    if (!serial) {
-        alert('Seria repartitorului este obligatorie.');
-        document.getElementById('modalHeatingSerial').focus();
-        return false;
+    // Validări și mesaje din sursă (FlatHeatingEdit.aspx)
+    if (data.allocator_model === '-') { alert('Trebuie sa selectati modelul de repartitor ca sa continuati.'); return false; }
+    if (data.set_val && !num.test(data.set_val)) { alert('Numarul SET trebuie sa fie numeric'); $('modalHeatingSet').focus(); return false; }
+    if (data.is_pipe === '1' && data.factor_izolare) {
+        if (!num.test(data.factor_izolare)) { alert('Numarul Factor Izolare trebuie sa fie numeric'); $('modalHeatingFactorIzolare').focus(); return false; }
+        if (parseFloat(data.factor_izolare.replace(',', '.')) <= 0) { alert('Factorul de izolare este o valoare pozitiva.'); $('modalHeatingFactorIzolare').focus(); return false; }
+    }
+    if (data.room_no && !/^\d+$/.test(data.room_no)) { alert('Numarul Room Number trebuie sa fie numeric'); $('modalHeatingRoomNo').focus(); return false; }
+    if (!data.allocator_serial || !/^\d+$/.test(data.allocator_serial)) {
+        if (!window.confirm('Seria repartitorului nu este valida. Doriti sa continuati?')) { $('modalHeatingSerial').focus(); return false; }
     }
 
+    var idVal = $('modalRadiatorId').value;
     if (idVal) {
-        var id = parseInt(idVal, 10);
-        var existing = radiatorsData.find(function(r) { return r.id === id; });
-        if (existing) {
-            existing.allocator_model = model;
-            existing.radiator_type = radType;
-            existing.dimensions = dims;
-            existing.dim_spec = dimSpec;
-            existing.set_val = setVal;
-            existing.use_standard = useStd;
-            existing.is_standard = isStd;
-            existing.allocator_serial = serial;
-            existing.room = room;
-            existing.is_active = isActive;
-            existing.is_pipe = isPipe;
-            existing.room_no = roomNo;
-            existing.factor_location = factLoc;
-            existing.factor_cardinal = factCard;
-            existing.factor_correction = factCorr;
-        }
+        var existing = radiatorsData.find(function(r) { return r.id === parseInt(idVal, 10); });
+        if (existing) Object.assign(existing, data);
     } else {
-        var newId = (radiatorsData.length > 0) ? Math.max.apply(Math, radiatorsData.map(function(r) { return r.id; })) + 1 : 1;
-        radiatorsData.push({
-            id: newId,
-            allocator_model: model,
-            radiator_type: radType,
-            dimensions: dims,
-            dim_spec: dimSpec,
-            set_val: setVal,
-            use_standard: useStd,
-            is_standard: isStd,
-            allocator_serial: serial,
-            room: room,
-            is_active: isActive,
-            is_pipe: isPipe,
-            room_no: roomNo,
-            factor_location: factLoc,
-            factor_cardinal: factCard,
-            factor_correction: factCorr
-        });
+        var newId = radiatorsData.length ? Math.max.apply(Math, radiatorsData.map(function(r) { return r.id; })) + 1 : 1;
+        radiatorsData.push(Object.assign({
+            id: newId, nr_ord: String(radiatorsData.length + 1).padStart(2, '0'), pc: '0', billed: '1',
+            fact_amplasare: '', kq: '', kc: '', coef_eval: ''      // calculate de sistem
+        }, data));
     }
 
     closeHeatingRadiatorModal();
@@ -1931,26 +2016,24 @@ function saveHeatingRadiator(e) {
 }
 
 // ── State și logica pentru Tab-ul Apă ─────────────────────────────────
-var coldWaterModels = ["ADDRA WMP","Axioma AR","E-RM 30 AR","OP-LWAN AR","Ultrimis AR"];
-var hotWaterModels  = ["Axioma AC","E-RM 30 AC","OP-LWAN AC","Ultrimis AC"];
-var waterCountersData = [{"id":1,"nr_ord":1,"room_no":"","room_type":"Buc\u0103t\u0103rie","seal_serial":"","counter_type":"Apa rece","mech_serial":"54977800","mech_install_date":"2015-03-05","model":"E-RM 30 AR","radio_serial":"302653646","radio_install_date":"2026-07-01","direct_index":"47.789","inverse_index":"0.000"},{"id":2,"nr_ord":2,"room_no":"","room_type":"Buc\u0103t\u0103rie","seal_serial":"","counter_type":"Apa calda","mech_serial":"54980032","mech_install_date":"2015-03-05","model":"E-RM 30 AC","radio_serial":"302007221","radio_install_date":"2026-07-01","direct_index":"32.140","inverse_index":"0.000"},{"id":3,"nr_ord":3,"room_no":"","room_type":"Baie","seal_serial":"","counter_type":"Apa rece","mech_serial":"54978029","mech_install_date":"2015-03-05","model":"E-RM 30 AR","radio_serial":"302006984","radio_install_date":"2026-07-01","direct_index":"28.650","inverse_index":"0.000"},{"id":4,"nr_ord":4,"room_no":"","room_type":"Baie","seal_serial":"","counter_type":"Apa calda","mech_serial":"54980034","mech_install_date":"2015-03-05","model":"E-RM 30 AC","radio_serial":"302007211","radio_install_date":"2026-07-01","direct_index":"19.820","inverse_index":"0.000"}];
+var coldWaterModels = ["ADDRA WMP","Axioma AR","E-RM 30 AR","OP-LWAN AR","UltrimisAR"];
+var hotWaterModels  = ["Axioma AC","E-RM 30 AC","OP-LWAN AC","UltrimisAC"];
+var waterCountersData = [{"id":78083,"nr_ord":1,"room_no":"","room_type":"-","seal_serial":"","counter_type":"-","mech_serial":"","mech_install_date":"","model":"","radio_serial":"","radio_install_date":"","direct_index":"0","inverse_index":"0"},{"id":78084,"nr_ord":2,"room_no":"","room_type":"Bucatarie","seal_serial":"","counter_type":"Apa calda","mech_serial":"63326735","mech_install_date":"2015-03-11","model":"E-RM 30 AC","radio_serial":"302139123","radio_install_date":"2015-03-11","direct_index":"0","inverse_index":"0"},{"id":78085,"nr_ord":3,"room_no":"","room_type":"Baie","seal_serial":"","counter_type":"Apa rece","mech_serial":"63189283","mech_install_date":"2015-03-11","model":"E-RM 30 AR","radio_serial":"302658855","radio_install_date":"2015-03-11","direct_index":"0","inverse_index":"0"},{"id":78086,"nr_ord":4,"room_no":"","room_type":"Baie","seal_serial":"","counter_type":"Apa calda","mech_serial":"63333400","mech_install_date":"2015-03-11","model":"E-RM 30 AC","radio_serial":"302140247","radio_install_date":"2015-03-11","direct_index":"0","inverse_index":"0"}];
 
+/* Sursă: SelectWaterCounter() – lista de modele după tipul contorului; fără tip, „-”. */
 function handleCounterTypeChange(counterType, selectedModel) {
     var sel = document.getElementById('modalCounterModel');
     if (!sel) return;
-    sel.innerHTML = '';
-    var list = (counterType === 'Apa calda') ? hotWaterModels : coldWaterModels;
+    sel.innerHTML = '<option value="">-</option>';
+    var list = counterType === 'Apa calda' ? hotWaterModels : (counterType === 'Apa rece' ? coldWaterModels : []);
     list.forEach(function(m) {
         var opt = document.createElement('option');
         opt.value = m;
         opt.textContent = m;
-        if (selectedModel && selectedModel === m) {
-            opt.selected = true;
-        } else if (!selectedModel && m === list[0]) {
-            opt.selected = true;
-        }
+        if (selectedModel === m) opt.selected = true;
         sel.appendChild(opt);
     });
+    sel.disabled = list.length === 0;
 }
 
 function renderWaterCountersTable() {
@@ -1971,18 +2054,19 @@ function renderWaterCountersTable() {
 
     var html = '';
     waterCountersData.forEach(function(c, idx) {
-        var isCold = (c.counter_type === 'Apa rece');
-        var badgeClass = isCold ? 'water-badge-cold' : 'water-badge-hot';
-        var badgeLabel = isCold ? 'Apă rece' : 'Apă caldă';
+        var typeCell = '-';
+        if (c.counter_type === 'Apa rece' || c.counter_type === 'Apa calda') {
+            var isCold = (c.counter_type === 'Apa rece');
+            typeCell = '<span class="' + (isCold ? 'water-badge-cold' : 'water-badge-hot') + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg> ' + (isCold ? 'Apă rece' : 'Apă caldă') + '</span>';
+        }
 
         html += '<tr>' +
-            '<td style="text-align: center; font-weight: 600; color: var(--text-muted);">' + (idx + 1) + '</td>' +
-            '<td style="text-align: center; font-weight: 500;">' + (c.room_no ? escapeHtml(c.room_no) : '&ndash;') + '</td>' +
-            '<td style="font-weight: 600; color: var(--text-main);">' + escapeHtml(c.room_type) + '</td>' +
-            '<td><span class="' + badgeClass + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg> ' + badgeLabel + '</span></td>' +
-            '<td style="font-size: 12.5px; color: var(--text-main); font-weight: 500;">' + (c.model ? escapeHtml(c.model) : '&ndash;') + '</td>' +
-            '<td><span style="font-family: monospace; font-size: 12.5px; font-weight: 600; color: var(--text-main);">' + escapeHtml(c.mech_serial) + '</span></td>' +
-            '<td><span style="font-family: monospace; font-size: 12.5px; font-weight: 500; color: var(--text-muted);">' + (c.radio_serial ? escapeHtml(c.radio_serial) : '&ndash;') + '</span></td>' +
+            '<td class="td-code" style="text-align: center;">' + (idx + 1) + '</td>' +
+            '<td style="text-align: center;">' + escapeHtml(c.room_no || '') + '</td>' +
+            '<td class="td-name">' + escapeHtml(c.room_type || '-') + '</td>' +
+            '<td>' + typeCell + '</td>' +
+            '<td>' + (c.mech_serial ? '<span class="serial-value">' + escapeHtml(c.mech_serial) + '</span>' : '') + '</td>' +
+            '<td>' + (c.radio_serial ? '<span class="serial-value">' + escapeHtml(c.radio_serial) + '</span>' : '') + '</td>' +
             '<td style="text-align: center;">' +
                 '<div style="display: inline-flex; align-items: center; gap: 4px;">' +
                     '<button type="button" class="btn-action-icon" title="Modifică contor" onclick="openEditWaterCounterModal(' + c.id + ')">' +
@@ -2013,16 +2097,16 @@ function openAddWaterCounterModal() {
     document.getElementById('modalCounterId').value = '';
     document.getElementById('waterCounterModalTitle').textContent = 'Echipare apa – Adaugare';
     document.getElementById('modalCounterRoomNo').value = '';
-    document.getElementById('modalCounterRoomType').selectedIndex = 0;
+    document.getElementById('modalCounterRoomType').value = '-';
     document.getElementById('modalCounterSealSerial').value = '';
-    document.getElementById('modalCounterType').value = 'Apa rece';
-    handleCounterTypeChange('Apa rece', 'E-RM 30 AR');
+    document.getElementById('modalCounterType').value = '-';
+    handleCounterTypeChange('-', '');
     document.getElementById('modalCounterMechSerial').value = '';
-    document.getElementById('modalCounterMechInstallDate').value = '2015-03-05';
+    SonicDatepicker.setValue(document.getElementById('modalCounterMechInstallDate'), new Date());
     document.getElementById('modalCounterRadioSerial').value = '';
-    document.getElementById('modalCounterRadioInstallDate').value = '2026-07-01';
-    document.getElementById('modalCounterDirectIndex').value = '0.000';
-    document.getElementById('modalCounterInverseIndex').value = '0.000';
+    SonicDatepicker.setValue(document.getElementById('modalCounterRadioInstallDate'), new Date());
+    document.getElementById('modalCounterDirectIndex').value = '0';
+    document.getElementById('modalCounterInverseIndex').value = '0';
     document.getElementById('waterCounterModal').style.display = 'flex';
     setTimeout(function() {
         document.getElementById('modalCounterRoomNo').focus();
@@ -2036,16 +2120,16 @@ function openEditWaterCounterModal(id) {
     document.getElementById('modalCounterId').value = item.id;
     document.getElementById('waterCounterModalTitle').textContent = 'Echipare apa';
     document.getElementById('modalCounterRoomNo').value = item.room_no || '';
-    document.getElementById('modalCounterRoomType').value = item.room_type || 'Bucătărie';
+    document.getElementById('modalCounterRoomType').value = item.room_type || '-';
     document.getElementById('modalCounterSealSerial').value = item.seal_serial || '';
-    document.getElementById('modalCounterType').value = item.counter_type || 'Apa rece';
-    handleCounterTypeChange(item.counter_type || 'Apa rece', item.model || (item.counter_type === 'Apa calda' ? 'E-RM 30 AC' : 'E-RM 30 AR'));
+    document.getElementById('modalCounterType').value = item.counter_type || '-';
+    handleCounterTypeChange(item.counter_type || '-', item.model || '');
     document.getElementById('modalCounterMechSerial').value = item.mech_serial || '';
-    document.getElementById('modalCounterMechInstallDate').value = item.mech_install_date || '2015-03-05';
+    SonicDatepicker.setValue(document.getElementById('modalCounterMechInstallDate'), item.mech_install_date || '');
     document.getElementById('modalCounterRadioSerial').value = item.radio_serial || '';
-    document.getElementById('modalCounterRadioInstallDate').value = item.radio_install_date || '2026-07-01';
-    document.getElementById('modalCounterDirectIndex').value = (item.direct_index !== undefined) ? item.direct_index : '0.000';
-    document.getElementById('modalCounterInverseIndex').value = (item.inverse_index !== undefined) ? item.inverse_index : '0.000';
+    SonicDatepicker.setValue(document.getElementById('modalCounterRadioInstallDate'), item.radio_install_date || '');
+    document.getElementById('modalCounterDirectIndex').value = (item.direct_index !== undefined) ? item.direct_index : '0';
+    document.getElementById('modalCounterInverseIndex').value = (item.inverse_index !== undefined) ? item.inverse_index : '0';
     document.getElementById('waterCounterModal').style.display = 'flex';
 }
 
@@ -2064,11 +2148,23 @@ function saveWaterCounter(e) {
     var counterType = document.getElementById('modalCounterType').value;
     var model = document.getElementById('modalCounterModel').value;
     var mechSerial = document.getElementById('modalCounterMechSerial').value.trim();
-    var mechInstallDate = document.getElementById('modalCounterMechInstallDate').value;
+    var mechInstallDate = SonicDatepicker.getISO(document.getElementById('modalCounterMechInstallDate'));
     var radioSerial = document.getElementById('modalCounterRadioSerial').value.trim();
-    var radioInstallDate = document.getElementById('modalCounterRadioInstallDate').value;
-    var directIndex = document.getElementById('modalCounterDirectIndex').value.trim() || '0.000';
-    var inverseIndex = document.getElementById('modalCounterInverseIndex').value.trim() || '0.000';
+    var radioInstallDate = SonicDatepicker.getISO(document.getElementById('modalCounterRadioInstallDate'));
+    var directIndex = document.getElementById('modalCounterDirectIndex').value.trim() || '0';
+    var inverseIndex = document.getElementById('modalCounterInverseIndex').value.trim() || '0';
+
+    // Validări din sursă (FlatWaterEdit.aspx)
+    if (roomNo && !/^\d+$/.test(roomNo)) {
+        alert('Numarul Room Number trebuie sa fie numeric');
+        document.getElementById('modalCounterRoomNo').focus();
+        return false;
+    }
+    var mechDateEl = document.getElementById('modalCounterMechInstallDate'), radioDateEl = document.getElementById('modalCounterRadioInstallDate');
+    if ((mechDateEl.value && !mechInstallDate) || (radioDateEl.value && !radioInstallDate)) {
+        alert('Data montaj apa nu este valida.');
+        return false;
+    }
 
     if (!mechSerial) {
         alert('Seria contor mecanic este obligatorie.');
@@ -2156,8 +2252,14 @@ function handleApartamentWaterSubmit(e) {
     if (e && e.preventDefault) e.preventDefault();
     var persNo = document.getElementById('txtPersNo').value.trim();
     if (!/^\d+$/.test(persNo)) {
-        alert('Numărul de persoane este un număr întreg.');
+        alert('Numarul de persoane este un intreg.');
         document.getElementById('txtPersNo').focus();
+        return false;
+    }
+    var instEl = document.getElementById('dtpWaterInstallDate');
+    if (instEl.value && !SonicDatepicker.getISO(instEl)) {
+        alert('Data montaj apa nu este valida.');
+        instEl.focus();
         return false;
     }
     alert('Datele de calcul apă și echiparea apartamentului au fost salvate cu succes!');
@@ -2250,7 +2352,7 @@ function selectCity(cityName) {
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

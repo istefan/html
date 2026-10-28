@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Dashboard – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Dashboard Billing – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="assets/js/sonic-live-net.js"></script>
 </head>
 <body>
 
@@ -179,7 +185,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +193,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +330,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,15 +572,15 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-billing-logo.svg" alt="SONIC BILLING" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
-            <div class="header-page-title">Dashboard</div>
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
+            <div class="header-page-title">Dashboard Billing</div>
 
             <!-- User profile avatar (always visible) -->
             <a href="contul-meu.html" class="user-profile" title="Contul meu">SI</a>
@@ -573,14 +621,7 @@
                             aria-selected="false"
                             aria-controls="help-pane-1"
                             data-tab="1">
-                        Indicatori KPI                    </button>
-                                        <button class="help-tab-btn "
-                            role="tab"
-                            id="help-tab-2"
-                            aria-selected="false"
-                            aria-controls="help-pane-2"
-                            data-tab="2">
-                        Citiri Recente                    </button>
+                        Indicatori                    </button>
                                     </nav>
                 <!-- Tab content panes -->
                 <div class="help-tab-content">
@@ -590,12 +631,13 @@
                          aria-labelledby="help-tab-0"
                          data-pane="0">
                         
-            <h4>Bine ați venit în SONIC BILLING</h4>
-            <p>Dashboard-ul vă oferă o privire de ansamblu în timp real asupra activității de facturare pentru energie termică și apă. 
-            Indicatorii afișați sunt actualizați la fiecare accesare a paginii.</p>
-            <p>Utilizați meniul din stânga pentru a naviga între modulele aplicației: 
-            <strong>Administrare</strong>, <strong>Master Data Management</strong>, <strong>Calcul</strong>, 
-            <strong>Facturare</strong> și <strong>Rapoarte</strong>.</p>
+            <h4>Dashboard Billing</h4>
+            <p>Drumul citirilor: de la gateway-urile din teren până la factură.</p>
+            <ul>
+                <li><strong>Harta live</strong> – gateway-urile din toate orașele trimit citiri spre serverul SONIC; punctele roșii nu au transmis.</li>
+                <li><strong>Fluxul de calcul</strong> – câte NOD-uri sunt în fiecare etapă a perioadei curente. Click pe o etapă deschide Monitorizare Calcul.</li>
+                <li><strong>Operatori</strong> – progresul fiecărui operator de calcul și termenele depășite.</li>
+            </ul>
                             </div>
                                         <div class="help-tab-pane "
                          role="tabpanel"
@@ -603,29 +645,11 @@
                          aria-labelledby="help-tab-1"
                          data-pane="1">
                         
-            <h4>Ce reprezintă indicatorii?</h4>
             <ul>
-                <li><strong>Total Parteneri</strong> – numărul total de parteneri (proprietari/chiriași) înregistrați în sistem.</li>
-                <li><strong>Contracte Active</strong> – contractele de furnizare aflate în stare activă la momentul curent.</li>
-                <li><strong>Rată Citire</strong> – procentul contorelor/repartitoarelor citite față de total, în perioada de calcul curentă.</li>
-                <li><strong>Facturi Neemise</strong> – numărul de facturi calculate dar neemise încă; necesită acțiune din modulul Facturare.</li>
+                <li><strong>Rata de citire</strong> – procentul echipamentelor citite la data citirii (radio + walk-by).</li>
+                <li><strong>Calitatea citirilor</strong> – cum au fost obținute valorile: radio, walk-by, estimate, necitite.</li>
+                <li><strong>Plauzibilitate</strong> – citiri negative, consumuri exagerate și consumuri zero care așteaptă rezoluție (pasul 4 din calcul).</li>
             </ul>
-                            </div>
-                                        <div class="help-tab-pane "
-                         role="tabpanel"
-                         id="help-pane-2"
-                         aria-labelledby="help-tab-2"
-                         data-pane="2">
-                        
-            <h4>Tabelul cu citiri recente</h4>
-            <p>Afișează ultimele citiri introduse în sistem, indiferent de metodă (manuală, import fișier sau citire radio). 
-            Statusurile posibile sunt:</p>
-            <ul>
-                <li><strong>Validat</strong> – citirea a trecut verificările de plauzibilitate.</li>
-                <li><strong>Nevalidat</strong> – citirea există dar nu a fost validată manual de un operator.</li>
-                <li><strong>Eroare</strong> – citirea a eșuat la validare (valoare imposibilă, contor lipsă etc.).</li>
-            </ul>
-            <p>Apăsați <em>„Vezi toate"</em> pentru a deschide lista completă cu filtre avansate.</p>
                             </div>
                                     </div>
                     </div><!-- /.help-panel-inner -->
@@ -654,101 +678,341 @@
 
     <div class="content">
 
-        <div class="page-title">
-            <h1>Dashboard</h1>
-            <p>Bine ai revenit. Iată o privire de ansamblu asupra activității de billing.</p>
-        </div>
+<div class="page-title-container">
+    <div class="page-title">
+        <h1>Dashboard Billing</h1>
+        <p>Fluxul citirilor – de la gateway-urile din teren, prin calcul, până la factură.</p>
+    </div>
+</div>
 
-        <!-- ── KPI Cards ──────────────────────────────────────────── -->
-        <div class="grid-4">
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">Total Parteneri</span>
-                    <div class="card-icon"><div class="card-icon-inner" style="border-radius:50%;"></div></div>
-                </div>
-                <div class="card-value">1,284</div>
-                <div class="card-trend">↑ 3.2% vs luna trecută</div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">Contracte Active</span>
-                    <div class="card-icon"><div class="card-icon-inner"></div></div>
-                </div>
-                <div class="card-value">976</div>
-                <div class="card-trend">↑ 1.8% vs luna trecută</div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">Rată Citire (perioadă)</span>
-                    <div class="card-icon"><div class="card-icon-inner"></div></div>
-                </div>
-                <div class="card-value">96.4%</div>
-                <div class="card-trend negative">↓ 0.6% vs perioada anterioară</div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">Facturi Neemise</span>
-                    <div class="card-icon"><div class="card-icon-inner" style="border-color:var(--red);"></div></div>
-                </div>
-                <div class="card-value">38</div>
-                <div class="card-trend negative">Necesită acțiune</div>
-            </div>
+<!-- React: <LiveHero /> -->
+<section class="live-hero">
+    <div id="billingHeroMap"></div>
+    <div class="live-hero-shade"></div>
+    <div class="live-hero-content">
+        <span class="live-eyebrow"><span class="pro-live-dot"></span>Fluxul citirilor · live</span>
+        <h2 class="live-title">Citirile ajung acum din 6 orașe</h2>
+        <p class="live-subtitle">99 din 101 gateway-uri transmit către serverul SONIC, pentru 10.628 de echipamente. Fiecare pachet intră direct în bufferul de citiri brute și în calculul perioadei curente.</p>
+        <div class="live-actions">
+            <a href="initiere-calcul.html" class="btn-primary">Inițiere calcul</a>
+            <a href="citiri-brute-apa.html" class="btn-secondary">Citiri brute</a>
         </div>
+        <div class="live-stats">
+            <div class="live-stat"><span class="live-stat-label">Citiri azi</span><span class="live-stat-value" id="billReadings">1.284.907</span></div>
+            <div class="live-stat"><span class="live-stat-label">Rata de citire</span><span class="live-stat-value">97,8<small> %</small></span><span class="live-stat-meta">+0,6 față de septembrie</span></div>
+            <div class="live-stat"><span class="live-stat-label">Perioada curentă</span><span class="live-stat-value">56<small> %</small></span><span class="live-stat-meta">calcul finalizat</span></div>
+        </div>
+    </div>
+    <div class="live-corner"><span class="pro-live-dot"></span><strong id="billClock">--:--</strong><span>· <span id="billRate">0</span> citiri / s</span></div>
+    <ul class="live-ticker" id="billTicker" aria-live="polite"></ul>
+</section>
 
-        <!-- ── Charts ─────────────────────────────────────────────── -->
-        <div class="grid-2-1">
-            <div class="chart-container">
-                <div class="chart-header">
-                    <span class="chart-title">Evoluție Consum Energie Termică</span>
-                    <div class="chart-period">Anul curent</div>
-                </div>
-                <div class="chart-placeholder">
-                    <div class="chart-line" style="bottom:30%;">
-                        <svg width="100%" height="100%" style="overflow:visible;position:absolute;bottom:0;">
-                            <path d="M0,80 Q100,60 200,90 T400,50 T600,20 T800,0" fill="none" stroke="var(--accent)" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <div class="chart-labels">
-                        <span>Ian</span><span>Feb</span><span>Mar</span><span>Apr</span><span>Mai</span><span>Iun</span><span>Iul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
-                    </div>
-                </div>
+<!-- React: <CalcFlow /> -->
+<div class="card pro-panel">
+    <div class="edit-section-header">
+        <span class="edit-section-title">Perioada de calcul 01.09.2026 - 30.09.2026 · 21 NOD-uri</span>
+        <a href="monitorizare-calcul.html" class="pro-panel-link">Monitorizare calcul <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+    </div>
+    <div class="dash-flow">
+                <a href="monitorizare-calcul.html" class="dash-flow-step">
+            <span class="dash-flow-num">5</span>
+            <span class="dash-flow-label">Alocat</span>
+            <span class="dash-flow-meta">neînceput</span>
+        </a>
+                <a href="monitorizare-calcul.html" class="dash-flow-step">
+            <span class="dash-flow-num">3</span>
+            <span class="dash-flow-label">Pregătire</span>
+            <span class="dash-flow-meta">note, citiri</span>
+        </a>
+                <a href="monitorizare-calcul.html" class="dash-flow-step">
+            <span class="dash-flow-num">4</span>
+            <span class="dash-flow-label">Calcul</span>
+            <span class="dash-flow-meta">necitite, plauzibil.</span>
+        </a>
+                <a href="monitorizare-calcul.html" class="dash-flow-step">
+            <span class="dash-flow-num">3</span>
+            <span class="dash-flow-label">Facturare</span>
+            <span class="dash-flow-meta">gata de facturare</span>
+        </a>
+                <a href="monitorizare-calcul.html" class="dash-flow-step is-done">
+            <span class="dash-flow-num">6</span>
+            <span class="dash-flow-label">Încheiat</span>
+            <span class="dash-flow-meta">notificat clientul</span>
+        </a>
             </div>
-            <div>
-                <div class="chart-container" style="height:100%;">
-                    <span class="chart-title" style="display:block;margin-bottom:32px;">Distribuție Servicii</span>
-                    <div style="height:140px;display:flex;align-items:center;justify-content:center;margin-bottom:32px;">
-                        <div style="width:140px;height:140px;border-radius:50%;border:20px solid var(--accent);border-left-color:#edf2f7;position:relative;">
-                            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:18px;font-weight:600;">976</div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="list-item"><span class="list-label"><span class="dot" style="background:var(--accent);"></span> Energie Termică</span><span class="list-value">71%</span></div>
-                        <div class="list-item"><span class="list-label"><span class="dot" style="background:#edf2f7;"></span> Apă</span><span class="list-value">29%</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="progress-bar" style="margin-top: 14px;"><div class="progress-bar__fill" style="width: 56%;"></div></div>
+    <span class="progress-label">56% din pașii de calcul ai perioadei sunt finalizați</span>
+</div>
 
-        <!-- ── Tabel recent ────────────────────────────────────────── -->
-        <div class="table-container">
-            <div class="table-header">
-                <span class="chart-title">Citiri Recente</span>
-                <a href="facturare.html" class="table-link">Vezi toate ↗</a>
-            </div>
-            <table>
-                <thead><tr><th>Partener</th><th>Apartament</th><th>Tip Serviciu</th><th>Valoare</th><th>Status</th></tr></thead>
-                <tbody>
-                    <tr><td style="font-weight:500;">Ionescu Maria</td><td>Bloc 12, Ap. 4</td><td>Energie Termică</td><td>0.834 Gcal</td><td><span class="status-badge status-online">Validat</span></td></tr>
-                    <tr><td style="font-weight:500;">Popescu Andrei</td><td>Bloc 7, Ap. 18</td><td>Apă Rece</td><td>4.2 m³</td><td><span class="status-badge status-online">Validat</span></td></tr>
-                    <tr><td style="font-weight:500;">Dumitrescu Ion</td><td>Bloc 3, Ap. 9</td><td>Energie Termică</td><td>—</td><td><span class="status-badge status-warning">Nevalidat</span></td></tr>
-                    <tr><td style="font-weight:500;">Constantin Ana</td><td>Bloc 15, Ap. 2</td><td>Apă Caldă</td><td>2.8 m³</td><td><span class="status-badge status-error">Eroare</span></td></tr>
-                </tbody>
-            </table>
+<div class="pro-grid-2-1">
+    <!-- React: <OperatorTable /> -->
+    <div class="card pro-panel">
+        <div class="edit-section-header">
+            <span class="edit-section-title">Operatori de calcul</span>
+            <a href="monitorizare-calcul.html" class="pro-panel-link">Detalii <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
         </div>
+        <div class="pro-panel-flush">
+            <div class="table-scroll">
+                <table class="partners-table">
+                    <thead>
+                        <tr><th>Operator</th><th style="text-align: center;">NOD-uri</th><th style="text-align: center;">Încheiate</th><th style="text-align: center;">Termen depășit</th><th style="width: 34%;">Progres</th></tr>
+                    </thead>
+                    <tbody>
+                                                <tr>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar pro-avatar--sm">MT</span>
+                                    <div style="min-width: 0;"><div class="pro-person-name">Manuel Tudorache</div><div class="pro-person-meta">Operator calcul</div></div>
+                                </div>
+                            </td>
+                            <td style="text-align: center;">3</td>
+                            <td style="text-align: center;">2</td>
+                            <td style="text-align: center;"><span class="status-badge status-online">0</span></td>
+                            <td>
+                                <div class="progress-bar"><div class="progress-bar__fill" style="width: 94%;"></div></div>
+                                <span class="progress-label">94%</span>
+                            </td>
+                        </tr>
+                                                <tr>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar pro-avatar--sm">GS</span>
+                                    <div style="min-width: 0;"><div class="pro-person-name">Georgiana Serban</div><div class="pro-person-meta">Operator calcul</div></div>
+                                </div>
+                            </td>
+                            <td style="text-align: center;">3</td>
+                            <td style="text-align: center;">2</td>
+                            <td style="text-align: center;"><span class="status-badge status-online">0</span></td>
+                            <td>
+                                <div class="progress-bar"><div class="progress-bar__fill" style="width: 94%;"></div></div>
+                                <span class="progress-label">94%</span>
+                            </td>
+                        </tr>
+                                                <tr>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar pro-avatar--sm">IF</span>
+                                    <div style="min-width: 0;"><div class="pro-person-name">Irina Fomici</div><div class="pro-person-meta">Operator calcul</div></div>
+                                </div>
+                            </td>
+                            <td style="text-align: center;">3</td>
+                            <td style="text-align: center;">1</td>
+                            <td style="text-align: center;"><span class="status-badge status-online">0</span></td>
+                            <td>
+                                <div class="progress-bar"><div class="progress-bar__fill" style="width: 67%;"></div></div>
+                                <span class="progress-label">67%</span>
+                            </td>
+                        </tr>
+                                                <tr>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar pro-avatar--sm">CB</span>
+                                    <div style="min-width: 0;"><div class="pro-person-name">Carmen Bîndaroi</div><div class="pro-person-meta">Operator calcul</div></div>
+                                </div>
+                            </td>
+                            <td style="text-align: center;">8</td>
+                            <td style="text-align: center;">1</td>
+                            <td style="text-align: center;"><span class="status-badge status-online">0</span></td>
+                            <td>
+                                <div class="progress-bar"><div class="progress-bar__fill" style="width: 42%;"></div></div>
+                                <span class="progress-label">42%</span>
+                            </td>
+                        </tr>
+                                                <tr>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar pro-avatar--sm">SC</span>
+                                    <div style="min-width: 0;"><div class="pro-person-name">Stefania Chiran</div><div class="pro-person-meta">Specialist calcul</div></div>
+                                </div>
+                            </td>
+                            <td style="text-align: center;">2</td>
+                            <td style="text-align: center;">0</td>
+                            <td style="text-align: center;"><span class="status-badge status-online">0</span></td>
+                            <td>
+                                <div class="progress-bar"><div class="progress-bar__fill" style="width: 33%;"></div></div>
+                                <span class="progress-label">33%</span>
+                            </td>
+                        </tr>
+                                                <tr>
+                            <td>
+                                <div class="pro-person">
+                                    <span class="pro-avatar pro-avatar--sm">NM</span>
+                                    <div style="min-width: 0;"><div class="pro-person-name">Nina Marcu</div><div class="pro-person-meta">Operator calcul</div></div>
+                                </div>
+                            </td>
+                            <td style="text-align: center;">2</td>
+                            <td style="text-align: center;">0</td>
+                            <td style="text-align: center;"><span class="status-badge status-online">0</span></td>
+                            <td>
+                                <div class="progress-bar"><div class="progress-bar__fill" style="width: 0%;"></div></div>
+                                <span class="progress-label">0%</span>
+                            </td>
+                        </tr>
+                                            </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- React: <Deadlines /> -->
+    <div class="card pro-panel">
+        <div class="edit-section-header">
+            <span class="edit-section-title">Termene apropiate</span>
+            <a href="initiere-calcul.html" class="pro-panel-link">Inițiere calcul <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+        </div>
+        <ul class="pro-feed">
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon pro-feed-icon--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">NOD 81-011-0041 · Apă</div>
+                    <div class="pro-feed-text">Asociația de Proprietari 55</div>
+                    <div class="pro-feed-meta">Carmen Bîndaroi · termen 30.09.2026 · mai sunt 1 zile</div>
+                </div>
+                <a href="procesare-calcul.html?nod=81-011-0041" class="btn-action-icon" title="Deschide calculul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon pro-feed-icon--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">NOD 81-011-0040 · Apă</div>
+                    <div class="pro-feed-text">Asociația de Proprietari 55</div>
+                    <div class="pro-feed-meta">Carmen Bîndaroi · termen 30.09.2026 · mai sunt 1 zile</div>
+                </div>
+                <a href="procesare-calcul.html?nod=81-011-0040" class="btn-action-icon" title="Deschide calculul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon pro-feed-icon--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">NOD 81-029-0030 · Apă</div>
+                    <div class="pro-feed-text">ASOCIATIA DE PROPRIETARI BLOC 50</div>
+                    <div class="pro-feed-meta">Carmen Bîndaroi · termen 30.09.2026 · mai sunt 1 zile</div>
+                </div>
+                <a href="procesare-calcul.html?nod=81-029-0030" class="btn-action-icon" title="Deschide calculul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon pro-feed-icon--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">NOD 81-029-0029 · Apă</div>
+                    <div class="pro-feed-text">ASOCIATIA DE PROPRIETARI BLOC 50</div>
+                    <div class="pro-feed-meta">Carmen Bîndaroi · termen 30.09.2026 · mai sunt 1 zile</div>
+                </div>
+                <a href="procesare-calcul.html?nod=81-029-0029" class="btn-action-icon" title="Deschide calculul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon pro-feed-icon--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">NOD 81-004-0847 · Energie Termică</div>
+                    <div class="pro-feed-text">P-TA VICTORIEI</div>
+                    <div class="pro-feed-meta">Carmen Bîndaroi · termen 30.09.2026 · mai sunt 1 zile</div>
+                </div>
+                <a href="procesare-calcul.html?nod=81-004-0847" class="btn-action-icon" title="Deschide calculul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon pro-feed-icon--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">NOD 81-011-0038 · Apă</div>
+                    <div class="pro-feed-text">Asociația de Proprietari 55</div>
+                    <div class="pro-feed-meta">Carmen Bîndaroi · termen 30.09.2026 · mai sunt 1 zile</div>
+                </div>
+                <a href="procesare-calcul.html?nod=81-011-0038" class="btn-action-icon" title="Deschide calculul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+<div class="pro-grid-3">
+    <!-- React: <ReadingQuality /> -->
+    <div class="card pro-panel">
+        <div class="edit-section-header"><span class="edit-section-title">Calitatea citirilor · perioada curentă</span></div>
+        <div class="pro-ring-row">
+            <div class="pro-ring" style="--pct: 91.4;"><div class="pro-ring-inner"><span class="pro-ring-value">91,4%</span><span class="pro-ring-label">radio</span></div></div>
+            <div class="pro-ring-stats">
+                <div><span>Citite radio:</span> <strong>91,4%</strong></div>
+                <div><span>Walk-by:</span> <strong>6,4%</strong></div>
+                <div><span>Estimate:</span> <strong>1,7%</strong></div>
+                <div><span>Necitite:</span> <strong>0,5%</strong></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- React: <Plausibility /> -->
+    <div class="card pro-panel">
+        <div class="edit-section-header">
+            <span class="edit-section-title">Plauzibilitate · de rezolvat</span>
+            <a href="parametri-sistem.html" class="pro-panel-link">Praguri <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+        </div>
+        <div class="calc-kpi-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 10px;">
+            <div class="calc-kpi"><span class="calc-kpi-label">Negative</span><span class="calc-kpi-value">14</span></div>
+            <div class="calc-kpi"><span class="calc-kpi-label">Exagerate</span><span class="calc-kpi-value">87</span></div>
+            <div class="calc-kpi"><span class="calc-kpi-label">Zero</span><span class="calc-kpi-value">46</span></div>
+        </div>
+        <span class="progress-label">Prag consum exagerat: peste media blocului + 50% sau peste media ultimelor 3 luni + 50%.</span>
+    </div>
+
+    <!-- React: <QuickLinks /> -->
+    <div class="card pro-panel">
+        <div class="edit-section-header"><span class="edit-section-title">Acces rapid</span></div>
+        <ul class="pro-feed">
+                        <li class="pro-feed-item">
+                <div class="pro-feed-body"><div class="pro-feed-title">Inițiere calcul</div><div class="pro-feed-meta">NOD-urile operatorului, ordonate după termen</div></div>
+                <a href="initiere-calcul.html" class="btn-action-icon" title="Deschide inițiere calcul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+            </li>
+                        <li class="pro-feed-item">
+                <div class="pro-feed-body"><div class="pro-feed-title">Monitorizare calcul</div><div class="pro-feed-meta">Productivitate și reasignare operatori</div></div>
+                <a href="monitorizare-calcul.html" class="btn-action-icon" title="Deschide monitorizare calcul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+            </li>
+                        <li class="pro-feed-item">
+                <div class="pro-feed-body"><div class="pro-feed-title">Citiri brute apă</div><div class="pro-feed-meta">Bufferul de citiri importate</div></div>
+                <a href="citiri-brute-apa.html" class="btn-action-icon" title="Deschide citiri brute apă"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+            </li>
+                        <li class="pro-feed-item">
+                <div class="pro-feed-body"><div class="pro-feed-title">Validare citire</div><div class="pro-feed-meta">Validarea citirilor pe NOD și perioadă</div></div>
+                <a href="validare-apa.html" class="btn-action-icon" title="Deschide validare citire"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+            </li>
+                        <li class="pro-feed-item">
+                <div class="pro-feed-body"><div class="pro-feed-title">Gestiune facturare</div><div class="pro-feed-meta">Proforme, export, fișiere pe disc</div></div>
+                <a href="facturare.html" class="btn-action-icon" title="Deschide gestiune facturare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+            </li>
+                        <li class="pro-feed-item">
+                <div class="pro-feed-body"><div class="pro-feed-title">Rapoarte</div><div class="pro-feed-meta">61 de rapoarte cu căutare</div></div>
+                <a href="rapoarte.html" class="btn-action-icon" title="Deschide rapoarte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+<script>
+/* Dashboard Billing – harta citirilor (date demo; în producție WebSocket /api/network/live) */
+(function () {
+    var HQ = {"name":"SONIC HQ","address":"Str. Nițu Vasile 57, Sector 4, București","gps":[44.3836,26.1166]};
+    var NODES = [{"id":"GW-40111","gps":[44.40645,26.05567],"label":"GW-40111 · București · 127 echipamente","off":false},{"id":"GW-40114","gps":[44.45602,26.05535],"label":"GW-40114 · București · 143 echipamente","off":false},{"id":"GW-40129","gps":[44.40892,26.11753],"label":"GW-40129 · București · 159 echipamente","off":false},{"id":"GW-40144","gps":[44.43946,26.1224],"label":"GW-40144 · București · 180 echipamente","off":false},{"id":"GW-40150","gps":[44.39062,26.10324],"label":"GW-40150 · București · 120 echipamente","off":false},{"id":"GW-40163","gps":[44.47583,26.06286],"label":"GW-40163 · București · 108 echipamente","off":true},{"id":"GW-40173","gps":[44.40527,26.12018],"label":"GW-40173 · București · 114 echipamente","off":false},{"id":"GW-40184","gps":[44.38781,26.11992],"label":"GW-40184 · București · 61 echipamente","off":false},{"id":"GW-40199","gps":[44.47101,26.17076],"label":"GW-40199 · București · 138 echipamente","off":false},{"id":"GW-40214","gps":[44.41336,26.06826],"label":"GW-40214 · București · 166 echipamente","off":false},{"id":"GW-40218","gps":[44.41568,26.12599],"label":"GW-40218 · București · 182 echipamente","off":false},{"id":"GW-40235","gps":[44.43779,26.09742],"label":"GW-40235 · București · 75 echipamente","off":false},{"id":"GW-40244","gps":[44.3861,26.07603],"label":"GW-40244 · București · 44 echipamente","off":false},{"id":"GW-40256","gps":[44.46255,26.05216],"label":"GW-40256 · București · 32 echipamente","off":false},{"id":"GW-40272","gps":[44.40417,26.09399],"label":"GW-40272 · București · 114 echipamente","off":false},{"id":"GW-40276","gps":[44.41106,26.07058],"label":"GW-40276 · București · 123 echipamente","off":false},{"id":"GW-40283","gps":[44.40804,26.02834],"label":"GW-40283 · București · 35 echipamente","off":false},{"id":"GW-40292","gps":[44.45696,26.08903],"label":"GW-40292 · București · 43 echipamente","off":false},{"id":"GW-40307","gps":[44.41262,26.17539],"label":"GW-40307 · București · 187 echipamente","off":false},{"id":"GW-40324","gps":[44.44699,26.049],"label":"GW-40324 · București · 62 echipamente","off":false},{"id":"GW-40337","gps":[44.39027,26.10465],"label":"GW-40337 · București · 77 echipamente","off":false},{"id":"GW-40352","gps":[44.47112,26.09007],"label":"GW-40352 · București · 123 echipamente","off":false},{"id":"GW-40366","gps":[44.41621,26.05828],"label":"GW-40366 · București · 66 echipamente","off":false},{"id":"GW-40377","gps":[44.45623,26.10777],"label":"GW-40377 · București · 87 echipamente","off":false},{"id":"GW-40392","gps":[44.43831,26.04644],"label":"GW-40392 · București · 66 echipamente","off":false},{"id":"GW-40398","gps":[44.45033,26.10546],"label":"GW-40398 · București · 186 echipamente","off":false},{"id":"GW-40406","gps":[44.46606,26.12665],"label":"GW-40406 · București · 46 echipamente","off":false},{"id":"GW-40412","gps":[44.49017,26.1242],"label":"GW-40412 · București · 129 echipamente","off":false},{"id":"GW-40426","gps":[44.40367,26.13982],"label":"GW-40426 · București · 58 echipamente","off":false},{"id":"GW-40435","gps":[44.38555,26.13503],"label":"GW-40435 · București · 81 echipamente","off":false},{"id":"GW-40449","gps":[44.43101,26.15808],"label":"GW-40449 · București · 138 echipamente","off":false},{"id":"GW-40457","gps":[44.41898,26.09102],"label":"GW-40457 · București · 177 echipamente","off":false},{"id":"GW-40473","gps":[44.46107,26.13834],"label":"GW-40473 · București · 166 echipamente","off":false},{"id":"GW-40478","gps":[44.47978,26.08309],"label":"GW-40478 · București · 56 echipamente","off":false},{"id":"GW-40488","gps":[44.46318,26.17367],"label":"GW-40488 · București · 141 echipamente","off":false},{"id":"GW-40495","gps":[44.42984,26.1717],"label":"GW-40495 · București · 55 echipamente","off":true},{"id":"GW-40508","gps":[44.47832,26.08274],"label":"GW-40508 · București · 25 echipamente","off":false},{"id":"GW-40513","gps":[44.43167,26.13977],"label":"GW-40513 · București · 27 echipamente","off":false},{"id":"GW-40522","gps":[44.4815,26.13599],"label":"GW-40522 · București · 25 echipamente","off":false},{"id":"GW-40532","gps":[44.45602,26.10815],"label":"GW-40532 · București · 77 echipamente","off":false},{"id":"GW-40536","gps":[44.43879,26.05863],"label":"GW-40536 · București · 158 echipamente","off":false},{"id":"GW-40544","gps":[44.38951,26.06744],"label":"GW-40544 · București · 32 echipamente","off":false},{"id":"GW-40551","gps":[44.37727,26.10141],"label":"GW-40551 · București · 100 echipamente","off":false},{"id":"GW-40564","gps":[44.47726,26.08414],"label":"GW-40564 · București · 98 echipamente","off":false},{"id":"GW-40580","gps":[44.40801,26.03597],"label":"GW-40580 · București · 139 echipamente","off":false},{"id":"GW-40591","gps":[44.39619,26.0676],"label":"GW-40591 · București · 77 echipamente","off":false},{"id":"GW-40602","gps":[44.38478,26.10893],"label":"GW-40602 · București · 172 echipamente","off":false},{"id":"GW-40618","gps":[44.43488,26.06838],"label":"GW-40618 · București · 166 echipamente","off":false},{"id":"GW-40632","gps":[44.48297,26.13529],"label":"GW-40632 · București · 135 echipamente","off":false},{"id":"GW-40637","gps":[44.40884,26.03517],"label":"GW-40637 · București · 148 echipamente","off":false},{"id":"GW-40653","gps":[44.48352,26.05297],"label":"GW-40653 · București · 36 echipamente","off":false},{"id":"GW-40658","gps":[44.39321,26.15662],"label":"GW-40658 · București · 116 echipamente","off":false},{"id":"GW-40668","gps":[44.4461,26.16482],"label":"GW-40668 · București · 78 echipamente","off":false},{"id":"GW-40678","gps":[44.44291,26.01539],"label":"GW-40678 · București · 90 echipamente","off":false},{"id":"GW-40695","gps":[44.40521,26.0501],"label":"GW-40695 · București · 118 echipamente","off":false},{"id":"GW-40705","gps":[44.48197,26.13913],"label":"GW-40705 · București · 29 echipamente","off":false},{"id":"GW-40714","gps":[44.45587,26.11885],"label":"GW-40714 · București · 172 echipamente","off":false},{"id":"GW-40717","gps":[44.46434,26.12646],"label":"GW-40717 · București · 181 echipamente","off":false},{"id":"GW-40727","gps":[44.42721,26.17266],"label":"GW-40727 · București · 141 echipamente","off":false},{"id":"GW-40735","gps":[44.4541,26.15583],"label":"GW-40735 · București · 60 echipamente","off":false},{"id":"GW-40741","gps":[44.41668,26.06081],"label":"GW-40741 · București · 187 echipamente","off":false},{"id":"GW-40750","gps":[44.44777,26.13185],"label":"GW-40750 · București · 161 echipamente","off":false},{"id":"GW-40767","gps":[44.38001,26.13901],"label":"GW-40767 · București · 54 echipamente","off":false},{"id":"GW-40772","gps":[44.40046,26.13347],"label":"GW-40772 · București · 90 echipamente","off":false},{"id":"GW-40783","gps":[45.18501,28.79216],"label":"GW-40783 · Tulcea · 146 echipamente","off":false},{"id":"GW-40793","gps":[45.17447,28.82093],"label":"GW-40793 · Tulcea · 43 echipamente","off":false},{"id":"GW-40797","gps":[45.17364,28.81024],"label":"GW-40797 · Tulcea · 95 echipamente","off":false},{"id":"GW-40812","gps":[45.18328,28.79292],"label":"GW-40812 · Tulcea · 117 echipamente","off":false},{"id":"GW-40825","gps":[45.17074,28.81798],"label":"GW-40825 · Tulcea · 90 echipamente","off":false},{"id":"GW-40838","gps":[45.17431,28.78615],"label":"GW-40838 · Tulcea · 117 echipamente","off":false},{"id":"GW-40855","gps":[45.18095,28.80919],"label":"GW-40855 · Tulcea · 28 echipamente","off":false},{"id":"GW-40862","gps":[45.17873,28.82033],"label":"GW-40862 · Tulcea · 47 echipamente","off":false},{"id":"GW-40879","gps":[45.17927,28.80507],"label":"GW-40879 · Tulcea · 52 echipamente","off":false},{"id":"GW-40883","gps":[46.55224,24.55547],"label":"GW-40883 · Târgu Mureș · 64 echipamente","off":false},{"id":"GW-40898","gps":[46.54675,24.57023],"label":"GW-40898 · Târgu Mureș · 188 echipamente","off":false},{"id":"GW-40911","gps":[46.5359,24.54537],"label":"GW-40911 · Târgu Mureș · 140 echipamente","off":false},{"id":"GW-40919","gps":[46.54672,24.55705],"label":"GW-40919 · Târgu Mureș · 157 echipamente","off":false},{"id":"GW-40932","gps":[46.55168,24.55902],"label":"GW-40932 · Târgu Mureș · 96 echipamente","off":false},{"id":"GW-40940","gps":[46.54647,24.57379],"label":"GW-40940 · Târgu Mureș · 182 echipamente","off":false},{"id":"GW-40943","gps":[46.54869,24.57182],"label":"GW-40943 · Târgu Mureș · 120 echipamente","off":false},{"id":"GW-40951","gps":[46.55282,24.56851],"label":"GW-40951 · Târgu Mureș · 30 echipamente","off":false},{"id":"GW-40964","gps":[46.55043,24.56953],"label":"GW-40964 · Târgu Mureș · 156 echipamente","off":false},{"id":"GW-40981","gps":[44.94064,26.0428],"label":"GW-40981 · Ploiești · 94 echipamente","off":false},{"id":"GW-40985","gps":[44.94124,26.02136],"label":"GW-40985 · Ploiești · 159 echipamente","off":false},{"id":"GW-40998","gps":[44.93911,26.02498],"label":"GW-40998 · Ploiești · 50 echipamente","off":false},{"id":"GW-41006","gps":[44.9486,26.03058],"label":"GW-41006 · Ploiești · 142 echipamente","off":false},{"id":"GW-41022","gps":[44.93676,26.02632],"label":"GW-41022 · Ploiești · 38 echipamente","off":false},{"id":"GW-41026","gps":[44.9373,26.01744],"label":"GW-41026 · Ploiești · 69 echipamente","off":false},{"id":"GW-41034","gps":[44.18097,28.63966],"label":"GW-41034 · Constanța · 163 echipamente","off":false},{"id":"GW-41046","gps":[44.18367,28.64],"label":"GW-41046 · Constanța · 169 echipamente","off":false},{"id":"GW-41057","gps":[44.18111,28.62895],"label":"GW-41057 · Constanța · 146 echipamente","off":false},{"id":"GW-41068","gps":[44.15934,28.64913],"label":"GW-41068 · Constanța · 65 echipamente","off":false},{"id":"GW-41082","gps":[44.17311,28.63815],"label":"GW-41082 · Constanța · 170 echipamente","off":false},{"id":"GW-41098","gps":[44.15915,28.64456],"label":"GW-41098 · Constanța · 89 echipamente","off":false},{"id":"GW-41104","gps":[44.15934,28.65022],"label":"GW-41104 · Constanța · 92 echipamente","off":false},{"id":"GW-41109","gps":[45.65523,25.61728],"label":"GW-41109 · Brașov · 31 echipamente","off":false},{"id":"GW-41112","gps":[45.66106,25.60471],"label":"GW-41112 · Brașov · 130 echipamente","off":false},{"id":"GW-41128","gps":[45.6611,25.58334],"label":"GW-41128 · Brașov · 181 echipamente","off":false},{"id":"GW-41135","gps":[45.65405,25.60549],"label":"GW-41135 · Brașov · 131 echipamente","off":false},{"id":"GW-41140","gps":[45.64928,25.60795],"label":"GW-41140 · Brașov · 31 echipamente","off":false},{"id":"GW-41157","gps":[45.64012,25.60307],"label":"GW-41157 · Brașov · 53 echipamente","off":false}];
+    var NODS = ["81-011-0041","81-011-0040","81-029-0030","81-029-0029","81-004-0847","81-011-0039","81-011-0038","81-011-0037","81-001-0021","81-001-0055","81-001-0001","81-001-0002","81-001-0004","81-001-0005","81-001-0007","81-001-0010","81-001-0017","81-001-0018","81-001-0020","81-001-0022","81-001-0023"];
+    var readings = 1284907, perSec = 0, n = 0;
+    function $(id) { return document.getElementById(id); }
+    function now() { var d = new Date(); return String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); }
+    document.addEventListener('DOMContentLoaded', function () {
+        SonicLiveNet.clock($('billClock'));
+        SonicLiveNet.create('billingHeroMap', {
+            hq: { gps: HQ.gps, label: HQ.name, address: HQ.address }, nodes: NODES, fit: 'all', hero: true, maxZoom: 8, padding: 30, rate: 9, links: true,
+            onPacket: function (node) {
+                var k = 20 + Math.floor(Math.random() * 160);
+                readings += k; perSec += k;
+                SonicLiveNet.counter($('billReadings'), readings);
+                if (++n % 4) return;
+                var bad = Math.random() < 0.07;
+                SonicLiveNet.ticker($('billTicker'), bad
+                    ? '<time>' + now() + '</time><span><b>Citire negativă</b> · NOD ' + NODS[Math.floor(Math.random() * NODS.length)] + ' → plauzibilitate</span>'
+                    : '<time>' + now() + '</time><span><b>' + node.id + '</b> · ' + node.label.split(' · ')[1] + ' · ' + k + ' citiri</span>', 5);
+                if (bad) $('billTicker').firstChild.classList.add('is-alert');
+            }
+        });
+        setInterval(function () { SonicLiveNet.counter($('billRate'), perSec / 2); perSec = 0; }, 2000);
+    });
+})();
+</script>
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

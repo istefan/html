@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Sezoane – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Sezoane – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
 </head>
 <body>
 
@@ -179,7 +182,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +190,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +327,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem active">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +569,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-billing-logo.svg" alt="SONIC BILLING" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Sezoane</div>
 
             <!-- User profile avatar (always visible) -->
@@ -558,7 +603,64 @@
     <div class="help-wrapper">
         <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
             <div class="help-panel-inner">
-                                <p class="help-empty">Nu există informații de ajutor disponibile pentru această pagină.</p>
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Filtrare &amp; Căutare                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Stare Sezon                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Gestiune Sezoane</h4>
+            <p>Această pagină permite administrarea intervalelor sezoniere pentru calculul și repartizarea costurilor de utilități (Energie Termică, Apă, Gaz).</p>
+            <p>Fiecare sezon definește perioada calendaristică activă (data de început și data de sfârșit) și utilitatea căreia i se aplică.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <h4>Căutare eficientă</h4>
+            <p>Puteți filtra rapid după denumirea sezonului, utilitate sau numărul de înregistrări afișate pe pagină. De asemenea, bara de căutare din antetul tabelului permite filtrarea dinamică instantanee.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <h4>Semnificație status</h4>
+            <ul>
+                <li><span class="status-badge status-online">Activ</span> &ndash; Sezonul utilizat la preluarea citirilor și generarea calculelor active.</li>
+                <li><span class="status-badge status-offline">Inactiv</span> &ndash; Sezon încheiat sau arhivat.</li>
+            </ul>
+                            </div>
+                                    </div>
                     </div><!-- /.help-panel-inner -->
         </div><!-- /.help-panel -->
         
@@ -585,26 +687,412 @@
 
     <div class="content">
 
-<div class="page-title-container">
-    <div class="page-title">
-        <h1>Sezoane</h1>
-        <p>Pagina este în construcție.</p>
-    </div>
-</div>
+        <!-- ── Page Title Container ──────────────────────────────────────── -->
+        <div class="page-title-container">
+            <div class="page-title">
+                <h1>Sezoane</h1>
+                <p>Gestiunea intervalelor sezoniere pentru calculul și repartizarea costurilor de utilități.</p>
+            </div>
+            <a href="sezoane-edit.html" class="btn-secondary btn-add">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>Adaugă Sezon</span>
+            </a>
+        </div>
 
-<div class="card" style="padding: 60px 40px; text-align: center; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; margin-top: 24px;">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="64" height="64" style="margin-bottom: 20px; opacity: 0.3; color: var(--accent);">
-        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-        <polyline points="2 17 12 22 22 17"></polyline>
-        <polyline points="2 12 12 17 22 12"></polyline>
-    </svg>
-    <h2 style="color: var(--text-main); margin-bottom: 12px; font-weight: 600;">În curând</h2>
-    <p style="font-size: 15px;">Interfața pentru <strong>Sezoane</strong> nu a fost încă generată în acest demo.</p>
-</div>
+        <!-- ── Formular de Filtrare Avansată ──────────────────────────────── -->
+        <div class="card filter-card">
+            <div class="filter-card-head">
+                <span class="filter-card-title">Filtrare Avansată</span>
+            </div>
+            <form method="GET" action="sezoane.html" id="filterForm">
+                <div class="filter-grid-2">
+                    <!-- Denumire sezon -->
+                    <div class="form-group">
+                        <label class="form-label" for="txtSeasonName">Denumire sezon</label>
+                        <input name="name" type="text" id="txtSeasonName" class="input-control" placeholder="Ex: ET 2025-2026" value="">
+                    </div>
+
+                    <!-- Utilitate -->
+                    <div class="form-group">
+                        <label class="form-label" for="ddlUS">Utilitate</label>
+                        <select name="utility" id="ddlUS" class="input-control">
+                            <option value="-1" selected>- Toate utilitățile -</option>
+                            <option value="2" >Apă</option>
+                            <option value="1" >Energie Termică</option>
+                            <option value="3" >Gaz</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="filter-actions">
+                    <div class="filter-per-page">
+                        <label class="filter-per-page-label" for="ddlPerPage">Înreg / pag</label>
+                        <select name="per_page" id="ddlPerPage" class="input-control select-per-page">
+                            <option value="10" >10</option>
+                            <option value="15" >15</option>
+                            <option value="25" >25</option>
+                            <option value="50" >50</option>
+                            <option value="100" selected>100</option>
+                        </select>
+                    </div>
+                    <a href="sezoane.html" class="btn-secondary">Resetează</a>
+                    <button type="submit" class="btn-primary">Caută</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- ── Tabel Date Sezoane ─────────────────────────────────────────── -->
+        <div class="table-container">
+            <div class="table-toolbar">
+                <div class="table-toolbar-left">
+                    <span class="table-count">
+                        Afișare <strong id="visibleCount">9</strong> din <strong>9</strong> înregistrări
+                    </span>
+                </div>
+                <div class="table-toolbar-right">
+                    <div class="live-search-wrapper" title="Filtrare locală în timp real după denumire, utilitate sau dată">
+                        <span class="live-search-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </span>
+                        <input type="text" id="tableSearch" class="input-control" placeholder="Căutare dinamică sezoane...">
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-scroll">
+                <table class="partners-table" id="dataTable">
+                    <thead>
+                        <tr>
+                            <th style="width: 28%;">Denumire sezon</th>
+                            <th style="width: 18%; text-align: center;">Data început</th>
+                            <th style="width: 18%; text-align: center;">Data sfârșit</th>
+                            <th style="width: 18%; text-align: center;">Utilitate</th>
+                            <th style="width: 10%; text-align: center;">Activat</th>
+                            <th style="width: 8%; text-align: center;">Acțiuni</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dataTableBody">
+                                                <tr data-search="et 2025-2026 energie termică 01.09.2025 31.08.2026 activ">
+                            <td class="td-code">
+                                <a href="sezoane-edit.html?id=1" class="td-link">
+                                    ET 2025-2026                                </a>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="color: var(--text-muted);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    01.09.2025                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="color: var(--text-muted);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    31.08.2026                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span class="status-badge status-offline">
+                                    Energie Termică                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                                                    <span class="status-badge status-online">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12" style="margin-right: 4px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        Activ
+                                    </span>
+                                                            </td>
+                            <td style="text-align: center;">
+                                <a href="sezoane-edit.html?id=1" class="btn-action-icon" title="Editează Sezon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-search="apă 2025-2026 apă 01.01.2025 31.12.2026 activ">
+                            <td class="td-code">
+                                <a href="sezoane-edit.html?id=2" class="td-link">
+                                    Apă 2025-2026                                </a>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="color: var(--text-muted);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    01.01.2025                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="color: var(--text-muted);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    31.12.2026                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span class="status-badge status-offline">
+                                    Apă                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                                                    <span class="status-badge status-online">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12" style="margin-right: 4px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        Activ
+                                    </span>
+                                                            </td>
+                            <td style="text-align: center;">
+                                <a href="sezoane-edit.html?id=2" class="btn-action-icon" title="Editează Sezon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-search="gaz 2025-2026 gaz 01.09.2025 31.08.2026 activ">
+                            <td class="td-code">
+                                <a href="sezoane-edit.html?id=3" class="td-link">
+                                    Gaz 2025-2026                                </a>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="color: var(--text-muted);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    01.09.2025                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="color: var(--text-muted);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    31.08.2026                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span class="status-badge status-offline">
+                                    Gaz                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                                                    <span class="status-badge status-online">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12" style="margin-right: 4px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        Activ
+                                    </span>
+                                                            </td>
+                            <td style="text-align: center;">
+                                <a href="sezoane-edit.html?id=3" class="btn-action-icon" title="Editează Sezon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-search="et 2024-2025 energie termică 01.09.2024 31.08.2025 inactiv">
+                            <td class="td-code">
+                                <a href="sezoane-edit.html?id=4" class="td-link">
+                                    ET 2024-2025                                </a>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="color: var(--text-muted);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    01.09.2024                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="color: var(--text-muted);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    31.08.2025                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span class="status-badge status-offline">
+                                    Energie Termică                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                                                    <span class="status-badge status-offline">Inactiv</span>
+                                                            </td>
+                            <td style="text-align: center;">
+                                <a href="sezoane-edit.html?id=4" class="btn-action-icon" title="Editează Sezon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-search="apă 2023-2024 apă 01.01.2023 31.12.2024 inactiv">
+                            <td class="td-code">
+                                <a href="sezoane-edit.html?id=5" class="td-link">
+                                    Apă 2023-2024                                </a>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="color: var(--text-muted);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    01.01.2023                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="color: var(--text-muted);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    31.12.2024                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span class="status-badge status-offline">
+                                    Apă                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                                                    <span class="status-badge status-offline">Inactiv</span>
+                                                            </td>
+                            <td style="text-align: center;">
+                                <a href="sezoane-edit.html?id=5" class="btn-action-icon" title="Editează Sezon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-search="et 2023-2024 energie termică 01.09.2023 31.08.2024 inactiv">
+                            <td class="td-code">
+                                <a href="sezoane-edit.html?id=6" class="td-link">
+                                    ET 2023-2024                                </a>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="color: var(--text-muted);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    01.09.2023                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="color: var(--text-muted);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    31.08.2024                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span class="status-badge status-offline">
+                                    Energie Termică                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                                                    <span class="status-badge status-offline">Inactiv</span>
+                                                            </td>
+                            <td style="text-align: center;">
+                                <a href="sezoane-edit.html?id=6" class="btn-action-icon" title="Editează Sezon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-search="apa apă 01.01.2016 31.12.2017 inactiv">
+                            <td class="td-code">
+                                <a href="sezoane-edit.html?id=7" class="td-link">
+                                    Apa                                </a>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="color: var(--text-muted);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    01.01.2016                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="color: var(--text-muted);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    31.12.2017                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span class="status-badge status-offline">
+                                    Apă                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                                                    <span class="status-badge status-offline">Inactiv</span>
+                                                            </td>
+                            <td style="text-align: center;">
+                                <a href="sezoane-edit.html?id=7" class="btn-action-icon" title="Editează Sezon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-search="et 2013-2014 energie termică 01.09.2013 31.08.2014 inactiv">
+                            <td class="td-code">
+                                <a href="sezoane-edit.html?id=8" class="td-link">
+                                    ET 2013-2014                                </a>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="color: var(--text-muted);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    01.09.2013                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="color: var(--text-muted);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    31.08.2014                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span class="status-badge status-offline">
+                                    Energie Termică                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                                                    <span class="status-badge status-offline">Inactiv</span>
+                                                            </td>
+                            <td style="text-align: center;">
+                                <a href="sezoane-edit.html?id=8" class="btn-action-icon" title="Editează Sezon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                </a>
+                            </td>
+                        </tr>
+                                                <tr data-search="et 2012-2013 energie termică 01.09.2012 31.08.2013 inactiv">
+                            <td class="td-code">
+                                <a href="sezoane-edit.html?id=9" class="td-link">
+                                    ET 2012-2013                                </a>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="color: var(--text-muted);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    01.09.2012                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="display: inline-flex; align-items: center; gap: 6px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="color: var(--text-muted);"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    31.08.2013                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span class="status-badge status-offline">
+                                    Energie Termică                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                                                    <span class="status-badge status-offline">Inactiv</span>
+                                                            </td>
+                            <td style="text-align: center;">
+                                <a href="sezoane-edit.html?id=9" class="btn-action-icon" title="Editează Sezon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                </a>
+                            </td>
+                        </tr>
+                        
+                        <tr id="noResultsRow" style="display: none;">
+                            <td colspan="6" class="table-empty">
+                                Niciun sezon găsit conform filtrelor specificate.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-pagination">
+                <div class="pagination-info">
+                    Afișare <strong>1</strong> - <strong>9</strong> din <strong>9</strong> înregistrări
+                </div>
+                <div class="pagination-controls">
+                    <button type="button" class="btn-secondary btn-page-nav" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        <span>Anterior</span>
+                    </button>
+                    <div class="pagination-pages">
+                        <button type="button" class="btn-secondary btn-page active">1</button>
+                    </div>
+                    <button type="button" class="btn-secondary btn-page-nav" disabled>
+                        <span>Următor</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+<script>
+(function () {
+    var searchInput = document.getElementById('tableSearch');
+    var tbody       = document.getElementById('dataTableBody');
+    var countEl     = document.getElementById('visibleCount');
+    var noResultsEl = document.getElementById('noResultsRow');
+
+    if (!searchInput || !tbody) return;
+
+    searchInput.addEventListener('input', function () {
+        var query = this.value.trim().toLowerCase();
+        var rows  = tbody.querySelectorAll('tr:not(#noResultsRow)');
+        var visible = 0;
+
+        rows.forEach(function (row) {
+            var searchStr = (row.getAttribute('data-search') || '').toLowerCase();
+            var show = !query || searchStr.indexOf(query) !== -1;
+            row.style.display = show ? '' : 'none';
+            if (show) visible++;
+        });
+
+        if (countEl) countEl.textContent = visible;
+        if (noResultsEl) noResultsEl.style.display = visible === 0 ? '' : 'none';
+    });
+})();
+</script>
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

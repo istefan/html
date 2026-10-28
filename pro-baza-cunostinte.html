@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Bază de Cunoștințe – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
+    <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+<script>
+    (function() {
+        var sb = document.getElementById('sidebar');
+        var ls = localStorage.getItem('sb_collapsed');
+        if (ls === '1') sb.classList.add('collapsed');
+        else if (ls === '0') sb.classList.remove('collapsed');
+    })();
+</script>
+    <!-- ── Logo ─────────────────────────────────────────────────────── -->
+    <!-- React: <SidebarLogo activeApp={activeApp} /> -->
+    <div class="logo">
+        <a href="sonic-dashboard.html" title="SONIC – Acasă">
+            <img src="assets/images/sonic-logo.svg"
+                 alt="SONIC"
+                 class="logo-full"
+                 id="sidebarLogo">
+            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">S</span>
+        </a>
+    </div>
+
+    <!-- ── Nav ───────────────────────────────────────────────────────── -->
+    <!-- React: <SidebarNav activeApp={activeApp} onAppChange={setActiveApp} /> -->
+    <nav class="sidebar-nav" aria-label="Navigare principală">
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  1. SONIC GRID
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-grid"
+             data-logo="assets/images/sonic-grid-logo.svg"
+             data-logo-icon="SG">
+            <button class="app-section-header" type="button" title="SONIC GRID">
+                <img src="assets/images/sonic-grid-logo.svg" class="app-section-logo" alt="SONIC GRID">
+                <span class="app-section-badge">SG</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Panoul Meu -->
+                <a href="panoul-meu.html" class="nav-item " title="Panoul Meu">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </span>
+                    <span class="nav-label">Panoul Meu</span>
+                </a>
+
+                <!-- Adresele Mele -->
+                <a href="adresele-mele.html" class="nav-item " title="Adresele Mele">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </span>
+                    <span class="nav-label">Adresele Mele</span>
+                </a>
+
+                <!-- Regiuni / Zone -->
+                <a href="regiuni-zone.html" class="nav-item " title="Regiuni / Zone">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </span>
+                    <span class="nav-label">Regiuni / Zone</span>
+                </a>
+
+                <!-- Perioade Citiri -->
+                <a href="perioade-citiri.html" class="nav-item " title="Perioade Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </span>
+                    <span class="nav-label">Perioade Citiri</span>
+                </a>
+
+                <!-- Setări Alerte -->
+                <a href="setari-alerte.html" class="nav-item " title="Setări Alerte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </span>
+                    <span class="nav-label">Setări Alerte</span>
+                </a>
+
+                <!-- Info Center -->
+                <a href="info-center.html" class="nav-item " title="Info Center">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    <span class="nav-label">Info Center</span>
+                </a>
+
+                <!-- Contact -->
+                <a href="contact.html" class="nav-item " title="Contact">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </span>
+                    <span class="nav-label">Contact</span>
+                </a>
+
+                <!-- ── RAPOARTE (section label) ── -->
+                <div class="nav-section">Rapoarte</div>
+
+                <!-- Raport Citiri -->
+                <a href="raport-citiri.html" class="nav-item " title="Raport Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Raport Citiri</span>
+                </a>
+
+                <!-- Bilanț Neînchideri Apă -->
+                <a href="bilant-neinchideri.html" class="nav-item " title="Bilanț Neînchideri Apă">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                    </span>
+                    <span class="nav-label">Bilanț Neînchideri Apă</span>
+                </a>
+
+                <!-- Estimări Consum -->
+                <a href="estimari-consum.html" class="nav-item " title="Estimări Consum">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </span>
+                    <span class="nav-label">Estimări Consum</span>
+                </a>
+
+                <!-- Raport Alerte -->
+                <a href="raport-alerte.html" class="nav-item " title="Raport Alerte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Raport Alerte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  2. SONIC MARKET
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-market"
+             data-logo="assets/images/sonic-market-logo.svg"
+             data-logo-icon="SM">
+            <button class="app-section-header" type="button" title="SONIC MARKET">
+                <img src="assets/images/sonic-market-logo.svg" class="app-section-logo" alt="SONIC MARKET">
+                <span class="app-section-badge">SM</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard Market -->
+                <a href="market-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  3. SONIC PRO
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section open"
+             data-app="sonic-pro"
+             data-logo="assets/images/sonic-pro-logo.svg"
+             data-logo-icon="SP">
+            <button class="app-section-header" type="button" title="SONIC PRO">
+                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+                <span class="app-section-badge">SP</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard PRO (dispecerat) -->
+                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group open" data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem active">Bază de Cunoștințe</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  4. SONIC BILLING
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-billing"
+             data-logo="assets/images/sonic-billing-logo.svg"
+             data-logo-icon="SB">
+            <button class="app-section-header" type="button" title="SONIC BILLING">
+                <img src="assets/images/sonic-billing-logo.svg" class="app-section-logo" alt="SONIC BILLING">
+                <span class="app-section-badge">SB</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard -->
+                <a href="index.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── ADMINISTRARE ─────────────────────────────────────────── -->
+                <div class="nav-group " data-group="administrare">
+                    <button class="nav-group-title" type="button" title="Administrare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                        </span>
+                        <span class="nav-label">Administrare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="utilizatori.html" class="nav-subitem ">Utilizatori</a>
+                        <a href="cititori.html" class="nav-subitem ">Cititori</a>
+                        <a href="parametri-sistem.html" class="nav-subitem ">Parametri Sistem</a>
+                        <a href="stergere-perioade.html" class="nav-subitem ">Ștergere Perioade Calcul</a>
+                    </div>
+                </div>
+
+                <!-- ── DICTIONARE ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="dictionare">
+                    <button class="nav-group-title" type="button" title="Dictionare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Dictionare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="localitati.html" class="nav-subitem ">Localități</a>
+                        <a href="puncte-lucru.html" class="nav-subitem ">Puncte de Lucru</a>
+                        <a href="producatori.html" class="nav-subitem ">Producători</a>
+                        <a href="furnizori.html" class="nav-subitem ">Furnizori Utilități</a>
+                        <a href="unitati-masura.html" class="nav-subitem ">Unități de Măsură</a>
+                        <a href="tipuri-servicii.html" class="nav-subitem ">Tipuri Servicii</a>
+                        <a href="companii.html" class="nav-subitem ">Companii</a>
+                    </div>
+                </div>
+
+                <!-- ── DATABANK MANAGEMENT ──────────────────────────────────── -->
+                <div class="nav-group " data-group="databank">
+                    <button class="nav-group-title" type="button" title="Databank Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                        </span>
+                        <span class="nav-label">Databank Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="tipuri-radiatoare.html" class="nav-subitem ">Tipuri Radiatoare</a>
+                        <a href="modele-radiatoare.html" class="nav-subitem ">Modele Radiatoare</a>
+                        <a href="modele-repartitoare.html" class="nav-subitem ">Modele Repartitoare</a>
+                        <a href="modele-contoare.html" class="nav-subitem ">Modele Contoare</a>
+                        <a href="serii-apometre.html" class="nav-subitem ">Serii Apometre Achiziționate</a>
+                    </div>
+                </div>
+
+                <!-- ── CALCUL ────────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="calcul">
+                    <button class="nav-group-title" type="button" title="Calcul">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </span>
+                        <span class="nav-label">Calcul</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
+                        <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
+                        <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
+                        <a href="tarife.html" class="nav-subitem ">Tarife</a>
+                    </div>
+                </div>
+
+                <!-- ── IMPORT / EXPORT CITIRI ───────────────────────────────── -->
+                <div class="nav-group " data-group="import-export">
+                    <button class="nav-group-title" type="button" title="Import / Export Citiri">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </span>
+                        <span class="nav-label">Import / Export Citiri</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="citire-manuala-et.html" class="nav-subitem ">Citire Manuală ET</a>
+                        <a href="citire-manuala-apa.html" class="nav-subitem ">Citire Manuală Apă</a>
+                        <a href="citiri-brute-et.html" class="nav-subitem ">Citiri Brute Energie Termică</a>
+                        <a href="citiri-brute-apa.html" class="nav-subitem ">Citiri Brute Apă</a>
+                        <a href="export-pl.html" class="nav-subitem ">Export PL</a>
+                    </div>
+                </div>
+
+                <!-- ── CONSUM ENERGIE TERMICĂ ────────────────────────────────── -->
+                <div class="nav-group " data-group="consum-et">
+                    <button class="nav-group-title" type="button" title="Consum Energie Termică">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                        </span>
+                        <span class="nav-label">Consum Energie Termică</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="consum-et-detaliat.html" class="nav-subitem ">Introducere Detaliată</a>
+                        <a href="consum-et-cumulat.html" class="nav-subitem ">Introducere Cumulată</a>
+                    </div>
+                </div>
+
+                <!-- ── CONSUM APĂ ─────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="consum-apa">
+                    <button class="nav-group-title" type="button" title="Consum Apă">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L7 10a5 5 0 0 0 10 0L12 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Consum Apă</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="consum-apa-detaliat.html" class="nav-subitem ">Introducere Detaliată</a>
+                    </div>
+                </div>
+
+                <!-- ── VALIDARE CITIRE ───────────────────────────────────────── -->
+                <div class="nav-group " data-group="validare">
+                    <button class="nav-group-title" type="button" title="Validare Citire">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </span>
+                        <span class="nav-label">Validare Citire</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="validare-et.html" class="nav-subitem ">Validare Citire – ET</a>
+                        <a href="validare-apa.html" class="nav-subitem ">Validare Citire – Apă</a>
+                        <a href="cost-split-apa.html" class="nav-subitem ">Cost Split – Apă</a>
+                    </div>
+                </div>
+
+                <!-- ── GESTIUNE FACTURARE (standalone) ──────────────────────── -->
+                <a href="facturare.html" class="nav-item " title="Gestiune Facturare">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Gestiune Facturare</span>
+                </a>
+
+                <!-- ── GESTIUNE TIPĂRIRE ───────────────────────────────────────── -->
+                <div class="nav-group " data-group="tiparire">
+                    <button class="nav-group-title" type="button" title="Gestiune Tipărire">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                        </span>
+                        <span class="nav-label">Gestiune Tipărire</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="nod-tiparire.html" class="nav-subitem ">NOD pentru Tipărire</a>
+                        <a href="fise-citire.html" class="nav-subitem ">Fișe Citire</a>
+                    </div>
+                </div>
+
+                <!-- ── RAPOARTE (standalone) ──────────────────────────────────── -->
+                <a href="rapoarte.html" class="nav-item " title="Rapoarte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <span class="nav-label">Rapoarte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  5. SONIC FIN
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-fin"
+             data-logo="assets/images/sonic-fin-logo.svg"
+             data-logo-icon="SF">
+            <button class="app-section-header" type="button" title="SONIC FIN">
+                <img src="assets/images/sonic-fin-logo.svg" class="app-section-logo" alt="SONIC FIN">
+                <span class="app-section-badge">SF</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard FIN -->
+                <a href="fin-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  6. SONIC (Base – Ecosistem & Configurare)
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic"
+             data-logo="assets/images/sonic-logo.svg"
+             data-logo-icon="S">
+            <button class="app-section-header" type="button" title="SONIC">
+                <img src="assets/images/sonic-logo.svg" class="app-section-logo" alt="SONIC">
+                <span class="app-section-badge">S</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard SONIC -->
+                <a href="sonic-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <div class="nav-group " data-group="master-data">
+                    <button class="nav-group-title" type="button" title="Master Data Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Master Data Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
+                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
+                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
+                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
+                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
+                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- ── Sidebar Footer ─────────────────────────────────────────────── -->
+    <!-- React: <SidebarFooter /> -->
+    <div class="sidebar-footer">
+        <a href="contul-meu.html" class="nav-item " title="Contul Meu">
+            <span class="nav-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <span class="nav-label">Contul Meu</span>
+        </a>
+    </div>
+
+</aside>
+
+<!-- React: <main className="main"> -->
+<div class="main">
+
+    <!--
+        React: <Header
+            onToggleSidebar={toggleSidebar}
+            isCollapsed={isCollapsed}
+            isMobileOpen={isMobileOpen}
+            pageTitle={pageTitle}
+        />
+    -->
+    <div class="header">
+
+        <!-- LEFT: hamburger / sidebar-toggle + search (desktop) -->
+        <div class="header-left">
+            <!--
+                React: <SidebarToggleBtn
+                    onClick={onToggleSidebar}
+                    isCollapsed={isCollapsed}
+                    isMobile={isMobile}
+                />
+                Desktop: panel-left icon with collapse arrow
+                Mobile : hamburger icon
+            -->
+            <button class="sidebar-toggle-btn" id="sidebarToggle"
+                    title="Restrânge / Extinde meniu"
+                    aria-label="Toggle sidebar"
+                    data-collapsed="0">
+                <script>
+                    (function() {
+                        var btn = document.getElementById('sidebarToggle');
+                        var ls = localStorage.getItem('sb_collapsed');
+                        if (ls === '1') btn.setAttribute('data-collapsed', '1');
+                        else if (ls === '0') btn.setAttribute('data-collapsed', '0');
+                    })();
+                </script>
+                <!-- Mobile hamburger (hidden on desktop via CSS) -->
+                <svg class="icon-hamburger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+                <!-- Desktop panel icon (hidden on mobile via CSS) -->
+                <svg class="icon-panel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <line x1="9" y1="3" x2="9" y2="21"/>
+                    <polyline points="15 8 12 12 15 16" class="toggle-arrow"/>
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- CENTER: logo (mobile only, absolutely centered) -->
+        <!-- React: isMobile && <HeaderLogo /> -->
+        <div class="header-logo" aria-hidden="true">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-pro-logo.svg" alt="SONIC PRO" id="headerLogo">
+            </a>
+        </div>
+
+        <!-- RIGHT: page title (desktop) + user + logout -->
+        <div class="header-actions">
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
+            <div class="header-page-title">Bază de Cunoștințe</div>
+
+            <!-- User profile avatar (always visible) -->
+            <a href="contul-meu.html" class="user-profile" title="Contul meu">SI</a>
+
+            <!-- Logout button – icon only, always visible -->
+            <!-- React: <LogoutBtn onClick={handleLogout} /> -->
+            <a href="login.html" class="logout-btn" title="Deconectare" aria-label="Deconectare">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+            </a>
+        </div>
+
+    </div><!-- /.header -->
+
+    <!--
+        CONTEXTUAL HELP BAR (WordPress-style)
+        React: <HelpBar onToggle={toggleHelp} isOpen={isHelpOpen} />
+               <HelpPanel isOpen={isHelpOpen} tabs={helpTabs} />
+    -->
+    <div class="help-wrapper">
+        <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
+            <div class="help-panel-inner">
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Cum folosește AI-ul documentele                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Tipuri și etichete                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Bază de Cunoștințe</h4>
+            <p>Aici se gestionează documentele pe care se bazează răspunsurile scrise generate cu AI pentru solicitările clienților (pagina <strong>Solicitări</strong>): răspunsuri standard, legislație și proceduri interne.</p>
+            <ul>
+                <li><strong>Adaugă document</strong> – încărcați un fișier (.pdf, .doc, .docx, .txt), alegeți tipul și etichetele.</li>
+                <li><strong>Previzualizare</strong> – vedeți textul extras din document, așa cum îl folosește AI-ul.</li>
+                <li><strong>Înlocuiește fișierul</strong> – încărcați o versiune nouă (ex. lege modificată, procedură actualizată); data actualizării se schimbă automat.</li>
+                <li><strong>Testează în AI</strong> – verificați cum răspunde AI-ul la o întrebare tipică folosind documentul.</li>
+                <li><strong>Dezactivează</strong> – documentul nu mai este folosit ca sursă. Documentele nu se șterg; pot fi reactivate oricând.</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <h4>Surse și citare</h4>
+            <p>La generarea unui răspuns pentru o solicitare, AI-ul caută în documentele <strong>active</strong> pe cele potrivite categoriei solicitării (după etichete) și conținutului mesajului clientului.</p>
+            <ul>
+                <li>Fiecare afirmație importantă din răspuns indică sursa, prin codul documentului (ex. <em>[KB-05]</em>); sub răspuns apare lista surselor folosite.</li>
+                <li>Răspunsul este doar o <strong>propunere</strong>: operatorul îl verifică, îl editează și decide dacă îl trimite. <strong>Nu se trimite nimic automat</strong> clientului.</li>
+                <li>Coloana <em>Utilizări AI</em> arată de câte ori a fost citat documentul în răspunsurile din ultimele 30 de zile.</li>
+                <li>Un document dezactivat nu mai este folosit de AI, dar rămâne în istoric pentru răspunsurile deja trimise.</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <h4>Tipuri de documente</h4>
+            <ul>
+                <li><strong>Răspuns standard</strong> – formulări aprobate pentru situații frecvente (explicarea calculului, estimări, citirea echipamentelor).</li>
+                <li><strong>Legislație</strong> – acte normative și normative tehnice (legi, norme metrologice).</li>
+                <li><strong>Procedură internă</strong> – reguli interne (termene de răspuns, pași de verificare).</li>
+            </ul>
+            <h4>Etichete</h4>
+            <p>Etichetele leagă documentul de categoriile solicitărilor: Reclamație consum, Informații, Garanție, Avarie, Service, Montaj ulterior, Legislație, Procedură. Se pot adăuga și etichete libere (ex. <em>Apă</em>, <em>ET</em>), separate prin virgulă. Filtrul <em>Etichetă</em> din caseta de filtrare listează toate etichetele folosite.</p>
+                            </div>
+                                    </div>
+                    </div><!-- /.help-panel-inner -->
+        </div><!-- /.help-panel -->
+        
+        <div class="help-bar">
+            <button class="help-toggle-btn" id="helpToggle"
+                    aria-expanded="false"
+                    aria-controls="helpPanel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round"
+                     width="14" height="14" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                <span>Ajutor</span>
+                <svg class="help-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                     aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"/>
+                </svg>
+            </button>
+        </div><!-- /.help-bar -->
+    </div><!-- /.help-wrapper -->
+
+    <div class="content">
+
+        <!-- React: <PageTitle title="Bază de Cunoștințe" action={<AddButton onClick={openAdd} />} /> -->
+        <div class="page-title-container">
+            <div class="page-title">
+                <h1>Bază de Cunoștințe</h1>
+                <p>Documentele folosite de AI ca surse pentru răspunsurile scrise la solicitările clienților: răspunsuri standard, legislație și proceduri interne.</p>
+            </div>
+            <button type="button" class="btn-secondary btn-add" id="btnAddKbDoc" onclick="KbPage.openAdd()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>Adaugă document</span>
+            </button>
+        </div>
+
+        <!-- React: <KpiGrid items={stats} />  → GET /api/pro/kb/stats -->
+        <div class="calc-kpi-grid">
+            <div class="calc-kpi">
+                <span class="calc-kpi-label">Documente active</span>
+                <span class="calc-kpi-value" id="kpiActive">8</span>
+                <span class="pro-kpi-meta">din <span id="kpiTotal">8</span> documente</span>
+            </div>
+            <div class="calc-kpi">
+                <span class="calc-kpi-label">Răspunsuri standard</span>
+                <span class="calc-kpi-value" id="kpiStandard">4</span>
+                <span class="pro-kpi-meta">active</span>
+            </div>
+            <div class="calc-kpi">
+                <span class="calc-kpi-label">Acte normative</span>
+                <span class="calc-kpi-value" id="kpiLaws">3</span>
+                <span class="pro-kpi-meta">active</span>
+            </div>
+            <div class="calc-kpi">
+                <span class="calc-kpi-label">Utilizări în ultimele 30 zile</span>
+                <span class="calc-kpi-value" id="kpiUses">539</span>
+                <span class="pro-kpi-meta">citări în răspunsurile AI</span>
+            </div>
+        </div>
+
+        <!-- ── Formular de Filtrare ───────────────────────────────────── -->
+        <!-- React: <FilterCard fields={[title, type, tag]} perPage onReset onSearch /> -->
+        <div class="card filter-card">
+            <div class="filter-card-head">
+                <span class="filter-card-title">Filtrare Avansată</span>
+            </div>
+            <form method="GET" action="pro-baza-cunostinte.html" id="filterForm">
+                <div class="filter-grid-3">
+                    <div class="form-group">
+                        <label class="form-label" for="txtKbTitle">Titlu</label>
+                        <input name="title" type="text" id="txtKbTitle" class="input-control" placeholder="Ex: estimare consum" value="">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="ddlKbType">Tip</label>
+                        <select name="type" id="ddlKbType" class="input-control">
+                            <option value="-1">-</option>
+                                                            <option value="Răspuns standard" >Răspuns standard</option>
+                                                            <option value="Legislație" >Legislație</option>
+                                                            <option value="Procedură internă" >Procedură internă</option>
+                                                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="ddlKbTag">Etichetă</label>
+                        <select name="tag" id="ddlKbTag" class="input-control">
+                            <option value="-1">-</option>
+                                                            <option value="Reclamație consum" >Reclamație consum</option>
+                                                            <option value="ET" >ET</option>
+                                                            <option value="Informații" >Informații</option>
+                                                            <option value="Apă" >Apă</option>
+                                                            <option value="Legislație" >Legislație</option>
+                                                            <option value="Procedură" >Procedură</option>
+                                                    </select>
+                    </div>
+                </div>
+
+                <div class="filter-actions">
+                    <div class="filter-per-page">
+                        <label class="filter-per-page-label" for="ddlPerPage">Înreg / pag</label>
+                        <select name="per_page" id="ddlPerPage" class="input-control select-per-page">
+                                                            <option value="10" >10</option>
+                                                            <option value="15" >15</option>
+                                                            <option value="25" >25</option>
+                                                            <option value="50" >50</option>
+                                                            <option value="100" selected>100</option>
+                                                    </select>
+                    </div>
+                    <a href="pro-baza-cunostinte.html" class="btn-secondary">Resetează</a>
+                    <button type="submit" class="btn-primary">Caută</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- ── Tabel documente ─────────────────────────────────────────── -->
+        <!-- React: <DataTable columns={kbColumns} rows={docs} liveSearch /> -->
+        <div class="table-container">
+            <div class="table-toolbar">
+                <div class="table-toolbar-left">
+                    <span class="table-count">
+                        Afișare <strong id="visibleCount">8</strong> din <strong id="totalCount">8</strong> înregistrări
+                    </span>
+                </div>
+                <div class="table-toolbar-right">
+                    <div class="live-search-wrapper" title="Filtrare locală în timp real după cod, titlu sau fișier">
+                        <span class="live-search-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </span>
+                        <input type="text" id="kbLiveSearch" class="input-control" placeholder="Căutare dinamică cod / titlu...">
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-scroll">
+                <table class="partners-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 8%;">Cod</th>
+                            <th style="width: 30%;">Titlu</th>
+                            <th style="width: 13%;">Tip</th>
+                            <th style="width: 17%;">Etichete</th>
+                            <th style="width: 9%;">Actualizat</th>
+                            <th style="width: 8%; text-align: center;">Utilizări AI</th>
+                            <th style="width: 7%; text-align: center;">Stare</th>
+                            <th style="width: 8%; text-align: center;">Acțiuni</th>
+                        </tr>
+                    </thead>
+                    <tbody id="kbTableBody">
+                                                <tr data-id="KB-01"
+                            data-title="explicarea calculului pentru încălzire (repartitoare)"
+                            data-type="Răspuns standard"
+                            data-tags="Reclamație consum|ET"
+                            data-file="raspuns-calcul-incalzire-repartitoare.docx"
+                            data-uses="142"
+                            data-active="1">
+                            <td class="td-code">KB-01</td>
+                            <td class="td-name" data-col="title">Explicarea calculului pentru încălzire (repartitoare)</td>
+                            <td data-col="type">Răspuns standard</td>
+                            <td data-col="tags">
+                                <div class="pro-chips">
+                                    <span class="pro-chip">Reclamație consum</span><span class="pro-chip">ET</span>                                </div>
+                            </td>
+                            <td data-col="updated">18.09.2026</td>
+                            <td style="text-align: center;">142</td>
+                            <td style="text-align: center;" data-col="status">
+                                <span class="status-badge status-online">Activ</span>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Previzualizare" onclick="KbPage.openPreview('KB-01')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Înlocuiește fișierul" onclick="KbPage.openReplace('KB-01')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Testează în AI" onclick="KbPage.openTest('KB-01')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"></path><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"></path></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Dezactivează" data-toggle-btn onclick="KbPage.toggleActive('KB-01', this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>                                </button>
+                            </td>
+                        </tr>
+                                                <tr data-id="KB-02"
+                            data-title="estimarea consumului în lipsa citirii"
+                            data-type="Răspuns standard"
+                            data-tags="Reclamație consum"
+                            data-file="raspuns-estimare-consum.docx"
+                            data-uses="96"
+                            data-active="1">
+                            <td class="td-code">KB-02</td>
+                            <td class="td-name" data-col="title">Estimarea consumului în lipsa citirii</td>
+                            <td data-col="type">Răspuns standard</td>
+                            <td data-col="tags">
+                                <div class="pro-chips">
+                                    <span class="pro-chip">Reclamație consum</span>                                </div>
+                            </td>
+                            <td data-col="updated">02.08.2026</td>
+                            <td style="text-align: center;">96</td>
+                            <td style="text-align: center;" data-col="status">
+                                <span class="status-badge status-online">Activ</span>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Previzualizare" onclick="KbPage.openPreview('KB-02')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Înlocuiește fișierul" onclick="KbPage.openReplace('KB-02')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Testează în AI" onclick="KbPage.openTest('KB-02')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"></path><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"></path></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Dezactivează" data-toggle-btn onclick="KbPage.toggleActive('KB-02', this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>                                </button>
+                            </td>
+                        </tr>
+                                                <tr data-id="KB-03"
+                            data-title="programarea verificării metrologice"
+                            data-type="Răspuns standard"
+                            data-tags="Informații|Apă"
+                            data-file="procedura-verificare-metrologica.pdf"
+                            data-uses="37"
+                            data-active="1">
+                            <td class="td-code">KB-03</td>
+                            <td class="td-name" data-col="title">Programarea verificării metrologice</td>
+                            <td data-col="type">Răspuns standard</td>
+                            <td data-col="tags">
+                                <div class="pro-chips">
+                                    <span class="pro-chip">Informații</span><span class="pro-chip">Apă</span>                                </div>
+                            </td>
+                            <td data-col="updated">14.06.2026</td>
+                            <td style="text-align: center;">37</td>
+                            <td style="text-align: center;" data-col="status">
+                                <span class="status-badge status-online">Activ</span>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Previzualizare" onclick="KbPage.openPreview('KB-03')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Înlocuiește fișierul" onclick="KbPage.openReplace('KB-03')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Testează în AI" onclick="KbPage.openTest('KB-03')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"></path><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"></path></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Dezactivează" data-toggle-btn onclick="KbPage.toggleActive('KB-03', this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>                                </button>
+                            </td>
+                        </tr>
+                                                <tr data-id="KB-04"
+                            data-title="cum se citește afișajul repartitorului"
+                            data-type="Răspuns standard"
+                            data-tags="Informații"
+                            data-file="ghid-afisaj-repartitor.pdf"
+                            data-uses="58"
+                            data-active="1">
+                            <td class="td-code">KB-04</td>
+                            <td class="td-name" data-col="title">Cum se citește afișajul repartitorului</td>
+                            <td data-col="type">Răspuns standard</td>
+                            <td data-col="tags">
+                                <div class="pro-chips">
+                                    <span class="pro-chip">Informații</span>                                </div>
+                            </td>
+                            <td data-col="updated">30.05.2026</td>
+                            <td style="text-align: center;">58</td>
+                            <td style="text-align: center;" data-col="status">
+                                <span class="status-badge status-online">Activ</span>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Previzualizare" onclick="KbPage.openPreview('KB-04')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Înlocuiește fișierul" onclick="KbPage.openReplace('KB-04')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Testează în AI" onclick="KbPage.openTest('KB-04')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"></path><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"></path></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Dezactivează" data-toggle-btn onclick="KbPage.toggleActive('KB-04', this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>                                </button>
+                            </td>
+                        </tr>
+                                                <tr data-id="KB-05"
+                            data-title="legea nr. 196/2018 – asociațiile de proprietari"
+                            data-type="Legislație"
+                            data-tags="Legislație"
+                            data-file="legea-196-2018-asociatii-proprietari.pdf"
+                            data-uses="71"
+                            data-active="1">
+                            <td class="td-code">KB-05</td>
+                            <td class="td-name" data-col="title">Legea nr. 196/2018 – asociațiile de proprietari</td>
+                            <td data-col="type">Legislație</td>
+                            <td data-col="tags">
+                                <div class="pro-chips">
+                                    <span class="pro-chip">Legislație</span>                                </div>
+                            </td>
+                            <td data-col="updated">10.01.2026</td>
+                            <td style="text-align: center;">71</td>
+                            <td style="text-align: center;" data-col="status">
+                                <span class="status-badge status-online">Activ</span>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Previzualizare" onclick="KbPage.openPreview('KB-05')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Înlocuiește fișierul" onclick="KbPage.openReplace('KB-05')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Testează în AI" onclick="KbPage.openTest('KB-05')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"></path><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"></path></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Dezactivează" data-toggle-btn onclick="KbPage.toggleActive('KB-05', this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>                                </button>
+                            </td>
+                        </tr>
+                                                <tr data-id="KB-06"
+                            data-title="legea nr. 325/2006 – serviciul public de alimentare cu energie termică"
+                            data-type="Legislație"
+                            data-tags="Legislație|ET"
+                            data-file="legea-325-2006-energie-termica.pdf"
+                            data-uses="64"
+                            data-active="1">
+                            <td class="td-code">KB-06</td>
+                            <td class="td-name" data-col="title">Legea nr. 325/2006 – serviciul public de alimentare cu energie termică</td>
+                            <td data-col="type">Legislație</td>
+                            <td data-col="tags">
+                                <div class="pro-chips">
+                                    <span class="pro-chip">Legislație</span><span class="pro-chip">ET</span>                                </div>
+                            </td>
+                            <td data-col="updated">10.01.2026</td>
+                            <td style="text-align: center;">64</td>
+                            <td style="text-align: center;" data-col="status">
+                                <span class="status-badge status-online">Activ</span>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Previzualizare" onclick="KbPage.openPreview('KB-06')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Înlocuiește fișierul" onclick="KbPage.openReplace('KB-06')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Testează în AI" onclick="KbPage.openTest('KB-06')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"></path><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"></path></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Dezactivează" data-toggle-btn onclick="KbPage.toggleActive('KB-06', this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>                                </button>
+                            </td>
+                        </tr>
+                                                <tr data-id="KB-07"
+                            data-title="normativ metrologic nml pentru contoare de apă"
+                            data-type="Legislație"
+                            data-tags="Legislație|Apă"
+                            data-file="normativ-metrologic-contoare-apa.pdf"
+                            data-uses="22"
+                            data-active="1">
+                            <td class="td-code">KB-07</td>
+                            <td class="td-name" data-col="title">Normativ metrologic NML pentru contoare de apă</td>
+                            <td data-col="type">Legislație</td>
+                            <td data-col="tags">
+                                <div class="pro-chips">
+                                    <span class="pro-chip">Legislație</span><span class="pro-chip">Apă</span>                                </div>
+                            </td>
+                            <td data-col="updated">21.11.2025</td>
+                            <td style="text-align: center;">22</td>
+                            <td style="text-align: center;" data-col="status">
+                                <span class="status-badge status-online">Activ</span>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Previzualizare" onclick="KbPage.openPreview('KB-07')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Înlocuiește fișierul" onclick="KbPage.openReplace('KB-07')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Testează în AI" onclick="KbPage.openTest('KB-07')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"></path><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"></path></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Dezactivează" data-toggle-btn onclick="KbPage.toggleActive('KB-07', this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>                                </button>
+                            </td>
+                        </tr>
+                                                <tr data-id="KB-08"
+                            data-title="termene de răspuns la sesizări scrise"
+                            data-type="Procedură internă"
+                            data-tags="Procedură"
+                            data-file="procedura-termene-raspuns-sesizari.docx"
+                            data-uses="49"
+                            data-active="1">
+                            <td class="td-code">KB-08</td>
+                            <td class="td-name" data-col="title">Termene de răspuns la sesizări scrise</td>
+                            <td data-col="type">Procedură internă</td>
+                            <td data-col="tags">
+                                <div class="pro-chips">
+                                    <span class="pro-chip">Procedură</span>                                </div>
+                            </td>
+                            <td data-col="updated">03.03.2026</td>
+                            <td style="text-align: center;">49</td>
+                            <td style="text-align: center;" data-col="status">
+                                <span class="status-badge status-online">Activ</span>
+                            </td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Previzualizare" onclick="KbPage.openPreview('KB-08')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Înlocuiește fișierul" onclick="KbPage.openReplace('KB-08')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Testează în AI" onclick="KbPage.openTest('KB-08')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"></path><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"></path></svg>
+                                </button>
+                                <button type="button" class="btn-action-icon" title="Dezactivează" data-toggle-btn onclick="KbPage.toggleActive('KB-08', this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>                                </button>
+                            </td>
+                        </tr>
+                        
+                        <!-- No Results Row -->
+                        <tr id="noResultsRow" style="display: none;">
+                            <td colspan="8" class="table-empty">
+                                Niciun document găsit pentru criteriile alese.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-pagination">
+                <div class="pagination-info">
+                    Afișare <strong id="paginationStart">1</strong> - <strong id="paginationEnd">8</strong> din <strong id="paginationTotal">8</strong> înregistrări
+                </div>
+                <div class="pagination-controls">
+                    <button type="button" class="btn-secondary btn-page-nav" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        <span>Anterior</span>
+                    </button>
+                    <div class="pagination-pages">
+                        <button type="button" class="btn-secondary btn-page active">1</button>
+                    </div>
+                    <button type="button" class="btn-secondary btn-page-nav" disabled>
+                        <span>Următor</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ Modal Adaugă document / Înlocuiește fișierul ═════════════════════
+             React: <KbDocumentModal isOpen doc={editing} onSave={saveDoc} onClose={close} />
+             → POST /api/pro/kb (adăugare) / PUT /api/pro/kb/{id} (înlocuire), multipart/form-data
+        ═══════════════════════════════════════════════════════════════════ -->
+        <div class="modal-overlay" id="kbDocModal" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="kbDocModal-title">
+            <div class="modal-card" style="max-width: 680px; width: 95%;">
+                <div class="modal-header">
+                    <h3 id="kbDocModal-title">Adaugă document</h3>
+                    <button type="button" class="btn-close" title="Închide fereastra" onclick="KbPage.close('kbDocModal')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="calc-alert calc-alert--danger" id="kbDocErrors" style="display:none;"></div>
+
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label class="form-label" for="txtKbDocTitle">Titlu <span class="required-star">*</span></label>
+                            <input type="text" id="txtKbDocTitle" class="input-control" maxlength="200" placeholder="Ex: Explicarea calculului pentru apă caldă">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="ddlKbDocType">Tip <span class="required-star">*</span></label>
+                            <select id="ddlKbDocType" class="input-control">
+                                <option value="">-</option>
+                                                                    <option value="Răspuns standard">Răspuns standard</option>
+                                                                    <option value="Legislație">Legislație</option>
+                                                                    <option value="Procedură internă">Procedură internă</option>
+                                                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 14px;">
+                        <span class="form-label">Etichete <span class="field-hint">(categoriile solicitărilor)</span></span>
+                        <div class="pro-check-grid" id="kbDocCategories">
+                                                            <label class="pro-check-tile" for="chkKbCat0">
+                                    <input type="checkbox" id="chkKbCat0" value="Reclamație consum">
+                                    Reclamație consum                                </label>
+                                                            <label class="pro-check-tile" for="chkKbCat1">
+                                    <input type="checkbox" id="chkKbCat1" value="Informații">
+                                    Informații                                </label>
+                                                            <label class="pro-check-tile" for="chkKbCat2">
+                                    <input type="checkbox" id="chkKbCat2" value="Garanție">
+                                    Garanție                                </label>
+                                                            <label class="pro-check-tile" for="chkKbCat3">
+                                    <input type="checkbox" id="chkKbCat3" value="Avarie">
+                                    Avarie                                </label>
+                                                            <label class="pro-check-tile" for="chkKbCat4">
+                                    <input type="checkbox" id="chkKbCat4" value="Service">
+                                    Service                                </label>
+                                                            <label class="pro-check-tile" for="chkKbCat5">
+                                    <input type="checkbox" id="chkKbCat5" value="Montaj ulterior">
+                                    Montaj ulterior                                </label>
+                                                            <label class="pro-check-tile" for="chkKbCat6">
+                                    <input type="checkbox" id="chkKbCat6" value="Legislație">
+                                    Legislație                                </label>
+                                                            <label class="pro-check-tile" for="chkKbCat7">
+                                    <input type="checkbox" id="chkKbCat7" value="Procedură">
+                                    Procedură                                </label>
+                                                    </div>
+                    </div>
+                    <div class="form-group" style="margin-top: 14px;">
+                        <label class="form-label" for="txtKbDocTags">Alte etichete <span class="field-hint">(separate prin virgulă)</span></label>
+                        <input type="text" id="txtKbDocTags" class="input-control" placeholder="Ex: Apă, ET">
+                    </div>
+
+                    <div class="form-group" style="margin-top: 14px;">
+                        <span class="form-label">Fișier <span class="required-star" id="kbDocFileStar">*</span></span>
+                        <!-- React: <FileDrop accept=".pdf,.doc,.docx,.txt" onFile={setFile} /> -->
+                        <div class="pro-dropzone" id="kbDropzone" role="button" tabindex="0" aria-label="Alegeți fișierul documentului">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                            <div><strong>Trageți fișierul aici</strong> sau faceți click pentru a-l alege</div>
+                            <div>.pdf, .doc, .docx, .txt</div>
+                        </div>
+                        <input type="file" id="fuKbDocFile" accept=".pdf,.doc,.docx,.txt" hidden>
+                        <div class="list-sublabel" id="kbDocFileName">Niciun fișier ales.</div>
+                    </div>
+
+                    <div class="form-row-2" style="margin-top: 14px;">
+                        <div class="form-group">
+                            <label class="form-label" for="dtpKbValidFrom">Valabil de la</label>
+                            <input type="text" id="dtpKbValidFrom" class="input-control" data-datepicker>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-top: 14px;">
+                        <label class="form-label" for="txtKbDocNotes">Observații</label>
+                        <textarea id="txtKbDocNotes" class="input-control" rows="3" placeholder="Ex: forma consolidată, se verifică trimestrial"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" onclick="KbPage.close('kbDocModal')">Renunță</button>
+                    <button type="button" class="btn-primary" id="btnKbDocSave" onclick="KbPage.save()">Salvează document</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ Modal Previzualizare document ═══════════════════════════════════
+             React: <KbPreviewModal doc={previewDoc} />  → GET /api/pro/kb/{id}/preview
+        ═══════════════════════════════════════════════════════════════════ -->
+        <div class="modal-overlay" id="kbPreviewModal" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="kbPreviewModal-title">
+            <div class="modal-card" style="max-width: 720px; width: 95%;">
+                <div class="modal-header">
+                    <h3 id="kbPreviewModal-title">Previzualizare document</h3>
+                    <button type="button" class="btn-close" title="Închide fereastra" onclick="KbPage.close('kbPreviewModal')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="utility-context-strip">
+                        <div class="context-items">
+                            <div class="context-item"><span class="context-label">Cod:</span><strong class="context-value context-code" id="kbPrevCode"></strong></div>
+                            <div class="context-sep"></div>
+                            <div class="context-item"><span class="context-label">Tip:</span><span class="context-value" id="kbPrevType"></span></div>
+                            <div class="context-sep"></div>
+                            <div class="context-item"><span class="context-label">Fișier:</span><span class="context-value" id="kbPrevFile"></span></div>
+                            <div class="context-sep"></div>
+                            <div class="context-item"><span class="context-label">Actualizat:</span><span class="context-value" id="kbPrevUpdated"></span></div>
+                        </div>
+                        <div><span class="status-badge status-online" id="kbPrevStatus">Activ</span></div>
+                    </div>
+                    <div class="pro-chips" id="kbPrevTags" style="margin-bottom: 12px;"></div>
+                    <div class="pro-message" id="kbPrevText"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" onclick="KbPage.close('kbPreviewModal')">Închide</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ Modal Testează în AI ════════════════════════════════════════════
+             React: <KbAiTestModal doc={testDoc} />  → POST /api/pro/kb/{id}/test { question }
+        ═══════════════════════════════════════════════════════════════════ -->
+        <div class="modal-overlay" id="kbTestModal" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="kbTestModal-title">
+            <div class="modal-card" style="max-width: 620px; width: 95%;">
+                <div class="modal-header">
+                    <h3 id="kbTestModal-title">Testează în AI</h3>
+                    <button type="button" class="btn-close" title="Închide fereastra" onclick="KbPage.close('kbTestModal')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="utility-context-strip">
+                        <div class="context-items">
+                            <div class="context-item"><span class="context-label">Document:</span><strong class="context-value context-code" id="kbTestCode"></strong></div>
+                            <div class="context-sep"></div>
+                            <div class="context-item"><span class="context-value" id="kbTestTitle"></span></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <span class="form-label">Întrebare client (exemplu)</span>
+                        <div class="pro-message" id="kbTestQuestion"></div>
+                    </div>
+                    <div class="pro-ai-box">
+                        <div class="pro-ai-head">
+                            <span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"></path><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"></path></svg>
+                                Răspuns propus de AI
+                            </span>
+                            <span>Test – nu se trimite</span>
+                        </div>
+                        <div class="pro-ai-body">
+                            <div class="pro-ai-typing" id="kbTestTyping"><i></i><i></i><i></i> Se generează răspunsul…</div>
+                            <div id="kbTestAnswer" style="display:none;"></div>
+                            <div class="pro-ai-sources" id="kbTestSources" style="display:none;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" onclick="KbPage.close('kbTestModal')">Închide</button>
+                    <button type="button" class="btn-primary" id="btnKbRegenerate" onclick="KbPage.generate()">Regenerează</button>
+                </div>
+            </div>
+        </div>
+
+<script>
+/**
+ * Bază de Cunoștințe – logica paginii (filtrare client-side, KPI, modale, simulare AI).
+ * React: state { docs, filters, editing, previewDoc, testDoc }; datele vin din GET /api/pro/kb.
+ */
+var KbPage = (function () {
+    var docs = {"KB-01":{"id":"KB-01","title":"Explicarea calculului pentru încălzire (repartitoare)","type":"Răspuns standard","tags":["Reclamație consum","ET"],"updated":"2026-09-18","uses":142,"active":true,"file":"raspuns-calcul-incalzire-repartitoare.docx","validFrom":"2026-09-18","notes":"","preview":["Costul energiei termice pentru încălzire, înregistrat de contorul de branșament al blocului, se împarte în două componente: consumul comun (pierderi pe coloane, țevi și spații comune) și consumul individual, înregistrat de repartitoarele montate pe calorifere.","Partea individuală se repartizează proporțional cu unitățile corectate ale fiecărui apartament. Unitățile citite pe repartitor se înmulțesc cu factorii de corecție ai radiatorului (Kq, Kc), astfel încât caloriferele de tipuri și dimensiuni diferite să fie comparabile între ele.","La o reclamație, operatorul verifică citirile repartitoarelor din perioada contestată, eventualele estimări aplicate, factorii de corecție ai radiatoarelor și cota de consum comun stabilită de asociație. Răspunsul către client include detalierea din fișa de calcul a apartamentului."],"question":"De ce am de plată la încălzire mai mult decât vecinul meu, deși avem apartamente identice?","answer":["Bună ziua,","Vă mulțumim pentru mesaj. Factura de încălzire are două componente: o parte comună (pierderi pe coloane și spații comune), împărțită după regula stabilită de asociație, și o parte individuală, calculată din unitățile corectate citite pe repartitoarele de pe caloriferele dumneavoastră [KB-01].","Chiar și în apartamente identice, consumul individual poate diferi semnificativ, în funcție de temperatura menținută, de aerisire și de poziția apartamentului în bloc. Unitățile citite sunt corectate cu factorii fiecărui radiator, astfel încât comparația să fie corectă [KB-01].","Dacă ne transmiteți codul apartamentului, verificăm citirile repartitoarelor din luna contestată și vă trimitem detalierea calculului."]},"KB-02":{"id":"KB-02","title":"Estimarea consumului în lipsa citirii","type":"Răspuns standard","tags":["Reclamație consum"],"updated":"2026-08-02","uses":96,"active":true,"file":"raspuns-estimare-consum.docx","validFrom":"2026-08-02","notes":"","preview":["Când un contor sau un repartitor nu a putut fi citit (acces refuzat, echipament defect, lipsă transmisie radio), consumul perioadei se estimează conform metodologiei de calcul și regulamentului asociației de proprietari.","Metodele de estimare folosite, în ordinea preferinței: media ultimelor 3 luni, consumul din aceeași lună a anului anterior, media blocului, norma de consum. Metoda aplicată este menționată în fișa de calcul a apartamentului.","La următoarea citire reală, diferența dintre consumul estimat și consumul real se regularizează automat, astfel încât pe ansamblul perioadelor clientul plătește doar consumul înregistrat."],"question":"Nu am fost acasă la citire. Cum s-a calculat consumul de apă pe luna aceasta?","answer":["Bună ziua,","Deoarece contorul nu a putut fi citit în această perioadă, consumul a fost estimat pe baza mediei ultimelor 3 luni, conform metodologiei de calcul [KB-02].","La următoarea citire reală, diferența dintre consumul estimat și cel real se va regulariza automat, așa că nu veți plăti mai mult decât ați consumat [KB-02].","Dacă doriți, ne puteți transmite indexul actual al contorului (o fotografie a afișajului), iar noi îl vom folosi la recalculare."]},"KB-03":{"id":"KB-03","title":"Programarea verificării metrologice","type":"Răspuns standard","tags":["Informații","Apă"],"updated":"2026-06-14","uses":37,"active":true,"file":"procedura-verificare-metrologica.pdf","validFrom":"2026-06-14","notes":"Se actualizează la schimbarea programului de verificări.","preview":["Contoarele de apă rece și caldă se verifică metrologic periodic, la intervalul stabilit de normele de metrologie legală în vigoare. Data următoarei verificări este înscrisă în fișa echipamentului.","Verificarea se programează la nivel de NOD, pentru toate contoarele care ajung la termen în aceeași perioadă. Clientul este anunțat prin SMS cu cel puțin 48 de ore înainte de vizita echipei de service.","Dacă la vizită contorul nu este accesibil, se stabilește o nouă programare. Contoarele care nu mai pot fi verificate se înlocuiesc, iar clientul primește procesul-verbal de montaj."],"question":"Mi-a expirat verificarea metrologică la apometru. Ce trebuie să fac?","answer":["Bună ziua,","Verificarea metrologică a contoarelor se programează de echipa noastră, la nivelul întregului bloc, pentru toate contoarele ajunse la termen [KB-03].","Veți primi un SMS cu cel puțin 48 de ore înainte de vizita echipei de service, cu data și intervalul orar [KB-03]. Nu este nevoie să faceți altceva decât să asigurați accesul la contor în ziua programată.","Dacă intervalul propus nu vă convine, ne puteți răspunde la acest mesaj și reprogramăm vizita."]},"KB-04":{"id":"KB-04","title":"Cum se citește afișajul repartitorului","type":"Răspuns standard","tags":["Informații"],"updated":"2026-05-30","uses":58,"active":true,"file":"ghid-afisaj-repartitor.pdf","validFrom":"2026-05-30","notes":"","preview":["Repartitorul electronic afișează alternativ, la câteva secunde, mai multe valori: consumul curent (unități acumulate de la începutul sezonului de încălzire) și valoarea memorată la data de referință, folosită la calcul.","Valoarea memorată este marcată pe afișaj cu un simbol de memorie sau cu data de referință. Un test de segmente (toate cifrele aprinse) apare periodic și nu reprezintă o eroare.","Dacă pe afișaj apare un cod de eroare sau afișajul este stins, clientul este rugat să transmită o fotografie, iar solicitarea se transformă într-o intervenție de service."],"question":"Repartitorul meu afișează alternativ două valori. Care este citirea corectă?","answer":["Bună ziua,","Este normal ca repartitorul să afișeze alternativ două valori: consumul curent, acumulat de la începutul sezonului, și valoarea memorată la data de referință, marcată cu simbolul de memorie [KB-04].","Pentru calcul se folosește valoarea memorată la data de referință; citirea se face de regulă automat, prin radio [KB-04].","Dacă observați un cod de eroare sau afișajul stins, vă rugăm să ne trimiteți o fotografie, iar noi vom programa o verificare."]},"KB-05":{"id":"KB-05","title":"Legea nr. 196\/2018 – asociațiile de proprietari","type":"Legislație","tags":["Legislație"],"updated":"2026-01-10","uses":71,"active":true,"file":"legea-196-2018-asociatii-proprietari.pdf","validFrom":"2026-01-10","notes":"Forma consolidată. Se verifică trimestrial modificările legislative.","preview":["Legea nr. 196\/2018 reglementează înființarea, organizarea și funcționarea asociațiilor de proprietari, precum și administrarea condominiilor. Documentul conține forma consolidată a legii, folosită ca sursă pentru întrebările despre drepturile și obligațiile proprietarilor.","Pentru solicitările primite de SONIC sunt relevante în special prevederile privind repartizarea cheltuielilor comune pe categorii (pe consumuri individuale înregistrate, pe număr de persoane, pe cotă-parte indiviză) și rolul adunării generale în stabilirea regulilor de repartizare.","Răspunsurile care citează acest document trebuie să trimită clientul, pentru decizii care țin de asociație, către administratorul sau comitetul executiv al asociației de proprietari."],"question":"Cine decide modul de împărțire a cheltuielilor comune în bloc?","answer":["Bună ziua,","Modul de repartizare a cheltuielilor comune se stabilește la nivelul asociației de proprietari, prin hotărârea adunării generale, în condițiile Legii nr. 196\/2018 [KB-05].","SONIC aplică la calcul regulile de repartizare comunicate de asociație; pentru modificarea acestora vă recomandăm să vă adresați administratorului sau comitetului executiv al asociației [KB-05].","Vă putem transmite, la cerere, regulile de repartizare configurate în prezent pentru blocul dumneavoastră."]},"KB-06":{"id":"KB-06","title":"Legea nr. 325\/2006 – serviciul public de alimentare cu energie termică","type":"Legislație","tags":["Legislație","ET"],"updated":"2026-01-10","uses":64,"active":true,"file":"legea-325-2006-energie-termica.pdf","validFrom":"2026-01-10","notes":"Forma consolidată.","preview":["Legea nr. 325\/2006 stabilește cadrul juridic pentru serviciul public de alimentare cu energie termică: producerea, transportul, distribuția și furnizarea energiei termice către consumatori.","Pentru condominiile echipate cu repartitoare de costuri, documentul este folosit ca sursă pentru întrebările despre repartizarea consumului de energie termică între apartamente și despre obligațiile consumatorilor privind accesul la aparatele de măsură.","Detaliile de aplicare (metode de calcul, situația apartamentelor fără repartitoare) se completează cu normele tehnice în vigoare și cu răspunsul standard privind calculul pentru încălzire."],"question":"Am refuzat montarea repartitoarelor. Cum mi se calculează încălzirea?","answer":["Bună ziua,","În blocurile în care încălzirea se repartizează pe baza repartitoarelor, apartamentele fără repartitoare montate sau necitite se calculează după reguli specifice, stabilite de legislația privind serviciul de alimentare cu energie termică și de normele tehnice aplicabile [KB-06].","Concret, consumul acestor apartamente nu se determină din citiri, ci printr-o metodă de calcul prevăzută de norme, care de regulă nu este avantajoasă pentru proprietar [KB-06].","Dacă doriți montarea repartitoarelor, vă putem programa o vizită a echipei de montaj."]},"KB-07":{"id":"KB-07","title":"Normativ metrologic NML pentru contoare de apă","type":"Legislație","tags":["Legislație","Apă"],"updated":"2025-11-21","uses":22,"active":true,"file":"normativ-metrologic-contoare-apa.pdf","validFrom":"2025-11-21","notes":"","preview":["Normativul de metrologie legală pentru contoarele de apă stabilește condițiile de verificare a contoarelor puse în funcțiune: verificarea inițială, verificarea periodică și verificarea după reparare.","Un contor este considerat verificat metrologic atunci când are marcajul de verificare aplicat și sigiliul intact. Ruperea sigiliului, deteriorarea marcajului sau intervenția neautorizată asupra contorului anulează valabilitatea verificării.","Contoarele cu sigiliul deteriorat se reverifică sau se înlocuiesc printr-o intervenție de service; consumul perioadei până la intervenție se poate estima."],"question":"Contorul are sigiliul rupt. Mai este valabilă verificarea metrologică?","answer":["Bună ziua,","Un contor este considerat verificat metrologic doar dacă are marcajul de verificare și sigiliul intacte; ruperea sigiliului anulează valabilitatea verificării [KB-07].","În această situație contorul trebuie reverificat sau înlocuit printr-o intervenție de service, iar consumul până la intervenție se poate estima [KB-07].","Vă propunem să programăm o vizită a echipei de service. Vă rugăm să ne confirmați intervalul în care asigurați accesul la contor."]},"KB-08":{"id":"KB-08","title":"Termene de răspuns la sesizări scrise","type":"Procedură internă","tags":["Procedură"],"updated":"2026-03-03","uses":49,"active":true,"file":"procedura-termene-raspuns-sesizari.docx","validFrom":"2026-03-03","notes":"Aprobată de conducere; se aplică tuturor canalelor.","preview":["Sesizările scrise primite pe orice canal (e-mail, portal, formular web, scrisoare) se înregistrează în SONIC PRO cu număr de solicitare și dată de primire. Clientul primește confirmarea înregistrării în cel mult o zi lucrătoare.","Termenul intern de răspuns este de 10 zile lucrătoare de la înregistrare. Pentru solicitările care necesită o intervenție la fața locului, termenul curge de la data intervenției, iar clientul este informat despre programare.","Răspunsurile se trimit pe același canal pe care a venit solicitarea. Orice răspuns generat cu AI este verificat și aprobat de operator înainte de trimitere."],"question":"Am trimis o reclamație acum o săptămână. Când primesc răspuns?","answer":["Bună ziua,","Reclamația dumneavoastră a fost înregistrată, iar termenul nostru de răspuns este de 10 zile lucrătoare de la înregistrare [KB-08].","Dacă soluționarea necesită o verificare la fața locului, vă vom contacta pentru programare, iar răspunsul final va fi transmis după intervenție [KB-08].","Vă vom răspunde pe același canal pe care ne-ați scris. Vă mulțumim pentru răbdare."]}};
+    var categories = ["Reclamație consum","Informații","Garanție","Avarie","Service","Montaj ulterior","Legislație","Procedură"];
+    var today = '2026-10-28';
+    var editingId = null;     // null = adăugare, altfel id-ul documentului la „Înlocuiește fișierul”
+    var chosenFile = null;
+    var testId = null, testTimer = null;
+    var ICON_OFF = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18.36 6.64a9 9 0 1 1-12.73 0\"><\/path><line x1=\"12\" y1=\"2\" x2=\"12\" y2=\"12\"><\/line><\/svg>";
+    var ICON_ON  = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\"><\/path><polyline points=\"22 4 12 14.01 9 11.01\"><\/polyline><\/svg>";
+    var ACCEPT = ['pdf', 'doc', 'docx', 'txt'];
+
+    function el(id) { return document.getElementById(id); }
+    function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+    function fmtDate(iso) { if (!iso) return '—'; var p = iso.split('-'); return p[2] + '.' + p[1] + '.' + p[0]; }
+    function norm(s) { return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+    function rows() { return Array.prototype.slice.call(document.querySelectorAll('#kbTableBody tr[data-id]')); }
+    function chips(tags) { return tags.map(function (t) { return '<span class="pro-chip">' + esc(t) + '</span>'; }).join(''); }
+
+    function open(id) { el(id).style.display = 'flex'; }
+    function close(id) {
+        el(id).style.display = 'none';
+        if (id === 'kbTestModal' && testTimer) { clearTimeout(testTimer); testTimer = null; }
+    }
+
+    /* ── Filtrare (caseta de filtrare + căutare dinamică) ─────────── */
+    function applyFilters() {
+        var title = norm(el('txtKbTitle').value.trim());
+        var type = el('ddlKbType').value;
+        var tag = el('ddlKbTag').value;
+        var live = norm(el('kbLiveSearch').value.trim());
+        var perPage = parseInt(el('ddlPerPage').value, 10) || 100;
+        var all = rows(), matched = 0, shown = 0;
+
+        all.forEach(function (tr) {
+            var ok = true;
+            if (title && norm(tr.dataset.title).indexOf(title) === -1) ok = false;
+            if (ok && type !== '-1' && tr.dataset.type !== type) ok = false;
+            if (ok && tag !== '-1' && tr.dataset.tags.split('|').indexOf(tag) === -1) ok = false;
+            if (ok && live) {
+                var hay = norm(tr.dataset.id + ' ' + tr.dataset.title + ' ' + tr.dataset.file);
+                ok = live.split(/\s+/).every(function (w) { return hay.indexOf(w) !== -1; });
+            }
+            if (ok) matched++;
+            var visible = ok && shown < perPage;
+            if (visible) shown++;
+            tr.style.display = visible ? '' : 'none';
+        });
+
+        el('visibleCount').textContent = shown;
+        el('totalCount').textContent = all.length;
+        el('paginationStart').textContent = shown ? 1 : 0;
+        el('paginationEnd').textContent = shown;
+        el('paginationTotal').textContent = matched;
+        el('noResultsRow').style.display = matched ? 'none' : '';
+    }
+
+    /* ── KPI ──────────────────────────────────────────────────────── */
+    function updateKpis() {
+        var active = 0, std = 0, laws = 0, uses = 0, all = rows();
+        all.forEach(function (tr) {
+            uses += parseInt(tr.dataset.uses, 10) || 0;
+            if (tr.dataset.active !== '1') return;
+            active++;
+            if (tr.dataset.type === 'Răspuns standard') std++;
+            if (tr.dataset.type === 'Legislație') laws++;
+        });
+        el('kpiActive').textContent = active;
+        el('kpiTotal').textContent = all.length;
+        el('kpiStandard').textContent = std;
+        el('kpiLaws').textContent = laws;
+        el('kpiUses').textContent = uses;
+    }
+
+    /* ── Activare / dezactivare (documentele nu se șterg) ─────────── */
+    function toggleActive(id, btn) {
+        var d = docs[id], tr = document.querySelector('#kbTableBody tr[data-id="' + id + '"]');
+        if (!d || !tr) return;
+        var msg = d.active
+            ? 'Dezactivați documentul „' + d.title + '”?\n\nAI-ul nu îl va mai folosi ca sursă pentru răspunsurile noi. Documentul rămâne în listă și poate fi reactivat.'
+            : 'Activați documentul „' + d.title + '”?\n\nAI-ul îl va folosi din nou ca sursă pentru răspunsuri.';
+        if (!confirm(msg)) return;
+        d.active = !d.active;
+        tr.dataset.active = d.active ? '1' : '0';
+        btn.innerHTML = d.active ? ICON_OFF : ICON_ON;
+        btn.title = d.active ? 'Dezactivează' : 'Activează';
+        tr.querySelector('[data-col="status"]').innerHTML = '<span class="status-badge ' + (d.active ? 'status-online' : 'status-offline') + '">' + (d.active ? 'Activ' : 'Inactiv') + '</span>';
+        updateKpis();
+    }
+
+    /* ── Previzualizare ───────────────────────────────────────────── */
+    function openPreview(id) {
+        var d = docs[id]; if (!d) return;
+        el('kbPreviewModal-title').textContent = 'Previzualizare – ' + d.title;
+        el('kbPrevCode').textContent = d.id;
+        el('kbPrevType').textContent = d.type;
+        el('kbPrevFile').textContent = d.file || '—';
+        el('kbPrevUpdated').textContent = fmtDate(d.updated);
+        var st = el('kbPrevStatus');
+        st.className = 'status-badge ' + (d.active ? 'status-online' : 'status-offline');
+        st.textContent = d.active ? 'Activ' : 'Inactiv';
+        el('kbPrevTags').innerHTML = chips(d.tags);
+        var paras = d.preview && d.preview.length ? d.preview : [
+            'Documentul „' + d.title + '” a fost încărcat' + (d.file ? ' din fișierul ' + d.file : '') + ' și este în curs de indexare.',
+            'După indexare, aici va apărea textul extras din document, așa cum îl folosește AI-ul ca sursă pentru răspunsurile la solicitările etichetate: ' + (d.tags.length ? d.tags.join(', ') : 'fără etichete') + '.'
+        ].concat(d.notes ? ['Observații: ' + d.notes] : []);
+        el('kbPrevText').innerHTML = paras.map(function (p, i) {
+            return '<p' + (i < paras.length - 1 ? ' style="margin-bottom: 10px;"' : '') + '>' + esc(p) + '</p>';
+        }).join('');
+        open('kbPreviewModal');
+    }
+
+    /* ── Testează în AI (simulare 1,2 s) ──────────────────────────── */
+    function openTest(id) {
+        var d = docs[id]; if (!d) return;
+        testId = id;
+        el('kbTestCode').textContent = d.id;
+        el('kbTestTitle').textContent = d.title;
+        el('kbTestQuestion').textContent = d.question || 'Ce prevede documentul „' + d.title + '” pentru situația mea?';
+        open('kbTestModal');
+        generate();
+    }
+
+    function generate() {
+        var d = docs[testId]; if (!d) return;
+        if (testTimer) clearTimeout(testTimer);
+        el('kbTestTyping').style.display = '';
+        el('kbTestAnswer').style.display = 'none';
+        el('kbTestSources').style.display = 'none';
+        el('btnKbRegenerate').disabled = true;
+        testTimer = setTimeout(function () {
+            testTimer = null;
+            var paras = d.answer && d.answer.length ? d.answer : [
+                'Bună ziua,',
+                'Conform documentului „' + d.title + '” [' + d.id + '], vă transmitem informațiile solicitate.',
+                'Textul complet al răspunsului va fi disponibil după indexarea documentului.'
+            ];
+            var html = paras.map(function (p, i) {
+                var txt = esc(p).replace(/\[(KB-\d+)\]/g, '<strong>[$1]</strong>');
+                return '<p' + (i < paras.length - 1 ? ' style="margin-bottom: 10px;"' : '') + '>' + txt + '</p>';
+            }).join('');
+            if (!d.active) {
+                html = '<div class="calc-alert calc-alert--warning"><div>Documentul este inactiv: în producție AI-ul nu îl folosește ca sursă. Testul este afișat doar pentru verificare.</div></div>' + html;
+            }
+            el('kbTestTyping').style.display = 'none';
+            el('kbTestAnswer').innerHTML = html;
+            el('kbTestAnswer').style.display = '';
+            el('kbTestSources').innerHTML = 'Surse: <span class="pro-chip pro-chip--dark">' + esc(d.id) + '</span><span class="pro-chip">' + esc(d.title) + '</span>';
+            el('kbTestSources').style.display = '';
+            el('btnKbRegenerate').disabled = false;
+        }, 1200);
+    }
+
+    /* ── Modal Adaugă document / Înlocuiește fișierul ─────────────── */
+    function resetDocForm() {
+        el('txtKbDocTitle').value = '';
+        el('ddlKbDocType').value = '';
+        el('txtKbDocTags').value = '';
+        el('txtKbDocNotes').value = '';
+        el('fuKbDocFile').value = '';
+        chosenFile = null;
+        document.querySelectorAll('#kbDocCategories input[type="checkbox"]').forEach(function (c) { c.checked = false; });
+        if (window.SonicDatepicker) SonicDatepicker.setValue(el('dtpKbValidFrom'), '');
+        showErrors([]);
+    }
+
+    function openAdd() {
+        editingId = null;
+        resetDocForm();
+        el('kbDocModal-title').textContent = 'Adaugă document';
+        el('kbDocFileStar').style.display = '';
+        el('kbDocFileName').textContent = 'Niciun fișier ales.';
+        open('kbDocModal');
+        el('txtKbDocTitle').focus();
+    }
+
+    function openReplace(id) {
+        var d = docs[id]; if (!d) return;
+        editingId = id;
+        resetDocForm();
+        el('kbDocModal-title').textContent = 'Înlocuiește fișierul – ' + d.id;
+        el('txtKbDocTitle').value = d.title;
+        el('ddlKbDocType').value = d.type;
+        var other = [];
+        d.tags.forEach(function (t) {
+            var idx = categories.indexOf(t);
+            if (idx !== -1) el('chkKbCat' + idx).checked = true; else other.push(t);
+        });
+        el('txtKbDocTags').value = other.join(', ');
+        el('txtKbDocNotes').value = d.notes || '';
+        if (window.SonicDatepicker) SonicDatepicker.setValue(el('dtpKbValidFrom'), d.validFrom || '');
+        el('kbDocFileStar').style.display = 'none';
+        el('kbDocFileName').textContent = 'Fișier curent: ' + (d.file || '—') + '. Alegeți fișierul nou; dacă nu alegeți niciunul, se păstrează fișierul curent și se salvează doar datele.';
+        open('kbDocModal');
+    }
+
+    function showErrors(list) {
+        var box = el('kbDocErrors');
+        if (!list.length) { box.style.display = 'none'; box.innerHTML = ''; return; }
+        box.innerHTML = '<div>' + list.map(esc).join('<br>') + '</div>';
+        box.style.display = '';
+    }
+
+    function setFile(file) {
+        if (!file) return;
+        var ext = (file.name.split('.').pop() || '').toLowerCase();
+        if (ACCEPT.indexOf(ext) === -1) {
+            chosenFile = null;
+            el('fuKbDocFile').value = '';
+            showErrors(['Formatul fișierului „' + file.name + '” nu este acceptat. Încărcați un fișier .pdf, .doc, .docx sau .txt.']);
+            return;
+        }
+        chosenFile = file;
+        showErrors([]);
+        var kb = Math.max(1, Math.round(file.size / 1024));
+        el('kbDocFileName').textContent = 'Fișier ales: ' + file.name + ' (' + kb + ' KB)';
+    }
+
+    function collectTags() {
+        var tags = [];
+        document.querySelectorAll('#kbDocCategories input[type="checkbox"]:checked').forEach(function (c) { tags.push(c.value); });
+        el('txtKbDocTags').value.split(',').forEach(function (t) {
+            t = t.trim();
+            if (t && tags.indexOf(t) === -1) tags.push(t);
+        });
+        return tags;
+    }
+
+    function save() {
+        var title = el('txtKbDocTitle').value.trim();
+        var type = el('ddlKbDocType').value;
+        var vfInput = el('dtpKbValidFrom');
+        var validFrom = window.SonicDatepicker ? SonicDatepicker.getISO(vfInput) : '';
+        var errors = [];
+        if (!title) errors.push('Titlul documentului este obligatoriu.');
+        else if (title.length > 200) errors.push('Titlul documentului poate avea cel mult 200 de caractere.');
+        if (!type) errors.push('Selectați tipul documentului.');
+        if (!editingId && !chosenFile) errors.push('Selectați fișierul documentului (.pdf, .doc, .docx sau .txt).');
+        if (vfInput.value.trim() && !validFrom) errors.push('Data „Valabil de la” nu este validă.');
+        if (errors.length) { showErrors(errors); return; }
+
+        var tags = collectTags();
+        var notes = el('txtKbDocNotes').value.trim();
+        var d;
+        if (editingId) {
+            d = docs[editingId];
+            d.title = title; d.type = type; d.tags = tags; d.notes = notes; d.validFrom = validFrom;
+            if (chosenFile) { d.file = chosenFile.name; d.preview = []; }   // textul se reextrage după indexare
+            d.updated = today;
+            updateRow(d);
+        } else {
+            var max = 0;
+            Object.keys(docs).forEach(function (k) { var n = parseInt(k.replace('KB-', ''), 10); if (n > max) max = n; });
+            var id = 'KB-' + String(max + 1).padStart(2, '0');
+            d = docs[id] = { id: id, title: title, type: type, tags: tags, updated: today, uses: 0, active: true,
+                             file: chosenFile.name, validFrom: validFrom, notes: notes, preview: [], question: '', answer: [] };
+            addRow(d);
+        }
+        addTagOptions(tags);
+        close('kbDocModal');
+        updateKpis();
+        applyFilters();
+        var tr = document.querySelector('#kbTableBody tr[data-id="' + d.id + '"]');
+        if (tr && tr.style.display !== 'none') tr.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+
+    function fillRowData(tr, d) {
+        tr.dataset.id = d.id;
+        tr.dataset.title = d.title.toLowerCase();
+        tr.dataset.type = d.type;
+        tr.dataset.tags = d.tags.join('|');
+        tr.dataset.file = (d.file || '').toLowerCase();
+        tr.dataset.uses = d.uses;
+        tr.dataset.active = d.active ? '1' : '0';
+    }
+
+    function updateRow(d) {
+        var tr = document.querySelector('#kbTableBody tr[data-id="' + d.id + '"]');
+        if (!tr) return;
+        fillRowData(tr, d);
+        tr.querySelector('[data-col="title"]').textContent = d.title;
+        tr.querySelector('[data-col="type"]').textContent = d.type;
+        tr.querySelector('[data-col="tags"]').innerHTML = '<div class="pro-chips">' + chips(d.tags) + '</div>';
+        tr.querySelector('[data-col="updated"]').textContent = fmtDate(d.updated);
+    }
+
+    function addRow(d) {
+        // Se clonează primul rând (aceleași butoane de acțiune) și se completează cu datele noului document
+        var tpl = document.querySelector('#kbTableBody tr[data-id]');
+        var tr = tpl.cloneNode(true);
+        fillRowData(tr, d);
+        tr.style.display = '';
+        tr.querySelector('.td-code').textContent = d.id;
+        tr.cells[5].textContent = d.uses;
+        tr.querySelector('[data-col="status"]').innerHTML = '<span class="status-badge status-online">Activ</span>';
+        var btns = tr.querySelectorAll('.btn-action-icon');
+        btns.forEach(function (b) {
+            // titlul poate fi mutat de action-tooltip.js în data-tooltip / aria-label
+            var label = b.getAttribute('title') || b.getAttribute('data-tooltip') || b.getAttribute('aria-label') || '';
+            b.removeAttribute('data-tooltip');
+            b.removeAttribute('aria-label');
+            b.title = label;
+        });
+        btns[0].setAttribute('onclick', "KbPage.openPreview('" + d.id + "')");
+        btns[1].setAttribute('onclick', "KbPage.openReplace('" + d.id + "')");
+        btns[2].setAttribute('onclick', "KbPage.openTest('" + d.id + "')");
+        btns[3].setAttribute('onclick', "KbPage.toggleActive('" + d.id + "', this)");
+        btns[3].innerHTML = ICON_OFF;
+        btns[3].title = 'Dezactivează';
+        el('kbTableBody').insertBefore(tr, el('kbTableBody').firstChild);
+        updateRow(d);
+    }
+
+    function addTagOptions(tags) {
+        var sel = el('ddlKbTag');
+        var existing = Array.prototype.map.call(sel.options, function (o) { return o.value; });
+        tags.forEach(function (t) {
+            if (existing.indexOf(t) === -1) { sel.add(new Option(t, t)); existing.push(t); }
+        });
+    }
+
+    /* ── Inițializare ─────────────────────────────────────────────── */
+    document.addEventListener('DOMContentLoaded', function () {
+        el('filterForm').addEventListener('submit', function (e) { e.preventDefault(); applyFilters(); });
+        el('kbLiveSearch').addEventListener('input', applyFilters);
+        el('ddlPerPage').addEventListener('change', applyFilters);
+
+        var dz = el('kbDropzone'), fu = el('fuKbDocFile');
+        dz.addEventListener('click', function () { fu.click(); });
+        dz.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fu.click(); } });
+        fu.addEventListener('change', function () { if (fu.files && fu.files[0]) setFile(fu.files[0]); });
+        ['dragenter', 'dragover'].forEach(function (ev) {
+            dz.addEventListener(ev, function (e) { e.preventDefault(); dz.classList.add('is-over'); });
+        });
+        ['dragleave', 'dragend'].forEach(function (ev) {
+            dz.addEventListener(ev, function () { dz.classList.remove('is-over'); });
+        });
+        dz.addEventListener('drop', function (e) {
+            e.preventDefault();
+            dz.classList.remove('is-over');
+            if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) setFile(e.dataTransfer.files[0]);
+        });
+
+        // Închidere modale: click pe fundal / Esc
+        ['kbDocModal', 'kbPreviewModal', 'kbTestModal'].forEach(function (id) {
+            el(id).addEventListener('click', function (e) { if (e.target === el(id)) close(id); });
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key !== 'Escape') return;
+            ['kbDocModal', 'kbPreviewModal', 'kbTestModal'].forEach(function (id) { if (el(id).style.display !== 'none') close(id); });
+        });
+
+        applyFilters();
+    });
+
+    return { openAdd: openAdd, openReplace: openReplace, openPreview: openPreview, openTest: openTest,
+             generate: generate, toggleActive: toggleActive, save: save, close: close };
+})();
+</script>
+
+    </div><!-- /.content -->
+    <footer class="app-footer">
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
+    </footer>
+</div><!-- /.main -->
+
+<script src="assets/js/sidebar.js?v=1.0.1"></script>
+</body>
+</html>

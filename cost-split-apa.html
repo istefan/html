@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Cost Split – Apă – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Cost Split – Apă – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
 </head>
 <body>
 
@@ -179,7 +182,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +190,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +327,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +569,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-billing-logo.svg" alt="SONIC BILLING" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Cost Split – Apă</div>
 
             <!-- User profile avatar (always visible) -->
@@ -558,7 +603,69 @@
     <div class="help-wrapper">
         <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
             <div class="help-panel-inner">
-                                <p class="help-empty">Nu există informații de ajutor disponibile pentru această pagină.</p>
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Câmpuri și butoane                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Mod de lucru                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Cost Split – Apă</h4>
+            <p>Această pagină permite efectuarea operațiunii de <strong>Cost split</strong> pentru un client și perioadele de calcul selectate.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <h4>Elementele ecranului</h4>
+            <ul>
+                <li><strong>Client</strong> – selectarea clientului (partenerului) prin fereastra de selecție (lupă) sau ștergerea selecției (X).</li>
+                <li><strong>Lista perioade de calcul</strong> – afișează perioadele de calcul selectate pentru client.</li>
+                <li><strong>Adăugare perioade de calcul</strong> – deschide selectorul de perioade de calcul (selecție multiplă).</li>
+                <li><strong>Split cost</strong> – execută repartizarea costurilor pentru perioadele selectate.</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <h4>Pași de utilizare</h4>
+            <ul>
+                <li>Selectați <strong>Clientul</strong> folosind butonul de căutare.</li>
+                <li>Apăsați <strong>Adăugare perioade de calcul</strong> pentru a alege perioadele de calcul.</li>
+                <li>Apăsați <strong>Split cost</strong> pentru a rula operațiunea.</li>
+            </ul>
+                            </div>
+                                    </div>
                     </div><!-- /.help-panel-inner -->
         </div><!-- /.help-panel -->
         
@@ -585,26 +692,461 @@
 
     <div class="content">
 
+<!-- ===================================================================
+     React: <WaterCostSplitPage />
+     =================================================================== -->
+
+<!-- === Antet Pagină (conform RULES.md §1.11) === -->
 <div class="page-title-container">
     <div class="page-title">
         <h1>Cost Split – Apă</h1>
-        <p>Pagina este în construcție.</p>
+        <p>Repartizarea costurilor de apă pe perioade de calcul.</p>
     </div>
 </div>
 
-<div class="card" style="padding: 60px 40px; text-align: center; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; margin-top: 24px;">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="64" height="64" style="margin-bottom: 20px; opacity: 0.3; color: var(--accent);">
-        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-        <polyline points="2 17 12 22 22 17"></polyline>
-        <polyline points="2 12 12 17 22 12"></polyline>
-    </svg>
-    <h2 style="color: var(--text-main); margin-bottom: 12px; font-weight: 600;">În curând</h2>
-    <p style="font-size: 15px;">Interfața pentru <strong>Cost Split – Apă</strong> nu a fost încă generată în acest demo.</p>
+<!-- === Sumar erori validare (ctl00_VS) === -->
+<div id="ctl00_VS" class="card" style="display: none; border-color: var(--red); padding: 12px 16px; margin-bottom: 16px;"></div>
+
+<!-- === Card Cost Split (migrat 1:1 din CostSplit.aspx) ===
+     React: <CostSplitCard />
+-->
+<form method="POST" action="cost-split-apa.html" id="aspnetForm" onsubmit="return handleSplitCostSubmit(event);" novalidate>
+    <div class="card edit-section-card">
+        <div class="edit-section-body">
+
+            <!-- 1. Client (ctl00_phContent_lbPartner + ctl00$phContent$PartnerPicker) -->
+            <div class="form-row-2">
+                <div class="form-group">
+                    <label class="form-label" id="ctl00_phContent_lbPartner" for="ctl00_phContent_PartnerPicker">
+                        Client <span class="required-star">*</span>
+                    </label>
+                    <div class="picker-group">
+                        <input type="text"
+                               name="ctl00$phContent$PartnerPicker"
+                               id="ctl00_phContent_PartnerPicker"
+                               class="input-control"
+                               readonly
+                               required
+                               placeholder="Selectați clientul..."
+                               value="">
+                        <input type="hidden"
+                               name="ctl00$phContent$PartnerPickerValue"
+                               id="ctl00_phContent_PartnerPickerValue"
+                               value="">
+                        <!-- Câmp păstrat din sursă; în aplicația veche conținea URL-ul pickerului de parteneri -->
+                        <input type="hidden"
+                               name="ctl00$phContent$PartnerPickerURL"
+                               id="ctl00_phContent_PartnerPickerURL"
+                               value="">
+                        <button type="button"
+                                class="btn-picker"
+                                id="btnOpenPartnerPicker"
+                                title="Selectează client"
+                                onclick="FwkPartnerBrowse('ctl00$phContent$PartnerPicker', 'WindowName', '')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </button>
+                        <button type="button"
+                                class="btn-picker delete"
+                                id="btnClearPartnerPicker"
+                                title="Șterge selecția clientului"
+                                onclick="FwkClear('ctl00$phContent$PartnerPicker')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        </button>
+                    </div>
+                    <input type="submit" name="ctl00$phContent$btnRefresh" value="" id="ctl00_phContent_btnRefresh" style="display: none;">
+                    <span id="ctl00_phContent_revConsum" style="display: none;"></span>
+                </div>
+            </div>
+
+            <div class="filter-actions">
+                <button type="button"
+                        name="ctl00$phContent$btnAddCalculationPeriod"
+                        value="Adaugare perioade de calcul"
+                        id="ctl00_phContent_btnAddCalculationPeriod"
+                        class="btn-secondary"
+                        onclick="openCalculationPeriodPicker();">
+                    Adaugare perioade de calcul
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- === Bară acțiuni: Split cost (ctl00_phContent_btnSplit + ctl00_phContent_hiddenField) === -->
+    <div class="edit-actions-bar">
+        <div>
+            <button type="submit"
+                    name="ctl00$phContent$btnSplit"
+                    value="Split cost"
+                    id="ctl00_phContent_btnSplit"
+                    class="btn-primary">
+                Split cost
+            </button>
+            <input type="submit" name="ctl00$phContent$hiddenField" value="" id="ctl00_phContent_hiddenField" style="display: none;">
+        </div>
+    </div>
+
+    <!-- Containere și validatori păstrați 1:1 din sursa ASP.NET -->
+    <table id="ctl00_phContent_table2" style="display: none;"><tr><td></td></tr></table>
+    <span id="ctl00_phContent_cv" style="display: none;"></span>
+    <table id="table3" style="display: none;"><tr><td></td></tr></table>
+</form>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     MODAL 1 – Selectare Client (FwkPartnerBrowse)
+     ══════════════════════════════════════════════════════════════════════════ -->
+<div id="partnerPickerModal" class="modal-overlay" style="display: none;">
+    <div class="modal-card nod-picker-card">
+        <div class="modal-header">
+            <h3>Selectează Client</h3>
+            <button type="button" class="btn-close" onclick="closePartnerPickerModal()" title="Închide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div style="margin-bottom: 14px;">
+                <input type="text"
+                       id="partnerModalSearch"
+                       class="input-control"
+                       placeholder="Caută după cod, denumire sau localitate..."
+                       oninput="filterPartnerPickerModal()">
+            </div>
+            <div class="nod-picker-table-wrap">
+                <table class="modal-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 110px;">Cod</th>
+                            <th>Client</th>
+                            <th style="width: 130px;">Localitate</th>
+                            <th style="width: 90px; text-align: center;">Selectează</th>
+                        </tr>
+                    </thead>
+                    <tbody id="partnerModalTableBody">
+                                                                                <tr data-search="pl-0102 asociatia de proprietari apollo 2 - drumul fermei popesti leordeni str. drumul fermei - apollo 2, nr. 101-103, popesti leordeni, ilfov">
+                                <td class="td-code">PL-0102</td>
+                                <td>
+                                    <div class="td-name">ASOCIATIA DE PROPRIETARI APOLLO 2 - DRUMUL FERMEI</div>
+                                    <span class="list-sublabel">Str. DRUMUL FERMEI - APOLLO 2, Nr. 101-103, Popesti Leordeni, Ilfov</span>
+                                </td>
+                                <td>Popesti Leordeni</td>
+                                <td style="text-align: center;">
+                                    <button type="button"
+                                            class="btn-action-icon"
+                                            title="Selectează client"
+                                            onclick="selectCostSplitPartner('1024', 'PL-0102 - ASOCIATIA DE PROPRIETARI APOLLO 2 - DRUMUL FERMEI')">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    </button>
+                                </td>
+                            </tr>
+                                                                                <tr data-search="nv-0214 asociatia de proprietari bloc 21sud navodari navodari str. frunzelor, nr. 16-21, bl. 21sud, sc. a+b+c, navodari, constanta">
+                                <td class="td-code">NV-0214</td>
+                                <td>
+                                    <div class="td-name">ASOCIATIA DE PROPRIETARI BLOC 21SUD NAVODARI</div>
+                                    <span class="list-sublabel">Str. FRUNZELOR, Nr. 16-21, Bl. 21SUD, Sc. A+B+C, Navodari, Constanta</span>
+                                </td>
+                                <td>Navodari</td>
+                                <td style="text-align: center;">
+                                    <button type="button"
+                                            class="btn-action-icon"
+                                            title="Selectează client"
+                                            onclick="selectCostSplitPartner('1048', 'NV-0214 - ASOCIATIA DE PROPRIETARI BLOC 21SUD NAVODARI')">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    </button>
+                                </td>
+                            </tr>
+                                                                                <tr data-search="tl-0089 asociatia de proprietari viitorului 30 tulcea orasul tulcea str. viitorului, nr. 30, bl. b1-b2-50-120, orasul tulcea, tulcea">
+                                <td class="td-code">TL-0089</td>
+                                <td>
+                                    <div class="td-name">ASOCIATIA DE PROPRIETARI VIITORULUI 30 TULCEA</div>
+                                    <span class="list-sublabel">Str. VIITORULUI, Nr. 30, Bl. B1-B2-50-120, Orasul Tulcea, Tulcea</span>
+                                </td>
+                                <td>Orasul Tulcea</td>
+                                <td style="text-align: center;">
+                                    <button type="button"
+                                            class="btn-action-icon"
+                                            title="Selectează client"
+                                            onclick="selectCostSplitPartner('1075', 'TL-0089 - ASOCIATIA DE PROPRIETARI VIITORULUI 30 TULCEA')">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    </button>
+                                </td>
+                            </tr>
+                                                                                <tr data-search="b-2264 asociatia de proprietari tineretului-jilava nr. 4 bucuresti str. tineretului-jilava, nr. 4, bl. g1, sc. a+b, distr. 4, bucuresti, bucuresti">
+                                <td class="td-code">B-2264</td>
+                                <td>
+                                    <div class="td-name">ASOCIATIA DE PROPRIETARI TINERETULUI-JILAVA NR. 4</div>
+                                    <span class="list-sublabel">Str. TINERETULUI-JILAVA, Nr. 4, Bl. G1, Sc. A+B, Distr. 4, Bucuresti, Bucuresti</span>
+                                </td>
+                                <td>Bucuresti</td>
+                                <td style="text-align: center;">
+                                    <button type="button"
+                                            class="btn-action-icon"
+                                            title="Selectează client"
+                                            onclick="selectCostSplitPartner('1102', 'B-2264 - ASOCIATIA DE PROPRIETARI TINERETULUI-JILAVA NR. 4')">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    </button>
+                                </td>
+                            </tr>
+                                                                                <tr data-search="is-0075 asociatia de proprietari rediu 6a iasi iasi str. rediu, nr. 6a, bl. 482e, sc. a+b+c, iasi, iasi">
+                                <td class="td-code">IS-0075</td>
+                                <td>
+                                    <div class="td-name">ASOCIATIA DE PROPRIETARI REDIU 6A IASI</div>
+                                    <span class="list-sublabel">Str. REDIU, Nr. 6A, Bl. 482E, Sc. A+B+C, Iasi, Iasi</span>
+                                </td>
+                                <td>Iasi</td>
+                                <td style="text-align: center;">
+                                    <button type="button"
+                                            class="btn-action-icon"
+                                            title="Selectează client"
+                                            onclick="selectCostSplitPartner('1130', 'IS-0075 - ASOCIATIA DE PROPRIETARI REDIU 6A IASI')">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    </button>
+                                </td>
+                            </tr>
+                                                                                <tr data-search="bv-0125 asociatia de proprietari trifoiasul brasov brasov str. trifoiului, nr. 12, bl. 12, sc. a+b, brasov, brasov">
+                                <td class="td-code">BV-0125</td>
+                                <td>
+                                    <div class="td-name">ASOCIATIA DE PROPRIETARI TRIFOIASUL BRASOV</div>
+                                    <span class="list-sublabel">Str. TRIFOIULUI, Nr. 12, Bl. 12, Sc. A+B, Brasov, Brasov</span>
+                                </td>
+                                <td>Brasov</td>
+                                <td style="text-align: center;">
+                                    <button type="button"
+                                            class="btn-action-icon"
+                                            title="Selectează client"
+                                            onclick="selectCostSplitPartner('1165', 'BV-0125 - ASOCIATIA DE PROPRIETARI TRIFOIASUL BRASOV')">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    </button>
+                                </td>
+                            </tr>
+                                            </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     MODAL 2 – Adăugare Perioade de Calcul (openCalculationPeriodPicker)
+     ══════════════════════════════════════════════════════════════════════════ -->
+<div id="calcPeriodPickerModal" class="modal-overlay" style="display: none;">
+    <div class="modal-card nod-picker-card">
+        <div class="modal-header">
+            <h3>Selectează Perioade de Calcul</h3>
+            <button type="button" class="btn-close" onclick="closeCalculationPeriodPicker()" title="Închide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div style="margin-bottom: 14px;">
+                <input type="text"
+                       id="periodModalSearch"
+                       class="input-control"
+                       placeholder="Filtrează după NOD, adresă sau perioadă..."
+                       oninput="filterCalculationPeriodModal()">
+            </div>
+            <div class="nod-picker-table-wrap">
+                <table class="modal-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 44px; text-align: center;">
+                                <input type="checkbox" id="chkSelectAllPeriods" title="Selectează toate" onchange="toggleSelectAllPeriods(this.checked)">
+                            </th>
+                            <th style="width: 110px; text-align: center;">NOD</th>
+                            <th>Adresă de branșament</th>
+                            <th style="width: 165px; text-align: center;">Perioadă de calcul</th>
+                            <th style="width: 110px; text-align: center;">Stare</th>
+                        </tr>
+                    </thead>
+                    <tbody id="periodModalTableBody"></tbody>
+                </table>
+            </div>
+            <div class="edit-actions-bar" style="margin-top: 16px;">
+                <button type="button" class="btn-secondary" onclick="closeCalculationPeriodPicker()">Renunță</button>
+                <button type="button" class="btn-primary" onclick="confirmAddCalculationPeriods()">Adaugă perioadele selectate</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+/**
+ * Funcții migrate 1:1 din sursa ASP.NET (Admin/CostSplit/CostSplit.aspx):
+ *   - openCalculationPeriodPicker()
+ *   - FwkPartnerBrowse(ctrlName, windowName, features)
+ *   - FwkClear(ctrlName)
+ */
+var allAvailablePeriods = [{"period_id":"CP-901","partner_id":"1024","nod":"81-001-1269","address":"Str. DRUMUL FERMEI - APOLLO 2, Nr. 101, Bl. C1, Sc. 1, Popesti Leordeni, Ilfov","period":"01.10.2026 - 31.10.2026","status":"In calcul"},{"period_id":"CP-902","partner_id":"1024","nod":"81-001-1270","address":"Str. DRUMUL FERMEI - APOLLO 2, Nr. 101, Bl. C2, Sc. 1, Popesti Leordeni, Ilfov","period":"01.10.2026 - 31.10.2026","status":"In calcul"},{"period_id":"CP-903","partner_id":"1024","nod":"81-001-1271","address":"Str. DRUMUL FERMEI - APOLLO 2, Nr. 101, Bl. C4, Sc. 1, Popesti Leordeni, Ilfov","period":"01.10.2026 - 31.10.2026","status":"In calcul"},{"period_id":"CP-906","partner_id":"1048","nod":"81-021-0010","address":"Str. FRUNZELOR, Nr. 16, Bl. 21SUD, Sc. A, Navodari, Constanta","period":"01.10.2026 - 31.10.2026","status":"In calcul"},{"period_id":"CP-907","partner_id":"1048","nod":"81-021-0006","address":"Str. FRUNZELOR, Nr. 21, Bl. 21SUD, Sc. B, Navodari, Constanta","period":"01.10.2026 - 31.10.2026","status":"In calcul"},{"period_id":"CP-909","partner_id":"1075","nod":"81-029-0026","address":"Str. VIITORULUI, Nr. 30, Bl. B1, Sc. B, Orasul Tulcea, Tulcea","period":"01.10.2026 - 31.10.2026","status":"In calcul"},{"period_id":"CP-912","partner_id":"1102","nod":"81-001-2264","address":"Str. TINERETULUI-JILAVA, Nr. 4, Bl. G1, Sc. A+B, Distr. 4, Bucuresti, Bucuresti","period":"01.10.2026 - 31.10.2026","status":"In calcul"},{"period_id":"CP-913","partner_id":"1130","nod":"81-003-0075","address":"Str. REDIU, Nr. 6A, Bl. 482E, Sc. C, Iasi, Iasi","period":"01.10.2026 - 31.10.2026","status":"In calcul"},{"period_id":"CP-914","partner_id":"1165","nod":"81-033-0012","address":"Str. TRIFOIULUI, Nr. 12, Bl. 12, Sc. A, Brasov, Brasov","period":"01.10.2026 - 31.10.2026","status":"In calcul"}];
+var activePeriodsList   = [];
+
+function escapeHtml(str) {
+    if (str === null || str === undefined) return '';
+    var div = document.createElement('div');
+    div.textContent = String(str);
+    return div.innerHTML;
+}
+
+function FwkPartnerBrowse(ctrlName, windowName, features) {
+    var modal = document.getElementById('partnerPickerModal');
+    if (modal) {
+        modal.style.display = 'flex';
+        var searchInput = document.getElementById('partnerModalSearch');
+        if (searchInput) {
+            searchInput.value = '';
+            filterPartnerPickerModal();
+            setTimeout(function () { searchInput.focus(); }, 80);
+        }
+    }
+}
+
+function closePartnerPickerModal() {
+    var modal = document.getElementById('partnerPickerModal');
+    if (modal) modal.style.display = 'none';
+}
+
+function filterPartnerPickerModal() {
+    var q = (document.getElementById('partnerModalSearch').value || '').trim().toLowerCase();
+    var rows = document.querySelectorAll('#partnerModalTableBody tr');
+    rows.forEach(function (row) {
+        var search = (row.getAttribute('data-search') || '').toLowerCase();
+        row.style.display = (!q || search.indexOf(q) !== -1) ? '' : 'none';
+    });
+}
+
+function selectCostSplitPartner(partnerId, partnerDisplay) {
+    var txtPartner = document.getElementById('ctl00_phContent_PartnerPicker');
+    var hidPartner = document.getElementById('ctl00_phContent_PartnerPickerValue');
+    if (txtPartner) txtPartner.value = partnerDisplay;
+    if (hidPartner) hidPartner.value = partnerId;
+
+    activePeriodsList = [];
+    renderSelectedPeriods();
+    closePartnerPickerModal();
+}
+
+function FwkClear(ctrlName) {
+    var txtPartner = document.getElementById('ctl00_phContent_PartnerPicker');
+    var hidPartner = document.getElementById('ctl00_phContent_PartnerPickerValue');
+    if (txtPartner) txtPartner.value = '';
+    if (hidPartner) hidPartner.value = '';
+
+    activePeriodsList = [];
+    renderSelectedPeriods();
+}
+
+function openCalculationPeriodPicker() {
+    var hidPartner = document.getElementById('ctl00_phContent_PartnerPickerValue');
+    var partnerId  = hidPartner ? hidPartner.value.trim() : '';
+
+    var tbody  = document.getElementById('periodModalTableBody');
+    var chkAll = document.getElementById('chkSelectAllPeriods');
+    if (chkAll) chkAll.checked = false;
+
+    if (tbody) {
+        var existingIds = activePeriodsList.map(function (p) { return p.period_id; });
+        var candidatePeriods = partnerId
+            ? allAvailablePeriods.filter(function (p) { return String(p.partner_id) === String(partnerId); })
+            : allAvailablePeriods;
+
+        if (candidatePeriods.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="5" class="table-empty">Nu există perioade de calcul în starea „În calcul”.</td></tr>';
+        } else {
+            tbody.innerHTML = candidatePeriods.map(function (p) {
+                var isChecked = existingIds.indexOf(p.period_id) !== -1;
+                var searchStr = (p.nod + ' ' + p.address + ' ' + p.period).toLowerCase();
+                return '<tr data-search="' + escapeHtml(searchStr) + '">' +
+                    '<td style="text-align: center;">' +
+                        '<input type="checkbox" class="js-period-check" value="' + escapeHtml(p.period_id) + '" ' + (isChecked ? 'checked' : '') + '>' +
+                    '</td>' +
+                    '<td class="td-code" style="text-align: center;">' + escapeHtml(p.nod) + '</td>' +
+                    '<td><div class="td-name">' + escapeHtml(p.address) + '</div></td>' +
+                    '<td style="text-align: center;">' + escapeHtml(p.period) + '</td>' +
+                    '<td style="text-align: center;"><span class="status-badge status-warning">' + escapeHtml(p.status) + '</span></td>' +
+                '</tr>';
+            }).join('');
+        }
+    }
+
+    var modal = document.getElementById('calcPeriodPickerModal');
+    if (modal) {
+        modal.style.display = 'flex';
+        var searchInput = document.getElementById('periodModalSearch');
+        if (searchInput) {
+            searchInput.value = '';
+            setTimeout(function () { searchInput.focus(); }, 80);
+        }
+    }
+}
+
+function closeCalculationPeriodPicker() {
+    var modal = document.getElementById('calcPeriodPickerModal');
+    if (modal) modal.style.display = 'none';
+}
+
+function filterCalculationPeriodModal() {
+    var q = (document.getElementById('periodModalSearch').value || '').trim().toLowerCase();
+    var rows = document.querySelectorAll('#periodModalTableBody tr[data-search]');
+    rows.forEach(function (row) {
+        var search = (row.getAttribute('data-search') || '').toLowerCase();
+        row.style.display = (!q || search.indexOf(q) !== -1) ? '' : 'none';
+    });
+}
+
+function toggleSelectAllPeriods(checked) {
+    document.querySelectorAll('#periodModalTableBody .js-period-check').forEach(function (chk) {
+        var tr = chk.closest('tr');
+        if (tr && tr.style.display !== 'none') {
+            chk.checked = checked;
+        }
+    });
+}
+
+function confirmAddCalculationPeriods() {
+    var selectedIds = [];
+    document.querySelectorAll('#periodModalTableBody .js-period-check:checked').forEach(function (chk) {
+        selectedIds.push(chk.value);
+    });
+
+    activePeriodsList = allAvailablePeriods.filter(function (p) {
+        return selectedIds.indexOf(p.period_id) !== -1;
+    });
+
+    renderSelectedPeriods();
+    closeCalculationPeriodPicker();
+}
+
+function renderSelectedPeriods() {
+    var container = document.getElementById('selectedPeriodsContainer');
+    if (!container) return;
+
+    if (activePeriodsList.length === 0) {
+        container.innerHTML = '&ndash;';
+        return;
+    }
+
+    container.innerHTML = activePeriodsList.map(function (p) {
+        return escapeHtml(p.nod + ' (' + p.period + ')');
+    }).join(', ');
+}
+
+function handleSplitCostSubmit(e) {
+    if (e) e.preventDefault();
+    var txtPartner = document.getElementById('ctl00_phContent_PartnerPicker');
+    if (!txtPartner || !txtPartner.value.trim()) {
+        alert('Selectați un Client.');
+        return false;
+    }
+    if (activePeriodsList.length === 0) {
+        alert('Adăugați perioade de calcul în listă.');
+        return false;
+    }
+    alert('Split cost executat pentru clientul: ' + txtPartner.value);
+    return false;
+}
+</script>
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Parteneri – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Parteneri – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
 </head>
 <body>
 
@@ -179,7 +182,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +190,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +327,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +569,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-logo.svg" alt="SONIC" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Parteneri</div>
 
             <!-- User profile avatar (always visible) -->
@@ -649,16 +694,16 @@
                 <p>Vizualizează, filtrează și administrează partenerii înregistrați în sistem.</p>
             </div>
             <!-- Butonul Adăugă Partener - repoziționat, cu stil outline, distinct, ducând către parteneri-edit.php -->
-            <a href="parteneri-edit.html" class="btn-secondary" style="border-color: var(--accent); color: var(--accent); font-weight: 600; padding: 10px 18px;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="margin-right: 6px;"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <a href="parteneri-edit.html" class="btn-secondary btn-add">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                 <span>Adaugă Partener</span>
             </a>
         </div>
 
         <!-- ── Formular de Filtrare ───────────────────────────────────── -->
-        <div class="card" style="margin-bottom: 24px;">
-            <div style="margin-bottom: 18px;">
-                <span class="chart-title" style="font-size: 14px; font-weight: 600;">Filtrare Avansată</span>
+        <div class="card filter-card">
+            <div class="filter-card-head">
+                <span class="filter-card-title">Filtrare Avansată</span>
             </div>
             <form method="GET" action="parteneri.html" id="filterForm">
                 <div class="filter-grid">
@@ -749,7 +794,7 @@
         <div class="table-container">
             <div class="table-toolbar">
                 <div class="table-toolbar-left">
-                    <span style="color: var(--text-muted); font-size: 13px; font-weight: 500;">
+                    <span class="table-count">
                         Afișare <strong id="visibleCount">22</strong> din <strong>4833</strong> înregistrări
                     </span>
                 </div>
@@ -763,7 +808,7 @@
                 </div>
             </div>
 
-            <div style="overflow-x: auto; width: 100%;">
+            <div class="table-scroll">
                 <table class="partners-table">
                     <thead>
                         <tr>
@@ -778,12 +823,12 @@
                     <tbody id="partnersTableBody">
                         <!-- Rândurile trimit acum la parteneri-edit.php cu codul partenerului ca parametru -->
                         <tr data-address="str. trifoiului, nr. 6, bl. 1, sc. a, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0125</td>
-                            <td style="font-weight: 500;">ASOCIA DE PROPRIETARI TRIFOIASUL</td>
+                            <td class="td-code">BV0125</td>
+                            <td class="td-name">ASOCIA DE PROPRIETARI TRIFOIASUL</td>
                             <td>Client și furnizor</td>
                             <td>Str. TRIFOIULUI, Nr. 6, Bl. 1, Sc. A, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0125" class="btn-action-icon" title="Editează partener">
@@ -792,12 +837,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. lamaitei, nr. 76, bl. 76, sc. a, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0085</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE APARTAMENTE 152</td>
+                            <td class="td-code">BV0085</td>
+                            <td class="td-name">ASOCIATIA DE APARTAMENTE 152</td>
                             <td>Client și furnizor</td>
                             <td>Str. LAMAITEI, Nr. 76, Bl. 76, Sc. A, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0085" class="btn-action-icon" title="Editează partener">
@@ -806,12 +851,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. harmanului, nr. 21, bl. 31, sc. a-f, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV00129</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE PROPRIETAI PETUNIA 40-2</td>
+                            <td class="td-code">BV00129</td>
+                            <td class="td-name">ASOCIATIA DE PROPRIETAI PETUNIA 40-2</td>
                             <td>Client și furnizor</td>
                             <td>Str. HARMANULUI, Nr. 21, Bl. 31, Sc. A-F, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV00129" class="btn-action-icon" title="Editează partener">
@@ -820,12 +865,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. paraului, nr. 48, bl. albina, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0032</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI DE APARTAMENTE ALBINA</td>
+                            <td class="td-code">BV0032</td>
+                            <td class="td-name">ASOCIATIA DE PROPRIETARI DE APARTAMENTE ALBINA</td>
                             <td>Client și furnizor</td>
                             <td>Str. PARAULUI, Nr. 48, Bl. ALBINA, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0032" class="btn-action-icon" title="Editează partener">
@@ -834,12 +879,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. jepilor, nr. 34, bl. a33, sc. a, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0104</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI 162</td>
+                            <td class="td-code">BV0104</td>
+                            <td class="td-name">ASOCIATIA DE PROPRIETARI 162</td>
                             <td>Client și furnizor</td>
                             <td>Str. JEPILOR, Nr. 34, Bl. A33, Sc. A, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0104" class="btn-action-icon" title="Editează partener">
@@ -848,12 +893,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. valea cetatii, nr. 27, bl. a36, sc. b, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0103</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI 162</td>
+                            <td class="td-code">BV0103</td>
+                            <td class="td-name">ASOCIATIA DE PROPRIETARI 162</td>
                             <td>Client și furnizor</td>
                             <td>Str. VALEA CETATII, Nr. 27, Bl. A36, Sc. B, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0103" class="btn-action-icon" title="Editează partener">
@@ -862,12 +907,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. fragilor, nr. 4, bl. a29, sc. d, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0102</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI 162</td>
+                            <td class="td-code">BV0102</td>
+                            <td class="td-name">ASOCIATIA DE PROPRIETARI 162</td>
                             <td>Client și furnizor</td>
                             <td>Str. FRAGILOR, Nr. 4, Bl. A29, Sc. D, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0102" class="btn-action-icon" title="Editează partener">
@@ -876,12 +921,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. jepilor, nr. 36, bl. a34, sc. a, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0105</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI 162</td>
+                            <td class="td-code">BV0105</td>
+                            <td class="td-name">ASOCIATIA DE PROPRIETARI 162</td>
                             <td>Client și furnizor</td>
                             <td>Str. JEPILOR, Nr. 36, Bl. A34, Sc. A, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0105" class="btn-action-icon" title="Editează partener">
@@ -890,12 +935,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. mircea cel batran, nr. 52, bl. 54, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0097</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI 5 CMB</td>
+                            <td class="td-code">BV0097</td>
+                            <td class="td-name">ASOCIATIA DE PROPRIETARI 5 CMB</td>
                             <td>Client și furnizor</td>
                             <td>Str. MIRCEA CEL BATRAN, Nr. 52, Bl. 54, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0097" class="btn-action-icon" title="Editează partener">
@@ -904,12 +949,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. general leonard mociulschi, nr. 26, bl. g9, sc. a+b, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0053</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI 7 CRIZANTEMA</td>
+                            <td class="td-code">BV0053</td>
+                            <td class="td-name">ASOCIATIA DE PROPRIETARI 7 CRIZANTEMA</td>
                             <td>Client și furnizor</td>
                             <td>Str. GENERAL LEONARD MOCIULSCHI, Nr. 26, Bl. G9, Sc. A+B, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0053" class="btn-action-icon" title="Editează partener">
@@ -918,12 +963,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. 9 mai, nr. 6, bl. 6, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0082</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI 9 MAI</td>
+                            <td class="td-code">BV0082</td>
+                            <td class="td-name">ASOCIATIA DE PROPRIETARI 9 MAI</td>
                             <td>Client și furnizor</td>
                             <td>Str. 9 MAI, Nr. 6, Bl. 6, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0082" class="btn-action-icon" title="Editează partener">
@@ -932,12 +977,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. alexandru cel bun, nr. 19, bl. 19, sc. a, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0059</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI ALEXANDRU CEL BUN NR 19</td>
+                            <td class="td-code">BV0059</td>
+                            <td class="td-name">ASOCIATIA DE PROPRIETARI ALEXANDRU CEL BUN NR 19</td>
                             <td>Client și furnizor</td>
                             <td>Str. ALEXANDRU CEL BUN, Nr. 19, Bl. 19, Sc. A, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0059" class="btn-action-icon" title="Editează partener">
@@ -946,12 +991,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. saturn, nr. 19, bl. 66, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0055</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI APOLLO-NEPTUN</td>
+                            <td class="td-code">BV0055</td>
+                            <td class="td-name">ASOCIATIA DE PROPRIETARI APOLLO-NEPTUN</td>
                             <td>Client și furnizor</td>
                             <td>Str. SATURN, Nr. 19, Bl. 66, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0055" class="btn-action-icon" title="Editează partener">
@@ -960,12 +1005,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. saturn, nr. 48, bl. 115, sc. a, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0057</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI ARDEALUL</td>
+                            <td class="td-code">BV0057</td>
+                            <td class="td-name">ASOCIATIA DE PROPRIETARI ARDEALUL</td>
                             <td>Client și furnizor</td>
                             <td>Str. SATURN, Nr. 48, Bl. 115, Sc. A, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0057" class="btn-action-icon" title="Editează partener">
@@ -974,12 +1019,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. calea bucuresti, nr. 74, bl. 159, sc. a+b, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0120</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI ASTRA 159</td>
+                            <td class="td-code">BV0120</td>
+                            <td class="td-name">ASOCIATIA DE PROPRIETARI ASTRA 159</td>
                             <td>Client și furnizor</td>
                             <td>Str. CALEA BUCURESTI, Nr. 74, Bl. 159, Sc. A+B, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0120" class="btn-action-icon" title="Editează partener">
@@ -988,12 +1033,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. calea bucuresti, nr. 79, bl. s37, sc. a, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0121</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI ASTRA 159</td>
+                            <td class="td-code">BV0121</td>
+                            <td class="td-name">ASOCIATIA DE PROPRIETARI ASTRA 159</td>
                             <td>Client și furnizor</td>
                             <td>Str. CALEA BUCURESTI, Nr. 79, Bl. S37, Sc. A, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0121" class="btn-action-icon" title="Editează partener">
@@ -1002,12 +1047,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. berzei, nr. 1, bl. 6, sc. a+b, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0093</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI BERZEI 1</td>
+                            <td class="td-code">BV0093</td>
+                            <td class="td-name">ASOCIATIA DE PROPRIETARI BERZEI 1</td>
                             <td>Client și furnizor</td>
                             <td>Str. BERZEI, Nr. 1, Bl. 6, Sc. A+B, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0093" class="btn-action-icon" title="Editează partener">
@@ -1016,12 +1061,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. cronicar grigore ureche, nr. 14-15, bl. 2, sc. d, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0005</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI BIANCA</td>
+                            <td class="td-code">BV0005</td>
+                            <td class="td-name">ASOCIATIA DE PROPRIETARI BIANCA</td>
                             <td>Client și furnizor</td>
                             <td>Str. CRONICAR GRIGORE URECHE, Nr. 14-15, Bl. 2, Sc. D, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0005" class="btn-action-icon" title="Editează partener">
@@ -1030,12 +1075,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. de mijloc, nr. 146, bl. 10a+10b+10c, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0001</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI BL DE MIJLOC</td>
+                            <td class="td-code">BV0001</td>
+                            <td class="td-name">ASOCIATIA DE PROPRIETARI BL DE MIJLOC</td>
                             <td>Client și furnizor</td>
                             <td>Str. DE MIJLOC, Nr. 146, Bl. 10A+10B+10C, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0001" class="btn-action-icon" title="Editează partener">
@@ -1044,12 +1089,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. mihai viteazul, nr. 2, bl. 10, sc. a, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0051</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI BLOC 10</td>
+                            <td class="td-code">BV0051</td>
+                            <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC 10</td>
                             <td>Client și furnizor</td>
                             <td>Str. MIHAI VITEAZUL, Nr. 2, Bl. 10, Sc. A, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0051" class="btn-action-icon" title="Editează partener">
@@ -1058,12 +1103,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. 13 decembrie, nr. 108, bl. 108, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0003</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI BLOC 108 SC A-B-C</td>
+                            <td class="td-code">BV0003</td>
+                            <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC 108 SC A-B-C</td>
                             <td>Client și furnizor</td>
                             <td>Str. 13 DECEMBRIE, Nr. 108, Bl. 108, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0003" class="btn-action-icon" title="Editează partener">
@@ -1072,12 +1117,12 @@
                             </td>
                         </tr>
                         <tr data-address="str. alexandru vlahuta, nr. 40, bl. 120, sc. a+b, brasov, jud. brasov, romania">
-                            <td style="font-weight: 600;">BV0066</td>
-                            <td style="font-weight: 500;">ASOCIATIA DE PROPRIETARI BLOC 120</td>
+                            <td class="td-code">BV0066</td>
+                            <td class="td-name">ASOCIATIA DE PROPRIETARI BLOC 120</td>
                             <td>Client și furnizor</td>
                             <td>Str. ALEXANDRU VLAHUTA, Nr. 40, Bl. 120, Sc. A+B, Brasov, Jud. Brasov, Romania</td>
                             <td style="text-align: center;">
-                                <span class="status-badge status-online" style="padding: 4px 8px; font-size: 11px;">Asociat</span>
+                                <span class="status-badge status-online">Asociat</span>
                             </td>
                             <td style="text-align: center;">
                                 <a href="parteneri-edit.html?code=BV0066" class="btn-action-icon" title="Editează partener">
@@ -1088,7 +1133,7 @@
 
                         <!-- No Results Row -->
                         <tr id="noResultsRow" style="display: none;">
-                            <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 32px; font-style: italic;">
+                            <td colspan="6" class="table-empty">
                                 Niciun partener găsit pentru adresa căutată.
                             </td>
                         </tr>
@@ -1098,23 +1143,23 @@
 
             <!-- ── Paginație Tabel Date (Adăugată conform cerinței) ────────── -->
             <div class="table-pagination">
-                <div style="font-size: 13px; color: var(--text-muted);">
+                <div class="pagination-info">
                     Afișare <strong id="paginationStart">1</strong> - <strong id="paginationEnd">22</strong> din <strong>4833</strong> înregistrări
                 </div>
-                <div style="display: flex; align-items: center; gap: 8px;">
+                <div class="pagination-controls">
                     <!-- În listă statică dezactivăm funcționalitatea, gata de legat la router / backend -->
-                    <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" disabled>
+                    <button type="button" class="btn-secondary btn-page-nav" disabled>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
                         <span>Anterior</span>
                     </button>
                     <div class="pagination-pages">
-                        <button type="button" class="btn-secondary active" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;">1</button>
-                        <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Funcționalitate Pagină: Se va încărca pagina 2 din baza de date.');">2</button>
-                        <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Funcționalitate Pagină: Se va încărca pagina 3 din baza de date.');">3</button>
-                        <span style="padding: 0 4px; color: var(--text-muted); font-size: 12px;">...</span>
-                        <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Funcționalitate Pagină: Se va încărca pagina 49 din baza de date.');">49</button>
+                        <button type="button" class="btn-secondary btn-page active">1</button>
+                        <button type="button" class="btn-secondary btn-page" onclick="alert('Funcționalitate Pagină: Se va încărca pagina 2 din baza de date.');">2</button>
+                        <button type="button" class="btn-secondary btn-page" onclick="alert('Funcționalitate Pagină: Se va încărca pagina 3 din baza de date.');">3</button>
+                        <span class="pagination-gap">…</span>
+                        <button type="button" class="btn-secondary btn-page" onclick="alert('Funcționalitate Pagină: Se va încărca pagina 49 din baza de date.');">49</button>
                     </div>
-                    <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" onclick="alert('Funcționalitate Pagină: Se va încărca pagina următoare.');">
+                    <button type="button" class="btn-secondary btn-page-nav" onclick="alert('Funcționalitate Pagină: Se va încărca pagina următoare.');">
                         <span>Următor</span>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
@@ -1252,10 +1297,10 @@
                     Afișare NOD-uri: <strong class="nod-picker-count" id="nodPickerModal-count">0</strong>
                 </span>
                 <div class="nod-picker-page-btns">
-                    <button type="button" class="btn-action-icon nod-picker-prev" data-modal="nodPickerModal" disabled>
+                    <button type="button" class="btn-action-icon nod-picker-prev" title="Pagina anterioară" data-modal="nodPickerModal" disabled>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
                     </button>
-                    <button type="button" class="btn-action-icon nod-picker-next" data-modal="nodPickerModal" disabled>
+                    <button type="button" class="btn-action-icon nod-picker-next" title="Pagina următoare" data-modal="nodPickerModal" disabled>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
                 </div>
@@ -1333,7 +1378,7 @@
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

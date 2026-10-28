@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Dashboard FIN – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Dashboard FIN – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="assets/js/sonic-live-net.js"></script>
 </head>
 <body>
 
@@ -179,7 +185,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +193,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +330,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +572,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-fin-logo.svg" alt="SONIC FIN" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Dashboard FIN</div>
 
             <!-- User profile avatar (always visible) -->
@@ -573,7 +621,7 @@
                             aria-selected="false"
                             aria-controls="help-pane-1"
                             data-tab="1">
-                        Indicatori KPI                    </button>
+                        Extrase bancare                    </button>
                                     </nav>
                 <!-- Tab content panes -->
                 <div class="help-tab-content">
@@ -583,10 +631,13 @@
                          aria-labelledby="help-tab-0"
                          data-pane="0">
                         
-            <h4>SONIC FIN – Dashboard Financiar</h4>
-            <p>Dashboard-ul financiar oferă o privire de ansamblu în timp real asupra 
-            situației contabile și a fluxurilor financiare asociate serviciilor SONIC.</p>
-            <p>Indicatorii KPI sunt actualizați automat la fiecare accesare a paginii.</p>
+            <h4>SONIC FIN</h4>
+            <p>Facturile pentru echipamente și pentru serviciile lunare de citire și calcul, încasările și operarea extraselor bancare.</p>
+            <ul>
+                <li><strong>Harta</strong> – punctele albe sunt încasările care sosesc, cele verzi deschis sunt facturile emise spre clienți.</li>
+                <li><strong>Facturat vs încasat</strong> – ultimele 6 luni (bara gri = facturat, bara închisă = încasat).</li>
+                <li><strong>Vechimea creanțelor</strong> – soldul neîncasat pe intervale de întârziere.</li>
+            </ul>
                             </div>
                                         <div class="help-tab-pane "
                          role="tabpanel"
@@ -594,13 +645,8 @@
                          aria-labelledby="help-tab-1"
                          data-pane="1">
                         
-            <h4>Ce reprezintă indicatorii?</h4>
-            <ul>
-                <li><strong>Venituri Lunare</strong> – totalul veniturilor încasate în luna curentă.</li>
-                <li><strong>Facturi Restante</strong> – numărul de facturi neachitate peste termenul de plată.</li>
-                <li><strong>Rata de Încasare</strong> – procentul facturilor achitate din totalul emis în perioadă.</li>
-                <li><strong>Sold Debitori</strong> – valoarea totală a debitelor neachitate de către parteneri.</li>
-            </ul>
+            <h4>Alocarea plăților</h4>
+            <p>Extrasele importate sunt potrivite automat cu facturile (după codul partenerului și numărul facturii din detaliile plății). Plățile nepotrivite rămân „de alocat manual”.</p>
                             </div>
                                     </div>
                     </div><!-- /.help-panel-inner -->
@@ -629,104 +675,282 @@
 
     <div class="content">
 
-        <div class="page-title">
-            <h1>Dashboard Financiar</h1>
-            <p>Situația financiară curentă – venituri, încasări și sold debitori.</p>
-        </div>
+<div class="page-title-container">
+    <div class="page-title">
+        <h1>Dashboard FIN</h1>
+        <p>Facturare, încasări și extrase bancare, în timp real.</p>
+    </div>
+</div>
 
-        <!-- ── KPI Cards ──────────────────────────────────────────── -->
-        <div class="grid-4">
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">Venituri Lunare</span>
-                    <div class="card-icon"><div class="card-icon-inner" style="border-radius:50%;"></div></div>
-                </div>
-                <div class="card-value">248,630 lei</div>
-                <div class="card-trend">↑ 5.4% vs luna trecută</div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">Facturi Restante</span>
-                    <div class="card-icon"><div class="card-icon-inner" style="border-color:var(--red);"></div></div>
-                </div>
-                <div class="card-value">127</div>
-                <div class="card-trend negative">↑ 12 față de luna trecută</div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">Rata de Încasare</span>
-                    <div class="card-icon"><div class="card-icon-inner"></div></div>
-                </div>
-                <div class="card-value">89.2%</div>
-                <div class="card-trend">↑ 2.1% vs luna trecută</div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-title">Sold Debitori</span>
-                    <div class="card-icon"><div class="card-icon-inner" style="border-color:var(--red);"></div></div>
-                </div>
-                <div class="card-value">84,210 lei</div>
-                <div class="card-trend negative">Necesită atenție</div>
-            </div>
+<!-- React: <LiveHero /> -->
+<section class="live-hero">
+    <div id="finHeroMap"></div>
+    <div class="live-hero-shade"></div>
+    <div class="live-hero-content">
+        <span class="live-eyebrow"><span class="pro-live-dot"></span>SONIC FIN · încasări live</span>
+        <h2 class="live-title">Banii intră, facturile pleacă</h2>
+        <p class="live-subtitle">Fiecare punct alb este o plată identificată în extrasele bancare și alocată automat pe factură. Punctele verzi deschis sunt facturile emise azi către asociații.</p>
+        <div class="live-stats">
+            <div class="live-stat"><span class="live-stat-label">Încasat azi</span><span class="live-stat-value"><span id="finToday">86.410</span> <small>RON</small></span></div>
+            <div class="live-stat"><span class="live-stat-label">Plăți alocate</span><span class="live-stat-value" id="finPayments">836</span><span class="live-stat-meta">automat: 95,6%</span></div>
+            <div class="live-stat"><span class="live-stat-label">Rata de încasare</span><span class="live-stat-value">89,4<small> %</small></span><span class="live-stat-meta">ultimele 90 de zile</span></div>
         </div>
+    </div>
+    <div class="live-corner"><span class="pro-live-dot"></span><strong id="finClock">--:--</strong><span>· ultimul extras: BT, 14:20</span></div>
+    <ul class="live-ticker" id="finTicker" aria-live="polite"></ul>
+</section>
 
-        <!-- ── Charts ─────────────────────────────────────────────── -->
-        <div class="grid-2-1">
-            <div class="chart-container">
-                <div class="chart-header">
-                    <span class="chart-title">Evoluție Venituri vs Cheltuieli</span>
-                    <div class="chart-period">Ultimele 12 luni</div>
-                </div>
-                <div class="chart-placeholder">
-                    <div class="chart-line" style="bottom:30%;">
-                        <svg width="100%" height="100%" style="overflow:visible;position:absolute;bottom:0;">
-                            <path d="M0,70 Q80,50 160,65 T320,40 T480,25 T640,30 T800,10" fill="none" stroke="var(--accent)" stroke-width="2"/>
-                            <path d="M0,90 Q80,85 160,88 T320,80 T480,75 T640,78 T800,70" fill="none" stroke="var(--border-color)" stroke-width="2" stroke-dasharray="6,4"/>
-                        </svg>
-                    </div>
-                    <div class="chart-labels">
-                        <span>Oct</span><span>Nov</span><span>Dec</span><span>Ian</span><span>Feb</span><span>Mar</span><span>Apr</span><span>Mai</span><span>Iun</span><span>Iul</span><span>Aug</span><span>Sep</span>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="chart-container" style="height:100%;">
-                    <span class="chart-title" style="display:block;margin-bottom:32px;">Distribuție Încasări</span>
-                    <div style="height:140px;display:flex;align-items:center;justify-content:center;margin-bottom:32px;">
-                        <div style="width:140px;height:140px;border-radius:50%;border:20px solid var(--accent);border-left-color:#edf2f7;border-bottom-color:#edf2f7;position:relative;">
-                            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:18px;font-weight:600;">89.2%</div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="list-item"><span class="list-label"><span class="dot" style="background:var(--accent);"></span> Achitate la termen</span><span class="list-value">72%</span></div>
-                        <div class="list-item"><span class="list-label"><span class="dot" style="background:var(--border-color);"></span> Achitate cu întârziere</span><span class="list-value">17%</span></div>
-                        <div class="list-item"><span class="list-label"><span class="dot" style="background:#edf2f7;"></span> Neachitate</span><span class="list-value">11%</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- React: <FinKpis /> -->
+<div class="dash-stat-grid">
+    <a href="facturare.html" class="dash-stat">
+        <span class="dash-stat-top"><span class="dash-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></span></span>
+        <span class="dash-stat-value">1,58 mil.</span><span class="dash-stat-label">Facturat în octombrie (RON)</span>
+        <span class="dash-stat-link">Gestiune facturare →</span>
+    </a>
+    <div class="dash-stat">
+        <span class="dash-stat-top"><span class="dash-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle></svg></span></span>
+        <span class="dash-stat-value" id="finMonth">1,13 mil.</span><span class="dash-stat-label">Încasat în octombrie (RON)</span>
+        <span class="pro-kpi-meta">71,5% din facturat · luna în curs</span>
+    </div>
+    <div class="dash-stat">
+        <span class="dash-stat-top"><span class="dash-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></span></span>
+        <span class="dash-stat-value">714 mii</span><span class="dash-stat-label">Sold debitori (RON)</span>
+        <span class="pro-kpi-meta">−6,8% față de septembrie</span>
+    </div>
+    <div class="dash-stat">
+        <span class="dash-stat-top"><span class="dash-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg></span><span class="status-badge status-error">peste 90 zile: 9</span></span>
+        <span class="dash-stat-value">128</span><span class="dash-stat-label">Facturi restante</span>
+        <span class="pro-kpi-meta">58 de parteneri</span>
+    </div>
+</div>
 
-        <!-- ── Tabel Facturi Restante ──────────────────────────────── -->
-        <div class="table-container">
-            <div class="table-header">
-                <span class="chart-title">Facturi Restante – Top Debitori</span>
-                <a href="#" class="table-link">Vezi toate ↗</a>
-            </div>
-            <table>
-                <thead><tr><th>Partener</th><th>Nr. Factură</th><th>Data Emitere</th><th>Valoare</th><th>Zile Restante</th><th>Status</th></tr></thead>
-                <tbody>
-                    <tr><td style="font-weight:500;">Asociația Nr. 12 Bl. D16</td><td>FV-2026-0847</td><td>15.07.2026</td><td>12,480 lei</td><td>71</td><td><span class="status-badge status-error">Restant</span></td></tr>
-                    <tr><td style="font-weight:500;">Asociația Nr. 5 Bl. A3</td><td>FV-2026-0912</td><td>01.08.2026</td><td>8,320 lei</td><td>54</td><td><span class="status-badge status-error">Restant</span></td></tr>
-                    <tr><td style="font-weight:500;">Popescu Ion – Ap. 24</td><td>FV-2026-1043</td><td>15.08.2026</td><td>1,240 lei</td><td>40</td><td><span class="status-badge status-warning">Notificat</span></td></tr>
-                    <tr><td style="font-weight:500;">Asociația Nr. 8 Bl. C9</td><td>FV-2026-1105</td><td>01.09.2026</td><td>6,710 lei</td><td>23</td><td><span class="status-badge status-warning">Notificat</span></td></tr>
-                    <tr><td style="font-weight:500;">Stanescu Ana – Ap. 7</td><td>FV-2026-1198</td><td>10.09.2026</td><td>890 lei</td><td>14</td><td><span class="status-badge status-warning">Notificat</span></td></tr>
-                </tbody>
-            </table>
+<div class="pro-grid-2-1">
+    <!-- React: <InvoicedVsCollected /> -->
+    <div class="card pro-panel">
+        <div class="edit-section-header">
+            <span class="edit-section-title">Facturat vs încasat · 6 luni (mil. RON)</span>
+            <span class="pro-map-legend" style="margin: 0;"><span><i class="pro-legend-dot pro-legend-dot--done"></i>Facturat</span><span><i class="pro-legend-dot"></i>Încasat</span></span>
         </div>
+        <div class="pro-bars" style="height: 190px;">
+                        <div class="pro-bar-col">
+                <span class="pro-bar-value">92%</span>
+                <div class="dash-bar-pair">
+                    <div class="pro-bar pro-bar--muted" style="height: 84%;" title="Facturat: 1,42 mil. RON"></div>
+                    <div class="pro-bar" style="height: 77%;" title="Încasat: 1,31 mil. RON"></div>
+                </div>
+                <span class="pro-bar-label">Mai</span>
+            </div>
+                        <div class="pro-bar-col">
+                <span class="pro-bar-value">94%</span>
+                <div class="dash-bar-pair">
+                    <div class="pro-bar pro-bar--muted" style="height: 81%;" title="Facturat: 1,38 mil. RON"></div>
+                    <div class="pro-bar" style="height: 76%;" title="Încasat: 1,30 mil. RON"></div>
+                </div>
+                <span class="pro-bar-label">Iun</span>
+            </div>
+                        <div class="pro-bar-col">
+                <span class="pro-bar-value">98%</span>
+                <div class="dash-bar-pair">
+                    <div class="pro-bar pro-bar--muted" style="height: 71%;" title="Facturat: 1,21 mil. RON"></div>
+                    <div class="pro-bar" style="height: 69%;" title="Încasat: 1,18 mil. RON"></div>
+                </div>
+                <span class="pro-bar-label">Iul</span>
+            </div>
+                        <div class="pro-bar-col">
+                <span class="pro-bar-value">94%</span>
+                <div class="dash-bar-pair">
+                    <div class="pro-bar pro-bar--muted" style="height: 70%;" title="Facturat: 1,19 mil. RON"></div>
+                    <div class="pro-bar" style="height: 66%;" title="Încasat: 1,12 mil. RON"></div>
+                </div>
+                <span class="pro-bar-label">Aug</span>
+            </div>
+                        <div class="pro-bar-col">
+                <span class="pro-bar-value">88%</span>
+                <div class="dash-bar-pair">
+                    <div class="pro-bar pro-bar--muted" style="height: 86%;" title="Facturat: 1,46 mil. RON"></div>
+                    <div class="pro-bar" style="height: 76%;" title="Încasat: 1,29 mil. RON"></div>
+                </div>
+                <span class="pro-bar-label">Sep</span>
+            </div>
+                        <div class="pro-bar-col is-today">
+                <span class="pro-bar-value">72%</span>
+                <div class="dash-bar-pair">
+                    <div class="pro-bar pro-bar--muted" style="height: 93%;" title="Facturat: 1,58 mil. RON"></div>
+                    <div class="pro-bar" style="height: 66%;" title="Încasat: 1,13 mil. RON"></div>
+                </div>
+                <span class="pro-bar-label">Oct</span>
+            </div>
+                    </div>
+    </div>
+
+    <!-- React: <Aging /> -->
+    <div class="card pro-panel">
+        <div class="edit-section-header"><span class="edit-section-title">Vechimea creanțelor</span></div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">0 – 30 zile</span>
+            <span class="pro-stock-nums"><strong>412.300</strong> RON</span>
+            <div class="progress-bar"><div class="progress-bar__fill is-ok" style="width: 58%;"></div></div>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">31 – 60 zile</span>
+            <span class="pro-stock-nums"><strong>168.900</strong> RON</span>
+            <div class="progress-bar"><div class="progress-bar__fill " style="width: 24%;"></div></div>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">61 – 90 zile</span>
+            <span class="pro-stock-nums"><strong>74.200</strong> RON</span>
+            <div class="progress-bar"><div class="progress-bar__fill is-low" style="width: 10%;"></div></div>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Peste 90 zile</span>
+            <span class="pro-stock-nums"><strong>58.600</strong> RON</span>
+            <div class="progress-bar"><div class="progress-bar__fill is-out" style="width: 8%;"></div></div>
+        </div>
+                <span class="progress-label">Total sold: 714.000 RON</span>
+    </div>
+</div>
+
+<div class="pro-grid-2-1">
+    <!-- React: <TopDebtors /> -->
+    <div class="card pro-panel">
+        <div class="edit-section-header"><span class="edit-section-title">Cei mai mari restanțieri</span></div>
+        <div class="pro-panel-flush">
+            <div class="table-scroll">
+                <table class="partners-table">
+                    <thead><tr><th>NOD</th><th>Partener</th><th style="text-align: center;">Facturi</th><th style="text-align: right;">Sold (RON)</th><th style="text-align: center;">Cea mai veche</th><th style="text-align: center;">Acțiuni</th></tr></thead>
+                    <tbody>
+                                                <tr>
+                            <td class="td-code">81-001-0018</td>
+                            <td class="td-name">Asociația de Proprietari Bloc 2C</td>
+                            <td style="text-align: center;">3</td>
+                            <td style="text-align: right;">18.420</td>
+                            <td style="text-align: center;"><span class="status-badge status-error">94 zile</span></td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Trimite somație" onclick="alert('Somația a fost generată și trimisă pe e-mail către Asociația de Proprietari Bloc 2C (demo).')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                <a href="facturare.html" class="btn-action-icon" title="Vezi facturile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                            </td>
+                        </tr>
+                                                <tr>
+                            <td class="td-code">81-004-0847</td>
+                            <td class="td-name">P-ta Victoriei 34</td>
+                            <td style="text-align: center;">2</td>
+                            <td style="text-align: right;">12.760</td>
+                            <td style="text-align: center;"><span class="status-badge status-warning">71 zile</span></td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Trimite somație" onclick="alert('Somația a fost generată și trimisă pe e-mail către P-ta Victoriei 34 (demo).')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                <a href="facturare.html" class="btn-action-icon" title="Vezi facturile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                            </td>
+                        </tr>
+                                                <tr>
+                            <td class="td-code">81-001-0140</td>
+                            <td class="td-name">Asociația de Proprietari Bloc K</td>
+                            <td style="text-align: center;">2</td>
+                            <td style="text-align: right;">9.880</td>
+                            <td style="text-align: center;"><span class="status-badge status-warning">63 zile</span></td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Trimite somație" onclick="alert('Somația a fost generată și trimisă pe e-mail către Asociația de Proprietari Bloc K (demo).')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                <a href="facturare.html" class="btn-action-icon" title="Vezi facturile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                            </td>
+                        </tr>
+                                                <tr>
+                            <td class="td-code">81-011-0041</td>
+                            <td class="td-name">Asociația de Proprietari 55</td>
+                            <td style="text-align: center;">1</td>
+                            <td style="text-align: right;">7.340</td>
+                            <td style="text-align: center;"><span class="status-badge status-offline">41 zile</span></td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Trimite somație" onclick="alert('Somația a fost generată și trimisă pe e-mail către Asociația de Proprietari 55 (demo).')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                <a href="facturare.html" class="btn-action-icon" title="Vezi facturile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                            </td>
+                        </tr>
+                                                <tr>
+                            <td class="td-code">81-001-0030</td>
+                            <td class="td-name">Asociația de Proprietari Bloc 17 Sc. A</td>
+                            <td style="text-align: center;">1</td>
+                            <td style="text-align: right;">5.120</td>
+                            <td style="text-align: center;"><span class="status-badge status-offline">33 zile</span></td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <button type="button" class="btn-action-icon" title="Trimite somație" onclick="alert('Somația a fost generată și trimisă pe e-mail către Asociația de Proprietari Bloc 17 Sc. A (demo).')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                <a href="facturare.html" class="btn-action-icon" title="Vezi facturile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                            </td>
+                        </tr>
+                                            </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- React: <BankFiles /> -->
+    <div class="card pro-panel">
+        <div class="edit-section-header"><span class="edit-section-title">Extrase bancare · alocare plăți</span></div>
+        <ul class="pro-feed">
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon pro-feed-icon--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"></line><line x1="6" y1="18" x2="6" y2="11"></line><line x1="10" y1="18" x2="10" y2="11"></line><line x1="14" y1="18" x2="14" y2="11"></line><line x1="18" y1="18" x2="18" y2="11"></line><polygon points="12 2 20 7 4 7"></polygon></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">Banca Transilvania</div>
+                    <div class="pro-feed-meta">azi, 14:20 · 412 plăți · 398 alocate automat</div>
+                    <div class="progress-bar" style="margin-top: 6px;"><div class="progress-bar__fill" style="width: 97%;"></div></div>
+                </div>
+                <span class="status-badge status-warning">14 de alocat</span>            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"></line><line x1="6" y1="18" x2="6" y2="11"></line><line x1="10" y1="18" x2="10" y2="11"></line><line x1="14" y1="18" x2="14" y2="11"></line><line x1="18" y1="18" x2="18" y2="11"></line><polygon points="12 2 20 7 4 7"></polygon></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">ING Bank</div>
+                    <div class="pro-feed-meta">azi, 11:05 · 186 plăți · 186 alocate automat</div>
+                    <div class="progress-bar" style="margin-top: 6px;"><div class="progress-bar__fill" style="width: 100%;"></div></div>
+                </div>
+                <span class="status-badge status-online">Complet</span>            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon pro-feed-icon--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"></line><line x1="6" y1="18" x2="6" y2="11"></line><line x1="10" y1="18" x2="10" y2="11"></line><line x1="14" y1="18" x2="14" y2="11"></line><line x1="18" y1="18" x2="18" y2="11"></line><polygon points="12 2 20 7 4 7"></polygon></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">BCR</div>
+                    <div class="pro-feed-meta">azi, 09:40 · 233 plăți · 221 alocate automat</div>
+                    <div class="progress-bar" style="margin-top: 6px;"><div class="progress-bar__fill" style="width: 95%;"></div></div>
+                </div>
+                <span class="status-badge status-warning">12 de alocat</span>            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon pro-feed-icon--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"></line><line x1="6" y1="18" x2="6" y2="11"></line><line x1="10" y1="18" x2="10" y2="11"></line><line x1="14" y1="18" x2="14" y2="11"></line><line x1="18" y1="18" x2="18" y2="11"></line><polygon points="12 2 20 7 4 7"></polygon></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">Trezorerie</div>
+                    <div class="pro-feed-meta">ieri, 16:10 · 38 plăți · 31 alocate automat</div>
+                    <div class="progress-bar" style="margin-top: 6px;"><div class="progress-bar__fill" style="width: 82%;"></div></div>
+                </div>
+                <span class="status-badge status-warning">7 de alocat</span>            </li>
+                    </ul>
+    </div>
+</div>
+
+<script>
+/* Dashboard FIN – încasări și facturi pe hartă (date demo; în producție WebSocket /api/fin/live) */
+(function () {
+    var HQ = {"name":"SONIC HQ","address":"Str. Nițu Vasile 57, Sector 4, București","gps":[44.3836,26.1166]};
+    var NODES = [{"id":"P-5201","gps":[44.45602,26.05535],"label":"București","off":false},{"id":"P-5203","gps":[44.43946,26.1224],"label":"București","off":false},{"id":"P-5205","gps":[44.47583,26.06286],"label":"București","off":false},{"id":"P-5207","gps":[44.38781,26.11992],"label":"București","off":false},{"id":"P-5209","gps":[44.41336,26.06826],"label":"București","off":false},{"id":"P-5211","gps":[44.43779,26.09742],"label":"București","off":false},{"id":"P-5213","gps":[44.46255,26.05216],"label":"București","off":false},{"id":"P-5215","gps":[44.41106,26.07058],"label":"București","off":false},{"id":"P-5217","gps":[44.45696,26.08903],"label":"București","off":false},{"id":"P-5219","gps":[44.44699,26.049],"label":"București","off":false},{"id":"P-5221","gps":[44.47112,26.09007],"label":"București","off":false},{"id":"P-5223","gps":[44.45623,26.10777],"label":"București","off":false},{"id":"P-5225","gps":[44.45033,26.10546],"label":"București","off":false},{"id":"P-5227","gps":[44.49017,26.1242],"label":"București","off":false},{"id":"P-5229","gps":[44.38555,26.13503],"label":"București","off":false},{"id":"P-5231","gps":[44.41898,26.09102],"label":"București","off":false},{"id":"P-5233","gps":[44.47978,26.08309],"label":"București","off":false},{"id":"P-5235","gps":[44.42984,26.1717],"label":"București","off":false},{"id":"P-5237","gps":[44.43167,26.13977],"label":"București","off":false},{"id":"P-5239","gps":[44.45602,26.10815],"label":"București","off":false},{"id":"P-5241","gps":[44.38951,26.06744],"label":"București","off":false},{"id":"P-5243","gps":[44.47726,26.08414],"label":"București","off":false},{"id":"P-5245","gps":[44.39619,26.0676],"label":"București","off":false},{"id":"P-5247","gps":[44.43488,26.06838],"label":"București","off":false},{"id":"P-5249","gps":[44.40884,26.03517],"label":"București","off":false},{"id":"P-5251","gps":[44.39321,26.15662],"label":"București","off":false},{"id":"P-5253","gps":[44.44291,26.01539],"label":"București","off":false},{"id":"P-5255","gps":[44.48197,26.13913],"label":"București","off":false},{"id":"P-5257","gps":[44.46434,26.12646],"label":"București","off":false},{"id":"P-5259","gps":[44.4541,26.15583],"label":"București","off":false},{"id":"P-5261","gps":[44.44777,26.13185],"label":"București","off":false},{"id":"P-5263","gps":[44.40046,26.13347],"label":"București","off":false},{"id":"P-5265","gps":[45.17447,28.82093],"label":"Tulcea","off":false},{"id":"P-5267","gps":[45.18328,28.79292],"label":"Tulcea","off":false},{"id":"P-5269","gps":[45.17431,28.78615],"label":"Tulcea","off":false},{"id":"P-5271","gps":[45.17873,28.82033],"label":"Tulcea","off":false},{"id":"P-5273","gps":[46.55224,24.55547],"label":"Târgu Mureș","off":false},{"id":"P-5275","gps":[46.5359,24.54537],"label":"Târgu Mureș","off":false},{"id":"P-5277","gps":[46.55168,24.55902],"label":"Târgu Mureș","off":false},{"id":"P-5279","gps":[46.54869,24.57182],"label":"Târgu Mureș","off":false},{"id":"P-5281","gps":[46.55043,24.56953],"label":"Târgu Mureș","off":false},{"id":"P-5283","gps":[44.94124,26.02136],"label":"Ploiești","off":false},{"id":"P-5285","gps":[44.9486,26.03058],"label":"Ploiești","off":false},{"id":"P-5287","gps":[44.9373,26.01744],"label":"Ploiești","off":false},{"id":"P-5289","gps":[44.18367,28.64],"label":"Constanța","off":false},{"id":"P-5291","gps":[44.15934,28.64913],"label":"Constanța","off":false},{"id":"P-5293","gps":[44.15915,28.64456],"label":"Constanța","off":false},{"id":"P-5295","gps":[45.65523,25.61728],"label":"Brașov","off":false},{"id":"P-5297","gps":[45.6611,25.58334],"label":"Brașov","off":false},{"id":"P-5299","gps":[45.64928,25.60795],"label":"Brașov","off":false}];
+    var BANKS = ['BT', 'ING', 'BCR', 'BRD', 'Trezorerie'];
+    var today = 86410, payments = 836, n = 0;
+    function $(id) { return document.getElementById(id); }
+    function now() { var d = new Date(); return String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); }
+    document.addEventListener('DOMContentLoaded', function () {
+        SonicLiveNet.clock($('finClock'));
+        SonicLiveNet.create('finHeroMap', {
+            hq: { gps: HQ.gps, label: HQ.name, address: HQ.address }, nodes: NODES, fit: 'all', hero: true, maxZoom: 8, padding: 30, rate: 2.2, outbound: 0.25,
+            onPacket: function (node, dir) {
+                var v = 180 + Math.floor(Math.random() * 4200);
+                if (dir === 'in') {
+                    today += v; payments++;
+                    SonicLiveNet.counter($('finToday'), today); SonicLiveNet.counter($('finPayments'), payments);
+                    if (++n % 2) SonicLiveNet.ticker($('finTicker'), '<time>' + now() + '</time><span><b>+' + v.toLocaleString('ro-RO') + ' RON</b> · ' + BANKS[Math.floor(Math.random() * BANKS.length)] + ' · ' + node.label + '</span>', 5);
+                } else if (++n % 2) {
+                    SonicLiveNet.ticker($('finTicker'), '<time>' + now() + '</time><span><b>Factură emisă</b> · ' + node.label + ' · ' + v.toLocaleString('ro-RO') + ' RON</span>', 5);
+                }
+            }
+        });
+    });
+})();
+</script>
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

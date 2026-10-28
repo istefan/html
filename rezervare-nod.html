@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Rezervare NOD – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Rezervare NOD – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
 </head>
 <body>
 
@@ -179,7 +182,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +190,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +327,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +569,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-logo.svg" alt="SONIC" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Rezervare NOD</div>
 
             <!-- User profile avatar (always visible) -->
@@ -671,9 +716,9 @@
 <!-- === Formular de Filtrare ===
      React: <FilterCard onSearch={handleSearch} onReset={handleReset} fields={...} />
 -->
-<div class="card" style="margin-bottom: 24px;">
-    <div style="margin-bottom: 18px;">
-        <span class="chart-title" style="font-size: 14px; font-weight: 600;">Filtrare Avansată</span>
+<div class="card filter-card">
+    <div class="filter-card-head">
+        <span class="filter-card-title">Filtrare Avansată</span>
     </div>
     <form method="GET" action="rezervare-nod.html" id="filterFormRezervare">
         <div class="filter-grid">
@@ -805,13 +850,13 @@
             <!-- Rezervare (Perioadă Data început - Data sfârșit) -->
             <div class="form-group">
                 <label class="form-label" for="dtpStartDateRes">Rezervare (De la)</label>
-                <input type="date" name="start_date" id="dtpStartDateRes" class="input-control"
+                <input type="text" data-datepicker name="start_date" id="dtpStartDateRes" class="input-control"
                        value="">
             </div>
 
             <div class="form-group">
                 <label class="form-label" for="dtpEndDateRes">Rezervare (Până la)</label>
-                <input type="date" name="end_date" id="dtpEndDateRes" class="input-control"
+                <input type="text" data-datepicker name="end_date" id="dtpEndDateRes" class="input-control"
                        value="">
             </div>
 
@@ -857,7 +902,7 @@
     <!-- Bara de sus a tabelului -->
     <div class="table-toolbar">
         <div class="table-toolbar-left">
-            <span style="color: var(--text-muted); font-size: 13px; font-weight: 500;">
+            <span class="table-count">
                 Afișare <strong id="resVisibleCount">18</strong>
                 din <strong>120</strong> înregistrări
             </span>
@@ -880,7 +925,7 @@
     </div>
 
     <!-- Tabel propriu-zis -->
-    <div style="overflow-x: auto; width: 100%;">
+    <div class="table-scroll">
         <table class="partners-table" id="reservationsTable">
             <thead>
                 <tr>
@@ -896,12 +941,12 @@
             </thead>
             <tbody id="reservationsTableBody">
                                 <tr data-search="bucuresti str. ceairului, nr. 1, bl. j9, sc. 2,3, bucuresti, bucuresti - nod nou comandă">
-                    <td style="font-weight: 500;">Bucuresti</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td class="td-name">Bucuresti</td>
+                    <td style="text-align: center;">
                         25.11.2015                    </td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td style="text-align: center;">
                         -                    </td>
-                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                    <td class="td-code">
                         <span style="color: var(--text-muted); font-family: inherit;">-</span>                    </td>
                     <td>Str. CEAIRULUI, Nr. 1, Bl. J9, Sc. 2,3, Bucuresti, Bucuresti</td>
                     <td>
@@ -922,12 +967,12 @@
                     </td>
                 </tr>
                                 <tr data-search="bucuresti str. estacadei, nr. 4, bl. n25, sc. 2, et. 0, apt. 20, bucuresti, bucuresti - nod nou comandă">
-                    <td style="font-weight: 500;">Bucuresti</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td class="td-name">Bucuresti</td>
+                    <td style="text-align: center;">
                         22.12.2015                    </td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td style="text-align: center;">
                         -                    </td>
-                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                    <td class="td-code">
                         <span style="color: var(--text-muted); font-family: inherit;">-</span>                    </td>
                     <td>Str. ESTACADEI, Nr. 4, Bl. N25, Sc. 2, Et. 0, Apt. 20, Bucuresti, Bucuresti</td>
                     <td>
@@ -948,12 +993,12 @@
                     </td>
                 </tr>
                                 <tr data-search="târgu mures str. libertatii, nr. 109, bl. 109, sc. 1, apt. 80, târgu mures, mures - nod nou comandă">
-                    <td style="font-weight: 500;">Târgu Mures</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td class="td-name">Târgu Mures</td>
+                    <td style="text-align: center;">
                         26.05.2016                    </td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td style="text-align: center;">
                         -                    </td>
-                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                    <td class="td-code">
                         <span style="color: var(--text-muted); font-family: inherit;">-</span>                    </td>
                     <td>Str. LIBERTATII, Nr. 109, Bl. 109, Sc. 1, Apt. 80, Târgu Mures, Mures</td>
                     <td>
@@ -974,12 +1019,12 @@
                     </td>
                 </tr>
                                 <tr data-search="sibiu str. aleea steaza, nr. 2, bl. 2, sc. a, sibiu, sibiu 81-005-0015 nod nou rezervat">
-                    <td style="font-weight: 500;">Sibiu</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td class="td-name">Sibiu</td>
+                    <td style="text-align: center;">
                         28.06.2016                    </td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td style="text-align: center;">
                         28.06.2016                    </td>
-                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                    <td class="td-code">
                         81-005-0015                    </td>
                     <td>Str. ALEEA STEAZA, Nr. 2, Bl. 2, Sc. A, Sibiu, Sibiu</td>
                     <td>
@@ -1000,12 +1045,12 @@
                     </td>
                 </tr>
                                 <tr data-search="bucuresti str. theodor pallady, nr. 4, bl. m2, sc. e, distr. 3, bucuresti, bucuresti 81-001-0371 extindere rețea rezervat">
-                    <td style="font-weight: 500;">Bucuresti</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td class="td-name">Bucuresti</td>
+                    <td style="text-align: center;">
                         07.11.2014                    </td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td style="text-align: center;">
                         23.03.2015                    </td>
-                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                    <td class="td-code">
                         81-001-0371                    </td>
                     <td>Str. THEODOR PALLADY, Nr. 4, Bl. M2, Sc. E, Distr. 3, Bucuresti, Bucuresti</td>
                     <td>
@@ -1026,12 +1071,12 @@
                     </td>
                 </tr>
                                 <tr data-search="bucuresti str. barsanesti, nr. 2, bl. 156, sc. 2, distr. 6, bucuresti, bucuresti 81-001-0891 nod nou rezervat">
-                    <td style="font-weight: 500;">Bucuresti</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td class="td-name">Bucuresti</td>
+                    <td style="text-align: center;">
                         25.10.2018                    </td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td style="text-align: center;">
                         25.10.2018                    </td>
-                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                    <td class="td-code">
                         81-001-0891                    </td>
                     <td>Str. BARSANESTI, Nr. 2, Bl. 156, Sc. 2, Distr. 6, Bucuresti, Bucuresti</td>
                     <td>
@@ -1052,12 +1097,12 @@
                     </td>
                 </tr>
                                 <tr data-search="bucuresti str. barsanesti, nr. 2, bl. 156, sc. c, distr. 6, bucuresti, bucuresti 81-001-0892 nod nou rezervat">
-                    <td style="font-weight: 500;">Bucuresti</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td class="td-name">Bucuresti</td>
+                    <td style="text-align: center;">
                         25.10.2018                    </td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td style="text-align: center;">
                         25.10.2018                    </td>
-                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                    <td class="td-code">
                         81-001-0892                    </td>
                     <td>Str. BARSANESTI, Nr. 2, Bl. 156, Sc. C, Distr. 6, Bucuresti, Bucuresti</td>
                     <td>
@@ -1078,12 +1123,12 @@
                     </td>
                 </tr>
                                 <tr data-search="bucuresti str. caporal gheorghe ion, nr. 11, bl. 103, sc. 2, distr. 4, bucuresti 81-001-0990 nod nou rezervat">
-                    <td style="font-weight: 500;">Bucuresti</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td class="td-name">Bucuresti</td>
+                    <td style="text-align: center;">
                         15.05.2019                    </td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td style="text-align: center;">
                         15.05.2019                    </td>
-                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                    <td class="td-code">
                         81-001-0990                    </td>
                     <td>Str. CAPORAL GHEORGHE ION, Nr. 11, Bl. 103, Sc. 2, Distr. 4, Bucuresti</td>
                     <td>
@@ -1104,12 +1149,12 @@
                     </td>
                 </tr>
                                 <tr data-search="bucuresti str. pridvorului, nr. 13, bl. 13, sc. 2, distr. 4, bucuresti, bucuresti 81-001-1007 nod nou rezervat">
-                    <td style="font-weight: 500;">Bucuresti</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td class="td-name">Bucuresti</td>
+                    <td style="text-align: center;">
                         19.06.2019                    </td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td style="text-align: center;">
                         19.06.2019                    </td>
-                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                    <td class="td-code">
                         81-001-1007                    </td>
                     <td>Str. PRIDVORULUI, Nr. 13, Bl. 13, Sc. 2, Distr. 4, Bucuresti, Bucuresti</td>
                     <td>
@@ -1130,12 +1175,12 @@
                     </td>
                 </tr>
                                 <tr data-search="bucuresti str. calea dudesti, nr. 104-122, bl. cmg vitan, sc. 2, distr. 3, bucuresti 81-001-1186 nod nou rezervat">
-                    <td style="font-weight: 500;">Bucuresti</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td class="td-name">Bucuresti</td>
+                    <td style="text-align: center;">
                         27.03.2020                    </td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td style="text-align: center;">
                         27.03.2020                    </td>
-                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                    <td class="td-code">
                         81-001-1186                    </td>
                     <td>Str. CALEA DUDESTI, Nr. 104-122, Bl. CMG VITAN, Sc. 2, Distr. 3, Bucuresti</td>
                     <td>
@@ -1156,12 +1201,12 @@
                     </td>
                 </tr>
                                 <tr data-search="iasi str. aleea rozelor, nr. 32, bl. k3, iasi, iasi 81-003-0036 nod nou rezervat">
-                    <td style="font-weight: 500;">Iasi</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td class="td-name">Iasi</td>
+                    <td style="text-align: center;">
                         19.10.2015                    </td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td style="text-align: center;">
                         19.10.2015                    </td>
-                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                    <td class="td-code">
                         81-003-0036                    </td>
                     <td>Str. ALEEA ROZELOR, Nr. 32, Bl. K3, Iasi, Iasi</td>
                     <td>
@@ -1182,12 +1227,12 @@
                     </td>
                 </tr>
                                 <tr data-search="târgu mures str. vasile lucaciu, nr. 4, bl. 4, sc. 0, târgu mures, mures 81-004-0932 nod nou rezervat">
-                    <td style="font-weight: 500;">Târgu Mures</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td class="td-name">Târgu Mures</td>
+                    <td style="text-align: center;">
                         14.02.2024                    </td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td style="text-align: center;">
                         14.02.2024                    </td>
-                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                    <td class="td-code">
                         81-004-0932                    </td>
                     <td>Str. VASILE LUCACIU, Nr. 4, Bl. 4, Sc. 0, Târgu Mures, Mures</td>
                     <td>
@@ -1208,12 +1253,12 @@
                     </td>
                 </tr>
                                 <tr data-search="cisnadie str. wernigerode, nr. c, bl. c, sc. a, cisnadie, sibiu 81-007-0110 nod nou rezervat">
-                    <td style="font-weight: 500;">Cisnadie</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td class="td-name">Cisnadie</td>
+                    <td style="text-align: center;">
                         25.05.2024                    </td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td style="text-align: center;">
                         25.05.2024                    </td>
-                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                    <td class="td-code">
                         81-007-0110                    </td>
                     <td>Str. WERNIGERODE, Nr. C, Bl. C, Sc. A, Cisnadie, Sibiu</td>
                     <td>
@@ -1234,12 +1279,12 @@
                     </td>
                 </tr>
                                 <tr data-search="râmnicu vâlcea str. g-ral magheru, bl. g, sc. g, apt. 10, râmnicu vâlcea, valcea 81-010-0032 nod nou rezervat">
-                    <td style="font-weight: 500;">Râmnicu Vâlcea</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td class="td-name">Râmnicu Vâlcea</td>
+                    <td style="text-align: center;">
                         23.03.2018                    </td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td style="text-align: center;">
                         23.03.2018                    </td>
-                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                    <td class="td-code">
                         81-010-0032                    </td>
                     <td>Str. G-RAL MAGHERU, Bl. G, Sc. G, Apt. 10, Râmnicu Vâlcea, Valcea</td>
                     <td>
@@ -1260,12 +1305,12 @@
                     </td>
                 </tr>
                                 <tr data-search="tulcea str. cicoarei, nr. 9, bl. 8, sc. a, tulcea, tulcea 81-011-0046 montare apometre rezervat">
-                    <td style="font-weight: 500;">Tulcea</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td class="td-name">Tulcea</td>
+                    <td style="text-align: center;">
                         27.09.2018                    </td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td style="text-align: center;">
                         19.10.2018                    </td>
-                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                    <td class="td-code">
                         81-011-0046                    </td>
                     <td>Str. Cicoarei, Nr. 9, Bl. 8, Sc. A, Tulcea, Tulcea</td>
                     <td>
@@ -1286,12 +1331,12 @@
                     </td>
                 </tr>
                                 <tr data-search="brasov str. saturn, nr. 40, bl. 19, sc. a, brasov, brasov - nod nou comandă">
-                    <td style="font-weight: 500;">Brasov</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td class="td-name">Brasov</td>
+                    <td style="text-align: center;">
                         19.12.2024                    </td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td style="text-align: center;">
                         -                    </td>
-                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                    <td class="td-code">
                         <span style="color: var(--text-muted); font-family: inherit;">-</span>                    </td>
                     <td>Str. SATURN, Nr. 40, Bl. 19, Sc. A, Brasov, Brasov</td>
                     <td>
@@ -1312,12 +1357,12 @@
                     </td>
                 </tr>
                                 <tr data-search="târgu mures str. godeanu, nr. 1, bl. 1, sc. 0, târgu mures, mures - nod nou comandă">
-                    <td style="font-weight: 500;">Târgu Mures</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td class="td-name">Târgu Mures</td>
+                    <td style="text-align: center;">
                         31.03.2026                    </td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td style="text-align: center;">
                         -                    </td>
-                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                    <td class="td-code">
                         <span style="color: var(--text-muted); font-family: inherit;">-</span>                    </td>
                     <td>Str. GODEANU, Nr. 1, Bl. 1, Sc. 0, Târgu Mures, Mures</td>
                     <td>
@@ -1338,12 +1383,12 @@
                     </td>
                 </tr>
                                 <tr data-search="bucuresti str. caporal preda, nr. 2, bl. 3e, sc. 2, distr. 5, bucuresti, bucuresti - documentație lipsă respins comandă">
-                    <td style="font-weight: 500;">Bucuresti</td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td class="td-name">Bucuresti</td>
+                    <td style="text-align: center;">
                         14.10.2024                    </td>
-                    <td style="text-align: center; font-variant-numeric: tabular-nums; color: var(--text-muted);">
+                    <td style="text-align: center;">
                         -                    </td>
-                    <td style="font-weight: 600; font-family: monospace; font-size: 13px;">
+                    <td class="td-code">
                         <span style="color: var(--text-muted); font-family: inherit;">-</span>                    </td>
                     <td>Str. CAPORAL PREDA, Nr. 2, Bl. 3E, Sc. 2, Distr. 5, Bucuresti, Bucuresti</td>
                     <td>
@@ -1369,19 +1414,19 @@
 
     <!-- === Paginație === -->
     <div class="table-pagination">
-        <div style="font-size: 13px; color: var(--text-muted);">
+        <div class="pagination-info">
             Afișare <strong>1</strong> - <strong id="resPaginationVisible">18</strong> din <strong>120</strong> înregistrări
         </div>
-        <div style="display: flex; align-items: center; gap: 8px;">
-            <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" disabled>
+        <div class="pagination-controls">
+            <button type="button" class="btn-secondary btn-page-nav" disabled>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
                 <span>Anterior</span>
             </button>
             <div class="pagination-pages">
-                <button type="button" class="btn-secondary active" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;">1</button>
-                <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; min-width: 34px; justify-content: center;" onclick="alert('Pagina 2')">2</button>
+                <button type="button" class="btn-secondary btn-page active">1</button>
+                <button type="button" class="btn-secondary btn-page" onclick="alert('Pagina 2')">2</button>
             </div>
-            <button type="button" class="btn-secondary" style="padding: 6px 12px; font-size: 12px; display: inline-flex; align-items: center; gap: 6px;" onclick="alert('Pagina următoare')">
+            <button type="button" class="btn-secondary btn-page-nav" onclick="alert('Pagina următoare')">
                 <span>Următor</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </button>
@@ -1624,10 +1669,10 @@
                     Afișare NOD-uri: <strong class="nod-picker-count" id="nodPickerModalRes-count">0</strong>
                 </span>
                 <div class="nod-picker-page-btns">
-                    <button type="button" class="btn-action-icon nod-picker-prev" data-modal="nodPickerModalRes" disabled>
+                    <button type="button" class="btn-action-icon nod-picker-prev" title="Pagina anterioară" data-modal="nodPickerModalRes" disabled>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
                     </button>
-                    <button type="button" class="btn-action-icon nod-picker-next" data-modal="nodPickerModalRes" disabled>
+                    <button type="button" class="btn-action-icon nod-picker-next" title="Pagina următoare" data-modal="nodPickerModalRes" disabled>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
                 </div>
@@ -1777,7 +1822,7 @@ function handleNewOrderSubmit(e) {
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

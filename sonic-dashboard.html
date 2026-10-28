@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Dashboard SONIC – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Dashboard – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="assets/js/sonic-live-net.js"></script>
 </head>
 <body>
 
@@ -179,7 +185,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +193,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +330,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,15 +572,15 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-logo.svg" alt="SONIC" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
-            <div class="header-page-title">Dashboard SONIC</div>
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
+            <div class="header-page-title">Dashboard</div>
 
             <!-- User profile avatar (always visible) -->
             <a href="contul-meu.html" class="user-profile" title="Contul meu">SI</a>
@@ -580,12 +628,12 @@
             <p>Aceasta este pagina principală a ecosistemului SONIC. 
             De aici puteți accesa rapid toate modulele disponibile:</p>
             <ul>
-                <li><strong>SONIC GRID</strong> – Vizualizare consum, rapoarte, perioade citiri</li>
-                <li><strong>SONIC MARKET</strong> – Comandă produse și servicii</li>
-                <li><strong>SONIC PRO</strong> – Sesizări, intervenții tehnice</li>
-                <li><strong>SONIC BILLING</strong> – Facturare, calcul, citiri</li>
-                <li><strong>SONIC FIN</strong> – Contabilitate și rapoarte financiare</li>
-                <li><strong>SONIC</strong> – Configurare bază, Master Data Management</li>
+                <li><strong>SONIC GRID</strong> – Portalul clientului: consum apă, energie termică și alți senzori, rapoarte descărcabile</li>
+                <li><strong>SONIC MARKET</strong> – Comenzi de echipamente pentru clienți</li>
+                <li><strong>SONIC PRO</strong> – Programare montaje, intervenții și cititori walk-by</li>
+                <li><strong>SONIC BILLING</strong> – Prelucrare citiri, estimări și calcul</li>
+                <li><strong>SONIC FIN</strong> – Facturare echipamente și servicii, încasări și operare bancă</li>
+                <li><strong>SONIC</strong> – Parteneri, contracte, NOD-uri, angajați și colaboratori</li>
             </ul>
                             </div>
                                     </div>
@@ -615,99 +663,27 @@
 
     <div class="content">
 
-<!-- ── Hero Section ─────────────────────────────────────────────── -->
-<section class="sonic-hero" id="sonicHero">
-    <!-- Animated background elements -->
-    <div class="sonic-hero__bg">
-        <!-- Flowing grid lines -->
-        <svg class="sonic-hero__grid-svg" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true">
-            <defs>
-                <linearGradient id="heroLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="rgba(45,55,72,0)" />
-                    <stop offset="50%" stop-color="rgba(45,55,72,0.15)" />
-                    <stop offset="100%" stop-color="rgba(45,55,72,0)" />
-                </linearGradient>
-                <linearGradient id="heroAccentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#2d3748" />
-                    <stop offset="100%" stop-color="#4a5568" />
-                </linearGradient>
-            </defs>
-            <!-- Horizontal grid lines -->
-            <line x1="0" y1="80" x2="1200" y2="80" stroke="url(#heroLineGrad)" stroke-width="1" class="sonic-hero__line sonic-hero__line--h1"/>
-            <line x1="0" y1="160" x2="1200" y2="160" stroke="url(#heroLineGrad)" stroke-width="1" class="sonic-hero__line sonic-hero__line--h2"/>
-            <line x1="0" y1="240" x2="1200" y2="240" stroke="url(#heroLineGrad)" stroke-width="1" class="sonic-hero__line sonic-hero__line--h3"/>
-            <line x1="0" y1="320" x2="1200" y2="320" stroke="url(#heroLineGrad)" stroke-width="1" class="sonic-hero__line sonic-hero__line--h4"/>
-            <!-- Vertical grid lines -->
-            <line x1="300" y1="0" x2="300" y2="400" stroke="url(#heroLineGrad)" stroke-width="1" class="sonic-hero__line sonic-hero__line--v1"/>
-            <line x1="600" y1="0" x2="600" y2="400" stroke="url(#heroLineGrad)" stroke-width="1" class="sonic-hero__line sonic-hero__line--v2"/>
-            <line x1="900" y1="0" x2="900" y2="400" stroke="url(#heroLineGrad)" stroke-width="1" class="sonic-hero__line sonic-hero__line--v3"/>
-        </svg>
-
-        <!-- Animated data pulses (simulating meter readings) -->
-        <div class="sonic-hero__pulse sonic-hero__pulse--1"></div>
-        <div class="sonic-hero__pulse sonic-hero__pulse--2"></div>
-        <div class="sonic-hero__pulse sonic-hero__pulse--3"></div>
-        <div class="sonic-hero__pulse sonic-hero__pulse--4"></div>
-        <div class="sonic-hero__pulse sonic-hero__pulse--5"></div>
-
-        <!-- Animated signal waves -->
-        <div class="sonic-hero__wave sonic-hero__wave--1"></div>
-        <div class="sonic-hero__wave sonic-hero__wave--2"></div>
-        <div class="sonic-hero__wave sonic-hero__wave--3"></div>
-
-        <!-- Floating data nodes -->
-        <div class="sonic-hero__node sonic-hero__node--1">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L7 10a5 5 0 0 0 10 0L12 2z"/></svg>
+<!-- ── Hero: rețeaua SONIC live ──────────────────────────────── -->
+<!-- React: <LiveHero /> -->
+<section class="live-hero live-hero--tall" id="sonicHero">
+    <div id="sonicHeroMap"></div>
+    <div class="live-hero-shade"></div>
+    <div class="live-hero-content">
+        <span class="live-eyebrow"><span class="pro-live-dot"></span>Rețeaua SONIC · 101 gateway-uri · 6 orașe</span>
+        <h1 class="live-title">Bun venit în viitorul contorizării</h1>
+        <p class="live-subtitle">Monitorizare inteligentă în timp real a consumului de apă. Date precise, alerte instantanee și eficiență maximă, direct în panoul dumneavoastră.</p>
+        <div class="live-actions">
+            <a href="#sonicModules" class="btn-primary">Explorează modulele</a>
+            <a href="pro-harta.html" class="btn-secondary">Hartă live echipe</a>
         </div>
-        <div class="sonic-hero__node sonic-hero__node--2">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-        </div>
-        <div class="sonic-hero__node sonic-hero__node--3">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <div class="sonic-hero__node sonic-hero__node--4">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </div>
-
-        <!-- Connection lines between nodes -->
-        <svg class="sonic-hero__connections" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M200,120 Q400,80 600,200 T1000,150" fill="none" stroke="rgba(45,55,72,0.08)" stroke-width="1.5" class="sonic-hero__conn-path sonic-hero__conn-path--1"/>
-            <path d="M100,280 Q350,200 600,250 T1100,100" fill="none" stroke="rgba(45,55,72,0.06)" stroke-width="1" class="sonic-hero__conn-path sonic-hero__conn-path--2"/>
-        </svg>
-    </div>
-
-    <!-- Hero Content -->
-    <div class="sonic-hero__content">
-        <div class="sonic-hero__badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M12 2L7 10a5 5 0 0 0 10 0L12 2z"/></svg>
-            Smart Metering Platform
-        </div>
-        <h1 class="sonic-hero__title">Bun venit în viitorul contorizării</h1>
-        <p class="sonic-hero__subtitle">Monitorizare inteligentă în timp real a consumului de apă. Date precise, alerte instantanee și eficiență maximă, direct în panoul dumneavoastră.</p>
-        <div class="sonic-hero__actions">
-            <a href="#sonicModules" class="sonic-hero__btn sonic-hero__btn--primary">
-                Explorează modulele
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-        </div>
-        <!-- Live stats ticker -->
-        <div class="sonic-hero__stats">
-            <div class="sonic-hero__stat">
-                <span class="sonic-hero__stat-value">12,480</span>
-                <span class="sonic-hero__stat-label">Contoare active</span>
-            </div>
-            <div class="sonic-hero__stat-divider"></div>
-            <div class="sonic-hero__stat">
-                <span class="sonic-hero__stat-value">99.7%</span>
-                <span class="sonic-hero__stat-label">Uptime sistem</span>
-            </div>
-            <div class="sonic-hero__stat-divider"></div>
-            <div class="sonic-hero__stat">
-                <span class="sonic-hero__stat-value">2.4M</span>
-                <span class="sonic-hero__stat-label">Citiri / lună</span>
-            </div>
+        <div class="live-stats">
+            <div class="live-stat"><span class="live-stat-label">Contoare active</span><span class="live-stat-value">12.480</span></div>
+            <div class="live-stat"><span class="live-stat-label">Uptime sistem</span><span class="live-stat-value">99,7<small> %</small></span></div>
+            <div class="live-stat"><span class="live-stat-label">Pachete azi</span><span class="live-stat-value" id="sonicPackets">2.418.330</span><span class="live-stat-meta">2,4 mil. citiri / lună</span></div>
         </div>
     </div>
+    <div class="live-corner"><span class="pro-live-dot"></span><strong id="sonicClock">--:--</strong><span>· HQ Str. Nițu Vasile 57</span></div>
+    <ul class="live-ticker" id="sonicTicker" aria-live="polite"></ul>
 </section>
 
 <!-- ── Module Cards Grid ───────────────────────────────────────── -->
@@ -728,7 +704,7 @@
                 <div class="sonic-module-card__logo">
                     <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID">
                 </div>
-                <p class="sonic-module-card__desc">Vizualizare consum apă și energie termică, rapoarte, alerte și perioade de citiri.</p>
+                <p class="sonic-module-card__desc">Portalul clientului: consum de apă, energie termică și alți senzori, cu rapoarte descărcabile.</p>
             </div>
             <div class="sonic-module-card__footer">
                 <span class="sonic-module-card__link">Accesează <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
@@ -744,7 +720,7 @@
                 <div class="sonic-module-card__logo">
                     <img src="assets/images/sonic-market-logo.svg" alt="SONIC MARKET">
                 </div>
-                <p class="sonic-module-card__desc">Platformă de comenzi pentru produse și servicii destinate clienților și partenerilor.</p>
+                <p class="sonic-module-card__desc">Comenzi online de echipamente de măsură pentru clienți.</p>
             </div>
             <div class="sonic-module-card__footer">
                 <span class="sonic-module-card__link">Accesează <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
@@ -760,7 +736,7 @@
                 <div class="sonic-module-card__logo">
                     <img src="assets/images/sonic-pro-logo.svg" alt="SONIC PRO">
                 </div>
-                <p class="sonic-module-card__desc">Gestionare sesizări de la clienți, intervenții tehnice și mentenanță echipamente.</p>
+                <p class="sonic-module-card__desc">Programare montaje și intervenții pentru echipamente și gateway-uri, cititori walk-by, date în timp real din teren.</p>
             </div>
             <div class="sonic-module-card__footer">
                 <span class="sonic-module-card__link">Accesează <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
@@ -776,7 +752,7 @@
                 <div class="sonic-module-card__logo">
                     <img src="assets/images/sonic-billing-logo.svg" alt="SONIC BILLING">
                 </div>
-                <p class="sonic-module-card__desc">Calcul consum, facturare, validare citiri și gestionare perioade de calcul.</p>
+                <p class="sonic-module-card__desc">Prelucrare citiri, estimări pentru echipamente necitite sau defecte, perioade de calcul și calcul.</p>
             </div>
             <div class="sonic-module-card__footer">
                 <span class="sonic-module-card__link">Accesează <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
@@ -792,7 +768,7 @@
                 <div class="sonic-module-card__logo">
                     <img src="assets/images/sonic-fin-logo.svg" alt="SONIC FIN">
                 </div>
-                <p class="sonic-module-card__desc">Contabilitate, rapoarte financiare și gestiune plăți asociate serviciilor SONIC.</p>
+                <p class="sonic-module-card__desc">Facturi pentru echipamente și servicii lunare de citire și calcul, monitorizare și operare încasări prin bancă.</p>
             </div>
             <div class="sonic-module-card__footer">
                 <span class="sonic-module-card__link">Accesează <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
@@ -808,7 +784,7 @@
                 <div class="sonic-module-card__logo">
                     <img src="assets/images/sonic-logo.svg" alt="SONIC">
                 </div>
-                <p class="sonic-module-card__desc">Configurare bază ecosistem: parteneri, contracte, apartamente, gestiune NOD.</p>
+                <p class="sonic-module-card__desc">Date generale: parteneri, contracte, NOD-uri și apartamente, plus angajați și colaboratori.</p>
             </div>
             <div class="sonic-module-card__footer">
                 <span class="sonic-module-card__link">Accesează <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
@@ -818,9 +794,111 @@
     </div>
 </div>
 
+<!-- ── SONIC · Master Data ───────────────────────────────────── -->
+<div class="pro-grid-2-1">
+    <!-- React: <MasterDataChain /> -->
+    <div class="card pro-panel">
+        <div class="edit-section-header">
+            <span class="edit-section-title">SONIC · date generale</span>
+            <a href="parteneri.html" class="pro-panel-link">Parteneri &rarr;</a>
+        </div>
+        <div class="dash-flow">
+                        <a href="parteneri.html" class="dash-flow-step is-done">
+                <span class="dash-flow-num dash-flow-num--wide">1.284</span>
+                <span class="dash-flow-label">Parteneri</span>
+                <span class="dash-flow-meta">asociații și firme</span>
+            </a>
+                        <a href="contracte.html" class="dash-flow-step">
+                <span class="dash-flow-num dash-flow-num--wide">1.412</span>
+                <span class="dash-flow-label">Contracte</span>
+                <span class="dash-flow-meta">active</span>
+            </a>
+                        <a href="gestiune-nod.html" class="dash-flow-step">
+                <span class="dash-flow-num dash-flow-num--wide">4.833</span>
+                <span class="dash-flow-label">NOD-uri</span>
+                <span class="dash-flow-meta">branșamente</span>
+            </a>
+                        <a href="apartamente.html" class="dash-flow-step">
+                <span class="dash-flow-num dash-flow-num--wide">96k</span>
+                <span class="dash-flow-label">Apartamente</span>
+                <span class="dash-flow-meta">locuri de consum</span>
+            </a>
+                        <a href="gestiune-nod.html" class="dash-flow-step">
+                <span class="dash-flow-num dash-flow-num--wide">313k</span>
+                <span class="dash-flow-label">Echipamente</span>
+                <span class="dash-flow-meta">contoare, repartitoare, senzori</span>
+            </a>
+                    </div>
+        <p class="dash-text" style="margin-top: 14px;">Un partener are unul sau mai multe contracte; fiecare NOD (branșament) aparține unui singur contract și conține apartamente, spații comune și contoare pasante, unde sunt montate echipamentele.</p>
+    </div>
+
+    <!-- React: <CityCoverage /> -->
+    <div class="card pro-panel">
+        <div class="edit-section-header"><span class="edit-section-title">Acoperire pe orașe</span></div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">București</span>
+            <span class="pro-stock-nums"><strong>64</strong> gateway-uri · 6.757 ech.</span>
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 100%;"></div></div>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Târgu Mureș</span>
+            <span class="pro-stock-nums"><strong>9</strong> gateway-uri · 1.133 ech.</span>
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 17%;"></div></div>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Constanța</span>
+            <span class="pro-stock-nums"><strong>7</strong> gateway-uri · 894 ech.</span>
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 13%;"></div></div>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Tulcea</span>
+            <span class="pro-stock-nums"><strong>9</strong> gateway-uri · 735 ech.</span>
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 11%;"></div></div>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Brașov</span>
+            <span class="pro-stock-nums"><strong>6</strong> gateway-uri · 557 ech.</span>
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 8%;"></div></div>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Ploiești</span>
+            <span class="pro-stock-nums"><strong>6</strong> gateway-uri · 552 ech.</span>
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 8%;"></div></div>
+        </div>
+            </div>
+</div>
+
+<script>
+/* Dashboard SONIC – rețeaua live și evenimentele modulelor (date demo; în producție WebSocket /api/events/live) */
+(function () {
+    var HQ = {"name":"SONIC HQ","address":"Str. Nițu Vasile 57, Sector 4, București","gps":[44.3836,26.1166]};
+    var NODES = [{"id":"GW-40111","gps":[44.40645,26.05567],"label":"GW-40111 · București · 127 echipamente","off":false},{"id":"GW-40114","gps":[44.45602,26.05535],"label":"GW-40114 · București · 143 echipamente","off":false},{"id":"GW-40129","gps":[44.40892,26.11753],"label":"GW-40129 · București · 159 echipamente","off":false},{"id":"GW-40144","gps":[44.43946,26.1224],"label":"GW-40144 · București · 180 echipamente","off":false},{"id":"GW-40150","gps":[44.39062,26.10324],"label":"GW-40150 · București · 120 echipamente","off":false},{"id":"GW-40163","gps":[44.47583,26.06286],"label":"GW-40163 · București · 108 echipamente","off":true},{"id":"GW-40173","gps":[44.40527,26.12018],"label":"GW-40173 · București · 114 echipamente","off":false},{"id":"GW-40184","gps":[44.38781,26.11992],"label":"GW-40184 · București · 61 echipamente","off":false},{"id":"GW-40199","gps":[44.47101,26.17076],"label":"GW-40199 · București · 138 echipamente","off":false},{"id":"GW-40214","gps":[44.41336,26.06826],"label":"GW-40214 · București · 166 echipamente","off":false},{"id":"GW-40218","gps":[44.41568,26.12599],"label":"GW-40218 · București · 182 echipamente","off":false},{"id":"GW-40235","gps":[44.43779,26.09742],"label":"GW-40235 · București · 75 echipamente","off":false},{"id":"GW-40244","gps":[44.3861,26.07603],"label":"GW-40244 · București · 44 echipamente","off":false},{"id":"GW-40256","gps":[44.46255,26.05216],"label":"GW-40256 · București · 32 echipamente","off":false},{"id":"GW-40272","gps":[44.40417,26.09399],"label":"GW-40272 · București · 114 echipamente","off":false},{"id":"GW-40276","gps":[44.41106,26.07058],"label":"GW-40276 · București · 123 echipamente","off":false},{"id":"GW-40283","gps":[44.40804,26.02834],"label":"GW-40283 · București · 35 echipamente","off":false},{"id":"GW-40292","gps":[44.45696,26.08903],"label":"GW-40292 · București · 43 echipamente","off":false},{"id":"GW-40307","gps":[44.41262,26.17539],"label":"GW-40307 · București · 187 echipamente","off":false},{"id":"GW-40324","gps":[44.44699,26.049],"label":"GW-40324 · București · 62 echipamente","off":false},{"id":"GW-40337","gps":[44.39027,26.10465],"label":"GW-40337 · București · 77 echipamente","off":false},{"id":"GW-40352","gps":[44.47112,26.09007],"label":"GW-40352 · București · 123 echipamente","off":false},{"id":"GW-40366","gps":[44.41621,26.05828],"label":"GW-40366 · București · 66 echipamente","off":false},{"id":"GW-40377","gps":[44.45623,26.10777],"label":"GW-40377 · București · 87 echipamente","off":false},{"id":"GW-40392","gps":[44.43831,26.04644],"label":"GW-40392 · București · 66 echipamente","off":false},{"id":"GW-40398","gps":[44.45033,26.10546],"label":"GW-40398 · București · 186 echipamente","off":false},{"id":"GW-40406","gps":[44.46606,26.12665],"label":"GW-40406 · București · 46 echipamente","off":false},{"id":"GW-40412","gps":[44.49017,26.1242],"label":"GW-40412 · București · 129 echipamente","off":false},{"id":"GW-40426","gps":[44.40367,26.13982],"label":"GW-40426 · București · 58 echipamente","off":false},{"id":"GW-40435","gps":[44.38555,26.13503],"label":"GW-40435 · București · 81 echipamente","off":false},{"id":"GW-40449","gps":[44.43101,26.15808],"label":"GW-40449 · București · 138 echipamente","off":false},{"id":"GW-40457","gps":[44.41898,26.09102],"label":"GW-40457 · București · 177 echipamente","off":false},{"id":"GW-40473","gps":[44.46107,26.13834],"label":"GW-40473 · București · 166 echipamente","off":false},{"id":"GW-40478","gps":[44.47978,26.08309],"label":"GW-40478 · București · 56 echipamente","off":false},{"id":"GW-40488","gps":[44.46318,26.17367],"label":"GW-40488 · București · 141 echipamente","off":false},{"id":"GW-40495","gps":[44.42984,26.1717],"label":"GW-40495 · București · 55 echipamente","off":true},{"id":"GW-40508","gps":[44.47832,26.08274],"label":"GW-40508 · București · 25 echipamente","off":false},{"id":"GW-40513","gps":[44.43167,26.13977],"label":"GW-40513 · București · 27 echipamente","off":false},{"id":"GW-40522","gps":[44.4815,26.13599],"label":"GW-40522 · București · 25 echipamente","off":false},{"id":"GW-40532","gps":[44.45602,26.10815],"label":"GW-40532 · București · 77 echipamente","off":false},{"id":"GW-40536","gps":[44.43879,26.05863],"label":"GW-40536 · București · 158 echipamente","off":false},{"id":"GW-40544","gps":[44.38951,26.06744],"label":"GW-40544 · București · 32 echipamente","off":false},{"id":"GW-40551","gps":[44.37727,26.10141],"label":"GW-40551 · București · 100 echipamente","off":false},{"id":"GW-40564","gps":[44.47726,26.08414],"label":"GW-40564 · București · 98 echipamente","off":false},{"id":"GW-40580","gps":[44.40801,26.03597],"label":"GW-40580 · București · 139 echipamente","off":false},{"id":"GW-40591","gps":[44.39619,26.0676],"label":"GW-40591 · București · 77 echipamente","off":false},{"id":"GW-40602","gps":[44.38478,26.10893],"label":"GW-40602 · București · 172 echipamente","off":false},{"id":"GW-40618","gps":[44.43488,26.06838],"label":"GW-40618 · București · 166 echipamente","off":false},{"id":"GW-40632","gps":[44.48297,26.13529],"label":"GW-40632 · București · 135 echipamente","off":false},{"id":"GW-40637","gps":[44.40884,26.03517],"label":"GW-40637 · București · 148 echipamente","off":false},{"id":"GW-40653","gps":[44.48352,26.05297],"label":"GW-40653 · București · 36 echipamente","off":false},{"id":"GW-40658","gps":[44.39321,26.15662],"label":"GW-40658 · București · 116 echipamente","off":false},{"id":"GW-40668","gps":[44.4461,26.16482],"label":"GW-40668 · București · 78 echipamente","off":false},{"id":"GW-40678","gps":[44.44291,26.01539],"label":"GW-40678 · București · 90 echipamente","off":false},{"id":"GW-40695","gps":[44.40521,26.0501],"label":"GW-40695 · București · 118 echipamente","off":false},{"id":"GW-40705","gps":[44.48197,26.13913],"label":"GW-40705 · București · 29 echipamente","off":false},{"id":"GW-40714","gps":[44.45587,26.11885],"label":"GW-40714 · București · 172 echipamente","off":false},{"id":"GW-40717","gps":[44.46434,26.12646],"label":"GW-40717 · București · 181 echipamente","off":false},{"id":"GW-40727","gps":[44.42721,26.17266],"label":"GW-40727 · București · 141 echipamente","off":false},{"id":"GW-40735","gps":[44.4541,26.15583],"label":"GW-40735 · București · 60 echipamente","off":false},{"id":"GW-40741","gps":[44.41668,26.06081],"label":"GW-40741 · București · 187 echipamente","off":false},{"id":"GW-40750","gps":[44.44777,26.13185],"label":"GW-40750 · București · 161 echipamente","off":false},{"id":"GW-40767","gps":[44.38001,26.13901],"label":"GW-40767 · București · 54 echipamente","off":false},{"id":"GW-40772","gps":[44.40046,26.13347],"label":"GW-40772 · București · 90 echipamente","off":false},{"id":"GW-40783","gps":[45.18501,28.79216],"label":"GW-40783 · Tulcea · 146 echipamente","off":false},{"id":"GW-40793","gps":[45.17447,28.82093],"label":"GW-40793 · Tulcea · 43 echipamente","off":false},{"id":"GW-40797","gps":[45.17364,28.81024],"label":"GW-40797 · Tulcea · 95 echipamente","off":false},{"id":"GW-40812","gps":[45.18328,28.79292],"label":"GW-40812 · Tulcea · 117 echipamente","off":false},{"id":"GW-40825","gps":[45.17074,28.81798],"label":"GW-40825 · Tulcea · 90 echipamente","off":false},{"id":"GW-40838","gps":[45.17431,28.78615],"label":"GW-40838 · Tulcea · 117 echipamente","off":false},{"id":"GW-40855","gps":[45.18095,28.80919],"label":"GW-40855 · Tulcea · 28 echipamente","off":false},{"id":"GW-40862","gps":[45.17873,28.82033],"label":"GW-40862 · Tulcea · 47 echipamente","off":false},{"id":"GW-40879","gps":[45.17927,28.80507],"label":"GW-40879 · Tulcea · 52 echipamente","off":false},{"id":"GW-40883","gps":[46.55224,24.55547],"label":"GW-40883 · Târgu Mureș · 64 echipamente","off":false},{"id":"GW-40898","gps":[46.54675,24.57023],"label":"GW-40898 · Târgu Mureș · 188 echipamente","off":false},{"id":"GW-40911","gps":[46.5359,24.54537],"label":"GW-40911 · Târgu Mureș · 140 echipamente","off":false},{"id":"GW-40919","gps":[46.54672,24.55705],"label":"GW-40919 · Târgu Mureș · 157 echipamente","off":false},{"id":"GW-40932","gps":[46.55168,24.55902],"label":"GW-40932 · Târgu Mureș · 96 echipamente","off":false},{"id":"GW-40940","gps":[46.54647,24.57379],"label":"GW-40940 · Târgu Mureș · 182 echipamente","off":false},{"id":"GW-40943","gps":[46.54869,24.57182],"label":"GW-40943 · Târgu Mureș · 120 echipamente","off":false},{"id":"GW-40951","gps":[46.55282,24.56851],"label":"GW-40951 · Târgu Mureș · 30 echipamente","off":false},{"id":"GW-40964","gps":[46.55043,24.56953],"label":"GW-40964 · Târgu Mureș · 156 echipamente","off":false},{"id":"GW-40981","gps":[44.94064,26.0428],"label":"GW-40981 · Ploiești · 94 echipamente","off":false},{"id":"GW-40985","gps":[44.94124,26.02136],"label":"GW-40985 · Ploiești · 159 echipamente","off":false},{"id":"GW-40998","gps":[44.93911,26.02498],"label":"GW-40998 · Ploiești · 50 echipamente","off":false},{"id":"GW-41006","gps":[44.9486,26.03058],"label":"GW-41006 · Ploiești · 142 echipamente","off":false},{"id":"GW-41022","gps":[44.93676,26.02632],"label":"GW-41022 · Ploiești · 38 echipamente","off":false},{"id":"GW-41026","gps":[44.9373,26.01744],"label":"GW-41026 · Ploiești · 69 echipamente","off":false},{"id":"GW-41034","gps":[44.18097,28.63966],"label":"GW-41034 · Constanța · 163 echipamente","off":false},{"id":"GW-41046","gps":[44.18367,28.64],"label":"GW-41046 · Constanța · 169 echipamente","off":false},{"id":"GW-41057","gps":[44.18111,28.62895],"label":"GW-41057 · Constanța · 146 echipamente","off":false},{"id":"GW-41068","gps":[44.15934,28.64913],"label":"GW-41068 · Constanța · 65 echipamente","off":false},{"id":"GW-41082","gps":[44.17311,28.63815],"label":"GW-41082 · Constanța · 170 echipamente","off":false},{"id":"GW-41098","gps":[44.15915,28.64456],"label":"GW-41098 · Constanța · 89 echipamente","off":false},{"id":"GW-41104","gps":[44.15934,28.65022],"label":"GW-41104 · Constanța · 92 echipamente","off":false},{"id":"GW-41109","gps":[45.65523,25.61728],"label":"GW-41109 · Brașov · 31 echipamente","off":false},{"id":"GW-41112","gps":[45.66106,25.60471],"label":"GW-41112 · Brașov · 130 echipamente","off":false},{"id":"GW-41128","gps":[45.6611,25.58334],"label":"GW-41128 · Brașov · 181 echipamente","off":false},{"id":"GW-41135","gps":[45.65405,25.60549],"label":"GW-41135 · Brașov · 131 echipamente","off":false},{"id":"GW-41140","gps":[45.64928,25.60795],"label":"GW-41140 · Brașov · 31 echipamente","off":false},{"id":"GW-41157","gps":[45.64012,25.60307],"label":"GW-41157 · Brașov · 53 echipamente","off":false}];
+    var EVENTS = [
+        ['GRID', 'citire zilnică primită'], ['GRID', 'alertă consum nocturn'], ['MARKET', 'comandă nouă'],
+        ['PRO', 'intervenție finalizată'], ['BILLING', 'NOD gata de facturare'], ['FIN', 'încasare alocată'], ['GRID', 'citiri orare primite']
+    ];
+    var packets = 2418330, n = 0;
+    function $(id) { return document.getElementById(id); }
+    function now() { var d = new Date(); return String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); }
+    document.addEventListener('DOMContentLoaded', function () {
+        SonicLiveNet.clock($('sonicClock'));
+        SonicLiveNet.create('sonicHeroMap', {
+            hq: { gps: HQ.gps, label: HQ.name, address: HQ.address }, nodes: NODES, fit: 'all', hero: true, maxZoom: 8, padding: 30, rate: 11, outbound: 0.08,
+            onPacket: function (node) {
+                packets += 1 + Math.floor(Math.random() * 30);
+                SonicLiveNet.counter($('sonicPackets'), packets);
+                if (++n % 5) return;
+                var e = EVENTS[Math.floor(Math.random() * EVENTS.length)];
+                SonicLiveNet.ticker($('sonicTicker'), '<time>' + now() + '</time><span><b>SONIC ' + e[0] + '</b> · ' + e[1] + ' · ' + node.label.split(' · ')[1] + '</span>', 5);
+            }
+        });
+    });
+})();
+</script>
+
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 

@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Programare Intervenție – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
+    <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="assets/js/pro-map.js"></script>
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+<script>
+    (function() {
+        var sb = document.getElementById('sidebar');
+        var ls = localStorage.getItem('sb_collapsed');
+        if (ls === '1') sb.classList.add('collapsed');
+        else if (ls === '0') sb.classList.remove('collapsed');
+    })();
+</script>
+    <!-- ── Logo ─────────────────────────────────────────────────────── -->
+    <!-- React: <SidebarLogo activeApp={activeApp} /> -->
+    <div class="logo">
+        <a href="sonic-dashboard.html" title="SONIC – Acasă">
+            <img src="assets/images/sonic-logo.svg"
+                 alt="SONIC"
+                 class="logo-full"
+                 id="sidebarLogo">
+            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">S</span>
+        </a>
+    </div>
+
+    <!-- ── Nav ───────────────────────────────────────────────────────── -->
+    <!-- React: <SidebarNav activeApp={activeApp} onAppChange={setActiveApp} /> -->
+    <nav class="sidebar-nav" aria-label="Navigare principală">
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  1. SONIC GRID
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-grid"
+             data-logo="assets/images/sonic-grid-logo.svg"
+             data-logo-icon="SG">
+            <button class="app-section-header" type="button" title="SONIC GRID">
+                <img src="assets/images/sonic-grid-logo.svg" class="app-section-logo" alt="SONIC GRID">
+                <span class="app-section-badge">SG</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Panoul Meu -->
+                <a href="panoul-meu.html" class="nav-item " title="Panoul Meu">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </span>
+                    <span class="nav-label">Panoul Meu</span>
+                </a>
+
+                <!-- Adresele Mele -->
+                <a href="adresele-mele.html" class="nav-item " title="Adresele Mele">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </span>
+                    <span class="nav-label">Adresele Mele</span>
+                </a>
+
+                <!-- Regiuni / Zone -->
+                <a href="regiuni-zone.html" class="nav-item " title="Regiuni / Zone">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </span>
+                    <span class="nav-label">Regiuni / Zone</span>
+                </a>
+
+                <!-- Perioade Citiri -->
+                <a href="perioade-citiri.html" class="nav-item " title="Perioade Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </span>
+                    <span class="nav-label">Perioade Citiri</span>
+                </a>
+
+                <!-- Setări Alerte -->
+                <a href="setari-alerte.html" class="nav-item " title="Setări Alerte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </span>
+                    <span class="nav-label">Setări Alerte</span>
+                </a>
+
+                <!-- Info Center -->
+                <a href="info-center.html" class="nav-item " title="Info Center">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    <span class="nav-label">Info Center</span>
+                </a>
+
+                <!-- Contact -->
+                <a href="contact.html" class="nav-item " title="Contact">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </span>
+                    <span class="nav-label">Contact</span>
+                </a>
+
+                <!-- ── RAPOARTE (section label) ── -->
+                <div class="nav-section">Rapoarte</div>
+
+                <!-- Raport Citiri -->
+                <a href="raport-citiri.html" class="nav-item " title="Raport Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Raport Citiri</span>
+                </a>
+
+                <!-- Bilanț Neînchideri Apă -->
+                <a href="bilant-neinchideri.html" class="nav-item " title="Bilanț Neînchideri Apă">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                    </span>
+                    <span class="nav-label">Bilanț Neînchideri Apă</span>
+                </a>
+
+                <!-- Estimări Consum -->
+                <a href="estimari-consum.html" class="nav-item " title="Estimări Consum">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </span>
+                    <span class="nav-label">Estimări Consum</span>
+                </a>
+
+                <!-- Raport Alerte -->
+                <a href="raport-alerte.html" class="nav-item " title="Raport Alerte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Raport Alerte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  2. SONIC MARKET
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-market"
+             data-logo="assets/images/sonic-market-logo.svg"
+             data-logo-icon="SM">
+            <button class="app-section-header" type="button" title="SONIC MARKET">
+                <img src="assets/images/sonic-market-logo.svg" class="app-section-logo" alt="SONIC MARKET">
+                <span class="app-section-badge">SM</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard Market -->
+                <a href="market-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  3. SONIC PRO
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section open"
+             data-app="sonic-pro"
+             data-logo="assets/images/sonic-pro-logo.svg"
+             data-logo-icon="SP">
+            <button class="app-section-header" type="button" title="SONIC PRO">
+                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+                <span class="app-section-badge">SP</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard PRO (dispecerat) -->
+                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group open" data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem active">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  4. SONIC BILLING
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-billing"
+             data-logo="assets/images/sonic-billing-logo.svg"
+             data-logo-icon="SB">
+            <button class="app-section-header" type="button" title="SONIC BILLING">
+                <img src="assets/images/sonic-billing-logo.svg" class="app-section-logo" alt="SONIC BILLING">
+                <span class="app-section-badge">SB</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard -->
+                <a href="index.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── ADMINISTRARE ─────────────────────────────────────────── -->
+                <div class="nav-group " data-group="administrare">
+                    <button class="nav-group-title" type="button" title="Administrare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                        </span>
+                        <span class="nav-label">Administrare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="utilizatori.html" class="nav-subitem ">Utilizatori</a>
+                        <a href="cititori.html" class="nav-subitem ">Cititori</a>
+                        <a href="parametri-sistem.html" class="nav-subitem ">Parametri Sistem</a>
+                        <a href="stergere-perioade.html" class="nav-subitem ">Ștergere Perioade Calcul</a>
+                    </div>
+                </div>
+
+                <!-- ── DICTIONARE ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="dictionare">
+                    <button class="nav-group-title" type="button" title="Dictionare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Dictionare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="localitati.html" class="nav-subitem ">Localități</a>
+                        <a href="puncte-lucru.html" class="nav-subitem ">Puncte de Lucru</a>
+                        <a href="producatori.html" class="nav-subitem ">Producători</a>
+                        <a href="furnizori.html" class="nav-subitem ">Furnizori Utilități</a>
+                        <a href="unitati-masura.html" class="nav-subitem ">Unități de Măsură</a>
+                        <a href="tipuri-servicii.html" class="nav-subitem ">Tipuri Servicii</a>
+                        <a href="companii.html" class="nav-subitem ">Companii</a>
+                    </div>
+                </div>
+
+                <!-- ── DATABANK MANAGEMENT ──────────────────────────────────── -->
+                <div class="nav-group " data-group="databank">
+                    <button class="nav-group-title" type="button" title="Databank Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                        </span>
+                        <span class="nav-label">Databank Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="tipuri-radiatoare.html" class="nav-subitem ">Tipuri Radiatoare</a>
+                        <a href="modele-radiatoare.html" class="nav-subitem ">Modele Radiatoare</a>
+                        <a href="modele-repartitoare.html" class="nav-subitem ">Modele Repartitoare</a>
+                        <a href="modele-contoare.html" class="nav-subitem ">Modele Contoare</a>
+                        <a href="serii-apometre.html" class="nav-subitem ">Serii Apometre Achiziționate</a>
+                    </div>
+                </div>
+
+                <!-- ── CALCUL ────────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="calcul">
+                    <button class="nav-group-title" type="button" title="Calcul">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </span>
+                        <span class="nav-label">Calcul</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
+                        <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
+                        <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
+                        <a href="tarife.html" class="nav-subitem ">Tarife</a>
+                    </div>
+                </div>
+
+                <!-- ── IMPORT / EXPORT CITIRI ───────────────────────────────── -->
+                <div class="nav-group " data-group="import-export">
+                    <button class="nav-group-title" type="button" title="Import / Export Citiri">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </span>
+                        <span class="nav-label">Import / Export Citiri</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="citire-manuala-et.html" class="nav-subitem ">Citire Manuală ET</a>
+                        <a href="citire-manuala-apa.html" class="nav-subitem ">Citire Manuală Apă</a>
+                        <a href="citiri-brute-et.html" class="nav-subitem ">Citiri Brute Energie Termică</a>
+                        <a href="citiri-brute-apa.html" class="nav-subitem ">Citiri Brute Apă</a>
+                        <a href="export-pl.html" class="nav-subitem ">Export PL</a>
+                    </div>
+                </div>
+
+                <!-- ── CONSUM ENERGIE TERMICĂ ────────────────────────────────── -->
+                <div class="nav-group " data-group="consum-et">
+                    <button class="nav-group-title" type="button" title="Consum Energie Termică">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                        </span>
+                        <span class="nav-label">Consum Energie Termică</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="consum-et-detaliat.html" class="nav-subitem ">Introducere Detaliată</a>
+                        <a href="consum-et-cumulat.html" class="nav-subitem ">Introducere Cumulată</a>
+                    </div>
+                </div>
+
+                <!-- ── CONSUM APĂ ─────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="consum-apa">
+                    <button class="nav-group-title" type="button" title="Consum Apă">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L7 10a5 5 0 0 0 10 0L12 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Consum Apă</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="consum-apa-detaliat.html" class="nav-subitem ">Introducere Detaliată</a>
+                    </div>
+                </div>
+
+                <!-- ── VALIDARE CITIRE ───────────────────────────────────────── -->
+                <div class="nav-group " data-group="validare">
+                    <button class="nav-group-title" type="button" title="Validare Citire">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </span>
+                        <span class="nav-label">Validare Citire</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="validare-et.html" class="nav-subitem ">Validare Citire – ET</a>
+                        <a href="validare-apa.html" class="nav-subitem ">Validare Citire – Apă</a>
+                        <a href="cost-split-apa.html" class="nav-subitem ">Cost Split – Apă</a>
+                    </div>
+                </div>
+
+                <!-- ── GESTIUNE FACTURARE (standalone) ──────────────────────── -->
+                <a href="facturare.html" class="nav-item " title="Gestiune Facturare">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Gestiune Facturare</span>
+                </a>
+
+                <!-- ── GESTIUNE TIPĂRIRE ───────────────────────────────────────── -->
+                <div class="nav-group " data-group="tiparire">
+                    <button class="nav-group-title" type="button" title="Gestiune Tipărire">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                        </span>
+                        <span class="nav-label">Gestiune Tipărire</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="nod-tiparire.html" class="nav-subitem ">NOD pentru Tipărire</a>
+                        <a href="fise-citire.html" class="nav-subitem ">Fișe Citire</a>
+                    </div>
+                </div>
+
+                <!-- ── RAPOARTE (standalone) ──────────────────────────────────── -->
+                <a href="rapoarte.html" class="nav-item " title="Rapoarte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <span class="nav-label">Rapoarte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  5. SONIC FIN
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-fin"
+             data-logo="assets/images/sonic-fin-logo.svg"
+             data-logo-icon="SF">
+            <button class="app-section-header" type="button" title="SONIC FIN">
+                <img src="assets/images/sonic-fin-logo.svg" class="app-section-logo" alt="SONIC FIN">
+                <span class="app-section-badge">SF</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard FIN -->
+                <a href="fin-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  6. SONIC (Base – Ecosistem & Configurare)
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic"
+             data-logo="assets/images/sonic-logo.svg"
+             data-logo-icon="S">
+            <button class="app-section-header" type="button" title="SONIC">
+                <img src="assets/images/sonic-logo.svg" class="app-section-logo" alt="SONIC">
+                <span class="app-section-badge">S</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard SONIC -->
+                <a href="sonic-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <div class="nav-group " data-group="master-data">
+                    <button class="nav-group-title" type="button" title="Master Data Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Master Data Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
+                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
+                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
+                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
+                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
+                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- ── Sidebar Footer ─────────────────────────────────────────────── -->
+    <!-- React: <SidebarFooter /> -->
+    <div class="sidebar-footer">
+        <a href="contul-meu.html" class="nav-item " title="Contul Meu">
+            <span class="nav-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <span class="nav-label">Contul Meu</span>
+        </a>
+    </div>
+
+</aside>
+
+<!-- React: <main className="main"> -->
+<div class="main">
+
+    <!--
+        React: <Header
+            onToggleSidebar={toggleSidebar}
+            isCollapsed={isCollapsed}
+            isMobileOpen={isMobileOpen}
+            pageTitle={pageTitle}
+        />
+    -->
+    <div class="header">
+
+        <!-- LEFT: hamburger / sidebar-toggle + search (desktop) -->
+        <div class="header-left">
+            <!--
+                React: <SidebarToggleBtn
+                    onClick={onToggleSidebar}
+                    isCollapsed={isCollapsed}
+                    isMobile={isMobile}
+                />
+                Desktop: panel-left icon with collapse arrow
+                Mobile : hamburger icon
+            -->
+            <button class="sidebar-toggle-btn" id="sidebarToggle"
+                    title="Restrânge / Extinde meniu"
+                    aria-label="Toggle sidebar"
+                    data-collapsed="0">
+                <script>
+                    (function() {
+                        var btn = document.getElementById('sidebarToggle');
+                        var ls = localStorage.getItem('sb_collapsed');
+                        if (ls === '1') btn.setAttribute('data-collapsed', '1');
+                        else if (ls === '0') btn.setAttribute('data-collapsed', '0');
+                    })();
+                </script>
+                <!-- Mobile hamburger (hidden on desktop via CSS) -->
+                <svg class="icon-hamburger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+                <!-- Desktop panel icon (hidden on mobile via CSS) -->
+                <svg class="icon-panel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <line x1="9" y1="3" x2="9" y2="21"/>
+                    <polyline points="15 8 12 12 15 16" class="toggle-arrow"/>
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- CENTER: logo (mobile only, absolutely centered) -->
+        <!-- React: isMobile && <HeaderLogo /> -->
+        <div class="header-logo" aria-hidden="true">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-pro-logo.svg" alt="SONIC PRO" id="headerLogo">
+            </a>
+        </div>
+
+        <!-- RIGHT: page title (desktop) + user + logout -->
+        <div class="header-actions">
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
+            <div class="header-page-title">Programare Intervenție</div>
+
+            <!-- User profile avatar (always visible) -->
+            <a href="contul-meu.html" class="user-profile" title="Contul meu">SI</a>
+
+            <!-- Logout button – icon only, always visible -->
+            <!-- React: <LogoutBtn onClick={handleLogout} /> -->
+            <a href="login.html" class="logout-btn" title="Deconectare" aria-label="Deconectare">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+            </a>
+        </div>
+
+    </div><!-- /.header -->
+
+    <!--
+        CONTEXTUAL HELP BAR (WordPress-style)
+        React: <HelpBar onToggle={toggleHelp} isOpen={isHelpOpen} />
+               <HelpPanel isOpen={isHelpOpen} tabs={helpTabs} />
+    -->
+    <div class="help-wrapper">
+        <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
+            <div class="help-panel-inner">
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Cum se fac recomandările                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Garanție, override și SMS                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Programare Intervenție</h4>
+            <p>Pagina pe care o folosește operatorul când sună un client sau când pornește de la o solicitare, o problemă în rețea ori o intervenție nerealizată.</p>
+            <ol>
+                <li><strong>Caută</strong> adresa, codul NOD, asociația, persoana de contact sau telefonul.</li>
+                <li><strong>Completează</strong> ce trebuie făcut: tipul intervenției, echipamentele, durata și prioritatea.</li>
+                <li><strong>Alege</strong> una dintre variantele recomandate sau programează manual.</li>
+                <li><strong>Confirmă</strong> – clientul poate primi un SMS de reamintire.</li>
+            </ol>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <h4>Criterii</h4>
+            <ul>
+                <li><strong>Rol și competențe</strong> – doar persoanele cu rolul potrivit (Service, Montator, Cititor) și care lucrează cu echipamentele alese.</li>
+                <li><strong>Disponibilitate</strong> – se exclud weekendul, concediile și zilele cu alte sarcini (Calendar Echipe).</li>
+                <li><strong>Traseu</strong> – se preferă zilele în care persoana are deja intervenții aproape de adresă (distanța în km este față de cel mai apropiat punct din traseul zilei sau față de bază).</li>
+                <li><strong>Încărcare</strong> – se preferă zilele cu mai puține intervenții.</li>
+                <li><strong>Stoc</strong> – dacă un echipament lipsește din stocul liber (rezervat pentru montaje), varianta primește o avertizare și este depunctată până la data intrării în stoc.</li>
+            </ul>
+            <p>Dacă nicio persoană nu acoperă toate echipamentele, se propune o <strong>intervenție cuplată</strong>, cu mai multe persoane în același interval.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <h4>Garanție</h4>
+            <p>Se calculează de la ultima intervenție pe NOD. În garanție intervenția este gratuită; în afara garanției se poate încasa la fața locului.</p>
+            <h4>Programare manuală</h4>
+            <p>Operatorul poate alege orice zi, oră și persoană. Pagina avertizează (indisponibil, fără competență, stoc), dar nu blochează.</p>
+            <h4>SMS de reamintire</h4>
+            <p>Bifat implicit: clientul primește un SMS cu o zi înainte și/sau în ziua intervenției.</p>
+            <h4>Urgență</h4>
+            <p>Pentru prioritatea <em>Urgent</em> se poate trimite în loc de programare o <strong>notificare urgentă</strong>: o preia primul tehnician disponibil.</p>
+                            </div>
+                                    </div>
+                    </div><!-- /.help-panel-inner -->
+        </div><!-- /.help-panel -->
+        
+        <div class="help-bar">
+            <button class="help-toggle-btn" id="helpToggle"
+                    aria-expanded="false"
+                    aria-controls="helpPanel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round"
+                     width="14" height="14" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                <span>Ajutor</span>
+                <svg class="help-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                     aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"/>
+                </svg>
+            </button>
+        </div><!-- /.help-bar -->
+    </div><!-- /.help-wrapper -->
+
+    <div class="content">
+
+<div class="page-title-container">
+    <div class="page-title">
+        <h1>Programare Intervenție</h1>
+        <p>Caută adresa clientului și alege una dintre variantele recomandate după traseu, competențe și stoc.</p>
+    </div>
+    <a href="pro-dashboard.html" class="btn-secondary" id="btnBack">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <span>Înapoi</span>
+    </a>
+</div>
+
+<!-- React: <ScheduleSteps active={step} /> -->
+<div class="pro-steps" id="proSteps">
+    <span class="pro-step is-active" data-step="1"><span class="pro-step-num">1</span>Adresă și client</span>
+    <span class="pro-step" data-step="2"><span class="pro-step-num">2</span>Ce trebuie făcut</span>
+    <span class="pro-step" data-step="3"><span class="pro-step-num">3</span>Zi, oră și persoană</span>
+    <span class="pro-step" data-step="4"><span class="pro-step-num">4</span>Confirmare</span>
+</div>
+
+<div class="calc-alert">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>    <div><strong>Solicitare S-2604:</strong> Înlocuire repartitor + verificare contor ET (Telefon, 26.10.2026 16:48) · <a href="pro-solicitari.html?id=S-2604" class="td-link">deschide</a></div>
+</div>
+
+<div id="proScheduleDone" class="calc-alert calc-alert--success" style="display: none;"></div>
+
+<div class="pro-grid-2-1" id="proScheduleForm">
+    <div class="pro-stack">
+
+        <!-- ── 1. Adresă și client ─────────────────────────────── -->
+        <!-- React: <AddressSearch /> + <NodContext /> -->
+        <div class="card pro-panel">
+            <div class="edit-section-header"><span class="edit-section-title">1 · Adresă și client</span></div>
+            <div class="pro-search-big">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>                <input type="text" id="txtProSearch" class="input-control" autocomplete="off" placeholder="Stradă, număr, bloc, cod NOD, asociație, persoană sau telefon…" aria-label="Caută adresa">
+                <div class="pro-suggest" id="proSuggest" role="listbox"></div>
+            </div>
+
+            <div id="proNodContext" style="display: none; margin-top: 16px;">
+                <div class="utility-context-strip">
+                    <div class="context-items">
+                        <div class="context-item"><span class="context-label">NOD:</span><strong class="context-value context-code" id="ctxNod"></strong></div>
+                        <div class="context-sep"></div>
+                        <div class="context-item"><span class="context-label">Adresă:</span><span class="context-value" id="ctxAddress"></span></div>
+                        <div class="context-sep"></div>
+                        <div class="context-item"><span class="context-label">Asociație:</span><span class="context-value" id="ctxPartner"></span></div>
+                    </div>
+                    <div><a href="#" class="pro-panel-link" id="ctxNodLink">Fișa NOD-ului</a></div>
+                </div>
+                <div class="pro-grid-1-1" style="gap: 12px; margin-bottom: 14px;">
+                    <div class="pro-warranty" id="ctxWarranty"></div>
+                    <div class="pro-warranty">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        <div><strong>Echipamente pe NOD</strong><span class="pro-chips" id="ctxEquipment"></span></div>
+                    </div>
+                </div>
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label class="form-label" for="txtProFlat">Apartament</label>
+                        <input type="text" id="txtProFlat" class="input-control" maxlength="20" value="5">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtProPerson">Persoană de contact <span class="required-star">*</span></label>
+                        <input type="text" id="txtProPerson" class="input-control" maxlength="100" value="Carmen Voicu">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtProPhone">Telefon (pentru SMS) <span class="required-star">*</span></label>
+                        <input type="text" id="txtProPhone" class="input-control" maxlength="20" inputmode="tel" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── 2. Ce trebuie făcut ─────────────────────────────── -->
+        <!-- React: <JobForm /> -->
+        <div class="card pro-panel" id="proJobCard">
+            <div class="edit-section-header"><span class="edit-section-title">2 · Ce trebuie făcut</span></div>
+            <div class="form-row-3">
+                <div class="form-group">
+                    <label class="form-label" for="ddlProJob">Tip intervenție <span class="required-star">*</span></label>
+                    <select id="ddlProJob" class="input-control">
+                                                    <option value="Service" data-role="Service" selected>Service</option>
+                                                    <option value="Montaj ulterior" data-role="Montator" >Montaj ulterior</option>
+                                                    <option value="Montaj" data-role="Montator" >Montaj</option>
+                                                    <option value="Citire walk-by" data-role="Cititor" >Citire walk-by</option>
+                                            </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="ddlProDuration">Durată estimată</label>
+                    <select id="ddlProDuration" class="input-control">
+                        <option value="0.5">30 min</option>
+                        <option value="1" selected>1 oră</option>
+                        <option value="1.5">1 oră 30 min</option>
+                        <option value="2">2 ore</option>
+                        <option value="3">3 ore</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="ddlProPriority">Prioritate</label>
+                    <select id="ddlProPriority" class="input-control">
+                        <option value="Normal" selected>Normal</option>
+                        <option value="Urgent" >Urgent</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <span class="form-label">Echipamente <span class="required-star">*</span></span>
+                <div class="pro-check-grid" id="proTypes">
+                                            <label class="pro-check-tile"><input type="checkbox" value="apa" > Contor apă</label>
+                                            <label class="pro-check-tile"><input type="checkbox" value="et" checked> Contor energie termică</label>
+                                            <label class="pro-check-tile"><input type="checkbox" value="rep" checked> Repartitor</label>
+                                            <label class="pro-check-tile"><input type="checkbox" value="gw" > Gateway</label>
+                                            <label class="pro-check-tile"><input type="checkbox" value="senzor" > Senzor (fum / inundație / temperatură)</label>
+                                    </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="txtProNote">Descrierea problemei / observații</label>
+                <textarea id="txtProNote" class="input-control" rows="2" maxlength="1000">Înlocuire repartitor + verificare contor ET – Repartitor cu afișaj stins în sufragerie și contorul de energie termică afișează eroare E3.</textarea>
+            </div>
+            <div class="calc-alert calc-alert--danger" id="proUrgentHint" style="display: none; margin-bottom: 0;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                <div style="flex: 1;">Prioritate urgentă: în loc să aștepte o zi liberă, intervenția poate fi preluată azi de primul tehnician disponibil.</div>
+                <button type="button" class="btn-secondary" onclick="ProSchedule.urgent()">Notificare urgentă</button>
+            </div>
+        </div>
+
+        <!-- ── 3. Recomandări ──────────────────────────────────── -->
+        <!-- React: <SlotRecommendations /> + <ManualOverride /> -->
+        <div class="card pro-panel" id="proSlotsCard">
+            <div class="edit-section-header">
+                <span class="edit-section-title">3 · Variante recomandate</span>
+                <span class="pro-btn-group">
+                    <button type="button" class="water-filter-pill active" id="btnModeRec" onclick="ProSchedule.mode('rec', this)">Recomandate</button>
+                    <button type="button" class="water-filter-pill" id="btnModeManual" onclick="ProSchedule.mode('manual', this)">Manual</button>
+                </span>
+            </div>
+            <div id="proSlotsEmpty" class="table-empty">Alege adresa și echipamentele pentru a vedea variantele.</div>
+            <div id="proSlotsRec">
+                <div class="pro-slot-list" id="proSlotList"></div>
+            </div>
+            <div id="proSlotsManual" style="display: none;">
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label class="form-label" for="dtpProManualDate">Data <span class="required-star">*</span></label>
+                        <input type="text" id="dtpProManualDate" class="input-control" data-datepicker>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="ddlProManualTime">Ora <span class="required-star">*</span></label>
+                        <select id="ddlProManualTime" class="input-control">
+                                                            <option value="08:00">08:00</option>
+                                                            <option value="08:30">08:30</option>
+                                                            <option value="09:00">09:00</option>
+                                                            <option value="09:30">09:30</option>
+                                                            <option value="10:00">10:00</option>
+                                                            <option value="10:30">10:30</option>
+                                                            <option value="11:00">11:00</option>
+                                                            <option value="11:30">11:30</option>
+                                                            <option value="12:00">12:00</option>
+                                                            <option value="12:30">12:30</option>
+                                                            <option value="13:00">13:00</option>
+                                                            <option value="13:30">13:30</option>
+                                                            <option value="14:00">14:00</option>
+                                                            <option value="14:30">14:30</option>
+                                                            <option value="15:00">15:00</option>
+                                                            <option value="15:30">15:30</option>
+                                                            <option value="16:00">16:00</option>
+                                                            <option value="16:30">16:30</option>
+                                                            <option value="17:00">17:00</option>
+                                                            <option value="17:30">17:30</option>
+                                                    </select>
+                    </div>
+                    <div class="form-group">
+                        <span class="form-label">Interval</span>
+                        <div class="form-static-value" id="lblProManualEnd">—</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="form-label">Persoane <span class="required-star">*</span></span>
+                    <div class="pro-check-grid" id="proManualStaff">
+                                                    <label class="pro-check-tile"><input type="checkbox" value="s1"> Teodor Milian <span class="pro-kpi-meta" style="margin: 0 0 0 auto;">Cititor, Service</span></label>
+                                                    <label class="pro-check-tile"><input type="checkbox" value="s2"> Bogdan Antal <span class="pro-kpi-meta" style="margin: 0 0 0 auto;">Montator, Service</span></label>
+                                                    <label class="pro-check-tile"><input type="checkbox" value="s3"> Mihai Dobre <span class="pro-kpi-meta" style="margin: 0 0 0 auto;">Montator</span></label>
+                                                    <label class="pro-check-tile"><input type="checkbox" value="s4"> Cristian Pană <span class="pro-kpi-meta" style="margin: 0 0 0 auto;">Service</span></label>
+                                                    <label class="pro-check-tile"><input type="checkbox" value="s5"> Andrei Voicu <span class="pro-kpi-meta" style="margin: 0 0 0 auto;">Cititor</span></label>
+                                                    <label class="pro-check-tile"><input type="checkbox" value="s6"> Florin Stoica <span class="pro-kpi-meta" style="margin: 0 0 0 auto;">Montator, Service</span></label>
+                                                    <label class="pro-check-tile"><input type="checkbox" value="s7"> Daniel Ene <span class="pro-kpi-meta" style="margin: 0 0 0 auto;">Service</span></label>
+                                                    <label class="pro-check-tile"><input type="checkbox" value="s8"> Radu Marinescu <span class="pro-kpi-meta" style="margin: 0 0 0 auto;">Cititor, Montator</span></label>
+                                            </div>
+                </div>
+                <div id="proManualWarnings"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Coloana dreaptă: hartă + rezumat ───────────────────── -->
+    <div class="pro-stack">
+        <!-- React: <RouteMap /> -->
+        <div class="card pro-panel">
+            <div class="edit-section-header">
+                <span class="edit-section-title">Traseul zilei</span>
+                <span class="pro-kpi-meta" id="lblProRoute" style="margin: 0;">—</span>
+            </div>
+            <div id="proRouteMap" class="pro-map pro-map--sm"></div>
+            <div class="pro-map-legend">
+                <span><i class="pro-legend-dot" style="background: var(--text-main);"></i>Adresa clientului</span>
+                <span><i class="pro-legend-dot pro-legend-dot--ring"></i>Bază / echipă</span>
+                <span><i class="pro-legend-dot"></i>Intervenții în ziua aleasă</span>
+            </div>
+        </div>
+
+        <!-- React: <ScheduleSummary /> -->
+        <div class="card pro-panel">
+            <div class="edit-section-header"><span class="edit-section-title">4 · Rezumat</span></div>
+            <div class="pro-summary" id="proSummary">
+                <div class="pro-summary-row"><span>NOD</span><span id="sumNod">—</span></div>
+                <div class="pro-summary-row"><span>Intervenție</span><span id="sumJob">—</span></div>
+                <div class="pro-summary-row"><span>Data și ora</span><span id="sumWhen">—</span></div>
+                <div class="pro-summary-row"><span>Echipă</span><span id="sumStaff">—</span></div>
+                <div class="pro-summary-row"><span>Cost pentru client</span><span id="sumCost">—</span></div>
+            </div>
+            <div style="margin-top: 16px;">
+                <label class="heating-checkbox-item">
+                    <input type="checkbox" id="chkProSms" checked>
+                    <span>Trimite SMS de reamintire clientului</span>
+                </label>
+                <div class="form-group" style="margin-top: 8px;" id="proSmsOptions">
+                    <select id="ddlProSmsWhen" class="input-control" aria-label="Momentul SMS-ului">
+                        <option value="both">Cu o zi înainte și în ziua intervenției</option>
+                        <option value="day_before">Cu o zi înainte, la 18:00</option>
+                        <option value="same_day">În ziua intervenției, la 08:00</option>
+                    </select>
+                    <div class="pro-sms-preview" id="proSmsPreview" style="margin-top: 8px;">—</div>
+                </div>
+            </div>
+            <div class="edit-actions-bar" style="margin-top: 16px;">
+                <a href="pro-dashboard.html" class="btn-secondary">Renunță</a>
+                <button type="button" class="btn-primary" id="btnProConfirm" onclick="ProSchedule.confirm()" disabled>Confirmă programarea</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- React: <ConfirmScheduleModal /> -->
+<div class="modal-overlay" id="proConfirmModal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="proConfirmTitle">
+    <div class="modal-card" style="max-width: 520px;">
+        <div class="modal-header">
+            <h3 id="proConfirmTitle">Confirmare programare</h3>
+            <button type="button" class="btn-close" onclick="ProSchedule.closeConfirm()" title="Închide" aria-label="Închide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="pro-summary" id="proConfirmBody"></div>
+            <div id="proConfirmWarnings" style="margin-top: 12px;"></div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn-secondary" onclick="ProSchedule.closeConfirm()">Renunță</button>
+            <button type="button" class="btn-primary" onclick="ProSchedule.save()">Confirmă</button>
+        </div>
+    </div>
+</div>
+
+<!-- React: <UrgentDispatchModal /> -->
+<div class="modal-overlay" id="proUrgentModal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="proUrgentTitle">
+    <div class="modal-card" style="max-width: 620px;">
+        <div class="modal-header">
+            <h3 id="proUrgentTitle">Notificare urgentă – cine ajunge primul</h3>
+            <button type="button" class="btn-close" onclick="ProUrgent.close()" title="Închide" aria-label="Închide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="utility-context-strip">
+                <div class="context-items">
+                    <div class="context-item"><span class="context-label">NOD:</span><strong class="context-value context-code" id="proUrgentNod">—</strong></div>
+                    <div class="context-sep"></div>
+                    <div class="context-item"><span class="context-label">Adresă:</span><span class="context-value" id="proUrgentAddress">—</span></div>
+                </div>
+                <div><span class="status-badge status-error">Urgent</span></div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="proUrgentNote">Problema</label>
+                <input type="text" id="proUrgentNote" class="input-control" maxlength="200">
+            </div>
+
+            <p class="pro-kpi-meta" id="proUrgentHint">Notificarea se trimite în aplicația mobilă persoanelor de service disponibile azi, cu competența necesară. Ordinea este după distanța față de poziția live.</p>
+            <div class="pro-eta-list" id="proUrgentList" style="margin-top: 10px;"></div>
+            <div class="calc-alert calc-alert--success" id="proUrgentAccepted" style="display: none; margin-top: 14px;"></div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn-secondary" onclick="ProUrgent.close()">Renunță</button>
+            <button type="button" class="btn-primary" id="proUrgentSend" onclick="ProUrgent.send()">Trimite notificarea</button>
+        </div>
+    </div>
+</div>
+
+<script>
+/* Notificare urgentă – logica modalului (date demo; în producție: push + WebSocket) */
+var ProUrgent = (function () {
+    var STAFF = [{"id":"s1","name":"Teodor Milian","initials":"TM","skills":["apa","rep"],"pos":[44.4512,26.1135],"available":true,"status":"În teren"},{"id":"s2","name":"Bogdan Antal","initials":"BA","skills":["apa","et"],"pos":[44.4245,26.172],"available":true,"status":"În teren"},{"id":"s4","name":"Cristian Pană","initials":"CP","skills":["gw","senzor","rep"],"pos":[44.4705,26.066],"available":true,"status":"În teren"},{"id":"s6","name":"Florin Stoica","initials":"FS","skills":["gw","apa"],"pos":[44.429,26.0405],"available":true,"status":"În teren"},{"id":"s7","name":"Daniel Ene","initials":"DE","skills":["et","apa"],"pos":[44.442,26.096],"available":true,"status":"La birou"}];
+    var NODS = {"81-001-0001":{"address":"Str. Stefan cel Mare 27, Bl. 27, Sc. 1, Sector 2","gps":[44.4521,26.1102]},"81-001-0002":{"address":"Str. Reziliat 36, Vila, Sector 1","gps":[44.4702,26.0652]},"81-001-0004":{"address":"Str. Gura Ialomiței 3, Bl. PC9, Sc. B, Sector 3","gps":[44.4241,26.1752]},"81-001-0007":{"address":"Str. Laborator 125-127, Bl. S1, Sc. 2, Sector 3","gps":[44.4252,26.1351]},"81-001-0010":{"address":"Str. Bibescu Vodă 2, Bl. P5, Sc. 4, Sector 4","gps":[44.4201,26.1031]},"81-001-0017":{"address":"Str. Sibiu 18, Bl. 813, Sc. 1, Sector 6","gps":[44.4301,26.0402]},"81-001-0018":{"address":"Str. Unirii 13, Bl. 2C, Sc. 1, Sector 5","gps":[44.4271,26.1101]},"81-001-0020":{"address":"Str. Pantelimon 332, Bl. 32, Sc. 1, Sector 2","gps":[44.4452,26.1752]},"81-001-0021":{"address":"Str. Bucureștii Noi 26, Bl. 1, Sc. A, Sector 1","gps":[44.4781,26.0402]},"81-001-0023":{"address":"Str. Oteșani 14, Bl. T8B, Sc. 1, Sector 2","gps":[44.4481,26.1402]},"81-001-0030":{"address":"Str. Vergului 65, Bl. 17, Sc. A, Sector 2","gps":[44.4372,26.1652]},"81-001-0040":{"address":"Calea Moșilor 241, Bl. 47, Sc. A+B+C, Sector 2","gps":[44.4432,26.1202]},"81-001-0047":{"address":"Str. Lacul Tei 121, Bl. 5, Sc. 1, Sector 2","gps":[44.4602,26.1202]},"81-001-0053":{"address":"Calea Văcărești 308, Bl. 1E, Sc. 1, Sector 4","gps":[44.4021,26.1152]},"81-001-0055":{"address":"Aleea Bârsănești 2, Bl. 156, Sc. 2, Sector 6","gps":[44.4182,26.1702]},"81-001-0140":{"address":"Str. Liviu Rebreanu 14, Bl. K, Sc. 3, Sector 3","gps":[44.4202,26.1502]},"81-001-0467":{"address":"Aleea Callatis 1, Bl. A14A, Sc. 7+8, Sector 6","gps":[44.4322,26.0302]},"81-001-2108":{"address":"Str. Cremenița 5, Corp B, Sector 2","gps":[44.4452,26.1452]}};
+    var TYPES = {"apa":"Contor apă","et":"Contor energie termică","rep":"Repartitor","gw":"Gateway","senzor":"Senzor (fum \/ inundație \/ temperatură)"};
+    var ctx = null, timer = null;
+
+    function km(a, b) {
+        var r = 6371, dLat = (b[0] - a[0]) * Math.PI / 180, dLng = (b[1] - a[1]) * Math.PI / 180;
+        var h = Math.pow(Math.sin(dLat / 2), 2) + Math.cos(a[0] * Math.PI / 180) * Math.cos(b[0] * Math.PI / 180) * Math.pow(Math.sin(dLng / 2), 2);
+        return 2 * r * Math.asin(Math.min(1, Math.sqrt(h)));
+    }
+    function el(id) { return document.getElementById(id); }
+
+    function render() {
+        var nod = NODS[ctx.nod];
+        var list = STAFF.filter(function (s) { return s.available && (!ctx.type || s.skills.indexOf(ctx.type) !== -1); })
+            .map(function (s) { var d = km(s.pos, nod.gps) * 1.35; return { s: s, km: d, eta: Math.max(8, Math.round(d / 22 * 60) + 5) }; })
+            .sort(function (a, b) { return a.km - b.km; });
+        ctx.list = list;
+        el('proUrgentList').innerHTML = list.length ? list.map(function (x, i) {
+            return '<div class="pro-eta-item" data-staff="' + x.s.id + '">' +
+                '<div class="pro-person"><span class="pro-avatar" data-status="' + (x.s.status === 'În teren' ? 'teren' : 'birou') + '">' + x.s.initials + '</span>' +
+                '<div style="min-width:0"><div class="pro-person-name">' + x.s.name + '</div><div class="pro-person-meta">' + x.s.skills.map(function (k) { return TYPES[k]; }).join(', ') + '</div></div></div>' +
+                '<div class="pro-eta-km"><strong>~' + x.eta + ' min</strong>' + x.km.toFixed(1).replace('.', ',') + ' km</div>' +
+                '<span class="status-badge status-offline js-urgent-state">' + (i === 0 ? 'Cel mai aproape' : 'Disponibil') + '</span></div>';
+        }).join('') : '<div class="table-empty">Nicio persoană de service disponibilă azi cu competența necesară.</div>';
+        el('proUrgentSend').disabled = !list.length;
+    }
+
+    return {
+        open: function (o) {
+            ctx = o || {};
+            if (!NODS[ctx.nod]) { alert('NOD-ul nu are coordonate GPS.'); return; }
+            clearTimeout(timer);
+            el('proUrgentNod').textContent = ctx.nod;
+            el('proUrgentAddress').textContent = NODS[ctx.nod].address;
+            el('proUrgentNote').value = ctx.title || '';
+            el('proUrgentAccepted').style.display = 'none';
+            el('proUrgentSend').textContent = 'Trimite notificarea';
+            el('proUrgentSend').disabled = false;
+            render();
+            el('proUrgentModal').style.display = 'flex';
+        },
+        close: function () { clearTimeout(timer); el('proUrgentModal').style.display = 'none'; },
+        send: function () {
+            if (!ctx || !ctx.list || !ctx.list.length) return;
+            el('proUrgentSend').disabled = true;
+            el('proUrgentSend').textContent = 'Se așteaptă răspuns…';
+            document.querySelectorAll('#proUrgentList .js-urgent-state').forEach(function (b) { b.className = 'status-badge status-warning js-urgent-state'; b.textContent = 'Notificat'; });
+            // demo: cel mai apropiat acceptă după 2 secunde
+            timer = setTimeout(function () {
+                var w = ctx.list[0];
+                var row = document.querySelector('#proUrgentList [data-staff="' + w.s.id + '"]');
+                row.classList.add('is-accepted');
+                row.querySelector('.js-urgent-state').className = 'status-badge status-online js-urgent-state';
+                row.querySelector('.js-urgent-state').textContent = 'A acceptat';
+                document.querySelectorAll('#proUrgentList .js-urgent-state.status-warning').forEach(function (b) { b.className = 'status-badge status-offline js-urgent-state'; b.textContent = 'Preluat de altcineva'; });
+                el('proUrgentAccepted').innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg><div><strong>' + w.s.name + '</strong> a preluat intervenția și ajunge în aproximativ ' + w.eta + ' minute. Intervenția urgentă a fost adăugată în planul zilei.</div>';
+                el('proUrgentAccepted').style.display = 'flex';
+                el('proUrgentSend').textContent = 'Trimisă';
+                if (typeof ctx.onAccepted === 'function') ctx.onAccepted(w.s);
+            }, 2000);
+        }
+    };
+})();
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && document.getElementById('proUrgentModal').style.display === 'flex') ProUrgent.close(); });
+</script>
+
+<script>
+/* Programare Intervenție – căutare, recomandări, override, hartă, confirmare (date demo) */
+var ProSchedule = (function () {
+    var TODAY = '2026-10-28';
+    var STAFF = {"s1":{"name":"Teodor Milian","ini":"TM","roles":["Cititor","Service"],"skills":["apa","rep"],"base":[44.442,26.096],"phone":"0722 100 201"},"s2":{"name":"Bogdan Antal","ini":"BA","roles":["Montator","Service"],"skills":["apa","et"],"base":[44.43,26.15],"phone":"0722 100 202"},"s3":{"name":"Mihai Dobre","ini":"MD","roles":["Montator"],"skills":["rep","apa"],"base":[44.43,26.15],"phone":"0722 100 203"},"s4":{"name":"Cristian Pană","ini":"CP","roles":["Service"],"skills":["gw","senzor","rep"],"base":[44.442,26.096],"phone":"0722 100 204"},"s5":{"name":"Andrei Voicu","ini":"AV","roles":["Cititor"],"skills":["apa","rep"],"base":[44.442,26.096],"phone":"0722 100 205"},"s6":{"name":"Florin Stoica","ini":"FS","roles":["Montator","Service"],"skills":["gw","apa"],"base":[44.442,26.096],"phone":"0722 100 206"},"s7":{"name":"Daniel Ene","ini":"DE","roles":["Service"],"skills":["et","apa"],"base":[44.442,26.096],"phone":"0722 100 207"},"s8":{"name":"Radu Marinescu","ini":"RM","roles":["Cititor","Montator"],"skills":["rep"],"base":[44.442,26.096],"phone":"0722 100 208"}};
+    var NODS = {"81-001-0001":{"address":"Str. Stefan cel Mare 27, Bl. 27, Sc. 1, Sector 2","partner":"Asociația de Proprietari Bloc 27 Scara 1","contact":"Ion Georgescu (administrator)","phone":"0744 210 001","gps":[44.4521,26.1102],"equipment":["rep","apa"],"last_intervention":"2025-03-14","warranty_until":"2027-03-14","reader":"s1"},"81-001-0002":{"address":"Str. Reziliat 36, Vila, Sector 1","partner":"Asociația de Proprietari Bloc Vila","contact":"Maria Stan","phone":"0744 210 002","gps":[44.4702,26.0652],"equipment":["apa","gw"],"last_intervention":"2023-06-02","warranty_until":"2025-06-02","reader":"s8"},"81-001-0004":{"address":"Str. Gura Ialomiței 3, Bl. PC9, Sc. B, Sector 3","partner":"Asociația de Proprietari Bloc PC9 Sc. B","contact":"Elena Matei","phone":"0744 210 004","gps":[44.4241,26.1752],"equipment":["rep","apa","gw"],"last_intervention":"2026-02-11","warranty_until":"2028-02-11","reader":"s1"},"81-001-0007":{"address":"Str. Laborator 125-127, Bl. S1, Sc. 2, Sector 3","partner":"Asociația de Proprietari Bloc S1 Sc. 2","contact":"Vasile Popa","phone":"0744 210 007","gps":[44.4252,26.1351],"equipment":["rep","et"],"last_intervention":"2024-11-20","warranty_until":"2026-11-20","reader":"s1"},"81-001-0010":{"address":"Str. Bibescu Vodă 2, Bl. P5, Sc. 4, Sector 4","partner":"Asociația de Proprietari Bloc P5 Sc. 4","contact":"Cristina Ionescu","phone":"0744 210 010","gps":[44.4201,26.1031],"equipment":["apa","gw"],"last_intervention":"2025-09-03","warranty_until":"2027-09-03","reader":"s5"},"81-001-0017":{"address":"Str. Sibiu 18, Bl. 813, Sc. 1, Sector 6","partner":"Asociația de Proprietari Bl. 813","contact":"Gheorghe Dinu","phone":"0744 210 017","gps":[44.4301,26.0402],"equipment":["apa","rep","gw"],"last_intervention":"2026-05-19","warranty_until":"2028-05-19","reader":"s5"},"81-001-0018":{"address":"Str. Unirii 13, Bl. 2C, Sc. 1, Sector 5","partner":"Asociația de Proprietari Bloc 2C","contact":"Ana Dumitrescu","phone":"0744 210 018","gps":[44.4271,26.1101],"equipment":["et","apa"],"last_intervention":"2022-12-08","warranty_until":"2024-12-08","reader":"s1"},"81-001-0020":{"address":"Str. Pantelimon 332, Bl. 32, Sc. 1, Sector 2","partner":"Asociația de Proprietari Bloc 32","contact":"Paul Florescu","phone":"0744 210 020","gps":[44.4452,26.1752],"equipment":["rep","apa","gw"],"last_intervention":"2026-01-27","warranty_until":"2028-01-27","reader":"s8"},"81-001-0021":{"address":"Str. Bucureștii Noi 26, Bl. 1, Sc. A, Sector 1","partner":"Asociația de Proprietari Bloc 1","contact":"Mihaela Barbu","phone":"0744 210 021","gps":[44.4781,26.0402],"equipment":["apa","senzor"],"last_intervention":"2025-07-15","warranty_until":"2027-07-15","reader":"s8"},"81-001-0023":{"address":"Str. Oteșani 14, Bl. T8B, Sc. 1, Sector 2","partner":"Asociația de Proprietari Bloc T8B","contact":"Daniel Nistor","phone":"0744 210 023","gps":[44.4481,26.1402],"equipment":["et","rep"],"last_intervention":"2026-08-30","warranty_until":"2028-08-30","reader":"s1"},"81-001-0030":{"address":"Str. Vergului 65, Bl. 17, Sc. A, Sector 2","partner":"Asociația de Proprietari Bloc 17 Sc. A","contact":"Simona Lazăr","phone":"0744 210 030","gps":[44.4372,26.1652],"equipment":["rep","gw"],"last_intervention":"2024-04-04","warranty_until":"2026-04-04","reader":"s8"},"81-001-0040":{"address":"Calea Moșilor 241, Bl. 47, Sc. A+B+C, Sector 2","partner":"Asociația de Proprietari Bloc 47","contact":"Radu Moldovan","phone":"0744 210 040","gps":[44.4432,26.1202],"equipment":["rep","apa","gw"],"last_intervention":"2026-09-12","warranty_until":"2028-09-12","reader":"s1"},"81-001-0047":{"address":"Str. Lacul Tei 121, Bl. 5, Sc. 1, Sector 2","partner":"Asociația de Proprietari Bloc 5 Sc. 1-4","contact":"Alexandra Toma","phone":"0744 210 047","gps":[44.4602,26.1202],"equipment":["rep"],"last_intervention":"2023-10-10","warranty_until":"2025-10-10","reader":"s8"},"81-001-0053":{"address":"Calea Văcărești 308, Bl. 1E, Sc. 1, Sector 4","partner":"Asociația de Proprietari Bloc 1E","contact":"Bogdan Cristea","phone":"0744 210 053","gps":[44.4021,26.1152],"equipment":["et","apa","gw"],"last_intervention":"2025-12-01","warranty_until":"2027-12-01","reader":"s5"},"81-001-0055":{"address":"Aleea Bârsănești 2, Bl. 156, Sc. 2, Sector 6","partner":"Asociația de Proprietari Bloc 156 Sc. 2","contact":"Maria Enea","phone":"0744 210 055","gps":[44.4182,26.1702],"equipment":["apa","gw"],"last_intervention":"2026-03-11","warranty_until":"2028-03-11","reader":"s1"},"81-001-0140":{"address":"Str. Liviu Rebreanu 14, Bl. K, Sc. 3, Sector 3","partner":"Asociația de Proprietari Bloc K","contact":"Carmen Voicu","phone":"0744 210 140","gps":[44.4202,26.1502],"equipment":["rep","et"],"last_intervention":"2024-01-19","warranty_until":"2026-01-19","reader":"s1"},"81-001-0467":{"address":"Aleea Callatis 1, Bl. A14A, Sc. 7+8, Sector 6","partner":"Asociația de Proprietari Bloc A14A","contact":"Florin Dragomir","phone":"0744 210 467","gps":[44.4322,26.0302],"equipment":["apa","gw"],"last_intervention":"2026-06-06","warranty_until":"2028-06-06","reader":"s5"},"81-001-2108":{"address":"Str. Cremenița 5, Corp B, Sector 2","partner":"Asociația de Proprietari Cremenița 5","contact":"Valentina Iancu","phone":"0744 210 218","gps":[44.4452,26.1452],"equipment":["rep","apa"],"last_intervention":"2026-10-02","warranty_until":"2028-10-02","reader":"s8"}};
+    var IVS = [{"id":"I-5021","nod":"81-001-0004","date":"2026-10-28","time":"09:00","duration":1.5,"staff":["s4"],"type":"Service"},{"id":"I-5022","nod":"81-001-0002","date":"2026-10-28","time":"11:00","duration":1,"staff":["s4"],"type":"Service"},{"id":"I-5023","nod":"81-001-0021","date":"2026-10-28","time":"14:00","duration":1,"staff":["s4"],"type":"Service"},{"id":"I-5024","nod":"81-001-0055","date":"2026-10-28","time":"09:30","duration":1,"staff":["s2"],"type":"Service"},{"id":"I-5025","nod":"81-001-0004","date":"2026-10-28","time":"12:00","duration":1,"staff":["s2"],"type":"Service"},{"id":"I-5026","nod":"81-001-0140","date":"2026-10-28","time":"15:00","duration":1,"staff":["s2"],"type":"Service"},{"id":"I-5027","nod":"81-001-0040","date":"2026-10-28","time":"10:00","duration":1,"staff":["s1"],"type":"Service"},{"id":"I-5028","nod":"81-001-0001","date":"2026-10-28","time":"13:00","duration":1,"staff":["s1"],"type":"Service"},{"id":"I-5029","nod":"81-001-0020","date":"2026-10-29","time":"10:00","duration":2,"staff":["s3","s2"],"type":"Montaj ulterior"},{"id":"I-5030","nod":"81-001-0017","date":"2026-10-28","time":"10:30","duration":1.5,"staff":["s6"],"type":"Service"},{"id":"I-5031","nod":"81-001-0467","date":"2026-10-28","time":"13:30","duration":1,"staff":["s6"],"type":"Service"},{"id":"I-5032","nod":"81-001-0053","date":"2026-10-29","time":"09:00","duration":1,"staff":["s7"],"type":"Service"},{"id":"I-5033","nod":"81-001-0030","date":"2026-10-29","time":"11:00","duration":1,"staff":["s1"],"type":"Service"},{"id":"I-5034","nod":"81-001-0010","date":"2026-10-29","time":"10:00","duration":1,"staff":["s4"],"type":"Service"},{"id":"I-5035","nod":"81-001-2108","date":"2026-10-28","time":"08:00","duration":8,"staff":["s3"],"type":"Montaj"},{"id":"I-5036","nod":"81-001-0047","date":"2026-10-28","time":"08:30","duration":3,"staff":["s8"],"type":"Citire walk-by"}];
+    var UNAV = [{"staff":"s5","from":"2026-10-26","to":"2026-11-06","reason":"Concediu","note":"Concediu de odihnă"},{"staff":"s1","from":"2026-11-02","to":"2026-11-04","reason":"Alte sarcini","note":"Citiri walk-by NOD-uri sector 2"},{"staff":"s7","from":"2026-10-30","to":"2026-10-30","reason":"Formare","note":"Instruire contoare ultrasonice"},{"staff":"s3","from":"2026-11-05","to":"2026-11-05","reason":"Medical","note":""},{"staff":"s8","from":"2026-10-29","to":"2026-10-30","reason":"Alte sarcini","note":"Citiri walk-by Lacul Tei"}];
+    var STOCK = [{"code":"REP-30","name":"Repartitor E-ITN 30.4","type":"rep","central":500,"field":64,"reserved":520,"incoming":800,"incoming_date":"2026-11-12","unit":"buc"},{"code":"APA-AR","name":"Contor apă rece E-RM 30 AR","type":"apa","central":340,"field":41,"reserved":180,"incoming":0,"incoming_date":"","unit":"buc"},{"code":"APA-AC","name":"Contor apă caldă E-RM 30 AC","type":"apa","central":290,"field":37,"reserved":160,"incoming":0,"incoming_date":"","unit":"buc"},{"code":"ET-US","name":"Contor energie termică US","type":"et","central":26,"field":6,"reserved":30,"incoming":40,"incoming_date":"2026-11-04","unit":"buc"},{"code":"GW-LR","name":"Gateway LoRa \/ wM-Bus","type":"gw","central":18,"field":3,"reserved":6,"incoming":0,"incoming_date":"","unit":"buc"},{"code":"SZ-FL","name":"Senzor inundație","type":"senzor","central":45,"field":5,"reserved":0,"incoming":0,"incoming_date":"","unit":"buc"},{"code":"SIG-01","name":"Sigilii","type":"","central":4200,"field":610,"reserved":1300,"incoming":0,"incoming_date":"","unit":"buc"}];
+    var TYPES = {"apa":"Contor apă","et":"Contor energie termică","rep":"Repartitor","gw":"Gateway","senzor":"Senzor (fum \/ inundație \/ temperatură)"};
+    var INIT = {"nod":"81-001-0140","types":["rep","et"],"flat":"5","person":"Carmen Voicu","phone":"","job":"Service","priority":"Normal","note":"Înlocuire repartitor + verificare contor ET – Repartitor cu afișaj stins în sufragerie și contorul de energie termică afișează eroare E3.","source":{"kind":"Solicitare","id":"S-2604","text":"Înlocuire repartitor + verificare contor ET (Telefon, 26.10.2026 16:48)","href":"pro-solicitari.html?id=S-2604"}};
+    var HOURS = ['08:00', '10:00', '12:00', '14:00', '16:00'];
+    var DAYS = ['duminică', 'luni', 'marți', 'miercuri', 'joi', 'vineri', 'sâmbătă'];
+
+    var state = { nod: '', slots: [], selected: null, mode: 'rec' };
+    var map = null, mapLayer = null;
+    function $(id) { return document.getElementById(id); }
+    function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+    /* ── utilitare dată / distanță ─────────────────────── */
+    function addDays(iso, n) { var d = new Date(iso + 'T12:00:00'); d.setDate(d.getDate() + n); return d.toISOString().slice(0, 10); }
+    function dow(iso) { return new Date(iso + 'T12:00:00').getDay(); }
+    function fmtDate(iso) { var p = iso.split('-'); return p[2] + '.' + p[1] + '.' + p[0]; }
+    function fmtLong(iso) { var d = DAYS[dow(iso)]; return d.charAt(0).toUpperCase() + d.slice(1) + ', ' + fmtDate(iso); }
+    function hm(t) { return parseInt(t.slice(0, 2), 10) + parseInt(t.slice(3, 5), 10) / 60; }
+    function toTime(h) { var hh = Math.floor(h), mm = Math.round((h - hh) * 60); return String(hh).padStart(2, '0') + ':' + String(mm).padStart(2, '0'); }
+    function km(a, b) {
+        var r = 6371, dLat = (b[0] - a[0]) * Math.PI / 180, dLng = (b[1] - a[1]) * Math.PI / 180;
+        var h = Math.pow(Math.sin(dLat / 2), 2) + Math.cos(a[0] * Math.PI / 180) * Math.cos(b[0] * Math.PI / 180) * Math.pow(Math.sin(dLng / 2), 2);
+        return 2 * r * Math.asin(Math.min(1, Math.sqrt(h)));
+    }
+    function unavailable(sid, iso) {
+        var w = dow(iso); if (w === 0 || w === 6) return 'Weekend';
+        for (var i = 0; i < UNAV.length; i++) if (UNAV[i].staff === sid && iso >= UNAV[i].from && iso <= UNAV[i].to) return UNAV[i].reason;
+        return '';
+    }
+    function dayJobs(sid, iso) { return IVS.filter(function (v) { return v.date === iso && v.staff.indexOf(sid) !== -1; }).sort(function (a, b) { return a.time < b.time ? -1 : 1; }); }
+    function routeCost(sid, iso, gps) {
+        var jobs = dayJobs(sid, iso), pts = jobs.filter(function (j) { return NODS[j.nod]; }).map(function (j) { return NODS[j.nod].gps; });
+        if (!pts.length) pts = [STAFF[sid].base];
+        var m = Infinity; pts.forEach(function (p) { m = Math.min(m, km(p, gps)); });
+        return { km: m * 1.35, load: jobs.length }; // 1,35 – factor aproximativ distanță rutieră / distanță în linie dreaptă
+    }
+    function busy(sids, iso, start, dur) {
+        return IVS.some(function (v) {
+            if (v.date !== iso || !v.staff.some(function (s) { return sids.indexOf(s) !== -1; })) return false;
+            var s = hm(v.time); return start < s + v.duration && start + dur > s;
+        });
+    }
+    function stockWarnings(types, iso) {
+        var w = [];
+        types.forEach(function (t) {
+            STOCK.forEach(function (s) {
+                if (s.type !== t) return;
+                var free = s.central - s.reserved;
+                if (free < 1 && (!s.incoming_date || iso < s.incoming_date))
+                    w.push(s.name + ': stoc liber ' + free + ' (rezervat pentru montaje)' + (s.incoming_date ? '; intrare ' + s.incoming + ' buc. pe ' + fmtDate(s.incoming_date) : ''));
+            });
+        });
+        return w;
+    }
+
+    /* ── recomandări ───────────────────────────────────── */
+    function form() {
+        var types = Array.prototype.map.call(document.querySelectorAll('#proTypes input:checked'), function (c) { return c.value; });
+        var job = $('ddlProJob');
+        return { types: types, job: job.value, role: job.options[job.selectedIndex].getAttribute('data-role'), dur: parseFloat($('ddlProDuration').value), priority: $('ddlProPriority').value };
+    }
+    function recommend() {
+        var f = form(), nod = NODS[state.nod];
+        state.slots = []; state.selected = null;
+        if (!nod || !f.types.length) { renderSlots(); return; }
+        var res = [];
+        for (var d = 1; d <= 14; d++) {
+            var iso = addDays(TODAY, d), w = dow(iso);
+            if (w === 0 || w === 6) continue;
+            var pool = Object.keys(STAFF).filter(function (sid) { return STAFF[sid].roles.indexOf(f.role) !== -1 && !unavailable(sid, iso); });
+            // o singură persoană care acoperă toate echipamentele?
+            var pick = null, best = Infinity;
+            pool.forEach(function (sid) {
+                if (f.types.some(function (t) { return STAFF[sid].skills.indexOf(t) === -1; })) return;
+                var c = routeCost(sid, iso, nod.gps);
+                if (c.load < 6 && c.km < best) { best = c.km; pick = { staff: {}, km: c.km, load: c.load }; pick.staff[sid] = f.types.slice(); }
+            });
+            if (!pick) { // intervenție cuplată: cel mai bun om pentru fiecare echipament
+                pick = { staff: {}, km: 0, load: 0 };
+                var ok = f.types.every(function (t) {
+                    var b = null, bk = Infinity, bl = 0;
+                    pool.forEach(function (sid) {
+                        if (STAFF[sid].skills.indexOf(t) === -1) return;
+                        var c = routeCost(sid, iso, nod.gps);
+                        if (c.load < 6 && c.km < bk) { b = sid; bk = c.km; bl = c.load; }
+                    });
+                    if (!b) return false;
+                    if (!pick.staff[b]) { pick.staff[b] = []; pick.load += bl; }
+                    pick.staff[b].push(t); pick.km = Math.max(pick.km, bk);
+                    return true;
+                });
+                if (!ok) continue;
+            }
+            var sids = Object.keys(pick.staff);
+            for (var h = 0; h < HOURS.length; h++) {
+                if (busy(sids, iso, hm(HOURS[h]), f.dur)) continue;
+                var warn = stockWarnings(f.types, iso);
+                res.push({ date: iso, time: HOURS[h], staff: pick.staff, km: pick.km, load: pick.load, coupled: sids.length > 1, warn: warn,
+                           score: pick.km * 10 + pick.load * 4 + d * 2 + (warn.length ? 60 : 0) });
+                break;
+            }
+        }
+        res.sort(function (a, b) { return a.score - b.score; });
+        state.slots = res.slice(0, 5);
+        renderSlots();
+        if (state.slots.length) select(0);
+    }
+    function renderSlots() {
+        var f = form();
+        $('proSlotsEmpty').style.display = (!state.nod || !f.types.length || !state.slots.length) && state.mode === 'rec' ? '' : 'none';
+        if (state.nod && f.types.length && !state.slots.length) $('proSlotsEmpty').textContent = 'Nu există persoane disponibile cu rolul și competențele necesare în următoarele 14 zile. Folosește programarea manuală.';
+        else $('proSlotsEmpty').textContent = 'Alege adresa și echipamentele pentru a vedea variantele.';
+        $('proSlotList').innerHTML = state.slots.map(function (s, i) {
+            var people = Object.keys(s.staff).map(function (sid) {
+                return '<span class="pro-avatar pro-avatar--sm" title="' + esc(STAFF[sid].name) + '">' + STAFF[sid].ini + '</span>';
+            }).join('');
+            var names = Object.keys(s.staff).map(function (sid) { return STAFF[sid].name + (s.coupled ? ' (' + s.staff[sid].map(function (t) { return TYPES[t]; }).join(', ') + ')' : ''); }).join(' + ');
+            return '<button type="button" class="pro-slot" data-i="' + i + '" onclick="ProSchedule.select(' + i + ')">' +
+                '<span class="pro-slot-rank">' + (i + 1) + '</span>' +
+                '<span><span class="pro-slot-when">' + fmtLong(s.date) + ' · ' + s.time + '</span>' +
+                '<span class="pro-slot-meta"><span>' + esc(names) + '</span>' +
+                '<span>≈ ' + s.km.toFixed(1).replace('.', ',') + ' km de traseul zilei</span>' +
+                '<span>' + (s.load ? s.load + ' intervenți' + (s.load === 1 ? 'e' : 'i') + ' în ziua respectivă' : 'zi liberă – pleacă din bază') + '</span></span></span>' +
+                '<span class="pro-slot-side">' + (i === 0 ? '<span class="pro-best-tag">Cea mai bună</span>' : '') +
+                '<span class="pro-avatar-stack">' + people + '</span>' + (s.coupled ? '<span class="status-badge status-warning">Cuplată</span>' : '') + '</span>' +
+                (s.warn.length ? '<span class="pro-slot-warning">' + s.warn.map(esc).join('<br>') + '</span>' : '') +
+                '</button>';
+        }).join('');
+    }
+    function select(i) {
+        state.selected = state.slots[i] ? JSON.parse(JSON.stringify(state.slots[i])) : null;
+        document.querySelectorAll('.pro-slot').forEach(function (b) { b.classList.toggle('is-selected', +b.getAttribute('data-i') === i); });
+        drawRoute(); summary();
+    }
+
+    /* ── programare manuală (override) ─────────────────── */
+    function manual() {
+        var iso = SonicDatepicker.getISO($('dtpProManualDate')), time = $('ddlProManualTime').value, f = form();
+        var sids = Array.prototype.map.call(document.querySelectorAll('#proManualStaff input:checked'), function (c) { return c.value; });
+        $('lblProManualEnd').textContent = time + ' – ' + toTime(hm(time) + f.dur);
+        var warn = [];
+        if (iso && sids.length) {
+            sids.forEach(function (sid) {
+                var u = unavailable(sid, iso); if (u) warn.push(STAFF[sid].name + ': indisponibil (' + u + ')');
+                if (STAFF[sid].roles.indexOf(f.role) === -1) warn.push(STAFF[sid].name + ': nu are rolul ' + f.role);
+            });
+            var missing = f.types.filter(function (t) { return !sids.some(function (sid) { return STAFF[sid].skills.indexOf(t) !== -1; }); });
+            if (missing.length) warn.push('Nicio persoană aleasă nu are competența: ' + missing.map(function (t) { return TYPES[t]; }).join(', '));
+            if (busy(sids, iso, hm(time), f.dur)) warn.push('Suprapunere cu o intervenție deja programată în acest interval');
+            warn = warn.concat(stockWarnings(f.types, iso));
+            if (iso < addDays(TODAY, 0)) warn.push('Data este în trecut');
+        }
+        $('proManualWarnings').innerHTML = warn.length ? '<div class="calc-alert calc-alert--warning" style="margin-bottom: 0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line></svg><div><strong>Atenție – programarea este permisă, dar:</strong><br>' + warn.map(esc).join('<br>') + '</div></div>' : '';
+        if (iso && sids.length && state.nod) {
+            var st = {}; sids.forEach(function (sid) { st[sid] = f.types.filter(function (t) { return STAFF[sid].skills.indexOf(t) !== -1; }); });
+            var c = routeCost(sids[0], iso, NODS[state.nod].gps);
+            state.selected = { date: iso, time: time, staff: st, km: c.km, load: c.load, coupled: sids.length > 1, warn: warn, manual: true };
+        } else state.selected = null;
+        drawRoute(); summary();
+    }
+
+    /* ── hartă ─────────────────────────────────────────── */
+    function drawRoute() {
+        if (!map) return;
+        mapLayer.clearLayers();
+        var nod = NODS[state.nod]; if (!nod) { $('lblProRoute').textContent = '—'; return; }
+        var pts = [nod.gps];
+        SonicProMap.target(map, nod.gps, SonicProMap.popup('NOD ' + esc(state.nod), esc(nod.address)), mapLayer);
+        var s = state.selected;
+        if (s) {
+            var f = form();
+            Object.keys(s.staff).forEach(function (sid, k) {
+                var jobs = dayJobs(sid, s.date).filter(function (j) { return NODS[j.nod]; });
+                var stops = jobs.map(function (j) { return { t: hm(j.time), gps: NODS[j.nod].gps, j: j }; });
+                stops.push({ t: hm(s.time), gps: nod.gps, isNew: true });
+                stops.sort(function (a, b) { return a.t - b.t; });
+                var line = [STAFF[sid].base].concat(stops.map(function (x) { return x.gps; }));
+                SonicProMap.staff(map, STAFF[sid].base, STAFF[sid].ini, SonicProMap.popup(esc(STAFF[sid].name), 'Bază / punct de plecare'), false, mapLayer);
+                stops.forEach(function (x) { if (!x.isNew) SonicProMap.job(map, x.gps, '', SonicProMap.popup(x.j.id + ' · ' + x.j.time + ' · ' + esc(x.j.type), 'NOD ' + x.j.nod + '<br>' + esc(NODS[x.j.nod].address)), mapLayer); });
+                SonicProMap.route(map, line, k > 0, mapLayer);
+                pts = pts.concat(line);
+            });
+            $('lblProRoute').textContent = fmtDate(s.date) + ' · ' + Object.keys(s.staff).map(function (sid) { return STAFF[sid].name; }).join(' + ');
+        } else $('lblProRoute').textContent = 'NOD ' + state.nod;
+        SonicProMap.fit(map, pts, 15);
+    }
+
+    /* ── rezumat, SMS, pași ────────────────────────────── */
+    function warrantyInfo() {
+        var nod = NODS[state.nod]; if (!nod) return null;
+        return { inWarranty: nod.warranty_until >= TODAY, until: nod.warranty_until, last: nod.last_intervention };
+    }
+    function summary() {
+        var f = form(), s = state.selected, nod = NODS[state.nod], w = warrantyInfo();
+        $('sumNod').textContent = nod ? state.nod + ($('txtProFlat').value ? ' · ap. ' + $('txtProFlat').value : '') : '—';
+        $('sumJob').textContent = f.types.length ? f.job + ' · ' + f.types.map(function (t) { return TYPES[t]; }).join(', ') : f.job;
+        $('sumWhen').textContent = s ? fmtLong(s.date) + ', ' + s.time + ' – ' + toTime(hm(s.time) + f.dur) : '—';
+        $('sumStaff').textContent = s ? Object.keys(s.staff).map(function (sid) { return STAFF[sid].name; }).join(', ') + (s.coupled ? ' (cuplată)' : '') : '—';
+        $('sumCost').textContent = !w ? '—' : (f.job === 'Service' ? (w.inWarranty ? 'Gratuit – în garanție' : 'Cu plată – în afara garanției') : 'Conform contractului');
+        var person = $('txtProPerson').value.trim();
+        $('proSmsPreview').innerHTML = s && nod
+            ? 'SONIC: ' + esc(person ? 'Bună ziua, ' + person + '! ' : '') + 'Vă reamintim intervenția (' + esc(f.job.toLowerCase()) + ') din ' + fmtLong(s.date) + ', între ' + s.time + ' și ' + toTime(hm(s.time) + f.dur + 1) + ', la ' + esc(nod.address) + ($('txtProFlat').value ? ', ap. ' + esc($('txtProFlat').value) : '') + '. Tehnician: ' + esc(STAFF[Object.keys(s.staff)[0]].name) + '. Pentru modificări: 021 000 0000.'
+            : 'Mesajul apare după alegerea variantei.';
+        $('btnProConfirm').disabled = !(nod && f.types.length && s);
+        var step = !nod ? 1 : (!f.types.length ? 2 : (!s ? 3 : 4));
+        document.querySelectorAll('#proSteps .pro-step').forEach(function (el) {
+            var n = +el.getAttribute('data-step');
+            el.classList.toggle('is-active', n === step); el.classList.toggle('is-done', n < step);
+        });
+        $('proUrgentHint').style.display = f.priority === 'Urgent' && nod ? 'flex' : 'none';
+    }
+
+    /* ── căutare adresă ────────────────────────────────── */
+    function norm(s) { return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+    function hl(text, q) {
+        if (!q) return esc(text);
+        var i = norm(text).indexOf(norm(q)); if (i < 0) return esc(text);
+        return esc(text.slice(0, i)) + '<mark class="pro-hl">' + esc(text.slice(i, i + q.length)) + '</mark>' + esc(text.slice(i + q.length));
+    }
+    var focusIdx = -1;
+    function suggest() {
+        var q = $('txtProSearch').value.trim(), box = $('proSuggest');
+        if (q.length < 2) { box.classList.remove('is-open'); return; }
+        var words = norm(q).split(/\s+/);
+        var hits = Object.keys(NODS).filter(function (code) {
+            var n = NODS[code], hay = norm(code + ' ' + n.address + ' ' + n.partner + ' ' + n.contact + ' ' + n.phone.replace(/\s/g, '') + ' ' + n.phone);
+            return words.every(function (w) { return hay.indexOf(w) !== -1; });
+        }).slice(0, 8);
+        focusIdx = -1;
+        box.innerHTML = hits.length ? hits.map(function (code) {
+            var n = NODS[code];
+            return '<button type="button" class="pro-suggest-item" data-nod="' + code + '"><span class="td-code">' + hl(code, q) + '</span>' +
+                '<span><span class="pro-suggest-main">' + hl(n.address, q) + '</span><br><span class="pro-suggest-sub">' + hl(n.partner, q) + ' · ' + hl(n.contact, q) + ' · ' + hl(n.phone, q) + '</span></span></button>';
+        }).join('') : '<div class="pro-suggest-empty">Nicio adresă găsită. Încearcă strada, numărul blocului sau codul NOD.</div>';
+        box.classList.add('is-open');
+        box.querySelectorAll('.pro-suggest-item').forEach(function (b) { b.addEventListener('mousedown', function (e) { e.preventDefault(); pickNod(b.getAttribute('data-nod')); }); });
+    }
+    function pickNod(code) {
+        var n = NODS[code]; if (!n) return;
+        state.nod = code;
+        $('txtProSearch').value = n.address;
+        $('proSuggest').classList.remove('is-open');
+        $('proNodContext').style.display = '';
+        $('ctxNod').textContent = code;
+        $('ctxAddress').textContent = n.address;
+        $('ctxPartner').textContent = n.partner;
+        $('ctxNodLink').href = 'gestiune-nod-edit.html?nod=' + encodeURIComponent(code);
+        var inW = n.warranty_until >= TODAY;
+        $('ctxWarranty').innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>' + (inW ? '<polyline points="9 12 11 14 15 10"></polyline>' : '<line x1="9" y1="9" x2="15" y2="15"></line><line x1="15" y1="9" x2="9" y2="15"></line>') + '</svg>' +
+            '<div><strong>' + (inW ? 'În garanție până la ' + fmtDate(n.warranty_until) : 'În afara garanției din ' + fmtDate(n.warranty_until)) + '</strong>Ultima intervenție: ' + fmtDate(n.last_intervention) + '</div>' +
+            '<span class="status-badge ' + (inW ? 'status-online' : 'status-offline') + '" style="margin-left: auto;">' + (inW ? 'Gratuit' : 'Cu plată') + '</span>';
+        $('ctxEquipment').innerHTML = n.equipment.map(function (t) { return '<span class="pro-chip">' + esc(TYPES[t]) + '</span>'; }).join('');
+        if (!$('txtProPerson').value) $('txtProPerson').value = n.contact.replace(/\s*\(.*\)$/, '');
+        if (!$('txtProPhone').value) $('txtProPhone').value = n.phone;
+        // echipamentele implicite = cele de pe NOD, dacă nu e nimic bifat
+        if (!document.querySelectorAll('#proTypes input:checked').length && n.equipment.length === 1)
+            document.querySelector('#proTypes input[value="' + n.equipment[0] + '"]').checked = true;
+        recommend(); summary(); drawRoute();
+    }
+
+    /* ── confirmare ────────────────────────────────────── */
+    function validate() {
+        if (!state.nod) return 'Selectați adresa clientului.';
+        if (!form().types.length) return 'Selectați cel puțin un echipament.';
+        if (!$('txtProPerson').value.trim()) return 'Completați persoana de contact.';
+        if ($('chkProSms').checked && !/^[0-9 +]{10,}$/.test($('txtProPhone').value.trim())) return 'Numărul de telefon nu este valid pentru SMS.';
+        if (!state.selected) return 'Alegeți o variantă sau completați programarea manuală.';
+        return '';
+    }
+
+    /* ── inițializare ──────────────────────────────────── */
+    document.addEventListener('DOMContentLoaded', function () {
+        map = SonicProMap.create('proRouteMap', { center: [44.4400, 26.1050], zoom: 12, scrollWheelZoom: false });
+        mapLayer = SonicProMap.layer(map);
+        var inp = $('txtProSearch');
+        inp.addEventListener('input', suggest);
+        inp.addEventListener('focus', suggest);
+        inp.addEventListener('blur', function () { setTimeout(function () { $('proSuggest').classList.remove('is-open'); }, 120); });
+        inp.addEventListener('keydown', function (e) {
+            var items = $('proSuggest').querySelectorAll('.pro-suggest-item'); if (!items.length) return;
+            if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                focusIdx = (focusIdx + (e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length;
+                items.forEach(function (b, i) { b.classList.toggle('is-focus', i === focusIdx); });
+            } else if (e.key === 'Enter') { e.preventDefault(); pickNod(items[Math.max(0, focusIdx)].getAttribute('data-nod')); }
+            else if (e.key === 'Escape') $('proSuggest').classList.remove('is-open');
+        });
+        ['ddlProJob', 'ddlProDuration'].forEach(function (id) { $(id).addEventListener('change', function () { state.mode === 'rec' ? recommend() : manual(); summary(); }); });
+        $('ddlProPriority').addEventListener('change', summary);
+        document.querySelectorAll('#proTypes input').forEach(function (c) { c.addEventListener('change', function () { state.mode === 'rec' ? recommend() : manual(); summary(); }); });
+        ['txtProFlat', 'txtProPerson'].forEach(function (id) { $(id).addEventListener('input', summary); });
+        $('dtpProManualDate').addEventListener('change', manual);
+        $('ddlProManualTime').addEventListener('change', manual);
+        document.querySelectorAll('#proManualStaff input').forEach(function (c) { c.addEventListener('change', manual); });
+        $('chkProSms').addEventListener('change', function () { $('proSmsOptions').style.display = this.checked ? '' : 'none'; });
+        if (INIT.nod) pickNod(INIT.nod); else summary();
+    });
+
+    return {
+        select: select,
+        mode: function (m, btn) {
+            state.mode = m;
+            document.querySelectorAll('#btnModeRec, #btnModeManual').forEach(function (b) { b.classList.toggle('active', b === btn); });
+            $('proSlotsRec').style.display = m === 'rec' ? '' : 'none';
+            $('proSlotsManual').style.display = m === 'manual' ? '' : 'none';
+            if (m === 'manual') {
+                // precompletează din varianta selectată
+                if (state.selected && !state.selected.manual) {
+                    SonicDatepicker.setValue($('dtpProManualDate'), state.selected.date);
+                    $('ddlProManualTime').value = state.selected.time;
+                    document.querySelectorAll('#proManualStaff input').forEach(function (c) { c.checked = !!state.selected.staff[c.value]; });
+                }
+                $('proSlotsEmpty').style.display = 'none';
+                manual();
+            } else recommend();
+        },
+        confirm: function () {
+            var err = validate(); if (err) { alert(err); return; }
+            var f = form(), s = state.selected;
+            $('proConfirmBody').innerHTML = [
+                ['NOD', state.nod + ' · ' + NODS[state.nod].address + ($('txtProFlat').value ? ', ap. ' + $('txtProFlat').value : '')],
+                ['Client', $('txtProPerson').value + ' · ' + $('txtProPhone').value],
+                ['Intervenție', f.job + ' · ' + f.types.map(function (t) { return TYPES[t]; }).join(', ') + (f.priority === 'Urgent' ? ' · Urgent' : '')],
+                ['Data și ora', fmtLong(s.date) + ', ' + s.time + ' – ' + toTime(hm(s.time) + f.dur)],
+                ['Echipă', Object.keys(s.staff).map(function (sid) { return STAFF[sid].name; }).join(', ') + (s.coupled ? ' (cuplată)' : '')],
+                ['SMS', $('chkProSms').checked ? $('ddlProSmsWhen').options[$('ddlProSmsWhen').selectedIndex].text : 'Nu']
+            ].map(function (r) { return '<div class="pro-summary-row"><span>' + r[0] + '</span><span>' + esc(r[1]) + '</span></div>'; }).join('');
+            $('proConfirmWarnings').innerHTML = s.warn && s.warn.length ? '<div class="calc-alert calc-alert--warning" style="margin-bottom: 0;"><div>' + s.warn.map(esc).join('<br>') + '</div></div>' : '';
+            $('proConfirmModal').style.display = 'flex';
+        },
+        closeConfirm: function () { $('proConfirmModal').style.display = 'none'; },
+        save: function () {
+            var s = state.selected, f = form();
+            $('proConfirmModal').style.display = 'none';
+            $('proScheduleForm').style.display = 'none';
+            $('proSteps').querySelectorAll('.pro-step').forEach(function (el) { el.classList.remove('is-active'); el.classList.add('is-done'); });
+            var box = $('proScheduleDone');
+            box.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg><div style="flex: 1;"><strong>Intervenția I-5037 a fost programată</strong> pentru ' + fmtLong(s.date) + ', ora ' + s.time + ' (' + Object.keys(s.staff).map(function (sid) { return esc(STAFF[sid].name); }).join(', ') + '). ' +
+                ($('chkProSms').checked ? 'Clientul va primi SMS de reamintire. ' : '') + 'Echipa a primit notificare în aplicația mobilă.' +
+                '<div class="pro-btn-group" style="margin-top: 10px;"><a href="pro-programare.html" class="btn-secondary">Programare nouă</a><a href="interventii.html" class="btn-secondary">Vezi intervențiile</a><a href="pro-calendar.html" class="btn-secondary">Calendar echipe</a></div></div>';
+            box.style.display = 'flex';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        },
+        urgent: function () {
+            var f = form();
+            ProUrgent.open({ nod: state.nod, type: f.types[0] || '', title: $('txtProNote').value || (f.job + ' – ' + f.types.map(function (t) { return TYPES[t]; }).join(', ')) });
+        }
+    };
+})();
+</script>
+
+    </div><!-- /.content -->
+    <footer class="app-footer">
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
+    </footer>
+</div><!-- /.main -->
+
+<script src="assets/js/sidebar.js?v=1.0.1"></script>
+</body>
+</html>

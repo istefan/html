@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SONIC BILLING – Platformă modernă de billing pentru energie termică și apă.">
-    <title>Citiri Brute Apă – SONIC BILLING</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.1">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Citiri Brute Apă – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
     <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
 </head>
 <body>
 
@@ -179,7 +182,7 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO -->
+                <!-- Dashboard PRO (dispecerat) -->
                 <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -187,13 +190,53 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- Intervenții -->
-                <a href="interventii.html" class="nav-item " title="Intervenții">
-                    <span class="nav-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                    </span>
-                    <span class="nav-label">Intervenții</span>
-                </a>
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -284,6 +327,8 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
                         <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
                         <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
                         <a href="tarife.html" class="nav-subitem ">Tarife</a>
@@ -524,14 +569,14 @@
         <!-- CENTER: logo (mobile only, absolutely centered) -->
         <!-- React: isMobile && <HeaderLogo /> -->
         <div class="header-logo" aria-hidden="true">
-            <a href="sonic-dashboard.html">
-                <img src="assets/images/sonic-grid-logo.svg" alt="SONIC GRID" id="headerLogo">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-billing-logo.svg" alt="SONIC BILLING" id="headerLogo">
             </a>
         </div>
 
         <!-- RIGHT: page title (desktop) + user + logout -->
         <div class="header-actions">
-            <!-- Desktop page breadcrumb (hidden on mobile) -->
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
             <div class="header-page-title">Citiri Brute Apă</div>
 
             <!-- User profile avatar (always visible) -->
@@ -558,7 +603,75 @@
     <div class="help-wrapper">
         <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
             <div class="help-panel-inner">
-                                <p class="help-empty">Nu există informații de ajutor disponibile pentru această pagină.</p>
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Filtrare                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Coloane &amp; Semnificații                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Lista Citiri Brute Apă</h4>
+            <p>Această pagină afișează înregistrările brute din bufferul de citiri pentru contoarele și modulele radio de <strong>Apă</strong>, așa cum au fost preluate din fișierele sau sistemele de citire înainte de validare.</p>
+            <p>Pagina face parte din modulul <strong>SONIC BILLING</strong>, grupul <em>Import / Export Citiri</em>.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <h4>Câmpurile de filtrare</h4>
+            <ul>
+                <li><strong>Data import / Data citire</strong> &ndash; filtrează citirile după data încărcării în sistem sau data citirii efective (format <code>ZZ.LL.AAAA</code>).</li>
+                <li><strong>NOD</strong> &ndash; selectează un NOD din fereastra de selecție (lupă) sau șterge selecția (X).</li>
+                <li><strong>Utilitate</strong> &ndash; câmp informativ preselectat pe contextul paginii.</li>
+                <li><strong>Stadiu sigiliu</strong> &ndash; <code>INTACT</code> sau <code>VIOLAT</code>.</li>
+                <li><strong>MAG</strong> &ndash; filtrează după prezența alarmei de perturbație magnetică (<code>DA</code> / <code>NU</code>).</li>
+                <li><strong>Serie aparat</strong> &ndash; căutare exactă sau parțială după seria apometrului / modulului radio.</li>
+                <li><strong>Import din</strong> &ndash; sursa citirii: <em>AMM, Decor Press, FGH &ndash; Seamens, FGH &ndash; Sontex, M - Bus, SMDE &ndash; Clasic, SMDE &ndash; Radio</em>.</li>
+                <li><strong>Înreg / pag</strong> &ndash; numărul de rânduri afișate pe pagină (10, 15, 25, 50, 100).</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <h4>Structura tabelului de citiri brute Apă</h4>
+            <ul>
+                <li><strong>Serie aparat</strong> &ndash; seria unică a apometrului / modulului radio, afișată în format evidențiat monospace.</li>
+                <li><strong>Consum precedent sens normal / invers</strong> &amp; <strong>Cod unități consum normal / invers</strong> &ndash; valorile istorice și codurile de control transmise de modulul radio.</li>
+                <li><strong>Index actual normal / invers</strong> &ndash; indecșii curenți înregistrați pe sensul direct și pe sensul invers de curgere.</li>
+                <li><strong>MAG / Zi citire / Sursă / Stadiu sigiliu</strong> &ndash; parametri tehnici și de integritate ai citirii.</li>
+            </ul>
+                            </div>
+                                    </div>
                     </div><!-- /.help-panel-inner -->
         </div><!-- /.help-panel -->
         
@@ -585,26 +698,2504 @@
 
     <div class="content">
 
+<!-- ===================================================================
+     React: <RawReadingsWaterPage />
+     =================================================================== -->
+
+<!-- === Titlu pagină + Buton Adaugă (ctl00_phContent_btnAdd) ===
+     React: <PageTitleContainer title="Lista Citiri Brute Apă" addHref="adauga-citiri-brute-apa.html" />
+-->
 <div class="page-title-container">
     <div class="page-title">
-        <h1>Citiri Brute Apă</h1>
-        <p>Pagina este în construcție.</p>
+        <h1>Lista Citiri Brute Apă</h1>
+        <p>Vizualizare și filtrare citiri brute preluate în buffer pentru contoarele de apă.</p>
+    </div>
+    <a href="adauga-citiri-brute-apa.html" class="btn-secondary btn-add" id="ctl00_phContent_btnAdd">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        <span>Adaugă</span>
+    </a>
+</div>
+
+<!-- === Sumar erori validare (ctl00_VS) === -->
+<div id="ctl00_VS" class="card" style="display: none; border-color: var(--red); padding: 12px 16px; margin-bottom: 16px;"></div>
+
+<!-- === Casetă de Filtrare (8 câmpuri în .filter-grid 4+4 conform RULES.md §1.5) ===
+     React: <RawReadingsWaterFilterCard filters={filters} onSearch={handleSearch} onReset={handleReset} />
+-->
+<div class="card filter-card">
+    <div class="filter-card-head">
+        <span class="filter-card-title">Filtrare Avansată</span>
+    </div>
+    <form method="GET" action="citiri-brute-apa.html" id="rawWaterFilterForm" novalidate>
+        <div class="filter-grid">
+
+            <!-- 1. Data import (ctl00$phContent$dtpImportDate) -->
+            <div class="form-group">
+                <label class="form-label" for="ctl00_phContent_dtpImportDate">Data import</label>
+                <div class="picker-group">
+                    <input type="text" data-datepicker name="import_date" id="ctl00_phContent_dtpImportDate"
+                           class="input-control" maxlength="10"
+                           value="">
+                    <button type="button" class="btn-picker delete" title="Șterge data import"
+                            onclick="clear_Date('ctl00_phContent_dtpImportDate')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+                <span id="ctl00_phContent_dtpvImportDate" style="display: none;">Data import nu este valida.</span>
+            </div>
+
+            <!-- 2. Data citire (ctl00$phContent$dtpReadingDate) -->
+            <div class="form-group">
+                <label class="form-label" for="ctl00_phContent_dtpReadingDate">Data citire</label>
+                <div class="picker-group">
+                    <input type="text" data-datepicker name="reading_date" id="ctl00_phContent_dtpReadingDate"
+                           class="input-control" maxlength="10"
+                           value="">
+                    <button type="button" class="btn-picker delete" title="Șterge data citire"
+                            onclick="clear_Date('ctl00_phContent_dtpReadingDate')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+                <span id="ctl00_phContent_dtpvReadingDate" style="display: none;">Data citire nu este valida.</span>
+            </div>
+
+            <!-- 3. NOD (ctl00$phContent$USCounterPicker) -->
+            <div class="form-group">
+                <label class="form-label" id="ctl00_phContent_lbUSCounter" for="ctl00_phContent_USCounterPicker">NOD</label>
+                <div class="picker-group">
+                    <input type="text" name="nod" id="ctl00_phContent_USCounterPicker"
+                           class="input-control" readonly placeholder="Click pe lupă..."
+                           value="">
+                    <input type="hidden" name="nod_value" id="ctl00_phContent_USCounterPickerValue"
+                           value="-1">
+                    <!-- Câmp păstrat din sursă; în aplicația veche conținea URL-ul pickerului ASP.NET
+                         (/BillingControl/Common/Pickers/USCounterPickerList.aspx). În SONIC pickerul este partials/nod-picker.php. -->
+                    <input type="hidden" name="ctl00$phContent$USCounterPickerURL" value="">
+                    <button type="button" class="btn-picker" id="btnOpenRawWaterNod" title="Selectează NOD">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                    <button type="button" class="btn-picker delete" id="btnClearRawWaterNod" title="Șterge NOD">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+                <input type="button" id="btnCP" style="display: none;">
+            </div>
+
+            <!-- 4. Utilitate (ctl00$phContent$ddlUtility – disabled în sursă) -->
+            <div class="form-group">
+                <label class="form-label" for="ctl00_phContent_ddlUtility">Utilitate</label>
+                <select name="ctl00$phContent$ddlUtility" id="ctl00_phContent_ddlUtility" class="input-control" disabled="disabled">
+                                            <option value="-1" selected="selected">
+                            -                        </option>
+                                            <option value="2" >
+                            Apa                        </option>
+                                            <option value="1" >
+                            Energie Termica                        </option>
+                                            <option value="3" >
+                            Gaz                        </option>
+                                    </select>
+            </div>
+
+            <!-- 5. Stadiu sigiliu (ctl00$phContent$ddlSigiliu) -->
+            <div class="form-group">
+                <label class="form-label" for="ctl00_phContent_ddlSigiliu">Stadiu sigiliu</label>
+                <select name="seal" id="ctl00_phContent_ddlSigiliu" class="input-control">
+                                            <option value="-" selected="selected">
+                            -                        </option>
+                                            <option value="INTACT" >
+                            INTACT                        </option>
+                                            <option value="VIOLAT" >
+                            VIOLAT                        </option>
+                                    </select>
+            </div>
+
+            <!-- 6. MAG (ctl00$phContent$ddlMAG) -->
+            <div class="form-group">
+                <label class="form-label" for="ctl00_phContent_ddlMAG">MAG</label>
+                <select name="mag" id="ctl00_phContent_ddlMAG" class="input-control">
+                                            <option value="" selected="selected">
+                                                    </option>
+                                            <option value="-" >
+                            -                        </option>
+                                            <option value="DA" >
+                            DA                        </option>
+                                            <option value="NU" >
+                            NU                        </option>
+                                    </select>
+            </div>
+
+            <!-- 7. Serie aparat (ctl00$phContent$txtSerialNo) -->
+            <div class="form-group">
+                <label class="form-label" for="ctl00_phContent_txtSerialNo">Serie aparat</label>
+                <input type="text" name="serial" id="ctl00_phContent_txtSerialNo"
+                       class="input-control" placeholder="Serie contor / modul..."
+                       value="">
+            </div>
+
+            <!-- 8. Import din (ctl00$phContent$ddlReadingMethod) -->
+            <div class="form-group">
+                <label class="form-label" for="ctl00_phContent_ddlReadingMethod">Import din</label>
+                <select name="reading_method" id="ctl00_phContent_ddlReadingMethod" class="input-control">
+                                            <option value="-1" selected="selected">
+                            -                        </option>
+                                            <option value="7" >
+                            AMM                        </option>
+                                            <option value="1" >
+                            Decor Press                        </option>
+                                            <option value="2" >
+                            FGH – Seamens                        </option>
+                                            <option value="3" >
+                            FGH – Sontex                        </option>
+                                            <option value="6" >
+                            M - Bus                        </option>
+                                            <option value="5" >
+                            SMDE – Clasic                        </option>
+                                            <option value="4" >
+                            SMDE – Radio                        </option>
+                                    </select>
+            </div>
+
+        </div><!-- /.filter-grid -->
+
+        <!-- Footer filtru conform RULES.md §1.5: Înreg / pag + Resetează + Caută -->
+        <div class="filter-actions">
+            <div class="filter-per-page">
+                <label class="filter-per-page-label" for="ctl00_phContent_ucItemsPerPage_txtItemsPerPage">Înreg / pag</label>
+                <select name="per_page" id="ctl00_phContent_ucItemsPerPage_txtItemsPerPage" class="input-control select-per-page">
+                                            <option value="10" >10</option>
+                                            <option value="15" >15</option>
+                                            <option value="25" >25</option>
+                                            <option value="50" >50</option>
+                                            <option value="100" selected="selected">100</option>
+                                    </select>
+                <span id="ctl00_phContent_ucItemsPerPage_rfvItemsPerPage" style="display: none;">*</span>
+                <span id="ctl00_phContent_ucItemsPerPage_rvItemsPerPage" style="display: none;">*</span>
+            </div>
+            <a href="citiri-brute-apa.html" class="btn-secondary">Resetează</a>
+            <button type="submit" class="btn-primary" name="ctl00$phContent$btnSearch" id="ctl00_phContent_btnSearch">Caută</button>
+        </div>
+    </form>
+</div>
+
+<!-- === Tabel Citiri Brute Apă (ctl00_phContent_dgReadingsBuffer) ===
+     React: <RawReadingsWaterTable rows={rows} total={displayTotal} />
+-->
+<div class="table-container">
+    <div class="table-toolbar">
+        <div class="table-toolbar-left">
+            <span class="table-count">
+                Afișare <strong id="rawWaterVisibleCount">100</strong>
+                din <strong>38.845.495</strong> înregistrări
+            </span>
+        </div>
+        <div class="table-toolbar-right">
+            <div class="live-search-wrapper" title="Filtrare rapidă în pagina curentă">
+                <span class="live-search-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </span>
+                <input type="text" id="rawWaterLiveSearch" class="input-control" placeholder="Căutare dinamică serie / cod / sursă...">
+            </div>
+        </div>
+    </div>
+
+    <div class="table-scroll">
+        <table class="partners-table" id="ctl00_phContent_dgReadingsBuffer">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">Data import</th>
+                    <th style="text-align: center;">Data citire</th>
+                    <th>Serie aparat</th>
+                    <th>Utilitate</th>
+                    <th style="text-align: right;">Consum precedent sens normal</th>
+                    <th style="text-align: center;">Cod unități consum normal</th>
+                    <th style="text-align: right;">Consum precedent sens invers</th>
+                    <th style="text-align: center;">Cod unități consum invers</th>
+                    <th style="text-align: right;">Index actual normal</th>
+                    <th style="text-align: right;">Index actual invers</th>
+                    <th style="text-align: center;">MAG</th>
+                    <th style="text-align: center;">Zi citire</th>
+                    <th>Sursă</th>
+                    <th style="text-align: center;">Stadiu sigiliu</th>
+                </tr>
+            </thead>
+            <tbody id="rawWaterTableBody">
+                                <tr data-search="30.07.2021 30.07.2236 302258070 apa bolu2 bolna nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2236</td>
+                    <td><span class="serial-value">302258070</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">3.60</td>
+                    <td class="td-code" style="text-align: center;">boLu2</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">boLnA</td>
+                    <td style="text-align: right;">20.303</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2235 302068503 apa jiceh ji6ur nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2235</td>
+                    <td><span class="serial-value">302068503</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">2.90</td>
+                    <td class="td-code" style="text-align: center;">JicEh</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">Ji6ur</td>
+                    <td style="text-align: right;">75.960</td>
+                    <td style="text-align: right;">0.004</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2234 302073117 apa cn4rc cn4rc nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2234</td>
+                    <td><span class="serial-value">302073117</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">cn4rc</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">cn4rc</td>
+                    <td style="text-align: right;">0.005</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2233 302067266 apa 15r9c 15ci3 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2233</td>
+                    <td><span class="serial-value">302067266</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.80</td>
+                    <td class="td-code" style="text-align: center;">15r9c</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">15ci3</td>
+                    <td style="text-align: right;">29.932</td>
+                    <td style="text-align: right;">0.003</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2232 302051778 apa 55dl0 55u52 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2232</td>
+                    <td><span class="serial-value">302051778</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">1.40</td>
+                    <td class="td-code" style="text-align: center;">55dL0</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">55u52</td>
+                    <td style="text-align: right;">72.708</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2231 302068491 apa hfu3d hfu8t nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2231</td>
+                    <td><span class="serial-value">302068491</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">2.70</td>
+                    <td class="td-code" style="text-align: center;">hFu3d</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">hFu8t</td>
+                    <td style="text-align: right;">139.426</td>
+                    <td style="text-align: right;">0.002</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2230 302051776 apa uunne uu3t0 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2230</td>
+                    <td><span class="serial-value">302051776</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.60</td>
+                    <td class="td-code" style="text-align: center;">uunnE</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">uu3t0</td>
+                    <td style="text-align: right;">28.621</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2229 302073150 apa r6n8r r6rj9 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2229</td>
+                    <td><span class="serial-value">302073150</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">2.90</td>
+                    <td class="td-code" style="text-align: center;">r6n8r</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">r6rJ9</td>
+                    <td style="text-align: right;">102.157</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2228 302067300 apa il514 il84a nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2228</td>
+                    <td><span class="serial-value">302067300</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.60</td>
+                    <td class="td-code" style="text-align: center;">iL514</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">iL84A</td>
+                    <td style="text-align: right;">23.318</td>
+                    <td style="text-align: right;">0.011</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2227 302208165 apa tfd5i tf83o nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2227</td>
+                    <td><span class="serial-value">302208165</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">9.30</td>
+                    <td class="td-code" style="text-align: center;">tFd5i</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">tF83o</td>
+                    <td style="text-align: right;">104.503</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2226 302094924 apa ehf6p eht4p nu decor press violat">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2226</td>
+                    <td><span class="serial-value">302094924</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">4.00</td>
+                    <td class="td-code" style="text-align: center;">EhF6P</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">Eht4P</td>
+                    <td style="text-align: right;">307.972</td>
+                    <td style="text-align: right;">0.003</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-warning">VIOLAT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2225 302094921 apa hb85d hbr0l nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2225</td>
+                    <td><span class="serial-value">302094921</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">1.50</td>
+                    <td class="td-code" style="text-align: center;">hb85d</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">hbr0L</td>
+                    <td style="text-align: right;">107.304</td>
+                    <td style="text-align: right;">0.003</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2224 302094910 apa enuj1 enuic nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2224</td>
+                    <td><span class="serial-value">302094910</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">10.20</td>
+                    <td class="td-code" style="text-align: center;">EnuJ1</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">Enuic</td>
+                    <td style="text-align: right;">425.508</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2223 302094919 apa 1iujo 1iiii nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2223</td>
+                    <td><span class="serial-value">302094919</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">4.90</td>
+                    <td class="td-code" style="text-align: center;">1iuJo</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">1iiii</td>
+                    <td style="text-align: right;">156.870</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2222 302094913 apa 44c31 4up8h nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2222</td>
+                    <td><span class="serial-value">302094913</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">4.40</td>
+                    <td class="td-code" style="text-align: center;">44c31</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">4uP8h</td>
+                    <td style="text-align: right;">215.288</td>
+                    <td style="text-align: right;">0.003</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2221 302094935 apa 8c0ac 8cod0 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2221</td>
+                    <td><span class="serial-value">302094935</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">3.60</td>
+                    <td class="td-code" style="text-align: center;">8c0Ac</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">8cod0</td>
+                    <td style="text-align: right;">240.624</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2220 302094916 apa 6opi1 67adu nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2220</td>
+                    <td><span class="serial-value">302094916</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">8.40</td>
+                    <td class="td-code" style="text-align: center;">6oPi1</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">67Adu</td>
+                    <td style="text-align: right;">265.500</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2219 302071055 apa lh8he lh8he nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2219</td>
+                    <td><span class="serial-value">302071055</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">Lh8hE</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">Lh8hE</td>
+                    <td style="text-align: right;">29.123</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2218 302071054 apa 2j4eu 2j4eu nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2218</td>
+                    <td><span class="serial-value">302071054</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">2J4Eu</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">2J4Eu</td>
+                    <td style="text-align: right;">8.811</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2217 302071024 apa h7d92 h7dc9 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2217</td>
+                    <td><span class="serial-value">302071024</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">3.10</td>
+                    <td class="td-code" style="text-align: center;">h7d92</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">h7dc9</td>
+                    <td style="text-align: right;">141.613</td>
+                    <td style="text-align: right;">0.096</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2216 302094931 apa l5efe l5ee9 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2216</td>
+                    <td><span class="serial-value">302094931</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">2.60</td>
+                    <td class="td-code" style="text-align: center;">L5EFE</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">L5EE9</td>
+                    <td style="text-align: right;">84.970</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2215 302094906 apa alcfh alcfh nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2215</td>
+                    <td><span class="serial-value">302094906</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">ALcFh</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">ALcFh</td>
+                    <td style="text-align: right;">31.086</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2214 302094920 apa u27dh u27dh nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2214</td>
+                    <td><span class="serial-value">302094920</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">u27dh</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">u27dh</td>
+                    <td style="text-align: right;">30.512</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2213 302094903 apa u4452 u448d nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2213</td>
+                    <td><span class="serial-value">302094903</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.50</td>
+                    <td class="td-code" style="text-align: center;">u4452</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">u448d</td>
+                    <td style="text-align: right;">69.475</td>
+                    <td style="text-align: right;">0.019</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2212 302258161 apa 978o0 97n71 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2212</td>
+                    <td><span class="serial-value">302258161</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">9.10</td>
+                    <td class="td-code" style="text-align: center;">978o0</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">97n71</td>
+                    <td style="text-align: right;">57.905</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2211 302099212 apa n0odr nh07j nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2211</td>
+                    <td><span class="serial-value">302099212</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">2.60</td>
+                    <td class="td-code" style="text-align: center;">n0odr</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">nh07J</td>
+                    <td style="text-align: right;">83.827</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2210 302094895 apa th675 th66i nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2210</td>
+                    <td><span class="serial-value">302094895</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">2.20</td>
+                    <td class="td-code" style="text-align: center;">th675</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">th66i</td>
+                    <td style="text-align: right;">81.765</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2209 302089114 apa uap6t ulcut nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2209</td>
+                    <td><span class="serial-value">302089114</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">3.30</td>
+                    <td class="td-code" style="text-align: center;">uAP6t</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">uLcut</td>
+                    <td style="text-align: right;">133.160</td>
+                    <td style="text-align: right;">0.007</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2208 302258152 apa 5aajd 5atdc nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2208</td>
+                    <td><span class="serial-value">302258152</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">4.00</td>
+                    <td class="td-code" style="text-align: center;">5AAJd</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">5Atdc</td>
+                    <td style="text-align: right;">26.575</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2207 302280390 apa 7jfl1 7jidi nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2207</td>
+                    <td><span class="serial-value">302280390</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.90</td>
+                    <td class="td-code" style="text-align: center;">7JFL1</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">7Jidi</td>
+                    <td style="text-align: right;">2.842</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2206 302071023 apa fj19d fjcin nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2206</td>
+                    <td><span class="serial-value">302071023</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">1.30</td>
+                    <td class="td-code" style="text-align: center;">FJ19d</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">FJcin</td>
+                    <td style="text-align: right;">101.655</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2205 302260763 apa e5hnn e5it9 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2205</td>
+                    <td><span class="serial-value">302260763</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">9.50</td>
+                    <td class="td-code" style="text-align: center;">E5hnn</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">E5it9</td>
+                    <td style="text-align: right;">35.754</td>
+                    <td style="text-align: right;">0.009</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2204 302280421 apa 90ea5 90pit nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2204</td>
+                    <td><span class="serial-value">302280421</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">3.20</td>
+                    <td class="td-code" style="text-align: center;">90EA5</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">90Pit</td>
+                    <td style="text-align: right;">9.105</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2203 302071044 apa a4f3l a4fl5 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2203</td>
+                    <td><span class="serial-value">302071044</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.30</td>
+                    <td class="td-code" style="text-align: center;">A4F3L</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">A4FL5</td>
+                    <td style="text-align: right;">15.919</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2202 302065834 apa e493h e48td nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2202</td>
+                    <td><span class="serial-value">302065834</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">8.20</td>
+                    <td class="td-code" style="text-align: center;">E493h</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">E48td</td>
+                    <td style="text-align: right;">364.201</td>
+                    <td style="text-align: right;">0.017</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2201 302261776 apa 60af4 6fhd6 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2201</td>
+                    <td><span class="serial-value">302261776</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">9.30</td>
+                    <td class="td-code" style="text-align: center;">60AF4</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">6Fhd6</td>
+                    <td style="text-align: right;">43.313</td>
+                    <td style="text-align: right;">0.001</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2200 302280163 apa eje7u ej2bt nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2200</td>
+                    <td><span class="serial-value">302280163</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">3.60</td>
+                    <td class="td-code" style="text-align: center;">EJE7u</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">EJ2bt</td>
+                    <td style="text-align: right;">4.064</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2199 302208081 apa fejoh fej7i nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2199</td>
+                    <td><span class="serial-value">302208081</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">1.50</td>
+                    <td class="td-code" style="text-align: center;">FEJoh</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">FEJ7i</td>
+                    <td style="text-align: right;">15.511</td>
+                    <td style="text-align: right;">0.001</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2198 302280150 apa f434n f434n nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2198</td>
+                    <td><span class="serial-value">302280150</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">F434n</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">F434n</td>
+                    <td style="text-align: right;">0.869</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2197 302258212 apa pj1bu pj9f5 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2197</td>
+                    <td><span class="serial-value">302258212</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">7.90</td>
+                    <td class="td-code" style="text-align: center;">PJ1bu</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">PJ9F5</td>
+                    <td style="text-align: right;">42.272</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2196 302282238 apa 0ftu4 0ftnl nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2196</td>
+                    <td><span class="serial-value">302282238</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">1.50</td>
+                    <td class="td-code" style="text-align: center;">0Ftu4</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">0FtnL</td>
+                    <td style="text-align: right;">5.492</td>
+                    <td style="text-align: right;">0.048</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2195 302282272 apa a4u64 ab174 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2195</td>
+                    <td><span class="serial-value">302282272</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">14.60</td>
+                    <td class="td-code" style="text-align: center;">A4u64</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">Ab174</td>
+                    <td style="text-align: right;">39.295</td>
+                    <td style="text-align: right;">0.001</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2194 302094271 apa 1tbof 1tbf4 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2194</td>
+                    <td><span class="serial-value">302094271</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">2.70</td>
+                    <td class="td-code" style="text-align: center;">1tboF</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">1tbF4</td>
+                    <td style="text-align: right;">108.506</td>
+                    <td style="text-align: right;">0.002</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2193 302280387 apa o1ada o1a0f nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2193</td>
+                    <td><span class="serial-value">302280387</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">4.50</td>
+                    <td class="td-code" style="text-align: center;">o1AdA</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">o1A0F</td>
+                    <td style="text-align: right;">23.102</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2192 302208042 apa uci55 ucthn nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2192</td>
+                    <td><span class="serial-value">302208042</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">17.50</td>
+                    <td class="td-code" style="text-align: center;">uci55</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">ucthn</td>
+                    <td style="text-align: right;">96.584</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2191 302208083 apa 8a7nb 8ao2t nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2191</td>
+                    <td><span class="serial-value">302208083</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">6.50</td>
+                    <td class="td-code" style="text-align: center;">8A7nb</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">8Ao2t</td>
+                    <td style="text-align: right;">50.643</td>
+                    <td style="text-align: right;">0.004</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2190 302258222 apa e87p9 e8ebb nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2190</td>
+                    <td><span class="serial-value">302258222</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">2.90</td>
+                    <td class="td-code" style="text-align: center;">E87P9</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">E8Ebb</td>
+                    <td style="text-align: right;">13.419</td>
+                    <td style="text-align: right;">0.061</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2189 302208066 apa b83un b8392 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2189</td>
+                    <td><span class="serial-value">302208066</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">1.00</td>
+                    <td class="td-code" style="text-align: center;">b83un</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">b8392</td>
+                    <td style="text-align: right;">29.320</td>
+                    <td style="text-align: right;">0.010</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2188 302258238 apa 1daib 1da1t nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2188</td>
+                    <td><span class="serial-value">302258238</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">1.40</td>
+                    <td class="td-code" style="text-align: center;">1dAib</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">1dA1t</td>
+                    <td style="text-align: right;">7.627</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2187 302171279 apa 7c4fo 7c4ni nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2187</td>
+                    <td><span class="serial-value">302171279</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">3.10</td>
+                    <td class="td-code" style="text-align: center;">7c4Fo</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">7c4ni</td>
+                    <td style="text-align: right;">28.859</td>
+                    <td style="text-align: right;">0.121</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2186 302124358 apa 6be0i 6crfj nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2186</td>
+                    <td><span class="serial-value">302124358</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">2.70</td>
+                    <td class="td-code" style="text-align: center;">6bE0i</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">6crFJ</td>
+                    <td style="text-align: right;">85.895</td>
+                    <td style="text-align: right;">0.001</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2185 302051497 apa dd84h dd7pf nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2185</td>
+                    <td><span class="serial-value">302051497</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">2.70</td>
+                    <td class="td-code" style="text-align: center;">dd84h</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">dd7PF</td>
+                    <td style="text-align: right;">140.996</td>
+                    <td style="text-align: right;">0.039</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2184 302165953 apa 32aot 32ltt nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2184</td>
+                    <td><span class="serial-value">302165953</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">8.30</td>
+                    <td class="td-code" style="text-align: center;">32Aot</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">32Ltt</td>
+                    <td style="text-align: right;">182.114</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2183 302258423 apa 5u1fe 5ui7e nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2183</td>
+                    <td><span class="serial-value">302258423</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">3.30</td>
+                    <td class="td-code" style="text-align: center;">5u1FE</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">5ui7E</td>
+                    <td style="text-align: right;">15.558</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2182 302165949 apa io2li io2e7 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2182</td>
+                    <td><span class="serial-value">302165949</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.60</td>
+                    <td class="td-code" style="text-align: center;">io2Li</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">io2E7</td>
+                    <td style="text-align: right;">62.043</td>
+                    <td style="text-align: right;">0.131</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2181 302165983 apa iu8a5 iult9 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2181</td>
+                    <td><span class="serial-value">302165983</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">7.70</td>
+                    <td class="td-code" style="text-align: center;">iu8A5</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">iuLt9</td>
+                    <td style="text-align: right;">166.320</td>
+                    <td style="text-align: right;">0.002</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2180 302113518 apa tf72l tf8pf nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2180</td>
+                    <td><span class="serial-value">302113518</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">5.40</td>
+                    <td class="td-code" style="text-align: center;">tF72L</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">tF8PF</td>
+                    <td style="text-align: right;">241.667</td>
+                    <td style="text-align: right;">0.175</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2179 302258076 apa 5adoa 5ad1r nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2179</td>
+                    <td><span class="serial-value">302258076</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">1.90</td>
+                    <td class="td-code" style="text-align: center;">5AdoA</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">5Ad1r</td>
+                    <td style="text-align: right;">45.095</td>
+                    <td style="text-align: right;">0.002</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2178 302165975 apa jri9a jr4j2 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2178</td>
+                    <td><span class="serial-value">302165975</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">2.90</td>
+                    <td class="td-code" style="text-align: center;">Jri9A</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">Jr4J2</td>
+                    <td style="text-align: right;">67.811</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2177 302165298 apa nuf5c nuf7u nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2177</td>
+                    <td><span class="serial-value">302165298</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">1.70</td>
+                    <td class="td-code" style="text-align: center;">nuF5c</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">nuF7u</td>
+                    <td style="text-align: right;">38.441</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2176 302165639 apa 2i48u 2h89d nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2176</td>
+                    <td><span class="serial-value">302165639</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">23.20</td>
+                    <td class="td-code" style="text-align: center;">2i48u</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">2h89d</td>
+                    <td style="text-align: right;">502.948</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2175 302165981 apa oinie oie8t nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2175</td>
+                    <td><span class="serial-value">302165981</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">9.00</td>
+                    <td class="td-code" style="text-align: center;">oiniE</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">oiE8t</td>
+                    <td style="text-align: right;">217.064</td>
+                    <td style="text-align: right;">0.002</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2174 302165973 apa dcfe7 dc18c nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2174</td>
+                    <td><span class="serial-value">302165973</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">2.70</td>
+                    <td class="td-code" style="text-align: center;">dcFE7</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">dc18c</td>
+                    <td style="text-align: right;">79.560</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2173 302186084 apa 1na48 1nr6e nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2173</td>
+                    <td><span class="serial-value">302186084</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">1.40</td>
+                    <td class="td-code" style="text-align: center;">1nA48</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">1nr6E</td>
+                    <td style="text-align: right;">56.544</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2172 302099004 apa 486a2 48enb nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2172</td>
+                    <td><span class="serial-value">302099004</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">14.50</td>
+                    <td class="td-code" style="text-align: center;">486A2</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">48Enb</td>
+                    <td style="text-align: right;">488.567</td>
+                    <td style="text-align: right;">0.001</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2171 302112400 apa 198u6 1nn7d nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2171</td>
+                    <td><span class="serial-value">302112400</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">3.70</td>
+                    <td class="td-code" style="text-align: center;">198u6</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">1nn7d</td>
+                    <td style="text-align: right;">142.168</td>
+                    <td style="text-align: right;">0.054</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2170 302170458 apa lepud le66r nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2170</td>
+                    <td><span class="serial-value">302170458</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">8.80</td>
+                    <td class="td-code" style="text-align: center;">LEPud</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">LE66r</td>
+                    <td style="text-align: right;">141.060</td>
+                    <td style="text-align: right;">0.001</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2169 302202814 apa 897b0 897ft nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2169</td>
+                    <td><span class="serial-value">302202814</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">1.00</td>
+                    <td class="td-code" style="text-align: center;">897b0</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">897Ft</td>
+                    <td style="text-align: right;">15.835</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2168 302208138 apa j1u91 j18af nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2168</td>
+                    <td><span class="serial-value">302208138</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">5.40</td>
+                    <td class="td-code" style="text-align: center;">J1u91</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">J18AF</td>
+                    <td style="text-align: right;">82.643</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2167 302208156 apa jl0cb jlnod nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2167</td>
+                    <td><span class="serial-value">302208156</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">5.90</td>
+                    <td class="td-code" style="text-align: center;">JL0cb</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">JLnod</td>
+                    <td style="text-align: right;">59.652</td>
+                    <td style="text-align: right;">0.003</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2166 302112408 apa on9rf onn42 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2166</td>
+                    <td><span class="serial-value">302112408</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">10.60</td>
+                    <td class="td-code" style="text-align: center;">on9rF</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">onn42</td>
+                    <td style="text-align: right;">529.677</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2165 302112401 apa c2aa0 c2uut nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2165</td>
+                    <td><span class="serial-value">302112401</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">4.40</td>
+                    <td class="td-code" style="text-align: center;">c2AA0</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">c2uut</td>
+                    <td style="text-align: right;">130.853</td>
+                    <td style="text-align: right;">0.006</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2164 302112402 apa ertfr eru61 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2164</td>
+                    <td><span class="serial-value">302112402</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">3.80</td>
+                    <td class="td-code" style="text-align: center;">ErtFr</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">Eru61</td>
+                    <td style="text-align: right;">173.016</td>
+                    <td style="text-align: right;">0.006</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2163 302207799 apa o87oa o8c78 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2163</td>
+                    <td><span class="serial-value">302207799</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">2.80</td>
+                    <td class="td-code" style="text-align: center;">o87oA</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">o8c78</td>
+                    <td style="text-align: right;">29.715</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2162 302207795 apa 4uc10 4uc10 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2162</td>
+                    <td><span class="serial-value">302207795</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">4uc10</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">4uc10</td>
+                    <td style="text-align: right;">0.323</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2161 302207822 apa 2j165 22lo3 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2161</td>
+                    <td><span class="serial-value">302207822</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">2.30</td>
+                    <td class="td-code" style="text-align: center;">2J165</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">22Lo3</td>
+                    <td style="text-align: right;">24.635</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2160 302207798 apa pfje7 pfj9n nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2160</td>
+                    <td><span class="serial-value">302207798</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.40</td>
+                    <td class="td-code" style="text-align: center;">PFJE7</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">PFJ9n</td>
+                    <td style="text-align: right;">5.797</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2159 302207827 apa 8otro 8otu1 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2159</td>
+                    <td><span class="serial-value">302207827</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">3.50</td>
+                    <td class="td-code" style="text-align: center;">8otro</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">8otu1</td>
+                    <td style="text-align: right;">31.780</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2158 302207803 apa u459j u42eh nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2158</td>
+                    <td><span class="serial-value">302207803</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">3.20</td>
+                    <td class="td-code" style="text-align: center;">u459J</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">u42Eh</td>
+                    <td style="text-align: right;">35.555</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2157 302207789 apa dn68l dn8rl nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2157</td>
+                    <td><span class="serial-value">302207789</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">3.30</td>
+                    <td class="td-code" style="text-align: center;">dn68L</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">dn8rL</td>
+                    <td style="text-align: right;">53.474</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2156 302207828 apa po9tl poh54 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2156</td>
+                    <td><span class="serial-value">302207828</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">3.70</td>
+                    <td class="td-code" style="text-align: center;">Po9tL</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">Poh54</td>
+                    <td style="text-align: right;">42.762</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2155 302261790 apa 2prin 2puot nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2155</td>
+                    <td><span class="serial-value">302261790</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.40</td>
+                    <td class="td-code" style="text-align: center;">2Prin</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">2Puot</td>
+                    <td style="text-align: right;">2.229</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2154 302207810 apa 10n7f 10cut nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2154</td>
+                    <td><span class="serial-value">302207810</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.40</td>
+                    <td class="td-code" style="text-align: center;">10n7F</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">10cut</td>
+                    <td style="text-align: right;">10.559</td>
+                    <td style="text-align: right;">0.007</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2153 302029539 apa 8n14f 8n3it nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2153</td>
+                    <td><span class="serial-value">302029539</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">1.30</td>
+                    <td class="td-code" style="text-align: center;">8n14F</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">8n3it</td>
+                    <td style="text-align: right;">166.007</td>
+                    <td style="text-align: right;">0.001</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2152 302207787 apa 39a3f 39ado nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2152</td>
+                    <td><span class="serial-value">302207787</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.30</td>
+                    <td class="td-code" style="text-align: center;">39A3F</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">39Ado</td>
+                    <td style="text-align: right;">3.633</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2151 302207806 apa ec7i1 ec7i1 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2151</td>
+                    <td><span class="serial-value">302207806</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">Ec7i1</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">Ec7i1</td>
+                    <td style="text-align: right;">16.838</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2150 302207833 apa 720ar 72ec4 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2150</td>
+                    <td><span class="serial-value">302207833</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">4.60</td>
+                    <td class="td-code" style="text-align: center;">720Ar</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">72Ec4</td>
+                    <td style="text-align: right;">56.000</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2149 302207813 apa 625el 6263h nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2149</td>
+                    <td><span class="serial-value">302207813</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">2.70</td>
+                    <td class="td-code" style="text-align: center;">625EL</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">6263h</td>
+                    <td style="text-align: right;">34.080</td>
+                    <td style="text-align: right;">0.003</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2148 302207814 apa p6ad3 p6ouh nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2148</td>
+                    <td><span class="serial-value">302207814</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">7.30</td>
+                    <td class="td-code" style="text-align: center;">P6Ad3</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">P6ouh</td>
+                    <td style="text-align: right;">126.434</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2147 302207823 apa n47jo n47jt nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2147</td>
+                    <td><span class="serial-value">302207823</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.50</td>
+                    <td class="td-code" style="text-align: center;">n47Jo</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">n47Jt</td>
+                    <td style="text-align: right;">7.254</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2146 302207794 apa a5id9 a5674 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2146</td>
+                    <td><span class="serial-value">302207794</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">3.70</td>
+                    <td class="td-code" style="text-align: center;">A5id9</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">A5674</td>
+                    <td style="text-align: right;">46.991</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2145 302207792 apa 3878 038db nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2145</td>
+                    <td><span class="serial-value">302207792</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.40</td>
+                    <td class="td-code" style="text-align: center;">3878</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">038db</td>
+                    <td style="text-align: right;">7.347</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2144 302239164 apa add43 ad7a3 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2144</td>
+                    <td><span class="serial-value">302239164</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">6.70</td>
+                    <td class="td-code" style="text-align: center;">Add43</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">Ad7A3</td>
+                    <td style="text-align: right;">12.090</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2143 302261768 apa 252h6 251lp nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2143</td>
+                    <td><span class="serial-value">302261768</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">1.20</td>
+                    <td class="td-code" style="text-align: center;">252h6</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">251LP</td>
+                    <td style="text-align: right;">3.968</td>
+                    <td style="text-align: right;">0.003</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2142 302207764 apa r4beu r4u9h nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2142</td>
+                    <td><span class="serial-value">302207764</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">3.20</td>
+                    <td class="td-code" style="text-align: center;">r4bEu</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">r4u9h</td>
+                    <td style="text-align: right;">40.692</td>
+                    <td style="text-align: right;">0.001</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2141 302207804 apa 28h3r 28h1d nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2141</td>
+                    <td><span class="serial-value">302207804</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">0.50</td>
+                    <td class="td-code" style="text-align: center;">28h3r</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">28h1d</td>
+                    <td style="text-align: right;">11.791</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2140 302207832 apa 447f5 44hd2 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2140</td>
+                    <td><span class="serial-value">302207832</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">4.40</td>
+                    <td class="td-code" style="text-align: center;">447F5</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">44hd2</td>
+                    <td style="text-align: right;">51.049</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2139 302207801 apa ule9j ulale nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2139</td>
+                    <td><span class="serial-value">302207801</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">2.30</td>
+                    <td class="td-code" style="text-align: center;">uLE9J</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">uLALE</td>
+                    <td style="text-align: right;">25.616</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2138 302207817 apa 7co28 7cb41 nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2138</td>
+                    <td><span class="serial-value">302207817</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">3.60</td>
+                    <td class="td-code" style="text-align: center;">7co28</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">7cb41</td>
+                    <td style="text-align: right;">47.958</td>
+                    <td style="text-align: right;">0.000</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr data-search="30.07.2021 30.07.2137 302186985 apa nppc1 nppal nu decor press intact">
+                    <td style="text-align: center; white-space: nowrap;">30.07.2021</td>
+                    <td style="text-align: center; white-space: nowrap;">30.07.2137</td>
+                    <td><span class="serial-value">302186985</span></td>
+                    <td>Apa</td>
+                    <td style="text-align: right;">1.30</td>
+                    <td class="td-code" style="text-align: center;">nPPc1</td>
+                    <td style="text-align: right;">0.00</td>
+                    <td class="td-code" style="text-align: center;">nPPAL</td>
+                    <td style="text-align: right;">7.408</td>
+                    <td style="text-align: right;">0.001</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-offline">NU</span>
+                    </td>
+                    <td style="text-align: center;">28</td>
+                    <td class="td-name">Decor Press</td>
+                    <td style="text-align: center;">
+                        <span class="status-badge status-online">INTACT</span>
+                    </td>
+                </tr>
+                                <tr id="rawWaterEmptyRow" style="display: none;">
+                    <td colspan="14" class="table-empty">Nu există citiri brute de apă care să corespundă criteriilor selectate.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Paginație conform RULES.md §1.5 -->
+    <div class="table-pagination">
+        <div class="pagination-info">
+            Afișare <strong>1</strong> - <strong id="rawWaterPaginationTo">100</strong> din <strong>38.845.495</strong> înregistrări
+        </div>
+        <div class="pagination-controls">
+            <button type="button" class="btn-secondary btn-page-nav" disabled>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                <span>Anterior</span>
+            </button>
+            <div class="pagination-pages">
+                <button type="button" class="btn-secondary btn-page active">1</button>
+                                <button type="button" class="btn-secondary btn-page">2</button>
+                <button type="button" class="btn-secondary btn-page">3</button>
+                <span class="pagination-gap">…</span>
+                <button type="button" class="btn-secondary btn-page">388.455</button>
+                            </div>
+            <button type="button" class="btn-secondary btn-page-nav" >
+                <span>Următor</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
     </div>
 </div>
 
-<div class="card" style="padding: 60px 40px; text-align: center; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; margin-top: 24px;">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="64" height="64" style="margin-bottom: 20px; opacity: 0.3; color: var(--accent);">
-        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-        <polyline points="2 17 12 22 22 17"></polyline>
-        <polyline points="2 12 12 17 22 12"></polyline>
-    </svg>
-    <h2 style="color: var(--text-main); margin-bottom: 12px; font-weight: 600;">În curând</h2>
-    <p style="font-size: 15px;">Interfața pentru <strong>Citiri Brute Apă</strong> nu a fost încă generată în acest demo.</p>
-</div>
+
+<!-- ══ NOD Picker Modal (partial) ════════════════════════════════════════════
+     React: <NodPickerModal id="rawWaterNodPickerModal" onSelect={handleSelect} />
+══════════════════════════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="rawWaterNodPickerModal" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="rawWaterNodPickerModal-title">
+    <div class="modal-card nod-picker-card">
+        <div class="modal-header">
+            <h3 id="rawWaterNodPickerModal-title">Alegere NOD</h3>
+            <button type="button" class="btn-close nod-picker-close" data-modal="rawWaterNodPickerModal" title="Închide fereastra">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!-- Formular de filtrare -->
+            <form class="nod-picker-filter-form" id="rawWaterNodPickerModal-form" onsubmit="return false;">
+                <div class="nod-picker-filter-grid">
+                    <!-- Localitate -->
+                    <div class="form-group">
+                        <label class="form-label" for="rawWaterNodPickerModal-city">Localitate</label>
+                        <select id="rawWaterNodPickerModal-city" class="input-control">
+                            <option value="-1">-</option>
+                                                        <option value="Apold">Apold</option>
+                                                        <option value="Brasov">Brasov</option>
+                                                        <option value="Bucuresti">Bucuresti</option>
+                                                        <option value="Buftea">Buftea</option>
+                                                        <option value="Chiajna">Chiajna</option>
+                                                        <option value="Chitila">Chitila</option>
+                                                        <option value="Cisnadie">Cisnadie</option>
+                                                        <option value="Constanta">Constanta</option>
+                                                        <option value="Deva">Deva</option>
+                                                        <option value="Giurgiu">Giurgiu</option>
+                                                        <option value="Iasi">Iasi</option>
+                                                        <option value="Mamaia">Mamaia</option>
+                                                        <option value="Mangalia">Mangalia</option>
+                                                        <option value="Medgidia">Medgidia</option>
+                                                        <option value="Navodari">Navodari</option>
+                                                        <option value="Ploiesti">Ploiesti</option>
+                                                        <option value="Predeal">Predeal</option>
+                                                        <option value="Sibiu">Sibiu</option>
+                                                        <option value="Sighisoara">Sighisoara</option>
+                                                        <option value="Targu Mures">Targu Mures</option>
+                                                        <option value="Tulcea">Tulcea</option>
+                                                        <option value="Voluntari">Voluntari</option>
+                                                    </select>
+                    </div>
+                    <!-- Strada -->
+                    <div class="form-group">
+                        <label class="form-label" for="rawWaterNodPickerModal-street">Strada</label>
+                        <input type="text" id="rawWaterNodPickerModal-street" class="input-control" placeholder="Denumire stradă...">
+                    </div>
+                    <!-- Tip -->
+                    <div class="form-group">
+                        <label class="form-label" for="rawWaterNodPickerModal-type">Tip</label>
+                        <select id="rawWaterNodPickerModal-type" class="input-control">
+                            <option value="-1">-</option>
+                            <option value="1">Cu agenți economici</option>
+                            <option value="2">Fără agenți economici</option>
+                        </select>
+                    </div>
+                    <!-- Asociație -->
+                    <div class="form-group">
+                        <label class="form-label" for="rawWaterNodPickerModal-assoc">Asociație</label>
+                        <input type="text" id="rawWaterNodPickerModal-assoc" class="input-control" placeholder="Nume asociație...">
+                    </div>
+                    <!-- Cod NOD -->
+                    <div class="form-group">
+                        <label class="form-label" for="rawWaterNodPickerModal-code">Cod NOD</label>
+                        <input type="text" id="rawWaterNodPickerModal-code" class="input-control" placeholder="Cod...">
+                    </div>
+                </div>
+                <div class="nod-picker-filter-actions">
+                    <div class="filter-per-page">
+                        <label class="filter-per-page-label" for="rawWaterNodPickerModal-perpage">Înreg / pag</label>
+                        <select id="rawWaterNodPickerModal-perpage" class="input-control select-per-page">
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100" selected>100</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn-secondary nod-picker-reset" data-modal="rawWaterNodPickerModal">Resetează</button>
+                    <button type="button" class="btn-primary nod-picker-search" data-modal="rawWaterNodPickerModal">Caută</button>
+                </div>
+            </form>
+
+            <!-- Tabelul de rezultate NOD -->
+            <div class="nod-picker-table-wrap">
+                <table class="modal-table">
+                    <thead>
+                        <tr>
+                            <th>NOD</th>
+                            <th>Adresă NOD</th>
+                            <th>Asociație</th>
+                            <th class="nod-picker-th-sel"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="nod-picker-tbody" id="rawWaterNodPickerModal-tbody">
+                        <!-- Populat dinamic prin JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Paginație Modal -->
+            <div class="nod-picker-pagination">
+                <span class="nod-picker-count-label">
+                    Afișare NOD-uri: <strong class="nod-picker-count" id="rawWaterNodPickerModal-count">0</strong>
+                </span>
+                <div class="nod-picker-page-btns">
+                    <button type="button" class="btn-action-icon nod-picker-prev" title="Pagina anterioară" data-modal="rawWaterNodPickerModal" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button type="button" class="btn-action-icon nod-picker-next" title="Pagina următoare" data-modal="rawWaterNodPickerModal" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </div><!-- /modal-body -->
+    </div><!-- /modal-card -->
+</div><!-- /modal-overlay -->
+
+<!-- NOD Picker: date & logică JS ============================================
+     React: datele vin din props/API; logica este în NodPickerModal.tsx
+============================================================================ -->
+<script>
+(function() {
+    /* ── Date NOD ────────────────────────────────────────────────────── */
+    var _nodPickerData_rawWaterNodPickerModal = [
+    { id: "1",  code: "81-001-0001", address: "Str. STEFAN CEL MARE, Nr. 27, Bl. 27, Sc. 1, Distr. 2, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC 27 SCARA 1",    city: "Bucuresti", street: "stefan cel mare",          ownerType: "1" },
+    { id: "2",  code: "81-001-0002", address: "Str. REZILIAT, Nr. 36, Bl. Vila, Sc. 1, Distr. 1, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC VILA",          city: "Bucuresti", street: "reziliat",                  ownerType: "1" },
+    { id: "3",  code: "81-001-0003", address: "Str. REZILIAT, Sc. 1, Distr. 5, Bucuresti",                              association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "14", code: "81-001-0004", address: "Str. GURA IALOMITEI, Nr. 3, Bl. PC9, Sc. B, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC PC9 SCARA B",   city: "Bucuresti", street: "gura ialomitei",             ownerType: "1" },
+    { id: "15", code: "81-001-0005", address: "Str. GURA IALOMITEI, Nr. 3, Bl. PC9, Sc. A, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC PC9 SCARA A",   city: "Bucuresti", street: "gura ialomitei",             ownerType: "1" },
+    { id: "16", code: "81-001-0006", address: "Str. REZILIAT, Nr. 28, Bl. V81A, Sc. A, Distr. 3, Bucuresti",           association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "17", code: "81-001-0007", address: "Str. Laborator, Nr. 125-127, Bl. S1, Sc. 2, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC S1 SCARA 2",    city: "Bucuresti", street: "laborator",                  ownerType: "1" },
+    { id: "18", code: "81-001-0008", address: "Str. Liber, Nr. 012, Bl. 0, Sc. 2, Bucuresti",                          association: "",                                            city: "Bucuresti", street: "liber",                     ownerType: "2" },
+    { id: "20", code: "81-001-0010", address: "Str. BIBESCU VODA, Nr. 2, Bl. P5, Sc. 4, Distr. 4, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC P5 SCARA 4",    city: "Bucuresti", street: "bibescu voda",               ownerType: "1" },
+    { id: "21", code: "81-001-0011", address: "Str. REZILIAT, Sc. A+B, Apt. -, Distr. 3, Bucuresti",                   association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "22", code: "81-001-0012", address: "Str. MIHAI BRAVU, Nr. 291, Bl. 12A, Sc. 1, Distr. 3, Bucuresti",        association: "ASOCIATIA DE PROPRIETARI BLOC 12A SCARA A",   city: "Bucuresti", street: "mihai bravu",                ownerType: "1" },
+    { id: "23", code: "81-001-0013", address: "Str. REZILIAT, Sc. 1, Distr. 3, Bucuresti",                             association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "25", code: "81-001-0015", address: "Str. REZILIAT, Sc. 2, Distr. 3, Bucuresti",                             association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "27", code: "81-001-0017", address: "Str. SIBIU, Nr. 18, Bl. 813, Sc. 1, Distr. 6, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BL 813",             city: "Bucuresti", street: "sibiu",                     ownerType: "1" },
+    { id: "28", code: "81-001-0018", address: "Str. UNIRII, Nr. 13, Bl. 2C, Sc. 1, Distr. 5, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BLOC 2C",            city: "Bucuresti", street: "unirii",                    ownerType: "1" },
+    { id: "29", code: "81-001-0019", address: "Str. UNIRII, Nr. 13, Bl. 2C, Sc. 2, Distr. 5, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BLOC 2C",            city: "Bucuresti", street: "unirii",                    ownerType: "1" },
+    { id: "30", code: "81-001-0020", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 1, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "31", code: "81-001-0021", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 2, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "32", code: "81-001-0022", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 3, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "34", code: "81-001-0023", address: "Str. OTESANI, Nr. 14, Bl. T8B, Sc. 1, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC T8B",           city: "Bucuresti", street: "otesani",                   ownerType: "1" },
+    { id: "35", code: "81-001-0024", address: "Str. COLENTINA, Nr. 70, Bl. 108, Sc. 1, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 108",           city: "Bucuresti", street: "colentina",                  ownerType: "1" },
+    { id: "36", code: "81-001-0025", address: "Str. FUNDENI, Nr. 227, Bl. 116B, Sc. A, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 116B",          city: "Bucuresti", street: "fundeni",                   ownerType: "1" },
+    { id: "37", code: "81-001-0026", address: "Str. FUNDENI, Nr. 227, Bl. 116B, Sc. B, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 116B",          city: "Bucuresti", street: "fundeni",                   ownerType: "1" },
+    { id: "40", code: "81-001-0029", address: "Str. CONSTANTIN RADULESCU MOTRU, Nr. 23, Bl. B35, Sc. B, Distr. 4",    association: "ASOCIATIA DE PROPRIETARI BLOC 35 SCARA 2",   city: "Bucuresti", street: "constantin radulescu motru", ownerType: "1" },
+    { id: "41", code: "81-001-0030", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. A, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA A",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "42", code: "81-001-0031", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. B, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA B",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "43", code: "81-001-0032", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. E, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA E",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "51", code: "81-001-0040", address: "Str. CALEA MOSILOR, Nr. 241, Bl. 47, Sc. A+B+C, Distr. 2, Bucuresti",  association: "ASOCIATIA DE PROPRIETARI BLOC 47",            city: "Bucuresti", street: "calea mosilor",              ownerType: "1" },
+    { id: "52", code: "81-001-0041", address: "Str. MURGENI, Nr. 7, Bl. L27, Sc. A, Distr. 3, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC L27",           city: "Bucuresti", street: "murgeni",                   ownerType: "1" },
+    { id: "53", code: "81-001-0042", address: "Str. ALEEA CODLEA, Nr. 6, Bl. J3, Sc. 1, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC J3",            city: "Bucuresti", street: "aleea codlea",               ownerType: "1" },
+    { id: "54", code: "81-001-0043", address: "Str. ALEEA ROTUNDA, Nr. 1-4, Bl. Y1B, Sc. 5, Distr. 3, Bucuresti",     association: "ASOCIATIA DE PROPRIETARI BLOC Y1B SCARA 1-5", city: "Bucuresti", street: "aleea rotunda",              ownerType: "1" },
+    { id: "59", code: "81-001-0047", address: "Str. LACUL TEI, Nr. 121, Bl. 5, Sc. 1, Distr. 2, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC 5 SCARA 1-4",  city: "Bucuresti", street: "lacul tei",                  ownerType: "1" },
+    { id: "65", code: "81-001-0053", address: "Str. CALEA VACARESTI, Nr. 308, Bl. 1E, Sc. 1, Distr. 4, Bucuresti",    association: "ASOCIATIA DE PROPRIETARI BLOC 1E",            city: "Bucuresti", street: "calea vacaresti",            ownerType: "1" },
+    { id: "66", code: "81-001-0054", address: "Str. OLTENITEI, Nr. 140, Bl. 5, Sc. 3, Distr. 4, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC 5 SCARA 3",    city: "Bucuresti", street: "oltenitei",                  ownerType: "1" },
+    { id: "8",  code: "81-001-0055", address: "Str. ALEEA BARSANESTI, Nr. 2, Bl. 156, Sc. 2, Distr. 6, Bucuresti",    association: "ASOCIATIA DE PROPRIETARI BLOC156 SC. 2",     city: "Bucuresti", street: "aleea barsanesti",           ownerType: "1" },
+    { id: "68", code: "81-001-0057", address: "Str. CEAHLAU, Nr. 15, Bl. 75, Sc. 1, Distr. 6, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC 75",            city: "Bucuresti", street: "ceahlau",                   ownerType: "1" },
+    { id: "69", code: "81-001-0058", address: "Str. CEAHLAU, Nr. 15, Bl. 75, Sc. 2, Distr. 6, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC 75",            city: "Bucuresti", street: "ceahlau",                   ownerType: "1" }
+];
+
+    /* ── Configurare instanță ────────────────────────────────────────── */
+    var _cfg = {
+        modalId:    "rawWaterNodPickerModal",
+        inputId:    "ctl00_phContent_USCounterPicker",
+        btnOpenId:  "btnOpenRawWaterNod",
+        callback:   "onRawWaterNodSelected"   /* funcție opțională apelată la selecție */
+    };
+
+    function initNodPicker_rawWaterNodPickerModal() {
+        NodPicker.init(
+            _cfg,
+            _nodPickerData_rawWaterNodPickerModal        );
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initNodPicker_rawWaterNodPickerModal);
+    } else {
+        initNodPicker_rawWaterNodPickerModal();
+    }
+})();
+</script>
+
+<script>
+/**
+ * Comportament client-side pentru Lista Citiri Brute Apă (ReadingsBufferWaterList.aspx)
+ */
+function clear_Date(objId) {
+    var el = document.getElementById(objId) || document.getElementsByName(objId)[0];
+    if (el) el.value = '';
+}
+
+window.onRawWaterNodSelected = function (code) {
+    var hiddenVal = document.getElementById('ctl00_phContent_USCounterPickerValue');
+    if (hiddenVal) hiddenVal.value = code || '-1';
+};
+
+(function () {
+    'use strict';
+
+    // Ștergere NOD (FwkClear)
+    var btnClearNod = document.getElementById('btnClearRawWaterNod');
+    var nodInput    = document.getElementById('ctl00_phContent_USCounterPicker');
+    var nodVal      = document.getElementById('ctl00_phContent_USCounterPickerValue');
+
+    if (btnClearNod && nodInput) {
+        btnClearNod.addEventListener('click', function () {
+            nodInput.value = '';
+            if (nodVal) nodVal.value = '-1';
+        });
+    }
+
+    // Căutare dinamică locală în tabel
+    var liveSearch = document.getElementById('rawWaterLiveSearch');
+    var tbody      = document.getElementById('rawWaterTableBody');
+    var countEl    = document.getElementById('rawWaterVisibleCount');
+    var pagToEl    = document.getElementById('rawWaterPaginationTo');
+    var emptyRow   = document.getElementById('rawWaterEmptyRow');
+
+    if (liveSearch && tbody) {
+        liveSearch.addEventListener('input', function () {
+            var q = this.value.trim().toLowerCase();
+            var visible = 0;
+            tbody.querySelectorAll('tr[data-search]').forEach(function (tr) {
+                var text = tr.getAttribute('data-search') || '';
+                var match = !q || text.indexOf(q) !== -1;
+                tr.style.display = match ? '' : 'none';
+                if (match) visible++;
+            });
+            if (countEl) countEl.textContent = visible;
+            if (pagToEl) pagToEl.textContent = visible;
+            if (emptyRow) emptyRow.style.display = visible === 0 ? '' : 'none';
+        });
+    }
+})();
+</script>
 
     </div><!-- /.content -->
     <footer class="app-footer">
-        SONIC GRID &copy; 2026 &ndash; All rights reserved
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
     </footer>
 </div><!-- /.main -->
 
