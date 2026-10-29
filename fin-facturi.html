@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Facturi – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.31">
+    <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+<script>
+    (function() {
+        var sb = document.getElementById('sidebar');
+        var ls = localStorage.getItem('sb_collapsed');
+        if (ls === '1') sb.classList.add('collapsed');
+        else if (ls === '0') sb.classList.remove('collapsed');
+    })();
+</script>
+    <!-- ── Logo ─────────────────────────────────────────────────────── -->
+    <!-- React: <SidebarLogo activeApp={activeApp} /> -->
+    <div class="logo">
+        <a href="sonic-dashboard.html" title="SONIC – Acasă">
+            <img src="assets/images/sonic-logo.svg"
+                 alt="SONIC"
+                 class="logo-full"
+                 id="sidebarLogo">
+            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">S</span>
+        </a>
+    </div>
+
+    <!-- ── Nav ───────────────────────────────────────────────────────── -->
+    <!-- React: <SidebarNav activeApp={activeApp} onAppChange={setActiveApp} /> -->
+    <nav class="sidebar-nav" aria-label="Navigare principală">
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  1. SONIC GRID
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-grid"
+             data-logo="assets/images/sonic-grid-logo.svg"
+             data-logo-icon="SG">
+            <button class="app-section-header" type="button" title="SONIC GRID">
+                <img src="assets/images/sonic-grid-logo.svg" class="app-section-logo" alt="SONIC GRID">
+                <span class="app-section-badge">SG</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Panoul Meu -->
+                <a href="panoul-meu.html" class="nav-item " title="Panoul Meu">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </span>
+                    <span class="nav-label">Panoul Meu</span>
+                </a>
+
+                <!-- Adresele Mele -->
+                <a href="adresele-mele.html" class="nav-item " title="Adresele Mele">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </span>
+                    <span class="nav-label">Adresele Mele</span>
+                </a>
+
+                <!-- Regiuni / Zone -->
+                <a href="regiuni-zone.html" class="nav-item " title="Regiuni / Zone">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </span>
+                    <span class="nav-label">Regiuni / Zone</span>
+                </a>
+
+                <!-- Perioade Citiri -->
+                <a href="perioade-citiri.html" class="nav-item " title="Perioade Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </span>
+                    <span class="nav-label">Perioade Citiri</span>
+                </a>
+
+                <!-- Setări Alerte -->
+                <a href="setari-alerte.html" class="nav-item " title="Setări Alerte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </span>
+                    <span class="nav-label">Setări Alerte</span>
+                </a>
+
+                <!-- Info Center -->
+                <a href="info-center.html" class="nav-item " title="Info Center">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    <span class="nav-label">Info Center</span>
+                </a>
+
+                <!-- Contact -->
+                <a href="contact.html" class="nav-item " title="Contact">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </span>
+                    <span class="nav-label">Contact</span>
+                </a>
+
+                <!-- ── RAPOARTE (section label) ── -->
+                <div class="nav-section">Rapoarte</div>
+
+                <!-- Raport Citiri -->
+                <a href="raport-citiri.html" class="nav-item " title="Raport Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Raport Citiri</span>
+                </a>
+
+                <!-- Bilanț Neînchideri Apă -->
+                <a href="bilant-neinchideri.html" class="nav-item " title="Bilanț Neînchideri Apă">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                    </span>
+                    <span class="nav-label">Bilanț Neînchideri Apă</span>
+                </a>
+
+                <!-- Estimări Consum -->
+                <a href="estimari-consum.html" class="nav-item " title="Estimări Consum">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </span>
+                    <span class="nav-label">Estimări Consum</span>
+                </a>
+
+                <!-- Raport Alerte -->
+                <a href="raport-alerte.html" class="nav-item " title="Raport Alerte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Raport Alerte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  2. SONIC MARKET
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-market"
+             data-logo="assets/images/sonic-market-logo.svg"
+             data-logo-icon="SM">
+            <button class="app-section-header" type="button" title="SONIC MARKET">
+                <img src="assets/images/sonic-market-logo.svg" class="app-section-logo" alt="SONIC MARKET">
+                <span class="app-section-badge">SM</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard Market -->
+                <a href="market-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  3. SONIC PRO
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-pro"
+             data-logo="assets/images/sonic-pro-logo.svg"
+             data-logo-icon="SP">
+            <button class="app-section-header" type="button" title="SONIC PRO">
+                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+                <span class="app-section-badge">SP</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard PRO (dispecerat) -->
+                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  4. SONIC BILLING
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-billing"
+             data-logo="assets/images/sonic-billing-logo.svg"
+             data-logo-icon="SB">
+            <button class="app-section-header" type="button" title="SONIC BILLING">
+                <img src="assets/images/sonic-billing-logo.svg" class="app-section-logo" alt="SONIC BILLING">
+                <span class="app-section-badge">SB</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard -->
+                <a href="index.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── ADMINISTRARE ─────────────────────────────────────────── -->
+                <div class="nav-group " data-group="administrare">
+                    <button class="nav-group-title" type="button" title="Administrare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                        </span>
+                        <span class="nav-label">Administrare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="utilizatori.html" class="nav-subitem ">Utilizatori</a>
+                        <a href="cititori.html" class="nav-subitem ">Cititori</a>
+                        <a href="parametri-sistem.html" class="nav-subitem ">Parametri Sistem</a>
+                        <a href="stergere-perioade.html" class="nav-subitem ">Ștergere Perioade Calcul</a>
+                    </div>
+                </div>
+
+                <!-- ── DICTIONARE ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="dictionare">
+                    <button class="nav-group-title" type="button" title="Dictionare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Dictionare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="localitati.html" class="nav-subitem ">Localități</a>
+                        <a href="puncte-lucru.html" class="nav-subitem ">Puncte de Lucru</a>
+                        <a href="producatori.html" class="nav-subitem ">Producători</a>
+                        <a href="furnizori.html" class="nav-subitem ">Furnizori Utilități</a>
+                        <a href="unitati-masura.html" class="nav-subitem ">Unități de Măsură</a>
+                        <a href="tipuri-servicii.html" class="nav-subitem ">Tipuri Servicii</a>
+                        <a href="companii.html" class="nav-subitem ">Companii</a>
+                    </div>
+                </div>
+
+                <!-- ── DATABANK MANAGEMENT ──────────────────────────────────── -->
+                <div class="nav-group " data-group="databank">
+                    <button class="nav-group-title" type="button" title="Databank Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                        </span>
+                        <span class="nav-label">Databank Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="tipuri-radiatoare.html" class="nav-subitem ">Tipuri Radiatoare</a>
+                        <a href="modele-radiatoare.html" class="nav-subitem ">Modele Radiatoare</a>
+                        <a href="modele-repartitoare.html" class="nav-subitem ">Modele Repartitoare</a>
+                        <a href="modele-contoare.html" class="nav-subitem ">Modele Contoare</a>
+                        <a href="serii-apometre.html" class="nav-subitem ">Serii Apometre Achiziționate</a>
+                    </div>
+                </div>
+
+                <!-- ── CALCUL ────────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="calcul">
+                    <button class="nav-group-title" type="button" title="Calcul">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </span>
+                        <span class="nav-label">Calcul</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
+                        <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
+                        <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
+                        <a href="tarife.html" class="nav-subitem ">Tarife</a>
+                    </div>
+                </div>
+
+                <!-- ── IMPORT / EXPORT CITIRI ───────────────────────────────── -->
+                <div class="nav-group " data-group="import-export">
+                    <button class="nav-group-title" type="button" title="Import / Export Citiri">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </span>
+                        <span class="nav-label">Import / Export Citiri</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="citire-manuala-et.html" class="nav-subitem ">Citire Manuală ET</a>
+                        <a href="citire-manuala-apa.html" class="nav-subitem ">Citire Manuală Apă</a>
+                        <a href="citiri-brute-et.html" class="nav-subitem ">Citiri Brute Energie Termică</a>
+                        <a href="citiri-brute-apa.html" class="nav-subitem ">Citiri Brute Apă</a>
+                        <a href="export-pl.html" class="nav-subitem ">Export PL</a>
+                    </div>
+                </div>
+
+                <!-- ── CONSUM ENERGIE TERMICĂ ────────────────────────────────── -->
+                <div class="nav-group " data-group="consum-et">
+                    <button class="nav-group-title" type="button" title="Consum Energie Termică">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                        </span>
+                        <span class="nav-label">Consum Energie Termică</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="consum-et-detaliat.html" class="nav-subitem ">Introducere Detaliată</a>
+                        <a href="consum-et-cumulat.html" class="nav-subitem ">Introducere Cumulată</a>
+                    </div>
+                </div>
+
+                <!-- ── CONSUM APĂ ─────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="consum-apa">
+                    <button class="nav-group-title" type="button" title="Consum Apă">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L7 10a5 5 0 0 0 10 0L12 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Consum Apă</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="consum-apa-detaliat.html" class="nav-subitem ">Introducere Detaliată</a>
+                    </div>
+                </div>
+
+                <!-- ── VALIDARE CITIRE ───────────────────────────────────────── -->
+                <div class="nav-group " data-group="validare">
+                    <button class="nav-group-title" type="button" title="Validare Citire">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </span>
+                        <span class="nav-label">Validare Citire</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="validare-et.html" class="nav-subitem ">Validare Citire – ET</a>
+                        <a href="validare-apa.html" class="nav-subitem ">Validare Citire – Apă</a>
+                        <a href="cost-split-apa.html" class="nav-subitem ">Cost Split – Apă</a>
+                    </div>
+                </div>
+
+                <!-- ── GESTIUNE FACTURARE (standalone) ──────────────────────── -->
+                <a href="facturare.html" class="nav-item " title="Gestiune Facturare">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Gestiune Facturare</span>
+                </a>
+
+                <!-- ── GESTIUNE TIPĂRIRE ───────────────────────────────────────── -->
+                <div class="nav-group " data-group="tiparire">
+                    <button class="nav-group-title" type="button" title="Gestiune Tipărire">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                        </span>
+                        <span class="nav-label">Gestiune Tipărire</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="nod-tiparire.html" class="nav-subitem ">NOD pentru Tipărire</a>
+                        <a href="fise-citire.html" class="nav-subitem ">Fișe Citire</a>
+                    </div>
+                </div>
+
+                <!-- ── RAPOARTE (standalone) ──────────────────────────────────── -->
+                <a href="rapoarte.html" class="nav-item " title="Rapoarte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <span class="nav-label">Rapoarte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  5. SONIC FIN
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section open"
+             data-app="sonic-fin"
+             data-logo="assets/images/sonic-fin-logo.svg"
+             data-logo-icon="SF">
+            <button class="app-section-header" type="button" title="SONIC FIN">
+                <img src="assets/images/sonic-fin-logo.svg" class="app-section-logo" alt="SONIC FIN">
+                <span class="app-section-badge">SF</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard FIN -->
+                <a href="fin-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── MONTAJE & FACTURARE ── -->
+                <div class="nav-group open" data-group="fin-montaje">
+                    <button class="nav-group-title" type="button" title="Montaje & Facturare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>
+                        </span>
+                        <span class="nav-label">Montaje & Facturare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-validare-montaje.html" class="nav-subitem ">Validare Montaje</a>
+                        <a href="fin-facturare-echipamente.html" class="nav-subitem ">Facturare Echipamente</a>
+                        <a href="fin-rate.html" class="nav-subitem ">Scadențar Rate</a>
+                        <a href="fin-facturi.html" class="nav-subitem active">Facturi</a>
+                    </div>
+                </div>
+
+                <!-- ── ÎNCASĂRI ── -->
+                <div class="nav-group " data-group="fin-incasari">
+                    <button class="nav-group-title" type="button" title="Încasări">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+                        </span>
+                        <span class="nav-label">Încasări</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-chitante.html" class="nav-subitem ">Chitanțe</a>
+                        <a href="fin-chitantiere.html" class="nav-subitem ">Chitanțiere</a>
+                        <a href="fin-incasari-banca.html" class="nav-subitem ">Încasări Bancă</a>
+                        <a href="fin-recalculare.html" class="nav-subitem ">Recalculare Solduri</a>
+                    </div>
+                </div>
+
+                <!-- ── CREANȚE ── -->
+                <div class="nav-group " data-group="fin-creante">
+                    <button class="nav-group-title" type="button" title="Creanțe">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                        </span>
+                        <span class="nav-label">Creanțe</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-creante.html" class="nav-subitem ">Urmărire Creanțe</a>
+                        <a href="fin-alerte.html" class="nav-subitem ">Alerte SMS și E-mail</a>
+                    </div>
+                </div>
+
+                <!-- ── GESTIUNE STOCURI ── -->
+                <div class="nav-group " data-group="fin-gestiune">
+                    <button class="nav-group-title" type="button" title="Gestiune Stocuri">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                        </span>
+                        <span class="nav-label">Gestiune Stocuri</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-gestiuni.html" class="nav-subitem ">Gestiuni</a>
+                        <a href="fin-intrari.html" class="nav-subitem ">Intrări în Gestiune</a>
+                        <a href="fin-iesiri.html" class="nav-subitem ">Ieșiri și Transferuri</a>
+                        <a href="fin-retururi.html" class="nav-subitem ">Retururi</a>
+                        <a href="fin-comenzi-furnizori.html" class="nav-subitem ">Comenzi Furnizori</a>
+                        <a href="fin-necesar-marfa.html" class="nav-subitem ">Necesar de Comandat</a>
+                    </div>
+                </div>
+
+                <!-- ── NOMENCLATOARE ── -->
+                <div class="nav-group " data-group="fin-nomenclatoare">
+                    <button class="nav-group-title" type="button" title="Nomenclatoare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Nomenclatoare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-produse.html" class="nav-subitem ">Produse</a>
+                        <a href="fin-nomenclatoare.html" class="nav-subitem ">Nomenclatoare Financiare</a>
+                    </div>
+                </div>
+
+                <!-- ── RAPOARTE FIN (standalone) ── -->
+                <a href="fin-rapoarte.html" class="nav-item " title="Rapoarte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <span class="nav-label">Rapoarte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  6. SONIC (Base – Ecosistem & Configurare)
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic"
+             data-logo="assets/images/sonic-logo.svg"
+             data-logo-icon="S">
+            <button class="app-section-header" type="button" title="SONIC">
+                <img src="assets/images/sonic-logo.svg" class="app-section-logo" alt="SONIC">
+                <span class="app-section-badge">S</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard SONIC -->
+                <a href="sonic-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <div class="nav-group " data-group="master-data">
+                    <button class="nav-group-title" type="button" title="Master Data Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Master Data Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
+                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
+                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
+                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
+                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
+                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- ── Sidebar Footer ─────────────────────────────────────────────── -->
+    <!-- React: <SidebarFooter /> -->
+    <div class="sidebar-footer">
+        <a href="contul-meu.html" class="nav-item " title="Contul Meu">
+            <span class="nav-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <span class="nav-label">Contul Meu</span>
+        </a>
+    </div>
+
+</aside>
+
+<!-- React: <main className="main"> -->
+<div class="main">
+
+    <!--
+        React: <Header
+            onToggleSidebar={toggleSidebar}
+            isCollapsed={isCollapsed}
+            isMobileOpen={isMobileOpen}
+            pageTitle={pageTitle}
+        />
+    -->
+    <div class="header">
+
+        <!-- LEFT: hamburger / sidebar-toggle + search (desktop) -->
+        <div class="header-left">
+            <!--
+                React: <SidebarToggleBtn
+                    onClick={onToggleSidebar}
+                    isCollapsed={isCollapsed}
+                    isMobile={isMobile}
+                />
+                Desktop: panel-left icon with collapse arrow
+                Mobile : hamburger icon
+            -->
+            <button class="sidebar-toggle-btn" id="sidebarToggle"
+                    title="Restrânge / Extinde meniu"
+                    aria-label="Toggle sidebar"
+                    data-collapsed="0">
+                <script>
+                    (function() {
+                        var btn = document.getElementById('sidebarToggle');
+                        var ls = localStorage.getItem('sb_collapsed');
+                        if (ls === '1') btn.setAttribute('data-collapsed', '1');
+                        else if (ls === '0') btn.setAttribute('data-collapsed', '0');
+                    })();
+                </script>
+                <!-- Mobile hamburger (hidden on desktop via CSS) -->
+                <svg class="icon-hamburger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+                <!-- Desktop panel icon (hidden on mobile via CSS) -->
+                <svg class="icon-panel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <line x1="9" y1="3" x2="9" y2="21"/>
+                    <polyline points="15 8 12 12 15 16" class="toggle-arrow"/>
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- CENTER: logo (mobile only, absolutely centered) -->
+        <!-- React: isMobile && <HeaderLogo /> -->
+        <div class="header-logo" aria-hidden="true">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-fin-logo.svg" alt="SONIC FIN" id="headerLogo">
+            </a>
+        </div>
+
+        <!-- RIGHT: page title (desktop) + user + logout -->
+        <div class="header-actions">
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
+            <div class="header-page-title">Facturi</div>
+
+            <!-- User profile avatar (always visible) -->
+            <a href="contul-meu.html" class="user-profile" title="Contul meu">SI</a>
+
+            <!-- Logout button – icon only, always visible -->
+            <!-- React: <LogoutBtn onClick={handleLogout} /> -->
+            <a href="login.html" class="logout-btn" title="Deconectare" aria-label="Deconectare">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+            </a>
+        </div>
+
+    </div><!-- /.header -->
+
+    <!--
+        CONTEXTUAL HELP BAR (WordPress-style)
+        React: <HelpBar onToggle={toggleHelp} isOpen={isHelpOpen} />
+               <HelpPanel isOpen={isHelpOpen} tabs={helpTabs} />
+    -->
+    <div class="help-wrapper">
+        <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
+            <div class="help-panel-inner">
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Stări                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Acțiuni                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Facturi</h4>
+            <p>Lista tuturor facturilor urmărite în SONIC FIN, cu suma încasată, restul de plată și starea fiecăreia.</p>
+            <ul>
+                <li><strong>Echipamente</strong> și <strong>Rată echipamente</strong> – emise din SONIC FIN, la facturarea fișelor de montaj validate.</li>
+                <li><strong>Servicii citire și calcul</strong> – emise din <strong>SONIC BILLING</strong> (ultimul pas al calculului). În SONIC FIN apar doar pentru rapoarte și urmărirea încasării; nu se modifică aici.</li>
+                <li><strong>Intervenții</strong> – emise din SONIC PRO.</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <ul>
+                <li><strong>Achitată</strong> – suma încasată acoperă totalul facturii.</li>
+                <li><strong>Parțial achitată</strong> – s-a încasat o parte, scadența nu a trecut.</li>
+                <li><strong>Neachitată</strong> – nimic încasat, scadența nu a trecut.</li>
+                <li><strong>Restantă</strong> – rămâne de plată după scadență; coloana Scadență arată zilele de întârziere.</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <ul>
+                <li><strong>Detalii factură</strong> – liniile facturii, încasările alocate, alertele trimise și graficul ratelor.</li>
+                <li><strong>Tipărește</strong> / <strong>Trimite pe e-mail</strong> – factura în format PDF, către adresa de e-mail a partenerului.</li>
+                <li><strong>Înregistrează încasare</strong> – emite o chitanță pentru factură (doar dacă mai are rest de plată).</li>
+            </ul>
+            <p>Lista se poate deschide filtrată după partener, după planul de rate (din Scadențar Rate) sau după tip.</p>
+                            </div>
+                                    </div>
+                    </div><!-- /.help-panel-inner -->
+        </div><!-- /.help-panel -->
+        
+        <div class="help-bar">
+            <button class="help-toggle-btn" id="helpToggle"
+                    aria-expanded="false"
+                    aria-controls="helpPanel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round"
+                     width="14" height="14" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                <span>Ajutor</span>
+                <svg class="help-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                     aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"/>
+                </svg>
+            </button>
+        </div><!-- /.help-bar -->
+    </div><!-- /.help-wrapper -->
+
+    <div class="content">
+
+<div class="page-title-container">
+    <div class="page-title">
+        <h1>Facturi</h1>
+        <p>Facturile de echipamente, rate, servicii de citire și calcul și intervenții: încasări, rest de plată și restanțe.</p>
+    </div>
+</div>
+
+<!-- React: <CalcKpiGrid /> -->
+<div class="calc-kpi-grid">
+    <div class="calc-kpi"><span class="calc-kpi-label">Facturat (luna curentă)</span><span class="calc-kpi-value">35.381,20<span class="calc-kpi-unit"> RON</span></span><span class="pro-kpi-meta">19 facturi · octombrie 2026</span></div>
+    <div class="calc-kpi"><span class="calc-kpi-label">Încasat</span><span class="calc-kpi-value">8.089,32<span class="calc-kpi-unit"> RON</span></span><span class="pro-kpi-meta">14,4% din totalul facturilor din listă</span></div>
+    <div class="calc-kpi"><span class="calc-kpi-label">Rest de încasat</span><span class="calc-kpi-value">48.212,66<span class="calc-kpi-unit"> RON</span></span><span class="pro-kpi-meta">22 facturi cu rest de plată</span></div>
+    <div class="calc-kpi"><span class="calc-kpi-label">Restante</span><span class="calc-kpi-value">13 <span class="calc-kpi-unit">facturi</span></span><span class="pro-kpi-meta">31.897,64 RON după scadență</span></div>
+</div>
+
+<!-- ── Caseta de filtrare (7 câmpuri → filter-grid, 4 + 3) ──────────────
+     React: <FilterCard fields={[type, source, partner, nod, status, from, to]} /> -->
+<div class="card filter-card">
+    <div class="filter-card-head">
+        <span class="filter-card-title">Filtrare Avansată</span>
+    </div>
+    <form method="GET" action="fin-facturi.html" id="filterForm">
+        <div class="filter-grid">
+            <div class="form-group">
+                <label class="form-label" for="ddlType">Tip</label>
+                <select name="type" id="ddlType" class="input-control">
+                    <option value="">-</option>
+                    <option value="Echipamente" >Echipamente</option><option value="Rată echipamente" >Rată echipamente</option><option value="Servicii citire și calcul" >Servicii citire și calcul</option><option value="Intervenții" >Intervenții</option>                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="ddlSource">Sursă</label>
+                <select name="source" id="ddlSource" class="input-control">
+                    <option value="">-</option>
+                    <option value="SONIC FIN" >SONIC FIN</option><option value="SONIC BILLING" >SONIC BILLING</option><option value="SONIC PRO" >SONIC PRO</option>                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="ddlPartner">Partener</label>
+                <select name="partner" id="ddlPartner" class="input-control">
+                    <option value="">-</option>
+                                            <option value="B0001" >B0001 – Asociația de Proprietari Bloc 27 Scara 1</option>
+                                            <option value="B0018" >B0018 – Asociația de Proprietari Bloc 2C</option>
+                                            <option value="B0030" >B0030 – Asociația de Proprietari Bloc 17 Sc. A</option>
+                                            <option value="B0055" >B0055 – Asociația de Proprietari Bloc 156 Sc. 2</option>
+                                            <option value="B0102" >B0102 – Asociația de Proprietari Bloc 47</option>
+                                            <option value="B0118" >B0118 – Asociația de Proprietari Cremenița 5</option>
+                                            <option value="B0121" >B0121 – Asociația de Proprietari Bloc 32</option>
+                                            <option value="B0124" >B0124 – Asociația de Proprietari Bloc S1 Sc. 2</option>
+                                            <option value="B0140" >B0140 – Asociația de Proprietari Bloc K</option>
+                                            <option value="BV0006" >BV0006 – Asoc. de prop. de apartamente Iuliu Maniu 68</option>
+                                    </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="txtFfNod">NOD</label>
+                <div class="picker-group">
+                    <input type="text" id="txtFfNod" name="nod" class="input-control" readonly placeholder="Click pe lupă..." value="">
+                    <button type="button" class="btn-picker" id="btnOpenFfNodModal" title="Deschide selector NOD">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                    <button type="button" class="btn-picker delete" title="Șterge selecție" onclick="document.getElementById('txtFfNod').value=''">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="ddlStatus">Stare</label>
+                <select name="status" id="ddlStatus" class="input-control">
+                    <option value="">-</option>
+                    <option value="Achitată" >Achitată</option><option value="Parțial achitată" >Parțial achitată</option><option value="Neachitată" >Neachitată</option><option value="Restantă" >Restantă</option>                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="dtpFrom">Emise de la</label>
+                <input type="text" id="dtpFrom" name="from" class="input-control" data-datepicker value="">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="dtpTo">Emise până la</label>
+                <input type="text" id="dtpTo" name="to" class="input-control" data-datepicker value="">
+            </div>
+        </div>
+        <input type="hidden" name="plan" id="hidPlan" value="">
+        <div class="filter-actions">
+            <div class="filter-per-page">
+                <label class="filter-per-page-label" for="ddlPerPage">Înreg / pag</label>
+                <select name="per_page" id="ddlPerPage" class="input-control select-per-page">
+                                            <option value="10" >10</option>
+                                            <option value="15" >15</option>
+                                            <option value="25" >25</option>
+                                            <option value="50" >50</option>
+                                            <option value="100" selected>100</option>
+                                    </select>
+            </div>
+            <a href="fin-facturi.html" class="btn-secondary">Resetează</a>
+            <button type="submit" class="btn-primary">Caută</button>
+        </div>
+    </form>
+</div>
+
+<!-- React: <ActivePlanFilter plan={plan} /> – afișat când lista e deschisă din Scadențar Rate -->
+<div class="calc-alert" id="planFilterInfo" style="display: none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg><div>Sunt afișate doar facturile planului de rate <strong id="planFilterId"></strong>. <a class="td-link" href="fin-facturi.html"><strong>Afișează toate facturile</strong></a></div></div>
+
+<!-- ── Lista facturilor ──────────────────────────────────────────────────
+     React: <DataTable rows={invoices} rowActions={[…]} /> -->
+<div class="table-container">
+    <div class="table-toolbar">
+        <div class="table-toolbar-left">
+            <span class="table-count">Afișare <strong id="visibleCount">28</strong> din <strong>28</strong> înregistrări</span>
+        </div>
+        <div class="table-toolbar-right">
+            <div class="live-search-wrapper" title="Filtrare locală după factură, partener, CUI sau NOD">
+                <span class="live-search-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </span>
+                <input type="text" id="tableSearch" class="input-control" placeholder="Căutare dinamică factură, partener, NOD...">
+            </div>
+        </div>
+    </div>
+
+    <div class="table-scroll">
+        <table class="partners-table table-compact">
+            <thead>
+                <tr>
+                    <th>Factură</th>
+                    <th style="text-align: center;">Data</th>
+                    <th>Tip</th>
+                    <th>Partener</th>
+                    <th>NOD</th>
+                    <th>Perioadă / rată</th>
+                    <th style="text-align: right;">Total (RON)</th>
+                    <th style="text-align: right;">Încasat (RON)</th>
+                    <th style="text-align: right;">Rest (RON)</th>
+                    <th style="text-align: center;">Scadență</th>
+                    <th style="text-align: center;">Stare</th>
+                    <th style="text-align: center;">Acțiuni</th>
+                </tr>
+            </thead>
+            <tbody id="invoicesBody">
+                                <tr data-id="SNS-2026-08870" data-type="Servicii citire și calcul" data-source="SONIC BILLING"
+                    data-partner="B0055" data-nod="81-001-0055" data-status="Neachitată"
+                    data-date="2026-10-28" data-plan="" data-email="bloc156@asociatii.ro"
+                    data-search="sns-2026-08870 servicii citire și calcul sonic billing asociația de proprietari bloc 156 sc. 2 b0055 20456712 81-001-0055 septembrie 2026  neachitată">
+                    <td class="td-code" style="white-space: nowrap;">SNS-2026-08870</td>
+                    <td style="text-align: center; white-space: nowrap;">28.10.2026</td>
+                    <td>Servicii citire și calcul<div class="list-sublabel">SONIC BILLING</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc 156 Sc. 2</div><div class="list-sublabel">B0055 · CUI 20456712</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0055</td>
+                    <td>Septembrie 2026</td>
+                    <td style="text-align: right;">1.373,35</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;" class="td-code">1.373,35</td>
+                    <td style="text-align: center; white-space: nowrap;">20.11.2026</td>
+                    <td style="text-align: center;"><span class="status-badge status-offline">Neachitată</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNS-2026-08870" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNS-2026-08870" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNI-2026-00412" data-type="Intervenții" data-source="SONIC PRO"
+                    data-partner="B0055" data-nod="81-001-0055" data-status="Achitată"
+                    data-date="2026-10-28" data-plan="" data-email="bloc156@asociatii.ro"
+                    data-search="sni-2026-00412 intervenții sonic pro asociația de proprietari bloc 156 sc. 2 b0055 20456712 81-001-0055 —  achitată">
+                    <td class="td-code" style="white-space: nowrap;">SNI-2026-00412</td>
+                    <td style="text-align: center; white-space: nowrap;">28.10.2026</td>
+                    <td>Intervenții<div class="list-sublabel">SONIC PRO</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc 156 Sc. 2</div><div class="list-sublabel">B0055 · CUI 20456712</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0055</td>
+                    <td>—</td>
+                    <td style="text-align: right;">120,00</td>
+                    <td style="text-align: right;">120,00</td>
+                    <td style="text-align: right;" class="td-code">0,00</td>
+                    <td style="text-align: center; white-space: nowrap;">12.11.2026</td>
+                    <td style="text-align: center;"><span class="status-badge status-online">Achitată</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNI-2026-00412" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                            </td>
+                </tr>
+                                <tr data-id="SNI-2026-00418" data-type="Intervenții" data-source="SONIC PRO"
+                    data-partner="B0124" data-nod="81-001-0007" data-status="Neachitată"
+                    data-date="2026-10-26" data-plan="" data-email="blocs1@asociatii.ro"
+                    data-search="sni-2026-00418 intervenții sonic pro asociația de proprietari bloc s1 sc. 2 b0124 25789014 81-001-0007 —  neachitată">
+                    <td class="td-code" style="white-space: nowrap;">SNI-2026-00418</td>
+                    <td style="text-align: center; white-space: nowrap;">26.10.2026</td>
+                    <td>Intervenții<div class="list-sublabel">SONIC PRO</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc S1 Sc. 2</div><div class="list-sublabel">B0124 · CUI 25789014</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0007</td>
+                    <td>—</td>
+                    <td style="text-align: right;">300,00</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;" class="td-code">300,00</td>
+                    <td style="text-align: center; white-space: nowrap;">10.11.2026</td>
+                    <td style="text-align: center;"><span class="status-badge status-offline">Neachitată</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNI-2026-00418" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNI-2026-00418" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNS-2026-08862" data-type="Servicii citire și calcul" data-source="SONIC BILLING"
+                    data-partner="B0118" data-nod="81-001-2108" data-status="Neachitată"
+                    data-date="2026-10-22" data-plan="" data-email="cremenita5@asociatii.ro"
+                    data-search="sns-2026-08862 servicii citire și calcul sonic billing asociația de proprietari cremenița 5 b0118 30111842 81-001-2108 septembrie 2026  neachitată">
+                    <td class="td-code" style="white-space: nowrap;">SNS-2026-08862</td>
+                    <td style="text-align: center; white-space: nowrap;">22.10.2026</td>
+                    <td>Servicii citire și calcul<div class="list-sublabel">SONIC BILLING</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Cremenița 5</div><div class="list-sublabel">B0118 · CUI 30111842</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-2108</td>
+                    <td>Septembrie 2026</td>
+                    <td style="text-align: right;">1.470,15</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;" class="td-code">1.470,15</td>
+                    <td style="text-align: center; white-space: nowrap;">06.11.2026</td>
+                    <td style="text-align: center;"><span class="status-badge status-offline">Neachitată</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNS-2026-08862" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNS-2026-08862" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNS-2026-08861" data-type="Servicii citire și calcul" data-source="SONIC BILLING"
+                    data-partner="B0124" data-nod="81-001-0007" data-status="Neachitată"
+                    data-date="2026-10-20" data-plan="" data-email="blocs1@asociatii.ro"
+                    data-search="sns-2026-08861 servicii citire și calcul sonic billing asociația de proprietari bloc s1 sc. 2 b0124 25789014 81-001-0007 septembrie 2026  neachitată">
+                    <td class="td-code" style="white-space: nowrap;">SNS-2026-08861</td>
+                    <td style="text-align: center; white-space: nowrap;">20.10.2026</td>
+                    <td>Servicii citire și calcul<div class="list-sublabel">SONIC BILLING</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc S1 Sc. 2</div><div class="list-sublabel">B0124 · CUI 25789014</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0007</td>
+                    <td>Septembrie 2026</td>
+                    <td style="text-align: right;">2.269,96</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;" class="td-code">2.269,96</td>
+                    <td style="text-align: center; white-space: nowrap;">04.11.2026</td>
+                    <td style="text-align: center;"><span class="status-badge status-offline">Neachitată</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNS-2026-08861" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNS-2026-08861" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNS-2026-08860" data-type="Servicii citire și calcul" data-source="SONIC BILLING"
+                    data-partner="B0121" data-nod="81-001-0020" data-status="Neachitată"
+                    data-date="2026-10-20" data-plan="" data-email="bloc32.pantelimon@gmail.com"
+                    data-search="sns-2026-08860 servicii citire și calcul sonic billing asociația de proprietari bloc 32 b0121 21456871 81-001-0020 septembrie 2026  neachitată">
+                    <td class="td-code" style="white-space: nowrap;">SNS-2026-08860</td>
+                    <td style="text-align: center; white-space: nowrap;">20.10.2026</td>
+                    <td>Servicii citire și calcul<div class="list-sublabel">SONIC BILLING</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc 32</div><div class="list-sublabel">B0121 · CUI 21456871</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0020</td>
+                    <td>Septembrie 2026</td>
+                    <td style="text-align: right;">1.839,20</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;" class="td-code">1.839,20</td>
+                    <td style="text-align: center; white-space: nowrap;">04.11.2026</td>
+                    <td style="text-align: center;"><span class="status-badge status-offline">Neachitată</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNS-2026-08860" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNS-2026-08860" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNS-2026-08857" data-type="Servicii citire și calcul" data-source="SONIC BILLING"
+                    data-partner="B0001" data-nod="81-001-0001" data-status="Neachitată"
+                    data-date="2026-10-16" data-plan="" data-email="bloc27@asociatii.ro"
+                    data-search="sns-2026-08857 servicii citire și calcul sonic billing asociația de proprietari bloc 27 scara 1 b0001 15523409 81-001-0001 septembrie 2026  neachitată">
+                    <td class="td-code" style="white-space: nowrap;">SNS-2026-08857</td>
+                    <td style="text-align: center; white-space: nowrap;">16.10.2026</td>
+                    <td>Servicii citire și calcul<div class="list-sublabel">SONIC BILLING</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc 27 Scara 1</div><div class="list-sublabel">B0001 · CUI 15523409</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0001</td>
+                    <td>Septembrie 2026</td>
+                    <td style="text-align: right;">375,10</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;" class="td-code">375,10</td>
+                    <td style="text-align: center; white-space: nowrap;">31.10.2026</td>
+                    <td style="text-align: center;"><span class="status-badge status-offline">Neachitată</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNS-2026-08857" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNS-2026-08857" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNF-2026-01288" data-type="Rată echipamente" data-source="SONIC FIN"
+                    data-partner="B0102" data-nod="81-001-0040" data-status="Neachitată"
+                    data-date="2026-10-15" data-plan="PR-2026-0287" data-email="bloc47.mosilor@gmail.com"
+                    data-search="snf-2026-01288 rată echipamente sonic fin asociația de proprietari bloc 47 b0102 19902311 81-001-0040 rata 1/12 pr-2026-0287 neachitată">
+                    <td class="td-code" style="white-space: nowrap;">SNF-2026-01288</td>
+                    <td style="text-align: center; white-space: nowrap;">15.10.2026</td>
+                    <td>Rată echipamente<div class="list-sublabel">SONIC FIN</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc 47</div><div class="list-sublabel">B0102 · CUI 19902311</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0040</td>
+                    <td>Rata 1/12<div class="list-sublabel">Plan PR-2026-0287</div></td>
+                    <td style="text-align: right;">5.692,51</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;" class="td-code">5.692,51</td>
+                    <td style="text-align: center; white-space: nowrap;">15.11.2026</td>
+                    <td style="text-align: center;"><span class="status-badge status-offline">Neachitată</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNF-2026-01288" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNF-2026-01288" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNF-2026-01287" data-type="Echipamente" data-source="SONIC FIN"
+                    data-partner="B0102" data-nod="81-001-0040" data-status="Restantă"
+                    data-date="2026-10-15" data-plan="PR-2026-0329" data-email="bloc47.mosilor@gmail.com"
+                    data-search="snf-2026-01287 echipamente sonic fin asociația de proprietari bloc 47 b0102 19902311 81-001-0040 rata 1/1 pr-2026-0329 restantă">
+                    <td class="td-code" style="white-space: nowrap;">SNF-2026-01287</td>
+                    <td style="text-align: center; white-space: nowrap;">15.10.2026</td>
+                    <td>Echipamente<div class="list-sublabel">SONIC FIN</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc 47</div><div class="list-sublabel">B0102 · CUI 19902311</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0040</td>
+                    <td>Rata 1/1<div class="list-sublabel">Plan PR-2026-0329</div></td>
+                    <td style="text-align: right;">5.263,50</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;" class="td-code">5.263,50</td>
+                    <td style="text-align: center; white-space: nowrap;">15.10.2026<div class="list-sublabel">13 zile întârziere</div></td>
+                    <td style="text-align: center;"><span class="status-badge status-error">Restantă</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNF-2026-01287" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNF-2026-01287" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNF-2026-01286" data-type="Echipamente" data-source="SONIC FIN"
+                    data-partner="B0102" data-nod="81-001-0040" data-status="Achitată"
+                    data-date="2026-10-15" data-plan="PR-2026-0330" data-email="bloc47.mosilor@gmail.com"
+                    data-search="snf-2026-01286 echipamente sonic fin asociația de proprietari bloc 47 b0102 19902311 81-001-0040 rata 1/1 pr-2026-0330 achitată">
+                    <td class="td-code" style="white-space: nowrap;">SNF-2026-01286</td>
+                    <td style="text-align: center; white-space: nowrap;">15.10.2026</td>
+                    <td>Echipamente<div class="list-sublabel">SONIC FIN</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc 47</div><div class="list-sublabel">B0102 · CUI 19902311</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0040</td>
+                    <td>Rata 1/1<div class="list-sublabel">Plan PR-2026-0330</div></td>
+                    <td style="text-align: right;">907,50</td>
+                    <td style="text-align: right;">907,50</td>
+                    <td style="text-align: right;" class="td-code">0,00</td>
+                    <td style="text-align: center; white-space: nowrap;">25.10.2026</td>
+                    <td style="text-align: center;"><span class="status-badge status-online">Achitată</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNF-2026-01286" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                            </td>
+                </tr>
+                                <tr data-id="SNF-2026-01285" data-type="Rată echipamente" data-source="SONIC FIN"
+                    data-partner="B0102" data-nod="81-001-0040" data-status="Neachitată"
+                    data-date="2026-10-15" data-plan="PR-2026-0331" data-email="bloc47.mosilor@gmail.com"
+                    data-search="snf-2026-01285 rată echipamente sonic fin asociația de proprietari bloc 47 b0102 19902311 81-001-0040 rata 1/12 pr-2026-0331 neachitată">
+                    <td class="td-code" style="white-space: nowrap;">SNF-2026-01285</td>
+                    <td style="text-align: center; white-space: nowrap;">15.10.2026</td>
+                    <td>Rată echipamente<div class="list-sublabel">SONIC FIN</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc 47</div><div class="list-sublabel">B0102 · CUI 19902311</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0040</td>
+                    <td>Rata 1/12<div class="list-sublabel">Plan PR-2026-0331</div></td>
+                    <td style="text-align: right;">90,75</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;" class="td-code">90,75</td>
+                    <td style="text-align: center; white-space: nowrap;">15.11.2026</td>
+                    <td style="text-align: center;"><span class="status-badge status-offline">Neachitată</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNF-2026-01285" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNF-2026-01285" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNF-2026-01260" data-type="Rată echipamente" data-source="SONIC FIN"
+                    data-partner="B0018" data-nod="81-001-0018" data-status="Neachitată"
+                    data-date="2026-10-15" data-plan="PR-2026-0144" data-email="bloc2c@asociatii.ro"
+                    data-search="snf-2026-01260 rată echipamente sonic fin asociația de proprietari bloc 2c b0018 16620458 81-001-0018 rata 8/10 pr-2026-0144 neachitată">
+                    <td class="td-code" style="white-space: nowrap;">SNF-2026-01260</td>
+                    <td style="text-align: center; white-space: nowrap;">15.10.2026</td>
+                    <td>Rată echipamente<div class="list-sublabel">SONIC FIN</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc 2C</div><div class="list-sublabel">B0018 · CUI 16620458</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0018</td>
+                    <td>Rata 8/10<div class="list-sublabel">Plan PR-2026-0144</div></td>
+                    <td style="text-align: right;">2.904,00</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;" class="td-code">2.904,00</td>
+                    <td style="text-align: center; white-space: nowrap;">15.11.2026</td>
+                    <td style="text-align: center;"><span class="status-badge status-offline">Neachitată</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNF-2026-01260" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNF-2026-01260" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNS-2026-08841" data-type="Servicii citire și calcul" data-source="SONIC BILLING"
+                    data-partner="B0018" data-nod="81-001-0018" data-status="Restantă"
+                    data-date="2026-10-06" data-plan="" data-email="bloc2c@asociatii.ro"
+                    data-search="sns-2026-08841 servicii citire și calcul sonic billing asociația de proprietari bloc 2c b0018 16620458 81-001-0018 septembrie 2026  restantă">
+                    <td class="td-code" style="white-space: nowrap;">SNS-2026-08841</td>
+                    <td style="text-align: center; white-space: nowrap;">06.10.2026</td>
+                    <td>Servicii citire și calcul<div class="list-sublabel">SONIC BILLING</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc 2C</div><div class="list-sublabel">B0018 · CUI 16620458</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0018</td>
+                    <td>Septembrie 2026</td>
+                    <td style="text-align: right;">2.228,82</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;" class="td-code">2.228,82</td>
+                    <td style="text-align: center; white-space: nowrap;">21.10.2026<div class="list-sublabel">7 zile întârziere</div></td>
+                    <td style="text-align: center;"><span class="status-badge status-error">Restantă</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNS-2026-08841" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNS-2026-08841" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNS-2026-08840" data-type="Servicii citire și calcul" data-source="SONIC BILLING"
+                    data-partner="B0102" data-nod="81-001-0040" data-status="Achitată"
+                    data-date="2026-10-06" data-plan="" data-email="bloc47.mosilor@gmail.com"
+                    data-search="sns-2026-08840 servicii citire și calcul sonic billing asociația de proprietari bloc 47 b0102 19902311 81-001-0040 septembrie 2026  achitată">
+                    <td class="td-code" style="white-space: nowrap;">SNS-2026-08840</td>
+                    <td style="text-align: center; white-space: nowrap;">06.10.2026</td>
+                    <td>Servicii citire și calcul<div class="list-sublabel">SONIC BILLING</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc 47</div><div class="list-sublabel">B0102 · CUI 19902311</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0040</td>
+                    <td>Septembrie 2026</td>
+                    <td style="text-align: right;">1.950,52</td>
+                    <td style="text-align: right;">1.950,52</td>
+                    <td style="text-align: right;" class="td-code">0,00</td>
+                    <td style="text-align: center; white-space: nowrap;">21.10.2026</td>
+                    <td style="text-align: center;"><span class="status-badge status-online">Achitată</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNS-2026-08840" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                            </td>
+                </tr>
+                                <tr data-id="SNS-2026-08839" data-type="Servicii citire și calcul" data-source="SONIC BILLING"
+                    data-partner="B0140" data-nod="81-001-0140" data-status="Restantă"
+                    data-date="2026-10-06" data-plan="" data-email="blocK.rebreanu@gmail.com"
+                    data-search="sns-2026-08839 servicii citire și calcul sonic billing asociația de proprietari bloc k b0140 17788123 81-001-0140 septembrie 2026  restantă">
+                    <td class="td-code" style="white-space: nowrap;">SNS-2026-08839</td>
+                    <td style="text-align: center; white-space: nowrap;">06.10.2026</td>
+                    <td>Servicii citire și calcul<div class="list-sublabel">SONIC BILLING</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc K</div><div class="list-sublabel">B0140 · CUI 17788123</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0140</td>
+                    <td>Septembrie 2026</td>
+                    <td style="text-align: right;">1.560,90</td>
+                    <td style="text-align: right;">600,00</td>
+                    <td style="text-align: right;" class="td-code">960,90</td>
+                    <td style="text-align: center; white-space: nowrap;">21.10.2026<div class="list-sublabel">7 zile întârziere</div></td>
+                    <td style="text-align: center;"><span class="status-badge status-error">Restantă</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNS-2026-08839" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNS-2026-08839" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNS-2026-08838" data-type="Servicii citire și calcul" data-source="SONIC BILLING"
+                    data-partner="B0030" data-nod="81-001-0030" data-status="Restantă"
+                    data-date="2026-10-06" data-plan="" data-email="bloc17a@asociatii.ro"
+                    data-search="sns-2026-08838 servicii citire și calcul sonic billing asociația de proprietari bloc 17 sc. a b0030 22345118 81-001-0030 septembrie 2026  restantă">
+                    <td class="td-code" style="white-space: nowrap;">SNS-2026-08838</td>
+                    <td style="text-align: center; white-space: nowrap;">06.10.2026</td>
+                    <td>Servicii citire și calcul<div class="list-sublabel">SONIC BILLING</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc 17 Sc. A</div><div class="list-sublabel">B0030 · CUI 22345118</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0030</td>
+                    <td>Septembrie 2026</td>
+                    <td style="text-align: right;">1.185,80</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;" class="td-code">1.185,80</td>
+                    <td style="text-align: center; white-space: nowrap;">21.10.2026<div class="list-sublabel">7 zile întârziere</div></td>
+                    <td style="text-align: center;"><span class="status-badge status-error">Restantă</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNS-2026-08838" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNS-2026-08838" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNS-2026-08837" data-type="Servicii citire și calcul" data-source="SONIC BILLING"
+                    data-partner="B0055" data-nod="81-001-0055" data-status="Achitată"
+                    data-date="2026-10-06" data-plan="" data-email="bloc156@asociatii.ro"
+                    data-search="sns-2026-08837 servicii citire și calcul sonic billing asociația de proprietari bloc 156 sc. 2 b0055 20456712 81-001-0055 septembrie 2026  achitată">
+                    <td class="td-code" style="white-space: nowrap;">SNS-2026-08837</td>
+                    <td style="text-align: center; white-space: nowrap;">06.10.2026</td>
+                    <td>Servicii citire și calcul<div class="list-sublabel">SONIC BILLING</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc 156 Sc. 2</div><div class="list-sublabel">B0055 · CUI 20456712</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0055</td>
+                    <td>Septembrie 2026</td>
+                    <td style="text-align: right;">1.355,20</td>
+                    <td style="text-align: right;">1.355,20</td>
+                    <td style="text-align: right;" class="td-code">0,00</td>
+                    <td style="text-align: center; white-space: nowrap;">21.10.2026</td>
+                    <td style="text-align: center;"><span class="status-badge status-online">Achitată</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNS-2026-08837" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                            </td>
+                </tr>
+                                <tr data-id="SNS-2026-08836" data-type="Servicii citire și calcul" data-source="SONIC BILLING"
+                    data-partner="B0001" data-nod="81-001-0001" data-status="Achitată"
+                    data-date="2026-10-06" data-plan="" data-email="bloc27@asociatii.ro"
+                    data-search="sns-2026-08836 servicii citire și calcul sonic billing asociația de proprietari bloc 27 scara 1 b0001 15523409 81-001-0001 septembrie 2026  achitată">
+                    <td class="td-code" style="white-space: nowrap;">SNS-2026-08836</td>
+                    <td style="text-align: center; white-space: nowrap;">06.10.2026</td>
+                    <td>Servicii citire și calcul<div class="list-sublabel">SONIC BILLING</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc 27 Scara 1</div><div class="list-sublabel">B0001 · CUI 15523409</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0001</td>
+                    <td>Septembrie 2026</td>
+                    <td style="text-align: right;">1.706,10</td>
+                    <td style="text-align: right;">1.706,10</td>
+                    <td style="text-align: right;" class="td-code">0,00</td>
+                    <td style="text-align: center; white-space: nowrap;">21.10.2026</td>
+                    <td style="text-align: center;"><span class="status-badge status-online">Achitată</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNS-2026-08836" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                            </td>
+                </tr>
+                                <tr data-id="SNS-2026-08835" data-type="Servicii citire și calcul" data-source="SONIC BILLING"
+                    data-partner="BV0006" data-nod="81-033-0007" data-status="Restantă"
+                    data-date="2026-10-06" data-plan="" data-email="asoc.iuliumaniu68@gmail.com"
+                    data-search="sns-2026-08835 servicii citire și calcul sonic billing asoc. de prop. de apartamente iuliu maniu 68 bv0006 14572340 81-033-0007 septembrie 2026  restantă">
+                    <td class="td-code" style="white-space: nowrap;">SNS-2026-08835</td>
+                    <td style="text-align: center; white-space: nowrap;">06.10.2026</td>
+                    <td>Servicii citire și calcul<div class="list-sublabel">SONIC BILLING</div></td>
+                    <td><div class="td-name">Asoc. de prop. de apartamente Iuliu Maniu 68</div><div class="list-sublabel">BV0006 · CUI 14572340</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-033-0007</td>
+                    <td>Septembrie 2026</td>
+                    <td style="text-align: right;">2.787,84</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;" class="td-code">2.787,84</td>
+                    <td style="text-align: center; white-space: nowrap;">21.10.2026<div class="list-sublabel">7 zile întârziere</div></td>
+                    <td style="text-align: center;"><span class="status-badge status-error">Restantă</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNS-2026-08835" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNS-2026-08835" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNI-2026-00405" data-type="Intervenții" data-source="SONIC PRO"
+                    data-partner="B0030" data-nod="81-001-0030" data-status="Achitată"
+                    data-date="2026-09-18" data-plan="" data-email="bloc17a@asociatii.ro"
+                    data-search="sni-2026-00405 intervenții sonic pro asociația de proprietari bloc 17 sc. a b0030 22345118 81-001-0030 —  achitată">
+                    <td class="td-code" style="white-space: nowrap;">SNI-2026-00405</td>
+                    <td style="text-align: center; white-space: nowrap;">18.09.2026</td>
+                    <td>Intervenții<div class="list-sublabel">SONIC PRO</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc 17 Sc. A</div><div class="list-sublabel">B0030 · CUI 22345118</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0030</td>
+                    <td>—</td>
+                    <td style="text-align: right;">450,00</td>
+                    <td style="text-align: right;">450,00</td>
+                    <td style="text-align: right;" class="td-code">0,00</td>
+                    <td style="text-align: center; white-space: nowrap;">03.10.2026</td>
+                    <td style="text-align: center;"><span class="status-badge status-online">Achitată</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNI-2026-00405" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                            </td>
+                </tr>
+                                <tr data-id="SNF-2026-01180" data-type="Rată echipamente" data-source="SONIC FIN"
+                    data-partner="B0018" data-nod="81-001-0018" data-status="Restantă"
+                    data-date="2026-09-15" data-plan="PR-2026-0144" data-email="bloc2c@asociatii.ro"
+                    data-search="snf-2026-01180 rată echipamente sonic fin asociația de proprietari bloc 2c b0018 16620458 81-001-0018 rata 7/10 pr-2026-0144 restantă">
+                    <td class="td-code" style="white-space: nowrap;">SNF-2026-01180</td>
+                    <td style="text-align: center; white-space: nowrap;">15.09.2026</td>
+                    <td>Rată echipamente<div class="list-sublabel">SONIC FIN</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc 2C</div><div class="list-sublabel">B0018 · CUI 16620458</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0018</td>
+                    <td>Rata 7/10<div class="list-sublabel">Plan PR-2026-0144</div></td>
+                    <td style="text-align: right;">2.904,00</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;" class="td-code">2.904,00</td>
+                    <td style="text-align: center; white-space: nowrap;">15.10.2026<div class="list-sublabel">13 zile întârziere</div></td>
+                    <td style="text-align: center;"><span class="status-badge status-error">Restantă</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNF-2026-01180" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNF-2026-01180" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNF-2026-01001" data-type="Rată echipamente" data-source="SONIC FIN"
+                    data-partner="BV0006" data-nod="81-033-0007" data-status="Restantă"
+                    data-date="2026-09-15" data-plan="PR-2025-0912" data-email="asoc.iuliumaniu68@gmail.com"
+                    data-search="snf-2026-01001 rată echipamente sonic fin asoc. de prop. de apartamente iuliu maniu 68 bv0006 14572340 81-033-0007 rata 12/12 pr-2025-0912 restantă">
+                    <td class="td-code" style="white-space: nowrap;">SNF-2026-01001</td>
+                    <td style="text-align: center; white-space: nowrap;">15.09.2026</td>
+                    <td>Rată echipamente<div class="list-sublabel">SONIC FIN</div></td>
+                    <td><div class="td-name">Asoc. de prop. de apartamente Iuliu Maniu 68</div><div class="list-sublabel">BV0006 · CUI 14572340</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-033-0007</td>
+                    <td>Rata 12/12<div class="list-sublabel">Plan PR-2025-0912</div></td>
+                    <td style="text-align: right;">4.356,00</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;" class="td-code">4.356,00</td>
+                    <td style="text-align: center; white-space: nowrap;">15.10.2026<div class="list-sublabel">13 zile întârziere</div></td>
+                    <td style="text-align: center;"><span class="status-badge status-error">Restantă</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNF-2026-01001" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNF-2026-01001" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNS-2026-08412" data-type="Servicii citire și calcul" data-source="SONIC BILLING"
+                    data-partner="B0018" data-nod="81-001-0018" data-status="Restantă"
+                    data-date="2026-09-05" data-plan="" data-email="bloc2c@asociatii.ro"
+                    data-search="sns-2026-08412 servicii citire și calcul sonic billing asociația de proprietari bloc 2c b0018 16620458 81-001-0018 august 2026  restantă">
+                    <td class="td-code" style="white-space: nowrap;">SNS-2026-08412</td>
+                    <td style="text-align: center; white-space: nowrap;">05.09.2026</td>
+                    <td>Servicii citire și calcul<div class="list-sublabel">SONIC BILLING</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc 2C</div><div class="list-sublabel">B0018 · CUI 16620458</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0018</td>
+                    <td>August 2026</td>
+                    <td style="text-align: right;">2.175,58</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;" class="td-code">2.175,58</td>
+                    <td style="text-align: center; white-space: nowrap;">20.09.2026<div class="list-sublabel">38 zile întârziere</div></td>
+                    <td style="text-align: center;"><span class="status-badge status-error">Restantă</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNS-2026-08412" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNS-2026-08412" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNS-2026-08411" data-type="Servicii citire și calcul" data-source="SONIC BILLING"
+                    data-partner="B0140" data-nod="81-001-0140" data-status="Restantă"
+                    data-date="2026-09-05" data-plan="" data-email="blocK.rebreanu@gmail.com"
+                    data-search="sns-2026-08411 servicii citire și calcul sonic billing asociația de proprietari bloc k b0140 17788123 81-001-0140 august 2026  restantă">
+                    <td class="td-code" style="white-space: nowrap;">SNS-2026-08411</td>
+                    <td style="text-align: center; white-space: nowrap;">05.09.2026</td>
+                    <td>Servicii citire și calcul<div class="list-sublabel">SONIC BILLING</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc K</div><div class="list-sublabel">B0140 · CUI 17788123</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0140</td>
+                    <td>August 2026</td>
+                    <td style="text-align: right;">1.518,55</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;" class="td-code">1.518,55</td>
+                    <td style="text-align: center; white-space: nowrap;">20.09.2026<div class="list-sublabel">38 zile întârziere</div></td>
+                    <td style="text-align: center;"><span class="status-badge status-error">Restantă</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNS-2026-08411" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNS-2026-08411" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNF-2026-01102" data-type="Rată echipamente" data-source="SONIC FIN"
+                    data-partner="B0018" data-nod="81-001-0018" data-status="Restantă"
+                    data-date="2026-08-15" data-plan="PR-2026-0144" data-email="bloc2c@asociatii.ro"
+                    data-search="snf-2026-01102 rată echipamente sonic fin asociația de proprietari bloc 2c b0018 16620458 81-001-0018 rata 6/10 pr-2026-0144 restantă">
+                    <td class="td-code" style="white-space: nowrap;">SNF-2026-01102</td>
+                    <td style="text-align: center; white-space: nowrap;">15.08.2026</td>
+                    <td>Rată echipamente<div class="list-sublabel">SONIC FIN</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc 2C</div><div class="list-sublabel">B0018 · CUI 16620458</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0018</td>
+                    <td>Rata 6/10<div class="list-sublabel">Plan PR-2026-0144</div></td>
+                    <td style="text-align: right;">2.904,00</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;" class="td-code">2.904,00</td>
+                    <td style="text-align: center; white-space: nowrap;">15.09.2026<div class="list-sublabel">43 zile întârziere</div></td>
+                    <td style="text-align: center;"><span class="status-badge status-error">Restantă</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNF-2026-01102" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNF-2026-01102" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNF-2026-00911" data-type="Rată echipamente" data-source="SONIC FIN"
+                    data-partner="BV0006" data-nod="81-033-0007" data-status="Restantă"
+                    data-date="2026-08-15" data-plan="PR-2025-0912" data-email="asoc.iuliumaniu68@gmail.com"
+                    data-search="snf-2026-00911 rată echipamente sonic fin asoc. de prop. de apartamente iuliu maniu 68 bv0006 14572340 81-033-0007 rata 11/12 pr-2025-0912 restantă">
+                    <td class="td-code" style="white-space: nowrap;">SNF-2026-00911</td>
+                    <td style="text-align: center; white-space: nowrap;">15.08.2026</td>
+                    <td>Rată echipamente<div class="list-sublabel">SONIC FIN</div></td>
+                    <td><div class="td-name">Asoc. de prop. de apartamente Iuliu Maniu 68</div><div class="list-sublabel">BV0006 · CUI 14572340</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-033-0007</td>
+                    <td>Rata 11/12<div class="list-sublabel">Plan PR-2025-0912</div></td>
+                    <td style="text-align: right;">4.356,00</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;" class="td-code">4.356,00</td>
+                    <td style="text-align: center; white-space: nowrap;">15.09.2026<div class="list-sublabel">43 zile întârziere</div></td>
+                    <td style="text-align: center;"><span class="status-badge status-error">Restantă</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNF-2026-00911" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNF-2026-00911" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNS-2026-07996" data-type="Servicii citire și calcul" data-source="SONIC BILLING"
+                    data-partner="B0018" data-nod="81-001-0018" data-status="Restantă"
+                    data-date="2026-08-05" data-plan="" data-email="bloc2c@asociatii.ro"
+                    data-search="sns-2026-07996 servicii citire și calcul sonic billing asociația de proprietari bloc 2c b0018 16620458 81-001-0018 iulie 2026  restantă">
+                    <td class="td-code" style="white-space: nowrap;">SNS-2026-07996</td>
+                    <td style="text-align: center; white-space: nowrap;">05.08.2026</td>
+                    <td>Servicii citire și calcul<div class="list-sublabel">SONIC BILLING</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc 2C</div><div class="list-sublabel">B0018 · CUI 16620458</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0018</td>
+                    <td>Iulie 2026</td>
+                    <td style="text-align: right;">2.135,65</td>
+                    <td style="text-align: right;">1.000,00</td>
+                    <td style="text-align: right;" class="td-code">1.135,65</td>
+                    <td style="text-align: center; white-space: nowrap;">20.08.2026<div class="list-sublabel">69 zile întârziere</div></td>
+                    <td style="text-align: center;"><span class="status-badge status-error">Restantă</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNS-2026-07996" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNS-2026-07996" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr data-id="SNF-2026-01240" data-type="Rată echipamente" data-source="SONIC FIN"
+                    data-partner="B0140" data-nod="81-001-0140" data-status="Restantă"
+                    data-date="2026-06-15" data-plan="PR-2026-0118" data-email="blocK.rebreanu@gmail.com"
+                    data-search="snf-2026-01240 rată echipamente sonic fin asociația de proprietari bloc k b0140 17788123 81-001-0140 rata 2/6 pr-2026-0118 restantă">
+                    <td class="td-code" style="white-space: nowrap;">SNF-2026-01240</td>
+                    <td style="text-align: center; white-space: nowrap;">15.06.2026</td>
+                    <td>Rată echipamente<div class="list-sublabel">SONIC FIN</div></td>
+                    <td><div class="td-name">Asociația de Proprietari Bloc K</div><div class="list-sublabel">B0140 · CUI 17788123</div></td>
+                    <td class="td-code" style="white-space: nowrap;">81-001-0140</td>
+                    <td>Rata 2/6<div class="list-sublabel">Plan PR-2026-0118</div></td>
+                    <td style="text-align: right;">121,00</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;" class="td-code">121,00</td>
+                    <td style="text-align: center; white-space: nowrap;">15.07.2026<div class="list-sublabel">105 zile întârziere</div></td>
+                    <td style="text-align: center;"><span class="status-badge status-error">Restantă</span></td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="fin-facturi-edit.html?id=SNF-2026-01240" class="btn-action-icon" title="Detalii factură"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon js-print" title="Tipărește factura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></button>
+                        <button type="button" class="btn-action-icon js-email" title="Trimite factura pe e-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
+                                                    <a href="fin-chitante-edit.html?invoice=SNF-2026-01240" class="btn-action-icon" title="Înregistrează încasare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle><path d="M6 12h.01M18 12h.01"></path></svg></a>
+                                            </td>
+                </tr>
+                                <tr id="noResultsRow" style="display: none;"><td colspan="12" class="table-empty">Nicio factură pentru criteriile selectate.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-pagination">
+        <div class="pagination-info">Afișare <strong>1</strong> - <strong id="paginationEnd">28</strong> din <strong>28</strong> înregistrări</div>
+        <div class="pagination-controls">
+            <button type="button" class="btn-secondary btn-page-nav" disabled>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                <span>Anterior</span>
+            </button>
+            <div class="pagination-pages"><button type="button" class="btn-secondary btn-page active">1</button></div>
+            <button type="button" class="btn-secondary btn-page-nav" disabled>
+                <span>Următor</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- ══ NOD Picker Modal (partial) ════════════════════════════════════════════
+     React: <NodPickerModal id="ffNodPickerModal" onSelect={handleSelect} />
+══════════════════════════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="ffNodPickerModal" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="ffNodPickerModal-title">
+    <div class="modal-card nod-picker-card">
+        <div class="modal-header">
+            <h3 id="ffNodPickerModal-title">Alegere NOD</h3>
+            <button type="button" class="btn-close nod-picker-close" data-modal="ffNodPickerModal" title="Închide fereastra">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!-- Formular de filtrare -->
+            <form class="nod-picker-filter-form" id="ffNodPickerModal-form" onsubmit="return false;">
+                <div class="nod-picker-filter-grid">
+                    <!-- Localitate -->
+                    <div class="form-group">
+                        <label class="form-label" for="ffNodPickerModal-city">Localitate</label>
+                        <select id="ffNodPickerModal-city" class="input-control">
+                            <option value="-1">-</option>
+                                                        <option value="Apold">Apold</option>
+                                                        <option value="Brasov">Brasov</option>
+                                                        <option value="Bucuresti">Bucuresti</option>
+                                                        <option value="Buftea">Buftea</option>
+                                                        <option value="Chiajna">Chiajna</option>
+                                                        <option value="Chitila">Chitila</option>
+                                                        <option value="Cisnadie">Cisnadie</option>
+                                                        <option value="Constanta">Constanta</option>
+                                                        <option value="Deva">Deva</option>
+                                                        <option value="Giurgiu">Giurgiu</option>
+                                                        <option value="Iasi">Iasi</option>
+                                                        <option value="Mamaia">Mamaia</option>
+                                                        <option value="Mangalia">Mangalia</option>
+                                                        <option value="Medgidia">Medgidia</option>
+                                                        <option value="Navodari">Navodari</option>
+                                                        <option value="Ploiesti">Ploiesti</option>
+                                                        <option value="Predeal">Predeal</option>
+                                                        <option value="Sibiu">Sibiu</option>
+                                                        <option value="Sighisoara">Sighisoara</option>
+                                                        <option value="Targu Mures">Targu Mures</option>
+                                                        <option value="Tulcea">Tulcea</option>
+                                                        <option value="Voluntari">Voluntari</option>
+                                                    </select>
+                    </div>
+                    <!-- Strada -->
+                    <div class="form-group">
+                        <label class="form-label" for="ffNodPickerModal-street">Strada</label>
+                        <input type="text" id="ffNodPickerModal-street" class="input-control" placeholder="Denumire stradă...">
+                    </div>
+                    <!-- Tip -->
+                    <div class="form-group">
+                        <label class="form-label" for="ffNodPickerModal-type">Tip</label>
+                        <select id="ffNodPickerModal-type" class="input-control">
+                            <option value="-1">-</option>
+                            <option value="1">Cu agenți economici</option>
+                            <option value="2">Fără agenți economici</option>
+                        </select>
+                    </div>
+                    <!-- Asociație -->
+                    <div class="form-group">
+                        <label class="form-label" for="ffNodPickerModal-assoc">Asociație</label>
+                        <input type="text" id="ffNodPickerModal-assoc" class="input-control" placeholder="Nume asociație...">
+                    </div>
+                    <!-- Cod NOD -->
+                    <div class="form-group">
+                        <label class="form-label" for="ffNodPickerModal-code">Cod NOD</label>
+                        <input type="text" id="ffNodPickerModal-code" class="input-control" placeholder="Cod...">
+                    </div>
+                </div>
+                <div class="nod-picker-filter-actions">
+                    <div class="filter-per-page">
+                        <label class="filter-per-page-label" for="ffNodPickerModal-perpage">Înreg / pag</label>
+                        <select id="ffNodPickerModal-perpage" class="input-control select-per-page">
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100" selected>100</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn-secondary nod-picker-reset" data-modal="ffNodPickerModal">Resetează</button>
+                    <button type="button" class="btn-primary nod-picker-search" data-modal="ffNodPickerModal">Caută</button>
+                </div>
+            </form>
+
+            <!-- Tabelul de rezultate NOD -->
+            <div class="nod-picker-table-wrap">
+                <table class="modal-table">
+                    <thead>
+                        <tr>
+                            <th>NOD</th>
+                            <th>Adresă NOD</th>
+                            <th>Asociație</th>
+                            <th class="nod-picker-th-sel"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="nod-picker-tbody" id="ffNodPickerModal-tbody">
+                        <!-- Populat dinamic prin JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Paginație Modal -->
+            <div class="nod-picker-pagination">
+                <span class="nod-picker-count-label">
+                    Afișare NOD-uri: <strong class="nod-picker-count" id="ffNodPickerModal-count">0</strong>
+                </span>
+                <div class="nod-picker-page-btns">
+                    <button type="button" class="btn-action-icon nod-picker-prev" title="Pagina anterioară" data-modal="ffNodPickerModal" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button type="button" class="btn-action-icon nod-picker-next" title="Pagina următoare" data-modal="ffNodPickerModal" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </div><!-- /modal-body -->
+    </div><!-- /modal-card -->
+</div><!-- /modal-overlay -->
+
+<!-- NOD Picker: date & logică JS ============================================
+     React: datele vin din props/API; logica este în NodPickerModal.tsx
+============================================================================ -->
+<script>
+(function() {
+    /* ── Date NOD ────────────────────────────────────────────────────── */
+    var _nodPickerData_ffNodPickerModal = [
+    { id: "1",  code: "81-001-0001", address: "Str. STEFAN CEL MARE, Nr. 27, Bl. 27, Sc. 1, Distr. 2, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC 27 SCARA 1",    city: "Bucuresti", street: "stefan cel mare",          ownerType: "1" },
+    { id: "2",  code: "81-001-0002", address: "Str. REZILIAT, Nr. 36, Bl. Vila, Sc. 1, Distr. 1, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC VILA",          city: "Bucuresti", street: "reziliat",                  ownerType: "1" },
+    { id: "3",  code: "81-001-0003", address: "Str. REZILIAT, Sc. 1, Distr. 5, Bucuresti",                              association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "14", code: "81-001-0004", address: "Str. GURA IALOMITEI, Nr. 3, Bl. PC9, Sc. B, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC PC9 SCARA B",   city: "Bucuresti", street: "gura ialomitei",             ownerType: "1" },
+    { id: "15", code: "81-001-0005", address: "Str. GURA IALOMITEI, Nr. 3, Bl. PC9, Sc. A, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC PC9 SCARA A",   city: "Bucuresti", street: "gura ialomitei",             ownerType: "1" },
+    { id: "16", code: "81-001-0006", address: "Str. REZILIAT, Nr. 28, Bl. V81A, Sc. A, Distr. 3, Bucuresti",           association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "17", code: "81-001-0007", address: "Str. Laborator, Nr. 125-127, Bl. S1, Sc. 2, Distr. 3, Bucuresti",       association: "ASOCIATIA DE PROPRIETARI BLOC S1 SCARA 2",    city: "Bucuresti", street: "laborator",                  ownerType: "1" },
+    { id: "18", code: "81-001-0008", address: "Str. Liber, Nr. 012, Bl. 0, Sc. 2, Bucuresti",                          association: "",                                            city: "Bucuresti", street: "liber",                     ownerType: "2" },
+    { id: "20", code: "81-001-0010", address: "Str. BIBESCU VODA, Nr. 2, Bl. P5, Sc. 4, Distr. 4, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC P5 SCARA 4",    city: "Bucuresti", street: "bibescu voda",               ownerType: "1" },
+    { id: "21", code: "81-001-0011", address: "Str. REZILIAT, Sc. A+B, Apt. -, Distr. 3, Bucuresti",                   association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "22", code: "81-001-0012", address: "Str. MIHAI BRAVU, Nr. 291, Bl. 12A, Sc. 1, Distr. 3, Bucuresti",        association: "ASOCIATIA DE PROPRIETARI BLOC 12A SCARA A",   city: "Bucuresti", street: "mihai bravu",                ownerType: "1" },
+    { id: "23", code: "81-001-0013", address: "Str. REZILIAT, Sc. 1, Distr. 3, Bucuresti",                             association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "25", code: "81-001-0015", address: "Str. REZILIAT, Sc. 2, Distr. 3, Bucuresti",                             association: "REZILIAT",                                    city: "Bucuresti", street: "reziliat",                  ownerType: "2" },
+    { id: "27", code: "81-001-0017", address: "Str. SIBIU, Nr. 18, Bl. 813, Sc. 1, Distr. 6, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BL 813",             city: "Bucuresti", street: "sibiu",                     ownerType: "1" },
+    { id: "28", code: "81-001-0018", address: "Str. UNIRII, Nr. 13, Bl. 2C, Sc. 1, Distr. 5, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BLOC 2C",            city: "Bucuresti", street: "unirii",                    ownerType: "1" },
+    { id: "29", code: "81-001-0019", address: "Str. UNIRII, Nr. 13, Bl. 2C, Sc. 2, Distr. 5, Bucuresti",               association: "ASOCIATIA DE PROPRIETARI BLOC 2C",            city: "Bucuresti", street: "unirii",                    ownerType: "1" },
+    { id: "30", code: "81-001-0020", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 1, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "31", code: "81-001-0021", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 2, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "32", code: "81-001-0022", address: "Str. PANTELIMON, Nr. 332, Bl. 32, Sc. 3, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC 32",            city: "Bucuresti", street: "pantelimon",                 ownerType: "1" },
+    { id: "34", code: "81-001-0023", address: "Str. OTESANI, Nr. 14, Bl. T8B, Sc. 1, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC T8B",           city: "Bucuresti", street: "otesani",                   ownerType: "1" },
+    { id: "35", code: "81-001-0024", address: "Str. COLENTINA, Nr. 70, Bl. 108, Sc. 1, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 108",           city: "Bucuresti", street: "colentina",                  ownerType: "1" },
+    { id: "36", code: "81-001-0025", address: "Str. FUNDENI, Nr. 227, Bl. 116B, Sc. A, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 116B",          city: "Bucuresti", street: "fundeni",                   ownerType: "1" },
+    { id: "37", code: "81-001-0026", address: "Str. FUNDENI, Nr. 227, Bl. 116B, Sc. B, Distr. 2, Bucuresti",           association: "ASOCIATIA DE PROPRIETARI BLOC 116B",          city: "Bucuresti", street: "fundeni",                   ownerType: "1" },
+    { id: "40", code: "81-001-0029", address: "Str. CONSTANTIN RADULESCU MOTRU, Nr. 23, Bl. B35, Sc. B, Distr. 4",    association: "ASOCIATIA DE PROPRIETARI BLOC 35 SCARA 2",   city: "Bucuresti", street: "constantin radulescu motru", ownerType: "1" },
+    { id: "41", code: "81-001-0030", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. A, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA A",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "42", code: "81-001-0031", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. B, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA B",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "43", code: "81-001-0032", address: "Str. Vergului, Nr. 65, Bl. 17, Sc. E, Distr. 2, Bucuresti",             association: "ASOCIATIA DE PROPRIETARI BLOC 17 SCARA E",    city: "Bucuresti", street: "vergului",                  ownerType: "1" },
+    { id: "51", code: "81-001-0040", address: "Str. CALEA MOSILOR, Nr. 241, Bl. 47, Sc. A+B+C, Distr. 2, Bucuresti",  association: "ASOCIATIA DE PROPRIETARI BLOC 47",            city: "Bucuresti", street: "calea mosilor",              ownerType: "1" },
+    { id: "52", code: "81-001-0041", address: "Str. MURGENI, Nr. 7, Bl. L27, Sc. A, Distr. 3, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC L27",           city: "Bucuresti", street: "murgeni",                   ownerType: "1" },
+    { id: "53", code: "81-001-0042", address: "Str. ALEEA CODLEA, Nr. 6, Bl. J3, Sc. 1, Distr. 2, Bucuresti",          association: "ASOCIATIA DE PROPRIETARI BLOC J3",            city: "Bucuresti", street: "aleea codlea",               ownerType: "1" },
+    { id: "54", code: "81-001-0043", address: "Str. ALEEA ROTUNDA, Nr. 1-4, Bl. Y1B, Sc. 5, Distr. 3, Bucuresti",     association: "ASOCIATIA DE PROPRIETARI BLOC Y1B SCARA 1-5", city: "Bucuresti", street: "aleea rotunda",              ownerType: "1" },
+    { id: "59", code: "81-001-0047", address: "Str. LACUL TEI, Nr. 121, Bl. 5, Sc. 1, Distr. 2, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC 5 SCARA 1-4",  city: "Bucuresti", street: "lacul tei",                  ownerType: "1" },
+    { id: "65", code: "81-001-0053", address: "Str. CALEA VACARESTI, Nr. 308, Bl. 1E, Sc. 1, Distr. 4, Bucuresti",    association: "ASOCIATIA DE PROPRIETARI BLOC 1E",            city: "Bucuresti", street: "calea vacaresti",            ownerType: "1" },
+    { id: "66", code: "81-001-0054", address: "Str. OLTENITEI, Nr. 140, Bl. 5, Sc. 3, Distr. 4, Bucuresti",            association: "ASOCIATIA DE PROPRIETARI BLOC 5 SCARA 3",    city: "Bucuresti", street: "oltenitei",                  ownerType: "1" },
+    { id: "8",  code: "81-001-0055", address: "Str. ALEEA BARSANESTI, Nr. 2, Bl. 156, Sc. 2, Distr. 6, Bucuresti",    association: "ASOCIATIA DE PROPRIETARI BLOC156 SC. 2",     city: "Bucuresti", street: "aleea barsanesti",           ownerType: "1" },
+    { id: "68", code: "81-001-0057", address: "Str. CEAHLAU, Nr. 15, Bl. 75, Sc. 1, Distr. 6, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC 75",            city: "Bucuresti", street: "ceahlau",                   ownerType: "1" },
+    { id: "69", code: "81-001-0058", address: "Str. CEAHLAU, Nr. 15, Bl. 75, Sc. 2, Distr. 6, Bucuresti",              association: "ASOCIATIA DE PROPRIETARI BLOC 75",            city: "Bucuresti", street: "ceahlau",                   ownerType: "1" }
+];
+
+    /* ── Configurare instanță ────────────────────────────────────────── */
+    var _cfg = {
+        modalId:    "ffNodPickerModal",
+        inputId:    "txtFfNod",
+        btnOpenId:  "btnOpenFfNodModal",
+        callback:   null   /* funcție opțională apelată la selecție */
+    };
+
+    function initNodPicker_ffNodPickerModal() {
+        NodPicker.init(
+            _cfg,
+            _nodPickerData_ffNodPickerModal        );
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initNodPicker_ffNodPickerModal);
+    } else {
+        initNodPicker_ffNodPickerModal();
+    }
+})();
+</script>
+
+<script>
+/**
+ * Facturi – filtrare client-side (inclusiv prefiltrarea din URL: partner, plan, type), tipărire și trimitere pe e-mail (demo).
+ * În producție: GET /api/fin/invoices, GET /api/fin/invoices/{id}/pdf, POST /api/fin/invoices/{id}/send.
+ */
+(function () {
+    'use strict';
+    var rows = Array.prototype.slice.call(document.querySelectorAll('#invoicesBody tr[data-id]'));
+    function $(id) { return document.getElementById(id); }
+    function iso(el) { return (window.SonicDatepicker && el) ? SonicDatepicker.getISO(el) : ''; }
+
+    function apply() {
+        var f = {
+            type: $('ddlType').value, source: $('ddlSource').value, partner: $('ddlPartner').value, nod: $('txtFfNod').value.trim(),
+            status: $('ddlStatus').value, from: iso($('dtpFrom')), to: iso($('dtpTo')), plan: $('hidPlan').value, q: $('tableSearch').value.trim().toLowerCase()
+        };
+        var visible = 0;
+        rows.forEach(function (tr) {
+            var d = tr.dataset;
+            var show = (!f.type || d.type === f.type) && (!f.source || d.source === f.source) && (!f.partner || d.partner === f.partner)
+                && (!f.nod || d.nod === f.nod) && (!f.status || d.status === f.status) && (!f.from || d.date >= f.from) && (!f.to || d.date <= f.to)
+                && (!f.plan || d.plan === f.plan) && (!f.q || d.search.indexOf(f.q) !== -1);
+            tr.style.display = show ? '' : 'none';
+            if (show) visible++;
+        });
+        $('visibleCount').textContent = visible;
+        $('paginationEnd').textContent = visible;
+        $('noResultsRow').style.display = visible ? 'none' : '';
+        $('planFilterInfo').style.display = f.plan ? '' : 'none';
+        $('planFilterId').textContent = f.plan;
+    }
+
+    // Prefiltrare din URL (funcționează și în HTML-ul exportat)
+    function fromUrl() {
+        var p = new URLSearchParams(window.location.search);
+        function set(id, v) { var el = $(id); if (!v || !el) return; if (el.tagName === 'SELECT') { if (el.querySelector('option[value="' + v.replace(/"/g, '') + '"]')) el.value = v; } else el.value = v; }
+        set('ddlPartner', p.get('partner')); set('ddlType', p.get('type')); set('ddlSource', p.get('source')); set('ddlStatus', p.get('status'));
+        if (p.get('plan')) $('hidPlan').value = p.get('plan');
+    }
+
+    $('invoicesBody').addEventListener('click', function (e) {
+        var tr = e.target.closest('tr[data-id]'); if (!tr) return;
+        if (e.target.closest('.js-print')) {
+            alert('Se generează PDF-ul facturii ' + tr.dataset.id + ' pentru tipărire (simulare).');
+        } else if (e.target.closest('.js-email')) {
+            var to = tr.dataset.email || 'adresa partenerului';
+            if (confirm('Trimiteți factura ' + tr.dataset.id + ' pe e-mail la ' + to + '?')) alert('Factura ' + tr.dataset.id + ' a fost trimisă la ' + to + ' (simulare).');
+        }
+    });
+
+    $('filterForm').addEventListener('submit', function (e) { e.preventDefault(); apply(); });
+    $('tableSearch').addEventListener('input', apply);
+    document.addEventListener('DOMContentLoaded', function () { fromUrl(); apply(); });
+})();
+</script>
+
+    </div><!-- /.content -->
+    <footer class="app-footer">
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
+    </footer>
+</div><!-- /.main -->
+
+<script src="assets/js/sidebar.js?v=1.0.1"></script>
+</body>
+</html>

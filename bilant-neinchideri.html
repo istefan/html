@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
     <title>Bilanț Neînchideri Apă – SONIC</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.31">
     <script src="assets/js/nod-picker.js"></script>
     <script src="assets/js/edit-tabs.js"></script>
     <script src="assets/js/datepicker.js"></script>
@@ -453,6 +453,97 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
+                <!-- ── MONTAJE & FACTURARE ── -->
+                <div class="nav-group " data-group="fin-montaje">
+                    <button class="nav-group-title" type="button" title="Montaje & Facturare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>
+                        </span>
+                        <span class="nav-label">Montaje & Facturare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-validare-montaje.html" class="nav-subitem ">Validare Montaje</a>
+                        <a href="fin-facturare-echipamente.html" class="nav-subitem ">Facturare Echipamente</a>
+                        <a href="fin-rate.html" class="nav-subitem ">Scadențar Rate</a>
+                        <a href="fin-facturi.html" class="nav-subitem ">Facturi</a>
+                    </div>
+                </div>
+
+                <!-- ── ÎNCASĂRI ── -->
+                <div class="nav-group " data-group="fin-incasari">
+                    <button class="nav-group-title" type="button" title="Încasări">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+                        </span>
+                        <span class="nav-label">Încasări</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-chitante.html" class="nav-subitem ">Chitanțe</a>
+                        <a href="fin-chitantiere.html" class="nav-subitem ">Chitanțiere</a>
+                        <a href="fin-incasari-banca.html" class="nav-subitem ">Încasări Bancă</a>
+                        <a href="fin-recalculare.html" class="nav-subitem ">Recalculare Solduri</a>
+                    </div>
+                </div>
+
+                <!-- ── CREANȚE ── -->
+                <div class="nav-group " data-group="fin-creante">
+                    <button class="nav-group-title" type="button" title="Creanțe">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                        </span>
+                        <span class="nav-label">Creanțe</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-creante.html" class="nav-subitem ">Urmărire Creanțe</a>
+                        <a href="fin-alerte.html" class="nav-subitem ">Alerte SMS și E-mail</a>
+                    </div>
+                </div>
+
+                <!-- ── GESTIUNE STOCURI ── -->
+                <div class="nav-group " data-group="fin-gestiune">
+                    <button class="nav-group-title" type="button" title="Gestiune Stocuri">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                        </span>
+                        <span class="nav-label">Gestiune Stocuri</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-gestiuni.html" class="nav-subitem ">Gestiuni</a>
+                        <a href="fin-intrari.html" class="nav-subitem ">Intrări în Gestiune</a>
+                        <a href="fin-iesiri.html" class="nav-subitem ">Ieșiri și Transferuri</a>
+                        <a href="fin-retururi.html" class="nav-subitem ">Retururi</a>
+                        <a href="fin-comenzi-furnizori.html" class="nav-subitem ">Comenzi Furnizori</a>
+                        <a href="fin-necesar-marfa.html" class="nav-subitem ">Necesar de Comandat</a>
+                    </div>
+                </div>
+
+                <!-- ── NOMENCLATOARE ── -->
+                <div class="nav-group " data-group="fin-nomenclatoare">
+                    <button class="nav-group-title" type="button" title="Nomenclatoare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Nomenclatoare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-produse.html" class="nav-subitem ">Produse</a>
+                        <a href="fin-nomenclatoare.html" class="nav-subitem ">Nomenclatoare Financiare</a>
+                    </div>
+                </div>
+
+                <!-- ── RAPOARTE FIN (standalone) ── -->
+                <a href="fin-rapoarte.html" class="nav-item " title="Rapoarte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <span class="nav-label">Rapoarte</span>
+                </a>
+
             </div>
         </div>
 
@@ -618,7 +709,14 @@
                             aria-selected="false"
                             aria-controls="help-pane-1"
                             data-tab="1">
-                        Stadiu                    </button>
+                        Cum se citește                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Filtre și export                    </button>
                                     </nav>
                 <!-- Tab content panes -->
                 <div class="help-tab-content">
@@ -629,8 +727,9 @@
                          data-pane="0">
                         
             <h4>Bilanț Neînchideri Apă</h4>
-            <p>Raportul de bilanț al neînchiderilor pe apă (diferența dintre contorul de branșament și suma consumurilor individuale).</p>
-            <p>Pagina face parte în modulul <strong>SONIC GRID</strong>.</p>
+            <p>Compară, lună de lună, volumul de apă <strong>facturat de furnizor</strong> la branșament cu suma consumurilor înregistrate de <strong>contoarele</strong> din locurile de consum (apartamente, spații).</p>
+            <p>Diferența este <strong>neînchiderea</strong>: apă facturată care nu a fost înregistrată de contoare (pierderi, consumuri necontorizate, contoare defecte sau citiri lipsă).</p>
+            <p>Pentru un calcul corect, valorile facturate trebuie încărcate în <a href="perioade-citiri.html">Perioade Citiri</a>.</p>
                             </div>
                                         <div class="help-tab-pane "
                          role="tabpanel"
@@ -638,8 +737,25 @@
                          aria-labelledby="help-tab-1"
                          data-pane="1">
                         
-            <h4>Pagină în construcție</h4>
-            <p>Interfața acestei pagini nu a fost încă generată. Conținutul de ajutor va fi completat odată cu implementarea paginii.</p>
+            <ul>
+                <li><strong>Inelul</strong> – partea închisă este procentul înregistrat de contoare, restul este neînchiderea, pentru toată perioada aleasă.</li>
+                <li><strong>Neînchidere %</strong> = (facturat − contoare) / facturat × 100.</li>
+                <li><strong>Valoare negativă</strong> – contoarele au înregistrat mai mult decât s-a facturat; de obicei lipsesc valorile facturate pentru unele luni (sunt semnalate deasupra graficelor).</li>
+                <li><strong>Evoluție lunară</strong> – bara gri este volumul facturat, bara închisă cel înregistrat de contoare; comutați între Apă rece și Apă caldă.</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <ul>
+                <li><strong>Loc de măsurare</strong> – branșamentul (adresa și codul unic); listă cu căutare.</li>
+                <li><strong>De la / Până la</strong> – luna de început și luna de sfârșit; graficele și tabelul se actualizează imediat.</li>
+                <li><strong>Aplică</strong> – reîncarcă datele pentru locul ales.</li>
+                <li><strong>Exportă</strong> – descarcă bilanțul în Excel (.xlsx) pentru locul și luna de început alese.</li>
+            </ul>
                             </div>
                                     </div>
                     </div><!-- /.help-panel-inner -->
@@ -668,22 +784,311 @@
 
     <div class="content">
 
+<!-- React: <PageTitleContainer title="Bilanț Neînchideri Apă" /> -->
 <div class="page-title-container">
     <div class="page-title">
         <h1>Bilanț Neînchideri Apă</h1>
-        <p>Pagina este în construcție.</p>
+        <p>Pentru un calcul corect al bilanțului, asigurați-vă că ați încărcat valorile facturate în secțiunea <a href="perioade-citiri.html?addressId=10" class="td-link" id="linkPerioade">Perioade Citiri</a>.</p>
     </div>
 </div>
 
-<div class="card" style="padding: 60px 40px; text-align: center; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; margin-top: 24px;">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="64" height="64" style="margin-bottom: 20px; opacity: 0.3; color: var(--accent);">
-        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-        <polyline points="2 17 12 22 22 17"></polyline>
-        <polyline points="2 12 12 17 22 12"></polyline>
-    </svg>
-    <h2 style="color: var(--text-main); margin-bottom: 12px; font-weight: 600;">În curând</h2>
-    <p style="font-size: 15px;">Interfața pentru <strong>Bilanț Neînchideri Apă</strong> nu a fost încă generată în acest demo.</p>
+<!-- ══ Caseta de filtrare: loc de măsurare + perioadă (RULES §1.5) ══
+     React: <BalanceFilterCard /> -->
+<div class="card filter-card">
+    <div class="filter-card-head">
+        <span class="filter-card-title">Loc de măsurare și perioadă</span>
+    </div>
+    <form method="GET" action="bilant-neinchideri.html" id="bilantFilterForm" onsubmit="return applyFilter(event);">
+        <div class="filter-grid-3">
+            <div class="form-group">
+                <label class="form-label" for="selectLocMasurare">Loc de măsurare</label>
+                <select id="selectLocMasurare" name="addressId" class="input-control">
+                                        <option value="29" >Str. ALEEA BRASOVENI, Nr. 5, Bl. 16, Sc. A, Bucuresti, Bucuresti (810012496)</option>
+                                        <option value="58" >Str. ALEEA BRASOVENI, Nr. 5, Bl. 16, Sc. A, Bucuresti, Bucuresti (810012500)</option>
+                                        <option value="16" >Str. ALEEA CRINULUI, Nr. 4, Bl. 59, Sc. A, Navodari, Constanta (810210048)</option>
+                                        <option value="12" >Str. ALEEA HORTENSIEI, Nr. 1, Bl. E1, Sc. A, Constanta, Constanta (810120290)</option>
+                                        <option value="60" >Str. KAUFLAND HORNBACH DOMNESTI WEST PARK, Nr. 1, Bl. KAUFLAND, Sc. 0, Bucuresti, Bucuresti (810460001)</option>
+                                        <option value="14" >Str. LIDL DRUMUL BINELUI, Nr. 51, Mag. 255, Bucuresti, Bucuresti (810012418)</option>
+                                        <option value="13" >Str. LIDL TOPORASI, Nr. 6A, Mag. 416, Bucuresti, Bucuresti (810012417)</option>
+                                        <option value="17" >Str. NITU VASILE ADDRA WMP, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti (810012443)</option>
+                                        <option value="18" >Str. NITU VASILE OP-LWAN, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti (810012466)</option>
+                                        <option value="10" selected>Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti (810012411)</option>
+                                        <option value="63" >Str. PESCARILOR, Nr. 69, Bl. FZ26, Sc. A, Constanta, Constanta (810120316)</option>
+                                        <option value="27" >Str. RANDUNICII, Nr. 13, Bl. CITY_NORD_1, Sc. -, Tunari, Ilfov (810440001)</option>
+                                        <option value="28" >Str. RANDUNICII, Nr. 15, Bl. CITY_NORD_2, Sc. -, Tunari, Ilfov (810440002)</option>
+                                        <option value="56" >Str. STEFAN CEL MARE, Nr. 30, Bl. M10, Sc. A, Constanta, Constanta (810120306)</option>
+                                        <option value="59" >Str. TIPARNITEI, Nr. 105, Bl. 105, Sc. A, Bucuresti, Bucuresti (810012503)</option>
+                                        <option value="62" >Str. TOMIS, Nr. 253, Bl. T1, Sc. C, Constanta, Constanta (810120315)</option>
+                                        <option value="15" >Str. TOMIS, Nr. 308, Bl. LT3, Sc. D+E+F, Constanta, Constanta (810120289)</option>
+                                        <option value="9" >Str. TRIFOIULUI, Nr. 54, Bl. 1, Sc. 1, Dobroesti, Ilfov (810270021)</option>
+                                        <option value="19" >Str. VOROVESTI, Nr. 1, Bl. 1, Sc. 1, Iasi, Iasi (810030072)</option>
+                                    </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="selectStartMonth">De la</label>
+                <select id="selectStartMonth" name="from" class="input-control">
+                                        <option value="2025-11" selected>Noiembrie 2025</option>
+                                        <option value="2025-12" >Decembrie 2025</option>
+                                        <option value="2026-01" >Ianuarie 2026</option>
+                                        <option value="2026-02" >Februarie 2026</option>
+                                        <option value="2026-03" >Martie 2026</option>
+                                        <option value="2026-04" >Aprilie 2026</option>
+                                        <option value="2026-05" >Mai 2026</option>
+                                        <option value="2026-06" >Iunie 2026</option>
+                                        <option value="2026-07" >Iulie 2026</option>
+                                        <option value="2026-08" >August 2026</option>
+                                        <option value="2026-09" >Septembrie 2026</option>
+                                        <option value="2026-10" >Octombrie 2026</option>
+                                    </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="selectEndMonth">Până la</label>
+                <select id="selectEndMonth" name="to" class="input-control">
+                                        <option value="2025-11" >Noiembrie 2025</option>
+                                        <option value="2025-12" >Decembrie 2025</option>
+                                        <option value="2026-01" >Ianuarie 2026</option>
+                                        <option value="2026-02" >Februarie 2026</option>
+                                        <option value="2026-03" >Martie 2026</option>
+                                        <option value="2026-04" >Aprilie 2026</option>
+                                        <option value="2026-05" >Mai 2026</option>
+                                        <option value="2026-06" >Iunie 2026</option>
+                                        <option value="2026-07" >Iulie 2026</option>
+                                        <option value="2026-08" >August 2026</option>
+                                        <option value="2026-09" >Septembrie 2026</option>
+                                        <option value="2026-10" selected>Octombrie 2026</option>
+                                    </select>
+            </div>
+        </div>
+        <div class="filter-actions">
+            <a href="bilant-neinchideri.html" class="btn-secondary">Resetează</a>
+            <button type="submit" class="btn-primary" id="btnApply">Aplică</button>
+        </div>
+    </form>
 </div>
+
+<!-- ══ Casetă contextuală (RULES §1.9) ══ React: <UtilityContextStrip /> -->
+<div class="utility-context-strip">
+    <div class="context-items">
+        <div class="context-item"><span class="context-label">Loc de măsurare:</span><span class="context-value">Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti</span></div>
+        <div class="context-sep"></div>
+        <div class="context-item"><span class="context-label">Cod:</span><strong class="context-value context-code">810012411</strong></div>
+        <div class="context-sep"></div>
+        <div class="context-item"><span class="context-label">Perioada:</span><span class="context-value" id="ctxPeriod">—</span></div>
+    </div>
+    <div><span class="status-badge status-online">Utilitate: Apă</span></div>
+</div>
+
+<!-- ══ Luni fără valoare facturată ══ React: <MissingBilledAlert /> -->
+<div class="calc-alert calc-alert--warning" id="missingAlert" style="display: none; margin-bottom: 16px;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+    <div>Lunile <strong id="missingMonths"></strong> nu au valoare facturată pentru apă rece, iar bilanțul pe perioadă este denaturat. Încărcați valorile în <a href="perioade-citiri.html?addressId=10" class="td-link">Perioade Citiri</a>.</div>
+</div>
+
+<!-- ══ Inelele de neînchidere (în sursă: graficele doughnut) ══ React: <BalanceRing /> × 2 -->
+<div class="pro-grid-1-1">
+        <div class="card pro-panel" id="bilantChartRece">
+        <div class="edit-section-header">
+            <span class="edit-section-title">Neînchidere Apă Rece</span>
+            <span class="pro-map-legend" style="margin: 0;"><span><i class="pro-legend-dot"></i>Contoare</span><span><i class="pro-legend-dot pro-legend-dot--muted"></i>Neînchidere</span></span>
+        </div>
+        <div class="pro-ring-row">
+            <div class="pro-ring pro-ring--lg" id="ring-ar" style="--pct: 0;">
+                <div class="pro-ring-inner">
+                    <span class="pro-ring-value" id="ringValue-ar">—</span>
+                    <span class="pro-ring-label">Neînchidere</span>
+                </div>
+            </div>
+            <div class="pro-ring-stats">
+                <div><span>Facturată:</span> <strong id="statFact-ar">—</strong> m³</div>
+                <div><span>Contoare:</span> <strong id="statCont-ar">—</strong> m³ (<span id="statContPct-ar">—</span>)</div>
+                <div><span>Neînchidere:</span> <strong id="statDiff-ar">—</strong> m³</div>
+                <div class="list-sublabel" id="statNote-ar"></div>
+            </div>
+        </div>
+    </div>
+        <div class="card pro-panel" id="bilantChartCalda">
+        <div class="edit-section-header">
+            <span class="edit-section-title">Neînchidere Apă Caldă</span>
+            <span class="pro-map-legend" style="margin: 0;"><span><i class="pro-legend-dot"></i>Contoare</span><span><i class="pro-legend-dot pro-legend-dot--muted"></i>Neînchidere</span></span>
+        </div>
+        <div class="pro-ring-row">
+            <div class="pro-ring pro-ring--lg" id="ring-ac" style="--pct: 0;">
+                <div class="pro-ring-inner">
+                    <span class="pro-ring-value" id="ringValue-ac">—</span>
+                    <span class="pro-ring-label">Neînchidere</span>
+                </div>
+            </div>
+            <div class="pro-ring-stats">
+                <div><span>Facturată:</span> <strong id="statFact-ac">—</strong> m³</div>
+                <div><span>Contoare:</span> <strong id="statCont-ac">—</strong> m³ (<span id="statContPct-ac">—</span>)</div>
+                <div><span>Neînchidere:</span> <strong id="statDiff-ac">—</strong> m³</div>
+                <div class="list-sublabel" id="statNote-ac"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+<!-- ══ Evoluție lunară: facturat vs contoare ══ React: <MonthlyBars /> -->
+<div class="card pro-panel">
+    <div class="edit-section-header">
+        <span class="edit-section-title">Evoluție lunară · facturat vs contoare (m³)</span>
+        <span class="pro-map-legend" style="margin: 0;"><span><i class="pro-legend-dot pro-legend-dot--done"></i>Facturată</span><span><i class="pro-legend-dot"></i>Contoare</span></span>
+    </div>
+    <div class="water-filter-pills" role="group" aria-label="Utilitate grafic">
+        <button type="button" class="water-filter-pill active" data-utility="ar">Apă rece</button>
+        <button type="button" class="water-filter-pill" data-utility="ac">Apă caldă</button>
+    </div>
+    <div class="pro-bars pro-bars--dense" id="monthlyBars" style="height: 200px;"></div>
+</div>
+
+<!-- ══ Tabelul lunar (în sursă: #bilantTabelBody) ══ React: <BalanceTable /> -->
+<div class="table-container">
+    <div class="table-toolbar">
+        <div class="table-toolbar-left">
+            <span class="table-count" id="tabelTitlu">Neînchideri lunare detaliate</span>
+        </div>
+        <div class="table-toolbar-right">
+            <button type="button" class="btn-secondary" id="btnExport" onclick="exportXlsx()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Exportă (Excel)</span>
+            </button>
+        </div>
+    </div>
+    <div class="table-scroll">
+        <table class="partners-table">
+            <thead>
+                <tr>
+                    <th>Perioada Calcul</th>
+                    <th style="text-align: right;">AR Facturată m³</th>
+                    <th style="text-align: right;">AR Contoare m³</th>
+                    <th style="text-align: right;">AR Diferență m³</th>
+                    <th style="text-align: right;">AC Facturată m³</th>
+                    <th style="text-align: right;">AC Contoare m³</th>
+                    <th style="text-align: right;">AC Diferență m³</th>
+                </tr>
+            </thead>
+            <tbody id="bilantTabelBody"></tbody>
+            <tfoot id="bilantTabelFoot"></tfoot>
+        </table>
+    </div>
+</div>
+
+<script>
+/* Bilanț Neînchideri Apă – recalcularea pe perioadă (ca în sursă), fără reîncărcarea paginii.
+   Date demo; în producție: GET /api/grid/water-balance?addressId=&from=&to= */
+(function () {
+    var bilantData = [{"id":"2025-11","perioada":"Noiembrie 2025","arFact":93,"arCont":92.75,"acFact":0,"acCont":0},{"id":"2025-12","perioada":"Decembrie 2025","arFact":80,"arCont":77.42,"acFact":0,"acCont":0},{"id":"2026-01","perioada":"Ianuarie 2026","arFact":66,"arCont":64.92,"acFact":0,"acCont":0},{"id":"2026-02","perioada":"Februarie 2026","arFact":82,"arCont":80.14,"acFact":0,"acCont":0},{"id":"2026-03","perioada":"Martie 2026","arFact":74,"arCont":73.67,"acFact":0,"acCont":0},{"id":"2026-04","perioada":"Aprilie 2026","arFact":88,"arCont":87.09,"acFact":0,"acCont":0},{"id":"2026-05","perioada":"Mai 2026","arFact":111,"arCont":110.23,"acFact":0,"acCont":0},{"id":"2026-06","perioada":"Iunie 2026","arFact":114,"arCont":113.61,"acFact":0,"acCont":0},{"id":"2026-07","perioada":"Iulie 2026","arFact":133,"arCont":132.83,"acFact":0,"acCont":0},{"id":"2026-08","perioada":"August 2026","arFact":72,"arCont":88.76,"acFact":0,"acCont":0},{"id":"2026-09","perioada":"Septembrie 2026","arFact":0,"arCont":105.62,"acFact":0,"acCont":0},{"id":"2026-10","perioada":"Octombrie 2026","arFact":0,"arCont":77.45,"acFact":0,"acCont":0}];
+    var startSel = document.getElementById('selectStartMonth');
+    var endSel   = document.getElementById('selectEndMonth');
+    var placeSel = document.getElementById('selectLocMasurare');
+    var utility  = 'ar';
+    var rowsCache = [];
+
+    function $(id) { return document.getElementById(id); }
+    function fmt(v) { return v.toLocaleString('ro-RO', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+    function sum(rows, k) { return rows.reduce(function (s, r) { return s + r[k]; }, 0); }
+
+    // Inelul: partea închisă = contoare (max. 100%), valoarea = neînchiderea %
+    function updateRing(u, totalFact, totalCont) {
+        var neinch = totalFact - totalCont;
+        var pCont = totalFact > 0 ? totalCont / totalFact * 100 : 0;
+        var pNe   = totalFact > 0 ? neinch / totalFact * 100 : 0;
+        $('ring-' + u).style.setProperty('--pct', Math.max(0, Math.min(100, pCont)).toFixed(2));
+        $('ringValue-' + u).textContent = totalFact > 0 ? pNe.toFixed(2).replace('.', ',') + '%' : '—';
+        $('statFact-' + u).textContent = fmt(totalFact);
+        $('statCont-' + u).textContent = fmt(totalCont);
+        $('statContPct-' + u).textContent = pCont.toFixed(2).replace('.', ',') + '%';
+        $('statDiff-' + u).textContent = fmt(neinch);
+        $('statNote-' + u).textContent = totalFact <= 0
+            ? (totalCont > 0 ? 'Nu există valori facturate în perioada aleasă.' : 'Fără consum de ' + (u === 'ar' ? 'apă rece' : 'apă caldă') + ' în perioada aleasă.')
+            : (neinch < 0 ? 'Valoare negativă: contoarele au înregistrat mai mult decât s-a facturat.' : '');
+    }
+
+    function renderBars() {
+        var kF = utility + 'Fact', kC = utility + 'Cont';
+        var max = Math.max(1, Math.max.apply(null, rowsCache.map(function (r) { return Math.max(r[kF], r[kC]); })));
+        $('monthlyBars').innerHTML = rowsCache.map(function (r, i) {
+            var d = r[kF] - r[kC];
+            var lbl = r.perioada.split(' ');
+            return '<div class="pro-bar-col' + (i === rowsCache.length - 1 ? ' is-today' : '') + '">' +
+                '<span class="pro-bar-value">' + (r[kF] > 0 ? (d / r[kF] * 100).toFixed(1).replace('.', ',') + '%' : '—') + '</span>' +
+                '<div class="dash-bar-pair">' +
+                    '<div class="pro-bar pro-bar--muted" style="height: ' + (r[kF] / max * 100).toFixed(1) + '%;" title="Facturată: ' + fmt(r[kF]) + ' m³"></div>' +
+                    '<div class="pro-bar" style="height: ' + (r[kC] / max * 100).toFixed(1) + '%;" title="Contoare: ' + fmt(r[kC]) + ' m³"></div>' +
+                '</div>' +
+                '<span class="pro-bar-label">' + lbl[0].substring(0, 3) + ' ' + lbl[1].substring(2) + '</span></div>';
+        }).join('');
+    }
+
+    function updateDisplay() {
+        var si = bilantData.findIndex(function (x) { return x.id === startSel.value; });
+        var ei = bilantData.findIndex(function (x) { return x.id === endSel.value; });
+        if (si < 0) si = 0;
+        if (ei < 0) ei = bilantData.length - 1;
+        if (ei < si) { ei = si; endSel.value = startSel.value; }
+        var rows = rowsCache = bilantData.slice(si, ei + 1);
+        var period = rows[0].perioada + ' - ' + rows[rows.length - 1].perioada;
+
+        $('tabelTitlu').textContent = 'Neînchideri lunare detaliate pentru perioada ' + period;
+        $('ctxPeriod').textContent = period;
+
+        $('bilantTabelBody').innerHTML = rows.map(function (r) {
+            var noAr = r.arFact <= 0 && r.arCont > 0, noAc = r.acFact <= 0 && r.acCont > 0;
+            return '<tr>' +
+                '<td class="td-name">' + r.perioada + (noAr || noAc ? '<span class="list-sublabel">fără valoare facturată</span>' : '') + '</td>' +
+                '<td style="text-align: right;">' + fmt(r.arFact) + '</td>' +
+                '<td style="text-align: right;">' + fmt(r.arCont) + '</td>' +
+                '<td class="td-code" style="text-align: right;">' + fmt(r.arFact - r.arCont) + '</td>' +
+                '<td style="text-align: right;">' + fmt(r.acFact) + '</td>' +
+                '<td style="text-align: right;">' + fmt(r.acCont) + '</td>' +
+                '<td class="td-code" style="text-align: right;">' + fmt(r.acFact - r.acCont) + '</td></tr>';
+        }).join('');
+
+        var tArF = sum(rows, 'arFact'), tArC = sum(rows, 'arCont'), tAcF = sum(rows, 'acFact'), tAcC = sum(rows, 'acCont');
+        $('bilantTabelFoot').innerHTML = '<tr>' +
+            '<td class="td-code">Total perioadă</td>' +
+            '<td class="td-code" style="text-align: right;">' + fmt(tArF) + '</td>' +
+            '<td class="td-code" style="text-align: right;">' + fmt(tArC) + '</td>' +
+            '<td class="td-code" style="text-align: right;">' + fmt(tArF - tArC) + '</td>' +
+            '<td class="td-code" style="text-align: right;">' + fmt(tAcF) + '</td>' +
+            '<td class="td-code" style="text-align: right;">' + fmt(tAcC) + '</td>' +
+            '<td class="td-code" style="text-align: right;">' + fmt(tAcF - tAcC) + '</td></tr>';
+
+        updateRing('ar', tArF, tArC);
+        updateRing('ac', tAcF, tAcC);
+
+        var missing = rows.filter(function (r) { return r.arFact <= 0 && r.arCont > 0; }).map(function (r) { return r.perioada; });
+        $('missingMonths').textContent = missing.join(', ');
+        $('missingAlert').style.display = missing.length ? '' : 'none';
+
+        renderBars();
+    }
+
+    // Aplică = reîncarcă datele pentru locul ales (ca în sursă); dacă locul nu s-a schimbat, recalculează doar perioada
+    window.applyFilter = function (e) {
+        if (placeSel.value === '10') { e.preventDefault(); updateDisplay(); return false; }
+        return true;
+    };
+
+    // Exportă (în sursă: ExportXlsx?addressId=&fromYear=&fromMonth=)
+    window.exportXlsx = function () {
+        var p = startSel.value.split('-');
+        // producție: GET /api/grid/water-balance/export.xlsx?addressId=…&fromYear=p[0]&fromMonth=p[1]
+        alert('Se descarcă bilanțul în Excel pentru ' + placeSel.options[placeSel.selectedIndex].text + ', începând cu ' + startSel.options[startSel.selectedIndex].text + ' (demo).');
+    };
+
+    document.querySelectorAll('.water-filter-pill[data-utility]').forEach(function (b) {
+        b.addEventListener('click', function () {
+            document.querySelectorAll('.water-filter-pill[data-utility]').forEach(function (x) { x.classList.toggle('active', x === b); });
+            utility = b.getAttribute('data-utility');
+            renderBars();
+        });
+    });
+    startSel.addEventListener('change', updateDisplay);
+    endSel.addEventListener('change', updateDisplay);
+    updateDisplay();
+})();
+</script>
 
     </div><!-- /.content -->
     <footer class="app-footer">

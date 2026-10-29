@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
     <title>Editare Contract – SONIC</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.31">
     <script src="assets/js/nod-picker.js"></script>
     <script src="assets/js/edit-tabs.js"></script>
     <script src="assets/js/datepicker.js"></script>
@@ -453,6 +453,97 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
+                <!-- ── MONTAJE & FACTURARE ── -->
+                <div class="nav-group " data-group="fin-montaje">
+                    <button class="nav-group-title" type="button" title="Montaje & Facturare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>
+                        </span>
+                        <span class="nav-label">Montaje & Facturare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-validare-montaje.html" class="nav-subitem ">Validare Montaje</a>
+                        <a href="fin-facturare-echipamente.html" class="nav-subitem ">Facturare Echipamente</a>
+                        <a href="fin-rate.html" class="nav-subitem ">Scadențar Rate</a>
+                        <a href="fin-facturi.html" class="nav-subitem ">Facturi</a>
+                    </div>
+                </div>
+
+                <!-- ── ÎNCASĂRI ── -->
+                <div class="nav-group " data-group="fin-incasari">
+                    <button class="nav-group-title" type="button" title="Încasări">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+                        </span>
+                        <span class="nav-label">Încasări</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-chitante.html" class="nav-subitem ">Chitanțe</a>
+                        <a href="fin-chitantiere.html" class="nav-subitem ">Chitanțiere</a>
+                        <a href="fin-incasari-banca.html" class="nav-subitem ">Încasări Bancă</a>
+                        <a href="fin-recalculare.html" class="nav-subitem ">Recalculare Solduri</a>
+                    </div>
+                </div>
+
+                <!-- ── CREANȚE ── -->
+                <div class="nav-group " data-group="fin-creante">
+                    <button class="nav-group-title" type="button" title="Creanțe">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                        </span>
+                        <span class="nav-label">Creanțe</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-creante.html" class="nav-subitem ">Urmărire Creanțe</a>
+                        <a href="fin-alerte.html" class="nav-subitem ">Alerte SMS și E-mail</a>
+                    </div>
+                </div>
+
+                <!-- ── GESTIUNE STOCURI ── -->
+                <div class="nav-group " data-group="fin-gestiune">
+                    <button class="nav-group-title" type="button" title="Gestiune Stocuri">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                        </span>
+                        <span class="nav-label">Gestiune Stocuri</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-gestiuni.html" class="nav-subitem ">Gestiuni</a>
+                        <a href="fin-intrari.html" class="nav-subitem ">Intrări în Gestiune</a>
+                        <a href="fin-iesiri.html" class="nav-subitem ">Ieșiri și Transferuri</a>
+                        <a href="fin-retururi.html" class="nav-subitem ">Retururi</a>
+                        <a href="fin-comenzi-furnizori.html" class="nav-subitem ">Comenzi Furnizori</a>
+                        <a href="fin-necesar-marfa.html" class="nav-subitem ">Necesar de Comandat</a>
+                    </div>
+                </div>
+
+                <!-- ── NOMENCLATOARE ── -->
+                <div class="nav-group " data-group="fin-nomenclatoare">
+                    <button class="nav-group-title" type="button" title="Nomenclatoare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Nomenclatoare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-produse.html" class="nav-subitem ">Produse</a>
+                        <a href="fin-nomenclatoare.html" class="nav-subitem ">Nomenclatoare Financiare</a>
+                    </div>
+                </div>
+
+                <!-- ── RAPOARTE FIN (standalone) ── -->
+                <a href="fin-rapoarte.html" class="nav-item " title="Rapoarte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <span class="nav-label">Rapoarte</span>
+                </a>
+
             </div>
         </div>
 
@@ -618,13 +709,20 @@
                             aria-selected="false"
                             aria-controls="help-pane-1"
                             data-tab="1">
-                        Servicii Contractate                    </button>
+                        Facturare                    </button>
                                         <button class="help-tab-btn "
                             role="tab"
                             id="help-tab-2"
                             aria-selected="false"
                             aria-controls="help-pane-2"
                             data-tab="2">
+                        Servicii Contractate                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-3"
+                            aria-selected="false"
+                            aria-controls="help-pane-3"
+                            data-tab="3">
                         NOD-uri Asociate                    </button>
                                     </nav>
                 <!-- Tab content panes -->
@@ -638,6 +736,7 @@
             <h4>Informații Contract</h4>
             <p>Introduceți numărul contractului, data semnării, codul și denumirea partenerului beneficiar.</p>
             <p>Câmpul <strong>Durată c. exploatare</strong> reprezintă durata în ani (valoare numerică pozitivă de maximum 10 ani).</p>
+            <p><strong>Tip contract</strong>, <strong>Data expirare</strong>, <strong>Fișier</strong> și <strong>Este activ</strong> vin din aplicația de gestiune / facturare; un contract inactiv nu mai generează facturi.</p>
                             </div>
                                         <div class="help-tab-pane "
                          role="tabpanel"
@@ -645,14 +744,32 @@
                          aria-labelledby="help-tab-1"
                          data-pane="1">
                         
-            <h4>Gestiune Servicii</h4>
-            <p>Tab-ul <strong>Servicii</strong> listează serviciile de facturare și contorizare activate pe acest contract.</p>
+            <h4>Condițiile de facturare ale contractului</h4>
+            <p>Datele folosite de SONIC FIN la facturarea echipamentelor montate și la urmărirea încasării. Se introduc o singură dată, aici – departamentul financiar nu le mai completează separat.</p>
+            <ul>
+                <li><strong>Prețuri contract aparate</strong> – prețul unui aparat (fără TVA) pentru produsele din lista contractului.</li>
+                <li><strong>Număr rate</strong> – numărul de rate negociat la nivel de contract. Se aplică tuturor apartamentelor, cu excepția celor la care instalatorul a trecut alt număr de rate la montaj (câmpul „Număr rate” din apartament).</li>
+                <li><strong>Tipuri rate</strong> – variantele de plată acceptate (număr de luni și valoarea totală pe aparat). Numărul de rate ales trebuie să existe în listă.</li>
+                <li><strong>Data încasare</strong> – ziua din lună la care scade rata; prima rată scade în luna următoare facturării.</li>
+                <li><strong>Procent penalități</strong> – procentul pe zi de întârziere folosit la recalcularea soldurilor și în notificările de plată.</li>
+                <li><strong>Comisioane</strong> – comisionul agentului de vânzări și al asociației (procentual sau valoare fixă) și dacă au fost achitate.</li>
+                <li><strong>Lista produse</strong> – echipamentele și serviciile incluse în contract.</li>
+            </ul>
                             </div>
                                         <div class="help-tab-pane "
                          role="tabpanel"
                          id="help-pane-2"
                          aria-labelledby="help-tab-2"
                          data-pane="2">
+                        
+            <h4>Gestiune Servicii</h4>
+            <p>Tab-ul <strong>Servicii</strong> listează serviciile de facturare și contorizare activate pe acest contract.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-3"
+                         aria-labelledby="help-tab-3"
+                         data-pane="3">
                         
             <h4>Asociere NOD-uri</h4>
             <p>Vizualizați și administrați nodurile de contorizare (nodurile de calcul) arondate acestui contract.</p>
@@ -688,7 +805,7 @@
 <div class="page-title-container">
     <div class="page-title">
         <h1>Editare Contract</h1>
-        <p>Modifici informațiile pentru contractul numărul <strong>0155</strong>.</p>
+        <p>Modifici informațiile pentru contractul numărul <strong>C-2026-118</strong>.</p>
     </div>
     <a href="contracte.html" class="btn-secondary">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
@@ -702,6 +819,10 @@
         <button type="button" class="edit-tab-btn active" role="tab" aria-selected="true" aria-controls="tab-general" id="tabBtn-general" onclick="switchTab('general', this)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
             Date generale
+        </button>
+        <button type="button" class="edit-tab-btn " role="tab" aria-selected="false" aria-controls="tab-billing" id="tabBtn-billing" onclick="switchTab('billing', this)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle><path d="M6 12h.01M18 12h.01"></path></svg>
+            Facturare
         </button>
         <button type="button" class="edit-tab-btn " role="tab" aria-selected="false" aria-controls="tab-services" id="tabBtn-services" onclick="switchTab('services', this)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
@@ -731,12 +852,12 @@
                 <div class="form-row-2">
                     <div class="form-group">
                         <label class="form-label" for="txtContractNumber">Număr contract <span class="required-star">*</span></label>
-                        <input type="text" id="txtContractNumber" name="contract_no" class="input-control" placeholder="Ex: 0155" value="0155" required>
+                        <input type="text" id="txtContractNumber" name="contract_no" class="input-control" placeholder="Ex: 0155" value="C-2026-118" required>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label" for="dtpContractDate">Data contract <span class="required-star">*</span></label>
-                        <input type="text" data-datepicker id="dtpContractDate" name="contract_date" class="input-control" value="2025-04-10" required>
+                        <input type="text" data-datepicker id="dtpContractDate" name="contract_date" class="input-control" value="2026-09-15" required>
                     </div>
                 </div>
 
@@ -744,13 +865,13 @@
                 <div class="form-row-2">
                     <div class="form-group">
                         <label class="form-label" for="txtPartnerCode">Cod partener <span class="required-star">*</span></label>
-                        <input type="text" id="txtPartnerCode" name="partner_code" class="input-control" placeholder="Cod partener..." value="0155" required>
+                        <input type="text" id="txtPartnerCode" name="partner_code" class="input-control" placeholder="Cod partener..." value="B0118" required>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label" for="txtPartnerName">Nume partener <span class="required-star">*</span></label>
                         <div class="picker-group">
-                            <input type="text" id="txtPartnerName" name="partner_name" class="input-control" readonly placeholder="Click pe lupă pentru a selecta partenerul..." value="11 IUNIE BL 102 SC 7" required>
+                            <input type="text" id="txtPartnerName" name="partner_name" class="input-control" readonly placeholder="Click pe lupă pentru a selecta partenerul..." value="Asociația de Proprietari Cremenița 5" required>
                             <button type="button" class="btn-picker" id="btnOpenPartnerModal" title="Selectează partener" onclick="openPartnerModal()">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                             </button>
@@ -771,14 +892,51 @@
 
                     <div class="form-group">
                         <label class="form-label" for="dtpInstallDate">Data începere montare <span class="required-star">*</span></label>
-                        <input type="text" data-datepicker id="dtpInstallDate" name="install_date" class="input-control" value="2026-01-26" required>
+                        <input type="text" data-datepicker id="dtpInstallDate" name="install_date" class="input-control" value="2026-09-15" required>
                     </div>
                 </div>
 
-                <!-- Rândul 4: Observații -->
+                <!-- Rândul 4: Tip contract & Data expirare (din aplicația de facturare) -->
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label class="form-label" for="ddlContractType">Tip contract <span class="required-star">*</span></label>
+                        <select id="ddlContractType" name="contract_type" class="input-control" required>
+                                                        <option value="Repartitoare" >Repartitoare</option>
+                                                        <option value="Contoare apă" >Contoare apă</option>
+                                                        <option value="Repartitoare și contoare" selected>Repartitoare și contoare</option>
+                                                        <option value="Servicii citire și calcul" >Servicii citire și calcul</option>
+                                                        <option value="Gateway-uri și senzori" >Gateway-uri și senzori</option>
+                                                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="dtpExpiryDate">Data expirare</label>
+                        <input type="text" data-datepicker id="dtpExpiryDate" name="expiry_date" class="input-control" value="2031-09-15">
+                    </div>
+                </div>
+
+                <!-- Rândul 5: Fișier contract (+ Descarcă) & Este activ -->
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label class="form-label" for="fuContractFile">Fișier</label>
+                        <div class="picker-group">
+                            <input type="file" id="fuContractFile" name="contract_file" class="input-control" accept=".pdf,.doc,.docx,.jpg,.png">
+                            <button type="button" class="btn-secondary" id="btnDownloadContract"  onclick="alert('Se descarcă Contract_C-2026-118.pdf (demo).')">Descarcă</button>
+                        </div>
+                        <span class="field-hint">Fișier atașat: Contract_C-2026-118.pdf</span>
+                    </div>
+                    <div class="form-group">
+                        <span class="form-label">Stare contract</span>
+                        <label class="heating-checkbox-item">
+                            <input type="checkbox" id="chkIsActive" name="is_active" value="1" checked>
+                            <span>Este activ</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Rândul 6: Observații (= „Descriere” în aplicația de facturare) -->
                 <div class="form-group" style="margin-bottom: 0;">
                     <label class="form-label" for="txtComments">Observații</label>
-                    <textarea id="txtComments" name="comments" class="input-control" rows="3" placeholder="Observații sau detalii suplimentare despre contract...">Contract încheiat conform acordului asociației de proprietari. Prelungire automată pe perioade de 12 luni.</textarea>
+                    <textarea id="txtComments" name="comments" class="input-control" rows="3" placeholder="Observații sau detalii suplimentare despre contract...">35 apartamente, repartitoare + contoare apă rece / caldă.</textarea>
                 </div>
 
             </div>
@@ -793,6 +951,300 @@
             </button>
         </div>
 
+    </form>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     TAB – Facturare (câmpurile de facturare din aplicația de gestiune + Număr rate)
+     React: <ContractBillingForm contract={contract} onSave={saveBilling} />
+══════════════════════════════════════════════════════════════════════ -->
+<div id="tab-billing" class="tab-pane " style="display: none;" role="tabpanel" aria-labelledby="tabBtn-billing">
+    <form id="contractBillingForm" method="POST" action="contracte.html" onsubmit="return handleBillingSubmit(event)">
+
+        <!-- React: <BillingTermsCard /> -->
+        <div class="card edit-section-card" style="margin-bottom: 20px;">
+            <div class="edit-section-header">
+                <span class="edit-section-title">Condiții de facturare</span>
+            </div>
+            <div class="edit-section-body" style="padding-top: 16px;">
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label class="form-label" for="txtDevicePrice">Prețuri contract aparate (RON, fără TVA) <span class="required-star">*</span></label>
+                        <input type="text" id="txtDevicePrice" name="device_price" class="input-control" inputmode="decimal" value="150" oninput="updateInstallmentHint()" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtInstallments">Număr rate <span class="required-star">*</span></label>
+                        <input type="number" id="txtInstallments" name="installments" class="input-control" min="1" max="60" step="1" value="12" oninput="updateInstallmentHint()" required>
+                        <span class="field-hint" id="installmentsHint">Implicit pentru apartamentele contractului; se poate modifica la apartament, la montaj.</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtCollectionDay">Data încasare (ziua din lună) <span class="required-star">*</span></label>
+                        <input type="number" id="txtCollectionDay" name="collection_day" class="input-control" min="1" max="28" step="1" value="15" required>
+                    </div>
+                </div>
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label class="form-label" for="txtOperatingFee">Taxă exploatare (RON)</label>
+                        <input type="text" id="txtOperatingFee" name="operating_fee" class="input-control" inputmode="decimal" value="4">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="ddlCollectionMode">Modalitate încasare <span class="required-star">*</span></label>
+                        <select id="ddlCollectionMode" name="collection_mode" class="input-control" required>
+                                                        <option value="Prin Asociație" selected>Prin Asociație</option>
+                                                        <option value="Direct de la proprietari" >Direct de la proprietari</option>
+                                                        <option value="Prin Asociație sau Proprietari" >Prin Asociație sau Proprietari</option>
+                                                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtPenaltyPct">Procent penalități (% / zi)</label>
+                        <input type="text" id="txtPenaltyPct" name="penalty_pct" class="input-control" inputmode="decimal" value="0.1">
+                    </div>
+                </div>
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label class="form-label" for="txtSagaCode">Cod SAGA</label>
+                        <input type="text" id="txtSagaCode" name="saga_code" class="input-control" maxlength="20" value="02118">
+                    </div>
+                    <div class="form-group">
+                        <span class="form-label">Plată</span>
+                        <label class="heating-checkbox-item">
+                            <input type="checkbox" id="chkPayViaAssociation" name="pay_via_association" value="1" checked>
+                            <span>Plată prin Asociație</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- React: <CommissionsCard /> -->
+        <div class="card edit-section-card" style="margin-bottom: 20px;">
+            <div class="edit-section-header">
+                <span class="edit-section-title">Comisioane</span>
+            </div>
+            <div class="edit-section-body" style="padding-top: 16px;">
+                <div class="form-row-4">
+                    <div class="form-group">
+                        <label class="form-label" for="ddlSalesAgent">Agent vânzări</label>
+                        <select id="ddlSalesAgent" name="sales_agent" class="input-control">
+                            <option value="">-</option>
+                                                        <option value="Cristi Pică" selected>Cristi Pică</option>
+                                                        <option value="Monica Ilie" >Monica Ilie</option>
+                                                        <option value="Sorin Lupu" >Sorin Lupu</option>
+                                                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="ddlAgentCommissionType">Tip comision agent vânzări</label>
+                        <select id="ddlAgentCommissionType" name="agent_commission_type" class="input-control">
+                                                        <option value="Procentual" selected>Procentual</option>
+                                                        <option value="Valoare fixă" >Valoare fixă</option>
+                                                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtAgentCommission">Valoare comision agent vânzări</label>
+                        <input type="text" id="txtAgentCommission" name="agent_commission" class="input-control" inputmode="decimal" value="3">
+                    </div>
+                    <div class="form-group">
+                        <span class="form-label">Comision agent</span>
+                        <label class="heating-checkbox-item">
+                            <input type="checkbox" id="chkAgentCommissionPaid" name="agent_commission_paid" value="1" >
+                            <span>Achitat</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-row-4">
+                    <div></div>
+                    <div class="form-group">
+                        <label class="form-label" for="ddlAssocCommissionType">Tip comision asociație</label>
+                        <select id="ddlAssocCommissionType" name="assoc_commission_type" class="input-control">
+                                                        <option value="Procentual" >Procentual</option>
+                                                        <option value="Valoare fixă" selected>Valoare fixă</option>
+                                                    </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtAssocCommission">Valoare comision asociație</label>
+                        <input type="text" id="txtAssocCommission" name="assoc_commission" class="input-control" inputmode="decimal" value="0">
+                    </div>
+                    <div class="form-group">
+                        <span class="form-label">Comision asociație</span>
+                        <label class="heating-checkbox-item">
+                            <input type="checkbox" id="chkAssocCommissionPaid" name="assoc_commission_paid" value="1" >
+                            <span>Achitat</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- React: <InstallmentTypesTable rows={installmentTypes} onAdd onRemove /> -->
+        <div class="card edit-section-card" style="margin-bottom: 20px;">
+            <div class="edit-section-header">
+                <span class="edit-section-title">Tipuri rate</span>
+            </div>
+            <div class="edit-section-body" style="padding-top: 16px;">
+                <div class="table-scroll">
+                    <table class="partners-table">
+                        <thead>
+                            <tr>
+                                <th>Număr luni</th>
+                                <th style="text-align: right;">Valoare totală / aparat (RON)</th>
+                                <th style="text-align: right;">Rată lunară / aparat (RON)</th>
+                                <th style="text-align: center; width: 90px;">Acțiuni</th>
+                            </tr>
+                        </thead>
+                        <tbody id="installmentTypesBody">
+                                                        <tr data-months="1">
+                                <td class="td-code">1</td>
+                                <td style="text-align: right;">150,00</td>
+                                <td style="text-align: right;">150,00</td>
+                                <td style="text-align: center;">
+                                    <button type="button" class="btn-action-icon" title="Șterge tipul de rată" onclick="removeInstallmentType(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
+                                </td>
+                            </tr>
+                                                        <tr data-months="6">
+                                <td class="td-code">6</td>
+                                <td style="text-align: right;">156,00</td>
+                                <td style="text-align: right;">26,00</td>
+                                <td style="text-align: center;">
+                                    <button type="button" class="btn-action-icon" title="Șterge tipul de rată" onclick="removeInstallmentType(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
+                                </td>
+                            </tr>
+                                                        <tr data-months="12">
+                                <td class="td-code">12</td>
+                                <td style="text-align: right;">162,00</td>
+                                <td style="text-align: right;">13,50</td>
+                                <td style="text-align: center;">
+                                    <button type="button" class="btn-action-icon" title="Șterge tipul de rată" onclick="removeInstallmentType(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
+                                </td>
+                            </tr>
+                                                        <tr id="installmentTypesEmpty" style="display: none;"><td colspan="4" class="table-empty">Niciun tip de rată definit.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="form-row-3" style="margin-top: 16px;">
+                    <div class="form-group">
+                        <label class="form-label" for="txtNewMonths">Număr luni</label>
+                        <input type="number" id="txtNewMonths" class="input-control" min="1" max="60" step="1">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtNewTotal">Valoare totală / aparat (RON)</label>
+                        <input type="text" id="txtNewTotal" class="input-control" inputmode="decimal">
+                    </div>
+                    <div class="form-group">
+                        <span class="form-label">&nbsp;</span>
+                        <button type="button" class="btn-secondary" onclick="addInstallmentType()">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            <span>Adaugă tip rată</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- React: <ContractProductsTable products={products} onAdd onRemove /> -->
+        <div class="card edit-section-card">
+            <div class="edit-section-header">
+                <span class="edit-section-title">Lista produse</span>
+            </div>
+            <div class="edit-section-body" style="padding-top: 16px;">
+                <div class="table-scroll">
+                    <table class="partners-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 12%;">Cod</th>
+                                <th>Nume produs</th>
+                                <th>Categorie</th>
+                                <th style="text-align: right;">Preț de listă (RON)</th>
+                                <th style="text-align: center; width: 90px;">Acțiuni</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contractProductsBody">
+                                                        <tr data-code="REP-30">
+                                <td class="td-code">REP-30</td>
+                                <td class="td-name">Repartitor Metra E-ITN 30.4 – Radio</td>
+                                <td>Repartitoare</td>
+                                <td style="text-align: right;">150,00</td>
+                                <td style="text-align: center;">
+                                    <button type="button" class="btn-action-icon" title="Elimină produsul din contract" onclick="removeContractProduct(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
+                                </td>
+                            </tr>
+                                                        <tr data-code="APA-AR">
+                                <td class="td-code">APA-AR</td>
+                                <td class="td-name">Contor apă rece E-RM 30 AR</td>
+                                <td>Contoare apă</td>
+                                <td style="text-align: right;">185,00</td>
+                                <td style="text-align: center;">
+                                    <button type="button" class="btn-action-icon" title="Elimină produsul din contract" onclick="removeContractProduct(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
+                                </td>
+                            </tr>
+                                                        <tr data-code="APA-AC">
+                                <td class="td-code">APA-AC</td>
+                                <td class="td-name">Contor apă caldă E-RM 30 AC</td>
+                                <td>Contoare apă</td>
+                                <td style="text-align: right;">195,00</td>
+                                <td style="text-align: center;">
+                                    <button type="button" class="btn-action-icon" title="Elimină produsul din contract" onclick="removeContractProduct(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
+                                </td>
+                            </tr>
+                                                        <tr data-code="ROB-12">
+                                <td class="td-code">ROB-12</td>
+                                <td class="td-name">Robinet sferic 1/2&quot;</td>
+                                <td>Materiale montaj</td>
+                                <td style="text-align: right;">38,00</td>
+                                <td style="text-align: center;">
+                                    <button type="button" class="btn-action-icon" title="Elimină produsul din contract" onclick="removeContractProduct(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
+                                </td>
+                            </tr>
+                                                        <tr data-code="SRV-DP">
+                                <td class="td-code">SRV-DP</td>
+                                <td class="td-name">Taxă deplasare</td>
+                                <td>Servicii</td>
+                                <td style="text-align: right;">60,00</td>
+                                <td style="text-align: center;">
+                                    <button type="button" class="btn-action-icon" title="Elimină produsul din contract" onclick="removeContractProduct(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
+                                </td>
+                            </tr>
+                                                        <tr id="contractProductsEmpty" style="display: none;"><td colspan="5" class="table-empty">Niciun produs în contract.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="form-row-2" style="margin-top: 16px;">
+                    <div class="form-group">
+                        <label class="form-label" for="ddlNewProduct">Produs</label>
+                        <select id="ddlNewProduct" class="input-control">
+                                                        <option value="REP-30" data-name="Repartitor Metra E-ITN 30.4 – Radio" data-category="Repartitoare" data-price="150,00">REP-30 – Repartitor Metra E-ITN 30.4 – Radio</option>
+                                                        <option value="APA-AR" data-name="Contor apă rece E-RM 30 AR" data-category="Contoare apă" data-price="185,00">APA-AR – Contor apă rece E-RM 30 AR</option>
+                                                        <option value="APA-AC" data-name="Contor apă caldă E-RM 30 AC" data-category="Contoare apă" data-price="195,00">APA-AC – Contor apă caldă E-RM 30 AC</option>
+                                                        <option value="ET-US" data-name="Contor energie termică ultrasonic" data-category="Contoare ET" data-price="890,00">ET-US – Contor energie termică ultrasonic</option>
+                                                        <option value="GW-LR" data-name="Gateway LoRa / wM-Bus" data-category="Gateway-uri" data-price="1.450,00">GW-LR – Gateway LoRa / wM-Bus</option>
+                                                        <option value="SZ-FL" data-name="Senzor inundație" data-category="Senzori" data-price="240,00">SZ-FL – Senzor inundație</option>
+                                                        <option value="MOD-RF" data-name="Modul radio contor apă" data-category="Contoare apă" data-price="95,00">MOD-RF – Modul radio contor apă</option>
+                                                        <option value="SIG-01" data-name="Sigiliu" data-category="Materiale montaj" data-price="2,00">SIG-01 – Sigiliu</option>
+                                                        <option value="ROB-12" data-name="Robinet sferic 1/2&quot;" data-category="Materiale montaj" data-price="38,00">ROB-12 – Robinet sferic 1/2&quot;</option>
+                                                        <option value="RAC-12" data-name="Racord olandez 1/2&quot;" data-category="Materiale montaj" data-price="12,00">RAC-12 – Racord olandez 1/2&quot;</option>
+                                                        <option value="GAR-12" data-name="Set garnituri 1/2&quot;" data-category="Materiale montaj" data-price="4,00">GAR-12 – Set garnituri 1/2&quot;</option>
+                                                        <option value="ADP-RP" data-name="Adaptor montaj repartitor" data-category="Materiale montaj" data-price="9,00">ADP-RP – Adaptor montaj repartitor</option>
+                                                        <option value="SRV-MT" data-name="Manoperă montaj echipament" data-category="Servicii" data-price="35,00">SRV-MT – Manoperă montaj echipament</option>
+                                                        <option value="SRV-DP" data-name="Taxă deplasare" data-category="Servicii" data-price="60,00">SRV-DP – Taxă deplasare</option>
+                                                    </select>
+                    </div>
+                    <div class="form-group">
+                        <span class="form-label">&nbsp;</span>
+                        <button type="button" class="btn-secondary" onclick="addContractProduct()">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            <span>Adaugă produs</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="edit-actions-bar">
+            <a href="contracte.html" class="btn-secondary">Renunță</a>
+            <button type="submit" class="btn-primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                <span>Salvează facturarea</span>
+            </button>
+        </div>
     </form>
 </div>
 
@@ -1560,6 +2012,84 @@ function handleContractSubmit(e) {
     }
     return true;
 }
+
+// ── Tab Facturare ─────────────────────────────────────────────────────────
+function parseAmount(v) { return parseFloat(String(v || '').replace(/\./g, '').replace(',', '.')); }
+function formatAmount(v) { return v.toLocaleString('ro-RO', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+
+/** Afișează rata lunară pentru numărul de rate ales, din „Tipuri rate” (sau avertizează dacă tipul nu există). */
+function updateInstallmentHint() {
+    var n = parseInt(document.getElementById('txtInstallments').value, 10);
+    var hint = document.getElementById('installmentsHint');
+    var row = document.querySelector('#installmentTypesBody tr[data-months="' + n + '"]');
+    if (!n || n < 1) { hint.textContent = 'Numărul de rate trebuie să fie cel puțin 1.'; return; }
+    if (row) {
+        hint.textContent = n === 1 ? 'Plată integrală: ' + row.children[1].textContent + ' RON / aparat.' : n + ' rate × ' + row.children[2].textContent + ' RON / aparat. Se poate modifica la apartament, la montaj.';
+    } else {
+        hint.textContent = 'Nu există tipul de rată de ' + n + ' luni în lista „Tipuri rate” – adăugați-l mai jos.';
+    }
+}
+
+function addInstallmentType() {
+    var months = parseInt(document.getElementById('txtNewMonths').value, 10);
+    var total = parseAmount(document.getElementById('txtNewTotal').value);
+    if (!months || months < 1 || isNaN(total) || total <= 0) { alert('Completați numărul de luni și valoarea totală (valori pozitive).'); return; }
+    var body = document.getElementById('installmentTypesBody');
+    if (body.querySelector('tr[data-months="' + months + '"]')) { alert('Tipul de rată de ' + months + ' luni există deja.'); return; }
+    var tr = document.createElement('tr');
+    tr.setAttribute('data-months', months);
+    tr.innerHTML = '<td class="td-code">' + months + '</td><td style="text-align: right;">' + formatAmount(total) + '</td><td style="text-align: right;">' + formatAmount(total / months) + '</td>'
+        + '<td style="text-align: center;"><button type="button" class="btn-action-icon" title="Șterge tipul de rată" onclick="removeInstallmentType(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button></td>';
+    body.insertBefore(tr, document.getElementById('installmentTypesEmpty'));
+    document.getElementById('installmentTypesEmpty').style.display = 'none';
+    document.getElementById('txtNewMonths').value = '';
+    document.getElementById('txtNewTotal').value = '';
+    updateInstallmentHint();
+}
+
+function removeInstallmentType(btn) {
+    var tr = btn.closest('tr');
+    if (!confirm('Ștergeți tipul de rată de ' + tr.getAttribute('data-months') + ' luni?')) return;
+    tr.remove();
+    document.getElementById('installmentTypesEmpty').style.display = document.querySelector('#installmentTypesBody tr[data-months]') ? 'none' : '';
+    updateInstallmentHint();
+}
+
+function addContractProduct() {
+    var sel = document.getElementById('ddlNewProduct');
+    var opt = sel.options[sel.selectedIndex];
+    var body = document.getElementById('contractProductsBody');
+    if (body.querySelector('tr[data-code="' + opt.value + '"]')) { alert('Produsul ' + opt.value + ' este deja în contract.'); return; }
+    var tr = document.createElement('tr');
+    tr.setAttribute('data-code', opt.value);
+    tr.innerHTML = '<td class="td-code">' + escapeHtml(opt.value) + '</td><td class="td-name">' + escapeHtml(opt.getAttribute('data-name')) + '</td><td>' + escapeHtml(opt.getAttribute('data-category')) + '</td>'
+        + '<td style="text-align: right;">' + escapeHtml(opt.getAttribute('data-price')) + '</td>'
+        + '<td style="text-align: center;"><button type="button" class="btn-action-icon" title="Elimină produsul din contract" onclick="removeContractProduct(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button></td>';
+    body.insertBefore(tr, document.getElementById('contractProductsEmpty'));
+    document.getElementById('contractProductsEmpty').style.display = 'none';
+}
+
+function removeContractProduct(btn) {
+    var tr = btn.closest('tr');
+    if (!confirm('Eliminați produsul ' + tr.getAttribute('data-code') + ' din contract?')) return;
+    tr.remove();
+    document.getElementById('contractProductsEmpty').style.display = document.querySelector('#contractProductsBody tr[data-code]') ? 'none' : '';
+}
+
+function handleBillingSubmit(e) {
+    e.preventDefault();
+    var price = parseAmount(document.getElementById('txtDevicePrice').value);
+    var n = parseInt(document.getElementById('txtInstallments').value, 10);
+    var day = parseInt(document.getElementById('txtCollectionDay').value, 10);
+    if (isNaN(price) || price <= 0) { alert('Prețul contract aparate trebuie să fie o valoare pozitivă.'); return false; }
+    if (!n || n < 1 || n > 60) { alert('Numărul de rate trebuie să fie între 1 și 60.'); return false; }
+    if (!day || day < 1 || day > 28) { alert('Data încasare trebuie să fie o zi între 1 și 28.'); return false; }
+    if (!document.querySelector('#installmentTypesBody tr[data-months="' + n + '"]')) { alert('Numărul de rate ales (' + n + ') nu există în lista „Tipuri rate”.'); return false; }
+    alert('Datele de facturare au fost salvate (demo).');
+    return false;
+}
+
+document.addEventListener('DOMContentLoaded', updateInstallmentHint);
 
 function escapeHtml(text) {
     if (text === null || text === undefined) return '';

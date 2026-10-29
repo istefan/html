@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
     <title>Estimări Consum – SONIC</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.31">
     <script src="assets/js/nod-picker.js"></script>
     <script src="assets/js/edit-tabs.js"></script>
     <script src="assets/js/datepicker.js"></script>
     <script src="assets/js/action-tooltip.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.min.js"></script>
 </head>
 <body>
 
@@ -453,6 +454,97 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
+                <!-- ── MONTAJE & FACTURARE ── -->
+                <div class="nav-group " data-group="fin-montaje">
+                    <button class="nav-group-title" type="button" title="Montaje & Facturare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>
+                        </span>
+                        <span class="nav-label">Montaje & Facturare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-validare-montaje.html" class="nav-subitem ">Validare Montaje</a>
+                        <a href="fin-facturare-echipamente.html" class="nav-subitem ">Facturare Echipamente</a>
+                        <a href="fin-rate.html" class="nav-subitem ">Scadențar Rate</a>
+                        <a href="fin-facturi.html" class="nav-subitem ">Facturi</a>
+                    </div>
+                </div>
+
+                <!-- ── ÎNCASĂRI ── -->
+                <div class="nav-group " data-group="fin-incasari">
+                    <button class="nav-group-title" type="button" title="Încasări">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+                        </span>
+                        <span class="nav-label">Încasări</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-chitante.html" class="nav-subitem ">Chitanțe</a>
+                        <a href="fin-chitantiere.html" class="nav-subitem ">Chitanțiere</a>
+                        <a href="fin-incasari-banca.html" class="nav-subitem ">Încasări Bancă</a>
+                        <a href="fin-recalculare.html" class="nav-subitem ">Recalculare Solduri</a>
+                    </div>
+                </div>
+
+                <!-- ── CREANȚE ── -->
+                <div class="nav-group " data-group="fin-creante">
+                    <button class="nav-group-title" type="button" title="Creanțe">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                        </span>
+                        <span class="nav-label">Creanțe</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-creante.html" class="nav-subitem ">Urmărire Creanțe</a>
+                        <a href="fin-alerte.html" class="nav-subitem ">Alerte SMS și E-mail</a>
+                    </div>
+                </div>
+
+                <!-- ── GESTIUNE STOCURI ── -->
+                <div class="nav-group " data-group="fin-gestiune">
+                    <button class="nav-group-title" type="button" title="Gestiune Stocuri">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                        </span>
+                        <span class="nav-label">Gestiune Stocuri</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-gestiuni.html" class="nav-subitem ">Gestiuni</a>
+                        <a href="fin-intrari.html" class="nav-subitem ">Intrări în Gestiune</a>
+                        <a href="fin-iesiri.html" class="nav-subitem ">Ieșiri și Transferuri</a>
+                        <a href="fin-retururi.html" class="nav-subitem ">Retururi</a>
+                        <a href="fin-comenzi-furnizori.html" class="nav-subitem ">Comenzi Furnizori</a>
+                        <a href="fin-necesar-marfa.html" class="nav-subitem ">Necesar de Comandat</a>
+                    </div>
+                </div>
+
+                <!-- ── NOMENCLATOARE ── -->
+                <div class="nav-group " data-group="fin-nomenclatoare">
+                    <button class="nav-group-title" type="button" title="Nomenclatoare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Nomenclatoare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-produse.html" class="nav-subitem ">Produse</a>
+                        <a href="fin-nomenclatoare.html" class="nav-subitem ">Nomenclatoare Financiare</a>
+                    </div>
+                </div>
+
+                <!-- ── RAPOARTE FIN (standalone) ── -->
+                <a href="fin-rapoarte.html" class="nav-item " title="Rapoarte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <span class="nav-label">Rapoarte</span>
+                </a>
+
             </div>
         </div>
 
@@ -618,7 +710,14 @@
                             aria-selected="false"
                             aria-controls="help-pane-1"
                             data-tab="1">
-                        Stadiu                    </button>
+                        Grafic Proiecție                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Export &amp; Raportare                    </button>
                                     </nav>
                 <!-- Tab content panes -->
                 <div class="help-tab-content">
@@ -628,9 +727,10 @@
                          aria-labelledby="help-tab-0"
                          data-pane="0">
                         
-            <h4>Estimări Consum</h4>
-            <p>Raportul consumurilor estimate pentru echipamentele necitite sau defecte.</p>
-            <p>Pagina face parte în modulul <strong>SONIC GRID</strong>.</p>
+            <h4>Estimări Consum Lună Curentă</h4>
+            <p>Acest ecran realizează o proiecție statistică a consumului lunar de apă pentru locurile de măsurare selectate, pe baza volumelor efectiv înregistrate până la data curentă.</p>
+            <p>Formula de calcul utilizează o proiecție liniară pe 31 zile:</p>
+            <code>Consum Estimat = (Consum Realizat / Zile Scurse) × Zile Lună</code>
                             </div>
                                         <div class="help-tab-pane "
                          role="tabpanel"
@@ -638,8 +738,21 @@
                          aria-labelledby="help-tab-1"
                          data-pane="1">
                         
-            <h4>Pagină în construcție</h4>
-            <p>Interfața acestei pagini nu a fost încă generată. Conținutul de ajutor va fi completat odată cu implementarea paginii.</p>
+            <h4>Structură bare stacked</h4>
+            <p>Graficul ilustrează pentru fiecare utilitate:</p>
+            <ul>
+                <li><strong>Consum Realizat (albastru):</strong> volumul citit și confirmat prin LoRaWAN de la începutul lunii până azi.</li>
+                <li><strong>Proiecție Restul Lunii (gri):</strong> volumul prognozat pentru zilele rămase din lună.</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <h4>Export date</h4>
+            <p>Datele de estimare pot fi descărcate în format Excel (XLSX) sau tipărite direct pentru analize de gestiune și bugetare.</p>
                             </div>
                                     </div>
                     </div><!-- /.help-panel-inner -->
@@ -668,22 +781,437 @@
 
     <div class="content">
 
+<!-- React: <PageHeader title="Estimări Consum" /> -->
 <div class="page-title-container">
     <div class="page-title">
         <h1>Estimări Consum</h1>
-        <p>Pagina este în construcție.</p>
+        <p>Se estimează consumul total pentru luna curentă, bazat pe media consumului zilnic înregistrat până la data curentă.</p>
+    </div>
+    <div class="page-actions">
+        <button type="button" class="btn btn-secondary" onclick="handleExportXlsx()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="8" y1="13" x2="16" y2="17"></line>
+                <line x1="16" y1="13" x2="8" y2="17"></line>
+            </svg>
+            <span>Exportă Excel</span>
+        </button>
+        <button type="button" class="btn btn-secondary" onclick="window.print()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>Tipărește</span>
+        </button>
     </div>
 </div>
 
-<div class="card" style="padding: 60px 40px; text-align: center; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; margin-top: 24px;">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="64" height="64" style="margin-bottom: 20px; opacity: 0.3; color: var(--accent);">
-        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-        <polyline points="2 17 12 22 22 17"></polyline>
-        <polyline points="2 12 12 17 22 12"></polyline>
-    </svg>
-    <h2 style="color: var(--text-main); margin-bottom: 12px; font-weight: 600;">În curând</h2>
-    <p style="font-size: 15px;">Interfața pentru <strong>Estimări Consum</strong> nu a fost încă generată în acest demo.</p>
+<!-- React: <EstimariFilterCard /> (Conform RULES §1.5) -->
+<div class="filter-card" style="margin-bottom: 24px;">
+    <div class="filter-card-head">
+        <div class="filter-card-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span>Filtrare Loc de Măsurare &amp; Lună Proiecție</span>
+        </div>
+    </div>
+    
+    <form method="get" action="estimari-consum.html">
+        <div class="form-row-2">
+            <div class="form-group">
+                <label class="form-label" for="locSelect">Loc de Măsurare</label>
+                <select id="locSelect" name="loc" class="input-control">
+                    <option value="all" >- Toate locațiile (vedere agregată) -</option>
+                                        <option value="810012496" >
+                        Str. ALEEA BRASOVENI, Nr. 5, Bl. 16, Sc. A, Bucuresti, Bucuresti (Cod: 810012496)
+                    </option>
+                                        <option value="810012500" >
+                        Str. ALEEA BRASOVENI, Nr. 5, Bl. 16, Sc. A, Bucuresti, Bucuresti (Cod: 810012500)
+                    </option>
+                                        <option value="810210048" >
+                        Str. ALEEA CRINULUI, Nr. 4, Bl. 59, Sc. A, Navodari, Constanta (Cod: 810210048)
+                    </option>
+                                        <option value="810120290" >
+                        Str. ALEEA HORTENSIEI, Nr. 1, Bl. E1, Sc. A, Constanta, Constanta (Cod: 810120290)
+                    </option>
+                                        <option value="810460001" >
+                        Str. KAUFLAND HORNBACH DOMNESTI WEST PARK, Nr. 1, Bl. KAUFLAND, Sc. 0, Bucuresti, Bucuresti (Cod: 810460001)
+                    </option>
+                                        <option value="810012418" >
+                        Str. LIDL DRUMUL BINELUI, Nr. 51, Mag. 255, Bucuresti, Bucuresti (Cod: 810012418)
+                    </option>
+                                        <option value="810012417" >
+                        Str. LIDL TOPORASI, Nr. 6A, Mag. 416, Bucuresti, Bucuresti (Cod: 810012417)
+                    </option>
+                                        <option value="810012443" >
+                        Str. NITU VASILE ADDRA WMP, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti (Cod: 810012443)
+                    </option>
+                                        <option value="810012466" >
+                        Str. NITU VASILE OP-LWAN, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti (Cod: 810012466)
+                    </option>
+                                        <option value="810012411" >
+                        Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti (Cod: 810012411)
+                    </option>
+                                        <option value="810120316" >
+                        Str. PESCARILOR, Nr. 69, Bl. FZ26, Sc. A, Constanta, Constanta (Cod: 810120316)
+                    </option>
+                                        <option value="810440001" >
+                        Str. RANDUNICII, Nr. 13, Bl. CITY_NORD_1, Sc. -, Tunari, Ilfov (Cod: 810440001)
+                    </option>
+                                        <option value="810440002" >
+                        Str. RANDUNICII, Nr. 15, Bl. CITY_NORD_2, Sc. -, Tunari, Ilfov (Cod: 810440002)
+                    </option>
+                                        <option value="810120306" >
+                        Str. STEFAN CEL MARE, Nr. 30, Bl. M10, Sc. A, Constanta, Constanta (Cod: 810120306)
+                    </option>
+                                        <option value="810012503" >
+                        Str. TIPARNITEI, Nr. 105, Bl. 105, Sc. A, Bucuresti, Bucuresti (Cod: 810012503)
+                    </option>
+                                        <option value="810120315" >
+                        Str. TOMIS, Nr. 253, Bl. T1, Sc. C, Constanta, Constanta (Cod: 810120315)
+                    </option>
+                                        <option value="810120289" >
+                        Str. TOMIS, Nr. 308, Bl. LT3, Sc. D+E+F, Constanta, Constanta (Cod: 810120289)
+                    </option>
+                                        <option value="810270021" >
+                        Str. TRIFOIULUI, Nr. 54, Bl. 1, Sc. 1, Dobroesti, Ilfov (Cod: 810270021)
+                    </option>
+                                        <option value="810030072" >
+                        Str. VOROVESTI, Nr. 1, Bl. 1, Sc. 1, Iasi, Iasi (Cod: 810030072)
+                    </option>
+                                    </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="monthSelect">Lună Calcul &amp; Proiecție</label>
+                <select id="monthSelect" name="month" class="input-control">
+                    <option value="2026-10" selected>Octombrie 2026 (Luna curentă • 29 zile scurse)</option>
+                    <option value="2026-09" >Septembrie 2026 (Închis • 30 zile)</option>
+                    <option value="2026-08" >August 2026 (Închis • 31 zile)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="filter-card-footer">
+            <div class="table-count">
+                Locație selectată: Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti            </div>
+            <div class="filter-actions">
+                <a href="estimari-consum.html?loc=810012411" class="btn btn-secondary">Resetează</a>
+                <button type="submit" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                    </svg>
+                    <span>Aplică</span>
+                </button>
+            </div>
+        </div>
+    </form>
 </div>
+
+<!-- React: <EstimariKPIGrid /> -->
+<div class="estimari-kpi-grid">
+    <!-- KPI 1: Consum Mediu Zilnic -->
+    <div class="estimari-kpi-card">
+        <div class="estimari-kpi-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>Consum Mediu Zilnic</span>
+        </div>
+        <div class="estimari-kpi-rows">
+            <div class="estimari-kpi-row">
+                <span class="estimari-kpi-val">2,67</span>
+                <span class="estimari-kpi-suffix">
+                    <span class="report-metric-indicator report-metric-indicator--rece"></span>
+                    m³ / zi (apă rece)
+                </span>
+            </div>
+            <div class="estimari-kpi-row">
+                <span class="estimari-kpi-val">0,00</span>
+                <span class="estimari-kpi-suffix">
+                    <span class="report-metric-indicator report-metric-indicator--calda"></span>
+                    m³ / zi (apă caldă)
+                </span>
+            </div>
+        </div>
+        <div class="estimari-kpi-note">Calculat pentru cele 29 zile scurse din lună.</div>
+    </div>
+
+    <!-- KPI 2: Consum Realizat (până azi) -->
+    <div class="estimari-kpi-card">
+        <div class="estimari-kpi-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <span>Consum Realizat (până azi)</span>
+        </div>
+        <div class="estimari-kpi-rows">
+            <div class="estimari-kpi-row">
+                <span class="estimari-kpi-val">77,45</span>
+                <span class="estimari-kpi-suffix">
+                    <span class="report-metric-indicator report-metric-indicator--rece"></span>
+                    m³ (apă rece)
+                </span>
+            </div>
+            <div class="estimari-kpi-row">
+                <span class="estimari-kpi-val">0,00</span>
+                <span class="estimari-kpi-suffix">
+                    <span class="report-metric-indicator report-metric-indicator--calda"></span>
+                    m³ (apă caldă)
+                </span>
+            </div>
+        </div>
+        <div class="estimari-kpi-note">Index confirmat LoRaWAN la 29.10.2026.</div>
+    </div>
+
+    <!-- KPI 3: Consum Total Estimat (lună) -->
+    <div class="estimari-kpi-card">
+        <div class="estimari-kpi-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+            <span>Consum Total Estimat (lună)</span>
+        </div>
+        <div class="estimari-kpi-rows">
+            <div class="estimari-kpi-row">
+                <span class="estimari-kpi-val">82,79</span>
+                <span class="estimari-kpi-suffix">
+                    <span class="report-metric-indicator report-metric-indicator--rece"></span>
+                    m³ (apă rece)
+                </span>
+            </div>
+            <div class="estimari-kpi-row">
+                <span class="estimari-kpi-val">0,00</span>
+                <span class="estimari-kpi-suffix">
+                    <span class="report-metric-indicator report-metric-indicator--calda"></span>
+                    m³ (apă caldă)
+                </span>
+            </div>
+        </div>
+        <div class="estimari-kpi-note">Pe baza unei proiecții liniare pentru 31 zile.</div>
+    </div>
+</div>
+
+<!-- React: <ChartCard /> -->
+<div class="report-chart-card">
+    <div class="report-chart-header">
+        <div class="report-chart-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            <span>Proiecție vizuală: Realizat vs. Estimat – Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti (Cod: 810012411)</span>
+        </div>
+        <div style="font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 12px;">
+            <span style="display: inline-flex; align-items: center; gap: 5px;">
+                <span style="width: 10px; height: 10px; background: rgba(59, 130, 246, 0.85); border-radius: 2px;"></span>
+                Consum Realizat
+            </span>
+            <span style="display: inline-flex; align-items: center; gap: 5px;">
+                <span style="width: 10px; height: 10px; background: rgba(148, 163, 184, 0.55); border-radius: 2px;"></span>
+                Proiecție Restul Lunii
+            </span>
+        </div>
+    </div>
+    
+    <div style="position: relative; height: 320px;">
+        <canvas id="estChart"></canvas>
+    </div>
+</div>
+
+<!-- React: <TableCard /> (Conform RULES §1.5) -->
+<div class="table-container">
+    <div class="table-toolbar">
+        <div class="table-count" id="tableCountDisplay">
+            Afișare 1 locație        </div>
+        <div class="live-search-wrapper" style="width: 260px;">
+            <input type="text" id="locSearchInput" class="input-control" placeholder="Caută după adresă sau cod..." oninput="handleTableSearch()" style="padding: 6px 10px; font-size: 12px;">
+        </div>
+    </div>
+
+    <div class="table-scroll">
+        <table class="partners-table table-compact" id="estimariTable">
+            <thead>
+                <tr>
+                    <th style="min-width: 280px;">Loc de Măsurare</th>
+                    <th style="text-align: right; width: 130px;">Realizat AR (m³)</th>
+                    <th style="text-align: right; width: 130px;">Estimat AR (m³)</th>
+                    <th style="text-align: right; width: 130px;">Realizat AC (m³)</th>
+                    <th style="text-align: right; width: 130px;">Estimat AC (m³)</th>
+                    <th style="text-align: right; width: 140px;">Medie Zi (AR/AC)</th>
+                    <th style="text-align: center; width: 90px;">Acțiuni</th>
+                </tr>
+            </thead>
+            <tbody>
+                                <tr class="loc-row" data-search="str. nitu vasile, nr. 57, bl. 1, sc. 1, bucuresti, bucuresti 810012411">
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti</div>
+                        <span class="td-code">810012411</span>
+                    </td>
+                    <td style="text-align: right; font-weight: 600;">77,45</td>
+                    <td style="text-align: right; font-weight: 700; color: #2563eb;">82,79</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right;">0,00</td>
+                    <td style="text-align: right; font-size: 11.5px; color: var(--text-muted);">
+                        2,67 / 0,00                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                            </tbody>
+            <tfoot>
+                <tr style="background: #f8fafc; font-weight: 700; border-top: 2px solid var(--border-color);">
+                    <td style="padding: 10px 14px;">TOTAL GENERAL</td>
+                    <td style="text-align: right; padding: 10px 14px;">77,45</td>
+                    <td style="text-align: right; padding: 10px 14px; color: #2563eb;">82,79</td>
+                    <td style="text-align: right; padding: 10px 14px;">0,00</td>
+                    <td style="text-align: right; padding: 10px 14px;">0,00</td>
+                    <td style="text-align: right; padding: 10px 14px; font-size: 11.5px; color: var(--text-muted);">
+                        2,67 / 0,00                    </td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <!-- Paginare standard conform §1.5 -->
+    <div class="pagination-container" style="border-top: 1px solid var(--border-color); padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;">
+        <div class="pagination-info" style="font-size: 12px; color: var(--text-muted);">
+            Se afișează 1–1 din 1 înregistrări
+        </div>
+        <div class="pagination-controls">
+            <button type="button" class="btn btn-secondary btn-page-nav" disabled>
+                <span>&laquo; Anterior</span>
+            </button>
+            <button type="button" class="btn btn-secondary btn-page active">1</button>
+            <button type="button" class="btn btn-secondary btn-page-nav" disabled>
+                <span>Următor &raquo;</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+// Chart.js - bare stacked: Realizat + Restul lunii
+document.addEventListener('DOMContentLoaded', function() {
+    var canvas = document.getElementById('estChart');
+    if (!canvas || typeof Chart === 'undefined') return;
+
+    var ctx = canvas.getContext('2d');
+    var realAR = 77.45;
+    var restAR = 5.34;
+    var realAC = 0;
+    var restAC = 0;
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Apă Rece (AR)', 'Apă Caldă (AC)'],
+            datasets: [
+                {
+                    label: 'Consum Realizat',
+                    data: [realAR, realAC],
+                    backgroundColor: 'rgba(59, 130, 246, 0.85)',
+                    borderColor: '#2563eb',
+                    borderWidth: 1,
+                    borderRadius: 4
+                },
+                {
+                    label: 'Proiecție Restul Lunii',
+                    data: [restAR, restAC],
+                    backgroundColor: 'rgba(148, 163, 184, 0.55)',
+                    borderColor: '#94a3b8',
+                    borderWidth: 1,
+                    borderRadius: 4
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    stacked: true,
+                    grid: { display: false },
+                    ticks: { font: { size: 12, family: 'inherit', weight: '600' } }
+                },
+                y: {
+                    stacked: true,
+                    beginAtZero: true,
+                    title: { display: true, text: 'Volum (m³)', font: { size: 12, weight: '600' } },
+                    grid: { color: 'rgba(0, 0, 0, 0.05)' },
+                    ticks: {
+                        font: { size: 11, family: 'inherit' },
+                        callback: function(v) { return v.toLocaleString('ro-RO') + ' m³'; }
+                    }
+                }
+            },
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: function(ctx) {
+                            var label = ctx.dataset.label || '';
+                            var val = ctx.parsed.y || 0;
+                            return label + ': ' + val.toLocaleString('ro-RO', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' m³';
+                        },
+                        afterBody: function(items) {
+                            var idx = items[0].dataIndex;
+                            var total = (idx === 0) ? (realAR + restAR) : (realAC + restAC);
+                            return '\nTotal Estimat Lună: ' + total.toLocaleString('ro-RO', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' m³';
+                        }
+                    }
+                }
+            }
+        }
+    });
+});
+
+// Căutare dinamică live în tabel
+function handleTableSearch() {
+    var input = document.getElementById('locSearchInput');
+    if (!input) return;
+    var q = input.value.trim().toLowerCase();
+    var rows = document.querySelectorAll('#estimariTable tbody tr.loc-row');
+    var visible = 0;
+
+    rows.forEach(function(row) {
+        var str = row.getAttribute('data-search') || '';
+        if (!q || str.indexOf(q) !== -1) {
+            row.style.display = '';
+            visible++;
+        } else {
+            row.style.display = 'none';
+        }
+    });
+
+    var countDisplay = document.getElementById('tableCountDisplay');
+    if (countDisplay) {
+        countDisplay.textContent = 'Afișare ' + visible + ' din ' + rows.length + ' locații' + (q ? ' (filtrate)' : '');
+    }
+}
+
+// Export Excel simulare cu feedback
+function handleExportXlsx() {
+    var loc = document.getElementById('locSelect').value;
+    var month = document.getElementById('monthSelect').value;
+    alert('Raportul de estimări consum în format Excel (XLSX) pentru ' + (loc === 'all' ? 'toate locațiile' : 'locația ' + loc) + ' a fost descărcat.');
+}
+</script>
 
     </div><!-- /.content -->
     <footer class="app-footer">

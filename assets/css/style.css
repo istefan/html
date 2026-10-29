@@ -2167,10 +2167,23 @@ a.btn-secondary:active {
     margin-bottom: 20px;
 }
 
+/* Căutarea și butoanele din dreapta barei stau pe același rând (ex. căutare + „Adaugă …”) */
+.table-toolbar-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 @media (max-width: 576px) {
     .table-toolbar {
         flex-direction: column;
         align-items: stretch;
+    }
+
+    .table-toolbar-right {
+        justify-content: stretch;
     }
 
     .live-search-wrapper {
@@ -6115,4 +6128,1047 @@ a.dash-flow-step:hover .dash-flow-num { transform: scale(1.06); }
     .pro-bars--dense .pro-bar-value, .pro-bars--dense .pro-bar-col:nth-child(even) .pro-bar-label { visibility: hidden; }
     .pro-bars--dense .pro-bar-col.is-today .pro-bar-value, .pro-bars--dense .pro-bar-col.is-today .pro-bar-label { visibility: visible; }
     .pro-bars--dense .pro-bar-label { font-size: 10px; }
+}
+
+/* ==========================================================================
+   SONIC FIN – completări (gestiune, montaje, facturare, încasări, creanțe)
+   ========================================================================== */
+/* A doua linie dintr-o celulă (adresă, CUI, IBAN, sursă) – întotdeauna sub textul principal */
+.list-sublabel { display: block; }
+/* Rândul de pastile de filtrare rapidă (.water-filter-pill) deasupra unei liste */
+.water-filter-pills { display: flex; flex-wrap: wrap; gap: 6px; margin: -6px 0 16px; }
+
+/* ==========================================================================
+   Info Center (info-center.php) – Ghid de utilizare SONIC GRID
+   ========================================================================== */
+.info-hero-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+.info-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--bg-main);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    margin-bottom: 12px;
+}
+.info-hero-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+}
+.info-hero-desc {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    max-width: 640px;
+    margin: 0 auto 20px;
+    line-height: 1.5;
+}
+.info-hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Secțiunile portalului - Card Grid */
+.info-section-heading {
+    margin: 28px 0 16px;
+}
+.info-section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0 0 4px;
+}
+.info-section-subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0;
+}
+.info-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+@media (max-width: 1024px) {
+    .info-cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 640px) {
+    .info-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.info-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+    user-select: none;
+    position: relative;
+}
+.info-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.info-card.is-expanded {
+    border-color: var(--accent);
+}
+.info-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.info-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.info-card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+.info-card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin: 0;
+}
+.info-card-chevron {
+    color: var(--text-muted);
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+.info-card.is-expanded .info-card-chevron {
+    transform: rotate(180deg);
+}
+.info-card-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.45;
+    margin: 0;
+}
+.info-card-expand {
+    display: none;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--border-color);
+    font-size: 12.5px;
+    color: var(--text-main);
+    line-height: 1.5;
+}
+.info-card.is-expanded .info-card-expand {
+    display: block;
+}
+.info-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+}
+.info-card-link:hover {
+    text-decoration: underline;
+}
+
+/* Timeline / Flux recomandat */
+.info-flow-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 32px;
+}
+@media (max-width: 900px) {
+    .info-flow-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 600px) {
+    .info-flow-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.info-flow-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 16px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+.info-flow-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--text-main);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+.info-flow-body {
+    flex: 1;
+}
+.info-flow-name {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin: 0 0 4px;
+}
+.info-flow-desc {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* FAQ Accordion */
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 32px;
+}
+.faq-item {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color 0.15s ease;
+}
+.faq-item.is-expanded {
+    border-color: var(--accent);
+}
+.faq-header {
+    width: 100%;
+    padding: 14px 18px;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    cursor: pointer;
+    text-align: left;
+}
+.faq-header-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+.faq-chevron {
+    color: var(--text-muted);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+.faq-item.is-expanded .faq-chevron {
+    transform: rotate(180deg);
+}
+.faq-body {
+    display: none;
+    padding: 0 18px 18px 18px;
+    font-size: 13px;
+    color: var(--text-main);
+    line-height: 1.55;
+    border-top: 1px solid transparent;
+}
+.faq-item.is-expanded .faq-body {
+    display: block;
+}
+.faq-alert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+}
+@media (max-width: 640px) {
+    .faq-alert-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.faq-alert-card {
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 12px 14px;
+}
+.faq-alert-title {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.faq-alert-list {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.45;
+}
+
+/* Contact CTA banner */
+.info-contact-cta {
+    background: var(--text-main);
+    color: #ffffff;
+    border-radius: var(--radius);
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+.info-contact-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 6px;
+    color: #ffffff;
+}
+.info-contact-desc {
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    max-width: 600px;
+    line-height: 1.45;
+}
+
+/* ==========================================================================
+   Contact (contact.php)
+   ========================================================================== */
+.contact-layout-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(320px, 1.2fr);
+    gap: 24px;
+    align-items: start;
+    margin-bottom: 24px;
+}
+@media (max-width: 992px) {
+    .contact-layout-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 0 24px;
+    padding: 0;
+    list-style: none;
+}
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+.contact-info-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+.contact-info-text {
+    font-size: 13.5px;
+    color: var(--text-main);
+    line-height: 1.5;
+}
+.contact-info-text strong {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    display: block;
+    margin-bottom: 2px;
+}
+.contact-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+.contact-link:hover {
+    text-decoration: underline;
+}
+.contact-faq-callout {
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 16px;
+    font-size: 13px;
+}
+.contact-faq-callout-title {
+    font-weight: 600;
+    color: var(--text-main);
+    margin: 0 0 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.contact-faq-callout-desc {
+    color: var(--text-muted);
+    margin: 0 0 10px;
+    line-height: 1.45;
+}
+
+/* ==========================================================================
+   Raport Citiri (raport-citiri.php)
+   ========================================================================== */
+.raport-citiri-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) minmax(0, 1.15fr);
+    gap: 20px;
+    align-items: start;
+    margin-bottom: 24px;
+}
+@media (max-width: 1100px) {
+    .raport-citiri-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.raport-col-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 18px;
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+}
+.raport-col-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+.raport-col-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.raport-item-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 14px;
+    margin-bottom: 12px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.raport-item-card:hover {
+    border-color: var(--accent);
+}
+.raport-item-card.is-active {
+    border-color: var(--accent);
+    background: #f8fafc;
+    box-shadow: 0 0 0 1px var(--accent);
+}
+.raport-item-name {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin: 0 0 8px;
+    line-height: 1.4;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.raport-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+.raport-apt-list-scroll {
+    max-height: 560px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+.raport-apt-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    margin-bottom: 8px;
+    background: #ffffff;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+.raport-apt-item:hover {
+    background: var(--bg-main);
+    border-color: var(--accent);
+}
+.raport-apt-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* ── Raport Citiri Detaliat / Exemplu (raport-exemplu.php) ── */
+.report-chart-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+.report-chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+.report-chart-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.report-chart-presets {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+.btn-preset {
+    padding: 4px 10px;
+    font-size: 11.5px;
+    font-weight: 500;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background: #ffffff;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+.btn-preset:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+.btn-preset.is-active {
+    background: var(--text-main);
+    border-color: var(--text-main);
+    color: #ffffff;
+}
+.report-chart-wrapper {
+    position: relative;
+    height: 380px;
+    margin-bottom: 28px;
+}
+#selection-slider {
+    margin: 10px 10px 48px;
+    position: relative;
+    z-index: 5;
+}
+#selection-slider .noUi-connect {
+    background: var(--accent);
+}
+#selection-slider .noUi-handle {
+    border: 2px solid var(--accent);
+    background: #ffffff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    border-radius: 50%;
+    cursor: grab;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    top: -6px;
+}
+#selection-slider .noUi-handle:before, #selection-slider .noUi-handle:after {
+    display: none;
+}
+#selection-slider .noUi-tooltip {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: var(--text-main);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+#selection-slider .noUi-pips-horizontal {
+    position: relative;
+    margin-top: -4px !important;
+    height: 32px !important;
+}
+#selection-slider .noUi-pips-horizontal::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 4px;
+    background-image: repeating-linear-gradient(to right, #cbd5e1 0, #cbd5e1 2px, transparent 2px, transparent 4px);
+    z-index: 1;
+}
+#selection-slider .noUi-marker {
+    display: none !important;
+}
+#selection-slider .noUi-marker-large {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 10px;
+    background: #94a3b8;
+    z-index: 2;
+}
+#selection-slider .noUi-value-horizontal {
+    position: absolute;
+    top: 16px !important;
+    transform: translateX(-50%);
+    font-size: 11.5px !important;
+    font-weight: 500 !important;
+    color: #64748b !important;
+    z-index: 3;
+}
+
+/* 2-Col Grid pentru Sumar + Rapoarte Citiri */
+.report-row-grid {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+@media (max-width: 992px) {
+    .report-row-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.report-summary-card, .report-export-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.report-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.report-metric-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.report-metric-row:last-child {
+    border-bottom: none;
+}
+.report-metric-name {
+    font-size: 13px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.report-metric-indicator {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.report-metric-indicator--rece {
+    background: #3b82f6;
+}
+.report-metric-indicator--calda {
+    background: #ef4444;
+}
+.report-metric-val {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-main);
+    font-variant-numeric: tabular-nums;
+}
+.report-metric-unit {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-left: 2px;
+}
+.report-metric-unit--perzi {
+    font-size: 11px;
+    margin-left: 3px;
+}
+
+/* Grilă 6 Butoane Tip Raport */
+.report-type-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+}
+@media (max-width: 1200px) {
+    .report-type-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .report-type-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.report-type-item {
+    position: relative;
+}
+.report-type-item input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.report-type-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-main);
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    text-align: center;
+    min-height: 42px;
+}
+.report-type-label:hover {
+    border-color: var(--accent);
+    background: var(--bg-main);
+}
+.report-type-item input[type="radio"]:checked + .report-type-label {
+    border-color: var(--accent);
+    background: #eff6ff;
+    color: var(--accent);
+    font-weight: 600;
+    box-shadow: 0 0 0 1px var(--accent);
+}
+
+/* Format selector (XLSX, PDF) */
+.report-format-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+.report-format-item {
+    flex: 1;
+    position: relative;
+}
+.report-format-item input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.report-format-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: #ffffff;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-main);
+    transition: all 0.15s ease;
+}
+.report-format-label:hover {
+    border-color: var(--accent);
+    background: var(--bg-main);
+}
+.report-format-item input[type="radio"]:checked + .report-format-label {
+    border-color: var(--accent);
+    background: #eff6ff;
+    color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent);
+}
+
+/* Caseta Apartamente / Locuri de consum asociate */
+.report-flats-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+.report-flats-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+.report-flats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 10px;
+    max-height: 480px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+.report-flat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: #ffffff;
+    transition: all 0.15s ease;
+}
+.report-flat-row:hover {
+    border-color: var(--accent);
+    background: var(--bg-main);
+}
+.report-flat-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.report-flat-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+.report-flat-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+/* ── Estimări Consum (estimari-consum.php) ── */
+.estimari-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+@media (max-width: 992px) {
+    .estimari-kpi-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.estimari-kpi-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+}
+.estimari-kpi-header {
+    font-size: 12.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.estimari-kpi-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.estimari-kpi-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+.estimari-kpi-val {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+}
+.estimari-kpi-suffix {
+    font-size: 12px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.estimari-kpi-note {
+    margin-top: auto;
+    padding-top: 12px;
+    font-size: 11.5px;
+    color: var(--text-muted);
+    line-height: 1.35;
+}
+
+
+
+/* Axă / flux cu oricâte etape (stadiile de recuperare, momentele alertelor) – coloane automate, scroll pe ecrane înguste */
+.dash-flow.dash-flow--auto { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(80px, 1fr); overflow-x: auto; }
+/* Pastilele de filtrare rapidă preiau fontul aplicației */
+.water-filter-pill { font-family: inherit; }
+/* Bara de taburi pe mobil: se derulează orizontal în loc să iasă din ecran (4+ taburi) */
+@media (max-width: 768px) { .edit-tabs-nav { overflow-x: auto; } }
+
+/* ==========================================================================
+   SONIC GRID – Bilanț Neînchideri Apă (inel mare + legendă pentru partea neînchisă)
+   ========================================================================== */
+.pro-ring.pro-ring--lg { width: 140px; height: 140px; flex: 0 0 140px; }
+.pro-ring--lg .pro-ring-inner { width: 108px; height: 108px; }
+.pro-ring--lg .pro-ring-value { font-size: 22px; }
+.pro-legend-dot--muted { background: var(--border-color); }
+
+/* ==========================================================================
+   SONIC GRID – Raport Alerte (raport-alerte.php)
+   ========================================================================== */
+.alert-active-card {
+    background: #ffffff;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(220, 38, 38, 0.05);
+}
+.alert-active-card .table-toolbar {
+    background: #fff5f5;
+    border-bottom: 1px solid #fee2e2;
+}
+.alert-type-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 3px;
+}
+.alert-desc-meta {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+.modal-alert-section-title {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.modal-alert-section-title--critical {
+    color: #dc2626;
+}
+.modal-alert-section-title--warning {
+    color: #d97706;
+}
+.modal-alert-item {
+    padding: 10px 14px;
+    background: #f8fafc;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+.modal-alert-item-head {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.modal-alert-item-body {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+.modal-alert-item-body strong {
+    color: var(--text-main);
 }

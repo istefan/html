@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
     <title>Raport Citiri – SONIC</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.31">
     <script src="assets/js/nod-picker.js"></script>
     <script src="assets/js/edit-tabs.js"></script>
     <script src="assets/js/datepicker.js"></script>
@@ -453,6 +453,97 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
+                <!-- ── MONTAJE & FACTURARE ── -->
+                <div class="nav-group " data-group="fin-montaje">
+                    <button class="nav-group-title" type="button" title="Montaje & Facturare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>
+                        </span>
+                        <span class="nav-label">Montaje & Facturare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-validare-montaje.html" class="nav-subitem ">Validare Montaje</a>
+                        <a href="fin-facturare-echipamente.html" class="nav-subitem ">Facturare Echipamente</a>
+                        <a href="fin-rate.html" class="nav-subitem ">Scadențar Rate</a>
+                        <a href="fin-facturi.html" class="nav-subitem ">Facturi</a>
+                    </div>
+                </div>
+
+                <!-- ── ÎNCASĂRI ── -->
+                <div class="nav-group " data-group="fin-incasari">
+                    <button class="nav-group-title" type="button" title="Încasări">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+                        </span>
+                        <span class="nav-label">Încasări</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-chitante.html" class="nav-subitem ">Chitanțe</a>
+                        <a href="fin-chitantiere.html" class="nav-subitem ">Chitanțiere</a>
+                        <a href="fin-incasari-banca.html" class="nav-subitem ">Încasări Bancă</a>
+                        <a href="fin-recalculare.html" class="nav-subitem ">Recalculare Solduri</a>
+                    </div>
+                </div>
+
+                <!-- ── CREANȚE ── -->
+                <div class="nav-group " data-group="fin-creante">
+                    <button class="nav-group-title" type="button" title="Creanțe">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                        </span>
+                        <span class="nav-label">Creanțe</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-creante.html" class="nav-subitem ">Urmărire Creanțe</a>
+                        <a href="fin-alerte.html" class="nav-subitem ">Alerte SMS și E-mail</a>
+                    </div>
+                </div>
+
+                <!-- ── GESTIUNE STOCURI ── -->
+                <div class="nav-group " data-group="fin-gestiune">
+                    <button class="nav-group-title" type="button" title="Gestiune Stocuri">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                        </span>
+                        <span class="nav-label">Gestiune Stocuri</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-gestiuni.html" class="nav-subitem ">Gestiuni</a>
+                        <a href="fin-intrari.html" class="nav-subitem ">Intrări în Gestiune</a>
+                        <a href="fin-iesiri.html" class="nav-subitem ">Ieșiri și Transferuri</a>
+                        <a href="fin-retururi.html" class="nav-subitem ">Retururi</a>
+                        <a href="fin-comenzi-furnizori.html" class="nav-subitem ">Comenzi Furnizori</a>
+                        <a href="fin-necesar-marfa.html" class="nav-subitem ">Necesar de Comandat</a>
+                    </div>
+                </div>
+
+                <!-- ── NOMENCLATOARE ── -->
+                <div class="nav-group " data-group="fin-nomenclatoare">
+                    <button class="nav-group-title" type="button" title="Nomenclatoare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Nomenclatoare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-produse.html" class="nav-subitem ">Produse</a>
+                        <a href="fin-nomenclatoare.html" class="nav-subitem ">Nomenclatoare Financiare</a>
+                    </div>
+                </div>
+
+                <!-- ── RAPOARTE FIN (standalone) ── -->
+                <a href="fin-rapoarte.html" class="nav-item " title="Rapoarte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <span class="nav-label">Rapoarte</span>
+                </a>
+
             </div>
         </div>
 
@@ -618,7 +709,14 @@
                             aria-selected="false"
                             aria-controls="help-pane-1"
                             data-tab="1">
-                        Stadiu                    </button>
+                        Filtrare                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Drepturi de acces                    </button>
                                     </nav>
                 <!-- Tab content panes -->
                 <div class="help-tab-content">
@@ -629,8 +727,11 @@
                          data-pane="0">
                         
             <h4>Raport Citiri</h4>
-            <p>Raportul citirilor pe perioade, cu posibilitate de descărcare.</p>
-            <p>Pagina face parte în modulul <strong>SONIC GRID</strong>.</p>
+            <p>Datele agregate pentru regiunile, locurile de măsurare (branșamente) și locurile de consum (apartamente) setate ca fiind curente.</p>
+            <ul>
+                <li><strong>Vezi citiri</strong> – deschide raportul (evoluția consumului zilnic, sumar, export) pentru regiune, branșament sau apartament.</li>
+                <li><strong>Locuri de consum</strong> – lista apartamentelor unui branșament, cu acces direct la raportul fiecăruia.</li>
+            </ul>
                             </div>
                                         <div class="help-tab-pane "
                          role="tabpanel"
@@ -638,8 +739,19 @@
                          aria-labelledby="help-tab-1"
                          data-pane="1">
                         
-            <h4>Pagină în construcție</h4>
-            <p>Interfața acestei pagini nu a fost încă generată. Conținutul de ajutor va fi completat odată cu implementarea paginii.</p>
+            <ul>
+                <li><strong>Căutare</strong> – după adresă, localitate, cod NOD, denumirea regiunii sau codul unui loc de consum (ex. C00189849).</li>
+                <li><strong>Nivel afișare</strong> – toate nivelurile, doar regiunile sau doar locurile de măsurare.</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <p><strong>PROPRIETAR</strong> – locația este administrată direct de contul dumneavoastră.</p>
+            <p><strong>MEMBRU</strong> – acces delegat, pe baza codului de regiune primit de la alt administrator (cu data de la care sunteți membru).</p>
                             </div>
                                     </div>
                     </div><!-- /.help-panel-inner -->
@@ -668,22 +780,412 @@
 
     <div class="content">
 
+<!-- React: <PageTitleContainer title="Raport Citiri" /> -->
 <div class="page-title-container">
     <div class="page-title">
         <h1>Raport Citiri</h1>
-        <p>Pagina este în construcție.</p>
+        <p>Datele agregate pentru regiunile, locurile de măsurare (branșamente) și locurile de consum (apartamente) setate ca fiind curente.</p>
     </div>
 </div>
 
-<div class="card" style="padding: 60px 40px; text-align: center; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; margin-top: 24px;">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="64" height="64" style="margin-bottom: 20px; opacity: 0.3; color: var(--accent);">
-        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-        <polyline points="2 17 12 22 22 17"></polyline>
-        <polyline points="2 12 12 17 22 12"></polyline>
-    </svg>
-    <h2 style="color: var(--text-main); margin-bottom: 12px; font-weight: 600;">În curând</h2>
-    <p style="font-size: 15px;">Interfața pentru <strong>Raport Citiri</strong> nu a fost încă generată în acest demo.</p>
+<!-- ══ Caseta de filtrare (RULES §1.5) ══ React: <ReadingReportsFilterCard /> -->
+<div class="card filter-card">
+    <div class="filter-card-head">
+        <span class="filter-card-title">Filtrare Avansată</span>
+    </div>
+    <form method="GET" action="raport-citiri.html" id="raportFilterForm" onsubmit="applyRaportFilter(); return false;">
+        <div class="filter-grid-2">
+            <div class="form-group">
+                <label class="form-label" for="raportSearch">Căutare după adresă, cod sau denumire</label>
+                <input type="text" id="raportSearch" name="q" class="input-control" placeholder="Ex.: Brasoveni, Tomis, Lidl, 810012496, C00189849…">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="raportLevel">Nivel afișare</label>
+                <select id="raportLevel" name="level" class="input-control">
+                    <option value="">Toate nivelurile</option>
+                    <option value="reg">Regiuni</option>
+                    <option value="br">Locuri de măsurare</option>
+                </select>
+            </div>
+        </div>
+        <div class="filter-actions">
+            <button type="button" class="btn-secondary" onclick="resetRaportFilter()">Resetează</button>
+            <button type="submit" class="btn-primary">Caută</button>
+        </div>
+    </form>
 </div>
+
+<!-- ══ Regiuni curente ══ React: <RegionsTable /> -->
+<div class="table-container" id="regionsBlock">
+    <div class="table-toolbar">
+        <div class="table-toolbar-left">
+            <span class="table-count">Regiuni curente: <strong id="regionsCount">4</strong></span>
+        </div>
+    </div>
+    <div class="table-scroll">
+        <table class="partners-table">
+            <thead>
+                <tr>
+                    <th>Regiune</th>
+                    <th style="width: 160px;">Rol</th>
+                    <th style="width: 180px; text-align: center;">Locuri de măsurare</th>
+                    <th style="width: 100px; text-align: center;">Acțiuni</th>
+                </tr>
+            </thead>
+            <tbody id="regionsBody">
+                                <tr data-search="constanta proprietar 810120290 810120316 810120306 810120315 810120289">
+                    <td class="td-name">Constanta</td>
+                    <td>
+                        <span class="status-badge status-online">Proprietar</span>
+                                            </td>
+                    <td style="text-align: center;">5</td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=6&amp;scope=reg" class="btn-action-icon" title="Vezi citirile regiunii"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                    </td>
+                </tr>
+                                <tr data-search="lidl proprietar 810012418 810012417">
+                    <td class="td-name">Lidl</td>
+                    <td>
+                        <span class="status-badge status-online">Proprietar</span>
+                                            </td>
+                    <td style="text-align: center;">2</td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=5&amp;scope=reg" class="btn-action-icon" title="Vezi citirile regiunii"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                    </td>
+                </tr>
+                                <tr data-search="navodari proprietar 810210048">
+                    <td class="td-name">Navodari</td>
+                    <td>
+                        <span class="status-badge status-online">Proprietar</span>
+                                            </td>
+                    <td style="text-align: center;">1</td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=7&amp;scope=reg" class="btn-action-icon" title="Vezi citirile regiunii"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                    </td>
+                </tr>
+                                <tr data-search="regiune test membru 810012443 810012466 810012411">
+                    <td class="td-name">Regiune Test</td>
+                    <td>
+                        <span class="status-badge status-offline">Membru</span>
+                        <span class="list-sublabel">din 09.10.2025</span>                    </td>
+                    <td style="text-align: center;">3</td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=1&amp;scope=reg" class="btn-action-icon" title="Vezi citirile regiunii"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                    </td>
+                </tr>
+                                <tr class="js-empty" style="display: none;"><td colspan="4" class="table-empty">Nicio regiune nu corespunde căutării.</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- ══ Locuri de măsurare (branșamente) ══ React: <PlacesTable /> -->
+<div class="table-container" id="placesBlock">
+    <div class="table-toolbar">
+        <div class="table-toolbar-left">
+            <span class="table-count">Locuri de măsurare: <strong id="placesCount">19</strong> · 451 locuri de consum</span>
+        </div>
+    </div>
+    <div class="table-scroll">
+        <table class="partners-table">
+            <thead>
+                <tr>
+                    <th style="width: 130px;">Cod NOD</th>
+                    <th>Adresă loc de măsurare</th>
+                    <th style="width: 130px;">Rol</th>
+                    <th style="width: 150px; text-align: center;">Locuri de consum</th>
+                    <th style="width: 110px; text-align: center;">Acțiuni</th>
+                </tr>
+            </thead>
+            <tbody id="placesBody">
+                                <tr data-search="810012496 str. aleea brasoveni, nr. 5, bl. 16, sc. a, bucuresti, bucuresti c00205589 c00205590 c00205591 c00205592 c00205593 c00205594 c00205595 c00205596 c00205597 c00205598 c00205599 c002055100 c002055101 c002055102 c002055103 c002055104 c002055105 c002055106 c002055107 c002055108 c002055109 c002055110 c002055111 c002055112 c002055113 c002055114 c002055115 c002055116 c002055117 c002055118 c002055119 c002055120 c002055121 c002055122 c002055123 c002055124 c002055125 c002055126 c002055127 c002055128 c002055129 c002055130 c002055131 c002055132">
+                    <td class="td-code">810012496</td>
+                    <td class="td-name">Str. ALEEA BRASOVENI, Nr. 5, Bl. 16, Sc. A, Bucuresti, Bucuresti</td>
+                    <td><span class="status-badge status-online">Proprietar</span></td>
+                    <td style="text-align: center;">44</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="raport-exemplu.html?id=810012496&amp;scope=br" class="btn-action-icon" title="Vezi citirile branșamentului"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon" title="Locuri de consum" onclick="openConsumers('810012496')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></button>
+                    </td>
+                </tr>
+                                <tr data-search="810012500 str. aleea brasoveni, nr. 5, bl. 16, sc. a, bucuresti, bucuresti e00205758 e00205759 e00205760 e00205761 e00205762 e00205763 e00205764 e00205765 e00205766 e00205767 e00205768 e00205769 e00205770 e00205771 e00205772 e00205773 e00205774 e00205775 e00205776 e00205777 e00205778 e00205779 e00205780 e00205781 e00205782 e00205783 e00205784 e00205785 e00205786 e00205787 e00205788 e00205789 e00205790 e00205791 e00205792 e00205793 e00205794 e00205795 e00205796 e00205797 e00205798 e00205799 e002057100 e002057101">
+                    <td class="td-code">810012500</td>
+                    <td class="td-name">Str. ALEEA BRASOVENI, Nr. 5, Bl. 16, Sc. A, Bucuresti, Bucuresti</td>
+                    <td><span class="status-badge status-online">Proprietar</span></td>
+                    <td style="text-align: center;">44</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="raport-exemplu.html?id=810012500&amp;scope=br" class="btn-action-icon" title="Vezi citirile branșamentului"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon" title="Locuri de consum" onclick="openConsumers('810012500')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></button>
+                    </td>
+                </tr>
+                                <tr data-search="810210048 str. aleea crinului, nr. 4, bl. 59, sc. a, navodari, constanta c00189849 c00189850 c00189851 c00189852 c00189853 c00189854 c00189855 c00189856 c00189857 c00189858 c00189859 c00189860 c00189861 c00189862 c00189863 c00189864 c00189865 c00189866 c00189867 c00189868 c00189869 c00189870 c00189871 c00189872 c00189873 c00189874 c00189875 c00189876 c00189877 c00189878 c00189879 c00189880 c00189881 c00189882 c00189883 c00189884 c00189885 c00189886 c00189887 c00189888">
+                    <td class="td-code">810210048</td>
+                    <td class="td-name">Str. ALEEA CRINULUI, Nr. 4, Bl. 59, Sc. A, Navodari, Constanta</td>
+                    <td><span class="status-badge status-online">Proprietar</span></td>
+                    <td style="text-align: center;">40</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="raport-exemplu.html?id=810210048&amp;scope=br" class="btn-action-icon" title="Vezi citirile branșamentului"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon" title="Locuri de consum" onclick="openConsumers('810210048')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></button>
+                    </td>
+                </tr>
+                                <tr data-search="810120290 str. aleea hortensiei, nr. 1, bl. e1, sc. a, constanta, constanta c00205501 c00205502 c00205503 c00205504 c00205505 c00205506 c00205507 c00205508 c00205509 c00205510 c00205511 c00205512 c00205513 c00205514 c00205515 c00205516 c00205517 c00205518 c00205519 c00205520 c00205521 c00205522 c00205523 c00205524 c00205525 c00205526 c00205527 c00205528 c00205529 c00205530 c00205531 c00205532 c00205533 c00205534 c00205535 c00205536 c00205537 c00205538 c00205539 c00205540 c00205541 c00205542 c00205543 c00205544 c00205545 c00205546">
+                    <td class="td-code">810120290</td>
+                    <td class="td-name">Str. ALEEA HORTENSIEI, Nr. 1, Bl. E1, Sc. A, Constanta, Constanta</td>
+                    <td><span class="status-badge status-online">Proprietar</span></td>
+                    <td style="text-align: center;">46</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="raport-exemplu.html?id=810120290&amp;scope=br" class="btn-action-icon" title="Vezi citirile branșamentului"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon" title="Locuri de consum" onclick="openConsumers('810120290')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></button>
+                    </td>
+                </tr>
+                                <tr data-search="810460001 str. kaufland hornbach domnesti west park, nr. 1, bl. kaufland, sc. 0, bucuresti, bucuresti c00208146 c00208147 c00208148 c00208149 c00208150 c00208151 c00208152 c00208203 c00208204">
+                    <td class="td-code">810460001</td>
+                    <td class="td-name">Str. KAUFLAND HORNBACH DOMNESTI WEST PARK, Nr. 1, Bl. KAUFLAND, Sc. 0, Bucuresti, Bucuresti</td>
+                    <td><span class="status-badge status-online">Proprietar</span></td>
+                    <td style="text-align: center;">9</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="raport-exemplu.html?id=810460001&amp;scope=br" class="btn-action-icon" title="Vezi citirile branșamentului"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon" title="Locuri de consum" onclick="openConsumers('810460001')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></button>
+                    </td>
+                </tr>
+                                <tr data-search="810012418 str. lidl drumul binelui, nr. 51, mag. 255, bucuresti, bucuresti c00196457">
+                    <td class="td-code">810012418</td>
+                    <td class="td-name">Str. LIDL DRUMUL BINELUI, Nr. 51, Mag. 255, Bucuresti, Bucuresti</td>
+                    <td><span class="status-badge status-online">Proprietar</span></td>
+                    <td style="text-align: center;">1</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="raport-exemplu.html?id=810012418&amp;scope=br" class="btn-action-icon" title="Vezi citirile branșamentului"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon" title="Locuri de consum" onclick="openConsumers('810012418')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></button>
+                    </td>
+                </tr>
+                                <tr data-search="810012417 str. lidl toporasi, nr. 6a, mag. 416, bucuresti, bucuresti c00196456">
+                    <td class="td-code">810012417</td>
+                    <td class="td-name">Str. LIDL TOPORASI, Nr. 6A, Mag. 416, Bucuresti, Bucuresti</td>
+                    <td><span class="status-badge status-online">Proprietar</span></td>
+                    <td style="text-align: center;">1</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="raport-exemplu.html?id=810012417&amp;scope=br" class="btn-action-icon" title="Vezi citirile branșamentului"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon" title="Locuri de consum" onclick="openConsumers('810012417')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></button>
+                    </td>
+                </tr>
+                                <tr data-search="810012443 str. nitu vasile addra wmp, nr. 57, bl. 1, sc. 1, bucuresti, bucuresti c00195669 c00200096">
+                    <td class="td-code">810012443</td>
+                    <td class="td-name">Str. NITU VASILE ADDRA WMP, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti</td>
+                    <td><span class="status-badge status-online">Proprietar</span></td>
+                    <td style="text-align: center;">2</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="raport-exemplu.html?id=810012443&amp;scope=br" class="btn-action-icon" title="Vezi citirile branșamentului"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon" title="Locuri de consum" onclick="openConsumers('810012443')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></button>
+                    </td>
+                </tr>
+                                <tr data-search="810012466 str. nitu vasile op-lwan, nr. 57, bl. 1, sc. 1, bucuresti, bucuresti c00202699">
+                    <td class="td-code">810012466</td>
+                    <td class="td-name">Str. NITU VASILE OP-LWAN, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti</td>
+                    <td><span class="status-badge status-online">Proprietar</span></td>
+                    <td style="text-align: center;">1</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="raport-exemplu.html?id=810012466&amp;scope=br" class="btn-action-icon" title="Vezi citirile branșamentului"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon" title="Locuri de consum" onclick="openConsumers('810012466')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></button>
+                    </td>
+                </tr>
+                                <tr data-search="810012411 str. nitu vasile, nr. 57, bl. 1, sc. 1, bucuresti, bucuresti c00195668 c00195669 c00195670 c00195671 c00195672 c00195673">
+                    <td class="td-code">810012411</td>
+                    <td class="td-name">Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti</td>
+                    <td><span class="status-badge status-online">Proprietar</span></td>
+                    <td style="text-align: center;">6</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="raport-exemplu.html?id=810012411&amp;scope=br" class="btn-action-icon" title="Vezi citirile branșamentului"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon" title="Locuri de consum" onclick="openConsumers('810012411')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></button>
+                    </td>
+                </tr>
+                                <tr data-search="810120316 str. pescarilor, nr. 69, bl. fz26, sc. a, constanta, constanta c00197413 c00197414 c00197415 c00197416 c00197417 c00197418 c00197419 c00197420 c00197421 c00197422 c00197423 c00197424 c00197425 c00197426 c00197427 c00197428 c00197429 c00197430 c00197431 c00197432 c00197433 c00197434 c00197435 c00197436 c00197437 c00197438 c00197439 c00197440 c00197441 c00197442 c00197443 c00197444 c00197445 c00197446 c00197447 c00197448 c00197449 c00197450 c00197451 c00197452 c00197453 c00197454 c00197455 c00197456 c00197457 c00197458 c00197459 c00197460 c00197461 c00197462 c00197463 c00197464 c00197465 c00197466 c00197467 c00197468 c00197469 c00197470 c00197471 c00197472 c00197473 c00197474 c00197475">
+                    <td class="td-code">810120316</td>
+                    <td class="td-name">Str. PESCARILOR, Nr. 69, Bl. FZ26, Sc. A, Constanta, Constanta</td>
+                    <td><span class="status-badge status-online">Proprietar</span></td>
+                    <td style="text-align: center;">63</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="raport-exemplu.html?id=810120316&amp;scope=br" class="btn-action-icon" title="Vezi citirile branșamentului"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon" title="Locuri de consum" onclick="openConsumers('810120316')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></button>
+                    </td>
+                </tr>
+                                <tr data-search="810440001 str. randunicii, nr. 13, bl. city_nord_1, sc. -, tunari, ilfov c00203924 c00203925 c00203926 c00203927 c00203928 c00203929 c00203930 c00203931 c00203932 c00203933 c00203934 c00203935 c00203936 c00203937 c00203938 c00203939 c00203940 c00203941 c00203942 c00203943 c00203944 c00203945 c00203946 c00203947 c00203948 c00203949">
+                    <td class="td-code">810440001</td>
+                    <td class="td-name">Str. RANDUNICII, Nr. 13, Bl. CITY_NORD_1, Sc. -, Tunari, Ilfov</td>
+                    <td><span class="status-badge status-online">Proprietar</span></td>
+                    <td style="text-align: center;">26</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="raport-exemplu.html?id=810440001&amp;scope=br" class="btn-action-icon" title="Vezi citirile branșamentului"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon" title="Locuri de consum" onclick="openConsumers('810440001')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></button>
+                    </td>
+                </tr>
+                                <tr data-search="810440002 str. randunicii, nr. 15, bl. city_nord_2, sc. -, tunari, ilfov c00203954 c00203955 c00203956 c00203957 c00203958 c00203959 c00203960 c00203961 c00203962 c00203963 c00203964 c00203965 c00203966 c00203967 c00203968 c00203969 c00203970 c00203971 c00203972 c00203973 c00203974 c00203975 c00203976 c00203977 c00203978 c00203979">
+                    <td class="td-code">810440002</td>
+                    <td class="td-name">Str. RANDUNICII, Nr. 15, Bl. CITY_NORD_2, Sc. -, Tunari, Ilfov</td>
+                    <td><span class="status-badge status-online">Proprietar</span></td>
+                    <td style="text-align: center;">26</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="raport-exemplu.html?id=810440002&amp;scope=br" class="btn-action-icon" title="Vezi citirile branșamentului"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon" title="Locuri de consum" onclick="openConsumers('810440002')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></button>
+                    </td>
+                </tr>
+                                <tr data-search="810120306 str. stefan cel mare, nr. 30, bl. m10, sc. a, constanta, constanta c00194205 c00194206 c00194207 c00194208 c00194209 c00194210 c00194211 c00194212 c00194213 c00194214 c00194215 c00194216 c00194217 c00194218 c00194219 c00194220 c00194221 c00194222 c00194223 c00194224 c00194225 c00194226 c00194227 c00194228">
+                    <td class="td-code">810120306</td>
+                    <td class="td-name">Str. STEFAN CEL MARE, Nr. 30, Bl. M10, Sc. A, Constanta, Constanta</td>
+                    <td><span class="status-badge status-online">Proprietar</span></td>
+                    <td style="text-align: center;">24</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="raport-exemplu.html?id=810120306&amp;scope=br" class="btn-action-icon" title="Vezi citirile branșamentului"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon" title="Locuri de consum" onclick="openConsumers('810120306')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></button>
+                    </td>
+                </tr>
+                                <tr data-search="810012503 str. tiparnitei, nr. 105, bl. 105, sc. a, bucuresti, bucuresti c00205501 c00205502 c00205503 c00205504 c00205505 c00205506 c00205507 c00205508 c00205509 c00205510 c00205511 c00205512 c00205513 c00205514 c00205515 c00205516 c00205517 c00205518 c00205519 c00205520 c00205521 c00205522 c00205523 c00205524 c00205525 c00205526 c00205527 c00205528 c00205529">
+                    <td class="td-code">810012503</td>
+                    <td class="td-name">Str. TIPARNITEI, Nr. 105, Bl. 105, Sc. A, Bucuresti, Bucuresti</td>
+                    <td><span class="status-badge status-online">Proprietar</span></td>
+                    <td style="text-align: center;">29</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="raport-exemplu.html?id=810012503&amp;scope=br" class="btn-action-icon" title="Vezi citirile branșamentului"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon" title="Locuri de consum" onclick="openConsumers('810012503')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></button>
+                    </td>
+                </tr>
+                                <tr data-search="810120315 str. tomis, nr. 253, bl. t1, sc. c, constanta, constanta c00197351 c00197352 c00197353 c00197354 c00197355 c00197356 c00197357 c00197358 c00197359 c00197360 c00197361 c00197362 c00197363 c00197364 c00197365 c00197366 c00197367 c00197368 c00197369 c00197370">
+                    <td class="td-code">810120315</td>
+                    <td class="td-name">Str. TOMIS, Nr. 253, Bl. T1, Sc. C, Constanta, Constanta</td>
+                    <td><span class="status-badge status-online">Proprietar</span></td>
+                    <td style="text-align: center;">20</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="raport-exemplu.html?id=810120315&amp;scope=br" class="btn-action-icon" title="Vezi citirile branșamentului"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon" title="Locuri de consum" onclick="openConsumers('810120315')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></button>
+                    </td>
+                </tr>
+                                <tr data-search="810120289 str. tomis, nr. 308, bl. lt3, sc. d+e+f, constanta, constanta c00205501 c00205502 c00205503 c00205504 c00205505 c00205506 c00205507 c00205508 c00205509 c00205510 c00205511 c00205512 c00205513 c00205514 c00205515 c00205516 c00205517 c00205518 c00205519 c00205520 c00205521 c00205522 c00205523 c00205524 c00205525 c00205526 c00205527 c00205528 c00205529 c00205530 c00205531 c00205532 c00205533 c00205534 c00205535 c00205536 c00205537 c00205538 c00205539 c00205540 c00205541 c00205542">
+                    <td class="td-code">810120289</td>
+                    <td class="td-name">Str. TOMIS, Nr. 308, Bl. LT3, Sc. D+E+F, Constanta, Constanta</td>
+                    <td><span class="status-badge status-online">Proprietar</span></td>
+                    <td style="text-align: center;">42</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="raport-exemplu.html?id=810120289&amp;scope=br" class="btn-action-icon" title="Vezi citirile branșamentului"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon" title="Locuri de consum" onclick="openConsumers('810120289')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></button>
+                    </td>
+                </tr>
+                                <tr data-search="810270021 str. trifoiului, nr. 54, bl. 1, sc. 1, dobroesti, ilfov c00194825 c00194826 c00194827 c00194828 c00194829 c00194830 c00194831 c00194832 c00194833 c00194834 c00194835 c00194836">
+                    <td class="td-code">810270021</td>
+                    <td class="td-name">Str. TRIFOIULUI, Nr. 54, Bl. 1, Sc. 1, Dobroesti, Ilfov</td>
+                    <td><span class="status-badge status-online">Proprietar</span></td>
+                    <td style="text-align: center;">12</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="raport-exemplu.html?id=810270021&amp;scope=br" class="btn-action-icon" title="Vezi citirile branșamentului"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon" title="Locuri de consum" onclick="openConsumers('810270021')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></button>
+                    </td>
+                </tr>
+                                <tr data-search="810030072 str. vorovesti, nr. 1, bl. 1, sc. 1, iasi, iasi c00199101 c00199102 c00199103 c00199104 c00199105 c00199106 c00199107 c00199108 c00199109 c00199110 c00199111 c00199112 c00199113 c00199114 c00199115">
+                    <td class="td-code">810030072</td>
+                    <td class="td-name">Str. VOROVESTI, Nr. 1, Bl. 1, Sc. 1, Iasi, Iasi</td>
+                    <td><span class="status-badge status-online">Proprietar</span></td>
+                    <td style="text-align: center;">15</td>
+                    <td style="text-align: center; white-space: nowrap;">
+                        <a href="raport-exemplu.html?id=810030072&amp;scope=br" class="btn-action-icon" title="Vezi citirile branșamentului"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+                        <button type="button" class="btn-action-icon" title="Locuri de consum" onclick="openConsumers('810030072')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></button>
+                    </td>
+                </tr>
+                                <tr class="js-empty" style="display: none;"><td colspan="5" class="table-empty">Niciun loc de măsurare nu corespunde căutării.</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- ══ Fereastra „Locuri de consum” ══ React: <ConsumersModal place consumers /> -->
+<div class="modal-overlay" id="consumersModal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="consumersTitle">
+    <div class="modal-card" style="max-width: 640px; width: 95%;">
+        <div class="modal-header">
+            <h3 id="consumersTitle">Locuri de consum</h3>
+            <button type="button" class="btn-close" title="Închide" onclick="closeConsumers()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+        </div>
+        <div class="modal-body">
+            <div class="utility-context-strip">
+                <div class="context-items">
+                    <div class="context-item"><span class="context-label">Cod NOD:</span><strong class="context-value context-code" id="consumersCode">—</strong></div>
+                    <div class="context-sep"></div>
+                    <div class="context-item"><span class="context-label">Adresă:</span><span class="context-value" id="consumersAddress">—</span></div>
+                </div>
+            </div>
+            <div class="table-toolbar">
+                <div class="table-toolbar-left"><span class="table-count">Afișare <strong id="consumersCount">0</strong> locuri de consum</span></div>
+                <div class="table-toolbar-right">
+                    <div class="live-search-wrapper">
+                        <span class="live-search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+                        <input type="text" id="consumersSearch" class="input-control" placeholder="Caută apartament sau cod…">
+                    </div>
+                </div>
+            </div>
+            <div class="nod-picker-table-wrap">
+                <table class="modal-table">
+                    <thead><tr><th>Loc de consum</th><th>Cod</th><th style="text-align: center; width: 80px;">Acțiuni</th></tr></thead>
+                    <tbody id="consumersBody"></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn-secondary" onclick="closeConsumers()">Închide</button>
+        </div>
+    </div>
+</div>
+
+<script>
+/* Raport Citiri – filtrare client + fereastra locurilor de consum (date demo; în producție din API) */
+var GRID_PLACES = {"810012496":"Str. ALEEA BRASOVENI, Nr. 5, Bl. 16, Sc. A, Bucuresti, Bucuresti","810012500":"Str. ALEEA BRASOVENI, Nr. 5, Bl. 16, Sc. A, Bucuresti, Bucuresti","810210048":"Str. ALEEA CRINULUI, Nr. 4, Bl. 59, Sc. A, Navodari, Constanta","810120290":"Str. ALEEA HORTENSIEI, Nr. 1, Bl. E1, Sc. A, Constanta, Constanta","810460001":"Str. KAUFLAND HORNBACH DOMNESTI WEST PARK, Nr. 1, Bl. KAUFLAND, Sc. 0, Bucuresti, Bucuresti","810012418":"Str. LIDL DRUMUL BINELUI, Nr. 51, Mag. 255, Bucuresti, Bucuresti","810012417":"Str. LIDL TOPORASI, Nr. 6A, Mag. 416, Bucuresti, Bucuresti","810012443":"Str. NITU VASILE ADDRA WMP, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti","810012466":"Str. NITU VASILE OP-LWAN, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti","810012411":"Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti","810120316":"Str. PESCARILOR, Nr. 69, Bl. FZ26, Sc. A, Constanta, Constanta","810440001":"Str. RANDUNICII, Nr. 13, Bl. CITY_NORD_1, Sc. -, Tunari, Ilfov","810440002":"Str. RANDUNICII, Nr. 15, Bl. CITY_NORD_2, Sc. -, Tunari, Ilfov","810120306":"Str. STEFAN CEL MARE, Nr. 30, Bl. M10, Sc. A, Constanta, Constanta","810012503":"Str. TIPARNITEI, Nr. 105, Bl. 105, Sc. A, Bucuresti, Bucuresti","810120315":"Str. TOMIS, Nr. 253, Bl. T1, Sc. C, Constanta, Constanta","810120289":"Str. TOMIS, Nr. 308, Bl. LT3, Sc. D+E+F, Constanta, Constanta","810270021":"Str. TRIFOIULUI, Nr. 54, Bl. 1, Sc. 1, Dobroesti, Ilfov","810030072":"Str. VOROVESTI, Nr. 1, Bl. 1, Sc. 1, Iasi, Iasi"};
+var GRID_CONSUMERS = {"810012496":[{"name":"Ap. 1","code":"C00205589"},{"name":"Ap. 2","code":"C00205590"},{"name":"Ap. 3","code":"C00205591"},{"name":"Ap. 4","code":"C00205592"},{"name":"Ap. 5","code":"C00205593"},{"name":"Ap. 6","code":"C00205594"},{"name":"Ap. 7","code":"C00205595"},{"name":"Ap. 8","code":"C00205596"},{"name":"Ap. 9","code":"C00205597"},{"name":"Ap. 10","code":"C00205598"},{"name":"Ap. 11","code":"C00205599"},{"name":"Ap. 12","code":"C002055100"},{"name":"Ap. 13","code":"C002055101"},{"name":"Ap. 14","code":"C002055102"},{"name":"Ap. 15","code":"C002055103"},{"name":"Ap. 16","code":"C002055104"},{"name":"Ap. 17","code":"C002055105"},{"name":"Ap. 18","code":"C002055106"},{"name":"Ap. 19","code":"C002055107"},{"name":"Ap. 20","code":"C002055108"},{"name":"Ap. 21","code":"C002055109"},{"name":"Ap. 22","code":"C002055110"},{"name":"Ap. 23","code":"C002055111"},{"name":"Ap. 24","code":"C002055112"},{"name":"Ap. 25","code":"C002055113"},{"name":"Ap. 26","code":"C002055114"},{"name":"Ap. 27","code":"C002055115"},{"name":"Ap. 28","code":"C002055116"},{"name":"Ap. 29","code":"C002055117"},{"name":"Ap. 30","code":"C002055118"},{"name":"Ap. 31","code":"C002055119"},{"name":"Ap. 32","code":"C002055120"},{"name":"Ap. 33","code":"C002055121"},{"name":"Ap. 34","code":"C002055122"},{"name":"Ap. 35","code":"C002055123"},{"name":"Ap. 36","code":"C002055124"},{"name":"Ap. 37","code":"C002055125"},{"name":"Ap. 38","code":"C002055126"},{"name":"Ap. 39","code":"C002055127"},{"name":"Ap. 40","code":"C002055128"},{"name":"Ap. 41","code":"C002055129"},{"name":"Ap. 42","code":"C002055130"},{"name":"Ap. 43","code":"C002055131"},{"name":"Ap. 44","code":"C002055132"}],"810012500":[{"name":"Ap. 1","code":"E00205758"},{"name":"Ap. 2","code":"E00205759"},{"name":"Ap. 3","code":"E00205760"},{"name":"Ap. 4","code":"E00205761"},{"name":"Ap. 5","code":"E00205762"},{"name":"Ap. 6","code":"E00205763"},{"name":"Ap. 7","code":"E00205764"},{"name":"Ap. 8","code":"E00205765"},{"name":"Ap. 9","code":"E00205766"},{"name":"Ap. 10","code":"E00205767"},{"name":"Ap. 11","code":"E00205768"},{"name":"Ap. 12","code":"E00205769"},{"name":"Ap. 13","code":"E00205770"},{"name":"Ap. 14","code":"E00205771"},{"name":"Ap. 15","code":"E00205772"},{"name":"Ap. 16","code":"E00205773"},{"name":"Ap. 17","code":"E00205774"},{"name":"Ap. 18","code":"E00205775"},{"name":"Ap. 19","code":"E00205776"},{"name":"Ap. 20","code":"E00205777"},{"name":"Ap. 21","code":"E00205778"},{"name":"Ap. 22","code":"E00205779"},{"name":"Ap. 23","code":"E00205780"},{"name":"Ap. 24","code":"E00205781"},{"name":"Ap. 25","code":"E00205782"},{"name":"Ap. 26","code":"E00205783"},{"name":"Ap. 27","code":"E00205784"},{"name":"Ap. 28","code":"E00205785"},{"name":"Ap. 29","code":"E00205786"},{"name":"Ap. 30","code":"E00205787"},{"name":"Ap. 31","code":"E00205788"},{"name":"Ap. 32","code":"E00205789"},{"name":"Ap. 33","code":"E00205790"},{"name":"Ap. 34","code":"E00205791"},{"name":"Ap. 35","code":"E00205792"},{"name":"Ap. 36","code":"E00205793"},{"name":"Ap. 37","code":"E00205794"},{"name":"Ap. 38","code":"E00205795"},{"name":"Ap. 39","code":"E00205796"},{"name":"Ap. 40","code":"E00205797"},{"name":"Ap. 41","code":"E00205798"},{"name":"Ap. 42","code":"E00205799"},{"name":"Ap. 43","code":"E002057100"},{"name":"Ap. 44","code":"E002057101"}],"810210048":[{"name":"Ap. 1","code":"C00189849"},{"name":"Ap. 2","code":"C00189850"},{"name":"Ap. 3","code":"C00189851"},{"name":"Ap. 4","code":"C00189852"},{"name":"Ap. 5","code":"C00189853"},{"name":"Ap. 6","code":"C00189854"},{"name":"Ap. 7","code":"C00189855"},{"name":"Ap. 8","code":"C00189856"},{"name":"Ap. 9","code":"C00189857"},{"name":"Ap. 10","code":"C00189858"},{"name":"Ap. 11","code":"C00189859"},{"name":"Ap. 12","code":"C00189860"},{"name":"Ap. 13","code":"C00189861"},{"name":"Ap. 14","code":"C00189862"},{"name":"Ap. 15","code":"C00189863"},{"name":"Ap. 16","code":"C00189864"},{"name":"Ap. 17","code":"C00189865"},{"name":"Ap. 18","code":"C00189866"},{"name":"Ap. 19","code":"C00189867"},{"name":"Ap. 20","code":"C00189868"},{"name":"Ap. 21","code":"C00189869"},{"name":"Ap. 22","code":"C00189870"},{"name":"Ap. 23","code":"C00189871"},{"name":"Ap. 24","code":"C00189872"},{"name":"Ap. 25","code":"C00189873"},{"name":"Ap. 26","code":"C00189874"},{"name":"Ap. 27","code":"C00189875"},{"name":"Ap. 28","code":"C00189876"},{"name":"Ap. 29","code":"C00189877"},{"name":"Ap. 30","code":"C00189878"},{"name":"Ap. 31","code":"C00189879"},{"name":"Ap. 32","code":"C00189880"},{"name":"Ap. 33","code":"C00189881"},{"name":"Ap. 34","code":"C00189882"},{"name":"Ap. 35","code":"C00189883"},{"name":"Ap. 36","code":"C00189884"},{"name":"Ap. 37","code":"C00189885"},{"name":"Ap. 38","code":"C00189886"},{"name":"Ap. 39","code":"C00189887"},{"name":"Ap. 40","code":"C00189888"}],"810120290":[{"name":"Ap. 1","code":"C00205501"},{"name":"Ap. 2","code":"C00205502"},{"name":"Ap. 3","code":"C00205503"},{"name":"Ap. 4","code":"C00205504"},{"name":"Ap. 5","code":"C00205505"},{"name":"Ap. 6","code":"C00205506"},{"name":"Ap. 7","code":"C00205507"},{"name":"Ap. 8","code":"C00205508"},{"name":"Ap. 9","code":"C00205509"},{"name":"Ap. 10","code":"C00205510"},{"name":"Ap. 11","code":"C00205511"},{"name":"Ap. 12","code":"C00205512"},{"name":"Ap. 13","code":"C00205513"},{"name":"Ap. 14","code":"C00205514"},{"name":"Ap. 15","code":"C00205515"},{"name":"Ap. 16","code":"C00205516"},{"name":"Ap. 17","code":"C00205517"},{"name":"Ap. 18","code":"C00205518"},{"name":"Ap. 19","code":"C00205519"},{"name":"Ap. 20","code":"C00205520"},{"name":"Ap. 21","code":"C00205521"},{"name":"Ap. 22","code":"C00205522"},{"name":"Ap. 23","code":"C00205523"},{"name":"Ap. 24","code":"C00205524"},{"name":"Ap. 25","code":"C00205525"},{"name":"Ap. 26","code":"C00205526"},{"name":"Ap. 27","code":"C00205527"},{"name":"Ap. 28","code":"C00205528"},{"name":"Ap. 29","code":"C00205529"},{"name":"Ap. 30","code":"C00205530"},{"name":"Ap. 31","code":"C00205531"},{"name":"Ap. 32","code":"C00205532"},{"name":"Ap. 33","code":"C00205533"},{"name":"Ap. 34","code":"C00205534"},{"name":"Ap. 35","code":"C00205535"},{"name":"Ap. 36","code":"C00205536"},{"name":"Ap. 37","code":"C00205537"},{"name":"Ap. 38","code":"C00205538"},{"name":"Ap. 39","code":"C00205539"},{"name":"Ap. 40","code":"C00205540"},{"name":"Ap. 41","code":"C00205541"},{"name":"Ap. 42","code":"C00205542"},{"name":"Ap. 43","code":"C00205543"},{"name":"Ap. 44","code":"C00205544"},{"name":"Ap. 45","code":"C00205545"},{"name":"Ap. 46","code":"C00205546"}],"810460001":[{"name":"Ap. GENERAL","code":"C00208146"},{"name":"Ap. KAUFLAND","code":"C00208147"},{"name":"Ap. TIPTOP","code":"C00208148"},{"name":"Ap. PIZZERIE","code":"C00208149"},{"name":"Ap. IMBIS","code":"C00208150"},{"name":"Ap. MENEKES_ADR_190","code":"C00208151"},{"name":"Ap. MENEKES_ADR_191","code":"C00208152"},{"name":"Ap. Farmacie_Veterinara","code":"C00208203"},{"name":"Ap. Farmacia_Help_Net","code":"C00208204"}],"810012418":[{"name":"Ap. 1","code":"C00196457"}],"810012417":[{"name":"Ap. 1","code":"C00196456"}],"810012443":[{"name":"Ap. 2","code":"C00195669"},{"name":"Ap. 2","code":"C00200096"}],"810012466":[{"name":"Ap. 1","code":"C00202699"}],"810012411":[{"name":"Ap. 1","code":"C00195668"},{"name":"Ap. 2","code":"C00195669"},{"name":"Ap. 3","code":"C00195670"},{"name":"Ap. 4","code":"C00195671"},{"name":"Ap. 5","code":"C00195672"},{"name":"Ap. 6","code":"C00195673"}],"810120316":[{"name":"Ap. 1","code":"C00197413"},{"name":"Ap. 2","code":"C00197414"},{"name":"Ap. 3","code":"C00197415"},{"name":"Ap. 4","code":"C00197416"},{"name":"Ap. 5","code":"C00197417"},{"name":"Ap. 6","code":"C00197418"},{"name":"Ap. 7","code":"C00197419"},{"name":"Ap. 8","code":"C00197420"},{"name":"Ap. 9","code":"C00197421"},{"name":"Ap. 10","code":"C00197422"},{"name":"Ap. 11","code":"C00197423"},{"name":"Ap. 12","code":"C00197424"},{"name":"Ap. 13","code":"C00197425"},{"name":"Ap. 14","code":"C00197426"},{"name":"Ap. 15","code":"C00197427"},{"name":"Ap. 16","code":"C00197428"},{"name":"Ap. 17","code":"C00197429"},{"name":"Ap. 18","code":"C00197430"},{"name":"Ap. 19","code":"C00197431"},{"name":"Ap. 20","code":"C00197432"},{"name":"Ap. 21","code":"C00197433"},{"name":"Ap. 22","code":"C00197434"},{"name":"Ap. 23","code":"C00197435"},{"name":"Ap. 24","code":"C00197436"},{"name":"Ap. 25","code":"C00197437"},{"name":"Ap. 26","code":"C00197438"},{"name":"Ap. 27","code":"C00197439"},{"name":"Ap. 28","code":"C00197440"},{"name":"Ap. 29","code":"C00197441"},{"name":"Ap. 30","code":"C00197442"},{"name":"Ap. 31","code":"C00197443"},{"name":"Ap. 32","code":"C00197444"},{"name":"Ap. 33","code":"C00197445"},{"name":"Ap. 34","code":"C00197446"},{"name":"Ap. 35","code":"C00197447"},{"name":"Ap. 36","code":"C00197448"},{"name":"Ap. 37","code":"C00197449"},{"name":"Ap. 38","code":"C00197450"},{"name":"Ap. 39","code":"C00197451"},{"name":"Ap. 40","code":"C00197452"},{"name":"Ap. 41","code":"C00197453"},{"name":"Ap. 42","code":"C00197454"},{"name":"Ap. 43","code":"C00197455"},{"name":"Ap. 44","code":"C00197456"},{"name":"Ap. 45","code":"C00197457"},{"name":"Ap. 46","code":"C00197458"},{"name":"Ap. 47","code":"C00197459"},{"name":"Ap. 48","code":"C00197460"},{"name":"Ap. 49","code":"C00197461"},{"name":"Ap. 50","code":"C00197462"},{"name":"Ap. 51","code":"C00197463"},{"name":"Ap. 52","code":"C00197464"},{"name":"Ap. 53","code":"C00197465"},{"name":"Ap. 54","code":"C00197466"},{"name":"Ap. 55","code":"C00197467"},{"name":"Ap. 56","code":"C00197468"},{"name":"Ap. 57","code":"C00197469"},{"name":"Ap. 58","code":"C00197470"},{"name":"Ap. 59","code":"C00197471"},{"name":"Ap. 60","code":"C00197472"},{"name":"Ap. 61","code":"C00197473"},{"name":"Ap. 62","code":"C00197474"},{"name":"Ap. 63","code":"C00197475"}],"810440001":[{"name":"Ap. 1","code":"C00203924"},{"name":"Ap. 2","code":"C00203925"},{"name":"Ap. 3","code":"C00203926"},{"name":"Ap. 4","code":"C00203927"},{"name":"Ap. 5","code":"C00203928"},{"name":"Ap. 6","code":"C00203929"},{"name":"Ap. 7","code":"C00203930"},{"name":"Ap. 8","code":"C00203931"},{"name":"Ap. 9","code":"C00203932"},{"name":"Ap. 10","code":"C00203933"},{"name":"Ap. 11","code":"C00203934"},{"name":"Ap. 12","code":"C00203935"},{"name":"Ap. 13","code":"C00203936"},{"name":"Ap. 14","code":"C00203937"},{"name":"Ap. 15","code":"C00203938"},{"name":"Ap. 16","code":"C00203939"},{"name":"Ap. 17","code":"C00203940"},{"name":"Ap. 18","code":"C00203941"},{"name":"Ap. 19","code":"C00203942"},{"name":"Ap. 20","code":"C00203943"},{"name":"Ap. 21","code":"C00203944"},{"name":"Ap. 22","code":"C00203945"},{"name":"Ap. 23","code":"C00203946"},{"name":"Ap. 24","code":"C00203947"},{"name":"Ap. 25","code":"C00203948"},{"name":"Ap. 26","code":"C00203949"}],"810440002":[{"name":"Ap. 1","code":"C00203954"},{"name":"Ap. 2","code":"C00203955"},{"name":"Ap. 3","code":"C00203956"},{"name":"Ap. 4","code":"C00203957"},{"name":"Ap. 5","code":"C00203958"},{"name":"Ap. 6","code":"C00203959"},{"name":"Ap. 7","code":"C00203960"},{"name":"Ap. 8","code":"C00203961"},{"name":"Ap. 9","code":"C00203962"},{"name":"Ap. 10","code":"C00203963"},{"name":"Ap. 11","code":"C00203964"},{"name":"Ap. 12","code":"C00203965"},{"name":"Ap. 13","code":"C00203966"},{"name":"Ap. 14","code":"C00203967"},{"name":"Ap. 15","code":"C00203968"},{"name":"Ap. 16","code":"C00203969"},{"name":"Ap. 17","code":"C00203970"},{"name":"Ap. 18","code":"C00203971"},{"name":"Ap. 19","code":"C00203972"},{"name":"Ap. 20","code":"C00203973"},{"name":"Ap. 21","code":"C00203974"},{"name":"Ap. 22","code":"C00203975"},{"name":"Ap. 23","code":"C00203976"},{"name":"Ap. 24","code":"C00203977"},{"name":"Ap. 25","code":"C00203978"},{"name":"Ap. 26","code":"C00203979"}],"810120306":[{"name":"Ap. 1","code":"C00194205"},{"name":"Ap. 2","code":"C00194206"},{"name":"Ap. 3","code":"C00194207"},{"name":"Ap. 4","code":"C00194208"},{"name":"Ap. 5","code":"C00194209"},{"name":"Ap. 6","code":"C00194210"},{"name":"Ap. 7","code":"C00194211"},{"name":"Ap. 8","code":"C00194212"},{"name":"Ap. 9","code":"C00194213"},{"name":"Ap. 10","code":"C00194214"},{"name":"Ap. 11","code":"C00194215"},{"name":"Ap. 12","code":"C00194216"},{"name":"Ap. 13","code":"C00194217"},{"name":"Ap. 14","code":"C00194218"},{"name":"Ap. 15","code":"C00194219"},{"name":"Ap. 16","code":"C00194220"},{"name":"Ap. 17","code":"C00194221"},{"name":"Ap. 18","code":"C00194222"},{"name":"Ap. 19","code":"C00194223"},{"name":"Ap. 20","code":"C00194224"},{"name":"Ap. 21","code":"C00194225"},{"name":"Ap. 22","code":"C00194226"},{"name":"Ap. 23","code":"C00194227"},{"name":"Ap. 24","code":"C00194228"}],"810012503":[{"name":"Ap. 1","code":"C00205501"},{"name":"Ap. 2","code":"C00205502"},{"name":"Ap. 3","code":"C00205503"},{"name":"Ap. 4","code":"C00205504"},{"name":"Ap. 5","code":"C00205505"},{"name":"Ap. 6","code":"C00205506"},{"name":"Ap. 7","code":"C00205507"},{"name":"Ap. 8","code":"C00205508"},{"name":"Ap. 9","code":"C00205509"},{"name":"Ap. 10","code":"C00205510"},{"name":"Ap. 11","code":"C00205511"},{"name":"Ap. 12","code":"C00205512"},{"name":"Ap. 13","code":"C00205513"},{"name":"Ap. 14","code":"C00205514"},{"name":"Ap. 15","code":"C00205515"},{"name":"Ap. 16","code":"C00205516"},{"name":"Ap. 17","code":"C00205517"},{"name":"Ap. 18","code":"C00205518"},{"name":"Ap. 19","code":"C00205519"},{"name":"Ap. 20","code":"C00205520"},{"name":"Ap. 21","code":"C00205521"},{"name":"Ap. 22","code":"C00205522"},{"name":"Ap. 23","code":"C00205523"},{"name":"Ap. 24","code":"C00205524"},{"name":"Ap. 25","code":"C00205525"},{"name":"Ap. 26","code":"C00205526"},{"name":"Ap. 27","code":"C00205527"},{"name":"Ap. 28","code":"C00205528"},{"name":"Ap. 29","code":"C00205529"}],"810120315":[{"name":"Ap. 1","code":"C00197351"},{"name":"Ap. 2","code":"C00197352"},{"name":"Ap. 3","code":"C00197353"},{"name":"Ap. 4","code":"C00197354"},{"name":"Ap. 5","code":"C00197355"},{"name":"Ap. 6","code":"C00197356"},{"name":"Ap. 7","code":"C00197357"},{"name":"Ap. 8","code":"C00197358"},{"name":"Ap. 9","code":"C00197359"},{"name":"Ap. 10","code":"C00197360"},{"name":"Ap. 11","code":"C00197361"},{"name":"Ap. 12","code":"C00197362"},{"name":"Ap. 13","code":"C00197363"},{"name":"Ap. 14","code":"C00197364"},{"name":"Ap. 15","code":"C00197365"},{"name":"Ap. 16","code":"C00197366"},{"name":"Ap. 17","code":"C00197367"},{"name":"Ap. 18","code":"C00197368"},{"name":"Ap. 19","code":"C00197369"},{"name":"Ap. 20","code":"C00197370"}],"810120289":[{"name":"Ap. 1","code":"C00205501"},{"name":"Ap. 2","code":"C00205502"},{"name":"Ap. 3","code":"C00205503"},{"name":"Ap. 4","code":"C00205504"},{"name":"Ap. 5","code":"C00205505"},{"name":"Ap. 6","code":"C00205506"},{"name":"Ap. 7","code":"C00205507"},{"name":"Ap. 8","code":"C00205508"},{"name":"Ap. 9","code":"C00205509"},{"name":"Ap. 10","code":"C00205510"},{"name":"Ap. 11","code":"C00205511"},{"name":"Ap. 12","code":"C00205512"},{"name":"Ap. 13","code":"C00205513"},{"name":"Ap. 14","code":"C00205514"},{"name":"Ap. 15","code":"C00205515"},{"name":"Ap. 16","code":"C00205516"},{"name":"Ap. 17","code":"C00205517"},{"name":"Ap. 18","code":"C00205518"},{"name":"Ap. 19","code":"C00205519"},{"name":"Ap. 20","code":"C00205520"},{"name":"Ap. 21","code":"C00205521"},{"name":"Ap. 22","code":"C00205522"},{"name":"Ap. 23","code":"C00205523"},{"name":"Ap. 24","code":"C00205524"},{"name":"Ap. 25","code":"C00205525"},{"name":"Ap. 26","code":"C00205526"},{"name":"Ap. 27","code":"C00205527"},{"name":"Ap. 28","code":"C00205528"},{"name":"Ap. 29","code":"C00205529"},{"name":"Ap. 30","code":"C00205530"},{"name":"Ap. 31","code":"C00205531"},{"name":"Ap. 32","code":"C00205532"},{"name":"Ap. 33","code":"C00205533"},{"name":"Ap. 34","code":"C00205534"},{"name":"Ap. 35","code":"C00205535"},{"name":"Ap. 36","code":"C00205536"},{"name":"Ap. 37","code":"C00205537"},{"name":"Ap. 38","code":"C00205538"},{"name":"Ap. 39","code":"C00205539"},{"name":"Ap. 40","code":"C00205540"},{"name":"Ap. 41","code":"C00205541"},{"name":"Ap. 42","code":"C00205542"}],"810270021":[{"name":"Ap. 1","code":"C00194825"},{"name":"Ap. 2","code":"C00194826"},{"name":"Ap. 3","code":"C00194827"},{"name":"Ap. 4","code":"C00194828"},{"name":"Ap. 5","code":"C00194829"},{"name":"Ap. 6","code":"C00194830"},{"name":"Ap. 7","code":"C00194831"},{"name":"Ap. 8","code":"C00194832"},{"name":"Ap. 9","code":"C00194833"},{"name":"Ap. 10","code":"C00194834"},{"name":"Ap. 11","code":"C00194835"},{"name":"Ap. 12","code":"C00194836"}],"810030072":[{"name":"Ap. 1","code":"C00199101"},{"name":"Ap. 2","code":"C00199102"},{"name":"Ap. 3","code":"C00199103"},{"name":"Ap. 4","code":"C00199104"},{"name":"Ap. 5","code":"C00199105"},{"name":"Ap. 6","code":"C00199106"},{"name":"Ap. 7","code":"C00199107"},{"name":"Ap. 8","code":"C00199108"},{"name":"Ap. 9","code":"C00199109"},{"name":"Ap. 10","code":"C00199110"},{"name":"Ap. 11","code":"C00199111"},{"name":"Ap. 12","code":"C00199112"},{"name":"Ap. 13","code":"C00199113"},{"name":"Ap. 14","code":"C00199114"},{"name":"Ap. 15","code":"C00199115"}]};
+var EYE_ICON = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z\"><\/path><circle cx=\"12\" cy=\"12\" r=\"3\"><\/circle><\/svg>";
+var currentPlace = '';
+
+function filterTable(bodyId, q) {
+    var n = 0;
+    document.querySelectorAll('#' + bodyId + ' tr[data-search]').forEach(function (tr) {
+        var show = !q || tr.getAttribute('data-search').indexOf(q) !== -1;
+        tr.style.display = show ? '' : 'none';
+        if (show) n++;
+    });
+    document.querySelector('#' + bodyId + ' .js-empty').style.display = n ? 'none' : '';
+    return n;
+}
+function applyRaportFilter() {
+    var q = document.getElementById('raportSearch').value.toLowerCase().trim();
+    var level = document.getElementById('raportLevel').value;
+    document.getElementById('regionsCount').textContent = filterTable('regionsBody', q);
+    document.getElementById('placesCount').textContent = filterTable('placesBody', q);
+    document.getElementById('regionsBlock').style.display = level === 'br' ? 'none' : '';
+    document.getElementById('placesBlock').style.display = level === 'reg' ? 'none' : '';
+}
+function resetRaportFilter() {
+    document.getElementById('raportSearch').value = '';
+    document.getElementById('raportLevel').value = '';
+    applyRaportFilter();
+}
+function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+function renderConsumers() {
+    var q = document.getElementById('consumersSearch').value.toLowerCase().trim();
+    var rows = (GRID_CONSUMERS[currentPlace] || []).filter(function (c) { return !q || (c.name + ' ' + c.code).toLowerCase().indexOf(q) !== -1; });
+    document.getElementById('consumersCount').textContent = rows.length;
+    document.getElementById('consumersBody').innerHTML = rows.length ? rows.map(function (c) {
+        return '<tr><td class="td-name">' + esc(c.name) + '</td><td class="td-code">' + esc(c.code) + '</td>' +
+            '<td style="text-align: center;"><a class="btn-action-icon" title="Vezi citirile locului de consum" href="raport-exemplu.html?id=' + encodeURIComponent(c.code) + '&amp;scope=loc&amp;br=' + currentPlace + '">' + EYE_ICON + '</a></td></tr>';
+    }).join('') : '<tr><td colspan="3" class="table-empty">Niciun loc de consum nu corespunde căutării.</td></tr>';
+}
+function openConsumers(code) {
+    currentPlace = code;
+    document.getElementById('consumersCode').textContent = code;
+    document.getElementById('consumersAddress').textContent = GRID_PLACES[code];
+    document.getElementById('consumersSearch').value = '';
+    renderConsumers();
+    document.getElementById('consumersModal').style.display = 'flex';
+}
+function closeConsumers() { document.getElementById('consumersModal').style.display = 'none'; }
+
+document.getElementById('raportSearch').addEventListener('input', applyRaportFilter);
+document.getElementById('raportLevel').addEventListener('change', applyRaportFilter);
+document.getElementById('consumersSearch').addEventListener('input', renderConsumers);
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeConsumers(); });
+</script>
 
     </div><!-- /.content -->
     <footer class="app-footer">

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
     <title>Dashboard FIN – SONIC</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.31">
     <script src="assets/js/nod-picker.js"></script>
     <script src="assets/js/edit-tabs.js"></script>
     <script src="assets/js/datepicker.js"></script>
@@ -456,6 +456,97 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
+                <!-- ── MONTAJE & FACTURARE ── -->
+                <div class="nav-group " data-group="fin-montaje">
+                    <button class="nav-group-title" type="button" title="Montaje & Facturare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>
+                        </span>
+                        <span class="nav-label">Montaje & Facturare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-validare-montaje.html" class="nav-subitem ">Validare Montaje</a>
+                        <a href="fin-facturare-echipamente.html" class="nav-subitem ">Facturare Echipamente</a>
+                        <a href="fin-rate.html" class="nav-subitem ">Scadențar Rate</a>
+                        <a href="fin-facturi.html" class="nav-subitem ">Facturi</a>
+                    </div>
+                </div>
+
+                <!-- ── ÎNCASĂRI ── -->
+                <div class="nav-group " data-group="fin-incasari">
+                    <button class="nav-group-title" type="button" title="Încasări">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+                        </span>
+                        <span class="nav-label">Încasări</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-chitante.html" class="nav-subitem ">Chitanțe</a>
+                        <a href="fin-chitantiere.html" class="nav-subitem ">Chitanțiere</a>
+                        <a href="fin-incasari-banca.html" class="nav-subitem ">Încasări Bancă</a>
+                        <a href="fin-recalculare.html" class="nav-subitem ">Recalculare Solduri</a>
+                    </div>
+                </div>
+
+                <!-- ── CREANȚE ── -->
+                <div class="nav-group " data-group="fin-creante">
+                    <button class="nav-group-title" type="button" title="Creanțe">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                        </span>
+                        <span class="nav-label">Creanțe</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-creante.html" class="nav-subitem ">Urmărire Creanțe</a>
+                        <a href="fin-alerte.html" class="nav-subitem ">Alerte SMS și E-mail</a>
+                    </div>
+                </div>
+
+                <!-- ── GESTIUNE STOCURI ── -->
+                <div class="nav-group " data-group="fin-gestiune">
+                    <button class="nav-group-title" type="button" title="Gestiune Stocuri">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                        </span>
+                        <span class="nav-label">Gestiune Stocuri</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-gestiuni.html" class="nav-subitem ">Gestiuni</a>
+                        <a href="fin-intrari.html" class="nav-subitem ">Intrări în Gestiune</a>
+                        <a href="fin-iesiri.html" class="nav-subitem ">Ieșiri și Transferuri</a>
+                        <a href="fin-retururi.html" class="nav-subitem ">Retururi</a>
+                        <a href="fin-comenzi-furnizori.html" class="nav-subitem ">Comenzi Furnizori</a>
+                        <a href="fin-necesar-marfa.html" class="nav-subitem ">Necesar de Comandat</a>
+                    </div>
+                </div>
+
+                <!-- ── NOMENCLATOARE ── -->
+                <div class="nav-group " data-group="fin-nomenclatoare">
+                    <button class="nav-group-title" type="button" title="Nomenclatoare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Nomenclatoare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-produse.html" class="nav-subitem ">Produse</a>
+                        <a href="fin-nomenclatoare.html" class="nav-subitem ">Nomenclatoare Financiare</a>
+                    </div>
+                </div>
+
+                <!-- ── RAPOARTE FIN (standalone) ── -->
+                <a href="fin-rapoarte.html" class="nav-item " title="Rapoarte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <span class="nav-label">Rapoarte</span>
+                </a>
+
             </div>
         </div>
 
@@ -621,7 +712,7 @@
                             aria-selected="false"
                             aria-controls="help-pane-1"
                             data-tab="1">
-                        Extrase bancare                    </button>
+                        Indicatori                    </button>
                                     </nav>
                 <!-- Tab content panes -->
                 <div class="help-tab-content">
@@ -632,11 +723,11 @@
                          data-pane="0">
                         
             <h4>SONIC FIN</h4>
-            <p>Facturile pentru echipamente și pentru serviciile lunare de citire și calcul, încasările și operarea extraselor bancare.</p>
+            <p>Gestiunea mărfii, validarea montajelor, facturarea echipamentelor în rate, încasările (chitanțe și bancă) și urmărirea creanțelor.</p>
             <ul>
                 <li><strong>Harta</strong> – punctele albe sunt încasările care sosesc, cele verzi deschis sunt facturile emise spre clienți.</li>
-                <li><strong>Facturat vs încasat</strong> – ultimele 6 luni (bara gri = facturat, bara închisă = încasat).</li>
-                <li><strong>Vechimea creanțelor</strong> – soldul neîncasat pe intervale de întârziere.</li>
+                <li><strong>De la contract la încasare</strong> – fluxul echipamentelor: contractele care urmează să fie montate, marfa aflată la instalatori, fișele de montaj de validat, echipamentele validate de facturat și ratele rămase de încasat.</li>
+                <li><strong>De făcut azi</strong> – tot ce așteaptă o acțiune: fiecare rând duce direct în pagina în care se rezolvă.</li>
             </ul>
                             </div>
                                         <div class="help-tab-pane "
@@ -645,8 +736,13 @@
                          aria-labelledby="help-tab-1"
                          data-pane="1">
                         
-            <h4>Alocarea plăților</h4>
-            <p>Extrasele importate sunt potrivite automat cu facturile (după codul partenerului și numărul facturii din detaliile plății). Plățile nepotrivite rămân „de alocat manual”.</p>
+            <h4>Cum se citesc</h4>
+            <ul>
+                <li><strong>Sold restant</strong> – facturile cu scadența depășită, neachitate (inclusiv ratele echipamentelor și serviciile de citire și calcul emise din SONIC BILLING).</li>
+                <li><strong>Încasări așteptate</strong> – facturile nescadente care ajung la scadență în următoarele 30 de zile.</li>
+                <li><strong>Vechimea creanțelor</strong> – soldul restant pe intervale de întârziere; peste 90 de zile dosarul trece de regulă în somație.</li>
+                <li><strong>Aprovizionare</strong> – produsele pentru care stocul din toate gestiunile, plus marfa comandată, nu acoperă montajele și intervențiile planificate.</li>
+            </ul>
                             </div>
                                     </div>
                     </div><!-- /.help-panel-inner -->
@@ -678,7 +774,7 @@
 <div class="page-title-container">
     <div class="page-title">
         <h1>Dashboard FIN</h1>
-        <p>Facturare, încasări și extrase bancare, în timp real.</p>
+        <p>Încasări, facturare, creanțe și gestiunea mărfii, în timp real.</p>
     </div>
 </div>
 
@@ -702,25 +798,60 @@
 
 <!-- React: <FinKpis /> -->
 <div class="dash-stat-grid">
-    <a href="facturare.html" class="dash-stat">
+    <a href="fin-facturi.html" class="dash-stat">
         <span class="dash-stat-top"><span class="dash-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></span></span>
         <span class="dash-stat-value">1,58 mil.</span><span class="dash-stat-label">Facturat în octombrie (RON)</span>
-        <span class="dash-stat-link">Gestiune facturare →</span>
+        <span class="dash-stat-link">Facturi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
     </a>
-    <div class="dash-stat">
+    <a href="fin-incasari-banca.html" class="dash-stat">
         <span class="dash-stat-top"><span class="dash-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle></svg></span></span>
-        <span class="dash-stat-value" id="finMonth">1,13 mil.</span><span class="dash-stat-label">Încasat în octombrie (RON)</span>
-        <span class="pro-kpi-meta">71,5% din facturat · luna în curs</span>
+        <span class="dash-stat-value">1,13 mil.</span><span class="dash-stat-label">Încasat în octombrie (RON) · 71,5%</span>
+        <span class="dash-stat-link">Încasări bancă <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+    </a>
+    <a href="fin-creante.html" class="dash-stat">
+        <span class="dash-stat-top"><span class="dash-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></span><span class="status-badge status-error">peste 90 zile</span></span>
+        <span class="dash-stat-value">31.898</span><span class="dash-stat-label">Sold restant (RON) · 5 parteneri</span>
+        <span class="dash-stat-link">Urmărire creanțe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+    </a>
+    <a href="fin-rate.html" class="dash-stat">
+        <span class="dash-stat-top"><span class="dash-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span></span>
+        <span class="dash-stat-value">16.315</span><span class="dash-stat-label">Încasări așteptate în 30 de zile (RON)</span>
+        <span class="dash-stat-link">Scadențar rate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+    </a>
+</div>
+
+<!-- React: <EquipmentPipeline /> -->
+<div class="card pro-panel">
+    <div class="edit-section-header">
+        <span class="edit-section-title">De la contract la încasare · echipamente</span>
+        <a href="fin-validare-montaje.html" class="pro-panel-link">Validare montaje <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
     </div>
-    <div class="dash-stat">
-        <span class="dash-stat-top"><span class="dash-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></span></span>
-        <span class="dash-stat-value">714 mii</span><span class="dash-stat-label">Sold debitori (RON)</span>
-        <span class="pro-kpi-meta">−6,8% față de septembrie</span>
-    </div>
-    <div class="dash-stat">
-        <span class="dash-stat-top"><span class="dash-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg></span><span class="status-badge status-error">peste 90 zile: 9</span></span>
-        <span class="dash-stat-value">128</span><span class="dash-stat-label">Facturi restante</span>
-        <span class="pro-kpi-meta">58 de parteneri</span>
+    <div class="dash-flow">
+        <a href="fin-necesar-marfa.html" class="dash-flow-step">
+            <span class="dash-flow-num dash-flow-num--wide">7</span>
+            <span class="dash-flow-label">Contracte de montat</span>
+            <span class="dash-flow-meta">~1,9k echipamente</span>
+        </a>
+        <a href="fin-gestiuni.html" class="dash-flow-step">
+            <span class="dash-flow-num dash-flow-num--wide">22,4k</span>
+            <span class="dash-flow-label">Marfă la instalatori</span>
+            <span class="dash-flow-meta">RON, la cost</span>
+        </a>
+        <a href="fin-validare-montaje.html" class="dash-flow-step">
+            <span class="dash-flow-num dash-flow-num--wide">5</span>
+            <span class="dash-flow-label">Fișe de validat</span>
+            <span class="dash-flow-meta">2 cu avertizări</span>
+        </a>
+        <a href="fin-facturare-echipamente.html" class="dash-flow-step">
+            <span class="dash-flow-num dash-flow-num--wide">7</span>
+            <span class="dash-flow-label">De facturat</span>
+            <span class="dash-flow-meta">8.305 RON</span>
+        </a>
+        <a href="fin-rate.html" class="dash-flow-step">
+            <span class="dash-flow-num dash-flow-num--wide">98,3k</span>
+            <span class="dash-flow-label">Rate de încasat</span>
+            <span class="dash-flow-meta">RON · 9 rate restante</span>
+        </a>
     </div>
 </div>
 
@@ -731,7 +862,7 @@
             <span class="edit-section-title">Facturat vs încasat · 6 luni (mil. RON)</span>
             <span class="pro-map-legend" style="margin: 0;"><span><i class="pro-legend-dot pro-legend-dot--done"></i>Facturat</span><span><i class="pro-legend-dot"></i>Încasat</span></span>
         </div>
-        <div class="pro-bars" style="height: 190px;">
+        <div class="pro-bars" style="height: 210px;">
                         <div class="pro-bar-col">
                 <span class="pro-bar-value">92%</span>
                 <div class="dash-bar-pair">
@@ -783,95 +914,152 @@
                     </div>
     </div>
 
-    <!-- React: <Aging /> -->
+    <!-- React: <TodoFeed /> -->
     <div class="card pro-panel">
-        <div class="edit-section-header"><span class="edit-section-title">Vechimea creanțelor</span></div>
-                <div class="pro-stock-row">
-            <span class="pro-stock-name">0 – 30 zile</span>
-            <span class="pro-stock-nums"><strong>412.300</strong> RON</span>
-            <div class="progress-bar"><div class="progress-bar__fill is-ok" style="width: 58%;"></div></div>
+        <div class="edit-section-header">
+            <span class="edit-section-title">De făcut azi</span>
+            <span class="status-badge status-warning">7</span>
         </div>
-                <div class="pro-stock-row">
-            <span class="pro-stock-name">31 – 60 zile</span>
-            <span class="pro-stock-nums"><strong>168.900</strong> RON</span>
-            <div class="progress-bar"><div class="progress-bar__fill " style="width: 24%;"></div></div>
-        </div>
-                <div class="pro-stock-row">
-            <span class="pro-stock-name">61 – 90 zile</span>
-            <span class="pro-stock-nums"><strong>74.200</strong> RON</span>
-            <div class="progress-bar"><div class="progress-bar__fill is-low" style="width: 10%;"></div></div>
-        </div>
-                <div class="pro-stock-row">
-            <span class="pro-stock-name">Peste 90 zile</span>
-            <span class="pro-stock-nums"><strong>58.600</strong> RON</span>
-            <div class="progress-bar"><div class="progress-bar__fill is-out" style="width: 8%;"></div></div>
-        </div>
-                <span class="progress-label">Total sold: 714.000 RON</span>
-    </div>
+                <ul class="pro-feed">
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon pro-feed-icon--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">5 fișe de montaj de validat</div>
+                    <div class="pro-feed-meta">2 cu avertizări (semnătură, GPS, fotografii) · trimise din aplicația mobilă</div>
+                </div>
+                <div class="pro-feed-actions">
+                    <a href="fin-validare-montaje.html" class="btn-action-icon" title="Rezolvă"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                </div>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">7 fișe validate, de facturat</div>
+                    <div class="pro-feed-meta">8.305,44 RON cu TVA · în rate, după apartament sau contract</div>
+                </div>
+                <div class="pro-feed-actions">
+                    <a href="fin-facturare-echipamente.html" class="btn-action-icon" title="Rezolvă"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                </div>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon pro-feed-icon--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"></line><line x1="6" y1="18" x2="6" y2="11"></line><line x1="10" y1="18" x2="10" y2="11"></line><line x1="14" y1="18" x2="14" y2="11"></line><line x1="18" y1="18" x2="18" y2="11"></line><polygon points="12 2 20 7 4 7"></polygon></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">33 plăți bancare de alocat manual</div>
+                    <div class="pro-feed-meta">3 extrase deschise · potrivire automată 96,0%</div>
+                </div>
+                <div class="pro-feed-actions">
+                    <a href="fin-incasari-banca.html" class="btn-action-icon" title="Rezolvă"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                </div>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon pro-feed-icon--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">1 promisiuni de plată în următoarele 3 zile</div>
+                    <div class="pro-feed-meta">Asociația de Proprietari Bloc 2C: 5.000 RON pe 30.10.2026</div>
+                </div>
+                <div class="pro-feed-actions">
+                    <a href="fin-creante.html" class="btn-action-icon" title="Rezolvă"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                </div>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon pro-feed-icon--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">4 produse de comandat</div>
+                    <div class="pro-feed-meta">Contor energie termică ultrasonic (24 buc), Adaptor montaj repartitor (304 buc) …</div>
+                </div>
+                <div class="pro-feed-actions">
+                    <a href="fin-necesar-marfa.html" class="btn-action-icon" title="Rezolvă"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                </div>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">2 documente de gestiune în ciornă</div>
+                    <div class="pro-feed-meta">TR-2026-1142 – Transfer către Gestiune Mihai Dobre · RT-2026-0075 – Retur către Magazia centrală</div>
+                </div>
+                <div class="pro-feed-actions">
+                    <a href="fin-iesiri.html" class="btn-action-icon" title="Rezolvă"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                </div>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon pro-feed-icon--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">1 alerte SMS / e-mail eșuate</div>
+                    <div class="pro-feed-meta">Verificați telefonul / adresa partenerului și retrimiteți.</div>
+                </div>
+                <div class="pro-feed-actions">
+                    <a href="fin-alerte.html" class="btn-action-icon" title="Rezolvă"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                </div>
+            </li>
+                    </ul>
+            </div>
 </div>
 
 <div class="pro-grid-2-1">
     <!-- React: <TopDebtors /> -->
     <div class="card pro-panel">
-        <div class="edit-section-header"><span class="edit-section-title">Cei mai mari restanțieri</span></div>
+        <div class="edit-section-header">
+            <span class="edit-section-title">Cei mai mari restanțieri</span>
+            <a href="fin-creante.html" class="pro-panel-link">Toate creanțele <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+        </div>
         <div class="pro-panel-flush">
             <div class="table-scroll">
                 <table class="partners-table">
-                    <thead><tr><th>NOD</th><th>Partener</th><th style="text-align: center;">Facturi</th><th style="text-align: right;">Sold (RON)</th><th style="text-align: center;">Cea mai veche</th><th style="text-align: center;">Acțiuni</th></tr></thead>
+                    <thead><tr><th>Partener</th><th style="text-align: center;">Facturi</th><th style="text-align: right;">Restant (RON)</th><th style="text-align: center;">Cea mai veche</th><th>Stadiu</th><th style="text-align: center;">Acțiuni</th></tr></thead>
                     <tbody>
                                                 <tr>
-                            <td class="td-code">81-001-0018</td>
-                            <td class="td-name">Asociația de Proprietari Bloc 2C</td>
+                            <td class="td-name">Asoc. de prop. de apartamente Iuliu Maniu 68<span class="list-sublabel">BV0006 · NOD 81-033-0007</span></td>
                             <td style="text-align: center;">3</td>
-                            <td style="text-align: right;">18.420</td>
-                            <td style="text-align: center;"><span class="status-badge status-error">94 zile</span></td>
+                            <td style="text-align: right;">11.499,84</td>
+                            <td style="text-align: center;"><span class="status-badge status-offline">43 zile</span></td>
+                            <td><span class="status-badge status-warning">Notificare 2</span></td>
                             <td style="text-align: center; white-space: nowrap;">
-                                <button type="button" class="btn-action-icon" title="Trimite somație" onclick="alert('Somația a fost generată și trimisă pe e-mail către Asociația de Proprietari Bloc 2C (demo).')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
-                                <a href="facturare.html" class="btn-action-icon" title="Vezi facturile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                                <a href="fin-creante-edit.html?partner=BV0006" class="btn-action-icon" title="Deschide dosarul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg></a>
+                                <a href="fin-facturi.html?partner=BV0006" class="btn-action-icon" title="Vezi facturile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></a>
                             </td>
                         </tr>
                                                 <tr>
-                            <td class="td-code">81-004-0847</td>
-                            <td class="td-name">P-ta Victoriei 34</td>
-                            <td style="text-align: center;">2</td>
-                            <td style="text-align: right;">12.760</td>
-                            <td style="text-align: center;"><span class="status-badge status-warning">71 zile</span></td>
+                            <td class="td-name">Asociația de Proprietari Bloc 2C<span class="list-sublabel">B0018 · NOD 81-001-0018</span></td>
+                            <td style="text-align: center;">5</td>
+                            <td style="text-align: right;">11.348,05</td>
+                            <td style="text-align: center;"><span class="status-badge status-warning">69 zile</span></td>
+                            <td><span class="status-badge status-error">Somație</span></td>
                             <td style="text-align: center; white-space: nowrap;">
-                                <button type="button" class="btn-action-icon" title="Trimite somație" onclick="alert('Somația a fost generată și trimisă pe e-mail către P-ta Victoriei 34 (demo).')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
-                                <a href="facturare.html" class="btn-action-icon" title="Vezi facturile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                                <a href="fin-creante-edit.html?partner=B0018" class="btn-action-icon" title="Deschide dosarul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg></a>
+                                <a href="fin-facturi.html?partner=B0018" class="btn-action-icon" title="Vezi facturile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></a>
                             </td>
                         </tr>
                                                 <tr>
-                            <td class="td-code">81-001-0140</td>
-                            <td class="td-name">Asociația de Proprietari Bloc K</td>
-                            <td style="text-align: center;">2</td>
-                            <td style="text-align: right;">9.880</td>
-                            <td style="text-align: center;"><span class="status-badge status-warning">63 zile</span></td>
-                            <td style="text-align: center; white-space: nowrap;">
-                                <button type="button" class="btn-action-icon" title="Trimite somație" onclick="alert('Somația a fost generată și trimisă pe e-mail către Asociația de Proprietari Bloc K (demo).')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
-                                <a href="facturare.html" class="btn-action-icon" title="Vezi facturile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
-                            </td>
-                        </tr>
-                                                <tr>
-                            <td class="td-code">81-011-0041</td>
-                            <td class="td-name">Asociația de Proprietari 55</td>
+                            <td class="td-name">Asociația de Proprietari Bloc 47<span class="list-sublabel">B0102 · NOD 81-001-0040</span></td>
                             <td style="text-align: center;">1</td>
-                            <td style="text-align: right;">7.340</td>
-                            <td style="text-align: center;"><span class="status-badge status-offline">41 zile</span></td>
+                            <td style="text-align: right;">5.263,50</td>
+                            <td style="text-align: center;"><span class="status-badge status-offline">13 zile</span></td>
+                            <td><span class="status-badge status-offline">Reamintire</span></td>
                             <td style="text-align: center; white-space: nowrap;">
-                                <button type="button" class="btn-action-icon" title="Trimite somație" onclick="alert('Somația a fost generată și trimisă pe e-mail către Asociația de Proprietari 55 (demo).')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
-                                <a href="facturare.html" class="btn-action-icon" title="Vezi facturile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                                <a href="fin-creante-edit.html?partner=B0102" class="btn-action-icon" title="Deschide dosarul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg></a>
+                                <a href="fin-facturi.html?partner=B0102" class="btn-action-icon" title="Vezi facturile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></a>
                             </td>
                         </tr>
                                                 <tr>
-                            <td class="td-code">81-001-0030</td>
-                            <td class="td-name">Asociația de Proprietari Bloc 17 Sc. A</td>
-                            <td style="text-align: center;">1</td>
-                            <td style="text-align: right;">5.120</td>
-                            <td style="text-align: center;"><span class="status-badge status-offline">33 zile</span></td>
+                            <td class="td-name">Asociația de Proprietari Bloc K<span class="list-sublabel">B0140 · NOD 81-001-0140</span></td>
+                            <td style="text-align: center;">3</td>
+                            <td style="text-align: right;">2.600,45</td>
+                            <td style="text-align: center;"><span class="status-badge status-error">105 zile</span></td>
+                            <td><span class="status-badge status-warning">Plan de eșalonare</span></td>
                             <td style="text-align: center; white-space: nowrap;">
-                                <button type="button" class="btn-action-icon" title="Trimite somație" onclick="alert('Somația a fost generată și trimisă pe e-mail către Asociația de Proprietari Bloc 17 Sc. A (demo).')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></button>
-                                <a href="facturare.html" class="btn-action-icon" title="Vezi facturile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                                <a href="fin-creante-edit.html?partner=B0140" class="btn-action-icon" title="Deschide dosarul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg></a>
+                                <a href="fin-facturi.html?partner=B0140" class="btn-action-icon" title="Vezi facturile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></a>
+                            </td>
+                        </tr>
+                                                <tr>
+                            <td class="td-name">Asociația de Proprietari Bloc 17 Sc. A<span class="list-sublabel">B0030 · NOD 81-001-0030</span></td>
+                            <td style="text-align: center;">1</td>
+                            <td style="text-align: right;">1.185,80</td>
+                            <td style="text-align: center;"><span class="status-badge status-offline">7 zile</span></td>
+                            <td><span class="status-badge status-warning">Notificare 1</span></td>
+                            <td style="text-align: center; white-space: nowrap;">
+                                <a href="fin-creante-edit.html?partner=B0030" class="btn-action-icon" title="Deschide dosarul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg></a>
+                                <a href="fin-facturi.html?partner=B0030" class="btn-action-icon" title="Vezi facturile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></a>
                             </td>
                         </tr>
                                             </tbody>
@@ -880,44 +1068,152 @@
         </div>
     </div>
 
-    <!-- React: <BankFiles /> -->
+    <div class="pro-stack">
+        <!-- React: <Aging /> -->
+        <div class="card pro-panel">
+            <div class="edit-section-header"><span class="edit-section-title">Vechimea creanțelor</span></div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">1 – 30 zile</span>
+                <span class="pro-stock-nums"><strong>19.687</strong> RON</span>
+                <div class="progress-bar"><div class="progress-bar__fill is-ok" style="width: 62%;"></div></div>
+            </div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">31 – 60 zile</span>
+                <span class="pro-stock-nums"><strong>10.954</strong> RON</span>
+                <div class="progress-bar"><div class="progress-bar__fill " style="width: 34%;"></div></div>
+            </div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">61 – 90 zile</span>
+                <span class="pro-stock-nums"><strong>1.136</strong> RON</span>
+                <div class="progress-bar"><div class="progress-bar__fill is-low" style="width: 4%;"></div></div>
+            </div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">Peste 90 zile</span>
+                <span class="pro-stock-nums"><strong>121</strong> RON</span>
+                <div class="progress-bar"><div class="progress-bar__fill is-out" style="width: 0%;"></div></div>
+            </div>
+                        <span class="progress-label">Total restant: 31.897,64 RON</span>
+        </div>
+
+        <!-- React: <ExpectedCollections /> -->
+        <div class="card pro-panel">
+            <div class="edit-section-header"><span class="edit-section-title">Încasări așteptate · 30 zile</span></div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">Săpt. din 28.10.2026</span>
+                <span class="pro-stock-nums"><strong>375</strong> RON</span>
+                <div class="progress-bar"><div class="progress-bar__fill is-ok" style="width: 4%;"></div></div>
+            </div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">Săpt. din 04.11.2026</span>
+                <span class="pro-stock-nums"><strong>5.879</strong> RON</span>
+                <div class="progress-bar"><div class="progress-bar__fill is-ok" style="width: 68%;"></div></div>
+            </div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">Săpt. din 11.11.2026</span>
+                <span class="pro-stock-nums"><strong>8.687</strong> RON</span>
+                <div class="progress-bar"><div class="progress-bar__fill is-ok" style="width: 100%;"></div></div>
+            </div>
+                        <div class="pro-stock-row">
+                <span class="pro-stock-name">Săpt. din 18.11.2026</span>
+                <span class="pro-stock-nums"><strong>1.373</strong> RON</span>
+                <div class="progress-bar"><div class="progress-bar__fill is-ok" style="width: 16%;"></div></div>
+            </div>
+                    </div>
+    </div>
+</div>
+
+<div class="pro-grid-1-1">
+    <!-- React: <BankStatements /> -->
     <div class="card pro-panel">
-        <div class="edit-section-header"><span class="edit-section-title">Extrase bancare · alocare plăți</span></div>
+        <div class="edit-section-header">
+            <span class="edit-section-title">Extrase bancare · alocare plăți</span>
+            <a href="fin-incasari-banca.html" class="pro-panel-link">Încasări bancă <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+        </div>
         <ul class="pro-feed">
                         <li class="pro-feed-item">
                 <span class="pro-feed-icon pro-feed-icon--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"></line><line x1="6" y1="18" x2="6" y2="11"></line><line x1="10" y1="18" x2="10" y2="11"></line><line x1="14" y1="18" x2="14" y2="11"></line><line x1="18" y1="18" x2="18" y2="11"></line><polygon points="12 2 20 7 4 7"></polygon></svg></span>
                 <div class="pro-feed-body">
-                    <div class="pro-feed-title">Banca Transilvania</div>
-                    <div class="pro-feed-meta">azi, 14:20 · 412 plăți · 398 alocate automat</div>
+                    <div class="pro-feed-title">Banca Transilvania · 182.411 RON</div>
+                    <div class="pro-feed-meta">28.10.2026, 14:20 · 412 plăți · 398 alocate</div>
                     <div class="progress-bar" style="margin-top: 6px;"><div class="progress-bar__fill" style="width: 97%;"></div></div>
                 </div>
-                <span class="status-badge status-warning">14 de alocat</span>            </li>
+                                    <div class="pro-feed-actions">
+                        <span class="status-badge status-warning">14 de alocat</span>
+                        <a href="fin-incasari-banca-edit.html?id=EX-1028-BT" class="btn-action-icon" title="Alocă plățile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                    </div>
+                            </li>
                         <li class="pro-feed-item">
                 <span class="pro-feed-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"></line><line x1="6" y1="18" x2="6" y2="11"></line><line x1="10" y1="18" x2="10" y2="11"></line><line x1="14" y1="18" x2="14" y2="11"></line><line x1="18" y1="18" x2="18" y2="11"></line><polygon points="12 2 20 7 4 7"></polygon></svg></span>
                 <div class="pro-feed-body">
-                    <div class="pro-feed-title">ING Bank</div>
-                    <div class="pro-feed-meta">azi, 11:05 · 186 plăți · 186 alocate automat</div>
+                    <div class="pro-feed-title">ING Bank · 71.205 RON</div>
+                    <div class="pro-feed-meta">28.10.2026, 11:05 · 186 plăți · 186 alocate</div>
                     <div class="progress-bar" style="margin-top: 6px;"><div class="progress-bar__fill" style="width: 100%;"></div></div>
                 </div>
                 <span class="status-badge status-online">Complet</span>            </li>
                         <li class="pro-feed-item">
                 <span class="pro-feed-icon pro-feed-icon--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"></line><line x1="6" y1="18" x2="6" y2="11"></line><line x1="10" y1="18" x2="10" y2="11"></line><line x1="14" y1="18" x2="14" y2="11"></line><line x1="18" y1="18" x2="18" y2="11"></line><polygon points="12 2 20 7 4 7"></polygon></svg></span>
                 <div class="pro-feed-body">
-                    <div class="pro-feed-title">BCR</div>
-                    <div class="pro-feed-meta">azi, 09:40 · 233 plăți · 221 alocate automat</div>
+                    <div class="pro-feed-title">BCR · 96.880 RON</div>
+                    <div class="pro-feed-meta">28.10.2026, 09:40 · 233 plăți · 221 alocate</div>
                     <div class="progress-bar" style="margin-top: 6px;"><div class="progress-bar__fill" style="width: 95%;"></div></div>
                 </div>
-                <span class="status-badge status-warning">12 de alocat</span>            </li>
+                                    <div class="pro-feed-actions">
+                        <span class="status-badge status-warning">12 de alocat</span>
+                        <a href="fin-incasari-banca-edit.html?id=EX-1028-BCR" class="btn-action-icon" title="Alocă plățile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                    </div>
+                            </li>
                         <li class="pro-feed-item">
                 <span class="pro-feed-icon pro-feed-icon--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"></line><line x1="6" y1="18" x2="6" y2="11"></line><line x1="10" y1="18" x2="10" y2="11"></line><line x1="14" y1="18" x2="14" y2="11"></line><line x1="18" y1="18" x2="18" y2="11"></line><polygon points="12 2 20 7 4 7"></polygon></svg></span>
                 <div class="pro-feed-body">
-                    <div class="pro-feed-title">Trezorerie</div>
-                    <div class="pro-feed-meta">ieri, 16:10 · 38 plăți · 31 alocate automat</div>
+                    <div class="pro-feed-title">Trezoreria Sector 4 · 22.140 RON</div>
+                    <div class="pro-feed-meta">27.10.2026, 16:10 · 38 plăți · 31 alocate</div>
                     <div class="progress-bar" style="margin-top: 6px;"><div class="progress-bar__fill" style="width: 82%;"></div></div>
                 </div>
-                <span class="status-badge status-warning">7 de alocat</span>            </li>
+                                    <div class="pro-feed-actions">
+                        <span class="status-badge status-warning">7 de alocat</span>
+                        <a href="fin-incasari-banca-edit.html?id=EX-1027-TREZ" class="btn-action-icon" title="Alocă plățile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+                    </div>
+                            </li>
                     </ul>
     </div>
+
+    <!-- React: <PurchaseNeed /> -->
+    <div class="card pro-panel">
+        <div class="edit-section-header">
+            <span class="edit-section-title">Aprovizionare</span>
+            <a href="fin-necesar-marfa.html" class="pro-panel-link">Necesar de comandat <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Contor energie termică ultrasonic</span>
+            <span class="pro-stock-nums"><span class="status-badge status-error">Comandă necesară</span></span>
+            <div class="progress-bar"><div class="progress-bar__fill is-out" style="width: 74%;"></div></div>
+            <span class="progress-label">Stoc + în tranzit: 68 din 92 buc · de comandat: <strong>24</strong> · CF-2026-043 pe 04.11.2026</span>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Adaptor montaj repartitor</span>
+            <span class="pro-stock-nums"><span class="status-badge status-error">Comandă necesară</span></span>
+            <div class="progress-bar"><div class="progress-bar__fill is-out" style="width: 76%;"></div></div>
+            <span class="progress-label">Stoc + în tranzit: 978 din 1.282 buc · de comandat: <strong>304</strong></span>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Contor apă caldă E-RM 30 AC</span>
+            <span class="pro-stock-nums"><span class="status-badge status-warning">Atenție</span></span>
+            <div class="progress-bar"><div class="progress-bar__fill is-low" style="width: 85%;"></div></div>
+            <span class="progress-label">Stoc + în tranzit: 432 din 508 buc · de comandat: <strong>76</strong></span>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Contor apă rece E-RM 30 AR</span>
+            <span class="pro-stock-nums"><span class="status-badge status-warning">Atenție</span></span>
+            <div class="progress-bar"><div class="progress-bar__fill is-low" style="width: 98%;"></div></div>
+            <span class="progress-label">Stoc + în tranzit: 501 din 511 buc · de comandat: <strong>10</strong></span>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Repartitor Metra E-ITN 30.4 – Radio</span>
+            <span class="pro-stock-nums"><span class="status-badge status-online">Acoperit</span></span>
+            <div class="progress-bar"><div class="progress-bar__fill is-ok" style="width: 100%;"></div></div>
+            <span class="progress-label">Stoc + în tranzit: 1.584 din 1.235 buc · CF-2026-044 pe 12.11.2026</span>
+        </div>
+            </div>
 </div>
 
 <script>

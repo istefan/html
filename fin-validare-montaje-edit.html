@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Fișă de Montaj – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.31">
+    <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+<script>
+    (function() {
+        var sb = document.getElementById('sidebar');
+        var ls = localStorage.getItem('sb_collapsed');
+        if (ls === '1') sb.classList.add('collapsed');
+        else if (ls === '0') sb.classList.remove('collapsed');
+    })();
+</script>
+    <!-- ── Logo ─────────────────────────────────────────────────────── -->
+    <!-- React: <SidebarLogo activeApp={activeApp} /> -->
+    <div class="logo">
+        <a href="sonic-dashboard.html" title="SONIC – Acasă">
+            <img src="assets/images/sonic-logo.svg"
+                 alt="SONIC"
+                 class="logo-full"
+                 id="sidebarLogo">
+            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">S</span>
+        </a>
+    </div>
+
+    <!-- ── Nav ───────────────────────────────────────────────────────── -->
+    <!-- React: <SidebarNav activeApp={activeApp} onAppChange={setActiveApp} /> -->
+    <nav class="sidebar-nav" aria-label="Navigare principală">
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  1. SONIC GRID
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-grid"
+             data-logo="assets/images/sonic-grid-logo.svg"
+             data-logo-icon="SG">
+            <button class="app-section-header" type="button" title="SONIC GRID">
+                <img src="assets/images/sonic-grid-logo.svg" class="app-section-logo" alt="SONIC GRID">
+                <span class="app-section-badge">SG</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Panoul Meu -->
+                <a href="panoul-meu.html" class="nav-item " title="Panoul Meu">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </span>
+                    <span class="nav-label">Panoul Meu</span>
+                </a>
+
+                <!-- Adresele Mele -->
+                <a href="adresele-mele.html" class="nav-item " title="Adresele Mele">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </span>
+                    <span class="nav-label">Adresele Mele</span>
+                </a>
+
+                <!-- Regiuni / Zone -->
+                <a href="regiuni-zone.html" class="nav-item " title="Regiuni / Zone">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </span>
+                    <span class="nav-label">Regiuni / Zone</span>
+                </a>
+
+                <!-- Perioade Citiri -->
+                <a href="perioade-citiri.html" class="nav-item " title="Perioade Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </span>
+                    <span class="nav-label">Perioade Citiri</span>
+                </a>
+
+                <!-- Setări Alerte -->
+                <a href="setari-alerte.html" class="nav-item " title="Setări Alerte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </span>
+                    <span class="nav-label">Setări Alerte</span>
+                </a>
+
+                <!-- Info Center -->
+                <a href="info-center.html" class="nav-item " title="Info Center">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    <span class="nav-label">Info Center</span>
+                </a>
+
+                <!-- Contact -->
+                <a href="contact.html" class="nav-item " title="Contact">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </span>
+                    <span class="nav-label">Contact</span>
+                </a>
+
+                <!-- ── RAPOARTE (section label) ── -->
+                <div class="nav-section">Rapoarte</div>
+
+                <!-- Raport Citiri -->
+                <a href="raport-citiri.html" class="nav-item " title="Raport Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Raport Citiri</span>
+                </a>
+
+                <!-- Bilanț Neînchideri Apă -->
+                <a href="bilant-neinchideri.html" class="nav-item " title="Bilanț Neînchideri Apă">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                    </span>
+                    <span class="nav-label">Bilanț Neînchideri Apă</span>
+                </a>
+
+                <!-- Estimări Consum -->
+                <a href="estimari-consum.html" class="nav-item " title="Estimări Consum">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </span>
+                    <span class="nav-label">Estimări Consum</span>
+                </a>
+
+                <!-- Raport Alerte -->
+                <a href="raport-alerte.html" class="nav-item " title="Raport Alerte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Raport Alerte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  2. SONIC MARKET
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-market"
+             data-logo="assets/images/sonic-market-logo.svg"
+             data-logo-icon="SM">
+            <button class="app-section-header" type="button" title="SONIC MARKET">
+                <img src="assets/images/sonic-market-logo.svg" class="app-section-logo" alt="SONIC MARKET">
+                <span class="app-section-badge">SM</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard Market -->
+                <a href="market-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  3. SONIC PRO
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-pro"
+             data-logo="assets/images/sonic-pro-logo.svg"
+             data-logo-icon="SP">
+            <button class="app-section-header" type="button" title="SONIC PRO">
+                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+                <span class="app-section-badge">SP</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard PRO (dispecerat) -->
+                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
+                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
+                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                    </div>
+                </div>
+
+                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-planificare">
+                    <button class="nav-group-title" type="button" title="Planificare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </span>
+                        <span class="nav-label">Planificare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
+                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  4. SONIC BILLING
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-billing"
+             data-logo="assets/images/sonic-billing-logo.svg"
+             data-logo-icon="SB">
+            <button class="app-section-header" type="button" title="SONIC BILLING">
+                <img src="assets/images/sonic-billing-logo.svg" class="app-section-logo" alt="SONIC BILLING">
+                <span class="app-section-badge">SB</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard -->
+                <a href="index.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── ADMINISTRARE ─────────────────────────────────────────── -->
+                <div class="nav-group " data-group="administrare">
+                    <button class="nav-group-title" type="button" title="Administrare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                        </span>
+                        <span class="nav-label">Administrare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="utilizatori.html" class="nav-subitem ">Utilizatori</a>
+                        <a href="cititori.html" class="nav-subitem ">Cititori</a>
+                        <a href="parametri-sistem.html" class="nav-subitem ">Parametri Sistem</a>
+                        <a href="stergere-perioade.html" class="nav-subitem ">Ștergere Perioade Calcul</a>
+                    </div>
+                </div>
+
+                <!-- ── DICTIONARE ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="dictionare">
+                    <button class="nav-group-title" type="button" title="Dictionare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Dictionare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="localitati.html" class="nav-subitem ">Localități</a>
+                        <a href="puncte-lucru.html" class="nav-subitem ">Puncte de Lucru</a>
+                        <a href="producatori.html" class="nav-subitem ">Producători</a>
+                        <a href="furnizori.html" class="nav-subitem ">Furnizori Utilități</a>
+                        <a href="unitati-masura.html" class="nav-subitem ">Unități de Măsură</a>
+                        <a href="tipuri-servicii.html" class="nav-subitem ">Tipuri Servicii</a>
+                        <a href="companii.html" class="nav-subitem ">Companii</a>
+                    </div>
+                </div>
+
+                <!-- ── DATABANK MANAGEMENT ──────────────────────────────────── -->
+                <div class="nav-group " data-group="databank">
+                    <button class="nav-group-title" type="button" title="Databank Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                        </span>
+                        <span class="nav-label">Databank Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="tipuri-radiatoare.html" class="nav-subitem ">Tipuri Radiatoare</a>
+                        <a href="modele-radiatoare.html" class="nav-subitem ">Modele Radiatoare</a>
+                        <a href="modele-repartitoare.html" class="nav-subitem ">Modele Repartitoare</a>
+                        <a href="modele-contoare.html" class="nav-subitem ">Modele Contoare</a>
+                        <a href="serii-apometre.html" class="nav-subitem ">Serii Apometre Achiziționate</a>
+                    </div>
+                </div>
+
+                <!-- ── CALCUL ────────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="calcul">
+                    <button class="nav-group-title" type="button" title="Calcul">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </span>
+                        <span class="nav-label">Calcul</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
+                        <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
+                        <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
+                        <a href="tarife.html" class="nav-subitem ">Tarife</a>
+                    </div>
+                </div>
+
+                <!-- ── IMPORT / EXPORT CITIRI ───────────────────────────────── -->
+                <div class="nav-group " data-group="import-export">
+                    <button class="nav-group-title" type="button" title="Import / Export Citiri">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </span>
+                        <span class="nav-label">Import / Export Citiri</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="citire-manuala-et.html" class="nav-subitem ">Citire Manuală ET</a>
+                        <a href="citire-manuala-apa.html" class="nav-subitem ">Citire Manuală Apă</a>
+                        <a href="citiri-brute-et.html" class="nav-subitem ">Citiri Brute Energie Termică</a>
+                        <a href="citiri-brute-apa.html" class="nav-subitem ">Citiri Brute Apă</a>
+                        <a href="export-pl.html" class="nav-subitem ">Export PL</a>
+                    </div>
+                </div>
+
+                <!-- ── CONSUM ENERGIE TERMICĂ ────────────────────────────────── -->
+                <div class="nav-group " data-group="consum-et">
+                    <button class="nav-group-title" type="button" title="Consum Energie Termică">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                        </span>
+                        <span class="nav-label">Consum Energie Termică</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="consum-et-detaliat.html" class="nav-subitem ">Introducere Detaliată</a>
+                        <a href="consum-et-cumulat.html" class="nav-subitem ">Introducere Cumulată</a>
+                    </div>
+                </div>
+
+                <!-- ── CONSUM APĂ ─────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="consum-apa">
+                    <button class="nav-group-title" type="button" title="Consum Apă">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L7 10a5 5 0 0 0 10 0L12 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Consum Apă</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="consum-apa-detaliat.html" class="nav-subitem ">Introducere Detaliată</a>
+                    </div>
+                </div>
+
+                <!-- ── VALIDARE CITIRE ───────────────────────────────────────── -->
+                <div class="nav-group " data-group="validare">
+                    <button class="nav-group-title" type="button" title="Validare Citire">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </span>
+                        <span class="nav-label">Validare Citire</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="validare-et.html" class="nav-subitem ">Validare Citire – ET</a>
+                        <a href="validare-apa.html" class="nav-subitem ">Validare Citire – Apă</a>
+                        <a href="cost-split-apa.html" class="nav-subitem ">Cost Split – Apă</a>
+                    </div>
+                </div>
+
+                <!-- ── GESTIUNE FACTURARE (standalone) ──────────────────────── -->
+                <a href="facturare.html" class="nav-item " title="Gestiune Facturare">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Gestiune Facturare</span>
+                </a>
+
+                <!-- ── GESTIUNE TIPĂRIRE ───────────────────────────────────────── -->
+                <div class="nav-group " data-group="tiparire">
+                    <button class="nav-group-title" type="button" title="Gestiune Tipărire">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                        </span>
+                        <span class="nav-label">Gestiune Tipărire</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="nod-tiparire.html" class="nav-subitem ">NOD pentru Tipărire</a>
+                        <a href="fise-citire.html" class="nav-subitem ">Fișe Citire</a>
+                    </div>
+                </div>
+
+                <!-- ── RAPOARTE (standalone) ──────────────────────────────────── -->
+                <a href="rapoarte.html" class="nav-item " title="Rapoarte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <span class="nav-label">Rapoarte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  5. SONIC FIN
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section open"
+             data-app="sonic-fin"
+             data-logo="assets/images/sonic-fin-logo.svg"
+             data-logo-icon="SF">
+            <button class="app-section-header" type="button" title="SONIC FIN">
+                <img src="assets/images/sonic-fin-logo.svg" class="app-section-logo" alt="SONIC FIN">
+                <span class="app-section-badge">SF</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard FIN -->
+                <a href="fin-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── MONTAJE & FACTURARE ── -->
+                <div class="nav-group open" data-group="fin-montaje">
+                    <button class="nav-group-title" type="button" title="Montaje & Facturare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>
+                        </span>
+                        <span class="nav-label">Montaje & Facturare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-validare-montaje.html" class="nav-subitem active">Validare Montaje</a>
+                        <a href="fin-facturare-echipamente.html" class="nav-subitem ">Facturare Echipamente</a>
+                        <a href="fin-rate.html" class="nav-subitem ">Scadențar Rate</a>
+                        <a href="fin-facturi.html" class="nav-subitem ">Facturi</a>
+                    </div>
+                </div>
+
+                <!-- ── ÎNCASĂRI ── -->
+                <div class="nav-group " data-group="fin-incasari">
+                    <button class="nav-group-title" type="button" title="Încasări">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+                        </span>
+                        <span class="nav-label">Încasări</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-chitante.html" class="nav-subitem ">Chitanțe</a>
+                        <a href="fin-chitantiere.html" class="nav-subitem ">Chitanțiere</a>
+                        <a href="fin-incasari-banca.html" class="nav-subitem ">Încasări Bancă</a>
+                        <a href="fin-recalculare.html" class="nav-subitem ">Recalculare Solduri</a>
+                    </div>
+                </div>
+
+                <!-- ── CREANȚE ── -->
+                <div class="nav-group " data-group="fin-creante">
+                    <button class="nav-group-title" type="button" title="Creanțe">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                        </span>
+                        <span class="nav-label">Creanțe</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-creante.html" class="nav-subitem ">Urmărire Creanțe</a>
+                        <a href="fin-alerte.html" class="nav-subitem ">Alerte SMS și E-mail</a>
+                    </div>
+                </div>
+
+                <!-- ── GESTIUNE STOCURI ── -->
+                <div class="nav-group " data-group="fin-gestiune">
+                    <button class="nav-group-title" type="button" title="Gestiune Stocuri">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                        </span>
+                        <span class="nav-label">Gestiune Stocuri</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-gestiuni.html" class="nav-subitem ">Gestiuni</a>
+                        <a href="fin-intrari.html" class="nav-subitem ">Intrări în Gestiune</a>
+                        <a href="fin-iesiri.html" class="nav-subitem ">Ieșiri și Transferuri</a>
+                        <a href="fin-retururi.html" class="nav-subitem ">Retururi</a>
+                        <a href="fin-comenzi-furnizori.html" class="nav-subitem ">Comenzi Furnizori</a>
+                        <a href="fin-necesar-marfa.html" class="nav-subitem ">Necesar de Comandat</a>
+                    </div>
+                </div>
+
+                <!-- ── NOMENCLATOARE ── -->
+                <div class="nav-group " data-group="fin-nomenclatoare">
+                    <button class="nav-group-title" type="button" title="Nomenclatoare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Nomenclatoare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-produse.html" class="nav-subitem ">Produse</a>
+                        <a href="fin-nomenclatoare.html" class="nav-subitem ">Nomenclatoare Financiare</a>
+                    </div>
+                </div>
+
+                <!-- ── RAPOARTE FIN (standalone) ── -->
+                <a href="fin-rapoarte.html" class="nav-item " title="Rapoarte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <span class="nav-label">Rapoarte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  6. SONIC (Base – Ecosistem & Configurare)
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic"
+             data-logo="assets/images/sonic-logo.svg"
+             data-logo-icon="S">
+            <button class="app-section-header" type="button" title="SONIC">
+                <img src="assets/images/sonic-logo.svg" class="app-section-logo" alt="SONIC">
+                <span class="app-section-badge">S</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard SONIC -->
+                <a href="sonic-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <div class="nav-group " data-group="master-data">
+                    <button class="nav-group-title" type="button" title="Master Data Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Master Data Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
+                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
+                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
+                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
+                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
+                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- ── Sidebar Footer ─────────────────────────────────────────────── -->
+    <!-- React: <SidebarFooter /> -->
+    <div class="sidebar-footer">
+        <a href="contul-meu.html" class="nav-item " title="Contul Meu">
+            <span class="nav-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <span class="nav-label">Contul Meu</span>
+        </a>
+    </div>
+
+</aside>
+
+<!-- React: <main className="main"> -->
+<div class="main">
+
+    <!--
+        React: <Header
+            onToggleSidebar={toggleSidebar}
+            isCollapsed={isCollapsed}
+            isMobileOpen={isMobileOpen}
+            pageTitle={pageTitle}
+        />
+    -->
+    <div class="header">
+
+        <!-- LEFT: hamburger / sidebar-toggle + search (desktop) -->
+        <div class="header-left">
+            <!--
+                React: <SidebarToggleBtn
+                    onClick={onToggleSidebar}
+                    isCollapsed={isCollapsed}
+                    isMobile={isMobile}
+                />
+                Desktop: panel-left icon with collapse arrow
+                Mobile : hamburger icon
+            -->
+            <button class="sidebar-toggle-btn" id="sidebarToggle"
+                    title="Restrânge / Extinde meniu"
+                    aria-label="Toggle sidebar"
+                    data-collapsed="0">
+                <script>
+                    (function() {
+                        var btn = document.getElementById('sidebarToggle');
+                        var ls = localStorage.getItem('sb_collapsed');
+                        if (ls === '1') btn.setAttribute('data-collapsed', '1');
+                        else if (ls === '0') btn.setAttribute('data-collapsed', '0');
+                    })();
+                </script>
+                <!-- Mobile hamburger (hidden on desktop via CSS) -->
+                <svg class="icon-hamburger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+                <!-- Desktop panel icon (hidden on mobile via CSS) -->
+                <svg class="icon-panel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <line x1="9" y1="3" x2="9" y2="21"/>
+                    <polyline points="15 8 12 12 15 16" class="toggle-arrow"/>
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- CENTER: logo (mobile only, absolutely centered) -->
+        <!-- React: isMobile && <HeaderLogo /> -->
+        <div class="header-logo" aria-hidden="true">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-fin-logo.svg" alt="SONIC FIN" id="headerLogo">
+            </a>
+        </div>
+
+        <!-- RIGHT: page title (desktop) + user + logout -->
+        <div class="header-actions">
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
+            <div class="header-page-title">Fișă de Montaj</div>
+
+            <!-- User profile avatar (always visible) -->
+            <a href="contul-meu.html" class="user-profile" title="Contul meu">SI</a>
+
+            <!-- Logout button – icon only, always visible -->
+            <!-- React: <LogoutBtn onClick={handleLogout} /> -->
+            <a href="login.html" class="logout-btn" title="Deconectare" aria-label="Deconectare">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+            </a>
+        </div>
+
+    </div><!-- /.header -->
+
+    <!--
+        CONTEXTUAL HELP BAR (WordPress-style)
+        React: <HelpBar onToggle={toggleHelp} isOpen={isHelpOpen} />
+               <HelpPanel isOpen={isHelpOpen} tabs={helpTabs} />
+    -->
+    <div class="help-wrapper">
+        <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
+            <div class="help-panel-inner">
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Validare                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Valoare și rate                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-3"
+                            aria-selected="false"
+                            aria-controls="help-pane-3"
+                            data-tab="3">
+                        Respingere                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Fișa de montaj</h4>
+            <p>Fișa este completată de instalator în aplicația mobilă la finalul montajului: proprietarul, echipamentele scanate (QR) cu încăperea și poziția, materialele suplimentare folosite, semnătura proprietarului, fotografiile și numărul de rate, dacă s-a negociat la apartament.</p>
+            <p>Operatorul verifică fișa și o <strong>validează</strong> sau o <strong>respinge</strong>.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <h4>Ce se întâmplă la validare</h4>
+            <ul>
+                <li>Gestiunea instalatorului scade cu echipamentele și materialele din fișă (tabelul „Impact în gestiune”).</li>
+                <li>Se generează automat documentul de gestiune <strong>„Consum montaj”</strong>.</li>
+                <li>Fișa apare în <strong>Facturare Echipamente</strong>, cu valoarea din cardul „Valoare de facturat”.</li>
+            </ul>
+            <p>Până la validare se pot corecta <strong>numărul de rate</strong> și <strong>cantitățile materialelor</strong>; modificările se salvează odată cu validarea. După validare fișa devine read-only.</p>
+            <p>Dacă fișa are avertizări, validarea cere o confirmare suplimentară.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <ul>
+                <li>Echipamentele din lista de produse a contractului se facturează la <strong>„Prețuri contract aparate”</strong>; gateway-urile și contoarele de energie termică au preț propriu (prețul de listă).</li>
+                <li>Materialele suplimentare se facturează la prețul de listă; sigiliile și adaptoarele sunt incluse în prețul aparatului.</li>
+                <li><strong>Numărul de rate</strong> stabilit la apartament are prioritate; dacă nu s-a stabilit, se aplică numărul de rate din contract.</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-3"
+                         aria-labelledby="help-tab-3"
+                         data-pane="3">
+                        
+            <p>Fișa respinsă se întoarce la instalator, în aplicația mobilă, împreună cu motivul (obligatoriu). Instalatorul corectează fișa și o retrimite. Gestiunea nu se modifică.</p>
+                            </div>
+                                    </div>
+                    </div><!-- /.help-panel-inner -->
+        </div><!-- /.help-panel -->
+        
+        <div class="help-bar">
+            <button class="help-toggle-btn" id="helpToggle"
+                    aria-expanded="false"
+                    aria-controls="helpPanel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round"
+                     width="14" height="14" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                <span>Ajutor</span>
+                <svg class="help-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                     aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"/>
+                </svg>
+            </button>
+        </div><!-- /.help-bar -->
+    </div><!-- /.help-wrapper -->
+
+    <div class="content">
+
+<div class="page-title-container">
+    <div class="page-title">
+        <h1>Fișă de Montaj</h1>
+        <p>Fișa FM-10421 – Ap. 24, Mocanu Adrian · NOD 81-001-2108</p>
+    </div>
+    <a href="fin-validare-montaje.html" class="btn-secondary" id="btnBack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polyline points="15 18 9 12 15 6"></polyline></svg><span>Înapoi la Validare Montaje</span></a>
+</div>
+
+<!-- React: <ContextStrip /> – Fișă, NOD, Contract, Partener, Instalator, Data + stare -->
+<div class="utility-context-strip">
+    <div class="context-items">
+        <div class="context-item"><span class="context-label">Fișă:</span><strong class="context-value context-code">FM-10421</strong></div>
+        <div class="context-sep"></div>
+        <div class="context-item"><span class="context-label">NOD:</span><strong class="context-value context-code">81-001-2108</strong></div>
+        <div class="context-sep"></div>
+        <div class="context-item"><span class="context-label">Contract:</span><span class="context-value"><a class="td-link" href="contracte-edit.html?id=C-2026-118">C-2026-118</a></span></div>
+        <div class="context-sep"></div>
+        <div class="context-item"><span class="context-label">Partener:</span><span class="context-value">Asociația de Proprietari Cremenița 5 (CUI 30111842)</span></div>
+        <div class="context-sep"></div>
+        <div class="context-item"><span class="context-label">Instalator:</span><span class="context-value">Mihai Dobre</span></div>
+        <div class="context-sep"></div>
+        <div class="context-item"><span class="context-label">Data:</span><span class="context-value">28.10.2026 11:42</span></div>
+    </div>
+    <div id="statusBadge"><span class="status-badge status-warning">Trimisă</span></div>
+</div>
+
+<!-- React: <StatusAlert /> – starea read-only a fișei / rezultatul acțiunii -->
+<div id="statusAlert">
+</div>
+
+<!-- ── (a) Apartament / spațiu ──────────────────────────────────────────
+     React: <FlatCard flat={flat} installments={installments} contractInstallments={contract.installments} /> -->
+<div class="card edit-section-card" style="margin-bottom: 20px;">
+    <div class="edit-section-header">
+        <span class="edit-section-title">Apartament</span>
+        <a href="apartamente-edit.html?id=2108-024" class="pro-panel-link">Deschide apartamentul <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+    </div>
+    <div class="edit-section-body">
+        <div class="form-row-3">
+            <div class="form-group">
+                <label class="form-label">Proprietar</label>
+                <div class="form-static-value">Mocanu Adrian</div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Cod apartament</label>
+                <div class="form-static-value">2108-024</div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Ap.</label>
+                <div class="form-static-value">24</div>
+            </div>
+        </div>
+        <div class="form-row-3">
+            <div class="form-group">
+                <label class="form-label">Telefon</label>
+                <div class="form-static-value">0723 441 024</div>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="ddlInstallments">Număr rate</label>
+                <select id="ddlInstallments" class="input-control js-editable" >
+                    <option value="" >Din contract (12 rate)</option>
+                                            <option value="1" >1 rată</option>
+                                            <option value="2" >2 rate</option>
+                                            <option value="3" >3 rate</option>
+                                            <option value="4" >4 rate</option>
+                                            <option value="6" selected>6 rate</option>
+                                            <option value="10" >10 rate</option>
+                                            <option value="12" >12 rate</option>
+                                            <option value="18" >18 rate</option>
+                                            <option value="24" >24 rate</option>
+                                    </select>
+                <div class="list-sublabel">Numărul de rate stabilit la apartament are prioritate față de cel din contract (C-2026-118: 12 rate).</div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Observații instalator</label>
+                <div class="form-static-value">Proprietarul a cerut 6 rate.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ── (b) Echipamente scanate (QR) ─────────────────────────────────────
+     React: <ScannedEquipmentTable items={items} warehouse={wh} /> -->
+<div class="card edit-section-card" style="margin-bottom: 20px;">
+    <div class="edit-section-header">
+        <span class="edit-section-title">Echipamente scanate (QR)</span>
+        <span class="status-badge status-offline">6 echipamente</span>
+    </div>
+    <div class="edit-section-body">
+        <div class="table-scroll">
+            <table class="partners-table table-compact">
+                <thead>
+                    <tr>
+                        <th style="width: 40px; text-align: center;">Nr.</th>
+                        <th>Produs</th>
+                        <th>Serie</th>
+                        <th>Încăpere</th>
+                        <th style="text-align: center;">Nr. încăpere</th>
+                        <th>Poziție / detalii tehnice</th>
+                        <th style="text-align: center;">În gestiunea instalatorului</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                        <tr>
+                        <td style="text-align: center;">1</td>
+                        <td><div class="td-name">Repartitor Metra E-ITN 30.4 – Radio</div><div class="list-sublabel">REP-30</div></td>
+                        <td><span class="serial-value">34912024</span></td>
+                        <td>Sufragerie</td>
+                        <td style="text-align: center;">1</td>
+                        <td>Cameră de mijloc etaj curent · Radiator Aluminiu Seven 600×1200</td>
+                        <td style="text-align: center;"><span class="status-badge status-online">Da</span></td>
+                    </tr>
+                                        <tr>
+                        <td style="text-align: center;">2</td>
+                        <td><div class="td-name">Repartitor Metra E-ITN 30.4 – Radio</div><div class="list-sublabel">REP-30</div></td>
+                        <td><span class="serial-value">34912025</span></td>
+                        <td>Dormitor</td>
+                        <td style="text-align: center;">2</td>
+                        <td>Cameră de colț etaj curent · Radiator Aluminiu Seven 600×800</td>
+                        <td style="text-align: center;"><span class="status-badge status-online">Da</span></td>
+                    </tr>
+                                        <tr>
+                        <td style="text-align: center;">3</td>
+                        <td><div class="td-name">Repartitor Metra E-ITN 30.4 – Radio</div><div class="list-sublabel">REP-30</div></td>
+                        <td><span class="serial-value">34912026</span></td>
+                        <td>Dormitor</td>
+                        <td style="text-align: center;">3</td>
+                        <td>Cameră de colț etaj curent · Radiator Aluminiu Seven 600×800</td>
+                        <td style="text-align: center;"><span class="status-badge status-online">Da</span></td>
+                    </tr>
+                                        <tr>
+                        <td style="text-align: center;">4</td>
+                        <td><div class="td-name">Repartitor Metra E-ITN 30.4 – Radio</div><div class="list-sublabel">REP-30</div></td>
+                        <td><span class="serial-value">34912027</span></td>
+                        <td>Bucatarie</td>
+                        <td style="text-align: center;">4</td>
+                        <td>Cameră de mijloc etaj curent · Radiator Otel 600×600</td>
+                        <td style="text-align: center;"><span class="status-badge status-online">Da</span></td>
+                    </tr>
+                                        <tr>
+                        <td style="text-align: center;">5</td>
+                        <td><div class="td-name">Contor apă rece E-RM 30 AR</div><div class="list-sublabel">APA-AR</div></td>
+                        <td><span class="serial-value">63412024</span></td>
+                        <td>Baie</td>
+                        <td style="text-align: center;">5</td>
+                        <td>Index inițial 0,000 mc · modul radio integrat</td>
+                        <td style="text-align: center;"><span class="status-badge status-online">Da</span></td>
+                    </tr>
+                                        <tr>
+                        <td style="text-align: center;">6</td>
+                        <td><div class="td-name">Contor apă caldă E-RM 30 AC</div><div class="list-sublabel">APA-AC</div></td>
+                        <td><span class="serial-value">63512024</span></td>
+                        <td>Baie</td>
+                        <td style="text-align: center;">5</td>
+                        <td>Index inițial 0,000 mc · modul radio integrat</td>
+                        <td style="text-align: center;"><span class="status-badge status-online">Da</span></td>
+                    </tr>
+                                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ── (c) Materiale suplimentare ───────────────────────────────────────
+     React: <MaterialsTable materials={materials} onQtyChange={setQty} readOnly={!editable} /> -->
+<div class="card edit-section-card" style="margin-bottom: 20px;">
+    <div class="edit-section-header">
+        <span class="edit-section-title">Materiale suplimentare</span>
+    </div>
+    <div class="edit-section-body">
+        <div class="table-scroll">
+            <table class="partners-table table-compact">
+                <thead>
+                    <tr>
+                        <th>Produs</th>
+                        <th style="text-align: center;">UM</th>
+                        <th style="width: 120px; text-align: right;">Cantitate</th>
+                        <th style="text-align: right;">Preț listă (RON)</th>
+                        <th>Facturare</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                        <tr>
+                        <td><div class="td-name">Adaptor montaj repartitor</div><div class="list-sublabel">ADP-RP</div></td>
+                        <td style="text-align: center;">buc</td>
+                        <td style="text-align: right;">
+                                                            <input type="number" min="0" step="1" class="input-control js-mat-qty js-editable" data-code="ADP-RP" value="4" style="width: 90px; text-align: right;" aria-label="Cantitate Adaptor montaj repartitor">
+                                                    </td>
+                        <td style="text-align: right;">9,00</td>
+                        <td>Inclus în prețul aparatului</td>
+                    </tr>
+                                        <tr>
+                        <td><div class="td-name">Sigiliu</div><div class="list-sublabel">SIG-01</div></td>
+                        <td style="text-align: center;">buc</td>
+                        <td style="text-align: right;">
+                                                            <input type="number" min="0" step="1" class="input-control js-mat-qty js-editable" data-code="SIG-01" value="4" style="width: 90px; text-align: right;" aria-label="Cantitate Sigiliu">
+                                                    </td>
+                        <td style="text-align: right;">2,00</td>
+                        <td>Inclus în prețul aparatului</td>
+                    </tr>
+                                        <tr>
+                        <td><div class="td-name">Robinet sferic 1/2&quot;</div><div class="list-sublabel">ROB-12</div></td>
+                        <td style="text-align: center;">buc</td>
+                        <td style="text-align: right;">
+                                                            <input type="number" min="0" step="1" class="input-control js-mat-qty js-editable" data-code="ROB-12" value="2" style="width: 90px; text-align: right;" aria-label="Cantitate Robinet sferic 1/2&quot;">
+                                                    </td>
+                        <td style="text-align: right;">38,00</td>
+                        <td>La prețul de listă</td>
+                    </tr>
+                                                        </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ── (d) Verificări automate ──────────────────────────────────────────
+     React: <AutoChecksList checks={checks} /> -->
+<div class="card edit-section-card" style="margin-bottom: 20px;">
+    <div class="edit-section-header">
+        <span class="edit-section-title">Verificări automate</span>
+        <span class="status-badge status-online">Toate verificările sunt OK</span>    </div>
+    <div class="edit-section-body">
+                <div class="calc-check-row">
+            <div>
+                <div class="td-name">Serii în gestiunea instalatorului</div>
+                <div class="list-sublabel">Toate cele 6 serii scanate figurează în gestiunea G-03 (Mihai Dobre).</div>
+            </div>
+            <span class="status-badge status-online">OK</span>
+        </div>
+                <div class="calc-check-row">
+            <div>
+                <div class="td-name">Semnătura proprietarului</div>
+                <div class="list-sublabel">Fișa este semnată de proprietar în aplicația mobilă.</div>
+            </div>
+            <span class="status-badge status-online">OK</span>
+        </div>
+                <div class="calc-check-row">
+            <div>
+                <div class="td-name">Poziția GPS la adresa NOD-ului</div>
+                <div class="list-sublabel">Poziția la trimitere corespunde adresei NOD-ului: Str. Cremenița 5, Corp B, Sector 2.</div>
+            </div>
+            <span class="status-badge status-online">OK</span>
+        </div>
+                <div class="calc-check-row">
+            <div>
+                <div class="td-name">Fotografii (minimum 3)</div>
+                <div class="list-sublabel">6 fotografii atașate.</div>
+            </div>
+            <span class="status-badge status-online">OK</span>
+        </div>
+                <div class="calc-check-row">
+            <div>
+                <div class="td-name">Serie neduplicată</div>
+                <div class="list-sublabel">Nicio serie nu apare pe o altă fișă de montaj.</div>
+            </div>
+            <span class="status-badge status-online">OK</span>
+        </div>
+            </div>
+</div>
+
+<!-- ── (e) Impact în gestiune ───────────────────────────────────────────
+     React: <StockImpactTable warehouse={wh} lines={impact} applied={status !== 'Trimisă'} /> -->
+<div class="card edit-section-card" style="margin-bottom: 20px;">
+    <div class="edit-section-header">
+        <span class="edit-section-title">Impact în gestiune – Gestiune Mihai Dobre (G-03)</span>
+        <a href="fin-gestiuni-edit.html?wh=G-03" class="pro-panel-link">Fișa gestiunii <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+    </div>
+    <div class="edit-section-body">
+                <div class="table-scroll">
+            <table class="partners-table table-compact" id="impactTable">
+                <thead>
+                    <tr>
+                        <th>Produs</th>
+                        <th style="text-align: right;">În gestiunea instalatorului acum</th>
+                        <th style="text-align: right;">Se scade</th>
+                        <th style="text-align: right;">Rămâne</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                        <tr data-code="REP-30" data-have="38">
+                        <td><div class="td-name">Repartitor Metra E-ITN 30.4 – Radio</div><div class="list-sublabel">REP-30 · buc</div></td>
+                        <td style="text-align: right;">38</td>
+                        <td style="text-align: right;" class="js-minus">4</td>
+                        <td style="text-align: right;" class="js-after">34</td>
+                    </tr>
+                                        <tr data-code="APA-AR" data-have="14">
+                        <td><div class="td-name">Contor apă rece E-RM 30 AR</div><div class="list-sublabel">APA-AR · buc</div></td>
+                        <td style="text-align: right;">14</td>
+                        <td style="text-align: right;" class="js-minus">1</td>
+                        <td style="text-align: right;" class="js-after">13</td>
+                    </tr>
+                                        <tr data-code="APA-AC" data-have="12">
+                        <td><div class="td-name">Contor apă caldă E-RM 30 AC</div><div class="list-sublabel">APA-AC · buc</div></td>
+                        <td style="text-align: right;">12</td>
+                        <td style="text-align: right;" class="js-minus">1</td>
+                        <td style="text-align: right;" class="js-after">11</td>
+                    </tr>
+                                        <tr data-code="ADP-RP" data-have="46">
+                        <td><div class="td-name">Adaptor montaj repartitor</div><div class="list-sublabel">ADP-RP · buc</div></td>
+                        <td style="text-align: right;">46</td>
+                        <td style="text-align: right;" class="js-minus">4</td>
+                        <td style="text-align: right;" class="js-after">42</td>
+                    </tr>
+                                        <tr data-code="SIG-01" data-have="260">
+                        <td><div class="td-name">Sigiliu</div><div class="list-sublabel">SIG-01 · buc</div></td>
+                        <td style="text-align: right;">260</td>
+                        <td style="text-align: right;" class="js-minus">4</td>
+                        <td style="text-align: right;" class="js-after">256</td>
+                    </tr>
+                                        <tr data-code="ROB-12" data-have="10">
+                        <td><div class="td-name">Robinet sferic 1/2&quot;</div><div class="list-sublabel">ROB-12 · buc</div></td>
+                        <td style="text-align: right;">10</td>
+                        <td style="text-align: right;" class="js-minus">2</td>
+                        <td style="text-align: right;" class="js-after">8</td>
+                    </tr>
+                                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ── (f) Valoare de facturat ──────────────────────────────────────────
+     React: <InvoiceValueCard lines={value.lines} net vat total rates rateValue source /> -->
+<div class="card edit-section-card">
+    <div class="edit-section-header">
+        <span class="edit-section-title">Valoare de facturat</span>
+        <span class="list-sublabel">Factura se emite pe CUI 30111842 – Asociația de Proprietari Cremenița 5</span>
+    </div>
+    <div class="edit-section-body">
+        <div class="table-scroll">
+            <table class="partners-table table-compact" id="valueTable">
+                <thead>
+                    <tr>
+                        <th>Produs</th>
+                        <th style="text-align: right;">Cant.</th>
+                        <th style="text-align: right;">Preț (RON)</th>
+                        <th>Sursa prețului</th>
+                        <th style="text-align: right;">Valoare (RON)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                        <tr data-code="REP-30">
+                        <td><div class="td-name">Repartitor Metra E-ITN 30.4 – Radio</div><div class="list-sublabel">REP-30</div></td>
+                        <td style="text-align: right;" class="js-qty">4</td>
+                        <td style="text-align: right;">150,00</td>
+                        <td>Preț contract aparate</td>
+                        <td style="text-align: right;" class="js-value">600,00</td>
+                    </tr>
+                                        <tr data-code="APA-AR">
+                        <td><div class="td-name">Contor apă rece E-RM 30 AR</div><div class="list-sublabel">APA-AR</div></td>
+                        <td style="text-align: right;" class="js-qty">1</td>
+                        <td style="text-align: right;">150,00</td>
+                        <td>Preț contract aparate</td>
+                        <td style="text-align: right;" class="js-value">150,00</td>
+                    </tr>
+                                        <tr data-code="APA-AC">
+                        <td><div class="td-name">Contor apă caldă E-RM 30 AC</div><div class="list-sublabel">APA-AC</div></td>
+                        <td style="text-align: right;" class="js-qty">1</td>
+                        <td style="text-align: right;">150,00</td>
+                        <td>Preț contract aparate</td>
+                        <td style="text-align: right;" class="js-value">150,00</td>
+                    </tr>
+                                        <tr data-code="ROB-12">
+                        <td><div class="td-name">Robinet sferic 1/2&quot;</div><div class="list-sublabel">ROB-12</div></td>
+                        <td style="text-align: right;" class="js-qty">2</td>
+                        <td style="text-align: right;">38,00</td>
+                        <td>Preț contract aparate</td>
+                        <td style="text-align: right;" class="js-value">76,00</td>
+                    </tr>
+                                    </tbody>
+            </table>
+        </div>
+        <div class="pro-summary" style="margin-top: 16px; max-width: 420px; margin-left: auto;">
+            <div class="pro-summary-row"><span>Total fără TVA</span><span><span id="valNet">976,00</span> RON</span></div>
+            <div class="pro-summary-row"><span>TVA 21%</span><span><span id="valVat">204,96</span> RON</span></div>
+            <div class="pro-summary-row"><span>Total de facturat</span><span><span id="valTotal">1.180,96</span> RON</span></div>
+            <div class="pro-summary-row"><span>Plată</span><span id="valRates">6 rate × 196,83 RON</span></div>
+            <div class="pro-summary-row"><span>Sursa numărului de rate</span><span id="valSource">Stabilit la apartament</span></div>
+        </div>
+    </div>
+</div>
+
+<!-- ── Bara de acțiuni (imediat sub ultimul card) ───────────────────────
+     React: <EditActionsBar onBack onReject onValidate /> -->
+<div class="edit-actions-bar">
+    <a href="fin-validare-montaje.html" class="btn-secondary">Înapoi la Validare Montaje</a>
+    <div class="edit-actions-group" id="actionsGroup">
+                    <button type="button" class="btn-secondary" id="btnReject">Respinge fișa</button>
+            <button type="button" class="btn-primary" id="btnValidate">Validează fișa</button>
+            </div>
+</div>
+
+<!-- ── Modal respingere (motiv obligatoriu) ───────────────────────────────
+     React: <RejectModal isOpen onConfirm={reason => reject(id, reason)} onClose /> -->
+<div id="rejectModal" class="modal-overlay" style="display: none;" aria-modal="true" role="dialog" aria-labelledby="rejectModal-title">
+    <div class="modal-card" style="max-width: 520px; width: 90%;">
+        <div class="modal-header">
+            <h3 id="rejectModal-title">Respinge fișa de montaj</h3>
+            <button type="button" class="btn-close js-close-reject" title="Închide fereastra">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="utility-context-strip">
+                <div class="context-items">
+                    <div class="context-item"><span class="context-label">Fișă:</span><strong class="context-value context-code">FM-10421</strong></div>
+                    <div class="context-sep"></div>
+                    <div class="context-item"><span class="context-label">Instalator:</span><span class="context-value">Mihai Dobre</span></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="txtRejectReason">Motivul respingerii <span class="required-star">*</span></label>
+                <textarea id="txtRejectReason" class="input-control" rows="4" maxlength="500"></textarea>
+                <div class="list-sublabel">Motivul se trimite instalatorului în aplicația mobilă; fișa revine la el pentru corectare și retrimitere.</div>
+            </div>
+            <div class="calc-alert calc-alert--danger" id="rejectError" style="display: none; margin: 12px 0 0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg><div>Completați motivul respingerii.</div></div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn-secondary js-close-reject">Renunță</button>
+            <button type="button" class="btn-primary" id="btnConfirmReject">Respinge fișa</button>
+        </div>
+    </div>
+</div>
+
+<script>
+/**
+ * Fișă de Montaj – recalcularea valorii și a impactului în gestiune la modificarea ratelor / cantităților,
+ * validare și respingere (demo). În producție: PUT / POST /api/fin/install-reports/{id}(/validate|/reject).
+ */
+(function () {
+    'use strict';
+    var DATA = {"id":"FM-10421","wh":"G-03","staff":"Mihai Dobre","vat":21,"contractRates":12,"contract":"C-2026-118","lines":[{"code":"REP-30","qty":4,"price":150,"material":false},{"code":"APA-AR","qty":1,"price":150,"material":false},{"code":"APA-AC","qty":1,"price":150,"material":false},{"code":"ROB-12","qty":2,"price":38,"material":true}],"materials":[{"code":"ADP-RP","qty":4,"price":9,"billable":false,"have":46},{"code":"SIG-01","qty":4,"price":2,"billable":false,"have":260},{"code":"ROB-12","qty":2,"price":38,"billable":true,"have":10}],"impact":{"REP-30":4,"APA-AR":1,"APA-AC":1,"ADP-RP":4,"SIG-01":4,"ROB-12":2},"warnings":[],"stockDoc":"CM-2026-0612"};
+    var editable = true;
+    if (!editable) return;
+
+    function $(id) { return document.getElementById(id); }
+    function money(v) { return v.toLocaleString('ro-RO', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+    function matQty() {
+        var q = {};
+        document.querySelectorAll('.js-mat-qty').forEach(function (inp) { q[inp.dataset.code] = Math.max(0, parseInt(inp.value, 10) || 0); });
+        return q;
+    }
+
+    function recalc() {
+        var q = matQty(), net = 0;
+        DATA.lines.forEach(function (l) {
+            var qty = l.material && q.hasOwnProperty(l.code) ? q[l.code] : l.qty;
+            var v = qty * l.price; net += v;
+            var tr = document.querySelector('#valueTable tr[data-code="' + l.code + '"]');
+            if (tr) { tr.querySelector('.js-qty').textContent = qty; tr.querySelector('.js-value').textContent = money(v); }
+        });
+        var total = Math.round(net * (1 + DATA.vat / 100) * 100) / 100;
+        var sel = $('ddlInstallments').value, rates = sel ? parseInt(sel, 10) : DATA.contractRates;
+        $('valNet').textContent = money(net);
+        $('valVat').textContent = money(total - net);
+        $('valTotal').textContent = money(total);
+        $('valRates').textContent = rates + (rates === 1 ? ' rată' : ' rate') + ' × ' + money(Math.round(total / rates * 100) / 100) + ' RON';
+        $('valSource').textContent = sel ? 'Stabilit la apartament' : 'Din contract (' + DATA.contract + ')';
+
+        // Impact în gestiune: materialele modificate
+        DATA.materials.forEach(function (m) {
+            var tr = document.querySelector('#impactTable tr[data-code="' + m.code + '"]');
+            if (!tr) return;
+            var equip = DATA.impact[m.code] - m.qty; // același cod nu e și echipament, dar păstrăm formula generală
+            var minus = equip + q[m.code], after = parseInt(tr.dataset.have, 10) - minus;
+            tr.querySelector('.js-minus').textContent = minus;
+            tr.querySelector('.js-after').innerHTML = after + (after < 0 ? ' <span class="status-badge status-error">Stoc insuficient</span>' : '');
+        });
+    }
+
+    function lock() {
+        document.querySelectorAll('.js-editable').forEach(function (el) { el.disabled = true; });
+    }
+
+    function stockSummary() {
+        var q = matQty(), parts = [];
+        Object.keys(DATA.impact).forEach(function (code) {
+            var m = DATA.materials.filter(function (x) { return x.code === code; })[0];
+            var n = m ? DATA.impact[code] - m.qty + q[code] : DATA.impact[code];
+            if (n > 0) parts.push(n + ' × ' + code);
+        });
+        return parts.join(', ');
+    }
+
+    var svgOk = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>';
+    var svgWarn = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>';
+
+    $('ddlInstallments').addEventListener('change', recalc);
+    document.querySelectorAll('.js-mat-qty').forEach(function (inp) { inp.addEventListener('input', recalc); });
+
+    $('btnValidate').addEventListener('click', function () {
+        var msg = 'Validați fișa ' + DATA.id + '?\n\nGestiunea ' + DATA.wh + ' (' + DATA.staff + ') scade cu: ' + stockSummary() +
+                  '.\nSe generează automat documentul „Consum montaj”, iar fișa trece la facturare.';
+        if (DATA.warnings.length) msg += '\n\nATENȚIE – fișa are avertizări: ' + DATA.warnings.join(', ') + '. Validați oricum?';
+        if (!confirm(msg)) return;
+        lock();
+        $('statusBadge').innerHTML = '<span class="status-badge status-online">Validată</span>';
+        $('statusAlert').innerHTML = '<div class="calc-alert calc-alert--success">' + svgOk + '<div>Fișa a fost validată. Documentul „Consum montaj” ' +
+            '<a class="td-link" href="fin-document-stoc.html?id=' + DATA.stockDoc + '"><strong>' + DATA.stockDoc + '</strong></a> a fost generat automat – gestiunea ' +
+            DATA.wh + ' a scăzut. Fișa poate fi facturată: <a class="td-link" href="fin-facturare-echipamente.html"><strong>Facturare Echipamente</strong></a>.</div></div>';
+        $('actionsGroup').innerHTML = '<a href="fin-facturare-echipamente.html" class="btn-primary">Mergi la facturare</a>';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    var modal = $('rejectModal');
+    function openReject() { $('rejectError').style.display = 'none'; modal.style.display = 'flex'; $('txtRejectReason').focus(); }
+    function closeReject() { modal.style.display = 'none'; }
+    $('btnReject').addEventListener('click', openReject);
+    document.querySelectorAll('.js-close-reject').forEach(function (b) { b.addEventListener('click', closeReject); });
+    modal.addEventListener('click', function (e) { if (e.target === modal) closeReject(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.style.display === 'flex') closeReject(); });
+    $('btnConfirmReject').addEventListener('click', function () {
+        var reason = $('txtRejectReason').value.trim();
+        if (!reason) { $('rejectError').style.display = ''; return; }
+        closeReject();
+        lock();
+        var safe = reason.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
+        $('statusBadge').innerHTML = '<span class="status-badge status-error">Respinsă</span>';
+        $('statusAlert').innerHTML = '<div class="calc-alert calc-alert--danger">' + svgWarn + '<div>Fișa a fost respinsă și trimisă înapoi instalatorului ' +
+            DATA.staff + ' (aplicația mobilă). Motiv: „' + safe + '”. Gestiunea nu s-a modificat.</div></div>';
+        $('actionsGroup').innerHTML = '';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+})();
+</script>
+
+    </div><!-- /.content -->
+    <footer class="app-footer">
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
+    </footer>
+</div><!-- /.main -->
+
+<script src="assets/js/sidebar.js?v=1.0.1"></script>
+</body>
+</html>

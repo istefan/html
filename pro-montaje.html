@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
     <title>Montaje și Stocuri – SONIC</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.31">
     <script src="assets/js/nod-picker.js"></script>
     <script src="assets/js/edit-tabs.js"></script>
     <script src="assets/js/datepicker.js"></script>
@@ -453,6 +453,97 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
+                <!-- ── MONTAJE & FACTURARE ── -->
+                <div class="nav-group " data-group="fin-montaje">
+                    <button class="nav-group-title" type="button" title="Montaje & Facturare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>
+                        </span>
+                        <span class="nav-label">Montaje & Facturare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-validare-montaje.html" class="nav-subitem ">Validare Montaje</a>
+                        <a href="fin-facturare-echipamente.html" class="nav-subitem ">Facturare Echipamente</a>
+                        <a href="fin-rate.html" class="nav-subitem ">Scadențar Rate</a>
+                        <a href="fin-facturi.html" class="nav-subitem ">Facturi</a>
+                    </div>
+                </div>
+
+                <!-- ── ÎNCASĂRI ── -->
+                <div class="nav-group " data-group="fin-incasari">
+                    <button class="nav-group-title" type="button" title="Încasări">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+                        </span>
+                        <span class="nav-label">Încasări</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-chitante.html" class="nav-subitem ">Chitanțe</a>
+                        <a href="fin-chitantiere.html" class="nav-subitem ">Chitanțiere</a>
+                        <a href="fin-incasari-banca.html" class="nav-subitem ">Încasări Bancă</a>
+                        <a href="fin-recalculare.html" class="nav-subitem ">Recalculare Solduri</a>
+                    </div>
+                </div>
+
+                <!-- ── CREANȚE ── -->
+                <div class="nav-group " data-group="fin-creante">
+                    <button class="nav-group-title" type="button" title="Creanțe">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                        </span>
+                        <span class="nav-label">Creanțe</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-creante.html" class="nav-subitem ">Urmărire Creanțe</a>
+                        <a href="fin-alerte.html" class="nav-subitem ">Alerte SMS și E-mail</a>
+                    </div>
+                </div>
+
+                <!-- ── GESTIUNE STOCURI ── -->
+                <div class="nav-group " data-group="fin-gestiune">
+                    <button class="nav-group-title" type="button" title="Gestiune Stocuri">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                        </span>
+                        <span class="nav-label">Gestiune Stocuri</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-gestiuni.html" class="nav-subitem ">Gestiuni</a>
+                        <a href="fin-intrari.html" class="nav-subitem ">Intrări în Gestiune</a>
+                        <a href="fin-iesiri.html" class="nav-subitem ">Ieșiri și Transferuri</a>
+                        <a href="fin-retururi.html" class="nav-subitem ">Retururi</a>
+                        <a href="fin-comenzi-furnizori.html" class="nav-subitem ">Comenzi Furnizori</a>
+                        <a href="fin-necesar-marfa.html" class="nav-subitem ">Necesar de Comandat</a>
+                    </div>
+                </div>
+
+                <!-- ── NOMENCLATOARE ── -->
+                <div class="nav-group " data-group="fin-nomenclatoare">
+                    <button class="nav-group-title" type="button" title="Nomenclatoare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Nomenclatoare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-produse.html" class="nav-subitem ">Produse</a>
+                        <a href="fin-nomenclatoare.html" class="nav-subitem ">Nomenclatoare Financiare</a>
+                    </div>
+                </div>
+
+                <!-- ── RAPOARTE FIN (standalone) ── -->
+                <a href="fin-rapoarte.html" class="nav-item " title="Rapoarte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <span class="nav-label">Rapoarte</span>
+                </a>
+
             </div>
         </div>
 
@@ -717,8 +808,8 @@
         <div class="calc-kpi-grid">
             <div class="calc-kpi">
                 <span class="calc-kpi-label">Montaje neprogramate</span>
-                <span class="calc-kpi-value" id="kpiUnscheduled">2</span>
-                <span class="pro-kpi-meta" id="kpiUnscheduledMeta">105 apartamente în așteptare</span>
+                <span class="calc-kpi-value" id="kpiUnscheduled">4</span>
+                <span class="pro-kpi-meta" id="kpiUnscheduledMeta">335 apartamente în așteptare</span>
             </div>
             <div class="calc-kpi">
                 <span class="calc-kpi-label">Montaje în curs</span>
@@ -766,9 +857,9 @@
 
             <div class="pro-board">
                                 <div class="pro-board-col" data-status="Neprogramat">
-                    <div class="pro-board-head"><span>Neprogramat</span><span class="pro-board-count" id="count-neprogramat">2</span></div>
+                    <div class="pro-board-head"><span>Neprogramat</span><span class="pro-board-count" id="count-neprogramat">4</span></div>
                     <div class="js-board-list" id="col-neprogramat">
-                        <div class="pro-board-card" data-install="M-304" data-from=""><div class="pro-board-card-title">Asociația de Proprietari Bloc M12 (nemontat)</div><div class="pro-board-card-meta">M-304 · Contract C-2026-127 · NOD nealocat</div><div class="pro-board-card-meta">Perioadă neprogramată</div><div class="pro-chips" style="margin-top: 8px;"><span class="pro-chip">Repartitor × 180</span><span class="pro-chip">Contor apă × 90</span><span class="pro-chip">Gateway × 2</span></div><div style="margin-top: 10px;"><div class="progress-bar" aria-label="Apartamente realizate 0%"><div class="progress-bar__fill" style="width: 0%;"></div></div><span class="progress-label">0 / 45 apartamente (0%)</span></div><div class="pro-board-card-foot"><span class="pro-person-meta">Fără echipă</span><button type="button" class="btn-secondary" onclick="ProMontaje.openSchedule('M-304')">Programează montaj</button></div></div><div class="pro-board-card" data-install="M-305" data-from=""><div class="pro-board-card-title">Asociația de Proprietari Bloc 7 Drumul Taberei</div><div class="pro-board-card-meta">M-305 · Contract C-2026-129 · NOD nealocat</div><div class="pro-board-card-meta">Perioadă neprogramată</div><div class="pro-chips" style="margin-top: 8px;"><span class="pro-chip">Contor apă × 120</span><span class="pro-chip">Contor ET × 30</span></div><div style="margin-top: 10px;"><div class="progress-bar" aria-label="Apartamente realizate 0%"><div class="progress-bar__fill" style="width: 0%;"></div></div><span class="progress-label">0 / 60 apartamente (0%)</span></div><div class="pro-board-card-foot"><span class="pro-person-meta">Fără echipă</span><button type="button" class="btn-secondary" onclick="ProMontaje.openSchedule('M-305')">Programează montaj</button></div></div>                        <div class="table-empty js-board-empty" style="display: none;">Niciun montaj.</div>
+                        <div class="pro-board-card" data-install="M-304" data-from=""><div class="pro-board-card-title">Asociația de Proprietari Bloc M12 (nemontat)</div><div class="pro-board-card-meta">M-304 · Contract C-2026-127 · NOD nealocat</div><div class="pro-board-card-meta">Perioadă neprogramată</div><div class="pro-chips" style="margin-top: 8px;"><span class="pro-chip">Repartitor × 180</span><span class="pro-chip">Contor apă × 90</span><span class="pro-chip">Gateway × 2</span></div><div style="margin-top: 10px;"><div class="progress-bar" aria-label="Apartamente realizate 0%"><div class="progress-bar__fill" style="width: 0%;"></div></div><span class="progress-label">0 / 45 apartamente (0%)</span></div><div class="pro-board-card-foot"><span class="pro-person-meta">Fără echipă</span><button type="button" class="btn-secondary" onclick="ProMontaje.openSchedule('M-304')">Programează montaj</button></div></div><div class="pro-board-card" data-install="M-305" data-from=""><div class="pro-board-card-title">Asociația de Proprietari Bloc 7 Drumul Taberei</div><div class="pro-board-card-meta">M-305 · Contract C-2026-129 · NOD nealocat</div><div class="pro-board-card-meta">Perioadă neprogramată</div><div class="pro-chips" style="margin-top: 8px;"><span class="pro-chip">Contor apă × 120</span><span class="pro-chip">Contor ET × 30</span></div><div style="margin-top: 10px;"><div class="progress-bar" aria-label="Apartamente realizate 0%"><div class="progress-bar__fill" style="width: 0%;"></div></div><span class="progress-label">0 / 60 apartamente (0%)</span></div><div class="pro-board-card-foot"><span class="pro-person-meta">Fără echipă</span><button type="button" class="btn-secondary" onclick="ProMontaje.openSchedule('M-305')">Programează montaj</button></div></div><div class="pro-board-card" data-install="M-307" data-from=""><div class="pro-board-card-title">Asociația de Proprietari Bloc Z3 Titan</div><div class="pro-board-card-meta">M-307 · Contract C-2026-131 · NOD nealocat</div><div class="pro-board-card-meta">Perioadă neprogramată</div><div class="pro-chips" style="margin-top: 8px;"><span class="pro-chip">Repartitor × 420</span><span class="pro-chip">Contor apă × 200</span><span class="pro-chip">Gateway × 4</span></div><div style="margin-top: 10px;"><div class="progress-bar" aria-label="Apartamente realizate 0%"><div class="progress-bar__fill" style="width: 0%;"></div></div><span class="progress-label">0 / 100 apartamente (0%)</span></div><div class="pro-board-card-foot"><span class="pro-person-meta">Fără echipă</span><button type="button" class="btn-secondary" onclick="ProMontaje.openSchedule('M-307')">Programează montaj</button></div></div><div class="pro-board-card" data-install="M-308" data-from=""><div class="pro-board-card-title">Asociația de Proprietari Bloc 12 Militari</div><div class="pro-board-card-meta">M-308 · Contract C-2026-133 · NOD nealocat</div><div class="pro-board-card-meta">Perioadă neprogramată</div><div class="pro-chips" style="margin-top: 8px;"><span class="pro-chip">Contor apă × 260</span><span class="pro-chip">Contor ET × 40</span></div><div style="margin-top: 10px;"><div class="progress-bar" aria-label="Apartamente realizate 0%"><div class="progress-bar__fill" style="width: 0%;"></div></div><span class="progress-label">0 / 130 apartamente (0%)</span></div><div class="pro-board-card-foot"><span class="pro-person-meta">Fără echipă</span><button type="button" class="btn-secondary" onclick="ProMontaje.openSchedule('M-308')">Programează montaj</button></div></div>                        <div class="table-empty js-board-empty" style="display: none;">Niciun montaj.</div>
                     </div>
                 </div>
                                 <div class="pro-board-col" data-status="Programat">
@@ -1264,7 +1355,7 @@ var ProMontaje = (function () {
     var STAFF = [{"id":"s1","name":"Teodor Milian","initials":"TM","warehouse":"G-01"},{"id":"s2","name":"Bogdan Antal","initials":"BA","warehouse":"G-02"},{"id":"s3","name":"Mihai Dobre","initials":"MD","warehouse":"G-03"},{"id":"s4","name":"Cristian Pană","initials":"CP","warehouse":"G-04"},{"id":"s5","name":"Andrei Voicu","initials":"AV","warehouse":""},{"id":"s6","name":"Florin Stoica","initials":"FS","warehouse":"G-06"},{"id":"s7","name":"Daniel Ene","initials":"DE","warehouse":"G-07"},{"id":"s8","name":"Radu Marinescu","initials":"RM","warehouse":"G-08"}];
     var UNAVAIL = [{"staff":"s5","from":"2026-10-26","to":"2026-11-06","reason":"Concediu","note":"Concediu de odihnă"},{"staff":"s1","from":"2026-11-02","to":"2026-11-04","reason":"Alte sarcini","note":"Citiri walk-by NOD-uri sector 2"},{"staff":"s7","from":"2026-10-30","to":"2026-10-30","reason":"Formare","note":"Instruire contoare ultrasonice"},{"staff":"s3","from":"2026-11-05","to":"2026-11-05","reason":"Medical","note":""},{"staff":"s8","from":"2026-10-29","to":"2026-10-30","reason":"Alte sarcini","note":"Citiri walk-by Lacul Tei"}];
     var INSTALLS = {};
-    INSTALLS = {"M-301":{"id":"M-301","contract":"C-2026-118","nod":"81-001-2108","partner":"Asociația de Proprietari Cremenița 5","from":"2026-10-26","to":"2026-10-30","team":["s3","s8"],"responsible":"s3","needs":{"rep":140,"apa":70},"flats":35,"done":22,"status":"În curs"},"M-302":{"id":"M-302","contract":"C-2026-121","nod":"81-001-0020","partner":"Asociația de Proprietari Bloc 32","from":"2026-11-02","to":"2026-11-06","team":["s3","s2"],"responsible":"s3","needs":{"rep":160,"apa":80},"flats":40,"done":0,"status":"Programat"},"M-303":{"id":"M-303","contract":"C-2026-124","nod":"81-001-0007","partner":"Asociația de Proprietari Bloc S1 Sc. 2","from":"2026-11-09","to":"2026-11-13","team":["s3","s6"],"responsible":"s6","needs":{"rep":220,"gw":2},"flats":48,"done":0,"status":"Programat"},"M-304":{"id":"M-304","contract":"C-2026-127","nod":"","partner":"Asociația de Proprietari Bloc M12 (nemontat)","from":"","to":"","team":[],"responsible":"","needs":{"rep":180,"apa":90,"gw":2},"flats":45,"done":0,"status":"Neprogramat"},"M-305":{"id":"M-305","contract":"C-2026-129","nod":"","partner":"Asociația de Proprietari Bloc 7 Drumul Taberei","from":"","to":"","team":[],"responsible":"","needs":{"apa":120,"et":30},"flats":60,"done":0,"status":"Neprogramat"},"M-306":{"id":"M-306","contract":"C-2026-102","nod":"81-001-0040","partner":"Asociația de Proprietari Bloc 47","from":"2026-10-12","to":"2026-10-16","team":["s2","s6"],"responsible":"s2","needs":{"rep":190,"apa":96,"gw":3},"flats":48,"done":45,"status":"Finalizat"}};
+    INSTALLS = {"M-301":{"id":"M-301","contract":"C-2026-118","nod":"81-001-2108","partner":"Asociația de Proprietari Cremenița 5","from":"2026-10-26","to":"2026-10-30","team":["s3","s8"],"responsible":"s3","needs":{"rep":140,"apa":70},"flats":35,"done":22,"status":"În curs"},"M-302":{"id":"M-302","contract":"C-2026-121","nod":"81-001-0020","partner":"Asociația de Proprietari Bloc 32","from":"2026-11-02","to":"2026-11-06","team":["s3","s2"],"responsible":"s3","needs":{"rep":160,"apa":80},"flats":40,"done":0,"status":"Programat"},"M-303":{"id":"M-303","contract":"C-2026-124","nod":"81-001-0007","partner":"Asociația de Proprietari Bloc S1 Sc. 2","from":"2026-11-09","to":"2026-11-13","team":["s3","s6"],"responsible":"s6","needs":{"rep":220,"gw":2},"flats":48,"done":0,"status":"Programat"},"M-304":{"id":"M-304","contract":"C-2026-127","nod":"","partner":"Asociația de Proprietari Bloc M12 (nemontat)","from":"","to":"","team":[],"responsible":"","needs":{"rep":180,"apa":90,"gw":2},"flats":45,"done":0,"status":"Neprogramat"},"M-305":{"id":"M-305","contract":"C-2026-129","nod":"","partner":"Asociația de Proprietari Bloc 7 Drumul Taberei","from":"","to":"","team":[],"responsible":"","needs":{"apa":120,"et":30},"flats":60,"done":0,"status":"Neprogramat"},"M-307":{"id":"M-307","contract":"C-2026-131","nod":"","partner":"Asociația de Proprietari Bloc Z3 Titan","from":"","to":"","team":[],"responsible":"","needs":{"rep":420,"apa":200,"gw":4},"flats":100,"done":0,"status":"Neprogramat"},"M-308":{"id":"M-308","contract":"C-2026-133","nod":"","partner":"Asociația de Proprietari Bloc 12 Militari","from":"","to":"","team":[],"responsible":"","needs":{"apa":260,"et":40},"flats":130,"done":0,"status":"Neprogramat"},"M-306":{"id":"M-306","contract":"C-2026-102","nod":"81-001-0040","partner":"Asociația de Proprietari Bloc 47","from":"2026-10-12","to":"2026-10-16","team":["s2","s6"],"responsible":"s2","needs":{"rep":190,"apa":96,"gw":3},"flats":48,"done":45,"status":"Finalizat"}};
     var STOCK = {"REP-30":{"code":"REP-30","name":"Repartitor E-ITN 30.4","type":"rep","central":500,"field":64,"reserved":520,"incoming":800,"incoming_date":"2026-11-12","unit":"buc"},"APA-AR":{"code":"APA-AR","name":"Contor apă rece E-RM 30 AR","type":"apa","central":340,"field":41,"reserved":180,"incoming":0,"incoming_date":"","unit":"buc"},"APA-AC":{"code":"APA-AC","name":"Contor apă caldă E-RM 30 AC","type":"apa","central":290,"field":37,"reserved":160,"incoming":0,"incoming_date":"","unit":"buc"},"ET-US":{"code":"ET-US","name":"Contor energie termică US","type":"et","central":26,"field":6,"reserved":30,"incoming":40,"incoming_date":"2026-11-04","unit":"buc"},"GW-LR":{"code":"GW-LR","name":"Gateway LoRa \/ wM-Bus","type":"gw","central":18,"field":3,"reserved":6,"incoming":0,"incoming_date":"","unit":"buc"},"SZ-FL":{"code":"SZ-FL","name":"Senzor inundație","type":"senzor","central":45,"field":5,"reserved":0,"incoming":0,"incoming_date":"","unit":"buc"},"SIG-01":{"code":"SIG-01","name":"Sigilii","type":"","central":4200,"field":610,"reserved":1300,"incoming":0,"incoming_date":"","unit":"buc"}};
     var WH = {"G-01":{"REP-30":8,"APA-AR":6,"APA-AC":5,"GW-LR":0},"G-02":{"REP-30":6,"APA-AR":9,"APA-AC":8,"GW-LR":0},"G-03":{"REP-30":22,"APA-AR":8,"APA-AC":7,"GW-LR":0},"G-04":{"REP-30":6,"APA-AR":0,"APA-AC":0,"GW-LR":2},"G-06":{"REP-30":4,"APA-AR":10,"APA-AC":9,"GW-LR":1},"G-07":{"REP-30":0,"APA-AR":5,"APA-AC":6,"GW-LR":0},"G-08":{"REP-30":18,"APA-AR":3,"APA-AC":2,"GW-LR":0}};
     var ICON_DETAILS = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"><\/circle><line x1=\"12\" y1=\"16\" x2=\"12\" y2=\"12\"><\/line><line x1=\"12\" y1=\"8\" x2=\"12.01\" y2=\"8\"><\/line><\/svg>";

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
     <title>Raport Alerte – SONIC</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.22">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.31">
     <script src="assets/js/nod-picker.js"></script>
     <script src="assets/js/edit-tabs.js"></script>
     <script src="assets/js/datepicker.js"></script>
@@ -453,6 +453,97 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
+                <!-- ── MONTAJE & FACTURARE ── -->
+                <div class="nav-group " data-group="fin-montaje">
+                    <button class="nav-group-title" type="button" title="Montaje & Facturare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>
+                        </span>
+                        <span class="nav-label">Montaje & Facturare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-validare-montaje.html" class="nav-subitem ">Validare Montaje</a>
+                        <a href="fin-facturare-echipamente.html" class="nav-subitem ">Facturare Echipamente</a>
+                        <a href="fin-rate.html" class="nav-subitem ">Scadențar Rate</a>
+                        <a href="fin-facturi.html" class="nav-subitem ">Facturi</a>
+                    </div>
+                </div>
+
+                <!-- ── ÎNCASĂRI ── -->
+                <div class="nav-group " data-group="fin-incasari">
+                    <button class="nav-group-title" type="button" title="Încasări">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+                        </span>
+                        <span class="nav-label">Încasări</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-chitante.html" class="nav-subitem ">Chitanțe</a>
+                        <a href="fin-chitantiere.html" class="nav-subitem ">Chitanțiere</a>
+                        <a href="fin-incasari-banca.html" class="nav-subitem ">Încasări Bancă</a>
+                        <a href="fin-recalculare.html" class="nav-subitem ">Recalculare Solduri</a>
+                    </div>
+                </div>
+
+                <!-- ── CREANȚE ── -->
+                <div class="nav-group " data-group="fin-creante">
+                    <button class="nav-group-title" type="button" title="Creanțe">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                        </span>
+                        <span class="nav-label">Creanțe</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-creante.html" class="nav-subitem ">Urmărire Creanțe</a>
+                        <a href="fin-alerte.html" class="nav-subitem ">Alerte SMS și E-mail</a>
+                    </div>
+                </div>
+
+                <!-- ── GESTIUNE STOCURI ── -->
+                <div class="nav-group " data-group="fin-gestiune">
+                    <button class="nav-group-title" type="button" title="Gestiune Stocuri">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                        </span>
+                        <span class="nav-label">Gestiune Stocuri</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-gestiuni.html" class="nav-subitem ">Gestiuni</a>
+                        <a href="fin-intrari.html" class="nav-subitem ">Intrări în Gestiune</a>
+                        <a href="fin-iesiri.html" class="nav-subitem ">Ieșiri și Transferuri</a>
+                        <a href="fin-retururi.html" class="nav-subitem ">Retururi</a>
+                        <a href="fin-comenzi-furnizori.html" class="nav-subitem ">Comenzi Furnizori</a>
+                        <a href="fin-necesar-marfa.html" class="nav-subitem ">Necesar de Comandat</a>
+                    </div>
+                </div>
+
+                <!-- ── NOMENCLATOARE ── -->
+                <div class="nav-group " data-group="fin-nomenclatoare">
+                    <button class="nav-group-title" type="button" title="Nomenclatoare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Nomenclatoare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-produse.html" class="nav-subitem ">Produse</a>
+                        <a href="fin-nomenclatoare.html" class="nav-subitem ">Nomenclatoare Financiare</a>
+                    </div>
+                </div>
+
+                <!-- ── RAPOARTE FIN (standalone) ── -->
+                <a href="fin-rapoarte.html" class="nav-item " title="Rapoarte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <span class="nav-label">Rapoarte</span>
+                </a>
+
             </div>
         </div>
 
@@ -618,7 +709,7 @@
                             aria-selected="false"
                             aria-controls="help-pane-1"
                             data-tab="1">
-                        Stadiu                    </button>
+                        Tipuri de Alerte                    </button>
                                     </nav>
                 <!-- Tab content panes -->
                 <div class="help-tab-content">
@@ -629,8 +720,8 @@
                          data-pane="0">
                         
             <h4>Raport Alerte</h4>
-            <p>Istoricul alertelor generate pentru adresele clientului.</p>
-            <p>Pagina face parte în modulul <strong>SONIC GRID</strong>.</p>
+            <p>Monitorizează alertele critice și atenționările transmise de contoarele cu ultrasunete conectate în rețeaua LoRaWAN.</p>
+            <p>Puteți filtra alertele pe fiecare loc de măsurare sau puteți vizualiza situația la nivelul întregului portofoliu.</p>
                             </div>
                                         <div class="help-tab-pane "
                          role="tabpanel"
@@ -638,8 +729,12 @@
                          aria-labelledby="help-tab-1"
                          data-pane="1">
                         
-            <h4>Pagină în construcție</h4>
-            <p>Interfața acestei pagini nu a fost încă generată. Conținutul de ajutor va fi completat odată cu implementarea paginii.</p>
+            <h4>Clasificare alerte</h4>
+            <ul>
+                <li><strong>Alerte Critice (SMS):</strong> Țeavă Spartă (consum > 250 l/h), Risc de Îngheț (&lt; 5°C), Fraudă / Tamper.</li>
+                <li><strong>Alerte Atenționare (E-mail):</strong> Curgere Inversă, Scurgere Continuă, Conductă Goală, Baterie Slabă.</li>
+            </ul>
+            <p>Faceți clic pe butonul <em>Explicații Alerte</em> din antet pentru ghidul complet și măsurile recomandate.</p>
                             </div>
                                     </div>
                     </div><!-- /.help-panel-inner -->
@@ -668,22 +763,2232 @@
 
     <div class="content">
 
+<!-- React: <PageHeader title="Raport Alerte" /> -->
 <div class="page-title-container">
     <div class="page-title">
         <h1>Raport Alerte</h1>
-        <p>Pagina este în construcție.</p>
+        <p>Monitorizarea alertelor active și istoricul anomaliilor de consum semnalate de echipamente.</p>
+    </div>
+    <div class="page-actions">
+        <button type="button" class="btn btn-secondary" onclick="openModal('modalExplicatiiAlerte')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <span>Explicații Alerte</span>
+        </button>
+        <button type="button" class="btn btn-secondary" onclick="handleExportAlerts('xlsx')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="8" y1="13" x2="16" y2="17"></line>
+                <line x1="16" y1="13" x2="8" y2="17"></line>
+            </svg>
+            <span>Exportă Excel</span>
+        </button>
+        <button type="button" class="btn btn-secondary" onclick="window.print()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>Tipărește</span>
+        </button>
     </div>
 </div>
 
-<div class="card" style="padding: 60px 40px; text-align: center; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; margin-top: 24px;">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="64" height="64" style="margin-bottom: 20px; opacity: 0.3; color: var(--accent);">
-        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-        <polyline points="2 17 12 22 22 17"></polyline>
-        <polyline points="2 12 12 17 22 12"></polyline>
-    </svg>
-    <h2 style="color: var(--text-main); margin-bottom: 12px; font-weight: 600;">În curând</h2>
-    <p style="font-size: 15px;">Interfața pentru <strong>Raport Alerte</strong> nu a fost încă generată în acest demo.</p>
+<!-- React: <UtilityContextStrip /> (Conform RULES §1.9) -->
+<div class="utility-context-strip" style="margin-bottom: 20px;">
+    <div class="context-items">
+        <div class="context-item">
+            <span class="context-label">Locație activă</span>
+            <span class="context-value" style="font-weight: 600;">Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti</span>
+        </div>
+        <span class="context-sep">•</span>
+        <div class="context-item">
+            <span class="context-label">Cod</span>
+            <span class="context-code">810012411</span>
+        </div>
+        <span class="context-sep">•</span>
+        <div class="context-item">
+            <span class="context-label">Alerte Active</span>
+            <span class="status-badge status-error" style="font-weight: 700;">4 active</span>
+        </div>
+        <span class="context-sep">•</span>
+        <div class="context-item">
+            <span class="context-label">Istoric Rezolvate</span>
+            <span class="context-value">59 alerte</span>
+        </div>
+        <span class="context-sep">•</span>
+        <div class="context-item">
+            <span class="context-label">Ultima verificare</span>
+            <span class="context-value">29.10.2026 11:15</span>
+        </div>
+    </div>
 </div>
+
+<!-- React: <AlertFilterCard /> (Conform RULES §1.5) -->
+<div class="filter-card" style="margin-bottom: 24px;">
+    <div class="filter-card-head">
+        <div class="filter-card-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span>Filtrare Alerte după Loc de Măsurare și Stare</span>
+        </div>
+    </div>
+
+    <form method="get" action="raport-alerte.html">
+        <div class="form-row-3">
+            <div class="form-group">
+                <label class="form-label" for="locSelect">Loc de Măsurare</label>
+                <select id="locSelect" name="loc" class="input-control">
+                    <option value="all" >- Toate locațiile (vedere generală) -</option>
+                                        <option value="810012496" >
+                        Str. ALEEA BRASOVENI, Nr. 5, Bl. 16, Sc. A, Bucuresti, Bucuresti (Cod: 810012496)
+                    </option>
+                                        <option value="810012500" >
+                        Str. ALEEA BRASOVENI, Nr. 5, Bl. 16, Sc. A, Bucuresti, Bucuresti (Cod: 810012500)
+                    </option>
+                                        <option value="810210048" >
+                        Str. ALEEA CRINULUI, Nr. 4, Bl. 59, Sc. A, Navodari, Constanta (Cod: 810210048)
+                    </option>
+                                        <option value="810120290" >
+                        Str. ALEEA HORTENSIEI, Nr. 1, Bl. E1, Sc. A, Constanta, Constanta (Cod: 810120290)
+                    </option>
+                                        <option value="810460001" >
+                        Str. KAUFLAND HORNBACH DOMNESTI WEST PARK, Nr. 1, Bl. KAUFLAND, Sc. 0, Bucuresti, Bucuresti (Cod: 810460001)
+                    </option>
+                                        <option value="810012418" >
+                        Str. LIDL DRUMUL BINELUI, Nr. 51, Mag. 255, Bucuresti, Bucuresti (Cod: 810012418)
+                    </option>
+                                        <option value="810012417" >
+                        Str. LIDL TOPORASI, Nr. 6A, Mag. 416, Bucuresti, Bucuresti (Cod: 810012417)
+                    </option>
+                                        <option value="810012443" >
+                        Str. NITU VASILE ADDRA WMP, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti (Cod: 810012443)
+                    </option>
+                                        <option value="810012466" >
+                        Str. NITU VASILE OP-LWAN, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti (Cod: 810012466)
+                    </option>
+                                        <option value="810012411" >
+                        Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti (Cod: 810012411)
+                    </option>
+                                        <option value="810120316" >
+                        Str. PESCARILOR, Nr. 69, Bl. FZ26, Sc. A, Constanta, Constanta (Cod: 810120316)
+                    </option>
+                                        <option value="810440001" >
+                        Str. RANDUNICII, Nr. 13, Bl. CITY_NORD_1, Sc. -, Tunari, Ilfov (Cod: 810440001)
+                    </option>
+                                        <option value="810440002" >
+                        Str. RANDUNICII, Nr. 15, Bl. CITY_NORD_2, Sc. -, Tunari, Ilfov (Cod: 810440002)
+                    </option>
+                                        <option value="810120306" >
+                        Str. STEFAN CEL MARE, Nr. 30, Bl. M10, Sc. A, Constanta, Constanta (Cod: 810120306)
+                    </option>
+                                        <option value="810012503" >
+                        Str. TIPARNITEI, Nr. 105, Bl. 105, Sc. A, Bucuresti, Bucuresti (Cod: 810012503)
+                    </option>
+                                        <option value="810120315" >
+                        Str. TOMIS, Nr. 253, Bl. T1, Sc. C, Constanta, Constanta (Cod: 810120315)
+                    </option>
+                                        <option value="810120289" >
+                        Str. TOMIS, Nr. 308, Bl. LT3, Sc. D+E+F, Constanta, Constanta (Cod: 810120289)
+                    </option>
+                                        <option value="810270021" >
+                        Str. TRIFOIULUI, Nr. 54, Bl. 1, Sc. 1, Dobroesti, Ilfov (Cod: 810270021)
+                    </option>
+                                        <option value="810030072" >
+                        Str. VOROVESTI, Nr. 1, Bl. 1, Sc. 1, Iasi, Iasi (Cod: 810030072)
+                    </option>
+                                    </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="alertType">Tip Alertă</label>
+                <select id="alertType" name="type" class="input-control">
+                    <option value="all" selected>- Toate tipurile de alertă -</option>
+                    <option value="burst" >Țeavă Spartă (Burst)</option>
+                    <option value="freeze" >Îngheț (Freeze)</option>
+                    <option value="backflow" >Curgere Inversă (Backflow)</option>
+                    <option value="dry" >Conductă Goală (Dry)</option>
+                    <option value="leakage" >Scurgere Continuă (Leakage)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="alertStatus">Stare Alertă</label>
+                <select id="alertStatus" name="status" class="input-control">
+                    <option value="all" selected>Toate alertele (Active &amp; Rezolvate)</option>
+                    <option value="active" >Doar Alerte Active</option>
+                    <option value="resolved" >Doar Istoric Rezolvate</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="filter-card-footer">
+            <div class="table-count">
+                4 active • 59 în istoric
+            </div>
+            <div class="filter-actions">
+                <a href="raport-alerte.html?loc=810012411" class="btn btn-secondary">Resetează</a>
+                <button type="submit" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                    </svg>
+                    <span>Aplică</span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- SECȚIUNEA 1: Alerte Active (4) -->
+<div class="alert-active-card">
+    <div class="table-toolbar" style="padding: 12px 18px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            <span style="font-size: 14px; font-weight: 700; color: #dc2626; text-transform: uppercase; letter-spacing: 0.3px;">
+                Alerte Active (4)
+            </span>
+        </div>
+        <span class="status-badge status-error" style="font-size: 11px;">Necesită Atenție Imediată</span>
+    </div>
+
+    <div class="table-scroll">
+        <table class="partners-table table-compact">
+            <thead>
+                <tr>
+                    <th style="width: 110px;">Severitate</th>
+                    <th>Tip Alertă</th>
+                    <th>Locație &amp; Echipament</th>
+                    <th style="width: 180px;">De la data</th>
+                    <th style="text-align: center; width: 100px;">Acțiuni</th>
+                </tr>
+            </thead>
+            <tbody>
+                                <tr>
+                    <td>
+                        <span class="status-badge status-warning">ATENȚIE</span>
+                    </td>
+                    <td>
+                        <div class="alert-type-title">
+                            CONDUCTĂ GOALĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 6</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Utilitate: Apă Rece • Serie Contor: <span class="serial-value">01122334</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        29-10-2026, 11:01                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Istoric &amp; Grafic Consum">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr>
+                    <td>
+                        <span class="status-badge status-warning">ATENȚIE</span>
+                    </td>
+                    <td>
+                        <div class="alert-type-title">
+                            CONDUCTĂ GOALĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 6</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Utilitate: Apă Rece • Serie Contor: <span class="serial-value">01122334</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        29-10-2026, 11:01                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Istoric &amp; Grafic Consum">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr>
+                    <td>
+                        <span class="status-badge status-warning">ATENȚIE</span>
+                    </td>
+                    <td>
+                        <div class="alert-type-title">
+                            CURGERE INVERSĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Utilitate: Apă Rece • Serie Contor: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        28-10-2026, 17:03                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Istoric &amp; Grafic Consum">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr>
+                    <td>
+                        <span class="status-badge status-warning">ATENȚIE</span>
+                    </td>
+                    <td>
+                        <div class="alert-type-title">
+                            CURGERE INVERSĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Utilitate: Apă Rece • Serie Contor: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        28-10-2026, 17:03                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Istoric &amp; Grafic Consum">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- SECȚIUNEA 2: Istoric Alerte Rezolvate -->
+<div class="table-container" style="margin-bottom: 24px;">
+    <div class="table-toolbar">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 14 14"></polyline>
+            </svg>
+            <span style="font-size: 14px; font-weight: 700; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.3px;">
+                Istoric Alerte (Rezolvate)
+            </span>
+            <span class="table-count" id="resolvedCountDisplay" style="margin-left: 8px;">
+                59 înregistrări
+            </span>
+        </div>
+        
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div class="live-search-wrapper" style="width: 240px;">
+                <input type="text" id="alertSearchInput" class="input-control" placeholder="Caută în istoric alerte..." oninput="handleAlertSearch()" style="padding: 5px 10px; font-size: 12px;">
+            </div>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="handleExportAlerts('history')" title="Exportă istoricul în format Excel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="margin-right: 4px;">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                <span>Exportă Istoric</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="table-scroll">
+        <table class="partners-table table-compact" id="resolvedAlertsTable">
+            <thead>
+                <tr>
+                    <th style="width: 110px;">Stare</th>
+                    <th>Tip Alertă</th>
+                    <th>Locație &amp; Echipament</th>
+                    <th style="width: 180px;">Dată Rezolvare</th>
+                    <th style="text-align: center; width: 100px;">Acțiuni</th>
+                </tr>
+            </thead>
+            <tbody>
+                                <tr class="resolved-row" data-search="curgere continuĂ apt. 5 07649260 21-09-2026, 10:52">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            CURGERE CONTINUĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        21-09-2026, 10:52                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 09-09-2026, 08:45">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        09-09-2026, 08:45                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 2 07671818 26-08-2026, 08:25">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 2</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07671818</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        26-08-2026, 08:25                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 2 07671818 25-08-2026, 11:35">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 2</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07671818</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        25-08-2026, 11:35                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 18-08-2026, 06:50">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        18-08-2026, 06:50                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 17-08-2026, 07:34">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        17-08-2026, 07:34                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 16-08-2026, 09:05">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        16-08-2026, 09:05                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 14-08-2026, 23:57">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        14-08-2026, 23:57                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 12-08-2026, 07:16">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        12-08-2026, 07:16                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 11-08-2026, 07:04">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        11-08-2026, 07:04                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 08-08-2026, 09:06">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        08-08-2026, 09:06                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 06-08-2026, 08:00">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        06-08-2026, 08:00                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 04-08-2026, 08:13">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        04-08-2026, 08:13                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 02-08-2026, 10:07">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        02-08-2026, 10:07                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 01-08-2026, 09:01">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        01-08-2026, 09:01                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 31-07-2026, 18:02">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        31-07-2026, 18:02                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 31-07-2026, 07:52">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        31-07-2026, 07:52                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 30-07-2026, 08:56">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        30-07-2026, 08:56                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 2 07671818 28-07-2026, 08:25">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 2</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07671818</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        28-07-2026, 08:25                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 28-07-2026, 07:11">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        28-07-2026, 07:11                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 2 07671818 27-07-2026, 08:22">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 2</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07671818</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        27-07-2026, 08:22                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 19-07-2026, 11:04">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        19-07-2026, 11:04                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 18-07-2026, 11:47">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        18-07-2026, 11:47                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 17-07-2026, 09:35">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        17-07-2026, 09:35                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 15-07-2026, 08:22">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        15-07-2026, 08:22                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 2 07671818 13-07-2026, 14:40">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 2</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07671818</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        13-07-2026, 14:40                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 11-07-2026, 09:18">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        11-07-2026, 09:18                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 07-07-2026, 06:59">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        07-07-2026, 06:59                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 30-06-2026, 07:09">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        30-06-2026, 07:09                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 29-06-2026, 06:45">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        29-06-2026, 06:45                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 28-06-2026, 10:02">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        28-06-2026, 10:02                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 26-06-2026, 08:12">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        26-06-2026, 08:12                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 23-06-2026, 07:06">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        23-06-2026, 07:06                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 22-06-2026, 07:27">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        22-06-2026, 07:27                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 21-06-2026, 09:26">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        21-06-2026, 09:26                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 19-06-2026, 08:19">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        19-06-2026, 08:19                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 17-06-2026, 07:59">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        17-06-2026, 07:59                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 1 07649259 14-06-2026, 14:27">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 1</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649259</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        14-06-2026, 14:27                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 04-06-2026, 07:45">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        04-06-2026, 07:45                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 2 07671818 05-05-2026, 16:30">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 2</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07671818</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        05-05-2026, 16:30                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 2 07671818 09-04-2026, 17:03">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 2</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07671818</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        09-04-2026, 17:03                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 2 07671818 26-03-2026, 13:36">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 2</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07671818</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        26-03-2026, 13:36                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ÎngheȚ apt. 3 05566448 23-01-2026, 20:23">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ÎNGHEȚ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 3</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">05566448</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        23-01-2026, 20:23                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ÎngheȚ apt. 3 05566448 23-01-2026, 17:53">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ÎNGHEȚ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 3</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">05566448</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        23-01-2026, 17:53                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ÎngheȚ apt. 3 05566448 23-01-2026, 15:00">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ÎNGHEȚ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 3</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">05566448</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        23-01-2026, 15:00                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ÎngheȚ apt. 3 05566448 22-01-2026, 14:12">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ÎNGHEȚ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 3</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">05566448</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        22-01-2026, 14:12                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ÎngheȚ apt. 5 07649260 22-01-2026, 14:01">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ÎNGHEȚ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        22-01-2026, 14:01                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ÎngheȚ apt. 3 05566448 22-01-2026, 13:54">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ÎNGHEȚ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 3</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">05566448</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        22-01-2026, 13:54                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ÎngheȚ apt. 3 05566448 21-01-2026, 21:47">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ÎNGHEȚ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 3</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">05566448</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        21-01-2026, 21:47                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ÎngheȚ apt. 3 05566448 21-01-2026, 10:30">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ÎNGHEȚ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 3</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">05566448</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        21-01-2026, 10:30                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 16-12-2025, 13:18">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        16-12-2025, 13:18                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ÎngheȚ apt. 2 07671818 24-11-2025, 13:30">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ÎNGHEȚ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 2</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07671818</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        24-11-2025, 13:30                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 18-11-2025, 17:27">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        18-11-2025, 17:27                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 31-10-2025, 21:43">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        31-10-2025, 21:43                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 5 07649260 24-10-2025, 22:18">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        24-10-2025, 22:18                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 2 07671818 16-10-2025, 13:40">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 2</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07671818</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        16-10-2025, 13:40                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 2 07671818 16-10-2025, 12:36">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 2</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07671818</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        16-10-2025, 12:36                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="curgere continuĂ apt. 5 07649260 21-09-2025, 15:58">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            CURGERE CONTINUĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 5</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07649260</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        21-09-2025, 15:58                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                                <tr class="resolved-row" data-search="ȚeavĂ spartĂ apt. 2 07671818 01-08-2025, 10:35">
+                    <td>
+                        <span class="status-badge status-offline">REZOLVAT</span>
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--text-main); font-size: 13px;">
+                            ȚEAVĂ SPARTĂ                        </div>
+                    </td>
+                    <td class="td-name">
+                        <div style="font-weight: 600; color: var(--text-main); margin-bottom: 2px;">
+                            Str. NITU VASILE, Nr. 57, Bl. 1, Sc. 1, Bucuresti, Bucuresti, <strong>Apt. 2</strong>
+                        </div>
+                        <div class="alert-desc-meta">
+                            Apă Rece • Serie: <span class="serial-value">07671818</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">
+                        01-08-2025, 10:35                    </td>
+                    <td style="text-align: center;">
+                        <a href="raport-exemplu.html?id=810012411&scope=br" class="btn-action-icon" title="Vezi Raport Citiri">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </a>
+                    </td>
+                </tr>
+                            </tbody>
+        </table>
+    </div>
+
+    <!-- Paginare standard conform §1.5 -->
+    <div class="pagination-container" style="border-top: 1px solid var(--border-color); padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;">
+        <div class="pagination-info" style="font-size: 12px; color: var(--text-muted);">
+            Se afișează 1–59 din 59 înregistrări
+        </div>
+        <div class="pagination-controls">
+            <button type="button" class="btn btn-secondary btn-page-nav" disabled>
+                <span>&laquo; Anterior</span>
+            </button>
+            <button type="button" class="btn btn-secondary btn-page active">1</button>
+            <button type="button" class="btn btn-secondary btn-page-nav" disabled>
+                <span>Următor &raquo;</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ══ Modal Explicații Alerte (Conform Ghidului din sursa ASP.NET) ═════════ -->
+<div class="modal-overlay" id="modalExplicatiiAlerte" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="modalExplicatiiAlerte-title">
+    <div class="modal-card" style="max-width: 680px; max-height: 85vh; display: flex; flex-direction: column;">
+        <div class="modal-header">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <h3 id="modalExplicatiiAlerte-title" style="margin: 0; font-size: 16px; font-weight: 700;">Ghid Alerte Contoare</h3>
+            </div>
+            <button type="button" class="btn-close" onclick="closeModal('modalExplicatiiAlerte')" title="Închide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+
+        <div class="modal-body" style="overflow-y: auto; padding: 20px;">
+            <!-- SECȚIUNEA 1: Alerte Critice -->
+            <div class="modal-alert-section-title modal-alert-section-title--critical">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                <span>Alerte Critice (SMS Instant)</span>
+            </div>
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 14px;">
+                Aceste alerte indică probleme urgente care necesită atenție imediată și sunt notificate, de regulă, prin SMS instant.
+            </p>
+
+            <div class="modal-alert-item">
+                <div class="modal-alert-item-head" style="color: #dc2626;">
+                    Țeavă Spartă (Burst)
+                </div>
+                <div class="modal-alert-item-body">
+                    <strong>Ce înseamnă:</strong> Un consum foarte mare și brusc (peste 250 litri/oră) care durează cel puțin o oră. Indică o defecțiune majoră.<br>
+                    <strong>Soluție recomandată:</strong> Verificați imediat instalația interioară și opriți alimentarea cu apă a locației. Contactați un instalator de urgență.
+                </div>
+            </div>
+
+            <div class="modal-alert-item">
+                <div class="modal-alert-item-head" style="color: #dc2626;">
+                    Îngheț (Freeze)
+                </div>
+                <div class="modal-alert-item-body">
+                    <strong>Ce înseamnă:</strong> Temperatura apei a scăzut sub 5°C, existând risc iminent de spargere a contorului și a instalației sanitare.<br>
+                    <strong>Soluție recomandată:</strong> Protejați termic contorul și țevile expuse în spațiile neîncălzite (subsoluri, cămine de branșament).
+                </div>
+            </div>
+
+            <div class="modal-alert-item">
+                <div class="modal-alert-item-head" style="color: #dc2626;">
+                    Fraudă (Tamper)
+                </div>
+                <div class="modal-alert-item-body">
+                    <strong>Ce înseamnă:</strong> Capacul contorului a fost deschis sau s-a intervenit mecanic/magnetic neautorizat asupra lui.<br>
+                    <strong>Soluție recomandată:</strong> Verificați vizual integritatea sigiliului mecanic și contactați administratorul de imobil.
+                </div>
+            </div>
+
+            <!-- SECȚIUNEA 2: Alerte de Atenționare -->
+            <div class="modal-alert-section-title modal-alert-section-title--warning" style="margin-top: 24px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <span>Alerte de Atenționare (E-mail Zilnic)</span>
+            </div>
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 14px;">
+                Aceste alerte sunt informative, indică posibile anomalii de consum sau defecțiuni minore și se transmit zilnic prin e-mail.
+            </p>
+
+            <div class="modal-alert-item">
+                <div class="modal-alert-item-head" style="color: #d97706;">
+                    Scurgere Continuă (Leakage)
+                </div>
+                <div class="modal-alert-item-body">
+                    <strong>Ce înseamnă:</strong> Un consum mic, dar permanent (peste 25 litri/oră) care nu se oprește timp de cel puțin 24 de ore (ex: rezervor WC defect sau robinet neînchis).<br>
+                    <strong>Soluție recomandată:</strong> Verificați toate sursele de apă interioare pentru a identifica și izola scurgerea.
+                </div>
+            </div>
+
+            <div class="modal-alert-item">
+                <div class="modal-alert-item-head" style="color: #d97706;">
+                    Curgere Inversă (Backflow)
+                </div>
+                <div class="modal-alert-item-body">
+                    <strong>Ce înseamnă:</strong> Apa circulă în sens opus prin contor. Poate indica un bypass între circuitele de apă rece și apă caldă (baterie defectă).<br>
+                    <strong>Soluție recomandată:</strong> Se recomandă montarea sau verificarea supapei de sens (clapet) după contor.
+                </div>
+            </div>
+
+            <div class="modal-alert-item">
+                <div class="modal-alert-item-head" style="color: #d97706;">
+                    Baterie Slabă (Low Battery)
+                </div>
+                <div class="modal-alert-item-body">
+                    <strong>Ce înseamnă:</strong> Bateria internă cu litiu a modulului radio LoRaWAN este aproape epuizată.<br>
+                    <strong>Soluție recomandată:</strong> Planificați înlocuirea contorului prin intermediul dispeceratului Decor Press.
+                </div>
+            </div>
+
+            <div class="modal-alert-item">
+                <div class="modal-alert-item-head" style="color: #d97706;">
+                    Contor Gol / Conductă Goală (Dry)
+                </div>
+                <div class="modal-alert-item-body">
+                    <strong>Ce înseamnă:</strong> Senzorul ultrasonic nu detectează prezența apei în camera de măsurare. Poate indica o oprire a furnizării apei în rețea.<br>
+                    <strong>Soluție recomandată:</strong> Verificați dacă alimentarea generală cu apă este oprită sau dacă instalația este aerisită.
+                </div>
+            </div>
+
+            <div class="modal-alert-item">
+                <div class="modal-alert-item-head" style="color: #d97706;">
+                    Eroare Permanentă (Permanent Error)
+                </div>
+                <div class="modal-alert-item-body">
+                    <strong>Ce înseamnă:</strong> Contorul a detectat o eroare hardware internă a traductorului cu ultrasunete.<br>
+                    <strong>Soluție recomandată:</strong> Contorul trebuie înlocuit de o echipă tehnică autorizată.
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('modalExplicatiiAlerte')">Închide</button>
+        </div>
+    </div>
+</div>
+
+<script>
+// Modal handler
+function openModal(id) {
+    var el = document.getElementById(id);
+    if (el) el.style.display = 'flex';
+}
+
+function closeModal(id) {
+    var el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+}
+
+// Căutare dinamică în istoricul alertelor
+function handleAlertSearch() {
+    var input = document.getElementById('alertSearchInput');
+    if (!input) return;
+    var q = input.value.trim().toLowerCase();
+    var rows = document.querySelectorAll('#resolvedAlertsTable tbody tr.resolved-row');
+    var visible = 0;
+
+    rows.forEach(function(row) {
+        var str = row.getAttribute('data-search') || '';
+        if (!q || str.indexOf(q) !== -1) {
+            row.style.display = '';
+            visible++;
+        } else {
+            row.style.display = 'none';
+        }
+    });
+
+    var countDisplay = document.getElementById('resolvedCountDisplay');
+    if (countDisplay) {
+        countDisplay.textContent = visible + ' din ' + rows.length + ' înregistrări' + (q ? ' găsite' : '');
+    }
+}
+
+// Simulare export Excel
+function handleExportAlerts(mode) {
+    var loc = document.getElementById('locSelect').value;
+    var msg = (mode === 'history')
+        ? 'Istoricul alertelor rezolvate în format Excel (XLSX) a fost generat pentru descărcare.'
+        : 'Raportul complet al alertelor (active și istoric) în format Excel (XLSX) a fost generat.';
+    alert(msg);
+}
+
+// Închidere modal la tasta Escape sau clic pe fundal
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal('modalExplicatiiAlerte');
+});
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('modal-overlay')) {
+        e.target.style.display = 'none';
+    }
+});
+</script>
 
     </div><!-- /.content -->
     <footer class="app-footer">
