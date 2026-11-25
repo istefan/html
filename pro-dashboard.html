@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
     <title>Dashboard PRO – SONIC</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.31">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.37">
     <script src="assets/js/nod-picker.js"></script>
     <script src="assets/js/edit-tabs.js"></script>
     <script src="assets/js/datepicker.js"></script>
     <script src="assets/js/action-tooltip.js"></script>
+    <script src="assets/js/history-tab.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="assets/js/pro-map.js"></script>
@@ -185,15 +186,15 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO (dispecerat) -->
-                <a href="pro-dashboard.html" class="nav-item active" title="Dashboard">
+                <!-- Panou SONIC PRO (dashboard) -->
+                <a href="pro-dashboard.html" class="nav-item active" title="Panou">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
-                    <span class="nav-label">Dashboard</span>
+                    <span class="nav-label">Panou</span>
                 </a>
 
-                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <!-- ── DISPECERAT ── -->
                 <div class="nav-group " data-group="pro-dispecerat">
                     <button class="nav-group-title" type="button" title="Dispecerat">
                         <span class="nav-group-icon">
@@ -203,41 +204,54 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
-                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
-                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
-                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
-                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                        <a href="pro-intrare-noua.html" class="nav-subitem ">Intrare Nouă</a>
+                        <a href="pro-tickete.html" class="nav-subitem ">Tickete</a>
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
                     </div>
                 </div>
 
-                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
-                <div class="nav-group " data-group="pro-planificare">
-                    <button class="nav-group-title" type="button" title="Planificare">
+                <!-- Montaje (meniu separat; regândit 2026-11-25) -->
+                <a href="pro-montaje.html" class="nav-item " title="Montaje">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </span>
+                    <span class="nav-label">Montaje</span>
+                </a>
+
+                <!-- Citiri walk-by (meniu separat, cerință 2026-11-25) -->
+                <a href="pro-citiri.html" class="nav-item " title="Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
+                    </span>
+                    <span class="nav-label">Citiri</span>
+                </a>
+
+                <!-- ── MONITORIZARE ── -->
+                <div class="nav-group " data-group="pro-monitorizare">
+                    <button class="nav-group-title" type="button" title="Monitorizare">
                         <span class="nav-group-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                         </span>
-                        <span class="nav-label">Planificare</span>
+                        <span class="nav-label">Monitorizare</span>
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
-                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
                         <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
-                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
                     </div>
                 </div>
 
-                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <!-- ── RESURSE ── -->
                 <div class="nav-group " data-group="pro-resurse">
                     <button class="nav-group-title" type="button" title="Resurse">
                         <span class="nav-group-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
                         </span>
                         <span class="nav-label">Resurse</span>
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
-                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
-                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                        <a href="pro-biblioteca.html" class="nav-subitem ">Bibliotecă</a>
                     </div>
                 </div>
 
@@ -571,13 +585,13 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <!-- ── MASTER DATA ──────────────────────────────────────────── -->
                 <div class="nav-group " data-group="master-data">
-                    <button class="nav-group-title" type="button" title="Master Data Management">
+                    <button class="nav-group-title" type="button" title="Master Data">
                         <span class="nav-group-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                         </span>
-                        <span class="nav-label">Master Data Management</span>
+                        <span class="nav-label">Master Data</span>
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
@@ -587,6 +601,21 @@
                         <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
                         <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
                         <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
+
+                <!-- ── PERSONAL ── -->
+                <div class="nav-group " data-group="personal">
+                    <button class="nav-group-title" type="button" title="Personal">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+                        </span>
+                        <span class="nav-label">Personal</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="personal.html" class="nav-subitem ">Angajați</a>
+                        <a href="personal-indisponibilitati.html" class="nav-subitem ">Concedii și Indisponibilități</a>
                     </div>
                 </div>
 
@@ -805,26 +834,26 @@
         <div class="pro-command-clock" id="proClock">--:--</div>
         <div class="pro-command-date">Miercuri, 28 octombrie 2026</div>
         <div class="pro-command-actions">
-            <a href="pro-programare.html" class="btn-primary">Programare nouă</a>
+            <a href="pro-intrare-noua.html" class="btn-primary">Intrare nouă</a>
                             <button type="button" class="btn-secondary" onclick="ProUrgent.open({ nod: '81-001-0030', type: 'gw', title: &quot;Gateway GW-40211 – Nu transmite&quot; })">Notificare urgentă</button>
                         <a href="pro-harta.html" class="btn-secondary">Hartă live</a>
         </div>
     </div>
     <div class="pro-command-stats">
-        <a href="interventii.html" class="pro-command-stat">
+        <a href="pro-calendar.html" class="pro-command-stat">
             <span class="pro-command-stat-label">Intervenții azi</span>
             <span class="pro-command-stat-value">12</span>
             <span class="pro-command-stat-meta">2 finalizate · 5 în curs</span>
         </a>
-        <a href="pro-echipe.html" class="pro-command-stat">
+        <a href="personal.html" class="pro-command-stat">
             <span class="pro-command-stat-label">Echipe în teren</span>
-            <span class="pro-command-stat-value">6<small> / 8</small></span>
+            <span class="pro-command-stat-value">15<small> / 17</small></span>
             <span class="pro-command-stat-meta">1 indisponibili azi</span>
         </a>
-        <a href="pro-solicitari.html" class="pro-command-stat">
-            <span class="pro-command-stat-label">Solicitări deschise</span>
-            <span class="pro-command-stat-value">7</span>
-            <span class="pro-command-stat-meta">2 urgente</span>
+        <a href="pro-tickete.html" class="pro-command-stat">
+            <span class="pro-command-stat-label">Tickete deschise</span>
+            <span class="pro-command-stat-value">19</span>
+            <span class="pro-command-stat-meta">4 depășite · 3 urgente</span>
         </a>
         <a href="pro-probleme-retea.html" class="pro-command-stat">
             <span class="pro-command-stat-label">Gateway-uri online</span>
@@ -856,7 +885,7 @@
     <div class="card pro-panel">
         <div class="edit-section-header">
             <span class="edit-section-title">Necesită atenție</span>
-            <span class="status-badge status-error">5</span>
+            <span class="status-badge status-error">11</span>
         </div>
                 <ul class="pro-feed">
                         <li class="pro-feed-item">
@@ -866,7 +895,7 @@
                     <div class="pro-feed-text">4 zile fără comunicare; 46 de repartitoare dependente.</div>                    <div class="pro-feed-meta">NOD 81-001-0030 · din 24.10 22:10</div>
                 </div>
                 <div class="pro-feed-actions">
-                                            <a href="pro-programare.html?nod=81-001-0030&types=gw&alert=R-901" class="btn-action-icon" title="Programează service"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
+                                            <a href="pro-intrare-noua.html?level=nod&amp;key=81-001-0030&amp;source=intern" class="btn-action-icon" title="Deschide ticket de service"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
                         <button type="button" class="btn-action-icon" title="Notificare urgentă" onclick="ProUrgent.open({ nod: '81-001-0030', type: 'gw', title: &quot;Gateway GW-40211 – Nu transmite&quot; })"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></button>
                                     </div>
             </li>
@@ -877,7 +906,7 @@
                     <div class="pro-feed-text">Ultimul semnal: tensiune 4,9 V (sub prag).</div>                    <div class="pro-feed-meta">NOD 81-001-0053 · din 27.10 03:45</div>
                 </div>
                 <div class="pro-feed-actions">
-                                            <a href="pro-programare.html?nod=81-001-0053&types=gw&alert=R-902" class="btn-action-icon" title="Programează service"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
+                                            <a href="pro-intrare-noua.html?level=nod&amp;key=81-001-0053&amp;source=intern" class="btn-action-icon" title="Deschide ticket de service"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
                         <button type="button" class="btn-action-icon" title="Notificare urgentă" onclick="ProUrgent.open({ nod: '81-001-0053', type: 'gw', title: &quot;Gateway GW-40188 – Nu transmite&quot; })"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></button>
                                     </div>
             </li>
@@ -888,7 +917,7 @@
                     <div class="pro-feed-text">Index invers +0,42 mc – posibil montaj invers.</div>                    <div class="pro-feed-meta">NOD 81-001-0055 · din 26.10 18:20</div>
                 </div>
                 <div class="pro-feed-actions">
-                                            <a href="pro-programare.html?nod=81-001-0055&types=apa&alert=R-903" class="btn-action-icon" title="Programează service"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
+                                            <a href="pro-intrare-noua.html?level=nod&amp;key=81-001-0055&amp;source=intern" class="btn-action-icon" title="Deschide ticket de service"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
                         <button type="button" class="btn-action-icon" title="Notificare urgentă" onclick="ProUrgent.open({ nod: '81-001-0055', type: 'apa', title: &quot;Contor apă 63333400 – Flux invers&quot; })"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></button>
                                     </div>
             </li>
@@ -899,21 +928,162 @@
                     <div class="pro-feed-text">Proprietarul nu a fost acasă – reprogramare necesară.</div>                    <div class="pro-feed-meta">NOD 81-001-0040 · Teodor Milian</div>
                 </div>
                 <div class="pro-feed-actions">
-                                            <a href="pro-programare.html?nod=81-001-0040&types=apa&reprogram=I-5027" class="btn-action-icon" title="Reprogramează"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
+                                            <a href="pro-intrare-noua.html?level=nod&amp;key=81-001-0040&amp;source=intern" class="btn-action-icon" title="Reprogramează"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
                                     </div>
             </li>
                         <li class="pro-feed-item">
                 <span class="pro-feed-icon "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
                 <div class="pro-feed-body">
-                    <div class="pro-feed-title">S-2611 – Repartitor căzut de pe calorifer</div>
-                    <div class="pro-feed-text">Ilie Marin, ap. 14</div>                    <div class="pro-feed-meta">Telefon · 28.10 09:12</div>
+                    <div class="pro-feed-title">T-5208 – Avarie / defecțiune echipament</div>
+                    <div class="pro-feed-text">Ilie Marin · NOD 81-001-0007, ap. 4</div>                    <div class="pro-feed-meta">Intervenție în teren · Scadent în 23 h · Urgent</div>
                 </div>
                 <div class="pro-feed-actions">
-                                            <a href="pro-solicitari.html?id=S-2611" class="btn-action-icon" title="Deschide solicitarea"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
-                        <a href="pro-programare.html?nod=81-001-0007&types=rep&ticket=S-2611" class="btn-action-icon" title="Programează intervenția"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a>
+                                            <a href="pro-ticket.html?id=T-5208" class="btn-action-icon" title="Deschide ticketul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                                    </div>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">T-5201 – Avarie / defecțiune echipament</div>
+                    <div class="pro-feed-text">Carmen Voicu · NOD 81-001-0140, ap. 5</div>                    <div class="pro-feed-meta">Intervenție în teren · Depășit cu 17 h · Normal</div>
+                </div>
+                <div class="pro-feed-actions">
+                                            <a href="pro-ticket.html?id=T-5201" class="btn-action-icon" title="Deschide ticketul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                                    </div>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">T-5200 – Avarie / defecțiune echipament</div>
+                    <div class="pro-feed-text">Carmen Voicu · NOD 81-001-0140, ap. 5</div>                    <div class="pro-feed-meta">Răspuns scris (e-mail) · Depășit cu 17 h · Normal</div>
+                </div>
+                <div class="pro-feed-actions">
+                                            <a href="pro-ticket.html?id=T-5200" class="btn-action-icon" title="Deschide ticketul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                                    </div>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">T-5223 – Echipament nu transmite</div>
+                    <div class="pro-feed-text">Departament calcul · NOD 81-001-0023</div>                    <div class="pro-feed-meta">Intervenție în teren · Scadent în 23 h · Urgent</div>
+                </div>
+                <div class="pro-feed-actions">
+                                            <a href="pro-ticket.html?id=T-5223" class="btn-action-icon" title="Deschide ticketul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                                    </div>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">T-5225 – Reclamație intervenție anterioară</div>
+                    <div class="pro-feed-text">Radu Moldovan · NOD 81-001-0040</div>                    <div class="pro-feed-meta">Răspuns scris (e-mail) · Depășit cu 24 h · Normal</div>
+                </div>
+                <div class="pro-feed-actions">
+                                            <a href="pro-ticket.html?id=T-5225" class="btn-action-icon" title="Deschide ticketul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                                    </div>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">T-5226 – Reclamație intervenție anterioară</div>
+                    <div class="pro-feed-text">Radu Moldovan · NOD 81-001-0040</div>                    <div class="pro-feed-meta">Intervenție în teren · Depășit cu 24 h · Normal</div>
+                </div>
+                <div class="pro-feed-actions">
+                                            <a href="pro-ticket.html?id=T-5226" class="btn-action-icon" title="Deschide ticketul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                                    </div>
+            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-feed-icon "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">T-5229 – Echipament nu transmite</div>
+                    <div class="pro-feed-text">Florin Dragomir · NOD 81-001-0467</div>                    <div class="pro-feed-meta">Intervenție în teren · Scadent în 46 h · Urgent</div>
+                </div>
+                <div class="pro-feed-actions">
+                                            <a href="pro-ticket.html?id=T-5229" class="btn-action-icon" title="Deschide ticketul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
                                     </div>
             </li>
                     </ul>
+            </div>
+</div>
+
+<!-- React: <OpenTickets bySla byResolution bySubject /> -->
+<div class="pro-grid-3">
+    <div class="card pro-panel">
+        <div class="edit-section-header">
+            <span class="edit-section-title">Tickete deschise · termen</span>
+            <a href="pro-tickete.html" class="pro-panel-link">Tickete <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Depășite</span>
+            <span class="pro-stock-nums"><strong>4</strong></span>
+            <div class="progress-bar"><div class="progress-bar__fill is-out" style="width: 40%;"></div></div>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Scadente în 24 h</span>
+            <span class="pro-stock-nums"><strong>2</strong></span>
+            <div class="progress-bar"><div class="progress-bar__fill is-low" style="width: 20%;"></div></div>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Scadente în 72 h</span>
+            <span class="pro-stock-nums"><strong>3</strong></span>
+            <div class="progress-bar"><div class="progress-bar__fill " style="width: 30%;"></div></div>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">În termen</span>
+            <span class="pro-stock-nums"><strong>10</strong></span>
+            <div class="progress-bar"><div class="progress-bar__fill is-ok" style="width: 100%;"></div></div>
+        </div>
+            </div>
+    <div class="card pro-panel">
+        <div class="edit-section-header"><span class="edit-section-title">Pe mod de rezolvare</span></div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Intervenție în teren</span>
+            <span class="pro-stock-nums"><strong>10</strong></span>
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 100%;"></div></div>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Răspuns scris (e-mail)</span>
+            <span class="pro-stock-nums"><strong>7</strong></span>
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 70%;"></div></div>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Scrisoare (poștă)</span>
+            <span class="pro-stock-nums"><strong>1</strong></span>
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 10%;"></div></div>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Apel telefonic de răspuns</span>
+            <span class="pro-stock-nums"><strong>1</strong></span>
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 10%;"></div></div>
+        </div>
+                <span class="progress-label">6 intervenții de programat · 9 răspunsuri de trimis</span>
+    </div>
+    <div class="card pro-panel">
+        <div class="edit-section-header"><span class="edit-section-title">Pe subiect · top 5</span></div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Avarie / defecțiune echipament</span>
+            <span class="pro-stock-nums"><strong>3</strong></span>
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 100%;"></div></div>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Solicitare informații</span>
+            <span class="pro-stock-nums"><strong>3</strong></span>
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 100%;"></div></div>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Echipament nu transmite</span>
+            <span class="pro-stock-nums"><strong>3</strong></span>
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 100%;"></div></div>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Contestație consum / factură</span>
+            <span class="pro-stock-nums"><strong>2</strong></span>
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 67%;"></div></div>
+        </div>
+                <div class="pro-stock-row">
+            <span class="pro-stock-name">Sigiliu rupt / resigilare</span>
+            <span class="pro-stock-nums"><strong>2</strong></span>
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 67%;"></div></div>
+        </div>
             </div>
 </div>
 
@@ -940,10 +1110,10 @@
                     </div>
                 </div>
                 <div class="pro-gantt-track js-gantt-track">
-                                                                <a href="interventii.html" class="pro-gantt-block pro-gantt-block--failed" style="left: 20%; width: calc(10% - 3px);"
+                                                                <a href="pro-calendar.html" class="pro-gantt-block pro-gantt-block--failed" style="left: 20%; width: calc(10% - 3px);"
                            title="I-5027 · 10:00 · Service · NOD 81-001-0040 · Nerealizată">
                             <strong>Service</strong>10:00 · 81-001-0040                        </a>
-                                            <a href="interventii.html" class="pro-gantt-block" style="left: 50%; width: calc(10% - 3px);"
+                                            <a href="pro-calendar.html" class="pro-gantt-block" style="left: 50%; width: calc(10% - 3px);"
                            title="I-5028 · 13:00 · Service · NOD 81-001-0001 · Programată">
                             <strong>Service</strong>13:00 · 81-001-0001                        </a>
                                     </div>
@@ -959,13 +1129,13 @@
                     </div>
                 </div>
                 <div class="pro-gantt-track js-gantt-track">
-                                                                <a href="interventii.html" class="pro-gantt-block pro-gantt-block--done" style="left: 15%; width: calc(10% - 3px);"
+                                                                <a href="pro-ticket.html?id=T-5206" class="pro-gantt-block pro-gantt-block--done" style="left: 15%; width: calc(10% - 3px);"
                            title="I-5024 · 09:30 · Service · NOD 81-001-0055 · Finalizată">
                             <strong>Service</strong>09:30 · 81-001-0055                        </a>
-                                            <a href="interventii.html" class="pro-gantt-block pro-gantt-block--progress" style="left: 40%; width: calc(10% - 3px);"
+                                            <a href="pro-calendar.html" class="pro-gantt-block pro-gantt-block--progress" style="left: 40%; width: calc(10% - 3px);"
                            title="I-5025 · 12:00 · Service · NOD 81-001-0004 · În curs">
                             <strong>Service</strong>12:00 · 81-001-0004                        </a>
-                                            <a href="interventii.html" class="pro-gantt-block" style="left: 70%; width: calc(10% - 3px);"
+                                            <a href="pro-calendar.html" class="pro-gantt-block" style="left: 70%; width: calc(10% - 3px);"
                            title="I-5026 · 15:00 · Service · NOD 81-001-0140 · Programată">
                             <strong>Service</strong>15:00 · 81-001-0140                        </a>
                                     </div>
@@ -981,7 +1151,7 @@
                     </div>
                 </div>
                 <div class="pro-gantt-track js-gantt-track">
-                                                                <a href="interventii.html" class="pro-gantt-block pro-gantt-block--progress" style="left: 0%; width: calc(80% - 3px);"
+                                                                <a href="pro-calendar.html" class="pro-gantt-block pro-gantt-block--progress" style="left: 0%; width: calc(80% - 3px);"
                            title="I-5035 · 08:00 · Montaj · NOD 81-001-2108 · În curs">
                             <strong>Montaj</strong>08:00 · 81-001-2108                        </a>
                                     </div>
@@ -997,13 +1167,13 @@
                     </div>
                 </div>
                 <div class="pro-gantt-track js-gantt-track">
-                                                                <a href="interventii.html" class="pro-gantt-block pro-gantt-block--done pro-gantt-block--urgent" style="left: 10%; width: calc(15% - 3px);"
+                                                                <a href="pro-ticket.html?id=T-5203" class="pro-gantt-block pro-gantt-block--done pro-gantt-block--urgent" style="left: 10%; width: calc(15% - 3px);"
                            title="I-5021 · 09:00 · Service · NOD 81-001-0004 · Finalizată">
                             <strong>Service</strong>09:00 · 81-001-0004                        </a>
-                                            <a href="interventii.html" class="pro-gantt-block pro-gantt-block--progress" style="left: 30%; width: calc(10% - 3px);"
+                                            <a href="pro-calendar.html" class="pro-gantt-block pro-gantt-block--progress" style="left: 30%; width: calc(10% - 3px);"
                            title="I-5022 · 11:00 · Service · NOD 81-001-0002 · În curs">
                             <strong>Service</strong>11:00 · 81-001-0002                        </a>
-                                            <a href="interventii.html" class="pro-gantt-block" style="left: 60%; width: calc(10% - 3px);"
+                                            <a href="pro-ticket.html?id=T-5198" class="pro-gantt-block" style="left: 60%; width: calc(10% - 3px);"
                            title="I-5023 · 14:00 · Service · NOD 81-001-0021 · Programată">
                             <strong>Service</strong>14:00 · 81-001-0021                        </a>
                                     </div>
@@ -1033,10 +1203,10 @@
                     </div>
                 </div>
                 <div class="pro-gantt-track js-gantt-track">
-                                                                <a href="interventii.html" class="pro-gantt-block pro-gantt-block--progress pro-gantt-block--urgent" style="left: 25%; width: calc(15% - 3px);"
+                                                                <a href="pro-calendar.html" class="pro-gantt-block pro-gantt-block--progress pro-gantt-block--urgent" style="left: 25%; width: calc(15% - 3px);"
                            title="I-5030 · 10:30 · Service · NOD 81-001-0017 · În curs">
                             <strong>Service</strong>10:30 · 81-001-0017                        </a>
-                                            <a href="interventii.html" class="pro-gantt-block" style="left: 55%; width: calc(10% - 3px);"
+                                            <a href="pro-ticket.html?id=T-5229" class="pro-gantt-block" style="left: 55%; width: calc(10% - 3px);"
                            title="I-5031 · 13:30 · Service · NOD 81-001-0467 · Programată">
                             <strong>Service</strong>13:30 · 81-001-0467                        </a>
                                     </div>
@@ -1052,7 +1222,7 @@
                     </div>
                 </div>
                 <div class="pro-gantt-track js-gantt-track">
-                                                                <a href="interventii.html" class="pro-gantt-block pro-gantt-block--progress" style="left: 5%; width: calc(30% - 3px);"
+                                                                <a href="pro-calendar.html" class="pro-gantt-block pro-gantt-block--progress" style="left: 5%; width: calc(30% - 3px);"
                            title="I-5036 · 08:30 · Citire walk-by · NOD 81-001-0047 · În curs">
                             <strong>Citire walk-by</strong>08:30 · 81-001-0047                        </a>
                                     </div>
@@ -1072,37 +1242,37 @@
     <!-- React: <ChannelStats /> -->
     <div class="card pro-panel">
         <div class="edit-section-header">
-            <span class="edit-section-title">Solicitări pe canale · 30 zile</span>
-            <a href="pro-solicitari.html" class="pro-panel-link">Inbox <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+            <span class="edit-section-title">Intrări pe canale · 30 zile</span>
+            <a href="pro-tickete.html?status=" class="pro-panel-link">Tickete <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
         </div>
                 <div class="pro-stock-row">
             <span class="pro-channel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Telefon</span>
-            <span class="pro-stock-nums"><strong>46</strong></span>
+            <span class="pro-stock-nums"><strong>54</strong></span>
             <div class="progress-bar"><div class="progress-bar__fill" style="width: 100%;"></div></div>
         </div>
                 <div class="pro-stock-row">
             <span class="pro-channel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>E-mail</span>
-            <span class="pro-stock-nums"><strong>31</strong></span>
-            <div class="progress-bar"><div class="progress-bar__fill" style="width: 67%;"></div></div>
+            <span class="pro-stock-nums"><strong>38</strong></span>
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 70%;"></div></div>
         </div>
                 <div class="pro-stock-row">
             <span class="pro-channel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>WhatsApp</span>
-            <span class="pro-stock-nums"><strong>22</strong></span>
-            <div class="progress-bar"><div class="progress-bar__fill" style="width: 48%;"></div></div>
+            <span class="pro-stock-nums"><strong>25</strong></span>
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 46%;"></div></div>
         </div>
                 <div class="pro-stock-row">
             <span class="pro-channel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg>Adresă scrisă</span>
-            <span class="pro-stock-nums"><strong>9</strong></span>
-            <div class="progress-bar"><div class="progress-bar__fill" style="width: 20%;"></div></div>
+            <span class="pro-stock-nums"><strong>12</strong></span>
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 22%;"></div></div>
         </div>
                 <div class="pro-stock-row">
-            <span class="pro-channel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>La ghișeu</span>
-            <span class="pro-stock-nums"><strong>7</strong></span>
-            <div class="progress-bar"><div class="progress-bar__fill" style="width: 15%;"></div></div>
+            <span class="pro-channel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>În locație</span>
+            <span class="pro-stock-nums"><strong>10</strong></span>
+            <div class="progress-bar"><div class="progress-bar__fill" style="width: 19%;"></div></div>
         </div>
                 <div class="pro-stock-row">
             <span class="pro-channel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>Intern (alt departament)</span>
-            <span class="pro-stock-nums"><strong>12</strong></span>
+            <span class="pro-stock-nums"><strong>14</strong></span>
             <div class="progress-bar"><div class="progress-bar__fill" style="width: 26%;"></div></div>
         </div>
             </div>
@@ -1222,8 +1392,8 @@
                             <td style="text-align: center;"><span class="status-badge status-online">Programat</span></td>
                         </tr>
                                                 <tr>
-                            <td class="td-name">Asociația de Proprietari Bloc M12 (nemontat)<span class="list-sublabel">C-2026-127 · 45 apartamente</span></td>
-                            <td class="td-code">—</td>
+                            <td class="td-name">Asociația de Proprietari Bloc M12<span class="list-sublabel">C-2026-127 · 45 apartamente</span></td>
+                            <td class="td-code">81-001-0310</td>
                             <td>—</td>
                             <td>—</td>
                             <td>
@@ -1234,7 +1404,7 @@
                         </tr>
                                                 <tr>
                             <td class="td-name">Asociația de Proprietari Bloc 7 Drumul Taberei<span class="list-sublabel">C-2026-129 · 60 apartamente</span></td>
-                            <td class="td-code">—</td>
+                            <td class="td-code">81-001-0320</td>
                             <td>—</td>
                             <td>—</td>
                             <td>
@@ -1244,13 +1414,24 @@
                             <td style="text-align: center;"><span class="status-badge status-offline">Neprogramat</span></td>
                         </tr>
                                                 <tr>
-                            <td class="td-name">Asociația de Proprietari Bloc Z3 Titan<span class="list-sublabel">C-2026-131 · 100 apartamente</span></td>
-                            <td class="td-code">—</td>
+                            <td class="td-name">Asociația de Proprietari Bloc Z3 Titan<span class="list-sublabel">C-2026-131 · 50 apartamente</span></td>
+                            <td class="td-code">81-001-0331</td>
                             <td>—</td>
                             <td>—</td>
                             <td>
                                 <div class="progress-bar"><div class="progress-bar__fill" style="width: 0%;"></div></div>
-                                <span class="progress-label">0 / 100 apartamente</span>
+                                <span class="progress-label">0 / 50 apartamente</span>
+                            </td>
+                            <td style="text-align: center;"><span class="status-badge status-offline">Neprogramat</span></td>
+                        </tr>
+                                                <tr>
+                            <td class="td-name">Asociația de Proprietari Bloc Z3 Titan<span class="list-sublabel">C-2026-131 · 50 apartamente</span></td>
+                            <td class="td-code">81-001-0332</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>
+                                <div class="progress-bar"><div class="progress-bar__fill" style="width: 0%;"></div></div>
+                                <span class="progress-label">0 / 50 apartamente</span>
                             </td>
                             <td style="text-align: center;"><span class="status-badge status-offline">Neprogramat</span></td>
                         </tr>
@@ -1275,7 +1456,7 @@
     <div class="card pro-panel">
         <div class="edit-section-header">
             <span class="edit-section-title">Echipe azi</span>
-            <a href="pro-echipe.html" class="pro-panel-link">Echipe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+            <a href="personal.html" class="pro-panel-link">Personal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
         </div>
         <ul class="pro-feed">
                         <li class="pro-feed-item">
@@ -1332,6 +1513,69 @@
                 <div class="pro-feed-body">
                     <div class="pro-feed-title">Radu Marinescu</div>
                     <div class="pro-feed-meta">Cititor · Montator · 1 intervenție</div>
+                </div>
+                <span class="status-badge status-online">În teren</span>            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-avatar" data-status="teren">IC</span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">Ionuț Ciobanu</div>
+                    <div class="pro-feed-meta">Cititor · 0 intervenții</div>
+                </div>
+                <span class="status-badge status-online">În teren</span>            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-avatar" data-status="teren">EV</span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">Elena Vasile</div>
+                    <div class="pro-feed-meta">Cititor · 0 intervenții</div>
+                </div>
+                <span class="status-badge status-online">În teren</span>            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-avatar" data-status="teren">MN</span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">Marius Neagu</div>
+                    <div class="pro-feed-meta">Cititor · 0 intervenții</div>
+                </div>
+                <span class="status-badge status-online">În teren</span>            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-avatar" data-status="teren">LM</span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">Laura Mihai</div>
+                    <div class="pro-feed-meta">Cititor · 0 intervenții</div>
+                </div>
+                <span class="status-badge status-online">În teren</span>            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-avatar" data-status="teren">GT</span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">Gabriel Toma</div>
+                    <div class="pro-feed-meta">Cititor · 0 intervenții</div>
+                </div>
+                <span class="status-badge status-online">În teren</span>            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-avatar" data-status="teren">CD</span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">Cristina Dinu</div>
+                    <div class="pro-feed-meta">Cititor · 0 intervenții</div>
+                </div>
+                <span class="status-badge status-online">În teren</span>            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-avatar" data-status="teren">AP</span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">Alin Petrescu</div>
+                    <div class="pro-feed-meta">Cititor · 0 intervenții</div>
+                </div>
+                <span class="status-badge status-online">În teren</span>            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-avatar" data-status="teren">RI</span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">Roxana Iordache</div>
+                    <div class="pro-feed-meta">Cititor · 0 intervenții</div>
+                </div>
+                <span class="status-badge status-online">În teren</span>            </li>
+                        <li class="pro-feed-item">
+                <span class="pro-avatar" data-status="teren">SL</span>
+                <div class="pro-feed-body">
+                    <div class="pro-feed-title">Sebastian Lungu</div>
+                    <div class="pro-feed-meta">Cititor · 0 intervenții</div>
                 </div>
                 <span class="status-badge status-online">În teren</span>            </li>
                     </ul>
@@ -1462,7 +1706,7 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && do
     tick();
     setInterval(tick, 1000);
 
-    var STAFF = [{"id":"s1","name":"Teodor Milian","ini":"TM","pos":[44.4512,26.1135],"status":"În teren","roles":"Cititor, Service","now":""},{"id":"s2","name":"Bogdan Antal","ini":"BA","pos":[44.4245,26.172],"status":"În teren","roles":"Montator, Service","now":"Service – NOD 81-001-0004"},{"id":"s3","name":"Mihai Dobre","ini":"MD","pos":[44.4448,26.1452],"status":"În teren","roles":"Montator","now":"Montaj – NOD 81-001-2108"},{"id":"s4","name":"Cristian Pană","ini":"CP","pos":[44.4705,26.066],"status":"În teren","roles":"Service","now":"Service – NOD 81-001-0002"},{"id":"s6","name":"Florin Stoica","ini":"FS","pos":[44.429,26.0405],"status":"În teren","roles":"Montator, Service","now":"Service – NOD 81-001-0017"},{"id":"s7","name":"Daniel Ene","ini":"DE","pos":[44.442,26.096],"status":"La birou","roles":"Service","now":""},{"id":"s8","name":"Radu Marinescu","ini":"RM","pos":[44.4598,26.121],"status":"În teren","roles":"Cititor, Montator","now":"Citire walk-by – NOD 81-001-0047"}];
+    var STAFF = [{"id":"s1","name":"Teodor Milian","ini":"TM","pos":[44.4512,26.1135],"status":"În teren","roles":"Cititor, Service","now":""},{"id":"s2","name":"Bogdan Antal","ini":"BA","pos":[44.4245,26.172],"status":"În teren","roles":"Montator, Service","now":"Service – NOD 81-001-0004"},{"id":"s3","name":"Mihai Dobre","ini":"MD","pos":[44.4448,26.1452],"status":"În teren","roles":"Montator","now":"Montaj – NOD 81-001-2108"},{"id":"s4","name":"Cristian Pană","ini":"CP","pos":[44.4705,26.066],"status":"În teren","roles":"Service","now":"Service – NOD 81-001-0002"},{"id":"s6","name":"Florin Stoica","ini":"FS","pos":[44.429,26.0405],"status":"În teren","roles":"Montator, Service","now":"Service – NOD 81-001-0017"},{"id":"s7","name":"Daniel Ene","ini":"DE","pos":[44.442,26.096],"status":"La birou","roles":"Service","now":""},{"id":"s8","name":"Radu Marinescu","ini":"RM","pos":[44.4598,26.121],"status":"În teren","roles":"Cititor, Montator","now":"Citire walk-by – NOD 81-001-0047"},{"id":"s9","name":"Ionuț Ciobanu","ini":"IC","pos":[44.416,26.039],"status":"În teren","roles":"Cititor","now":""},{"id":"s10","name":"Elena Vasile","ini":"EV","pos":[44.388,26.118],"status":"În teren","roles":"Cititor","now":""},{"id":"s11","name":"Marius Neagu","ini":"MN","pos":[44.452,26.152],"status":"În teren","roles":"Cititor","now":""},{"id":"s12","name":"Laura Mihai","ini":"LM","pos":[44.433,26.023],"status":"În teren","roles":"Cititor","now":""},{"id":"s13","name":"Gabriel Toma","ini":"GT","pos":[44.419,26.168],"status":"În teren","roles":"Cititor","now":""},{"id":"s14","name":"Cristina Dinu","ini":"CD","pos":[44.464,26.1],"status":"În teren","roles":"Cititor","now":""},{"id":"s15","name":"Alin Petrescu","ini":"AP","pos":[44.407,26.07],"status":"În teren","roles":"Cititor","now":""},{"id":"s16","name":"Roxana Iordache","ini":"RI","pos":[44.447,26.048],"status":"În teren","roles":"Cititor","now":""},{"id":"s17","name":"Sebastian Lungu","ini":"SL","pos":[44.408,26.135],"status":"În teren","roles":"Cititor","now":""}];
     var JOBS = [{"id":"I-5021","nod":"81-001-0004","gps":[44.4241,26.1752],"address":"Str. Gura Ialomiței 3, Bl. PC9, Sc. B, Sector 3","time":"09:00","type":"Service","state":"done","status":"Finalizată","staff":"Cristian Pană"},{"id":"I-5022","nod":"81-001-0002","gps":[44.4702,26.0652],"address":"Str. Reziliat 36, Vila, Sector 1","time":"11:00","type":"Service","state":"progress","status":"În curs","staff":"Cristian Pană"},{"id":"I-5023","nod":"81-001-0021","gps":[44.4781,26.0402],"address":"Str. Bucureștii Noi 26, Bl. 1, Sc. A, Sector 1","time":"14:00","type":"Service","state":"","status":"Programată","staff":"Cristian Pană"},{"id":"I-5024","nod":"81-001-0055","gps":[44.4182,26.1702],"address":"Aleea Bârsănești 2, Bl. 156, Sc. 2, Sector 6","time":"09:30","type":"Service","state":"done","status":"Finalizată","staff":"Bogdan Antal"},{"id":"I-5025","nod":"81-001-0004","gps":[44.4241,26.1752],"address":"Str. Gura Ialomiței 3, Bl. PC9, Sc. B, Sector 3","time":"12:00","type":"Service","state":"progress","status":"În curs","staff":"Bogdan Antal"},{"id":"I-5026","nod":"81-001-0140","gps":[44.4202,26.1502],"address":"Str. Liviu Rebreanu 14, Bl. K, Sc. 3, Sector 3","time":"15:00","type":"Service","state":"","status":"Programată","staff":"Bogdan Antal"},{"id":"I-5027","nod":"81-001-0040","gps":[44.4432,26.1202],"address":"Calea Moșilor 241, Bl. 47, Sc. A+B+C, Sector 2","time":"10:00","type":"Service","state":"failed","status":"Nerealizată","staff":"Teodor Milian"},{"id":"I-5028","nod":"81-001-0001","gps":[44.4521,26.1102],"address":"Str. Stefan cel Mare 27, Bl. 27, Sc. 1, Sector 2","time":"13:00","type":"Service","state":"","status":"Programată","staff":"Teodor Milian"},{"id":"I-5030","nod":"81-001-0017","gps":[44.4301,26.0402],"address":"Str. Sibiu 18, Bl. 813, Sc. 1, Sector 6","time":"10:30","type":"Service","state":"progress","status":"În curs","staff":"Florin Stoica"},{"id":"I-5031","nod":"81-001-0467","gps":[44.4322,26.0302],"address":"Aleea Callatis 1, Bl. A14A, Sc. 7+8, Sector 6","time":"13:30","type":"Service","state":"","status":"Programată","staff":"Florin Stoica"},{"id":"I-5035","nod":"81-001-2108","gps":[44.4452,26.1452],"address":"Str. Cremenița 5, Corp B, Sector 2","time":"08:00","type":"Montaj","state":"progress","status":"În curs","staff":"Mihai Dobre"},{"id":"I-5036","nod":"81-001-0047","gps":[44.4602,26.1202],"address":"Str. Lacul Tei 121, Bl. 5, Sc. 1, Sector 2","time":"08:30","type":"Citire walk-by","state":"progress","status":"În curs","staff":"Radu Marinescu"}];
     var ALERTS = [{"nod":"81-001-0030","gps":[44.4372,26.1652],"title":"Gateway GW-40211","issue":"Nu transmite","type":"gw","sev":"Critic"},{"nod":"81-001-0053","gps":[44.4021,26.1152],"title":"Gateway GW-40188","issue":"Nu transmite","type":"gw","sev":"Critic"},{"nod":"81-001-0055","gps":[44.4182,26.1702],"title":"Contor apă 63333400","issue":"Flux invers","type":"apa","sev":"Ridicat"},{"nod":"81-001-0001","gps":[44.4521,26.1102],"title":"Repartitor 34061227","issue":"Sabotaj \/ demontare","type":"rep","sev":"Ridicat"}];
 
@@ -1471,12 +1715,12 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && do
     var pts = [];
     JOBS.forEach(function (j) {
         pts.push(j.gps);
-        SonicProMap.job(map, j.gps, j.state, SonicProMap.popup(j.id + ' · ' + j.time + ' · ' + j.type, 'NOD ' + j.nod + '<br>' + j.address + '<br>' + j.staff + ' · ' + j.status, '<a href="interventii.html">Intervenții</a>'));
+        SonicProMap.job(map, j.gps, j.state, SonicProMap.popup(j.id + ' · ' + j.time + ' · ' + j.type, 'NOD ' + j.nod + '<br>' + j.address + '<br>' + j.staff + ' · ' + j.status, '<a href="pro-calendar.html">Calendar echipe</a>'));
     });
     ALERTS.forEach(function (a) {
         pts.push(a.gps);
         SonicProMap.alert(map, a.gps, SonicProMap.popup(a.title + ' – ' + a.issue, 'NOD ' + a.nod + ' · ' + a.sev,
-            '<a href="pro-programare.html?nod=' + encodeURIComponent(a.nod) + '&types=' + a.type + '">Programează service</a>'));
+            '<a href="pro-intrare-noua.html?level=nod&key=' + encodeURIComponent(a.nod) + '&source=intern">Deschide ticket de service</a>'));
     });
     STAFF.forEach(function (s) {
         pts.push(s.pos);

@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
     <title>Editare Apartament – SONIC</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.31">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.37">
     <script src="assets/js/nod-picker.js"></script>
     <script src="assets/js/edit-tabs.js"></script>
     <script src="assets/js/datepicker.js"></script>
     <script src="assets/js/action-tooltip.js"></script>
+    <script src="assets/js/history-tab.js"></script>
 </head>
 <body>
 
@@ -182,15 +183,15 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO (dispecerat) -->
-                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                <!-- Panou SONIC PRO (dashboard) -->
+                <a href="pro-dashboard.html" class="nav-item " title="Panou">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
-                    <span class="nav-label">Dashboard</span>
+                    <span class="nav-label">Panou</span>
                 </a>
 
-                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <!-- ── DISPECERAT ── -->
                 <div class="nav-group " data-group="pro-dispecerat">
                     <button class="nav-group-title" type="button" title="Dispecerat">
                         <span class="nav-group-icon">
@@ -200,41 +201,54 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
-                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
-                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
-                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
-                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                        <a href="pro-intrare-noua.html" class="nav-subitem ">Intrare Nouă</a>
+                        <a href="pro-tickete.html" class="nav-subitem ">Tickete</a>
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
                     </div>
                 </div>
 
-                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
-                <div class="nav-group " data-group="pro-planificare">
-                    <button class="nav-group-title" type="button" title="Planificare">
+                <!-- Montaje (meniu separat; regândit 2026-11-25) -->
+                <a href="pro-montaje.html" class="nav-item " title="Montaje">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </span>
+                    <span class="nav-label">Montaje</span>
+                </a>
+
+                <!-- Citiri walk-by (meniu separat, cerință 2026-11-25) -->
+                <a href="pro-citiri.html" class="nav-item " title="Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
+                    </span>
+                    <span class="nav-label">Citiri</span>
+                </a>
+
+                <!-- ── MONITORIZARE ── -->
+                <div class="nav-group " data-group="pro-monitorizare">
+                    <button class="nav-group-title" type="button" title="Monitorizare">
                         <span class="nav-group-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                         </span>
-                        <span class="nav-label">Planificare</span>
+                        <span class="nav-label">Monitorizare</span>
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
-                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
                         <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
-                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
                     </div>
                 </div>
 
-                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <!-- ── RESURSE ── -->
                 <div class="nav-group " data-group="pro-resurse">
                     <button class="nav-group-title" type="button" title="Resurse">
                         <span class="nav-group-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
                         </span>
                         <span class="nav-label">Resurse</span>
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
-                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
-                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                        <a href="pro-biblioteca.html" class="nav-subitem ">Bibliotecă</a>
                     </div>
                 </div>
 
@@ -568,13 +582,13 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <!-- ── MASTER DATA ──────────────────────────────────────────── -->
                 <div class="nav-group open" data-group="master-data">
-                    <button class="nav-group-title" type="button" title="Master Data Management">
+                    <button class="nav-group-title" type="button" title="Master Data">
                         <span class="nav-group-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                         </span>
-                        <span class="nav-label">Master Data Management</span>
+                        <span class="nav-label">Master Data</span>
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
@@ -584,6 +598,21 @@
                         <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
                         <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
                         <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
+
+                <!-- ── PERSONAL ── -->
+                <div class="nav-group " data-group="personal">
+                    <button class="nav-group-title" type="button" title="Personal">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+                        </span>
+                        <span class="nav-label">Personal</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="personal.html" class="nav-subitem ">Angajați</a>
+                        <a href="personal-indisponibilitati.html" class="nav-subitem ">Concedii și Indisponibilități</a>
                     </div>
                 </div>
 
@@ -1430,180 +1459,219 @@
 </div>
 
 <!-- ══════════════════════════════════════════════════════════════════════
-     TAB 4 – Istoric (tot ce s-a realizat în apartament)
-     React: <FlatHistoryTab events={history} onOpen={openEvent} />   // GET /api/flats/{id}/history
+     TAB 4 – Istoric (tot ce s-a realizat în apartament: tickete – intervenții, răspunsuri scrise – și montajul inițial)
+     React: <HistoryPanel level="flat" id={flat.nod + '/' + flat.flat} />   // partials/history-tab.php
 ══════════════════════════════════════════════════════════════════════ -->
 <div id="tab-history" class="tab-pane " role="tabpanel" aria-labelledby="tabBtn-history" style="display: none;">
-
-    <!-- React: <ApartmentContextStrip apartment={flat} /> -->
-    <div class="utility-context-strip">
+        <div class="utility-context-strip">
         <div class="context-items">
-                                            <div class="context-item">
-                    <span class="context-label">Proprietar:</span>
-                    <strong class="context-value">TOMA BARBU ELENA</strong>                </div>
-                            <div class="context-sep"></div>                <div class="context-item">
-                    <span class="context-label">Adresă:</span>
-                    <span class="context-value">Str. STEFAN CEL MARE, Nr. 27, Bloc 27, Scara 1, Etaj 1, Ap. 1</span>                </div>
-                        <div class="context-sep"></div>
+            <div class="context-item"><span class="context-label">Proprietar:</span><strong class="context-value">TOMA BARBU ELENA</strong></div>
+            <div class="context-sep"></div>
+            <div class="context-item"><span class="context-label">Adresă:</span><span class="context-value">Str. STEFAN CEL MARE, Nr. 27, Bloc 27, Scara 1, Etaj 1, Ap. 1</span></div>
+            <div class="context-sep"></div>
             <div class="context-item"><span class="context-label">NOD:</span><strong class="context-value context-code">81-001-0001</strong></div>
+            <div class="context-sep"></div>
+            <div class="context-item"><span class="context-label">Cod Apartament:</span><strong class="context-value context-code">0001</strong></div>
         </div>
-        <div><span class="status-badge status-online">8 evenimente</span></div>
     </div>
-
+    
+<div class="history-panel" id="histFlatRoot">
     <!-- React: <HistoryKpis /> -->
     <div class="calc-kpi-grid">
-        <div class="calc-kpi"><span class="calc-kpi-label">Intervenții</span><span class="calc-kpi-value">3</span></div>
-        <div class="calc-kpi"><span class="calc-kpi-label">Răspunsuri scrise</span><span class="calc-kpi-value">2</span></div>
-        <div class="calc-kpi"><span class="calc-kpi-label">Operațiuni efectuate</span><span class="calc-kpi-value">14</span></div>
-        <div class="calc-kpi"><span class="calc-kpi-label">Ultima vizită în apartament</span><span class="calc-kpi-value">14.10.2026</span></div>
+        <div class="calc-kpi"><span class="calc-kpi-label">Tickete deschise</span><span class="calc-kpi-value">0</span></div>
+        <div class="calc-kpi"><span class="calc-kpi-label">Intervenții în teren</span><span class="calc-kpi-value">3</span></div>
+        <div class="calc-kpi"><span class="calc-kpi-label">Răspunsuri scrise / scrisori / apeluri</span><span class="calc-kpi-value">2</span></div>
+        <div class="calc-kpi"><span class="calc-kpi-label">Ultima vizită în teren</span><span class="calc-kpi-value">14.10.2026</span></div>
     </div>
 
-    <!-- React: <HistoryTable events={filtered} type={type} query={query} /> -->
+    <!-- ══ Filtrare istoric (RULES §1.5) ══ React: <HistoryFilterCard /> -->
+    <div class="card filter-card">
+        <div class="filter-card-head"><span class="filter-card-title">Filtrare istoric</span></div>
+        <form onsubmit="SonicHistory.filter('histFlat'); return false;">
+            <div class="filter-grid-3">
+                                <div class="form-group">
+                    <label class="form-label" for="histFlatEquip">Tip echipament</label>
+                    <select id="histFlatEquip" class="input-control" data-filter="equipment">
+                        <option value="">Toate</option>
+                        <option value="apa">Contor apă</option><option value="et">Contor energie termică</option><option value="rep">Repartitor</option><option value="gw">Gateway</option><option value="senzor">Senzor (fum / inundație / temperatură)</option>                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="histFlatKind">Tip acțiune</label>
+                    <select id="histFlatKind" class="input-control" data-filter="kind">
+                        <option value="">Toate</option>
+                        <option value="Intervenție teren">Intervenție teren</option><option value="Răspuns scris">Răspuns scris</option><option value="Scrisoare">Scrisoare</option><option value="Apel telefonic">Apel telefonic</option><option value="Montaj">Montaj</option>                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="histFlatSubject">Subiect</label>
+                    <select id="histFlatSubject" class="input-control" data-filter="subject">
+                        <option value="">Toate</option>
+                        <option value="S01">Avarie / defecțiune echipament</option><option value="S02">Echipament nu transmite</option><option value="S03">Contestație consum / factură</option><option value="S04">Montaj ulterior (absent la montaj)</option><option value="S05">Solicitare informații</option><option value="S06">Verificare metrologică / înlocuire</option><option value="S07">Sigiliu rupt / resigilare</option><option value="S08">Ofertă echipamente noi</option><option value="S09">Reclamație intervenție anterioară</option><option value="S10">Modificare date apartament (proprietar, persoane)</option>                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="histFlatStatus">Stare</label>
+                    <select id="histFlatStatus" class="input-control" data-filter="open">
+                        <option value="">Toate</option>
+                        <option value="1">Deschise</option>
+                        <option value="0">Rezolvate / închise</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="histFlatPerson">Realizat de</label>
+                    <select id="histFlatPerson" class="input-control" data-filter="by">
+                        <option value="">Toți</option>
+                        <option value="Andreea Pop">Andreea Pop</option><option value="Bogdan Antal">Bogdan Antal</option><option value="Cristian Pană">Cristian Pană</option><option value="Echipa de montaj 2">Echipa de montaj 2</option><option value="Elena Marin">Elena Marin</option><option value="Mihai Dobre">Mihai Dobre</option>                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="histFlatFrom">Perioadă</label>
+                    <div class="date-range-group">
+                        <input type="text" id="histFlatFrom" class="input-control" data-datepicker aria-label="De la">
+                        <input type="text" id="histFlatTo" class="input-control" data-datepicker aria-label="Până la">
+                    </div>
+                </div>
+                            </div>
+            <div class="filter-actions">
+                <button type="button" class="btn-secondary" onclick="SonicHistory.reset('histFlat')">Resetează</button>
+                <button type="submit" class="btn-primary">Caută</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- ══ Lista evenimentelor ══ React: <HistoryTable rows /> -->
     <div class="table-container">
         <div class="table-toolbar">
             <div class="table-toolbar-left">
-                <span class="table-count">Afișare <strong id="historyCount">8</strong> din <strong>8</strong> evenimente</span>
+                <span class="table-count">Afișare <strong id="histFlatCount">6</strong> din <strong>6</strong> înregistrări</span>
             </div>
             <div class="table-toolbar-right">
                 <div class="live-search-wrapper">
                     <span class="live-search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
-                    <input type="text" id="historySearch" class="input-control" placeholder="Caută serie, persoană, operațiune...">
+                    <input type="text" id="histFlatSearch" class="input-control" placeholder="Caută serie, persoană, operațiune, ticket…">
                 </div>
-            </div>
+                                <a href="pro-intrare-noua.html?level=flat&amp;key=81-001-0001%2F1" class="btn-secondary btn-add"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg><span>Adaugă Ticket</span></a>
+                            </div>
         </div>
-        <div class="water-filter-pills" role="group" aria-label="Tip eveniment">
-            <button type="button" class="water-filter-pill active" data-type="">Toate (8)</button>
-                        <button type="button" class="water-filter-pill" data-type="Intervenție">Intervenție (3)</button>
-                        <button type="button" class="water-filter-pill" data-type="Răspuns scris">Răspuns scris (2)</button>
-                        <button type="button" class="water-filter-pill" data-type="Solicitare">Solicitare (1)</button>
-                        <button type="button" class="water-filter-pill" data-type="Citire de control">Citire de control (1)</button>
-                        <button type="button" class="water-filter-pill" data-type="Montaj">Montaj (1)</button>
-                    </div>
         <div class="table-scroll">
-            <table class="partners-table">
+            <table class="partners-table table-compact">
                 <thead>
                     <tr>
-                        <th style="width: 120px;">Data</th>
-                        <th style="width: 140px;">Tip</th>
-                        <th>Ce s-a realizat</th>
-                        <th style="width: 170px;">Realizat de</th>
-                        <th style="width: 110px;">Referință</th>
-                        <th style="width: 80px; text-align: center;">Acțiuni</th>
+                        <th style="width: 100px;">Data</th>
+                        <th style="width: 80px;">Ticket</th>
+                        <th style="width: 140px;">Tip acțiune</th>
+                        <th style="min-width: 320px;">Ce s-a solicitat / realizat</th>
+                        <th style="width: 150px;">Echipamente</th>
+                                                <th style="width: 140px;">Realizat de</th>
+                        <th style="width: 100px;">Stare</th>
+                        <th style="width: 90px; text-align: center;">Acțiuni</th>
                     </tr>
                 </thead>
-                <tbody id="historyBody">
-                                        <tr data-type="Intervenție" data-search="contor apă caldă baie nu transmite înlocuit modul radio contor apă caldă baie (contor 63333400): 302140247 → 302771905 · resigilat contorul 63333400 – sigiliu nou sg-118402 · verificată transmisia lora: rssi −92 dbm, primul pachet recepționat la 11:34 bogdan antal i-4987 în garanție – fără cost pentru proprietar. modulul vechi returnat în magazie (rt-2026-0071).">
-                        <td style="white-space: nowrap;">14.10.2026<span class="list-sublabel">11:20</span></td>
-                        <td><span class="status-badge status-online">Intervenție</span></td>
-                        <td><div class="td-name">Contor apă caldă baie nu transmite</div><span class="list-sublabel">Înlocuit modul radio contor apă caldă baie (contor 63333400): 302140247 → 302771905 · Resigilat contorul 63333400 – sigiliu nou SG-118402 · Verificată transmisia LoRa: R…</span></td>
-                        <td>Bogdan Antal<span class="list-sublabel">Service</span></td>
-                        <td class="td-code">I-4987</td>
-                        <td style="text-align: center;">
-                            <button type="button" class="btn-action-icon" title="Vezi detaliile" onclick="openHistoryEvent(0)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
-                        </td>
+                <tbody id="histFlatBody">
+                                        <tr data-equipment="apa" data-kind="Intervenție teren" data-subject="S03" data-open="0"
+                        data-by="Bogdan Antal" data-date="2026-10-14" data-level="flat" data-nod="81-001-0001" data-flat="81-001-0001/1" data-search="t-5191 contestație consum / factură înlocuit modul radio contor apă caldă baie (contor 63333400): 302140247 → 302771905 · resigilat contorul 63333400 – sigiliu nou sg-118402 · verificată transmisia lora: rssi −92 dbm, primul pachet recepționat la 11:34 consider că suma pentru apa caldă din septembrie este prea mare față de lunile anterioare. vă rog să verificați contorul. bogdan antal 63333400 toma barbu elena · proprietar">
+                        <td style="white-space: nowrap;">14.10.2026<span class="list-sublabel">11:40</span></td>
+                        <td class="td-code"><a href="pro-ticket.html?id=T-5191" class="td-link">T-5191</a></td>
+                        <td><span class="status-badge status-online">Intervenție teren</span><span class="list-sublabel">E-mail</span></td>
+                        <td><div class="td-name">Contestație consum / factură</div><span class="list-sublabel">Înlocuit modul radio contor apă caldă baie (contor 63333400): 302140247 → 302771905 · Resigilat contorul 63333400 – sigiliu nou SG-118402 · Verificată transmis…</span></td>
+                        <td><div class="pro-chips"><span class="pro-chip">Contor apă</span></div></td>
+                                                <td>Bogdan Antal<span class="list-sublabel">Echipă teren</span></td>
+                        <td><span class="status-badge status-offline">Rezolvat</span></td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <button type="button" class="btn-action-icon" title="Vezi detaliile" onclick="SonicHistory.detail('histFlat', 0)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+                            <a href="pro-ticket.html?id=T-5191" class="btn-action-icon" title="Deschide ticketul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>                        </td>
                     </tr>
-                                        <tr data-type="Răspuns scris" data-search="răspuns: contestație consum apă caldă septembrie stimată doamnă toma, în urma verificării datelor transmise de contorul de apă caldă din baie am constatat că modulul radio nu a transmis între 02.09 și 28.09, iar consumul a fost estimat pe baza mediei ultimelor 3 luni. am programat înlocuirea modulului radio pentru 14.10.2026, fără costuri, iar diferența se va regulariza în calculul lunii octombrie. andreea pop s-2571 trimis pe e-mail; propus de ai din „estimarea consumului în lipsa citirii”, revizuit de operator.">
+                                        <tr data-equipment="apa" data-kind="Răspuns scris" data-subject="S03" data-open="0"
+                        data-by="Andreea Pop" data-date="2026-10-10" data-level="flat" data-nod="81-001-0001" data-flat="81-001-0001/1" data-search="t-5190 contestație consum / factură stimată doamnă toma, în urma verificării datelor transmise de contorul de apă caldă din baie am constatat că modulul radio nu a transmis între 02.09 și 28.09, iar consumul a fost estimat pe baza mediei ultimelor 3 luni. am programat înlocuirea modulului radio pentru 14.10.2026, fără costuri, iar diferența se va regulariza în calculul lunii octombrie. consider că suma pentru apa caldă din septembrie este prea mare față de lunile anterioare. vă rog să verificați contorul. andreea pop 63333400 toma barbu elena · proprietar">
                         <td style="white-space: nowrap;">10.10.2026<span class="list-sublabel">15:05</span></td>
+                        <td class="td-code"><a href="pro-ticket.html?id=T-5190" class="td-link">T-5190</a></td>
                         <td><span class="status-badge status-offline">Răspuns scris</span><span class="list-sublabel">E-mail</span></td>
-                        <td><div class="td-name">Răspuns: contestație consum apă caldă septembrie</div><span class="list-sublabel">Stimată doamnă Toma, în urma verificării datelor transmise de contorul de apă caldă din baie am constatat că modulul radio nu a transmis între 02.09 și 28.09, iar consum…</span></td>
-                        <td>Andreea Pop<span class="list-sublabel">Relații clienți</span></td>
-                        <td class="td-code">S-2571</td>
-                        <td style="text-align: center;">
-                            <button type="button" class="btn-action-icon" title="Vezi detaliile" onclick="openHistoryEvent(1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
-                        </td>
+                        <td><div class="td-name">Contestație consum / factură</div><span class="list-sublabel">Stimată doamnă Toma, în urma verificării datelor transmise de contorul de apă caldă din baie am constatat că modulul radio nu a transmis între 02.09 și 28.09, …</span></td>
+                        <td><div class="pro-chips"><span class="pro-chip">Contor apă</span></div></td>
+                                                <td>Andreea Pop<span class="list-sublabel">Relații clienți</span></td>
+                        <td><span class="status-badge status-offline">Rezolvat</span></td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <button type="button" class="btn-action-icon" title="Vezi detaliile" onclick="SonicHistory.detail('histFlat', 1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+                            <a href="pro-ticket.html?id=T-5190" class="btn-action-icon" title="Deschide ticketul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>                        </td>
                     </tr>
-                                        <tr data-type="Solicitare" data-search="contestație consum apă caldă septembrie consider că suma pentru apa caldă din septembrie este prea mare față de lunile anterioare. vă rog să verificați contorul. toma barbu elena s-2571 ">
-                        <td style="white-space: nowrap;">08.10.2026<span class="list-sublabel">09:42</span></td>
-                        <td><span class="status-badge status-warning">Solicitare</span><span class="list-sublabel">E-mail</span></td>
-                        <td><div class="td-name">Contestație consum apă caldă septembrie</div><span class="list-sublabel">Consider că suma pentru apa caldă din septembrie este prea mare față de lunile anterioare. Vă rog să verificați contorul.</span></td>
-                        <td>Toma Barbu Elena<span class="list-sublabel">Proprietar</span></td>
-                        <td class="td-code">S-2571</td>
-                        <td style="text-align: center;">
-                            <button type="button" class="btn-action-icon" title="Vezi detaliile" onclick="openHistoryEvent(2)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
-                        </td>
+                                        <tr data-equipment="rep" data-kind="Intervenție teren" data-subject="S01" data-open="0"
+                        data-by="Mihai Dobre" data-date="2026-07-22" data-level="flat" data-nod="81-001-0001" data-flat="81-001-0001/1" data-search="t-4890 avarie / defecțiune echipament înlocuit repartitorul din sufragerie (baterie descărcată): 34131619 → 34912001 · montat adaptor nou pe radiator (aluminiu, 600×1200) · transferat istoricul de unități pe noua serie repartitorul din sufragerie are afișajul stins. mihai dobre 34131619 toma barbu elena · proprietar">
+                        <td style="white-space: nowrap;">22.07.2026<span class="list-sublabel">13:40</span></td>
+                        <td class="td-code"><a href="pro-ticket.html?id=T-4890" class="td-link">T-4890</a></td>
+                        <td><span class="status-badge status-online">Intervenție teren</span><span class="list-sublabel">Telefon</span></td>
+                        <td><div class="td-name">Avarie / defecțiune echipament</div><span class="list-sublabel">Înlocuit repartitorul din sufragerie (baterie descărcată): 34131619 → 34912001 · Montat adaptor nou pe radiator (aluminiu, 600×1200) · Transferat istoricul de …</span></td>
+                        <td><div class="pro-chips"><span class="pro-chip">Repartitor</span></div></td>
+                                                <td>Mihai Dobre<span class="list-sublabel">Echipă teren</span></td>
+                        <td><span class="status-badge status-offline">Rezolvat</span></td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <button type="button" class="btn-action-icon" title="Vezi detaliile" onclick="SonicHistory.detail('histFlat', 2)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+                            <a href="pro-ticket.html?id=T-4890" class="btn-action-icon" title="Deschide ticketul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>                        </td>
                     </tr>
-                                        <tr data-type="Intervenție" data-search="repartitor cu afișaj stins – sufragerie înlocuit repartitorul din sufragerie (baterie descărcată): 34131619 → 34912001 · montat adaptor nou pe radiator (aluminiu, 600×1200) · transferat istoricul de unități pe noua serie mihai dobre i-4512 repartitorul vechi returnat în magazie. proprietar prezent, fișă semnată.">
-                        <td style="white-space: nowrap;">22.07.2026<span class="list-sublabel">13:10</span></td>
-                        <td><span class="status-badge status-online">Intervenție</span></td>
-                        <td><div class="td-name">Repartitor cu afișaj stins – sufragerie</div><span class="list-sublabel">Înlocuit repartitorul din sufragerie (baterie descărcată): 34131619 → 34912001 · Montat adaptor nou pe radiator (aluminiu, 600×1200) · Transferat istoricul de unități pe…</span></td>
-                        <td>Mihai Dobre<span class="list-sublabel">Montator</span></td>
-                        <td class="td-code">I-4512</td>
-                        <td style="text-align: center;">
-                            <button type="button" class="btn-action-icon" title="Vezi detaliile" onclick="openHistoryEvent(3)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
-                        </td>
-                    </tr>
-                                        <tr data-type="Citire de control" data-search="citire de control walk-by citire de control a celor 4 repartitoare – diferență față de citirea radio: 0 unități · citire vizuală contoare apă: ar baie 412,318 mc, ac baie 188,904 mc teodor milian i-4205 ">
-                        <td style="white-space: nowrap;">15.05.2026<span class="list-sublabel">10:30</span></td>
-                        <td><span class="status-badge status-offline">Citire de control</span></td>
-                        <td><div class="td-name">Citire de control walk-by</div><span class="list-sublabel">Citire de control a celor 4 repartitoare – diferență față de citirea radio: 0 unități · Citire vizuală contoare apă: AR baie 412,318 mc, AC baie 188,904 mc</span></td>
-                        <td>Teodor Milian<span class="list-sublabel">Cititor</span></td>
-                        <td class="td-code">I-4205</td>
-                        <td style="text-align: center;">
-                            <button type="button" class="btn-action-icon" title="Vezi detaliile" onclick="openHistoryEvent(4)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
-                        </td>
-                    </tr>
-                                        <tr data-type="Răspuns scris" data-search="răspuns: termenul verificării metrologice contoarele de apă din apartamentul dumneavoastră au fost montate pe 11.03.2015; verificarea metrologică este valabilă 5 ani de la ultima înlocuire, iar următoarea campanie în blocul dumneavoastră este planificată în trimestrul ii 2027. veți fi anunțată cu cel puțin 10 zile înainte. elena marin s-2210 răspuns la adresa scrisă nr. 418 / 24.02.2026, trimis prin poștă.">
+                                        <tr data-equipment="apa" data-kind="Scrisoare" data-subject="S06" data-open="0"
+                        data-by="Elena Marin" data-date="2026-03-03" data-level="flat" data-nod="81-001-0001" data-flat="81-001-0001/1" data-search="t-4788 verificare metrologică / înlocuire contoarele de apă din apartamentul dumneavoastră au fost montate pe 11.03.2015; verificarea metrologică este valabilă 5 ani de la ultima înlocuire, iar următoarea campanie în blocul dumneavoastră este planificată în trimestrul ii 2027. veți fi anunțată cu cel puțin 10 zile înainte. când trebuie făcută verificarea metrologică a contoarelor de apă din apartament? elena marin  toma barbu elena · proprietar">
                         <td style="white-space: nowrap;">03.03.2026<span class="list-sublabel">12:15</span></td>
-                        <td><span class="status-badge status-offline">Răspuns scris</span><span class="list-sublabel">Adresă scrisă</span></td>
-                        <td><div class="td-name">Răspuns: termenul verificării metrologice</div><span class="list-sublabel">Contoarele de apă din apartamentul dumneavoastră au fost montate pe 11.03.2015; verificarea metrologică este valabilă 5 ani de la ultima înlocuire, iar următoarea campan…</span></td>
-                        <td>Elena Marin<span class="list-sublabel">Relații clienți</span></td>
-                        <td class="td-code">S-2210</td>
-                        <td style="text-align: center;">
-                            <button type="button" class="btn-action-icon" title="Vezi detaliile" onclick="openHistoryEvent(5)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
-                        </td>
+                        <td class="td-code"><a href="pro-ticket.html?id=T-4788" class="td-link">T-4788</a></td>
+                        <td><span class="status-badge status-offline">Scrisoare</span><span class="list-sublabel">Adresă scrisă (poștă)</span></td>
+                        <td><div class="td-name">Verificare metrologică / înlocuire</div><span class="list-sublabel">Contoarele de apă din apartamentul dumneavoastră au fost montate pe 11.03.2015; verificarea metrologică este valabilă 5 ani de la ultima înlocuire, iar următoa…</span></td>
+                        <td><div class="pro-chips"><span class="pro-chip">Contor apă</span></div></td>
+                                                <td>Elena Marin<span class="list-sublabel">Relații clienți</span></td>
+                        <td><span class="status-badge status-offline">Rezolvat</span></td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <button type="button" class="btn-action-icon" title="Vezi detaliile" onclick="SonicHistory.detail('histFlat', 3)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+                            <a href="pro-ticket.html?id=T-4788" class="btn-action-icon" title="Deschide ticketul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>                        </td>
                     </tr>
-                                        <tr data-type="Intervenție" data-search="sigiliu rupt la renovarea băii resigilat contorul de apă rece din baie 63189283 – sigiliu nou sg-097133 · verificat indexul și sensul de curgere (fără flux invers) · proces-verbal de resigilare pv-1120 semnat de proprietar cristian pană i-3870 în afara garanției: încasat 60 ron taxă deplasare (chitanța snc-b 0042).">
-                        <td style="white-space: nowrap;">20.11.2025<span class="list-sublabel">16:40</span></td>
-                        <td><span class="status-badge status-online">Intervenție</span></td>
-                        <td><div class="td-name">Sigiliu rupt la renovarea băii</div><span class="list-sublabel">Resigilat contorul de apă rece din baie 63189283 – sigiliu nou SG-097133 · Verificat indexul și sensul de curgere (fără flux invers) · Proces-verbal de resigilare PV-112…</span></td>
-                        <td>Cristian Pană<span class="list-sublabel">Service</span></td>
-                        <td class="td-code">I-3870</td>
-                        <td style="text-align: center;">
-                            <button type="button" class="btn-action-icon" title="Vezi detaliile" onclick="openHistoryEvent(6)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
-                        </td>
+                                        <tr data-equipment="apa" data-kind="Intervenție teren" data-subject="S07" data-open="0"
+                        data-by="Cristian Pană" data-date="2025-11-20" data-level="flat" data-nod="81-001-0001" data-flat="81-001-0001/1" data-search="t-4102 sigiliu rupt / resigilare resigilat contorul de apă rece din baie 63189283 – sigiliu nou sg-097133 · verificat indexul și sensul de curgere (fără flux invers) · proces-verbal de resigilare pv-1120 semnat de proprietar sigiliul contorului de apă rece din baie s-a rupt la renovare. cristian pană 63189283 toma barbu elena · proprietar">
+                        <td style="white-space: nowrap;">20.11.2025<span class="list-sublabel">16:50</span></td>
+                        <td class="td-code"><a href="pro-ticket.html?id=T-4102" class="td-link">T-4102</a></td>
+                        <td><span class="status-badge status-online">Intervenție teren</span><span class="list-sublabel">Telefon</span></td>
+                        <td><div class="td-name">Sigiliu rupt / resigilare</div><span class="list-sublabel">Resigilat contorul de apă rece din baie 63189283 – sigiliu nou SG-097133 · Verificat indexul și sensul de curgere (fără flux invers) · Proces-verbal de resigil…</span></td>
+                        <td><div class="pro-chips"><span class="pro-chip">Contor apă</span></div></td>
+                                                <td>Cristian Pană<span class="list-sublabel">Echipă teren</span></td>
+                        <td><span class="status-badge status-offline">Rezolvat</span></td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <button type="button" class="btn-action-icon" title="Vezi detaliile" onclick="SonicHistory.detail('histFlat', 4)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+                            <a href="pro-ticket.html?id=T-4102" class="btn-action-icon" title="Deschide ticketul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>                        </td>
                     </tr>
-                                        <tr data-type="Montaj" data-search="montaj inițial echipamente montat 3 contoare apă: ac bucătărie 63326735, ar baie 63189283, ac baie 63333400 (module radio 302139123, 302658855, 302140247) · montat 4 repartitoare e-itn 30.4 (sufragerie, dormitor, bucătărie, baie) · sigilate toate contoarele; index inițial 0 echipa de montaj 2 m-0412 ">
+                                        <tr data-equipment="rep apa" data-kind="Montaj" data-subject="" data-open="0"
+                        data-by="Echipa de montaj 2" data-date="2015-03-11" data-level="flat" data-nod="81-001-0001" data-flat="" data-search=" montaj inițial echipamente montaj repartitor, contor apă – nod 81-001-0001  echipa de montaj 2  ">
                         <td style="white-space: nowrap;">11.03.2015<span class="list-sublabel">09:00</span></td>
+                        <td class="td-code">—</td>
                         <td><span class="status-badge status-online">Montaj</span></td>
-                        <td><div class="td-name">Montaj inițial echipamente</div><span class="list-sublabel">Montat 3 contoare apă: AC bucătărie 63326735, AR baie 63189283, AC baie 63333400 (module radio 302139123, 302658855, 302140247) · Montat 4 repartitoare E-ITN 30.4 (sufra…</span></td>
-                        <td>Echipa de montaj 2<span class="list-sublabel">Montator</span></td>
-                        <td class="td-code">M-0412</td>
-                        <td style="text-align: center;">
-                            <button type="button" class="btn-action-icon" title="Vezi detaliile" onclick="openHistoryEvent(7)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
-                        </td>
+                        <td><div class="td-name">Montaj inițial echipamente</div><span class="list-sublabel">Montaj Repartitor, Contor apă – NOD 81-001-0001</span></td>
+                        <td><div class="pro-chips"><span class="pro-chip">Repartitor</span><span class="pro-chip">Contor apă</span></div></td>
+                                                <td>Echipa de montaj 2<span class="list-sublabel">Montator</span></td>
+                        <td><span class="status-badge status-offline">Rezolvat</span></td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <button type="button" class="btn-action-icon" title="Vezi detaliile" onclick="SonicHistory.detail('histFlat', 5)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+                                                    </td>
                     </tr>
-                                        <tr id="historyEmpty" style="display: none;"><td colspan="6" class="table-empty">Niciun eveniment nu corespunde filtrării.</td></tr>
+                                        <tr class="js-history-empty" style="display: none;"><td colspan="8" class="table-empty">Niciun eveniment nu corespunde filtrării.</td></tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <div class="edit-actions-bar">
-        <a href="apartamente.html" class="btn-secondary">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="15 18 9 12 15 6"></polyline></svg>
-            <span>Înapoi la listă</span>
-        </a>
-        <div class="edit-actions-group">
-            <a href="pro-programare.html?nod=81-001-0001" class="btn-secondary">Programează intervenție</a>
-            <a href="pro-solicitari.html" class="btn-primary">Solicitare nouă</a>
-        </div>
+        <div class="edit-actions-bar">
+        <a href="apartamente.html" class="btn-secondary">Înapoi</a>
+        <a href="pro-intrare-noua.html?level=flat&amp;key=81-001-0001%2F1" class="btn-primary">Adaugă Ticket</a>
     </div>
-</div>
+    </div>
 
-<!-- ══ Modal detalii eveniment din istoric ══ React: <HistoryEventModal event={selected} onClose /> -->
-<div class="modal-overlay" id="historyModal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="historyModalTitle">
+
+<!-- Fereastra cu detaliile unui eveniment ══ React: <HistoryEventModal event /> -->
+<div class="modal-overlay" id="histFlatDetail" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="histFlatDetailTitle">
     <div class="modal-card" style="max-width: 640px; width: 95%;">
         <div class="modal-header">
-            <h3 id="historyModalTitle">Detalii eveniment</h3>
-            <button type="button" class="btn-close" title="Închide" onclick="closeHistoryEvent()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+            <h3 id="histFlatDetailTitle">Detalii</h3>
+            <button type="button" class="btn-close" title="Închide" onclick="SonicHistory.closeDetail('histFlat')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
         </div>
-        <div class="modal-body" id="historyModalBody"></div>
+        <div class="modal-body" id="histFlatDetailBody"></div>
         <div class="modal-footer">
-            <button type="button" class="btn-secondary" onclick="closeHistoryEvent()">Închide</button>
-            <button type="button" class="btn-primary" onclick="window.print()">Tipărește</button>
+            <button type="button" class="btn-secondary" onclick="SonicHistory.closeDetail('histFlat')">Închide</button>
+            <a href="#" class="btn-primary" id="histFlatDetailOpen">Deschide ticketul</a>
         </div>
     </div>
 </div>
+<script>window.SONIC_HISTORY = window.SONIC_HISTORY || {}; window.SONIC_HISTORY["histFlat"] = [{"date":"2026-10-14 11:40","ticket":"T-5191","entry":"IN-2026-1031","kind":"Intervenție teren","resolution":"teren","status":"Rezolvat","priority":"Normal","subject":"S03","title":"Contestație consum \/ factură","summary":"Înlocuit modul radio contor apă caldă baie (contor 63333400): 302140247 → 302771905 · Resigilat contorul 63333400 – sigiliu nou SG-118402 · Verificată transmisia LoRa: RSSI −92 dBm, primul pachet recepționat la 11:34","ops":["Înlocuit modul radio contor apă caldă baie (contor 63333400): 302140247 → 302771905","Resigilat contorul 63333400 – sigiliu nou SG-118402","Verificată transmisia LoRa: RSSI −92 dBm, primul pachet recepționat la 11:34"],"text":"","request":"Consider că suma pentru apa caldă din septembrie este prea mare față de lunile anterioare. Vă rog să verificați contorul.","equipment":["apa"],"serials":["63333400"],"by":"Bogdan Antal","role":"Echipă teren","source":"E-mail","contact":"Toma Barbu Elena · Proprietar","level":"flat","flats":["81-001-0001\/1"],"nod":"81-001-0001","note":""},{"date":"2026-10-10 15:05","ticket":"T-5190","entry":"IN-2026-1031","kind":"Răspuns scris","resolution":"scris","status":"Rezolvat","priority":"Normal","subject":"S03","title":"Contestație consum \/ factură","summary":"Stimată doamnă Toma, în urma verificării datelor transmise de contorul de apă caldă din baie am constatat că modulul radio nu a transmis între 02.09 și 28.09, iar consumul a fost estimat pe baza mediei ultimelor 3 luni. Am programat înlocuirea modulului radio pentru 14.10.2026, fără costuri, iar diferența se va regulariza în calculul lunii octombrie.","ops":[],"text":"Stimată doamnă Toma, în urma verificării datelor transmise de contorul de apă caldă din baie am constatat că modulul radio nu a transmis între 02.09 și 28.09, iar consumul a fost estimat pe baza mediei ultimelor 3 luni. Am programat înlocuirea modulului radio pentru 14.10.2026, fără costuri, iar diferența se va regulariza în calculul lunii octombrie.","request":"Consider că suma pentru apa caldă din septembrie este prea mare față de lunile anterioare. Vă rog să verificați contorul.","equipment":["apa"],"serials":["63333400"],"by":"Andreea Pop","role":"Relații clienți","source":"E-mail","contact":"Toma Barbu Elena · Proprietar","level":"flat","flats":["81-001-0001\/1"],"nod":"81-001-0001","note":""},{"date":"2026-07-22 13:40","ticket":"T-4890","entry":"IN-2026-0915","kind":"Intervenție teren","resolution":"teren","status":"Rezolvat","priority":"Normal","subject":"S01","title":"Avarie \/ defecțiune echipament","summary":"Înlocuit repartitorul din sufragerie (baterie descărcată): 34131619 → 34912001 · Montat adaptor nou pe radiator (aluminiu, 600×1200) · Transferat istoricul de unități pe noua serie","ops":["Înlocuit repartitorul din sufragerie (baterie descărcată): 34131619 → 34912001","Montat adaptor nou pe radiator (aluminiu, 600×1200)","Transferat istoricul de unități pe noua serie"],"text":"","request":"Repartitorul din sufragerie are afișajul stins.","equipment":["rep"],"serials":["34131619"],"by":"Mihai Dobre","role":"Echipă teren","source":"Telefon","contact":"Toma Barbu Elena · Proprietar","level":"flat","flats":["81-001-0001\/1"],"nod":"81-001-0001","note":""},{"date":"2026-03-03 12:15","ticket":"T-4788","entry":"IN-2026-0410","kind":"Scrisoare","resolution":"scrisoare","status":"Rezolvat","priority":"Scăzut","subject":"S06","title":"Verificare metrologică \/ înlocuire","summary":"Contoarele de apă din apartamentul dumneavoastră au fost montate pe 11.03.2015; verificarea metrologică este valabilă 5 ani de la ultima înlocuire, iar următoarea campanie în blocul dumneavoastră este planificată în trimestrul II 2027. Veți fi anunțată cu cel puțin 10 zile înainte.","ops":[],"text":"Contoarele de apă din apartamentul dumneavoastră au fost montate pe 11.03.2015; verificarea metrologică este valabilă 5 ani de la ultima înlocuire, iar următoarea campanie în blocul dumneavoastră este planificată în trimestrul II 2027. Veți fi anunțată cu cel puțin 10 zile înainte.","request":"Când trebuie făcută verificarea metrologică a contoarelor de apă din apartament?","equipment":["apa"],"serials":[],"by":"Elena Marin","role":"Relații clienți","source":"Adresă scrisă (poștă)","contact":"Toma Barbu Elena · Proprietar","level":"flat","flats":["81-001-0001\/1"],"nod":"81-001-0001","note":""},{"date":"2025-11-20 16:50","ticket":"T-4102","entry":"IN-2025-2210","kind":"Intervenție teren","resolution":"teren","status":"Rezolvat","priority":"Normal","subject":"S07","title":"Sigiliu rupt \/ resigilare","summary":"Resigilat contorul de apă rece din baie 63189283 – sigiliu nou SG-097133 · Verificat indexul și sensul de curgere (fără flux invers) · Proces-verbal de resigilare PV-1120 semnat de proprietar","ops":["Resigilat contorul de apă rece din baie 63189283 – sigiliu nou SG-097133","Verificat indexul și sensul de curgere (fără flux invers)","Proces-verbal de resigilare PV-1120 semnat de proprietar"],"text":"","request":"Sigiliul contorului de apă rece din baie s-a rupt la renovare.","equipment":["apa"],"serials":["63189283"],"by":"Cristian Pană","role":"Echipă teren","source":"Telefon","contact":"Toma Barbu Elena · Proprietar","level":"flat","flats":["81-001-0001\/1"],"nod":"81-001-0001","note":"Valoare de încasat: 60 RON (încasare în teren)"},{"date":"2015-03-11 09:00","ticket":"","entry":"","kind":"Montaj","resolution":"montaj","status":"Rezolvat","priority":"","subject":"","title":"Montaj inițial echipamente","summary":"Montaj Repartitor, Contor apă – NOD 81-001-0001","ops":["Montat echipamentele contractului: Repartitor, Contor apă","Sigilate contoarele; index inițial 0"],"text":"","request":"","equipment":["rep","apa"],"serials":[],"by":"Echipa de montaj 2","role":"Montator","source":"","contact":"","level":"flat","flats":[],"nod":"81-001-0001","note":""}];</script>
+    </div>
 
 <!-- ══ Modal Selector Oraș / Localitate ══════════════════════════════════ -->
 <div id="cityPickerModal" class="modal-overlay" style="display: none;">
@@ -2629,53 +2697,6 @@ function selectCity(cityName) {
     var modal = document.getElementById('cityPickerModal');
     if (modal) modal.style.display = 'none';
 }
-// ── Tab Istoric: filtrare pe tip + căutare + modal detalii (date demo – GET /api/flats/{id}/history) ──
-var FLAT_HISTORY = [{"date":"2026-10-14 11:20","type":"Intervenție","ref":"I-4987","by":"Bogdan Antal","role":"Service","title":"Contor apă caldă baie nu transmite","ops":["Înlocuit modul radio contor apă caldă baie (contor 63333400): 302140247 → 302771905","Resigilat contorul 63333400 – sigiliu nou SG-118402","Verificată transmisia LoRa: RSSI −92 dBm, primul pachet recepționat la 11:34"],"note":"În garanție – fără cost pentru proprietar. Modulul vechi returnat în magazie (RT-2026-0071).","result":"Finalizată","channel":""},{"date":"2026-10-10 15:05","type":"Răspuns scris","ref":"S-2571","by":"Andreea Pop","role":"Relații clienți","title":"Răspuns: contestație consum apă caldă septembrie","ops":[],"text":"Stimată doamnă Toma, în urma verificării datelor transmise de contorul de apă caldă din baie am constatat că modulul radio nu a transmis între 02.09 și 28.09, iar consumul a fost estimat pe baza mediei ultimelor 3 luni. Am programat înlocuirea modulului radio pentru 14.10.2026, fără costuri, iar diferența se va regulariza în calculul lunii octombrie.","note":"Trimis pe e-mail; propus de AI din „Estimarea consumului în lipsa citirii”, revizuit de operator.","result":"Răspuns trimis","channel":"E-mail"},{"date":"2026-10-08 09:42","type":"Solicitare","ref":"S-2571","by":"Toma Barbu Elena","role":"Proprietar","title":"Contestație consum apă caldă septembrie","ops":[],"text":"Consider că suma pentru apa caldă din septembrie este prea mare față de lunile anterioare. Vă rog să verificați contorul.","note":"","result":"Rezolvată","channel":"E-mail"},{"date":"2026-07-22 13:10","type":"Intervenție","ref":"I-4512","by":"Mihai Dobre","role":"Montator","title":"Repartitor cu afișaj stins – sufragerie","ops":["Înlocuit repartitorul din sufragerie (baterie descărcată): 34131619 → 34912001","Montat adaptor nou pe radiator (aluminiu, 600×1200)","Transferat istoricul de unități pe noua serie"],"note":"Repartitorul vechi returnat în magazie. Proprietar prezent, fișă semnată.","result":"Finalizată","channel":""},{"date":"2026-05-15 10:30","type":"Citire de control","ref":"I-4205","by":"Teodor Milian","role":"Cititor","title":"Citire de control walk-by","ops":["Citire de control a celor 4 repartitoare – diferență față de citirea radio: 0 unități","Citire vizuală contoare apă: AR baie 412,318 mc, AC baie 188,904 mc"],"note":"","result":"Finalizată","channel":""},{"date":"2026-03-03 12:15","type":"Răspuns scris","ref":"S-2210","by":"Elena Marin","role":"Relații clienți","title":"Răspuns: termenul verificării metrologice","ops":[],"text":"Contoarele de apă din apartamentul dumneavoastră au fost montate pe 11.03.2015; verificarea metrologică este valabilă 5 ani de la ultima înlocuire, iar următoarea campanie în blocul dumneavoastră este planificată în trimestrul II 2027. Veți fi anunțată cu cel puțin 10 zile înainte.","note":"Răspuns la adresa scrisă nr. 418 \/ 24.02.2026, trimis prin poștă.","result":"Răspuns trimis","channel":"Adresă scrisă"},{"date":"2025-11-20 16:40","type":"Intervenție","ref":"I-3870","by":"Cristian Pană","role":"Service","title":"Sigiliu rupt la renovarea băii","ops":["Resigilat contorul de apă rece din baie 63189283 – sigiliu nou SG-097133","Verificat indexul și sensul de curgere (fără flux invers)","Proces-verbal de resigilare PV-1120 semnat de proprietar"],"note":"În afara garanției: încasat 60 RON taxă deplasare (chitanța SNC-B 0042).","result":"Finalizată","channel":""},{"date":"2015-03-11 09:00","type":"Montaj","ref":"M-0412","by":"Echipa de montaj 2","role":"Montator","title":"Montaj inițial echipamente","ops":["Montat 3 contoare apă: AC bucătărie 63326735, AR baie 63189283, AC baie 63333400 (module radio 302139123, 302658855, 302140247)","Montat 4 repartitoare E-ITN 30.4 (sufragerie, dormitor, bucătărie, baie)","Sigilate toate contoarele; index inițial 0"],"note":"","result":"Finalizată","channel":""}];
-var historyType = '';
-function filterHistory() {
-    var q = (document.getElementById('historySearch').value || '').toLowerCase().trim(), n = 0;
-    document.querySelectorAll('#historyBody tr[data-type]').forEach(function (tr) {
-        var show = (!historyType || tr.getAttribute('data-type') === historyType) && (!q || tr.getAttribute('data-search').indexOf(q) !== -1);
-        tr.style.display = show ? '' : 'none';
-        if (show) n++;
-    });
-    document.getElementById('historyCount').textContent = n;
-    document.getElementById('historyEmpty').style.display = n ? 'none' : '';
-}
-function escH(t) { var d = document.createElement('div'); d.textContent = t == null ? '' : String(t); return d.innerHTML; }
-function openHistoryEvent(i) {
-    var e = FLAT_HISTORY[i], p = e.date.split(' ')[0].split('-');
-    var html = '<div class="utility-context-strip"><div class="context-items">' +
-        '<div class="context-item"><span class="context-label">Tip:</span><span class="context-value">' + escH(e.type) + '</span></div><div class="context-sep"></div>' +
-        '<div class="context-item"><span class="context-label">Data:</span><span class="context-value">' + p[2] + '.' + p[1] + '.' + p[0] + ' ' + e.date.substr(11, 5) + '</span></div><div class="context-sep"></div>' +
-        '<div class="context-item"><span class="context-label">Referință:</span><strong class="context-value context-code">' + escH(e.ref) + '</strong></div></div>' +
-        '<div><span class="status-badge status-online">' + escH(e.result) + '</span></div></div>' +
-        '<div class="form-group"><span class="form-label">' + escH(e.title) + '</span>' +
-        '<div class="form-static-value">' + escH(e.by) + ' · ' + escH(e.role) + (e.channel ? ' · ' + escH(e.channel) : '') + '</div></div>';
-    if (e.ops && e.ops.length) {
-        html += '<div class="form-group"><span class="form-label">Operațiuni efectuate</span><ul class="pro-feed">' + e.ops.map(function (o) {
-            return '<li class="pro-feed-item"><div class="pro-feed-body"><div class="pro-feed-text">' + escH(o).replace(/\b(\d{8,9}|SG-\d+)\b/g, '<span class="serial-value">$1</span>') + '</div></div></li>';
-        }).join('') + '</ul></div>';
-    }
-    if (e.text) html += '<div class="form-group"><span class="form-label">' + (e.type === 'Solicitare' ? 'Textul solicitării' : 'Textul răspunsului') + '</span><div class="calc-note">' + escH(e.text) + '</div></div>';
-    if (e.note) html += '<div class="form-group" style="margin-bottom: 0;"><span class="form-label">Observații</span><div class="form-static-value">' + escH(e.note) + '</div></div>';
-    document.getElementById('historyModalTitle').textContent = e.type + ' ' + e.ref;
-    document.getElementById('historyModalBody').innerHTML = html;
-    document.getElementById('historyModal').style.display = 'flex';
-}
-function closeHistoryEvent() { document.getElementById('historyModal').style.display = 'none'; }
-document.addEventListener('DOMContentLoaded', function () {
-    var search = document.getElementById('historySearch');
-    if (!search) return;
-    search.addEventListener('input', filterHistory);
-    document.querySelectorAll('#tab-history .water-filter-pill').forEach(function (b) {
-        b.addEventListener('click', function () {
-            document.querySelectorAll('#tab-history .water-filter-pill').forEach(function (x) { x.classList.toggle('active', x === b); });
-            historyType = b.getAttribute('data-type');
-            filterHistory();
-        });
-    });
-});
 </script>
 
     </div><!-- /.content -->

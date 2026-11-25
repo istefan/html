@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
     <title>Probleme Rețea – SONIC</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.31">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.37">
     <script src="assets/js/nod-picker.js"></script>
     <script src="assets/js/edit-tabs.js"></script>
     <script src="assets/js/datepicker.js"></script>
     <script src="assets/js/action-tooltip.js"></script>
+    <script src="assets/js/history-tab.js"></script>
 </head>
 <body>
 
@@ -182,16 +183,16 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO (dispecerat) -->
-                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                <!-- Panou SONIC PRO (dashboard) -->
+                <a href="pro-dashboard.html" class="nav-item " title="Panou">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
-                    <span class="nav-label">Dashboard</span>
+                    <span class="nav-label">Panou</span>
                 </a>
 
-                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
-                <div class="nav-group open" data-group="pro-dispecerat">
+                <!-- ── DISPECERAT ── -->
+                <div class="nav-group " data-group="pro-dispecerat">
                     <button class="nav-group-title" type="button" title="Dispecerat">
                         <span class="nav-group-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
@@ -200,41 +201,54 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
-                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
-                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
-                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
-                        <a href="pro-probleme-retea.html" class="nav-subitem active">Probleme Rețea</a>
+                        <a href="pro-intrare-noua.html" class="nav-subitem ">Intrare Nouă</a>
+                        <a href="pro-tickete.html" class="nav-subitem ">Tickete</a>
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
                     </div>
                 </div>
 
-                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
-                <div class="nav-group " data-group="pro-planificare">
-                    <button class="nav-group-title" type="button" title="Planificare">
+                <!-- Montaje (meniu separat; regândit 2026-11-25) -->
+                <a href="pro-montaje.html" class="nav-item " title="Montaje">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </span>
+                    <span class="nav-label">Montaje</span>
+                </a>
+
+                <!-- Citiri walk-by (meniu separat, cerință 2026-11-25) -->
+                <a href="pro-citiri.html" class="nav-item " title="Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
+                    </span>
+                    <span class="nav-label">Citiri</span>
+                </a>
+
+                <!-- ── MONITORIZARE ── -->
+                <div class="nav-group open" data-group="pro-monitorizare">
+                    <button class="nav-group-title" type="button" title="Monitorizare">
                         <span class="nav-group-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                         </span>
-                        <span class="nav-label">Planificare</span>
+                        <span class="nav-label">Monitorizare</span>
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
-                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem active">Probleme Rețea</a>
                         <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
-                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
                     </div>
                 </div>
 
-                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <!-- ── RESURSE ── -->
                 <div class="nav-group " data-group="pro-resurse">
                     <button class="nav-group-title" type="button" title="Resurse">
                         <span class="nav-group-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
                         </span>
                         <span class="nav-label">Resurse</span>
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
-                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
-                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                        <a href="pro-biblioteca.html" class="nav-subitem ">Bibliotecă</a>
                     </div>
                 </div>
 
@@ -568,13 +582,13 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <!-- ── MASTER DATA ──────────────────────────────────────────── -->
                 <div class="nav-group " data-group="master-data">
-                    <button class="nav-group-title" type="button" title="Master Data Management">
+                    <button class="nav-group-title" type="button" title="Master Data">
                         <span class="nav-group-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                         </span>
-                        <span class="nav-label">Master Data Management</span>
+                        <span class="nav-label">Master Data</span>
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
@@ -584,6 +598,21 @@
                         <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
                         <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
                         <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
+
+                <!-- ── PERSONAL ── -->
+                <div class="nav-group " data-group="personal">
+                    <button class="nav-group-title" type="button" title="Personal">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+                        </span>
+                        <span class="nav-label">Personal</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="personal.html" class="nav-subitem ">Angajați</a>
+                        <a href="personal-indisponibilitati.html" class="nav-subitem ">Concedii și Indisponibilități</a>
                     </div>
                 </div>
 
@@ -716,7 +745,7 @@
                             aria-selected="false"
                             aria-controls="help-pane-2"
                             data-tab="2">
-                        Programare service / Notificare urgentă                    </button>
+                        Ticket de service / Notificare urgentă                    </button>
                                     </nav>
                 <!-- Tab content panes -->
                 <div class="help-tab-content">
@@ -759,7 +788,7 @@
                         
             <h4>Acțiuni pe rând</h4>
             <ul>
-                <li><strong>Programează service</strong> – deschide programarea cu NOD-ul, tipul de echipament și problema precompletate; sistemul recomandă ziua, ora și persoana după traseu, competență și stoc.</li>
+                <li><strong>Deschide ticket de service</strong> – deschide o intrare nouă (sursa Intern) cu NOD-ul precompletat; ticketul de intervenție se programează apoi din pagina ticketului.</li>
                 <li><strong>Notificare urgentă</strong> – trimite o notificare în aplicația mobilă tuturor persoanelor de service disponibile azi, cu competența necesară, ordonate după distanță. Primul care acceptă preia intervenția („cine ajunge primul”).</li>
                 <li><strong>Detalii echipament</strong> – NOD-ul, adresa, garanția, echipamentele de pe NOD și ultimele transmisii ale echipamentului.</li>
                 <li><strong>Marchează ca rezolvat</strong> – după confirmare, problema primește starea „Rezolvat” și nu mai este numărată sus.</li>
@@ -985,7 +1014,7 @@
                             <td class="js-iv-cell" style="white-space: nowrap;">
                                 —                            </td>
                             <td style="text-align: center; white-space: nowrap;">
-                                <a href="pro-programare.html?nod=81-001-0030&amp;types=gw&amp;alert=R-901" class="btn-action-icon" title="Programează service">
+                                <a href="pro-intrare-noua.html?level=nod&amp;key=81-001-0030&amp;source=intern" class="btn-action-icon" title="Deschide ticket de service">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><line x1="12" y1="13" x2="12" y2="19"></line><line x1="9" y1="16" x2="15" y2="16"></line></svg>
                                 </a>
                                 <button type="button" class="btn-action-icon js-urgent" title="Notificare urgentă" onclick="openUrgent('R-901')">
@@ -1020,7 +1049,7 @@
                             <td class="js-iv-cell" style="white-space: nowrap;">
                                 —                            </td>
                             <td style="text-align: center; white-space: nowrap;">
-                                <a href="pro-programare.html?nod=81-001-0053&amp;types=gw&amp;alert=R-902" class="btn-action-icon" title="Programează service">
+                                <a href="pro-intrare-noua.html?level=nod&amp;key=81-001-0053&amp;source=intern" class="btn-action-icon" title="Deschide ticket de service">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><line x1="12" y1="13" x2="12" y2="19"></line><line x1="9" y1="16" x2="15" y2="16"></line></svg>
                                 </a>
                                 <button type="button" class="btn-action-icon js-urgent" title="Notificare urgentă" onclick="openUrgent('R-902')">
@@ -1053,10 +1082,10 @@
                                                                 <span class="status-badge status-online">În garanție</span>
                                                             </td>
                             <td class="js-iv-cell" style="white-space: nowrap;">
-                                                                <a href="interventii.html" class="td-link" title="Programată – Teodor Milian">I-5028 · 28.10</a>
+                                                                <a href="pro-tickete.html" class="td-link" title="Programată – Teodor Milian">I-5028 · 28.10</a>
                                                             </td>
                             <td style="text-align: center; white-space: nowrap;">
-                                <a href="pro-programare.html?nod=81-001-0001&amp;types=rep&amp;alert=R-904" class="btn-action-icon" title="Programează service">
+                                <a href="pro-intrare-noua.html?level=nod&amp;key=81-001-0001&amp;source=intern" class="btn-action-icon" title="Deschide ticket de service">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><line x1="12" y1="13" x2="12" y2="19"></line><line x1="9" y1="16" x2="15" y2="16"></line></svg>
                                 </a>
                                 <button type="button" class="btn-action-icon js-urgent" title="Notificare urgentă" onclick="openUrgent('R-904')">
@@ -1091,7 +1120,7 @@
                             <td class="js-iv-cell" style="white-space: nowrap;">
                                 —                            </td>
                             <td style="text-align: center; white-space: nowrap;">
-                                <a href="pro-programare.html?nod=81-001-0055&amp;types=apa&amp;alert=R-903" class="btn-action-icon" title="Programează service">
+                                <a href="pro-intrare-noua.html?level=nod&amp;key=81-001-0055&amp;source=intern" class="btn-action-icon" title="Deschide ticket de service">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><line x1="12" y1="13" x2="12" y2="19"></line><line x1="9" y1="16" x2="15" y2="16"></line></svg>
                                 </a>
                                 <button type="button" class="btn-action-icon js-urgent" title="Notificare urgentă" onclick="openUrgent('R-903')">
@@ -1126,7 +1155,7 @@
                             <td class="js-iv-cell" style="white-space: nowrap;">
                                 —                            </td>
                             <td style="text-align: center; white-space: nowrap;">
-                                <a href="pro-programare.html?nod=81-001-0140&amp;types=rep&amp;alert=R-906" class="btn-action-icon" title="Programează service">
+                                <a href="pro-intrare-noua.html?level=nod&amp;key=81-001-0140&amp;source=intern" class="btn-action-icon" title="Deschide ticket de service">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><line x1="12" y1="13" x2="12" y2="19"></line><line x1="9" y1="16" x2="15" y2="16"></line></svg>
                                 </a>
                                 <button type="button" class="btn-action-icon js-urgent" title="Notificare urgentă" onclick="openUrgent('R-906')">
@@ -1161,7 +1190,7 @@
                             <td class="js-iv-cell" style="white-space: nowrap;">
                                 —                            </td>
                             <td style="text-align: center; white-space: nowrap;">
-                                <a href="pro-programare.html?nod=81-001-0023&amp;types=et&amp;alert=R-905" class="btn-action-icon" title="Programează service">
+                                <a href="pro-intrare-noua.html?level=nod&amp;key=81-001-0023&amp;source=intern" class="btn-action-icon" title="Deschide ticket de service">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><line x1="12" y1="13" x2="12" y2="19"></line><line x1="9" y1="16" x2="15" y2="16"></line></svg>
                                 </a>
                                 <button type="button" class="btn-action-icon js-urgent" title="Notificare urgentă" onclick="openUrgent('R-905')">
@@ -1194,10 +1223,10 @@
                                                                 <span class="status-badge status-online">În garanție</span>
                                                             </td>
                             <td class="js-iv-cell" style="white-space: nowrap;">
-                                                                <a href="interventii.html" class="td-link" title="Programată – Cristian Pană">I-5023 · 28.10</a>
+                                                                <a href="pro-tickete.html" class="td-link" title="Programată – Cristian Pană">I-5023 · 28.10</a>
                                                             </td>
                             <td style="text-align: center; white-space: nowrap;">
-                                <a href="pro-programare.html?nod=81-001-0021&amp;types=senzor&amp;alert=R-907" class="btn-action-icon" title="Programează service">
+                                <a href="pro-intrare-noua.html?level=nod&amp;key=81-001-0021&amp;source=intern" class="btn-action-icon" title="Deschide ticket de service">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><line x1="12" y1="13" x2="12" y2="19"></line><line x1="9" y1="16" x2="15" y2="16"></line></svg>
                                 </a>
                                 <button type="button" class="btn-action-icon js-urgent" title="Notificare urgentă" onclick="openUrgent('R-907')">
@@ -1232,7 +1261,7 @@
                             <td class="js-iv-cell" style="white-space: nowrap;">
                                 —                            </td>
                             <td style="text-align: center; white-space: nowrap;">
-                                <a href="pro-programare.html?nod=81-001-0040&amp;types=apa&amp;alert=R-908" class="btn-action-icon" title="Programează service">
+                                <a href="pro-intrare-noua.html?level=nod&amp;key=81-001-0040&amp;source=intern" class="btn-action-icon" title="Deschide ticket de service">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><line x1="12" y1="13" x2="12" y2="19"></line><line x1="9" y1="16" x2="15" y2="16"></line></svg>
                                 </a>
                                 <button type="button" class="btn-action-icon js-urgent" title="Notificare urgentă" onclick="openUrgent('R-908')">
@@ -1320,7 +1349,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn-secondary" onclick="closeDeviceDetails()">Renunță</button>
-                    <a href="#" class="btn-primary" id="ddSchedule">Programează service</a>
+                    <a href="#" class="btn-primary" id="ddSchedule">Deschide ticket de service</a>
                 </div>
             </div>
         </div>
@@ -1625,7 +1654,7 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && do
  * Probleme Rețea – filtrare / căutare / paginație client-side, modal „Detalii echipament”,
  * notificare urgentă și marcarea ca rezolvat (date demo; în producție: API-urile din antetul fișierului).
  */
-var NET_ALERTS = {"R-901":{"id":"R-901","device":"Gateway","type":"gw","serial":"GW-40211","nod":"81-001-0030","address":"Str. Vergului 65, Bl. 17, Sc. A, Sector 2","partner":"Asociația de Proprietari Bloc 17 Sc. A","issue":"Nu transmite","detail":"4 zile fără comunicare; 46 de repartitoare dependente.","severity":"Critic","since":"24.10.2026 22:10","ago":"acum 3 zile","lastInt":"04.04.2024","warranty":false,"warrantyUntil":"04.04.2026","equipment":"Repartitor, Gateway","hasIntervention":false,"link":"pro-programare.html?nod=81-001-0030&types=gw&alert=R-901","events":[{"kind":"alert","title":"Comunicare întreruptă","text":"4 zile fără comunicare; 46 de repartitoare dependente.","when":"24.10.2026 22:10"},{"kind":"ok","title":"Transmisie reușită","text":"Pachet de date primit de la echipamentele dependente.","when":"24.10.2026 20:10"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"23.10.2026 20:10"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"22.10.2026 20:10"}]},"R-902":{"id":"R-902","device":"Gateway","type":"gw","serial":"GW-40188","nod":"81-001-0053","address":"Calea Văcărești 308, Bl. 1E, Sc. 1, Sector 4","partner":"Asociația de Proprietari Bloc 1E","issue":"Nu transmite","detail":"Ultimul semnal: tensiune 4,9 V (sub prag).","severity":"Critic","since":"27.10.2026 03:45","ago":"acum o zi","lastInt":"01.12.2025","warranty":true,"warrantyUntil":"01.12.2027","equipment":"Contor energie termică, Contor apă, Gateway","hasIntervention":false,"link":"pro-programare.html?nod=81-001-0053&types=gw&alert=R-902","events":[{"kind":"alert","title":"Comunicare întreruptă","text":"Ultimul semnal: tensiune 4,9 V (sub prag).","when":"27.10.2026 03:45"},{"kind":"ok","title":"Transmisie reușită","text":"Pachet de date primit de la echipamentele dependente.","when":"27.10.2026 01:45"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"26.10.2026 01:45"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"25.10.2026 02:45"}]},"R-904":{"id":"R-904","device":"Repartitor","type":"rep","serial":"34061227","nod":"81-001-0001","address":"Str. Stefan cel Mare 27, Bl. 27, Sc. 1, Sector 2","partner":"Asociația de Proprietari Bloc 27 Scara 1","issue":"Sabotaj \/ demontare","detail":"Senzor de demontare activat.","severity":"Ridicat","since":"25.10.2026 11:02","ago":"acum 3 zile","lastInt":"14.03.2025","warranty":true,"warrantyUntil":"14.03.2027","equipment":"Repartitor, Contor apă","hasIntervention":true,"link":"pro-programare.html?nod=81-001-0001&types=rep&alert=R-904","events":[{"kind":"warn","title":"Ultima transmisie – alarma este încă activă","text":"Sabotaj \/ demontare","when":"28.10.2026 06:00"},{"kind":"alert","title":"Alarmă: Sabotaj \/ demontare","text":"Senzor de demontare activat.","when":"25.10.2026 11:02"},{"kind":"ok","title":"Transmisie reușită","text":"Index transmis, fără erori.","when":"25.10.2026 09:02"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"24.10.2026 10:02"}]},"R-903":{"id":"R-903","device":"Contor apă","type":"apa","serial":"63333400","nod":"81-001-0055","address":"Aleea Bârsănești 2, Bl. 156, Sc. 2, Sector 6","partner":"Asociația de Proprietari Bloc 156 Sc. 2","issue":"Flux invers","detail":"Index invers +0,42 mc – posibil montaj invers.","severity":"Ridicat","since":"26.10.2026 18:20","ago":"acum o zi","lastInt":"11.03.2026","warranty":true,"warrantyUntil":"11.03.2028","equipment":"Contor apă, Gateway","hasIntervention":false,"link":"pro-programare.html?nod=81-001-0055&types=apa&alert=R-903","events":[{"kind":"warn","title":"Ultima transmisie – alarma este încă activă","text":"Flux invers","when":"28.10.2026 06:00"},{"kind":"alert","title":"Alarmă: Flux invers","text":"Index invers +0,42 mc – posibil montaj invers.","when":"26.10.2026 18:20"},{"kind":"ok","title":"Transmisie reușită","text":"Index transmis, fără erori.","when":"26.10.2026 16:20"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"25.10.2026 16:20"}]},"R-906":{"id":"R-906","device":"Repartitor","type":"rep","serial":"34722225","nod":"81-001-0140","address":"Str. Liviu Rebreanu 14, Bl. K, Sc. 3, Sector 3","partner":"Asociația de Proprietari Bloc K","issue":"Baterie descărcată","detail":"Autonomie estimată \u003C 30 zile.","severity":"Mediu","since":"20.10.2026 07:00","ago":"acum 8 zile","lastInt":"19.01.2024","warranty":false,"warrantyUntil":"19.01.2026","equipment":"Repartitor, Contor energie termică","hasIntervention":false,"link":"pro-programare.html?nod=81-001-0140&types=rep&alert=R-906","events":[{"kind":"warn","title":"Ultima transmisie – alarma este încă activă","text":"Baterie descărcată","when":"28.10.2026 06:00"},{"kind":"alert","title":"Alarmă: Baterie descărcată","text":"Autonomie estimată \u003C 30 zile.","when":"20.10.2026 07:00"},{"kind":"ok","title":"Transmisie reușită","text":"Index transmis, fără erori.","when":"20.10.2026 05:00"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"19.10.2026 05:00"}]},"R-905":{"id":"R-905","device":"Contor ET","type":"et","serial":"ET-77120","nod":"81-001-0023","address":"Str. Oteșani 14, Bl. T8B, Sc. 1, Sector 2","partner":"Asociația de Proprietari Bloc T8B","issue":"Eroare E3 (senzor temp.)","detail":"Diferență de temperatură invalidă tur \/ retur.","severity":"Mediu","since":"27.10.2026 09:30","ago":"acum o zi","lastInt":"30.08.2026","warranty":true,"warrantyUntil":"30.08.2028","equipment":"Contor energie termică, Repartitor","hasIntervention":false,"link":"pro-programare.html?nod=81-001-0023&types=et&alert=R-905","events":[{"kind":"warn","title":"Ultima transmisie – alarma este încă activă","text":"Eroare E3 (senzor temp.)","when":"28.10.2026 06:00"},{"kind":"alert","title":"Alarmă: Eroare E3 (senzor temp.)","text":"Diferență de temperatură invalidă tur \/ retur.","when":"27.10.2026 09:30"},{"kind":"ok","title":"Transmisie reușită","text":"Index transmis, fără erori.","when":"27.10.2026 07:30"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"26.10.2026 07:30"}]},"R-907":{"id":"R-907","device":"Senzor","type":"senzor","serial":"SZ-1102","nod":"81-001-0021","address":"Str. Bucureștii Noi 26, Bl. 1, Sc. A, Sector 1","partner":"Asociația de Proprietari Bloc 1","issue":"Nu transmite","detail":"Senzor inundație subsol.","severity":"Mediu","since":"27.10.2026 20:15","ago":"acum 15 ore","lastInt":"15.07.2025","warranty":true,"warrantyUntil":"15.07.2027","equipment":"Contor apă, Senzor (fum \/ inundație \/ temperatură)","hasIntervention":true,"link":"pro-programare.html?nod=81-001-0021&types=senzor&alert=R-907","events":[{"kind":"alert","title":"Comunicare întreruptă","text":"Senzor inundație subsol.","when":"27.10.2026 20:15"},{"kind":"ok","title":"Transmisie reușită","text":"Index transmis, fără erori.","when":"27.10.2026 18:15"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"26.10.2026 18:15"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"25.10.2026 18:15"}]},"R-908":{"id":"R-908","device":"Contor apă","type":"apa","serial":"63189283","nod":"81-001-0040","address":"Calea Moșilor 241, Bl. 47, Sc. A+B+C, Sector 2","partner":"Asociația de Proprietari Bloc 47","issue":"Nu transmite","detail":"Modul radio – semnal slab (RSSI -112 dBm).","severity":"Scăzut","since":"22.10.2026 14:00","ago":"acum 5 zile","lastInt":"12.09.2026","warranty":true,"warrantyUntil":"12.09.2028","equipment":"Repartitor, Contor apă, Gateway","hasIntervention":false,"link":"pro-programare.html?nod=81-001-0040&types=apa&alert=R-908","events":[{"kind":"alert","title":"Comunicare întreruptă","text":"Modul radio – semnal slab (RSSI -112 dBm).","when":"22.10.2026 14:00"},{"kind":"ok","title":"Transmisie reușită","text":"Index transmis, fără erori.","when":"22.10.2026 12:00"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"21.10.2026 12:00"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"20.10.2026 12:00"}]}};
+var NET_ALERTS = {"R-901":{"id":"R-901","device":"Gateway","type":"gw","serial":"GW-40211","nod":"81-001-0030","address":"Str. Vergului 65, Bl. 17, Sc. A, Sector 2","partner":"Asociația de Proprietari Bloc 17 Sc. A","issue":"Nu transmite","detail":"4 zile fără comunicare; 46 de repartitoare dependente.","severity":"Critic","since":"24.10.2026 22:10","ago":"acum 3 zile","lastInt":"04.04.2024","warranty":false,"warrantyUntil":"04.04.2026","equipment":"Repartitor, Gateway","hasIntervention":false,"link":"pro-intrare-noua.html?level=nod&key=81-001-0030&source=intern","events":[{"kind":"alert","title":"Comunicare întreruptă","text":"4 zile fără comunicare; 46 de repartitoare dependente.","when":"24.10.2026 22:10"},{"kind":"ok","title":"Transmisie reușită","text":"Pachet de date primit de la echipamentele dependente.","when":"24.10.2026 20:10"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"23.10.2026 20:10"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"22.10.2026 20:10"}]},"R-902":{"id":"R-902","device":"Gateway","type":"gw","serial":"GW-40188","nod":"81-001-0053","address":"Calea Văcărești 308, Bl. 1E, Sc. 1, Sector 4","partner":"Asociația de Proprietari Bloc 1E","issue":"Nu transmite","detail":"Ultimul semnal: tensiune 4,9 V (sub prag).","severity":"Critic","since":"27.10.2026 03:45","ago":"acum o zi","lastInt":"01.12.2025","warranty":true,"warrantyUntil":"01.12.2027","equipment":"Contor energie termică, Contor apă, Gateway","hasIntervention":false,"link":"pro-intrare-noua.html?level=nod&key=81-001-0053&source=intern","events":[{"kind":"alert","title":"Comunicare întreruptă","text":"Ultimul semnal: tensiune 4,9 V (sub prag).","when":"27.10.2026 03:45"},{"kind":"ok","title":"Transmisie reușită","text":"Pachet de date primit de la echipamentele dependente.","when":"27.10.2026 01:45"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"26.10.2026 01:45"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"25.10.2026 01:45"}]},"R-904":{"id":"R-904","device":"Repartitor","type":"rep","serial":"34061227","nod":"81-001-0001","address":"Str. Stefan cel Mare 27, Bl. 27, Sc. 1, Sector 2","partner":"Asociația de Proprietari Bloc 27 Scara 1","issue":"Sabotaj \/ demontare","detail":"Senzor de demontare activat.","severity":"Ridicat","since":"25.10.2026 11:02","ago":"acum 3 zile","lastInt":"14.03.2025","warranty":true,"warrantyUntil":"14.03.2027","equipment":"Repartitor, Contor apă","hasIntervention":true,"link":"pro-intrare-noua.html?level=nod&key=81-001-0001&source=intern","events":[{"kind":"warn","title":"Ultima transmisie – alarma este încă activă","text":"Sabotaj \/ demontare","when":"28.10.2026 06:00"},{"kind":"alert","title":"Alarmă: Sabotaj \/ demontare","text":"Senzor de demontare activat.","when":"25.10.2026 11:02"},{"kind":"ok","title":"Transmisie reușită","text":"Index transmis, fără erori.","when":"25.10.2026 09:02"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"24.10.2026 09:02"}]},"R-903":{"id":"R-903","device":"Contor apă","type":"apa","serial":"63333400","nod":"81-001-0055","address":"Aleea Bârsănești 2, Bl. 156, Sc. 2, Sector 6","partner":"Asociația de Proprietari Bloc 156 Sc. 2","issue":"Flux invers","detail":"Index invers +0,42 mc – posibil montaj invers.","severity":"Ridicat","since":"26.10.2026 18:20","ago":"acum o zi","lastInt":"11.03.2026","warranty":true,"warrantyUntil":"11.03.2028","equipment":"Contor apă, Gateway","hasIntervention":false,"link":"pro-intrare-noua.html?level=nod&key=81-001-0055&source=intern","events":[{"kind":"warn","title":"Ultima transmisie – alarma este încă activă","text":"Flux invers","when":"28.10.2026 06:00"},{"kind":"alert","title":"Alarmă: Flux invers","text":"Index invers +0,42 mc – posibil montaj invers.","when":"26.10.2026 18:20"},{"kind":"ok","title":"Transmisie reușită","text":"Index transmis, fără erori.","when":"26.10.2026 16:20"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"25.10.2026 16:20"}]},"R-906":{"id":"R-906","device":"Repartitor","type":"rep","serial":"34722225","nod":"81-001-0140","address":"Str. Liviu Rebreanu 14, Bl. K, Sc. 3, Sector 3","partner":"Asociația de Proprietari Bloc K","issue":"Baterie descărcată","detail":"Autonomie estimată \u003C 30 zile.","severity":"Mediu","since":"20.10.2026 07:00","ago":"acum 8 zile","lastInt":"19.01.2024","warranty":false,"warrantyUntil":"19.01.2026","equipment":"Repartitor, Contor energie termică","hasIntervention":false,"link":"pro-intrare-noua.html?level=nod&key=81-001-0140&source=intern","events":[{"kind":"warn","title":"Ultima transmisie – alarma este încă activă","text":"Baterie descărcată","when":"28.10.2026 06:00"},{"kind":"alert","title":"Alarmă: Baterie descărcată","text":"Autonomie estimată \u003C 30 zile.","when":"20.10.2026 07:00"},{"kind":"ok","title":"Transmisie reușită","text":"Index transmis, fără erori.","when":"20.10.2026 05:00"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"19.10.2026 05:00"}]},"R-905":{"id":"R-905","device":"Contor ET","type":"et","serial":"ET-77120","nod":"81-001-0023","address":"Str. Oteșani 14, Bl. T8B, Sc. 1, Sector 2","partner":"Asociația de Proprietari Bloc T8B","issue":"Eroare E3 (senzor temp.)","detail":"Diferență de temperatură invalidă tur \/ retur.","severity":"Mediu","since":"27.10.2026 09:30","ago":"acum o zi","lastInt":"30.08.2026","warranty":true,"warrantyUntil":"30.08.2028","equipment":"Contor energie termică, Repartitor","hasIntervention":false,"link":"pro-intrare-noua.html?level=nod&key=81-001-0023&source=intern","events":[{"kind":"warn","title":"Ultima transmisie – alarma este încă activă","text":"Eroare E3 (senzor temp.)","when":"28.10.2026 06:00"},{"kind":"alert","title":"Alarmă: Eroare E3 (senzor temp.)","text":"Diferență de temperatură invalidă tur \/ retur.","when":"27.10.2026 09:30"},{"kind":"ok","title":"Transmisie reușită","text":"Index transmis, fără erori.","when":"27.10.2026 07:30"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"26.10.2026 07:30"}]},"R-907":{"id":"R-907","device":"Senzor","type":"senzor","serial":"SZ-1102","nod":"81-001-0021","address":"Str. Bucureștii Noi 26, Bl. 1, Sc. A, Sector 1","partner":"Asociația de Proprietari Bloc 1","issue":"Nu transmite","detail":"Senzor inundație subsol.","severity":"Mediu","since":"27.10.2026 20:15","ago":"acum 15 ore","lastInt":"15.07.2025","warranty":true,"warrantyUntil":"15.07.2027","equipment":"Contor apă, Senzor (fum \/ inundație \/ temperatură)","hasIntervention":true,"link":"pro-intrare-noua.html?level=nod&key=81-001-0021&source=intern","events":[{"kind":"alert","title":"Comunicare întreruptă","text":"Senzor inundație subsol.","when":"27.10.2026 20:15"},{"kind":"ok","title":"Transmisie reușită","text":"Index transmis, fără erori.","when":"27.10.2026 18:15"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"26.10.2026 18:15"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"25.10.2026 18:15"}]},"R-908":{"id":"R-908","device":"Contor apă","type":"apa","serial":"63189283","nod":"81-001-0040","address":"Calea Moșilor 241, Bl. 47, Sc. A+B+C, Sector 2","partner":"Asociația de Proprietari Bloc 47","issue":"Nu transmite","detail":"Modul radio – semnal slab (RSSI -112 dBm).","severity":"Scăzut","since":"22.10.2026 14:00","ago":"acum 5 zile","lastInt":"12.09.2026","warranty":true,"warrantyUntil":"12.09.2028","equipment":"Repartitor, Contor apă, Gateway","hasIntervention":false,"link":"pro-intrare-noua.html?level=nod&key=81-001-0040&source=intern","events":[{"kind":"alert","title":"Comunicare întreruptă","text":"Modul radio – semnal slab (RSSI -112 dBm).","when":"22.10.2026 14:00"},{"kind":"ok","title":"Transmisie reușită","text":"Index transmis, fără erori.","when":"22.10.2026 12:00"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"21.10.2026 12:00"},{"kind":"ok","title":"Transmisie reușită","text":"Transmisie zilnică programată.","when":"20.10.2026 12:00"}]}};
 var GW = {"total":128,"online":124,"offline":4};
 var netResolved = {};
 var netPage = 1;
@@ -1719,7 +1748,7 @@ function openUrgent(id) {
             // Intervenția urgentă acceptată apare în coloana „Intervenție”
             a.hasIntervention = true;
             var row = document.querySelector('#alertsTableBody tr[data-id="' + id + '"]');
-            if (row) row.querySelector('.js-iv-cell').innerHTML = '<a href="interventii.html" class="td-link" title="Intervenție urgentă acceptată">Urgentă · ' + netEsc(staff.name) + '</a>';
+            if (row) row.querySelector('.js-iv-cell').innerHTML = '<a href="pro-tickete.html" class="td-link" title="Intervenție urgentă acceptată">Urgentă · ' + netEsc(staff.name) + '</a>';
             netUpdateCounters();
         }
     });

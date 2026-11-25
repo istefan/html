@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
+    <title>Editare Angajat – SONIC</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.37">
+    <script src="assets/js/nod-picker.js"></script>
+    <script src="assets/js/edit-tabs.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/action-tooltip.js"></script>
+    <script src="assets/js/history-tab.js"></script>
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+<script>
+    (function() {
+        var sb = document.getElementById('sidebar');
+        var ls = localStorage.getItem('sb_collapsed');
+        if (ls === '1') sb.classList.add('collapsed');
+        else if (ls === '0') sb.classList.remove('collapsed');
+    })();
+</script>
+    <!-- ── Logo ─────────────────────────────────────────────────────── -->
+    <!-- React: <SidebarLogo activeApp={activeApp} /> -->
+    <div class="logo">
+        <a href="sonic-dashboard.html" title="SONIC – Acasă">
+            <img src="assets/images/sonic-logo.svg"
+                 alt="SONIC"
+                 class="logo-full"
+                 id="sidebarLogo">
+            <span class="logo-icon" id="sidebarLogoIcon" aria-hidden="true">S</span>
+        </a>
+    </div>
+
+    <!-- ── Nav ───────────────────────────────────────────────────────── -->
+    <!-- React: <SidebarNav activeApp={activeApp} onAppChange={setActiveApp} /> -->
+    <nav class="sidebar-nav" aria-label="Navigare principală">
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  1. SONIC GRID
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-grid"
+             data-logo="assets/images/sonic-grid-logo.svg"
+             data-logo-icon="SG">
+            <button class="app-section-header" type="button" title="SONIC GRID">
+                <img src="assets/images/sonic-grid-logo.svg" class="app-section-logo" alt="SONIC GRID">
+                <span class="app-section-badge">SG</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Panoul Meu -->
+                <a href="panoul-meu.html" class="nav-item " title="Panoul Meu">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </span>
+                    <span class="nav-label">Panoul Meu</span>
+                </a>
+
+                <!-- Adresele Mele -->
+                <a href="adresele-mele.html" class="nav-item " title="Adresele Mele">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </span>
+                    <span class="nav-label">Adresele Mele</span>
+                </a>
+
+                <!-- Regiuni / Zone -->
+                <a href="regiuni-zone.html" class="nav-item " title="Regiuni / Zone">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </span>
+                    <span class="nav-label">Regiuni / Zone</span>
+                </a>
+
+                <!-- Perioade Citiri -->
+                <a href="perioade-citiri.html" class="nav-item " title="Perioade Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </span>
+                    <span class="nav-label">Perioade Citiri</span>
+                </a>
+
+                <!-- Setări Alerte -->
+                <a href="setari-alerte.html" class="nav-item " title="Setări Alerte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </span>
+                    <span class="nav-label">Setări Alerte</span>
+                </a>
+
+                <!-- Info Center -->
+                <a href="info-center.html" class="nav-item " title="Info Center">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    <span class="nav-label">Info Center</span>
+                </a>
+
+                <!-- Contact -->
+                <a href="contact.html" class="nav-item " title="Contact">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </span>
+                    <span class="nav-label">Contact</span>
+                </a>
+
+                <!-- ── RAPOARTE (section label) ── -->
+                <div class="nav-section">Rapoarte</div>
+
+                <!-- Raport Citiri -->
+                <a href="raport-citiri.html" class="nav-item " title="Raport Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Raport Citiri</span>
+                </a>
+
+                <!-- Bilanț Neînchideri Apă -->
+                <a href="bilant-neinchideri.html" class="nav-item " title="Bilanț Neînchideri Apă">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                    </span>
+                    <span class="nav-label">Bilanț Neînchideri Apă</span>
+                </a>
+
+                <!-- Estimări Consum -->
+                <a href="estimari-consum.html" class="nav-item " title="Estimări Consum">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </span>
+                    <span class="nav-label">Estimări Consum</span>
+                </a>
+
+                <!-- Raport Alerte -->
+                <a href="raport-alerte.html" class="nav-item " title="Raport Alerte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Raport Alerte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  2. SONIC MARKET
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-market"
+             data-logo="assets/images/sonic-market-logo.svg"
+             data-logo-icon="SM">
+            <button class="app-section-header" type="button" title="SONIC MARKET">
+                <img src="assets/images/sonic-market-logo.svg" class="app-section-logo" alt="SONIC MARKET">
+                <span class="app-section-badge">SM</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard Market -->
+                <a href="market-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  3. SONIC PRO
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-pro"
+             data-logo="assets/images/sonic-pro-logo.svg"
+             data-logo-icon="SP">
+            <button class="app-section-header" type="button" title="SONIC PRO">
+                <img src="assets/images/sonic-pro-logo.svg" class="app-section-logo" alt="SONIC PRO">
+                <span class="app-section-badge">SP</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Panou SONIC PRO (dashboard) -->
+                <a href="pro-dashboard.html" class="nav-item " title="Panou">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Panou</span>
+                </a>
+
+                <!-- ── DISPECERAT ── -->
+                <div class="nav-group " data-group="pro-dispecerat">
+                    <button class="nav-group-title" type="button" title="Dispecerat">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                        </span>
+                        <span class="nav-label">Dispecerat</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-intrare-noua.html" class="nav-subitem ">Intrare Nouă</a>
+                        <a href="pro-tickete.html" class="nav-subitem ">Tickete</a>
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                    </div>
+                </div>
+
+                <!-- Montaje (meniu separat; regândit 2026-11-25) -->
+                <a href="pro-montaje.html" class="nav-item " title="Montaje">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </span>
+                    <span class="nav-label">Montaje</span>
+                </a>
+
+                <!-- Citiri walk-by (meniu separat, cerință 2026-11-25) -->
+                <a href="pro-citiri.html" class="nav-item " title="Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
+                    </span>
+                    <span class="nav-label">Citiri</span>
+                </a>
+
+                <!-- ── MONITORIZARE ── -->
+                <div class="nav-group " data-group="pro-monitorizare">
+                    <button class="nav-group-title" type="button" title="Monitorizare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                        </span>
+                        <span class="nav-label">Monitorizare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                        <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
+                    </div>
+                </div>
+
+                <!-- ── RESURSE ── -->
+                <div class="nav-group " data-group="pro-resurse">
+                    <button class="nav-group-title" type="button" title="Resurse">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Resurse</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="pro-biblioteca.html" class="nav-subitem ">Bibliotecă</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  4. SONIC BILLING
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-billing"
+             data-logo="assets/images/sonic-billing-logo.svg"
+             data-logo-icon="SB">
+            <button class="app-section-header" type="button" title="SONIC BILLING">
+                <img src="assets/images/sonic-billing-logo.svg" class="app-section-logo" alt="SONIC BILLING">
+                <span class="app-section-badge">SB</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard -->
+                <a href="index.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── ADMINISTRARE ─────────────────────────────────────────── -->
+                <div class="nav-group " data-group="administrare">
+                    <button class="nav-group-title" type="button" title="Administrare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                        </span>
+                        <span class="nav-label">Administrare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="utilizatori.html" class="nav-subitem ">Utilizatori</a>
+                        <a href="cititori.html" class="nav-subitem ">Cititori</a>
+                        <a href="parametri-sistem.html" class="nav-subitem ">Parametri Sistem</a>
+                        <a href="stergere-perioade.html" class="nav-subitem ">Ștergere Perioade Calcul</a>
+                    </div>
+                </div>
+
+                <!-- ── DICTIONARE ───────────────────────────────────────────── -->
+                <div class="nav-group " data-group="dictionare">
+                    <button class="nav-group-title" type="button" title="Dictionare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Dictionare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="localitati.html" class="nav-subitem ">Localități</a>
+                        <a href="puncte-lucru.html" class="nav-subitem ">Puncte de Lucru</a>
+                        <a href="producatori.html" class="nav-subitem ">Producători</a>
+                        <a href="furnizori.html" class="nav-subitem ">Furnizori Utilități</a>
+                        <a href="unitati-masura.html" class="nav-subitem ">Unități de Măsură</a>
+                        <a href="tipuri-servicii.html" class="nav-subitem ">Tipuri Servicii</a>
+                        <a href="companii.html" class="nav-subitem ">Companii</a>
+                    </div>
+                </div>
+
+                <!-- ── DATABANK MANAGEMENT ──────────────────────────────────── -->
+                <div class="nav-group " data-group="databank">
+                    <button class="nav-group-title" type="button" title="Databank Management">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                        </span>
+                        <span class="nav-label">Databank Management</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="tipuri-radiatoare.html" class="nav-subitem ">Tipuri Radiatoare</a>
+                        <a href="modele-radiatoare.html" class="nav-subitem ">Modele Radiatoare</a>
+                        <a href="modele-repartitoare.html" class="nav-subitem ">Modele Repartitoare</a>
+                        <a href="modele-contoare.html" class="nav-subitem ">Modele Contoare</a>
+                        <a href="serii-apometre.html" class="nav-subitem ">Serii Apometre Achiziționate</a>
+                    </div>
+                </div>
+
+                <!-- ── CALCUL ────────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="calcul">
+                    <button class="nav-group-title" type="button" title="Calcul">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </span>
+                        <span class="nav-label">Calcul</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="initiere-calcul.html" class="nav-subitem ">Inițiere Calcul</a>
+                        <a href="monitorizare-calcul.html" class="nav-subitem ">Monitorizare Calcul</a>
+                        <a href="perioda-calcul.html" class="nav-subitem ">Perioadă de Calcul</a>
+                        <a href="sezoane.html" class="nav-subitem ">Sezoane</a>
+                        <a href="tarife.html" class="nav-subitem ">Tarife</a>
+                    </div>
+                </div>
+
+                <!-- ── IMPORT / EXPORT CITIRI ───────────────────────────────── -->
+                <div class="nav-group " data-group="import-export">
+                    <button class="nav-group-title" type="button" title="Import / Export Citiri">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </span>
+                        <span class="nav-label">Import / Export Citiri</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="citire-manuala-et.html" class="nav-subitem ">Citire Manuală ET</a>
+                        <a href="citire-manuala-apa.html" class="nav-subitem ">Citire Manuală Apă</a>
+                        <a href="citiri-brute-et.html" class="nav-subitem ">Citiri Brute Energie Termică</a>
+                        <a href="citiri-brute-apa.html" class="nav-subitem ">Citiri Brute Apă</a>
+                        <a href="export-pl.html" class="nav-subitem ">Export PL</a>
+                    </div>
+                </div>
+
+                <!-- ── CONSUM ENERGIE TERMICĂ ────────────────────────────────── -->
+                <div class="nav-group " data-group="consum-et">
+                    <button class="nav-group-title" type="button" title="Consum Energie Termică">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                        </span>
+                        <span class="nav-label">Consum Energie Termică</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="consum-et-detaliat.html" class="nav-subitem ">Introducere Detaliată</a>
+                        <a href="consum-et-cumulat.html" class="nav-subitem ">Introducere Cumulată</a>
+                    </div>
+                </div>
+
+                <!-- ── CONSUM APĂ ─────────────────────────────────────────────── -->
+                <div class="nav-group " data-group="consum-apa">
+                    <button class="nav-group-title" type="button" title="Consum Apă">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L7 10a5 5 0 0 0 10 0L12 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Consum Apă</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="consum-apa-detaliat.html" class="nav-subitem ">Introducere Detaliată</a>
+                    </div>
+                </div>
+
+                <!-- ── VALIDARE CITIRE ───────────────────────────────────────── -->
+                <div class="nav-group " data-group="validare">
+                    <button class="nav-group-title" type="button" title="Validare Citire">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </span>
+                        <span class="nav-label">Validare Citire</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="validare-et.html" class="nav-subitem ">Validare Citire – ET</a>
+                        <a href="validare-apa.html" class="nav-subitem ">Validare Citire – Apă</a>
+                        <a href="cost-split-apa.html" class="nav-subitem ">Cost Split – Apă</a>
+                    </div>
+                </div>
+
+                <!-- ── GESTIUNE FACTURARE (standalone) ──────────────────────── -->
+                <a href="facturare.html" class="nav-item " title="Gestiune Facturare">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </span>
+                    <span class="nav-label">Gestiune Facturare</span>
+                </a>
+
+                <!-- ── GESTIUNE TIPĂRIRE ───────────────────────────────────────── -->
+                <div class="nav-group " data-group="tiparire">
+                    <button class="nav-group-title" type="button" title="Gestiune Tipărire">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                        </span>
+                        <span class="nav-label">Gestiune Tipărire</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="nod-tiparire.html" class="nav-subitem ">NOD pentru Tipărire</a>
+                        <a href="fise-citire.html" class="nav-subitem ">Fișe Citire</a>
+                    </div>
+                </div>
+
+                <!-- ── RAPOARTE (standalone) ──────────────────────────────────── -->
+                <a href="rapoarte.html" class="nav-item " title="Rapoarte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <span class="nav-label">Rapoarte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  5. SONIC FIN
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section"
+             data-app="sonic-fin"
+             data-logo="assets/images/sonic-fin-logo.svg"
+             data-logo-icon="SF">
+            <button class="app-section-header" type="button" title="SONIC FIN">
+                <img src="assets/images/sonic-fin-logo.svg" class="app-section-logo" alt="SONIC FIN">
+                <span class="app-section-badge">SF</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard FIN -->
+                <a href="fin-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── MONTAJE & FACTURARE ── -->
+                <div class="nav-group " data-group="fin-montaje">
+                    <button class="nav-group-title" type="button" title="Montaje & Facturare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>
+                        </span>
+                        <span class="nav-label">Montaje & Facturare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-validare-montaje.html" class="nav-subitem ">Validare Montaje</a>
+                        <a href="fin-facturare-echipamente.html" class="nav-subitem ">Facturare Echipamente</a>
+                        <a href="fin-rate.html" class="nav-subitem ">Scadențar Rate</a>
+                        <a href="fin-facturi.html" class="nav-subitem ">Facturi</a>
+                    </div>
+                </div>
+
+                <!-- ── ÎNCASĂRI ── -->
+                <div class="nav-group " data-group="fin-incasari">
+                    <button class="nav-group-title" type="button" title="Încasări">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+                        </span>
+                        <span class="nav-label">Încasări</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-chitante.html" class="nav-subitem ">Chitanțe</a>
+                        <a href="fin-chitantiere.html" class="nav-subitem ">Chitanțiere</a>
+                        <a href="fin-incasari-banca.html" class="nav-subitem ">Încasări Bancă</a>
+                        <a href="fin-recalculare.html" class="nav-subitem ">Recalculare Solduri</a>
+                    </div>
+                </div>
+
+                <!-- ── CREANȚE ── -->
+                <div class="nav-group " data-group="fin-creante">
+                    <button class="nav-group-title" type="button" title="Creanțe">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                        </span>
+                        <span class="nav-label">Creanțe</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-creante.html" class="nav-subitem ">Urmărire Creanțe</a>
+                        <a href="fin-alerte.html" class="nav-subitem ">Alerte SMS și E-mail</a>
+                    </div>
+                </div>
+
+                <!-- ── GESTIUNE STOCURI ── -->
+                <div class="nav-group " data-group="fin-gestiune">
+                    <button class="nav-group-title" type="button" title="Gestiune Stocuri">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                        </span>
+                        <span class="nav-label">Gestiune Stocuri</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-gestiuni.html" class="nav-subitem ">Gestiuni</a>
+                        <a href="fin-intrari.html" class="nav-subitem ">Intrări în Gestiune</a>
+                        <a href="fin-iesiri.html" class="nav-subitem ">Ieșiri și Transferuri</a>
+                        <a href="fin-retururi.html" class="nav-subitem ">Retururi</a>
+                        <a href="fin-comenzi-furnizori.html" class="nav-subitem ">Comenzi Furnizori</a>
+                        <a href="fin-necesar-marfa.html" class="nav-subitem ">Necesar de Comandat</a>
+                    </div>
+                </div>
+
+                <!-- ── NOMENCLATOARE ── -->
+                <div class="nav-group " data-group="fin-nomenclatoare">
+                    <button class="nav-group-title" type="button" title="Nomenclatoare">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </span>
+                        <span class="nav-label">Nomenclatoare</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="fin-produse.html" class="nav-subitem ">Produse</a>
+                        <a href="fin-nomenclatoare.html" class="nav-subitem ">Nomenclatoare Financiare</a>
+                    </div>
+                </div>
+
+                <!-- ── RAPOARTE FIN (standalone) ── -->
+                <a href="fin-rapoarte.html" class="nav-item " title="Rapoarte">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    <span class="nav-label">Rapoarte</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ╔══════════════════════════════════════════════════════════════
+             ║  6. SONIC (Base – Ecosistem & Configurare)
+             ╚══════════════════════════════════════════════════════════════ -->
+        <div class="app-section open"
+             data-app="sonic"
+             data-logo="assets/images/sonic-logo.svg"
+             data-logo-icon="S">
+            <button class="app-section-header" type="button" title="SONIC">
+                <img src="assets/images/sonic-logo.svg" class="app-section-logo" alt="SONIC">
+                <span class="app-section-badge">S</span>
+            </button>
+            <div class="app-section-body">
+
+                <!-- Dashboard SONIC -->
+                <a href="sonic-dashboard.html" class="nav-item " title="Dashboard">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                    </span>
+                    <span class="nav-label">Dashboard</span>
+                </a>
+
+                <!-- ── MASTER DATA ──────────────────────────────────────────── -->
+                <div class="nav-group " data-group="master-data">
+                    <button class="nav-group-title" type="button" title="Master Data">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="nav-label">Master Data</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="parteneri.html" class="nav-subitem ">Parteneri</a>
+                        <a href="contracte.html" class="nav-subitem ">Contracte</a>
+                        <a href="apartamente.html" class="nav-subitem ">Apartamente</a>
+                        <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
+                        <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
+                        <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
+
+                <!-- ── PERSONAL ── -->
+                <div class="nav-group open" data-group="personal">
+                    <button class="nav-group-title" type="button" title="Personal">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+                        </span>
+                        <span class="nav-label">Personal</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="personal.html" class="nav-subitem active">Angajați</a>
+                        <a href="personal-indisponibilitati.html" class="nav-subitem ">Concedii și Indisponibilități</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- ── Sidebar Footer ─────────────────────────────────────────────── -->
+    <!-- React: <SidebarFooter /> -->
+    <div class="sidebar-footer">
+        <a href="contul-meu.html" class="nav-item " title="Contul Meu">
+            <span class="nav-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <span class="nav-label">Contul Meu</span>
+        </a>
+    </div>
+
+</aside>
+
+<!-- React: <main className="main"> -->
+<div class="main">
+
+    <!--
+        React: <Header
+            onToggleSidebar={toggleSidebar}
+            isCollapsed={isCollapsed}
+            isMobileOpen={isMobileOpen}
+            pageTitle={pageTitle}
+        />
+    -->
+    <div class="header">
+
+        <!-- LEFT: hamburger / sidebar-toggle + search (desktop) -->
+        <div class="header-left">
+            <!--
+                React: <SidebarToggleBtn
+                    onClick={onToggleSidebar}
+                    isCollapsed={isCollapsed}
+                    isMobile={isMobile}
+                />
+                Desktop: panel-left icon with collapse arrow
+                Mobile : hamburger icon
+            -->
+            <button class="sidebar-toggle-btn" id="sidebarToggle"
+                    title="Restrânge / Extinde meniu"
+                    aria-label="Toggle sidebar"
+                    data-collapsed="0">
+                <script>
+                    (function() {
+                        var btn = document.getElementById('sidebarToggle');
+                        var ls = localStorage.getItem('sb_collapsed');
+                        if (ls === '1') btn.setAttribute('data-collapsed', '1');
+                        else if (ls === '0') btn.setAttribute('data-collapsed', '0');
+                    })();
+                </script>
+                <!-- Mobile hamburger (hidden on desktop via CSS) -->
+                <svg class="icon-hamburger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+                <!-- Desktop panel icon (hidden on mobile via CSS) -->
+                <svg class="icon-panel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <line x1="9" y1="3" x2="9" y2="21"/>
+                    <polyline points="15 8 12 12 15 16" class="toggle-arrow"/>
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- CENTER: logo (mobile only, absolutely centered) -->
+        <!-- React: isMobile && <HeaderLogo /> -->
+        <div class="header-logo" aria-hidden="true">
+                        <a href="sonic-dashboard.html">
+                <img src="assets/images/sonic-logo.svg" alt="SONIC" id="headerLogo">
+            </a>
+        </div>
+
+        <!-- RIGHT: page title (desktop) + user + logout -->
+        <div class="header-actions">
+            <!-- Titlul paginii în header (desktop, ascuns pe mobil) – NU este breadcrumb -->
+            <div class="header-page-title">Editare Angajat</div>
+
+            <!-- User profile avatar (always visible) -->
+            <a href="contul-meu.html" class="user-profile" title="Contul meu">SI</a>
+
+            <!-- Logout button – icon only, always visible -->
+            <!-- React: <LogoutBtn onClick={handleLogout} /> -->
+            <a href="login.html" class="logout-btn" title="Deconectare" aria-label="Deconectare">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+            </a>
+        </div>
+
+    </div><!-- /.header -->
+
+    <!--
+        CONTEXTUAL HELP BAR (WordPress-style)
+        React: <HelpBar onToggle={toggleHelp} isOpen={isHelpOpen} />
+               <HelpPanel isOpen={isHelpOpen} tabs={helpTabs} />
+    -->
+    <div class="help-wrapper">
+        <div class="help-panel" id="helpPanel" aria-hidden="true" role="complementary" aria-label="Ajutor contextual">
+            <div class="help-panel-inner">
+                                    <!-- Tabs navigation -->
+                <nav class="help-tabs-nav" role="tablist" aria-label="Secțiuni ajutor">
+                                        <button class="help-tab-btn active"
+                            role="tab"
+                            id="help-tab-0"
+                            aria-selected="true"
+                            aria-controls="help-pane-0"
+                            data-tab="0">
+                        Prezentare generală                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-1"
+                            aria-selected="false"
+                            aria-controls="help-pane-1"
+                            data-tab="1">
+                        Concediul de odihnă                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-2"
+                            aria-selected="false"
+                            aria-controls="help-pane-2"
+                            data-tab="2">
+                        Concediul medical                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-3"
+                            aria-selected="false"
+                            aria-controls="help-pane-3"
+                            data-tab="3">
+                        Alte absențe                    </button>
+                                        <button class="help-tab-btn "
+                            role="tab"
+                            id="help-tab-4"
+                            aria-selected="false"
+                            aria-controls="help-pane-4"
+                            data-tab="4">
+                        Teren                    </button>
+                                    </nav>
+                <!-- Tab content panes -->
+                <div class="help-tab-content">
+                                        <div class="help-tab-pane active"
+                         role="tabpanel"
+                         id="help-pane-0"
+                         aria-labelledby="help-tab-0"
+                         data-pane="0">
+                        
+            <h4>Fișa angajatului</h4>
+            <p>Operatorul HR completează fișa fiecărui angajat, în patru taburi:</p>
+            <ul>
+                <li><strong>Date generale</strong> – date de contact, departament, funcție, locație, stare și datele personale (CNP, act de identitate, domiciliu).</li>
+                <li><strong>Contract de muncă</strong> – numărul și data contractului, data începerii activității, tipul (durată nedeterminată / determinată), norma, codul COR, perioada de probă și, la plecare, data și temeiul încetării.</li>
+                <li><strong>Teren</strong> – doar pentru angajații care lucrează în teren: roluri, competențe, gestiune și baza de plecare.</li>
+                <li><strong>Concedii și absențe</strong> – soldul concediului de odihnă, drepturile de concediu, concediile medicale și toate absențele.</li>
+            </ul>
+            <p>La un angajat nou se completează întâi datele generale; după salvare devin active și celelalte taburi.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-1"
+                         aria-labelledby="help-tab-1"
+                         data-pane="1">
+                        
+            <h4>Dreptul și soldul</h4>
+            <ul>
+                <li><strong>Zile de bază</strong> – din contract; minimum 20 de zile lucrătoare pe an (art. 145 Codul muncii).</li>
+                <li><strong>Zile suplimentare</strong> – pentru motive prevăzute de lege, contractul colectiv sau regulamentul intern (copil cu dizabilități sau boli cronice, condiții grele, persoane cu handicap, tineri sub 18 ani, vechime). Se adaugă câte un rând pentru fiecare motiv.</li>
+                <li><strong>Report din anul precedent</strong> – zilele neefectuate; se efectuează în 18 luni de la începutul anului următor (ex.: cele din 2025 până la 30.06.2027) și se consumă primele.</li>
+                <li>În anul angajării (sau al încetării), dreptul se acordă proporțional cu lunile lucrate.</li>
+            </ul>
+            <p><strong>Rămase</strong> = drept + report − efectuate − planificate. Cererile în așteptare se scad din zilele <em>disponibile</em>. Zilele se socotesc lucrătoare: fără weekend și fără sărbătorile legale. Dacă angajatul intră în concediu medical în timpul concediului de odihnă, zilele suprapuse revin în sold (art. 150).</p>
+            <p>Concediul de odihnă nu se compensează în bani decât la încetarea contractului (art. 146).</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-2"
+                         aria-labelledby="help-tab-2"
+                         data-pane="2">
+                        
+            <h4>Certificatele de concediu medical</h4>
+            <p>Se introduc din <strong>Adaugă absență</strong> → Concediu medical: seria și numărul certificatului, data acordării, codul de indemnizație, tipul (inițial sau în continuare – cu certificatul inițial) și medicul / unitatea sanitară.</p>
+            <ul>
+                <li>Primele 5 zile lucrătoare ale unui certificat inițial sunt suportate de angajator, restul din FNUASS (la sarcină și lăuzie, îngrijirea copilului bolnav și risc maternal – integral din FNUASS).</li>
+                <li>Pagina urmărește zilele de concediu medical din ultimele 12 luni: limita este de 183 de zile, iar peste 90 de zile este necesar avizul medicului expert.</li>
+            </ul>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-3"
+                         aria-labelledby="help-tab-3"
+                         data-pane="3">
+                        
+            <h4>Tipuri de absență</h4>
+            <ul>
+                <li><strong>Eveniment familial</strong> – căsătoria salariatului 5 zile, nașterea sau căsătoria unui copil 3 zile, decesul soțului / unei rude până la gradul II 3 zile, donare de sânge 1 zi.</li>
+                <li><strong>Concediu paternal</strong> – 10 zile lucrătoare (15 cu cursul de puericultură), în primele 8 săptămâni de la naștere.</li>
+                <li><strong>Concediu de îngrijitor</strong> – 5 zile lucrătoare pe an; <strong>Absență – forță majoră</strong> – 10 zile lucrătoare pe an, se recuperează.</li>
+                <li><strong>Concediu fără plată</strong>, <strong>Concediu creștere copil</strong> (contract suspendat), <strong>Absență nemotivată</strong>.</li>
+                <li><strong>Formare</strong>, <strong>Delegație</strong>, <strong>Alte sarcini</strong> – activități de serviciu, angajatul nu este disponibil pentru programări.</li>
+            </ul>
+            <p>Absențele nu se șterg – se <strong>anulează</strong> (cu confirmare) și rămân în istoric.</p>
+                            </div>
+                                        <div class="help-tab-pane "
+                         role="tabpanel"
+                         id="help-pane-4"
+                         aria-labelledby="help-tab-4"
+                         data-pane="4">
+                        
+            <h4>Lucrează în teren</h4>
+            <p>Bifa activează câmpurile pentru echipele de teren. Angajații de birou au bifa nebifată și nu apar în programările SONIC PRO.</p>
+            <ul>
+                <li><strong>Roluri</strong> – Cititor, Montator, Service (cel puțin unul).</li>
+                <li><strong>Competențe</strong> – tipurile de echipamente pe care poate lucra; obligatorie cel puțin una pentru Montator / Service.</li>
+                <li><strong>Gestiune</strong> – codul gestiunii virtuale din SONIC FIN (ex. G-03); se afișează stocul curent.</li>
+                <li><strong>Bază de plecare</strong> – punctul de plecare folosit la calculul traseelor și al recomandărilor de programare.</li>
+            </ul>
+                            </div>
+                                    </div>
+                    </div><!-- /.help-panel-inner -->
+        </div><!-- /.help-panel -->
+        
+        <div class="help-bar">
+            <button class="help-toggle-btn" id="helpToggle"
+                    aria-expanded="false"
+                    aria-controls="helpPanel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round"
+                     width="14" height="14" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                <span>Ajutor</span>
+                <svg class="help-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                     aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"/>
+                </svg>
+            </button>
+        </div><!-- /.help-bar -->
+    </div><!-- /.help-wrapper -->
+
+    <div class="content">
+
+        <!-- ══ Page Title ══════════════════════════════════════════════════ -->
+        <div class="page-title-container">
+            <div class="page-title">
+                <h1>Editare Angajat</h1>
+                <p>Mihai Dobre · Montator · Echipe teren</p>
+            </div>
+            <a href="personal.html" class="btn-secondary" id="btnBack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polyline points="15 18 9 12 15 6"></polyline></svg><span>Înapoi la Personal</span></a>
+        </div>
+
+        <!-- ══ Tab Navigation ══════════════════════════════════════════════ -->
+        <div class="edit-tabs-wrapper">
+            <div class="edit-tabs-nav" role="tablist" aria-label="Secțiuni angajat">
+                <button type="button" class="edit-tab-btn active" role="tab" aria-selected="true"
+                        aria-controls="tab-general" id="tabBtn-general" onclick="switchTab('general', this)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="8" r="4"></circle><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"></path></svg>
+                    Date generale
+                </button>
+                <button type="button" class="edit-tab-btn" role="tab" aria-selected="false"
+                        aria-controls="tab-contract" id="tabBtn-contract" onclick="switchTab('contract', this)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    Contract de muncă
+                </button>
+                <button type="button" class="edit-tab-btn" role="tab" aria-selected="false"
+                        aria-controls="tab-teren" id="tabBtn-teren" onclick="switchTab('teren', this)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                    Teren
+                </button>
+                <button type="button" class="edit-tab-btn" role="tab" aria-selected="false"
+                        aria-controls="tab-indisp" id="tabBtn-indisp" onclick="switchTab('indisp', this)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    Concedii și absențe
+                </button>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════════════════════
+             TAB 1 – Date generale
+             React: <StaffGeneralForm staff departments locations onSave />
+        ══════════════════════════════════════════════════════════════════════ -->
+        <div id="tab-general" class="tab-pane active" role="tabpanel" aria-labelledby="tabBtn-general">
+            <form method="POST" action="personal-edit.html" id="generalForm" novalidate>
+                <div class="card edit-section-card">
+                    <div class="edit-section-header">
+                        <span class="edit-section-title">Date generale</span>
+                    </div>
+                    <div class="edit-section-body">
+                        <div class="calc-alert calc-alert--danger" id="generalErrors" style="display:none;"></div>
+                        <div class="form-row-3">
+                            <div class="form-group">
+                                <label class="form-label" for="txtFirst">Prenume <span class="required-star">*</span></label>
+                                <input type="text" id="txtFirst" name="first" class="input-control" maxlength="50" value="Mihai">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="txtLast">Nume <span class="required-star">*</span></label>
+                                <input type="text" id="txtLast" name="last" class="input-control" maxlength="50" value="Dobre">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="ddlDeptEdit">Departament <span class="required-star">*</span></label>
+                                <select id="ddlDeptEdit" name="dept" class="input-control">
+                                    <option value="">-</option>
+                                                                            <option value="Conducere" >Conducere</option>
+                                                                            <option value="Resurse umane" >Resurse umane</option>
+                                                                            <option value="Dispecerat și relații clienți" >Dispecerat și relații clienți</option>
+                                                                            <option value="Echipe teren" selected>Echipe teren</option>
+                                                                            <option value="Calcul (Billing)" >Calcul (Billing)</option>
+                                                                            <option value="Financiar" >Financiar</option>
+                                                                            <option value="Recuperare creanțe" >Recuperare creanțe</option>
+                                                                            <option value="Gestiune și magazie" >Gestiune și magazie</option>
+                                                                            <option value="Vânzări" >Vânzări</option>
+                                                                            <option value="IT" >IT</option>
+                                                                    </select>
+                            </div>
+                        </div>
+                        <div class="form-row-3">
+                            <div class="form-group">
+                                <label class="form-label" for="txtPosition">Funcție <span class="required-star">*</span></label>
+                                <input type="text" id="txtPosition" name="position" class="input-control" maxlength="100" value="Montator">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="txtPhoneEdit">Telefon <span class="required-star">*</span></label>
+                                <input type="text" id="txtPhoneEdit" name="phone" class="input-control" maxlength="20" value="0722 100 203">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="txtEmail">E-mail</label>
+                                <input type="text" id="txtEmail" name="email" class="input-control" maxlength="250" value="mihai.dobre@sonic.ro">
+                            </div>
+                        </div>
+                        <div class="form-row-3">
+                            <div class="form-group">
+                                <label class="form-label" for="ddlLocation">Locație / punct de lucru</label>
+                                <select id="ddlLocation" name="location" class="input-control">
+                                                                            <option value="Sediu București" selected>Sediu București</option>
+                                                                            <option value="Punct de lucru Brașov" >Punct de lucru Brașov</option>
+                                                                            <option value="Punct de lucru Constanța" >Punct de lucru Constanța</option>
+                                                                            <option value="Punct de lucru Târgu Mureș" >Punct de lucru Târgu Mureș</option>
+                                                                    </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Data angajării</label>
+                                <div class="form-static-value">23.11.2016</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Stare</label>
+                                <label class="checkbox-row" for="chkActive">
+                                    <input type="checkbox" id="chkActive" name="active" value="1" checked>
+                                    <span class="checkbox-label">Activ</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- React: <PersonalDataForm cnp idDoc address /> -->
+                <div class="card edit-section-card">
+                    <div class="edit-section-header">
+                        <span class="edit-section-title">Date personale</span>
+                    </div>
+                    <div class="edit-section-body">
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label class="form-label" for="txtCnp">CNP <span class="required-star">*</span></label>
+                                <input type="text" id="txtCnp" name="cnp" class="input-control" maxlength="13" inputmode="numeric" value="2801206434402">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="txtBirth">Data nașterii</label>
+                                <input type="text" id="txtBirth" class="input-control" readonly value="06.12.1980">
+                            </div>
+                        </div>
+                        <div class="form-row-3">
+                            <div class="form-group">
+                                <label class="form-label" for="txtIdDoc">Act de identitate (tip, serie, număr) <span class="required-star">*</span></label>
+                                <input type="text" id="txtIdDoc" name="id_doc" class="input-control" maxlength="30" value="CI RX 790680">
+                            </div>
+                            <div class="form-group" style="grid-column: span 2;">
+                                <label class="form-label" for="txtAddress">Adresă domiciliu <span class="required-star">*</span></label>
+                                <input type="text" id="txtAddress" name="address" class="input-control" maxlength="250" value="Str. Matei Basarab 42, Sector 3, București">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="edit-actions-bar">
+                    <a href="personal.html" class="btn-secondary">Înapoi la Personal</a>
+                    <button type="submit" class="btn-primary">Salvează</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════════════════════
+             TAB 2 – Contract de muncă (CIM)
+             React: <EmploymentContractForm contract onSave />
+        ══════════════════════════════════════════════════════════════════════ -->
+        <div id="tab-contract" class="tab-pane" role="tabpanel" aria-labelledby="tabBtn-contract" style="display:none;">
+            <form method="POST" action="personal-edit.html" id="contractForm" novalidate>
+                <div class="card edit-section-card">
+                    <div class="edit-section-header">
+                        <span class="edit-section-title">Contract individual de muncă</span>
+                    </div>
+                    <div class="edit-section-body">
+                        <div class="calc-alert calc-alert--danger" id="contractErrors" style="display:none;"></div>
+                        <div class="form-row-3">
+                            <div class="form-group">
+                                <label class="form-label" for="txtContractNo">Număr contract <span class="required-star">*</span></label>
+                                <input type="text" id="txtContractNo" name="contract_no" class="input-control" maxlength="20" value="240">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="dtpContractDate">Data contractului <span class="required-star">*</span></label>
+                                <input type="text" id="dtpContractDate" name="contract_date" class="input-control" data-datepicker value="18.11.2016">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="dtpHired">Data începerii activității <span class="required-star">*</span></label>
+                                <input type="text" id="dtpHired" name="hired" class="input-control" data-datepicker value="23.11.2016">
+                            </div>
+                        </div>
+                        <div class="form-row-3">
+                            <div class="form-group">
+                                <label class="form-label" for="ddlContractType">Tip contract <span class="required-star">*</span></label>
+                                <select id="ddlContractType" name="contract_type" class="input-control">
+                                    <option selected>Durată nedeterminată</option><option >Durată determinată</option>                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="dtpContractEnd">Data sfârșit (durată determinată) <span class="required-star" id="contractEndStar">*</span></label>
+                                <input type="text" id="dtpContractEnd" name="contract_end" class="input-control" data-datepicker value="">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="txtProbation">Perioadă de probă (zile)</label>
+                                <input type="number" id="txtProbation" name="probation" class="input-control" min="0" max="120" value="0">
+                            </div>
+                        </div>
+                        <div class="form-row-3">
+                            <div class="form-group">
+                                <label class="form-label" for="ddlNorm">Normă <span class="required-star">*</span></label>
+                                <select id="ddlNorm" name="norm" class="input-control">
+                                    <option selected>Normă întreagă</option><option >Timp parțial</option>                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="txtHours">Ore pe zi</label>
+                                <input type="number" id="txtHours" name="hours" class="input-control" min="1" max="8" value="8">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="txtCor">Cod COR <span class="required-star">*</span></label>
+                                <input type="text" id="txtCor" name="cor" class="input-control" maxlength="6" inputmode="numeric" value="741307">
+                            </div>
+                        </div>
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label class="form-label">Funcție</label>
+                                <div class="form-static-value">Montator</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Vechime în firmă</label>
+                                <div class="form-static-value">9 ani, 11 luni</div>
+                            </div>
+                        </div>
+                        <div class="modal-section-title">Încetarea contractului</div>
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label class="form-label" for="dtpTerminated">Data încetării</label>
+                                <input type="text" id="dtpTerminated" name="terminated" class="input-control" data-datepicker value="">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="ddlTermination">Temei legal</label>
+                                <select id="ddlTermination" name="termination" class="input-control">
+                                    <option value="" selected>-</option><option value="Art. 55 lit. b – acordul părților" >Art. 55 lit. b – acordul părților</option><option value="Art. 81 – demisie" >Art. 81 – demisie</option><option value="Art. 56 lit. j – expirarea contractului pe durată determinată" >Art. 56 lit. j – expirarea contractului pe durată determinată</option><option value="Art. 65 – desființarea postului" >Art. 65 – desființarea postului</option><option value="Art. 61 – motive ce țin de persoana salariatului" >Art. 61 – motive ce țin de persoana salariatului</option>                                </select>
+                            </div>
+                        </div>
+                        <div class="calc-alert" id="terminationNote" style="display:none;">
+                            La încetare, zilele de concediu de odihnă neefectuate se compensează în bani (art. 146 alin. 3 Codul muncii) – sold la data încetării: <strong>22 zile</strong>. Contractul se închide și în Revisal.
+                        </div>
+                    </div>
+                </div>
+                <div class="edit-actions-bar">
+                    <a href="personal.html" class="btn-secondary">Înapoi la Personal</a>
+                    <button type="submit" class="btn-primary">Salvează contractul</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════════════════════
+             TAB 3 – Teren (roluri, competențe, gestiune, bază de plecare)
+             React: <StaffFieldForm field roles skills warehouse base stock onSave />
+        ══════════════════════════════════════════════════════════════════════ -->
+        <div id="tab-teren" class="tab-pane" role="tabpanel" aria-labelledby="tabBtn-teren" style="display:none;">
+            <form method="POST" action="personal-edit.html" id="fieldForm" novalidate>
+                <div class="card edit-section-card">
+                    <div class="edit-section-header">
+                        <span class="edit-section-title">Echipă de teren</span>
+                    </div>
+                    <div class="edit-section-body">
+                        <div class="calc-alert calc-alert--danger" id="fieldErrors" style="display:none;"></div>
+                        <label class="checkbox-row" for="chkField">
+                            <input type="checkbox" id="chkField" name="field" value="1" checked>
+                            <span class="checkbox-label">Lucrează în teren (cititor, montator, service)</span>
+                        </label>
+                        <div class="calc-alert" id="fieldOffNote" style="margin-top: 14px; display:none;">
+                            Angajatul nu lucrează în teren și nu apare în programările din SONIC PRO. Bifați opțiunea de mai sus pentru a-i atribui roluri, competențe și gestiune.
+                        </div>
+
+                        <fieldset id="fieldSet" style="border: 0; padding: 0; margin: 14px 0 0;">
+                            <div class="modal-section-title">Roluri <span class="required-star">*</span></div>
+                            <div class="pro-check-grid">
+                                                                    <label class="pro-check-tile"><input type="checkbox" name="roles[]" value="Cititor" > Cititor</label>
+                                                                    <label class="pro-check-tile"><input type="checkbox" name="roles[]" value="Montator" checked> Montator</label>
+                                                                    <label class="pro-check-tile"><input type="checkbox" name="roles[]" value="Service" > Service</label>
+                                                            </div>
+
+                            <div class="modal-section-title">Competențe – tipuri de echipamente <span class="required-star" id="skillsStar">*</span></div>
+                            <div class="pro-check-grid">
+                                                                    <label class="pro-check-tile"><input type="checkbox" name="skills[]" value="apa" checked> Contor apă</label>
+                                                                    <label class="pro-check-tile"><input type="checkbox" name="skills[]" value="et" > Contor energie termică</label>
+                                                                    <label class="pro-check-tile"><input type="checkbox" name="skills[]" value="rep" checked> Repartitor</label>
+                                                                    <label class="pro-check-tile"><input type="checkbox" name="skills[]" value="gw" > Gateway</label>
+                                                                    <label class="pro-check-tile"><input type="checkbox" name="skills[]" value="senzor" > Senzor (fum / inundație / temperatură)</label>
+                                                            </div>
+
+                            <div class="modal-section-title">Gestiune și bază de plecare</div>
+                            <div class="form-row-2">
+                                <div class="form-group">
+                                    <label class="form-label" for="txtWarehouseEdit">Gestiune</label>
+                                    <input type="text" id="txtWarehouseEdit" name="warehouse" class="input-control" maxlength="10" value="G-03">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="ddlBase">Bază de plecare</label>
+                                    <select id="ddlBase" name="base" class="input-control">
+                                        <option value="">-</option>
+                                                                                    <option value="44.4420,26.0960" >Sediu SONIC – Str. Nițu Vasile 57, București</option>
+                                                                                    <option value="44.4300,26.1500" selected>Bază București Est – Bd. Basarabia</option>
+                                                                                    <option value="45.6427,25.5887" >Punct de lucru Brașov</option>
+                                                                                    <option value="44.1733,28.6383" >Punct de lucru Constanța</option>
+                                                                                    <option value="46.5425,24.5575" >Punct de lucru Târgu Mureș</option>
+                                                                            </select>
+                                </div>
+                            </div>
+
+                            <!-- React: <WarehouseStock code={warehouse} items={stock} /> -->
+                            <div class="utility-context-strip">
+                                <div class="context-items">
+                                    <div class="context-item"><span class="context-label">Gestiune:</span><strong class="context-value context-code" id="whCode">—</strong></div>
+                                    <div class="context-sep"></div>
+                                    <div class="context-item"><span class="context-label">Locație:</span><span class="context-value" id="whLocation">—</span></div>
+                                </div>
+                                <div><a href="#" class="btn-secondary" id="whLink" style="display:none;">Deschide gestiunea</a></div>
+                            </div>
+                            <div class="table-scroll">
+                                <table class="partners-table table-compact">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 18%;">Cod</th>
+                                            <th>Produs</th>
+                                            <th style="width: 18%; text-align: right;">Cantitate</th>
+                                            <th style="width: 12%;">UM</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="whStockBody"></tbody>
+                                </table>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="edit-actions-bar">
+                    <a href="personal.html" class="btn-secondary">Înapoi la Personal</a>
+                    <button type="submit" class="btn-primary">Salvează</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════════════════════
+             TAB 4 – Concedii și absențe (sold CO, drepturi, concedii medicale, absențe)
+             React: <StaffLeave balance rights medical absences onAddAbsence onApprove onCancel onSaveRights />
+        ══════════════════════════════════════════════════════════════════════ -->
+        <div id="tab-indisp" class="tab-pane" role="tabpanel" aria-labelledby="tabBtn-indisp" style="display:none;">
+            <div class="utility-context-strip">
+                <div class="context-items">
+                    <div class="context-item"><span class="context-label">Angajat:</span><strong class="context-value">Mihai Dobre</strong></div>
+                    <div class="context-sep"></div>
+                    <div class="context-item"><span class="context-label">Departament:</span><span class="context-value">Echipe teren</span></div>
+                    <div class="context-sep"></div>
+                    <div class="context-item"><span class="context-label">Angajat din:</span><span class="context-value">23.11.2016</span></div>
+                    <div class="context-sep"></div>
+                    <div class="context-item"><span class="context-label">Azi:</span><span class="context-value">28.10.2026</span></div>
+                </div>
+                <div><span class="status-badge status-online">Disponibil azi</span></div>
+            </div>
+
+                        <!-- React: <LeaveBalance balance /> – recalculat în pagină după fiecare absență (SonicAbsence.balance) -->
+            <div class="calc-kpi-grid">
+                <div class="calc-kpi">
+                    <span class="calc-kpi-label">Drept concediu 2026</span>
+                    <div class="calc-kpi-value"><span id="kpiRight">28</span> <span class="calc-kpi-unit">zile</span></div>
+                    <span class="pro-kpi-meta" id="kpiRightMeta">25 de bază + 3 suplimentare</span>
+                </div>
+                <div class="calc-kpi">
+                    <span class="calc-kpi-label">Report din 2025</span>
+                    <div class="calc-kpi-value"><span id="kpiCarry">4</span> <span class="calc-kpi-unit">zile</span></div>
+                    <span class="pro-kpi-meta" id="kpiCarryMeta">rămase 0 · valabile până la 30.06.2027</span>
+                </div>
+                <div class="calc-kpi">
+                    <span class="calc-kpi-label">Efectuate / planificate</span>
+                    <div class="calc-kpi-value"><span id="kpiUsed">10 / 0</span> <span class="calc-kpi-unit">zile</span></div>
+                    <span class="pro-kpi-meta" id="kpiUsedMeta">nicio cerere în așteptare</span>
+                </div>
+                <div class="calc-kpi">
+                    <span class="calc-kpi-label">Zile CO rămase</span>
+                    <div class="calc-kpi-value"><span id="kpiLeft">22</span> <span class="calc-kpi-unit">din <span id="kpiTotal">32</span></span></div>
+                    <div class="progress-bar"><div class="progress-bar__fill" id="kpiLeftBar" style="width: 31%;"></div></div>
+                </div>
+            </div>
+            
+            <!-- React: <LeaveRightsForm base extra carry onSave /> -->
+            <div class="card edit-section-card">
+                <div class="edit-section-header">
+                    <span class="edit-section-title">Drepturi de concediu de odihnă – 2026</span>
+                </div>
+                <div class="edit-section-body">
+                    <div class="calc-alert calc-alert--danger" id="rightsErrors" style="display:none;"></div>
+                    <div class="form-row-3">
+                        <div class="form-group">
+                            <label class="form-label" for="txtCoBase">Zile CO de bază / an <span class="required-star">*</span></label>
+                            <input type="number" id="txtCoBase" class="input-control" min="20" max="60" value="25">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="txtCoCarry">Zile neefectuate reportate din 2025</label>
+                            <input type="number" id="txtCoCarry" class="input-control" min="0" max="60" value="4">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Valabile până la</label>
+                            <div class="form-static-value">30.06.2027 (18 luni – art. 146 Codul muncii)</div>
+                        </div>
+                    </div>
+
+                    <div class="modal-section-title">Zile suplimentare</div>
+                    <div class="table-scroll">
+                        <table class="partners-table table-compact">
+                            <thead>
+                                <tr>
+                                    <th>Motiv</th>
+                                    <th style="width: 10%; text-align: center;">Zile</th>
+                                    <th style="width: 34%;">Observații</th>
+                                    <th style="width: 9%; text-align: center;">Acțiuni</th>
+                                </tr>
+                            </thead>
+                            <tbody id="extraBody">
+                                                                <tr data-extra>
+                                    <td class="td-name" data-cell="reason">Condiții grele, periculoase sau vătămătoare (art. 147 CM)</td>
+                                    <td style="text-align: center;" data-cell="days">3</td>
+                                    <td>Lucrări în subsoluri tehnice / cămine.</td>
+                                    <td style="text-align: center;"><button type="button" class="btn-action-icon" title="Elimină zilele suplimentare" onclick="StaffEdit.removeExtra(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path></svg></button></td>
+                                </tr>
+                                                                <tr id="extraEmptyRow" style="display: none;"><td colspan="4" class="table-empty">Angajatul nu are zile suplimentare de concediu.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="form-row-3" style="margin-top: 12px;">
+                        <div class="form-group">
+                            <label class="form-label" for="ddlExtraReason">Motiv</label>
+                            <select id="ddlExtraReason" class="input-control">
+                                <option value="">-</option>
+                                <option>Copil cu dizabilități / boli cronice (regulament intern)</option><option>Condiții grele, periculoase sau vătămătoare (art. 147 CM)</option><option>Persoană cu handicap / nevăzător (art. 147 CM)</option><option>Tânăr sub 18 ani (art. 147 CM)</option><option>Vechime în muncă (contract colectiv)</option><option>Fidelitate față de companie (regulament intern)</option><option>Altele</option>                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="txtExtraDays">Zile</label>
+                            <input type="number" id="txtExtraDays" class="input-control" min="1" max="20">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="txtExtraNote">Observații (document justificativ)</label>
+                            <input type="text" id="txtExtraNote" class="input-control" maxlength="150">
+                        </div>
+                    </div>
+                    <button type="button" class="btn-secondary btn-add" onclick="StaffEdit.addExtra()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        <span>Adaugă zile suplimentare</span>
+                    </button>
+                </div>
+            </div>
+            <div class="edit-actions-bar">
+                <a href="personal.html" class="btn-secondary">Înapoi la Personal</a>
+                <button type="button" class="btn-primary" onclick="StaffEdit.saveRights()">Salvează drepturile</button>
+            </div>
+
+                        <!-- React: <MedicalLeaveSummary medical /> -->
+            <div class="utility-context-strip">
+                <div class="context-items">
+                    <div class="context-item"><span class="context-label">Concedii medicale 2026:</span><strong class="context-value" id="medCerts">1 certificate</strong></div>
+                    <div class="context-sep"></div>
+                    <div class="context-item"><span class="context-label">Zile lucrătoare:</span><span class="context-value" id="medWork">1</span></div>
+                    <div class="context-sep"></div>
+                    <div class="context-item"><span class="context-label">Angajator / FNUASS:</span><span class="context-value" id="medSplit">1 / 0</span></div>
+                    <div class="context-sep"></div>
+                    <div class="context-item"><span class="context-label">Ultimele 12 luni:</span><span class="context-value" id="med12">0 / 183 zile</span></div>
+                </div>
+                <div><span class="status-badge status-online" id="medBadge">Sub limita de 90 zile</span></div>
+            </div>
+            
+            <!-- React: <StaffAbsences rows onAdd onApprove onCancel /> – rândurile se desenează din SONIC_HR.absences -->
+            <div class="table-container">
+                <div class="table-toolbar">
+                    <div class="table-toolbar-left">
+                        <span class="table-count">Afișare <strong id="absCount">0</strong> absențe</span>
+                        <div class="water-filter-pills" id="absPills">
+                            <button type="button" class="water-filter-pill active" data-pill="">Toate</button>
+                            <button type="button" class="water-filter-pill" data-pill="CO">Concediu de odihnă</button>
+                            <button type="button" class="water-filter-pill" data-pill="CM">Concedii medicale</button>
+                            <button type="button" class="water-filter-pill" data-pill="other">Alte absențe</button>
+                        </div>
+                    </div>
+                    <div class="table-toolbar-right">
+                        <button type="button" class="btn-secondary btn-add" onclick="StaffEdit.openAbsence()">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            <span>Adaugă absență</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="table-scroll">
+                    <table class="partners-table table-compact">
+                        <thead>
+                            <tr>
+                                <th style="width: 15%;">Tip</th>
+                                <th style="width: 15%;">Perioadă</th>
+                                <th style="width: 7%; text-align: center;">Zile lucr.</th>
+                                <th>Detalii</th>
+                                <th style="width: 11%;">Introdus de</th>
+                                <th style="width: 11%;">Aprobat de</th>
+                                <th style="width: 9%; text-align: center;">Stare</th>
+                                <th style="width: 8%; text-align: center;">Acțiuni</th>
+                            </tr>
+                        </thead>
+                        <tbody id="absBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="edit-actions-bar">
+                <a href="personal.html" class="btn-secondary">Înapoi la Personal</a>
+                <div class="edit-actions-group">
+                    <a href="personal-indisponibilitati.html" class="btn-secondary">Concedii și Indisponibilități</a>
+                </div>
+            </div>
+        </div>
+
+<!-- ══ Modal comun „Adaugă absență” (partials/absence-modal.php + assets/js/hr-absence.js) ══
+     React: <AbsenceModal isOpen staff lockStaff rules absences onSave />
+═══════════════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="hrAbsenceModal" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="hrAbsenceModal-title">
+    <div class="modal-card" style="max-width: 760px; width: 96%;">
+        <div class="modal-header">
+            <h3 id="hrAbsenceModal-title">Adaugă absență</h3>
+            <button type="button" class="btn-close" title="Închide fereastra" data-abs-close>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="calc-alert calc-alert--danger" id="absErrors" style="display:none;"></div>
+
+            <div class="form-row-2">
+                <div class="form-group">
+                    <label class="form-label" for="ddlAbsStaff">Angajat <span class="required-star">*</span></label>
+                    <select id="ddlAbsStaff" class="input-control">
+                        <option value="">-</option>
+                                                    <option value="e01">Andrei Moraru – Conducere</option>
+                                                    <option value="e16">Diana Popescu – Resurse umane</option>
+                                                    <option value="e17">Vlad Iordache – Dispecerat și relații clienți</option>
+                                                    <option value="e02">Andreea Pop – Dispecerat și relații clienți</option>
+                                                    <option value="s2">Bogdan Antal – Echipe teren</option>
+                                                    <option value="s9">Ionuț Ciobanu – Echipe teren</option>
+                                                    <option value="s14">Cristina Dinu – Echipe teren</option>
+                                                    <option value="s3">Mihai Dobre – Echipe teren</option>
+                                                    <option value="s7">Daniel Ene – Echipe teren</option>
+                                                    <option value="s16">Roxana Iordache – Echipe teren</option>
+                                                    <option value="s17">Sebastian Lungu – Echipe teren</option>
+                                                    <option value="s8">Radu Marinescu – Echipe teren</option>
+                                                    <option value="s12">Laura Mihai – Echipe teren</option>
+                                                    <option value="s1">Teodor Milian – Echipe teren</option>
+                                                    <option value="s11">Marius Neagu – Echipe teren</option>
+                                                    <option value="s4">Cristian Pană – Echipe teren</option>
+                                                    <option value="s15">Alin Petrescu – Echipe teren</option>
+                                                    <option value="s6">Florin Stoica – Echipe teren</option>
+                                                    <option value="s13">Gabriel Toma – Echipe teren</option>
+                                                    <option value="s10">Elena Vasile – Echipe teren</option>
+                                                    <option value="s5">Andrei Voicu – Echipe teren</option>
+                                                    <option value="e06">Carmen Bîndaroi – Calcul (Billing)</option>
+                                                    <option value="e08">Stefania Chiran – Calcul (Billing)</option>
+                                                    <option value="e07">Irina Fomici – Calcul (Billing)</option>
+                                                    <option value="e09">Georgiana Dragomir – Financiar</option>
+                                                    <option value="e10">Ovidiu Tănase – Financiar</option>
+                                                    <option value="e03">Elena Marin – Recuperare creanțe</option>
+                                                    <option value="e04">Mihai Rusu – Recuperare creanțe</option>
+                                                    <option value="e13">Cosmin Bratu – Gestiune și magazie</option>
+                                                    <option value="e05">Laura Stanciu – Gestiune și magazie</option>
+                                                    <option value="e12">Monica Ilie – Vânzări</option>
+                                                    <option value="e11">Cristi Pică – Vânzări</option>
+                                                    <option value="e14">Radu Ciobanu – IT</option>
+                                            </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="ddlAbsType">Tip absență <span class="required-star">*</span></label>
+                    <select id="ddlAbsType" class="input-control">
+                        <option value="">-</option>
+                                                    <optgroup label="Concedii">
+                                                                    <option value="Concediu de odihnă">Concediu de odihnă (CO)</option>
+                                                                    <option value="Concediu medical">Concediu medical (CM)</option>
+                                                                    <option value="Eveniment familial">Eveniment familial (EV)</option>
+                                                                    <option value="Concediu paternal">Concediu paternal (CP)</option>
+                                                                    <option value="Concediu de îngrijitor">Concediu de îngrijitor (CI)</option>
+                                                            </optgroup>
+                                                    <optgroup label="Absențe">
+                                                                    <option value="Absență – forță majoră">Absență – forță majoră (FM)</option>
+                                                                    <option value="Concediu fără plată">Concediu fără plată (CFP)</option>
+                                                                    <option value="Concediu creștere copil">Concediu creștere copil (CCC)</option>
+                                                                    <option value="Absență nemotivată">Absență nemotivată (AN)</option>
+                                                            </optgroup>
+                                                    <optgroup label="Activități de serviciu">
+                                                                    <option value="Formare">Formare (F)</option>
+                                                                    <option value="Delegație">Delegație (D)</option>
+                                                                    <option value="Alte sarcini">Alte sarcini (AS)</option>
+                                                            </optgroup>
+                                            </select>
+                </div>
+            </div>
+
+            <!-- Soldul concediului de odihnă (se afișează la orice tip, ca informație pentru operatorul HR) -->
+            <div class="utility-context-strip" id="absBalance" style="display:none;">
+                <div class="context-items">
+                    <div class="context-item"><span class="context-label">Drept <span data-abs-year></span>:</span><strong class="context-value" id="absBalRight">—</strong></div>
+                    <div class="context-sep"></div>
+                    <div class="context-item"><span class="context-label">Report:</span><span class="context-value" id="absBalCarry">—</span></div>
+                    <div class="context-sep"></div>
+                    <div class="context-item"><span class="context-label">Efectuate + planificate:</span><span class="context-value" id="absBalUsed">—</span></div>
+                    <div class="context-sep"></div>
+                    <div class="context-item"><span class="context-label">În așteptare:</span><span class="context-value" id="absBalPending">—</span></div>
+                </div>
+                <div><span class="status-badge status-online" id="absBalLeft">— zile CO rămase</span></div>
+            </div>
+
+            <div class="form-row-2">
+                <div class="form-group">
+                    <label class="form-label" for="dtpAbsFrom">De la <span class="required-star">*</span></label>
+                    <input type="text" id="dtpAbsFrom" class="input-control" data-datepicker>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="dtpAbsTo">Până la <span class="required-star">*</span></label>
+                    <input type="text" id="dtpAbsTo" class="input-control" data-datepicker>
+                </div>
+            </div>
+            <div class="calc-alert" id="absDaysInfo" style="display:none;"></div>
+
+            <!-- Concediu medical – certificatul -->
+            <div id="absPanelCM" style="display:none;">
+                <div class="modal-section-title">Certificat de concediu medical</div>
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label class="form-label" for="txtCmSeries">Serie <span class="required-star">*</span></label>
+                        <input type="text" id="txtCmSeries" class="input-control" maxlength="10">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtCmNumber">Număr <span class="required-star">*</span></label>
+                        <input type="text" id="txtCmNumber" class="input-control" maxlength="12">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="dtpCmIssued">Data acordării <span class="required-star">*</span></label>
+                        <input type="text" id="dtpCmIssued" class="input-control" data-datepicker>
+                    </div>
+                </div>
+                <div class="form-row-3">
+                    <div class="form-group">
+                        <label class="form-label" for="ddlCmCode">Cod indemnizație <span class="required-star">*</span></label>
+                        <select id="ddlCmCode" class="input-control">
+                            <option value="">-</option>
+                            <option value="01">01 – Boală obișnuită (75%)</option><option value="04">04 – Urgență medico-chirurgicală (100%)</option><option value="05">05 – Boli infectocontagioase din grupa A (100%)</option><option value="06">06 – Tuberculoză (100%)</option><option value="08">08 – Sarcină și lăuzie (85%)</option><option value="09">09 – Îngrijire copil bolnav (85%)</option><option value="14">14 – Neoplazii, SIDA (100%)</option><option value="15">15 – Risc maternal (75%)</option>                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="ddlCmKind">Tip certificat</label>
+                        <select id="ddlCmKind" class="input-control">
+                            <option value="initial">Inițial</option>
+                            <option value="continuare">În continuare</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="txtCmInitial">Certificat inițial (serie și număr) <span class="required-star" id="cmInitialStar" style="display:none;">*</span></label>
+                        <input type="text" id="txtCmInitial" class="input-control" maxlength="25" disabled>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="txtCmDoctor">Medic / unitate sanitară</label>
+                    <input type="text" id="txtCmDoctor" class="input-control" maxlength="150">
+                </div>
+                <div class="calc-alert" id="absCmInfo"></div>
+            </div>
+
+            <!-- Eveniment familial -->
+            <div id="absPanelEV" style="display:none;">
+                <div class="form-group">
+                    <label class="form-label" for="ddlEvent">Eveniment <span class="required-star">*</span></label>
+                    <select id="ddlEvent" class="input-control">
+                        <option value="">-</option>
+                        <option value="Căsătoria salariatului">Căsătoria salariatului – 5 zile</option><option value="Nașterea sau căsătoria unui copil">Nașterea sau căsătoria unui copil – 3 zile</option><option value="Decesul soțului sau al unei rude până la gradul al II-lea">Decesul soțului sau al unei rude până la gradul al II-lea – 3 zile</option><option value="Donare de sânge">Donare de sânge – 1 zi</option>                    </select>
+                </div>
+            </div>
+
+            <!-- Concediu paternal -->
+            <div id="absPanelCP" style="display:none;">
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label class="form-label" for="dtpChildBirth">Data nașterii copilului <span class="required-star">*</span></label>
+                        <input type="text" id="dtpChildBirth" class="input-control" data-datepicker>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Curs de puericultură</label>
+                        <label class="checkbox-row" for="chkCourse">
+                            <input type="checkbox" id="chkCourse">
+                            <span class="checkbox-label">Are certificat de absolvire (+5 zile)</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calc-alert calc-alert--warning" id="absWarn" style="display:none;"></div>
+
+            <div class="form-row-2">
+                <div class="form-group">
+                    <label class="form-label" for="ddlAbsStatus">Stare</label>
+                    <select id="ddlAbsStatus" class="input-control">
+                        <option value="Aprobat">Aprobat – document aprobat depus la HR</option>
+                        <option value="În așteptare">În așteptare – cerere de aprobat</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="txtAbsApprover">Aprobat de <span class="required-star" id="absApproverStar">*</span></label>
+                    <input type="text" id="txtAbsApprover" class="input-control" maxlength="100">
+                </div>
+            </div>
+            <div class="form-row-2">
+                <div class="form-group">
+                    <label class="form-label" for="fileAbsDoc">Document justificativ</label>
+                    <input type="file" id="fileAbsDoc" class="input-control" accept=".pdf,.jpg,.jpeg,.png">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="txtAbsNote">Notă</label>
+                    <input type="text" id="txtAbsNote" class="input-control" maxlength="250">
+                </div>
+            </div>
+            <div class="calc-alert calc-alert--warning" id="absIvAlert" style="display:none;"></div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn-secondary" data-abs-close>Renunță</button>
+            <button type="button" class="btn-primary" id="btnAbsSave">Salvează</button>
+        </div>
+    </div>
+</div>
+<script>window.SONIC_HR = {"today":"2026-10-28","year":2026,"operator":"Diana Popescu","approver":"Andrei Moraru","holidays":{"2025-01-01":"Anul Nou","2025-01-02":"Anul Nou","2025-01-06":"Boboteaza","2025-01-07":"Sfântul Ioan","2025-01-24":"Ziua Unirii Principatelor","2025-04-18":"Vinerea Mare","2025-04-20":"Paștele","2025-04-21":"Paștele","2025-05-01":"Ziua Muncii","2025-06-01":"Ziua Copilului","2025-06-08":"Rusaliile","2025-06-09":"Rusaliile","2025-08-15":"Adormirea Maicii Domnului","2025-11-30":"Sfântul Andrei","2025-12-01":"Ziua Națională","2025-12-25":"Crăciunul","2025-12-26":"Crăciunul","2026-01-01":"Anul Nou","2026-01-02":"Anul Nou","2026-01-06":"Boboteaza","2026-01-07":"Sfântul Ioan","2026-01-24":"Ziua Unirii Principatelor","2026-04-10":"Vinerea Mare","2026-04-12":"Paștele","2026-04-13":"Paștele","2026-05-01":"Ziua Muncii","2026-05-31":"Rusaliile","2026-06-01":"Rusaliile \/ Ziua Copilului","2026-08-15":"Adormirea Maicii Domnului","2026-11-30":"Sfântul Andrei","2026-12-01":"Ziua Națională","2026-12-25":"Crăciunul","2026-12-26":"Crăciunul","2027-01-01":"Anul Nou","2027-01-02":"Anul Nou","2027-01-06":"Boboteaza","2027-01-07":"Sfântul Ioan","2027-01-24":"Ziua Unirii Principatelor","2027-04-30":"Vinerea Mare","2027-05-01":"Ziua Muncii","2027-05-02":"Paștele","2027-05-03":"Paștele","2027-06-01":"Ziua Copilului","2027-06-20":"Rusaliile","2027-06-21":"Rusaliile","2027-08-15":"Adormirea Maicii Domnului","2027-11-30":"Sfântul Andrei","2027-12-01":"Ziua Națională","2027-12-25":"Crăciunul","2027-12-26":"Crăciunul"},"types":{"Concediu de odihnă":{"code":"CO","group":"concediu","co":true,"paid":"Angajator","limit":0,"basis":"art. 144–151 Codul muncii"},"Concediu medical":{"code":"CM","group":"concediu","co":false,"paid":"Angajator \/ FNUASS","limit":0,"basis":"OUG 158\/2005"},"Eveniment familial":{"code":"EV","group":"concediu","co":false,"paid":"Angajator","limit":0,"basis":"art. 152 Codul muncii, HG 250\/1992"},"Concediu paternal":{"code":"CP","group":"concediu","co":false,"paid":"Angajator","limit":15,"basis":"Legea 210\/1999"},"Concediu de îngrijitor":{"code":"CI","group":"concediu","co":false,"paid":"Neplătit","limit":5,"basis":"art. 152^1 Codul muncii"},"Absență – forță majoră":{"code":"FM","group":"absenta","co":false,"paid":"Se recuperează","limit":10,"basis":"art. 152^2 Codul muncii"},"Concediu fără plată":{"code":"CFP","group":"absenta","co":false,"paid":"Neplătit","limit":0,"basis":"art. 153 Codul muncii"},"Concediu creștere copil":{"code":"CCC","group":"absenta","co":false,"paid":"Indemnizație de stat","limit":0,"basis":"OUG 111\/2010 – contract suspendat"},"Absență nemotivată":{"code":"AN","group":"absenta","co":false,"paid":"Neplătit","limit":0,"basis":"regulament intern"},"Formare":{"code":"F","group":"serviciu","co":false,"paid":"Angajator","limit":0,"basis":"art. 154–158 Codul muncii"},"Delegație":{"code":"D","group":"serviciu","co":false,"paid":"Angajator","limit":0,"basis":"art. 43–44 Codul muncii"},"Alte sarcini":{"code":"AS","group":"serviciu","co":false,"paid":"Angajator","limit":0,"basis":"sarcini interne (nu e absență HR)"}},"groups":{"concediu":"Concedii","absenta":"Absențe","serviciu":"Activități de serviciu"},"cmCodes":{"01":{"name":"Boală obișnuită","pct":75,"employer5":true},"04":{"name":"Urgență medico-chirurgicală","pct":100,"employer5":true},"05":{"name":"Boli infectocontagioase din grupa A","pct":100,"employer5":true},"06":{"name":"Tuberculoză","pct":100,"employer5":true},"08":{"name":"Sarcină și lăuzie","pct":85,"employer5":false},"09":{"name":"Îngrijire copil bolnav","pct":85,"employer5":false},"14":{"name":"Neoplazii, SIDA","pct":100,"employer5":true},"15":{"name":"Risc maternal","pct":75,"employer5":false}},"events":{"Căsătoria salariatului":5,"Nașterea sau căsătoria unui copil":3,"Decesul soțului sau al unei rude până la gradul al II-lea":3,"Donare de sânge":1},"cmLimit":183,"cmExpert":90,"staff":{"e01":{"name":"Andrei Moraru","dept":"Conducere","active":true,"field":false,"hired":"2014-02-01","terminated":"","co_base":25,"co_extra":0,"co_carry":3},"e16":{"name":"Diana Popescu","dept":"Resurse umane","active":true,"field":false,"hired":"2018-03-12","terminated":"","co_base":23,"co_extra":0,"co_carry":6},"e02":{"name":"Andreea Pop","dept":"Dispecerat și relații clienți","active":true,"field":false,"hired":"2019-09-16","terminated":"","co_base":23,"co_extra":0,"co_carry":6},"e17":{"name":"Vlad Iordache","dept":"Dispecerat și relații clienți","active":true,"field":false,"hired":"2026-06-15","terminated":"","co_base":21,"co_extra":0,"co_carry":0},"e03":{"name":"Elena Marin","dept":"Recuperare creanțe","active":true,"field":false,"hired":"2017-04-03","terminated":"","co_base":23,"co_extra":0,"co_carry":1},"e04":{"name":"Mihai Rusu","dept":"Recuperare creanțe","active":true,"field":false,"hired":"2021-01-11","terminated":"","co_base":23,"co_extra":0,"co_carry":4},"e05":{"name":"Laura Stanciu","dept":"Gestiune și magazie","active":true,"field":false,"hired":"2016-06-20","terminated":"","co_base":25,"co_extra":0,"co_carry":0},"e06":{"name":"Carmen Bîndaroi","dept":"Calcul (Billing)","active":true,"field":false,"hired":"2015-03-02","terminated":"","co_base":25,"co_extra":0,"co_carry":9},"e07":{"name":"Irina Fomici","dept":"Calcul (Billing)","active":true,"field":false,"hired":"2018-10-01","terminated":"","co_base":23,"co_extra":2,"co_carry":6},"e08":{"name":"Stefania Chiran","dept":"Calcul (Billing)","active":true,"field":false,"hired":"2013-05-13","terminated":"","co_base":25,"co_extra":2,"co_carry":2},"e09":{"name":"Georgiana Dragomir","dept":"Financiar","active":true,"field":false,"hired":"2020-02-17","terminated":"","co_base":23,"co_extra":0,"co_carry":5},"e10":{"name":"Ovidiu Tănase","dept":"Financiar","active":true,"field":false,"hired":"2022-03-01","terminated":"","co_base":21,"co_extra":0,"co_carry":1},"e11":{"name":"Cristi Pică","dept":"Vânzări","active":true,"field":false,"hired":"2019-01-07","terminated":"","co_base":23,"co_extra":0,"co_carry":4},"e12":{"name":"Monica Ilie","dept":"Vânzări","active":true,"field":false,"hired":"2020-08-24","terminated":"","co_base":23,"co_extra":0,"co_carry":0},"e13":{"name":"Cosmin Bratu","dept":"Gestiune și magazie","active":true,"field":false,"hired":"2018-05-02","terminated":"","co_base":23,"co_extra":0,"co_carry":3},"e14":{"name":"Radu Ciobanu","dept":"IT","active":true,"field":false,"hired":"2017-11-06","terminated":"","co_base":23,"co_extra":3,"co_carry":6},"e15":{"name":"Sorin Lupu","dept":"Vânzări","active":false,"field":false,"hired":"2016-02-15","terminated":"2026-04-30","co_base":25,"co_extra":0,"co_carry":0},"s1":{"name":"Teodor Milian","dept":"Echipe teren","active":true,"field":true,"hired":"2015-09-28","terminated":"","co_base":25,"co_extra":0,"co_carry":5},"s2":{"name":"Bogdan Antal","dept":"Echipe teren","active":true,"field":true,"hired":"2016-04-26","terminated":"","co_base":25,"co_extra":0,"co_carry":1},"s3":{"name":"Mihai Dobre","dept":"Echipe teren","active":true,"field":true,"hired":"2016-11-23","terminated":"","co_base":25,"co_extra":3,"co_carry":4},"s4":{"name":"Cristian Pană","dept":"Echipe teren","active":true,"field":true,"hired":"2017-06-22","terminated":"","co_base":23,"co_extra":0,"co_carry":0},"s5":{"name":"Andrei Voicu","dept":"Echipe teren","active":true,"field":true,"hired":"2018-01-19","terminated":"","co_base":23,"co_extra":0,"co_carry":3},"s6":{"name":"Florin Stoica","dept":"Echipe teren","active":true,"field":true,"hired":"2018-08-18","terminated":"","co_base":23,"co_extra":0,"co_carry":6},"s7":{"name":"Daniel Ene","dept":"Echipe teren","active":true,"field":true,"hired":"2019-03-17","terminated":"","co_base":23,"co_extra":0,"co_carry":2},"s8":{"name":"Radu Marinescu","dept":"Echipe teren","active":true,"field":true,"hired":"2019-10-14","terminated":"","co_base":23,"co_extra":0,"co_carry":5},"s9":{"name":"Ionuț Ciobanu","dept":"Echipe teren","active":true,"field":true,"hired":"2020-05-12","terminated":"","co_base":23,"co_extra":0,"co_carry":1},"s10":{"name":"Elena Vasile","dept":"Echipe teren","active":true,"field":true,"hired":"2020-12-09","terminated":"","co_base":23,"co_extra":0,"co_carry":4},"s11":{"name":"Marius Neagu","dept":"Echipe teren","active":true,"field":true,"hired":"2021-07-08","terminated":"","co_base":23,"co_extra":0,"co_carry":0},"s12":{"name":"Laura Mihai","dept":"Echipe teren","active":true,"field":true,"hired":"2022-02-04","terminated":"","co_base":21,"co_extra":0,"co_carry":3},"s13":{"name":"Gabriel Toma","dept":"Echipe teren","active":true,"field":true,"hired":"2022-09-03","terminated":"","co_base":21,"co_extra":0,"co_carry":6},"s14":{"name":"Cristina Dinu","dept":"Echipe teren","active":true,"field":true,"hired":"2023-04-02","terminated":"","co_base":21,"co_extra":0,"co_carry":2},"s15":{"name":"Alin Petrescu","dept":"Echipe teren","active":true,"field":true,"hired":"2023-10-30","terminated":"","co_base":21,"co_extra":0,"co_carry":5},"s16":{"name":"Roxana Iordache","dept":"Echipe teren","active":true,"field":true,"hired":"2024-05-28","terminated":"","co_base":21,"co_extra":0,"co_carry":1},"s17":{"name":"Sebastian Lungu","dept":"Echipe teren","active":true,"field":true,"hired":"2024-12-25","terminated":"","co_base":21,"co_extra":0,"co_carry":4}},"absences":[{"id":"A-332","staff":"e10","type":"Absență – forță majoră","from":"2026-02-12","to":"2026-02-12","note":"Inundație în locuință – se recuperează pe 14.02.","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-335","staff":"e08","type":"Concediu medical","from":"2026-03-02","to":"2026-03-13","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":{"series":"CCMAM","number":"4310459","issued":"2026-03-02","code":"04","kind":"initial","initial":"","doctor":"Spitalul Universitar de Urgență București"}},{"id":"A-404","staff":"e02","type":"Concediu de odihnă","from":"2026-03-02","to":"2026-03-06","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-412","staff":"e07","type":"Concediu de odihnă","from":"2026-03-02","to":"2026-03-06","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-421","staff":"e13","type":"Concediu de odihnă","from":"2026-03-02","to":"2026-03-06","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-426","staff":"s4","type":"Concediu de odihnă","from":"2026-03-02","to":"2026-03-06","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-435","staff":"s10","type":"Concediu de odihnă","from":"2026-03-02","to":"2026-03-06","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-444","staff":"s16","type":"Concediu de odihnă","from":"2026-03-02","to":"2026-03-06","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-331","staff":"e13","type":"Concediu de îngrijitor","from":"2026-03-16","to":"2026-03-18","note":"Îngrijire părinte după intervenție chirurgicală.","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-401","staff":"e01","type":"Concediu de odihnă","from":"2026-03-23","to":"2026-03-27","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-409","staff":"e05","type":"Concediu de odihnă","from":"2026-03-23","to":"2026-03-27","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-418","staff":"e11","type":"Concediu de odihnă","from":"2026-03-23","to":"2026-03-27","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-423","staff":"s2","type":"Concediu de odihnă","from":"2026-03-23","to":"2026-03-27","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-432","staff":"s8","type":"Concediu de odihnă","from":"2026-03-23","to":"2026-03-27","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-441","staff":"s14","type":"Concediu de odihnă","from":"2026-03-23","to":"2026-03-27","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-406","staff":"e03","type":"Concediu de odihnă","from":"2026-04-13","to":"2026-04-17","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-415","staff":"e09","type":"Concediu de odihnă","from":"2026-04-13","to":"2026-04-17","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-429","staff":"s6","type":"Concediu de odihnă","from":"2026-04-13","to":"2026-04-17","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-438","staff":"s12","type":"Concediu de odihnă","from":"2026-04-13","to":"2026-04-17","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-330","staff":"s6","type":"Concediu paternal","from":"2026-05-11","to":"2026-05-29","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":{"child_birth":"2026-05-04","course":true}},{"id":"A-411","staff":"e07","type":"Concediu de odihnă","from":"2026-06-22","to":"2026-06-26","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-422","staff":"s1","type":"Concediu de odihnă","from":"2026-06-22","to":"2026-06-26","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-434","staff":"s10","type":"Concediu de odihnă","from":"2026-06-22","to":"2026-06-26","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-402","staff":"e16","type":"Concediu de odihnă","from":"2026-06-29","to":"2026-07-10","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-414","staff":"e09","type":"Concediu de odihnă","from":"2026-06-29","to":"2026-07-10","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-424","staff":"s3","type":"Concediu de odihnă","from":"2026-06-29","to":"2026-07-10","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-437","staff":"s12","type":"Concediu de odihnă","from":"2026-06-29","to":"2026-07-10","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-329","staff":"e04","type":"Eveniment familial","from":"2026-07-06","to":"2026-07-10","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":{"event":"Căsătoria salariatului"}},{"id":"A-417","staff":"e11","type":"Concediu de odihnă","from":"2026-07-06","to":"2026-07-17","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-427","staff":"s5","type":"Concediu de odihnă","from":"2026-07-06","to":"2026-07-17","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-440","staff":"s14","type":"Concediu de odihnă","from":"2026-07-06","to":"2026-07-17","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-407","staff":"e04","type":"Concediu de odihnă","from":"2026-07-13","to":"2026-07-17","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-420","staff":"e13","type":"Concediu de odihnă","from":"2026-07-13","to":"2026-07-17","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-430","staff":"s7","type":"Concediu de odihnă","from":"2026-07-13","to":"2026-07-17","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-443","staff":"s16","type":"Concediu de odihnă","from":"2026-07-13","to":"2026-07-17","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-410","staff":"e06","type":"Concediu de odihnă","from":"2026-07-20","to":"2026-07-31","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-433","staff":"s9","type":"Concediu de odihnă","from":"2026-07-20","to":"2026-07-31","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-400","staff":"e01","type":"Concediu de odihnă","from":"2026-07-27","to":"2026-08-07","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-413","staff":"e08","type":"Concediu de odihnă","from":"2026-07-27","to":"2026-08-07","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-436","staff":"s11","type":"Concediu de odihnă","from":"2026-07-27","to":"2026-08-07","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-326","staff":"e14","type":"Concediu de odihnă","from":"2026-08-03","to":"2026-08-14","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-403","staff":"e02","type":"Concediu de odihnă","from":"2026-08-03","to":"2026-08-07","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-416","staff":"e10","type":"Concediu de odihnă","from":"2026-08-03","to":"2026-08-07","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-425","staff":"s4","type":"Concediu de odihnă","from":"2026-08-03","to":"2026-08-07","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-439","staff":"s13","type":"Concediu de odihnă","from":"2026-08-03","to":"2026-08-07","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-405","staff":"e03","type":"Concediu de odihnă","from":"2026-08-10","to":"2026-08-21","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-419","staff":"e12","type":"Concediu de odihnă","from":"2026-08-10","to":"2026-08-21","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-428","staff":"s6","type":"Concediu de odihnă","from":"2026-08-10","to":"2026-08-21","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-442","staff":"s15","type":"Concediu de odihnă","from":"2026-08-10","to":"2026-08-21","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-336","staff":"s2","type":"Concediu de odihnă","from":"2026-08-17","to":"2026-08-28","note":"S-a îmbolnăvit în concediu (CM 24–26.08) – concediul de odihnă s-a întrerupt.","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-408","staff":"e05","type":"Concediu de odihnă","from":"2026-08-17","to":"2026-08-28","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-431","staff":"s8","type":"Concediu de odihnă","from":"2026-08-17","to":"2026-08-28","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-445","staff":"s17","type":"Concediu de odihnă","from":"2026-08-17","to":"2026-08-28","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-337","staff":"s2","type":"Concediu medical","from":"2026-08-24","to":"2026-08-26","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":{"series":"CCMAM","number":"4387720","issued":"2026-08-24","code":"01","kind":"initial","initial":"","doctor":"Dr. Vasile Ion – CMI"}},{"id":"A-328","staff":"e12","type":"Concediu medical","from":"2026-09-14","to":"2026-09-25","note":"Copil internat.","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":{"series":"CCMAM","number":"4402277","issued":"2026-09-14","code":"09","kind":"initial","initial":"","doctor":"Spitalul Clinic de Copii „Grigore Alexandrescu”"}},{"id":"A-321","staff":"e07","type":"Concediu medical","from":"2026-10-19","to":"2026-10-25","note":"Certificat medical depus.","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":{"series":"CCMAM","number":"4469871","issued":"2026-10-19","code":"01","kind":"initial","initial":"","doctor":"Dr. Petrescu Ana – Policlinica Sector 3"}},{"id":"A-300","staff":"s5","type":"Concediu de odihnă","from":"2026-10-26","to":"2026-11-06","note":"Concediu de odihnă","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-327","staff":"e07","type":"Concediu medical","from":"2026-10-26","to":"2026-11-06","note":"Prelungire.","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":{"series":"CCMAM","number":"4471502","issued":"2026-10-26","code":"01","kind":"continuare","initial":"CCMAM 4469871","doctor":"Dr. Petrescu Ana – Policlinica Sector 3"}},{"id":"A-325","staff":"e09","type":"Concediu fără plată","from":"2026-10-28","to":"2026-10-28","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-306","staff":"s8","type":"Alte sarcini","from":"2026-10-29","to":"2026-10-30","note":"Citiri walk-by Lacul Tei","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-304","staff":"s7","type":"Formare","from":"2026-10-30","to":"2026-10-30","note":"Instruire contoare ultrasonice","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-301","staff":"s1","type":"Alte sarcini","from":"2026-11-02","to":"2026-11-03","note":"Verificări metrologice sector 2","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-303","staff":"s14","type":"Formare","from":"2026-11-02","to":"2026-11-02","note":"Instruire terminal citire walk-by","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-322","staff":"e05","type":"Delegație","from":"2026-11-03","to":"2026-11-04","note":"Inventar punct de lucru Brașov.","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-302","staff":"s11","type":"Concediu de odihnă","from":"2026-11-04","to":"2026-11-06","note":"Concediu de odihnă","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-305","staff":"s3","type":"Concediu medical","from":"2026-11-05","to":"2026-11-05","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":{"series":"CCMAM","number":"4471023","issued":"2026-11-05","code":"01","kind":"initial","initial":"","doctor":"Dr. Ionescu Maria – CMI"}},{"id":"A-323","staff":"e11","type":"Formare","from":"2026-11-10","to":"2026-11-10","note":"Curs produse noi (gateway-uri).","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-320","staff":"e02","type":"Concediu de odihnă","from":"2026-11-16","to":"2026-11-20","note":"","approved_by":"Andrei Moraru","entered_by":"Diana Popescu","status":"Aprobat","detail":[]},{"id":"A-334","staff":"e17","type":"Concediu de odihnă","from":"2026-11-23","to":"2026-11-27","note":"Prima cerere de concediu.","approved_by":"","entered_by":"Diana Popescu","status":"În așteptare","detail":[]},{"id":"A-324","staff":"e03","type":"Concediu de odihnă","from":"2026-12-21","to":"2026-12-31","note":"Sărbători.","approved_by":"","entered_by":"Diana Popescu","status":"În așteptare","detail":[]},{"id":"A-333","staff":"e06","type":"Concediu de odihnă","from":"2026-12-28","to":"2026-12-31","note":"","approved_by":"","entered_by":"Diana Popescu","status":"În așteptare","detail":[]}],"interventions":{"s4":[{"id":"I-5022","date":"2026-10-28","time":"11:00","type":"Service","nod":"81-001-0002"},{"id":"I-5023","date":"2026-10-28","time":"14:00","type":"Service","nod":"81-001-0021"},{"id":"I-5034","date":"2026-10-29","time":"10:00","type":"Service","nod":"81-001-0010"}],"s2":[{"id":"I-5025","date":"2026-10-28","time":"12:00","type":"Service","nod":"81-001-0004"},{"id":"I-5026","date":"2026-10-28","time":"15:00","type":"Service","nod":"81-001-0140"},{"id":"I-5029","date":"2026-10-29","time":"10:00","type":"Montaj ulterior","nod":"81-001-0020"}],"s1":[{"id":"I-5027","date":"2026-10-28","time":"10:00","type":"Service","nod":"81-001-0040"},{"id":"I-5028","date":"2026-10-28","time":"13:00","type":"Service","nod":"81-001-0001"},{"id":"I-5033","date":"2026-10-29","time":"11:00","type":"Service","nod":"81-001-0030"}],"s3":[{"id":"I-5029","date":"2026-10-29","time":"10:00","type":"Montaj ulterior","nod":"81-001-0020"},{"id":"I-5035","date":"2026-10-28","time":"08:00","type":"Montaj","nod":"81-001-2108"}],"s6":[{"id":"I-5030","date":"2026-10-28","time":"10:30","type":"Service","nod":"81-001-0017"},{"id":"I-5031","date":"2026-10-28","time":"13:30","type":"Service","nod":"81-001-0467"}],"s7":[{"id":"I-5032","date":"2026-10-29","time":"09:00","type":"Service","nod":"81-001-0053"}],"s8":[{"id":"I-5036","date":"2026-10-28","time":"08:30","type":"Citire walk-by","nod":"81-001-0047"}]}};</script>
+<script src="assets/js/hr-absence.js"></script>
+
+<script>
+/* Editare Angajat – validări date generale / personale (CNP), contract de muncă, tab Teren (bifă, roluri, competențe,
+   stocul gestiunii), concedii și absențe (sold CO, drepturi, CM, absențe prin SonicAbsence). În producție: /api/staff/{id}. */
+const StaffEdit = (function () {
+    const IS_NEW = false;
+    const WH = {"G-01":{"name":"Gestiune Teodor Milian","location":"Autoutilitara B-201-SNC","items":[{"code":"REP-30","name":"Repartitor Metra E-ITN 30.4 – Radio","qty":6,"um":"buc"},{"code":"APA-AR","name":"Contor apă rece E-RM 30 AR","qty":4,"um":"buc"},{"code":"APA-AC","name":"Contor apă caldă E-RM 30 AC","qty":4,"um":"buc"},{"code":"SIG-01","name":"Sigiliu","qty":60,"um":"buc"},{"code":"RAC-12","name":"Racord olandez 1\/2\"","qty":6,"um":"buc"},{"code":"GAR-12","name":"Set garnituri 1\/2\"","qty":12,"um":"set"},{"code":"ADP-RP","name":"Adaptor montaj repartitor","qty":8,"um":"buc"}]},"G-02":{"name":"Gestiune Bogdan Antal","location":"Autoutilitara B-202-SNC","items":[{"code":"REP-30","name":"Repartitor Metra E-ITN 30.4 – Radio","qty":4,"um":"buc"},{"code":"APA-AR","name":"Contor apă rece E-RM 30 AR","qty":12,"um":"buc"},{"code":"APA-AC","name":"Contor apă caldă E-RM 30 AC","qty":10,"um":"buc"},{"code":"ET-US","name":"Contor energie termică ultrasonic","qty":1,"um":"buc"},{"code":"MOD-RF","name":"Modul radio contor apă","qty":4,"um":"buc"},{"code":"SIG-01","name":"Sigiliu","qty":120,"um":"buc"},{"code":"ROB-12","name":"Robinet sferic 1\/2\"","qty":8,"um":"buc"},{"code":"RAC-12","name":"Racord olandez 1\/2\"","qty":16,"um":"buc"},{"code":"GAR-12","name":"Set garnituri 1\/2\"","qty":30,"um":"set"}]},"G-03":{"name":"Gestiune Mihai Dobre","location":"Autoutilitara B-203-SNC","items":[{"code":"REP-30","name":"Repartitor Metra E-ITN 30.4 – Radio","qty":38,"um":"buc"},{"code":"APA-AR","name":"Contor apă rece E-RM 30 AR","qty":14,"um":"buc"},{"code":"APA-AC","name":"Contor apă caldă E-RM 30 AC","qty":12,"um":"buc"},{"code":"SIG-01","name":"Sigiliu","qty":260,"um":"buc"},{"code":"ROB-12","name":"Robinet sferic 1\/2\"","qty":10,"um":"buc"},{"code":"RAC-12","name":"Racord olandez 1\/2\"","qty":24,"um":"buc"},{"code":"GAR-12","name":"Set garnituri 1\/2\"","qty":40,"um":"set"},{"code":"ADP-RP","name":"Adaptor montaj repartitor","qty":46,"um":"buc"}]},"G-04":{"name":"Gestiune Cristian Pană","location":"Autoutilitara B-204-SNC","items":[{"code":"GW-LR","name":"Gateway LoRa \/ wM-Bus","qty":2,"um":"buc"},{"code":"SZ-FL","name":"Senzor inundație","qty":5,"um":"buc"},{"code":"REP-30","name":"Repartitor Metra E-ITN 30.4 – Radio","qty":0,"um":"buc"},{"code":"SIG-01","name":"Sigiliu","qty":20,"um":"buc"},{"code":"MOD-RF","name":"Modul radio contor apă","qty":6,"um":"buc"}]},"G-06":{"name":"Gestiune Florin Stoica","location":"Autoutilitara B-206-SNC","items":[{"code":"APA-AR","name":"Contor apă rece E-RM 30 AR","qty":6,"um":"buc"},{"code":"APA-AC","name":"Contor apă caldă E-RM 30 AC","qty":6,"um":"buc"},{"code":"GW-LR","name":"Gateway LoRa \/ wM-Bus","qty":1,"um":"buc"},{"code":"SIG-01","name":"Sigiliu","qty":70,"um":"buc"},{"code":"ROB-12","name":"Robinet sferic 1\/2\"","qty":6,"um":"buc"},{"code":"RAC-12","name":"Racord olandez 1\/2\"","qty":10,"um":"buc"},{"code":"GAR-12","name":"Set garnituri 1\/2\"","qty":16,"um":"set"}]},"G-07":{"name":"Gestiune Daniel Ene","location":"Autoutilitara B-207-SNC","items":[{"code":"ET-US","name":"Contor energie termică ultrasonic","qty":1,"um":"buc"},{"code":"APA-AR","name":"Contor apă rece E-RM 30 AR","qty":5,"um":"buc"},{"code":"APA-AC","name":"Contor apă caldă E-RM 30 AC","qty":5,"um":"buc"},{"code":"SIG-01","name":"Sigiliu","qty":40,"um":"buc"},{"code":"RAC-12","name":"Racord olandez 1\/2\"","qty":8,"um":"buc"},{"code":"GAR-12","name":"Set garnituri 1\/2\"","qty":12,"um":"set"}]},"G-08":{"name":"Gestiune Radu Marinescu","location":"Autoutilitara B-208-SNC","items":[{"code":"REP-30","name":"Repartitor Metra E-ITN 30.4 – Radio","qty":12,"um":"buc"},{"code":"SIG-01","name":"Sigiliu","qty":40,"um":"buc"},{"code":"ADP-RP","name":"Adaptor montaj repartitor","qty":14,"um":"buc"}]}};
+    const ICON_CANCEL = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"><\/circle><line x1=\"15\" y1=\"9\" x2=\"9\" y2=\"15\"><\/line><line x1=\"9\" y1=\"9\" x2=\"15\" y2=\"15\"><\/line><\/svg>";
+    const ICON_APPROVE = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 6 9 17 4 12\"><\/polyline><\/svg>";
+    const ICON_TRASH = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"3 6 5 6 21 6\"><\/polyline><path d=\"M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6\"><\/path><\/svg>";
+    const $ = id => document.getElementById(id);
+    const esc = s => (s || '').toString().replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const fmt = iso => iso.split('-').reverse().join('.');
+    const showErrors = (box, errors) => {
+        box.innerHTML = errors.map(e => '<div>' + e + '</div>').join('');
+        box.style.display = errors.length ? 'block' : 'none';
+        return !errors.length;
+    };
+    /* ── Tab 1: Date generale ─────────────────────────────── */
+    // CNP: cifra de control (constanta 279146358279) + data nașterii; întoarce data ISO sau ''
+    function cnpBirth(c) {
+        if (!/^[1-8]\d{12}$/.test(c)) return '';
+        const w = '279146358279'; let sum = 0;
+        for (let i = 0; i < 12; i++) sum += +c[i] * +w[i];
+        let k = sum % 11; if (k === 10) k = 1;
+        if (k !== +c[12]) return '';
+        const cent = { 1: 1900, 2: 1900, 3: 1800, 4: 1800, 5: 2000, 6: 2000, 7: 1900, 8: 1900 }[c[0]];
+        const y = cent + +c.slice(1, 3), m = +c.slice(3, 5), d = +c.slice(5, 7), dt = new Date(y, m - 1, d);
+        return dt.getFullYear() === y && dt.getMonth() === m - 1 && dt.getDate() === d ? y + '-' + c.slice(3, 5) + '-' + c.slice(5, 7) : '';
+    }
+    $('txtCnp').addEventListener('input', () => { const b = cnpBirth($('txtCnp').value.trim()); $('txtBirth').value = b ? fmt(b) : ''; });
+    $('generalForm').addEventListener('submit', e => {
+        e.preventDefault();
+        const errors = [];
+        if (!$('txtFirst').value.trim()) errors.push('Completați prenumele.');
+        if (!$('txtLast').value.trim()) errors.push('Completați numele.');
+        if (!$('ddlDeptEdit').value) errors.push('Selectați departamentul.');
+        if (!$('txtPosition').value.trim()) errors.push('Completați funcția.');
+        if (!$('txtPhoneEdit').value.trim()) errors.push('Completați telefonul.');
+        const mail = $('txtEmail').value.trim();
+        if (mail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) errors.push('Adresa de e-mail nu este validă.');
+        if (!cnpBirth($('txtCnp').value.trim())) errors.push('CNP-ul nu este valid.');
+        if (!$('txtIdDoc').value.trim()) errors.push('Completați actul de identitate.');
+        if (!$('txtAddress').value.trim()) errors.push('Completați adresa de domiciliu.');
+        if (!showErrors($('generalErrors'), errors)) return;
+        if (IS_NEW) {
+            // În producție: POST /api/staff → id nou; taburile Teren / Indisponibilități devin active
+            ['tabBtn-contract', 'tabBtn-teren', 'tabBtn-indisp'].forEach(id => $(id).disabled = false);
+            alert('Angajatul a fost adăugat. Puteți completa acum tabul Teren și indisponibilitățile.');
+        } else {
+            alert('Datele generale au fost salvate.');
+        }
+    });
+
+    /* ── Tab 2: Teren ─────────────────────────────────────── */
+    const roleBoxes = () => Array.from(document.querySelectorAll('#fieldSet input[name="roles[]"]'));
+    const skillBoxes = () => Array.from(document.querySelectorAll('#fieldSet input[name="skills[]"]'));
+
+    function syncField() {
+        const on = $('chkField').checked;
+        $('fieldSet').style.display = on ? '' : 'none';
+        $('fieldOffNote').style.display = on ? 'none' : '';
+        const needSkill = roleBoxes().some(c => c.checked && (c.value === 'Montator' || c.value === 'Service'));
+        $('skillsStar').style.display = needSkill ? '' : 'none';
+    }
+
+    function renderStock() {
+        const code = $('txtWarehouseEdit').value.trim().toUpperCase();
+        const wh = WH[code];
+        const body = $('whStockBody');
+        $('whCode').textContent = code || '—';
+        $('whLocation').textContent = wh ? wh.name + ' · ' + wh.location : (code ? 'Gestiunea nu există în SONIC FIN' : 'Fără gestiune');
+        $('whLink').style.display = wh ? '' : 'none';
+        $('whLink').href = 'fin-gestiuni-edit.html?wh=' + encodeURIComponent(code);
+        if (!wh || !wh.items.length) {
+            body.innerHTML = '<tr><td colspan="4" class="table-empty">' + (wh ? 'Gestiunea nu are stoc.' : 'Nicio gestiune asociată.') + '</td></tr>';
+            return;
+        }
+        body.innerHTML = wh.items.map(it => '<tr><td class="td-code">' + esc(it.code) + '</td><td class="td-name">' + esc(it.name)
+            + '</td><td style="text-align: right;">' + it.qty.toLocaleString('ro-RO') + '</td><td>' + esc(it.um) + '</td></tr>').join('');
+    }
+
+    $('chkField').addEventListener('change', syncField);
+    roleBoxes().forEach(c => c.addEventListener('change', syncField));
+    $('txtWarehouseEdit').addEventListener('input', renderStock);
+    $('fieldForm').addEventListener('submit', e => {
+        e.preventDefault();
+        const errors = [];
+        if ($('chkField').checked) {
+            const roles = roleBoxes().filter(c => c.checked).map(c => c.value);
+            if (!roles.length) errors.push('Selectați cel puțin un rol.');
+            if ((roles.includes('Montator') || roles.includes('Service')) && !skillBoxes().some(c => c.checked)) {
+                errors.push('Selectați cel puțin o competență pentru rolurile Montator / Service.');
+            }
+        }
+        if (!showErrors($('fieldErrors'), errors)) return;
+        alert($('chkField').checked ? 'Rolurile, competențele și gestiunea au fost salvate.' : 'Angajatul a fost marcat ca angajat de birou (nu lucrează în teren).');
+    });
+
+    /* ── Tab 4: Concedii și absențe (SonicAbsence – partials/absence-modal.php) ─── */
+    const STAFF_ID = "s3";
+    const HR_YEAR = 2026;
+    const fmtShort = (f, t) => f === t ? fmt(f) : fmt(f).slice(0, 5) + ' – ' + fmt(t);
+    let pill = '';
+    const statusBadge = st => '<span class="status-badge ' + ({ 'Aprobat': 'status-online', 'În așteptare': 'status-warning' }[st] || 'status-offline') + '">' + esc(st) + '</span>';
+
+    function renderAbsences() {
+        if (!STAFF_ID || !window.SonicAbsence) return;
+        const H = SonicAbsence.data;
+        const rows = H.absences.filter(a => a.staff === STAFF_ID && (!pill || (pill === 'other' ? !['Concediu de odihnă', 'Concediu medical'].includes(a.type) : H.types[a.type].code === pill)))
+            .sort((x, y) => y.from.localeCompare(x.from));
+        $('absBody').innerHTML = rows.map(a => {
+            const det = [SonicAbsence.detail(a), a.note, a.document ? 'Document: ' + a.document : ''].filter(Boolean).join(' · ');
+            return '<tr data-abs="' + a.id + '"><td class="td-name">' + esc(a.type) + '<span class="list-sublabel">' + esc(H.types[a.type].code) + '</span></td>'
+                + '<td style="white-space: nowrap;">' + fmtShort(a.from, a.to) + (a.from.slice(0, 4) !== a.to.slice(0, 4) || a.from === a.to ? '' : '<span class="list-sublabel">' + a.from.slice(0, 4) + '</span>') + '</td>'
+                + '<td style="text-align: center;">' + SonicAbsence.workdays(a.from, a.to) + '</td><td>' + esc(det || '—') + '</td>'
+                + '<td>' + esc(a.entered_by || '—') + '</td><td>' + esc(a.approved_by || '—') + '</td><td style="text-align: center;">' + statusBadge(a.status) + '</td>'
+                + '<td style="text-align: center; white-space: nowrap;">'
+                + (a.status === 'În așteptare' ? '<button type="button" class="btn-action-icon" title="Aprobă" onclick="StaffEdit.approve(\'' + a.id + '\')">' + ICON_APPROVE + '</button>' : '')
+                + (a.status !== 'Anulat' ? '<button type="button" class="btn-action-icon" title="Anulează absența" onclick="StaffEdit.cancel(\'' + a.id + '\')">' + ICON_CANCEL + '</button>' : '—')
+                + '</td></tr>';
+        }).join('') || '<tr><td colspan="8" class="table-empty">Nicio absență înregistrată' + (pill ? ' pentru filtrul ales' : '') + '.</td></tr>';
+        $('absCount').textContent = rows.length;
+        renderBalance();
+    }
+
+    function renderBalance() {
+        if (!$('kpiLeft')) return;
+        const b = SonicAbsence.balance(STAFF_ID), m = SonicAbsence.medical(STAFF_ID), H = SonicAbsence.data;
+        $('kpiRight').textContent = b.base + b.extra;
+        $('kpiRightMeta').textContent = b.base + ' de bază' + (b.extra ? ' + ' + b.extra + ' suplimentare' : '') + (b.months < 12 ? ' · proporțional, ' + b.months + ' luni' : '');
+        $('kpiCarry').textContent = b.carry;
+        $('kpiCarryMeta').textContent = b.carry ? 'rămase ' + b.carryLeft + ' · valabile până la 30.06.' + (HR_YEAR + 1) : 'nu există zile reportate';
+        $('kpiUsed').textContent = b.taken + ' / ' + b.planned;
+        $('kpiUsedMeta').textContent = b.pending ? b.pending + ' zile în cereri în așteptare' : 'nicio cerere în așteptare';
+        $('kpiLeft').textContent = b.remaining;
+        $('kpiTotal').textContent = b.total;
+        $('kpiLeftBar').style.width = (b.total ? Math.round((b.total - b.remaining) / b.total * 100) : 0) + '%';
+        if ($('medCerts')) {
+            $('medCerts').textContent = m.certs + ' certificate';
+            $('medWork').textContent = m.work;
+            $('medSplit').textContent = m.employer + ' / ' + m.fnuass;
+            $('med12').textContent = m.last12 + ' / ' + H.cmLimit + ' zile';
+            $('medBadge').className = 'status-badge ' + (m.last12 > H.cmExpert ? 'status-warning' : 'status-online');
+            $('medBadge').textContent = m.last12 > H.cmExpert ? 'Aviz medic expert necesar' : 'Sub limita de ' + H.cmExpert + ' zile';
+        }
+    }
+
+    function openAbsence() { SonicAbsence.open({ staff: STAFF_ID, lockStaff: true, onSaved: renderAbsences }); }
+    function approve(id) {
+        if (!confirm('Aprobați absența?')) return;
+        SonicAbsence.setStatus(id, 'Aprobat', SonicAbsence.data.approver);   // În producție: PATCH /api/staff/absences/{id}
+        renderAbsences();
+    }
+    function cancel(id) {
+        if (!confirm('Anulați absența? Înregistrarea rămâne în istoric cu starea „Anulat”, iar zilele revin în sold.')) return;
+        SonicAbsence.setStatus(id, 'Anulat');
+        renderAbsences();
+    }
+
+    /* Drepturi de concediu: zile de bază, zile suplimentare, report (în producție: PUT /api/staff/{id}/leave-rights) */
+    function syncRights() {
+        if (!STAFF_ID) return;
+        const st = SonicAbsence.data.staff[STAFF_ID];
+        st.co_base = parseInt($('txtCoBase').value, 10) || 0;
+        st.co_carry = parseInt($('txtCoCarry').value, 10) || 0;
+        st.co_extra = Array.from(document.querySelectorAll('#extraBody tr[data-extra]')).reduce((n, tr) => n + (parseInt(tr.querySelector('[data-cell="days"]').textContent, 10) || 0), 0);
+        renderBalance();
+    }
+    function addExtra() {
+        const reason = $('ddlExtraReason').value, days = parseInt($('txtExtraDays').value, 10), note = $('txtExtraNote').value.trim();
+        const errors = [];
+        if (!reason) errors.push('Selectați motivul zilelor suplimentare.');
+        if (!(days >= 1 && days <= 20)) errors.push('Numărul de zile suplimentare este între 1 și 20.');
+        if (!showErrors($('rightsErrors'), errors)) return;
+        const tr = document.createElement('tr');
+        tr.dataset.extra = '';
+        tr.innerHTML = '<td class="td-name" data-cell="reason">' + esc(reason) + '</td><td style="text-align: center;" data-cell="days">' + days + '</td><td>' + esc(note || '—') + '</td>'
+            + '<td style="text-align: center;"><button type="button" class="btn-action-icon" title="Elimină zilele suplimentare" onclick="StaffEdit.removeExtra(this)">' + ICON_TRASH + '</button></td>';
+        $('extraBody').insertBefore(tr, $('extraEmptyRow'));
+        $('extraEmptyRow').style.display = 'none';
+        $('ddlExtraReason').value = ''; $('txtExtraDays').value = ''; $('txtExtraNote').value = '';
+        syncRights();
+    }
+    function removeExtra(btn) {
+        const tr = btn.closest('tr');
+        if (!confirm('Eliminați zilele suplimentare „' + tr.querySelector('[data-cell="reason"]').textContent + '”?')) return;
+        tr.remove();
+        $('extraEmptyRow').style.display = document.querySelector('#extraBody tr[data-extra]') ? 'none' : '';
+        syncRights();
+    }
+    function saveRights() {
+        const errors = [], base = parseInt($('txtCoBase').value, 10), carry = parseInt($('txtCoCarry').value || '0', 10);
+        if (!(base >= 20)) errors.push('Concediul de odihnă de bază este de cel puțin 20 de zile lucrătoare (art. 145 Codul muncii).');
+        if (!(carry >= 0 && carry <= 60)) errors.push('Zilele reportate trebuie să fie un număr între 0 și 60.');
+        if (!showErrors($('rightsErrors'), errors)) return;
+        syncRights();
+        alert('Drepturile de concediu au fost salvate.');
+    }
+    ['txtCoBase', 'txtCoCarry'].forEach(id => $(id).addEventListener('input', syncRights));
+    document.querySelectorAll('#absPills [data-pill]').forEach(b => b.addEventListener('click', () => {
+        pill = b.dataset.pill;
+        document.querySelectorAll('#absPills [data-pill]').forEach(x => x.classList.toggle('active', x === b));
+        renderAbsences();
+    }));
+
+    /* ── Tab 2: Contract de muncă ─────────────────────────── */
+    function syncContract() {
+        const fixed = $('ddlContractType').value === 'Durată determinată';
+        $('dtpContractEnd').disabled = !fixed; $('contractEndStar').style.display = fixed ? '' : 'none';
+        if (!fixed) SonicDatepicker.setValue($('dtpContractEnd'), '');
+        const part = $('ddlNorm').value === 'Timp parțial';
+        $('txtHours').disabled = !part; if (!part) $('txtHours').value = 8;
+        $('terminationNote').style.display = SonicDatepicker.getISO($('dtpTerminated')) ? '' : 'none';
+    }
+    ['ddlContractType', 'ddlNorm', 'dtpTerminated'].forEach(id => $(id).addEventListener('change', syncContract));
+    $('contractForm').addEventListener('submit', e => {
+        e.preventDefault();
+        const errors = [];
+        if (!$('txtContractNo').value.trim()) errors.push('Completați numărul contractului.');
+        if (!SonicDatepicker.getISO($('dtpContractDate'))) errors.push('Completați data contractului.');
+        if (!SonicDatepicker.getISO($('dtpHired'))) errors.push('Completați data începerii activității.');
+        if ($('ddlContractType').value === 'Durată determinată' && !SonicDatepicker.getISO($('dtpContractEnd'))) errors.push('Completați data de sfârșit a contractului pe durată determinată.');
+        const h = parseInt($('txtHours').value, 10);
+        if ($('ddlNorm').value === 'Timp parțial' && !(h >= 1 && h <= 7)) errors.push('Numărul de ore pe zi pentru timp parțial este între 1 și 7.');
+        if (!/^\d{6}$/.test($('txtCor').value.trim())) errors.push('Codul COR are 6 cifre.');
+        if (parseInt($('txtProbation').value || '0', 10) > 120 || parseInt($('txtProbation').value || '0', 10) < 0) errors.push('Perioada de probă este de cel mult 90 de zile (120 pentru funcțiile de conducere).');
+        if (SonicDatepicker.getISO($('dtpTerminated')) && !$('ddlTermination').value) errors.push('Selectați temeiul încetării.');
+        if (!showErrors($('contractErrors'), errors)) return;
+        alert('Contractul de muncă a fost salvat. Modificările se transmit în Revisal.');
+    });
+
+    syncField();
+    renderStock();
+    syncContract();
+    renderAbsences();
+    return { openAbsence, approve, cancel, addExtra, removeExtra, saveRights };
+})();
+</script>
+
+    </div><!-- /.content -->
+    <footer class="app-footer">
+        SONIC METERING &copy; 2026 &ndash; All rights reserved
+    </footer>
+</div><!-- /.main -->
+
+<script src="assets/js/sidebar.js?v=1.0.1"></script>
+</body>
+</html>

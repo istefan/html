@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
     <title>Document de Gestiune – SONIC</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.31">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.37">
     <script src="assets/js/nod-picker.js"></script>
     <script src="assets/js/edit-tabs.js"></script>
     <script src="assets/js/datepicker.js"></script>
     <script src="assets/js/action-tooltip.js"></script>
+    <script src="assets/js/history-tab.js"></script>
 </head>
 <body>
 
@@ -182,15 +183,15 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO (dispecerat) -->
-                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                <!-- Panou SONIC PRO (dashboard) -->
+                <a href="pro-dashboard.html" class="nav-item " title="Panou">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
-                    <span class="nav-label">Dashboard</span>
+                    <span class="nav-label">Panou</span>
                 </a>
 
-                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <!-- ── DISPECERAT ── -->
                 <div class="nav-group " data-group="pro-dispecerat">
                     <button class="nav-group-title" type="button" title="Dispecerat">
                         <span class="nav-group-icon">
@@ -200,41 +201,54 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
-                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
-                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
-                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
-                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                        <a href="pro-intrare-noua.html" class="nav-subitem ">Intrare Nouă</a>
+                        <a href="pro-tickete.html" class="nav-subitem ">Tickete</a>
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
                     </div>
                 </div>
 
-                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
-                <div class="nav-group " data-group="pro-planificare">
-                    <button class="nav-group-title" type="button" title="Planificare">
+                <!-- Montaje (meniu separat; regândit 2026-11-25) -->
+                <a href="pro-montaje.html" class="nav-item " title="Montaje">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </span>
+                    <span class="nav-label">Montaje</span>
+                </a>
+
+                <!-- Citiri walk-by (meniu separat, cerință 2026-11-25) -->
+                <a href="pro-citiri.html" class="nav-item " title="Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
+                    </span>
+                    <span class="nav-label">Citiri</span>
+                </a>
+
+                <!-- ── MONITORIZARE ── -->
+                <div class="nav-group " data-group="pro-monitorizare">
+                    <button class="nav-group-title" type="button" title="Monitorizare">
                         <span class="nav-group-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                         </span>
-                        <span class="nav-label">Planificare</span>
+                        <span class="nav-label">Monitorizare</span>
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
-                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
                         <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
-                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
                     </div>
                 </div>
 
-                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <!-- ── RESURSE ── -->
                 <div class="nav-group " data-group="pro-resurse">
                     <button class="nav-group-title" type="button" title="Resurse">
                         <span class="nav-group-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
                         </span>
                         <span class="nav-label">Resurse</span>
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
-                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
-                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                        <a href="pro-biblioteca.html" class="nav-subitem ">Bibliotecă</a>
                     </div>
                 </div>
 
@@ -568,13 +582,13 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <!-- ── MASTER DATA ──────────────────────────────────────────── -->
                 <div class="nav-group " data-group="master-data">
-                    <button class="nav-group-title" type="button" title="Master Data Management">
+                    <button class="nav-group-title" type="button" title="Master Data">
                         <span class="nav-group-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                         </span>
-                        <span class="nav-label">Master Data Management</span>
+                        <span class="nav-label">Master Data</span>
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
@@ -584,6 +598,21 @@
                         <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
                         <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
                         <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
+
+                <!-- ── PERSONAL ── -->
+                <div class="nav-group " data-group="personal">
+                    <button class="nav-group-title" type="button" title="Personal">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+                        </span>
+                        <span class="nav-label">Personal</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="personal.html" class="nav-subitem ">Angajați</a>
+                        <a href="personal-indisponibilitati.html" class="nav-subitem ">Concedii și Indisponibilități</a>
                     </div>
                 </div>
 
@@ -843,7 +872,7 @@
                             <label class="form-label" for="txtReference">Referință</label>
                             <input type="text" id="txtReference" name="ref" class="input-control" maxlength="100" list="refSuggestions" value="M-301">
                             <datalist id="refSuggestions">
-                                <option value="CF-2026-044"></option><option value="CF-2026-043"></option><option value="CF-2026-042"></option><option value="CF-2026-041"></option><option value="CF-2026-040"></option><option value="CF-2026-039"></option><option value="M-301"></option><option value="M-302"></option><option value="M-303"></option><option value="M-304"></option><option value="M-305"></option><option value="M-307"></option><option value="M-308"></option><option value="M-306"></option><option value="I-5021"></option><option value="I-5022"></option><option value="I-5023"></option><option value="I-5024"></option><option value="I-5025"></option><option value="I-5026"></option><option value="I-5027"></option><option value="I-5028"></option><option value="I-5029"></option><option value="I-5030"></option><option value="I-5031"></option><option value="I-5032"></option><option value="I-5033"></option><option value="I-5034"></option><option value="I-5035"></option><option value="I-5036"></option><option value="FM-10421"></option><option value="FM-10420"></option><option value="FM-10419"></option><option value="FM-10418"></option><option value="FM-10417"></option><option value="FM-10416"></option><option value="FM-10408"></option><option value="FM-10407"></option><option value="FM-10366"></option><option value="FM-10365"></option><option value="FM-10362"></option><option value="FM-10409"></option><option value="FM-10410"></option><option value="FM-10411"></option><option value="FM-10412"></option><option value="FM-10370"></option><option value="NIR-2026-0318"></option><option value="NIR-2026-0317"></option><option value="NIR-2026-0316"></option>                            </datalist>
+                                <option value="CF-2026-044"></option><option value="CF-2026-043"></option><option value="CF-2026-042"></option><option value="CF-2026-041"></option><option value="CF-2026-040"></option><option value="CF-2026-039"></option><option value="M-301"></option><option value="M-302"></option><option value="M-303"></option><option value="M-304"></option><option value="M-305"></option><option value="M-307"></option><option value="M-309"></option><option value="M-308"></option><option value="M-306"></option><option value="I-5021"></option><option value="I-5022"></option><option value="I-5023"></option><option value="I-5024"></option><option value="I-5025"></option><option value="I-5026"></option><option value="I-5027"></option><option value="I-5028"></option><option value="I-5029"></option><option value="I-5030"></option><option value="I-5031"></option><option value="I-5032"></option><option value="I-5033"></option><option value="I-5034"></option><option value="I-5035"></option><option value="I-5036"></option><option value="FM-10421"></option><option value="FM-10420"></option><option value="FM-10419"></option><option value="FM-10418"></option><option value="FM-10417"></option><option value="FM-10416"></option><option value="FM-10408"></option><option value="FM-10407"></option><option value="FM-10366"></option><option value="FM-10365"></option><option value="FM-10362"></option><option value="FM-10409"></option><option value="FM-10410"></option><option value="FM-10411"></option><option value="FM-10412"></option><option value="FM-10370"></option><option value="NIR-2026-0318"></option><option value="NIR-2026-0317"></option><option value="NIR-2026-0316"></option>                            </datalist>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="txtAccompanyingDoc">Document însoțitor</label>
@@ -953,7 +982,7 @@ var FinDoc = (function () {
     var IS_NEW    = false;
     var DOC_ID    = "TR-2026-1142";
     var PRODUCTS  = {"REP-30":{"name":"Repartitor Metra E-ITN 30.4 – Radio","um":"buc","cost":92,"qr":true},"APA-AR":{"name":"Contor apă rece E-RM 30 AR","um":"buc","cost":118,"qr":true},"APA-AC":{"name":"Contor apă caldă E-RM 30 AC","um":"buc","cost":124,"qr":true},"ET-US":{"name":"Contor energie termică ultrasonic","um":"buc","cost":610,"qr":true},"GW-LR":{"name":"Gateway LoRa \/ wM-Bus","um":"buc","cost":980,"qr":true},"SZ-FL":{"name":"Senzor inundație","um":"buc","cost":150,"qr":true},"MOD-RF":{"name":"Modul radio contor apă","um":"buc","cost":58,"qr":true},"SIG-01":{"name":"Sigiliu","um":"buc","cost":0.6,"qr":false},"ROB-12":{"name":"Robinet sferic 1\/2\"","um":"buc","cost":21,"qr":false},"RAC-12":{"name":"Racord olandez 1\/2\"","um":"buc","cost":5.5,"qr":false},"GAR-12":{"name":"Set garnituri 1\/2\"","um":"set","cost":1.2,"qr":false},"ADP-RP":{"name":"Adaptor montaj repartitor","um":"buc","cost":3.1,"qr":false}};
-    var STOCK     = {"MC":{"REP-30":500,"APA-AR":340,"APA-AC":290,"ET-US":26,"GW-LR":18,"SZ-FL":45,"MOD-RF":64,"SIG-01":4200,"ROB-12":180,"RAC-12":420,"GAR-12":900,"ADP-RP":650},"PL-BV":{"REP-30":120,"APA-AR":60,"APA-AC":55,"ET-US":0,"GW-LR":3,"SZ-FL":8,"MOD-RF":20,"SIG-01":600,"ROB-12":40,"RAC-12":90,"GAR-12":150,"ADP-RP":140},"PL-CT":{"REP-30":40,"APA-AR":35,"APA-AC":30,"ET-US":0,"GW-LR":2,"SZ-FL":4,"MOD-RF":10,"SIG-01":300,"ROB-12":25,"RAC-12":60,"GAR-12":80,"ADP-RP":50},"PL-MS":{"REP-30":60,"APA-AR":25,"APA-AC":20,"ET-US":0,"GW-LR":1,"SZ-FL":2,"MOD-RF":6,"SIG-01":250,"ROB-12":15,"RAC-12":40,"GAR-12":60,"ADP-RP":70},"G-01":{"REP-30":6,"APA-AR":4,"APA-AC":4,"SIG-01":60,"RAC-12":6,"GAR-12":12,"ADP-RP":8},"G-02":{"REP-30":4,"APA-AR":12,"APA-AC":10,"ET-US":1,"MOD-RF":4,"SIG-01":120,"ROB-12":8,"RAC-12":16,"GAR-12":30},"G-03":{"REP-30":38,"APA-AR":14,"APA-AC":12,"SIG-01":260,"ROB-12":10,"RAC-12":24,"GAR-12":40,"ADP-RP":46},"G-04":{"GW-LR":2,"SZ-FL":5,"REP-30":4,"SIG-01":20,"MOD-RF":6},"G-06":{"APA-AR":6,"APA-AC":6,"GW-LR":1,"SIG-01":70,"ROB-12":6,"RAC-12":10,"GAR-12":16},"G-07":{"ET-US":1,"APA-AR":5,"APA-AC":5,"SIG-01":40,"RAC-12":8,"GAR-12":12},"G-08":{"REP-30":12,"SIG-01":40,"ADP-RP":14}};
+    var STOCK     = {"MC":{"REP-30":500,"APA-AR":340,"APA-AC":290,"ET-US":26,"GW-LR":18,"SZ-FL":45,"MOD-RF":64,"SIG-01":4200,"ROB-12":180,"RAC-12":420,"GAR-12":900,"ADP-RP":650},"PL-BV":{"REP-30":120,"APA-AR":60,"APA-AC":55,"ET-US":0,"GW-LR":3,"SZ-FL":8,"MOD-RF":20,"SIG-01":600,"ROB-12":40,"RAC-12":90,"GAR-12":150,"ADP-RP":140},"PL-CT":{"REP-30":40,"APA-AR":35,"APA-AC":30,"ET-US":0,"GW-LR":2,"SZ-FL":4,"MOD-RF":10,"SIG-01":300,"ROB-12":25,"RAC-12":60,"GAR-12":80,"ADP-RP":50},"PL-MS":{"REP-30":60,"APA-AR":25,"APA-AC":20,"ET-US":0,"GW-LR":1,"SZ-FL":2,"MOD-RF":6,"SIG-01":250,"ROB-12":15,"RAC-12":40,"GAR-12":60,"ADP-RP":70},"G-01":{"REP-30":6,"APA-AR":4,"APA-AC":4,"SIG-01":60,"RAC-12":6,"GAR-12":12,"ADP-RP":8},"G-02":{"REP-30":4,"APA-AR":12,"APA-AC":10,"ET-US":1,"MOD-RF":4,"SIG-01":120,"ROB-12":8,"RAC-12":16,"GAR-12":30},"G-03":{"REP-30":38,"APA-AR":14,"APA-AC":12,"SIG-01":260,"ROB-12":10,"RAC-12":24,"GAR-12":40,"ADP-RP":46},"G-04":{"GW-LR":2,"SZ-FL":5,"REP-30":0,"SIG-01":20,"MOD-RF":6},"G-06":{"APA-AR":6,"APA-AC":6,"GW-LR":1,"SIG-01":70,"ROB-12":6,"RAC-12":10,"GAR-12":16},"G-07":{"ET-US":1,"APA-AR":5,"APA-AC":5,"SIG-01":40,"RAC-12":8,"GAR-12":12},"G-08":{"REP-30":12,"SIG-01":40,"ADP-RP":14}};
     var NAMES     = {"MC":"Magazia centrală","PL-BV":"Punct de lucru Brașov","PL-CT":"Punct de lucru Constanța","PL-MS":"Punct de lucru Târgu Mureș","G-01":"Gestiune Teodor Milian","G-02":"Gestiune Bogdan Antal","G-03":"Gestiune Mihai Dobre","G-04":"Gestiune Cristian Pană","G-06":"Gestiune Florin Stoica","G-07":"Gestiune Daniel Ene","G-08":"Gestiune Radu Marinescu","F-01":"Metra Messtechnik GmbH","F-02":"Hidrometric Distribuție SRL","F-03":"LoRa Systems SRL","F-04":"Instal Market SRL","BV0006":"Asoc. de prop. de apartamente Iuliu Maniu 68","B0118":"Asociația de Proprietari Cremenița 5","B0121":"Asociația de Proprietari Bloc 32","B0124":"Asociația de Proprietari Bloc S1 Sc. 2","B0127":"Asociația de Proprietari Bloc M12","B0129":"Asociația de Proprietari Bloc 7 Drumul Taberei","B0131":"Asociația de Proprietari Bloc Z3 Titan","B0133":"Asociația de Proprietari Bloc 12 Militari","B0102":"Asociația de Proprietari Bloc 47","B0018":"Asociația de Proprietari Bloc 2C","B0140":"Asociația de Proprietari Bloc K","B0030":"Asociația de Proprietari Bloc 17 Sc. A","B0055":"Asociația de Proprietari Bloc 156 Sc. 2","B0001":"Asociația de Proprietari Bloc 27 Scara 1"};
     var OPTS      = {"wh":[["MC","Magazia centrală"],["PL-BV","Punct de lucru Brașov"],["PL-CT","Punct de lucru Constanța"],["PL-MS","Punct de lucru Târgu Mureș"],["G-01","Gestiune Teodor Milian"],["G-02","Gestiune Bogdan Antal"],["G-03","Gestiune Mihai Dobre"],["G-04","Gestiune Cristian Pană"],["G-06","Gestiune Florin Stoica"],["G-07","Gestiune Daniel Ene"],["G-08","Gestiune Radu Marinescu"]],"store":[["MC","Magazia centrală"],["PL-BV","Punct de lucru Brașov"],["PL-CT","Punct de lucru Constanța"],["PL-MS","Punct de lucru Târgu Mureș"]],"sup":[["F-01","Metra Messtechnik GmbH"],["F-02","Hidrometric Distribuție SRL"],["F-03","LoRa Systems SRL"],["F-04","Instal Market SRL"]],"part":[["BV0006","BV0006 – Asoc. de prop. de apartamente Iuliu Maniu 68"],["B0118","B0118 – Asociația de Proprietari Cremenița 5"],["B0121","B0121 – Asociația de Proprietari Bloc 32"],["B0124","B0124 – Asociația de Proprietari Bloc S1 Sc. 2"],["B0127","B0127 – Asociația de Proprietari Bloc M12"],["B0129","B0129 – Asociația de Proprietari Bloc 7 Drumul Taberei"],["B0131","B0131 – Asociația de Proprietari Bloc Z3 Titan"],["B0133","B0133 – Asociația de Proprietari Bloc 12 Militari"],["B0102","B0102 – Asociația de Proprietari Bloc 47"],["B0018","B0018 – Asociația de Proprietari Bloc 2C"],["B0140","B0140 – Asociația de Proprietari Bloc K"],["B0030","B0030 – Asociația de Proprietari Bloc 17 Sc. A"],["B0055","B0055 – Asociația de Proprietari Bloc 156 Sc. 2"],["B0001","B0001 – Asociația de Proprietari Bloc 27 Scara 1"]]};
     var TYPE_CFG  = {"Intrare":{"from":[["Furnizori","sup"]],"to":[["Gestiuni","store"]]},"Transfer":{"from":[["Gestiuni","wh"]],"to":[["Gestiuni","wh"]]},"Ieșire vânzare":{"from":[["Gestiuni","store"]],"to":[["Clienți","part"]]},"Retur":{"from":[["Gestiuni","wh"]],"to":[["Gestiuni","store"],["Furnizori","sup"]]}};

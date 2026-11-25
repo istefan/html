@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
     <title>Emitere Chitanță – SONIC</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.31">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.37">
     <script src="assets/js/nod-picker.js"></script>
     <script src="assets/js/edit-tabs.js"></script>
     <script src="assets/js/datepicker.js"></script>
     <script src="assets/js/action-tooltip.js"></script>
+    <script src="assets/js/history-tab.js"></script>
 </head>
 <body>
 
@@ -182,15 +183,15 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO (dispecerat) -->
-                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                <!-- Panou SONIC PRO (dashboard) -->
+                <a href="pro-dashboard.html" class="nav-item " title="Panou">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
-                    <span class="nav-label">Dashboard</span>
+                    <span class="nav-label">Panou</span>
                 </a>
 
-                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <!-- ── DISPECERAT ── -->
                 <div class="nav-group " data-group="pro-dispecerat">
                     <button class="nav-group-title" type="button" title="Dispecerat">
                         <span class="nav-group-icon">
@@ -200,41 +201,54 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
-                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
-                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
-                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
-                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                        <a href="pro-intrare-noua.html" class="nav-subitem ">Intrare Nouă</a>
+                        <a href="pro-tickete.html" class="nav-subitem ">Tickete</a>
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
                     </div>
                 </div>
 
-                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
-                <div class="nav-group " data-group="pro-planificare">
-                    <button class="nav-group-title" type="button" title="Planificare">
+                <!-- Montaje (meniu separat; regândit 2026-11-25) -->
+                <a href="pro-montaje.html" class="nav-item " title="Montaje">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </span>
+                    <span class="nav-label">Montaje</span>
+                </a>
+
+                <!-- Citiri walk-by (meniu separat, cerință 2026-11-25) -->
+                <a href="pro-citiri.html" class="nav-item " title="Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
+                    </span>
+                    <span class="nav-label">Citiri</span>
+                </a>
+
+                <!-- ── MONITORIZARE ── -->
+                <div class="nav-group " data-group="pro-monitorizare">
+                    <button class="nav-group-title" type="button" title="Monitorizare">
                         <span class="nav-group-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                         </span>
-                        <span class="nav-label">Planificare</span>
+                        <span class="nav-label">Monitorizare</span>
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
-                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
                         <a href="pro-harta.html" class="nav-subitem ">Hartă Live</a>
-                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
                     </div>
                 </div>
 
-                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <!-- ── RESURSE ── -->
                 <div class="nav-group " data-group="pro-resurse">
                     <button class="nav-group-title" type="button" title="Resurse">
                         <span class="nav-group-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
                         </span>
                         <span class="nav-label">Resurse</span>
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
-                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
-                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                        <a href="pro-biblioteca.html" class="nav-subitem ">Bibliotecă</a>
                     </div>
                 </div>
 
@@ -568,13 +582,13 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <!-- ── MASTER DATA ──────────────────────────────────────────── -->
                 <div class="nav-group " data-group="master-data">
-                    <button class="nav-group-title" type="button" title="Master Data Management">
+                    <button class="nav-group-title" type="button" title="Master Data">
                         <span class="nav-group-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                         </span>
-                        <span class="nav-label">Master Data Management</span>
+                        <span class="nav-label">Master Data</span>
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
@@ -584,6 +598,21 @@
                         <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
                         <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
                         <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
+
+                <!-- ── PERSONAL ── -->
+                <div class="nav-group " data-group="personal">
+                    <button class="nav-group-title" type="button" title="Personal">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+                        </span>
+                        <span class="nav-label">Personal</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="personal.html" class="nav-subitem ">Angajați</a>
+                        <a href="personal-indisponibilitati.html" class="nav-subitem ">Concedii și Indisponibilități</a>
                     </div>
                 </div>
 
@@ -966,7 +995,7 @@
 var FinReceiptEdit = (function () {
     'use strict';
 
-    var PARTNERS   = {"BV0006":{"name":"Asoc. de prop. de apartamente Iuliu Maniu 68","cui":"14572340","address":"Bd. Iuliu Maniu 68, Sector 6, București","nods":["81-033-0007"]},"B0118":{"name":"Asociația de Proprietari Cremenița 5","cui":"30111842","address":"Str. Cremenița 5, Sector 2, București","nods":["81-001-2108"]},"B0121":{"name":"Asociația de Proprietari Bloc 32","cui":"21456871","address":"Str. Pantelimon 332, Sector 2, București","nods":["81-001-0020"]},"B0124":{"name":"Asociația de Proprietari Bloc S1 Sc. 2","cui":"25789014","address":"Str. Laborator 125-127, Sector 3, București","nods":["81-001-0007"]},"B0127":{"name":"Asociația de Proprietari Bloc M12","cui":"41230987","address":"Bd. Basarabia 92, Sector 3, București","nods":[]},"B0129":{"name":"Asociația de Proprietari Bloc 7 Drumul Taberei","cui":"18834502","address":"Str. Drumul Taberei 7, Sector 6, București","nods":[]},"B0131":{"name":"Asociația de Proprietari Bloc Z3 Titan","cui":"43120556","address":"Bd. 1 Decembrie 1918 nr. 3, Sector 3, București","nods":[]},"B0133":{"name":"Asociația de Proprietari Bloc 12 Militari","cui":"43398120","address":"Bd. Iuliu Maniu 12, Sector 6, București","nods":[]},"B0102":{"name":"Asociația de Proprietari Bloc 47","cui":"19902311","address":"Calea Moșilor 241, Sector 2, București","nods":["81-001-0040"]},"B0018":{"name":"Asociația de Proprietari Bloc 2C","cui":"16620458","address":"Str. Unirii 13, Sector 5, București","nods":["81-001-0018"]},"B0140":{"name":"Asociația de Proprietari Bloc K","cui":"17788123","address":"Str. Liviu Rebreanu 14, Sector 3, București","nods":["81-001-0140"]},"B0030":{"name":"Asociația de Proprietari Bloc 17 Sc. A","cui":"22345118","address":"Str. Vergului 65, Sector 2, București","nods":["81-001-0030"]},"B0055":{"name":"Asociația de Proprietari Bloc 156 Sc. 2","cui":"20456712","address":"Aleea Bârsănești 2, Sector 6, București","nods":["81-001-0055"]},"B0001":{"name":"Asociația de Proprietari Bloc 27 Scara 1","cui":"15523409","address":"Str. Ștefan cel Mare 27, Sector 2, București","nods":["81-001-0001"]}};
+    var PARTNERS   = {"BV0006":{"name":"Asoc. de prop. de apartamente Iuliu Maniu 68","cui":"14572340","address":"Bd. Iuliu Maniu 68, Sector 6, București","nods":["81-033-0007"]},"B0118":{"name":"Asociația de Proprietari Cremenița 5","cui":"30111842","address":"Str. Cremenița 5, Sector 2, București","nods":["81-001-2108"]},"B0121":{"name":"Asociația de Proprietari Bloc 32","cui":"21456871","address":"Str. Pantelimon 332, Sector 2, București","nods":["81-001-0020"]},"B0124":{"name":"Asociația de Proprietari Bloc S1 Sc. 2","cui":"25789014","address":"Str. Laborator 125-127, Sector 3, București","nods":["81-001-0007"]},"B0127":{"name":"Asociația de Proprietari Bloc M12","cui":"41230987","address":"Bd. Basarabia 92, Sector 3, București","nods":["81-001-0310"]},"B0129":{"name":"Asociația de Proprietari Bloc 7 Drumul Taberei","cui":"18834502","address":"Str. Drumul Taberei 7, Sector 6, București","nods":["81-001-0320"]},"B0131":{"name":"Asociația de Proprietari Bloc Z3 Titan","cui":"43120556","address":"Bd. 1 Decembrie 1918 nr. 3, Sector 3, București","nods":["81-001-0331","81-001-0332"]},"B0133":{"name":"Asociația de Proprietari Bloc 12 Militari","cui":"43398120","address":"Bd. Iuliu Maniu 12, Sector 6, București","nods":[]},"B0102":{"name":"Asociația de Proprietari Bloc 47","cui":"19902311","address":"Calea Moșilor 241, Sector 2, București","nods":["81-001-0040"]},"B0018":{"name":"Asociația de Proprietari Bloc 2C","cui":"16620458","address":"Str. Unirii 13, Sector 5, București","nods":["81-001-0018"]},"B0140":{"name":"Asociația de Proprietari Bloc K","cui":"17788123","address":"Str. Liviu Rebreanu 14, Sector 3, București","nods":["81-001-0140"]},"B0030":{"name":"Asociația de Proprietari Bloc 17 Sc. A","cui":"22345118","address":"Str. Vergului 65, Sector 2, București","nods":["81-001-0030"]},"B0055":{"name":"Asociația de Proprietari Bloc 156 Sc. 2","cui":"20456712","address":"Aleea Bârsănești 2, Sector 6, București","nods":["81-001-0055"]},"B0001":{"name":"Asociația de Proprietari Bloc 27 Scara 1","cui":"15523409","address":"Str. Ștefan cel Mare 27, Sector 2, București","nods":["81-001-0001"]}};
     var INVOICES   = [{"id":"SNF-2026-01240","partner":"B0140","type":"Rată echipamente","nod":"81-001-0140","detail":"Ap. 5 – rata 2\/6","due":"2026-07-15","due_label":"15.07.2026","total":121,"left":121,"late":105},{"id":"SNS-2026-07996","partner":"B0018","type":"Servicii citire și calcul","nod":"81-001-0018","detail":"Iulie 2026","due":"2026-08-20","due_label":"20.08.2026","total":2135.65,"left":1135.65,"late":69},{"id":"SNF-2026-00911","partner":"BV0006","type":"Rată echipamente","nod":"81-033-0007","detail":"Rata 11\/12","due":"2026-09-15","due_label":"15.09.2026","total":4356,"left":4356,"late":43},{"id":"SNF-2026-01102","partner":"B0018","type":"Rată echipamente","nod":"81-001-0018","detail":"Rata 6\/10","due":"2026-09-15","due_label":"15.09.2026","total":2904,"left":2904,"late":43},{"id":"SNS-2026-08411","partner":"B0140","type":"Servicii citire și calcul","nod":"81-001-0140","detail":"August 2026","due":"2026-09-20","due_label":"20.09.2026","total":1518.55,"left":1518.55,"late":38},{"id":"SNS-2026-08412","partner":"B0018","type":"Servicii citire și calcul","nod":"81-001-0018","detail":"August 2026","due":"2026-09-20","due_label":"20.09.2026","total":2175.58,"left":2175.58,"late":38},{"id":"SNF-2026-01001","partner":"BV0006","type":"Rată echipamente","nod":"81-033-0007","detail":"Rata 12\/12","due":"2026-10-15","due_label":"15.10.2026","total":4356,"left":4356,"late":13},{"id":"SNF-2026-01180","partner":"B0018","type":"Rată echipamente","nod":"81-001-0018","detail":"Rata 7\/10","due":"2026-10-15","due_label":"15.10.2026","total":2904,"left":2904,"late":13},{"id":"SNF-2026-01287","partner":"B0102","type":"Echipamente","nod":"81-001-0040","detail":"Gateway-uri spațiu tehnic","due":"2026-10-15","due_label":"15.10.2026","total":5263.5,"left":5263.5,"late":13},{"id":"SNS-2026-08835","partner":"BV0006","type":"Servicii citire și calcul","nod":"81-033-0007","detail":"Septembrie 2026","due":"2026-10-21","due_label":"21.10.2026","total":2787.84,"left":2787.84,"late":7},{"id":"SNS-2026-08838","partner":"B0030","type":"Servicii citire și calcul","nod":"81-001-0030","detail":"Septembrie 2026","due":"2026-10-21","due_label":"21.10.2026","total":1185.8,"left":1185.8,"late":7},{"id":"SNS-2026-08839","partner":"B0140","type":"Servicii citire și calcul","nod":"81-001-0140","detail":"Septembrie 2026","due":"2026-10-21","due_label":"21.10.2026","total":1560.9,"left":960.9,"late":7},{"id":"SNS-2026-08841","partner":"B0018","type":"Servicii citire și calcul","nod":"81-001-0018","detail":"Septembrie 2026","due":"2026-10-21","due_label":"21.10.2026","total":2228.82,"left":2228.82,"late":7},{"id":"SNS-2026-08857","partner":"B0001","type":"Servicii citire și calcul","nod":"81-001-0001","detail":"Septembrie 2026","due":"2026-10-31","due_label":"31.10.2026","total":375.1,"left":375.1,"late":0},{"id":"SNS-2026-08860","partner":"B0121","type":"Servicii citire și calcul","nod":"81-001-0020","detail":"Septembrie 2026","due":"2026-11-04","due_label":"04.11.2026","total":1839.2,"left":1839.2,"late":0},{"id":"SNS-2026-08861","partner":"B0124","type":"Servicii citire și calcul","nod":"81-001-0007","detail":"Septembrie 2026","due":"2026-11-04","due_label":"04.11.2026","total":2269.96,"left":2269.96,"late":0},{"id":"SNS-2026-08862","partner":"B0118","type":"Servicii citire și calcul","nod":"81-001-2108","detail":"Septembrie 2026","due":"2026-11-06","due_label":"06.11.2026","total":1470.15,"left":1470.15,"late":0},{"id":"SNI-2026-00418","partner":"B0124","type":"Intervenții","nod":"81-001-0007","detail":"Verificare contor ET – în afara garanției","due":"2026-11-10","due_label":"10.11.2026","total":300,"left":300,"late":0},{"id":"SNF-2026-01260","partner":"B0018","type":"Rată echipamente","nod":"81-001-0018","detail":"Rata 8\/10","due":"2026-11-15","due_label":"15.11.2026","total":2904,"left":2904,"late":0},{"id":"SNF-2026-01285","partner":"B0102","type":"Rată echipamente","nod":"81-001-0040","detail":"Ap. 7 – rata 1\/12","due":"2026-11-15","due_label":"15.11.2026","total":90.75,"left":90.75,"late":0},{"id":"SNF-2026-01288","partner":"B0102","type":"Rată echipamente","nod":"81-001-0040","detail":"Rata 1\/12 – 45 apartamente","due":"2026-11-15","due_label":"15.11.2026","total":5692.51,"left":5692.51,"late":0},{"id":"SNS-2026-08870","partner":"B0055","type":"Servicii citire și calcul","nod":"81-001-0055","detail":"Septembrie 2026","due":"2026-11-20","due_label":"20.11.2026","total":1373.35,"left":1373.35,"late":0}];
     var BOOKS      = {"inc1":{"series":"SNC-A","from":1,"to":500,"next":247},"inc2":{"series":"SNC-B","from":1,"to":500,"next":112},"inc3":{"series":"SNC-C","from":1,"to":250,"next":31},"inc4":{"series":"SNC-T","from":1,"to":250,"next":88}};
     var COLLECTORS = {"inc1":"Georgiana Dragomir","inc2":"Victor Nedelcu","inc3":"Ramona Chirilă","inc4":"Ovidiu Tănase"};

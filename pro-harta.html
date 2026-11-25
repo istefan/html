@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SONIC – Platformă integrată de management al contoarelor, repartitoarelor de costuri și senzorilor LoRa / wM-Bus.">
     <title>Hartă Live – SONIC</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.0.31">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0.37">
     <script src="assets/js/nod-picker.js"></script>
     <script src="assets/js/edit-tabs.js"></script>
     <script src="assets/js/datepicker.js"></script>
     <script src="assets/js/action-tooltip.js"></script>
+    <script src="assets/js/history-tab.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="assets/js/pro-map.js"></script>
@@ -185,15 +186,15 @@
             </button>
             <div class="app-section-body">
 
-                <!-- Dashboard PRO (dispecerat) -->
-                <a href="pro-dashboard.html" class="nav-item " title="Dashboard">
+                <!-- Panou SONIC PRO (dashboard) -->
+                <a href="pro-dashboard.html" class="nav-item " title="Panou">
                     <span class="nav-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                     </span>
-                    <span class="nav-label">Dashboard</span>
+                    <span class="nav-label">Panou</span>
                 </a>
 
-                <!-- ── DISPECERAT ───────────────────────────────────────────── -->
+                <!-- ── DISPECERAT ── -->
                 <div class="nav-group " data-group="pro-dispecerat">
                     <button class="nav-group-title" type="button" title="Dispecerat">
                         <span class="nav-group-icon">
@@ -203,41 +204,54 @@
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
-                        <a href="pro-programare.html" class="nav-subitem ">Programare Intervenție</a>
-                        <a href="pro-solicitari.html" class="nav-subitem ">Solicitări Clienți</a>
-                        <a href="interventii.html" class="nav-subitem ">Intervenții</a>
-                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
+                        <a href="pro-intrare-noua.html" class="nav-subitem ">Intrare Nouă</a>
+                        <a href="pro-tickete.html" class="nav-subitem ">Tickete</a>
+                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
                     </div>
                 </div>
 
-                <!-- ── PLANIFICARE ──────────────────────────────────────────── -->
-                <div class="nav-group open" data-group="pro-planificare">
-                    <button class="nav-group-title" type="button" title="Planificare">
+                <!-- Montaje (meniu separat; regândit 2026-11-25) -->
+                <a href="pro-montaje.html" class="nav-item " title="Montaje">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </span>
+                    <span class="nav-label">Montaje</span>
+                </a>
+
+                <!-- Citiri walk-by (meniu separat, cerință 2026-11-25) -->
+                <a href="pro-citiri.html" class="nav-item " title="Citiri">
+                    <span class="nav-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
+                    </span>
+                    <span class="nav-label">Citiri</span>
+                </a>
+
+                <!-- ── MONITORIZARE ── -->
+                <div class="nav-group open" data-group="pro-monitorizare">
+                    <button class="nav-group-title" type="button" title="Monitorizare">
                         <span class="nav-group-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                         </span>
-                        <span class="nav-label">Planificare</span>
+                        <span class="nav-label">Monitorizare</span>
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
-                        <a href="pro-calendar.html" class="nav-subitem ">Calendar Echipe</a>
+                        <a href="pro-probleme-retea.html" class="nav-subitem ">Probleme Rețea</a>
                         <a href="pro-harta.html" class="nav-subitem active">Hartă Live</a>
-                        <a href="pro-montaje.html" class="nav-subitem ">Montaje și Stocuri</a>
                     </div>
                 </div>
 
-                <!-- ── RESURSE ──────────────────────────────────────────────── -->
+                <!-- ── RESURSE ── -->
                 <div class="nav-group " data-group="pro-resurse">
                     <button class="nav-group-title" type="button" title="Resurse">
                         <span class="nav-group-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
                         </span>
                         <span class="nav-label">Resurse</span>
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
-                        <a href="pro-echipe.html" class="nav-subitem ">Echipe Teren</a>
-                        <a href="pro-baza-cunostinte.html" class="nav-subitem ">Bază de Cunoștințe</a>
+                        <a href="pro-biblioteca.html" class="nav-subitem ">Bibliotecă</a>
                     </div>
                 </div>
 
@@ -571,13 +585,13 @@
                     <span class="nav-label">Dashboard</span>
                 </a>
 
-                <!-- ── MASTER DATA MANAGEMENT ───────────────────────────────── -->
+                <!-- ── MASTER DATA ──────────────────────────────────────────── -->
                 <div class="nav-group " data-group="master-data">
-                    <button class="nav-group-title" type="button" title="Master Data Management">
+                    <button class="nav-group-title" type="button" title="Master Data">
                         <span class="nav-group-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                         </span>
-                        <span class="nav-label">Master Data Management</span>
+                        <span class="nav-label">Master Data</span>
                         <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="nav-subitems">
@@ -587,6 +601,21 @@
                         <a href="gestiune-nod.html" class="nav-subitem ">Gestiune NOD</a>
                         <a href="rezervare-nod.html" class="nav-subitem ">Rezervare NOD</a>
                         <a href="alocare-nod.html" class="nav-subitem ">Alocare NOD</a>
+                    </div>
+                </div>
+
+                <!-- ── PERSONAL ── -->
+                <div class="nav-group " data-group="personal">
+                    <button class="nav-group-title" type="button" title="Personal">
+                        <span class="nav-group-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+                        </span>
+                        <span class="nav-label">Personal</span>
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-subitems">
+                        <a href="personal.html" class="nav-subitem ">Angajați</a>
+                        <a href="personal-indisponibilitati.html" class="nav-subitem ">Concedii și Indisponibilități</a>
                     </div>
                 </div>
 
@@ -787,7 +816,7 @@
     <aside class="pro-map-side">
         <div class="card pro-panel" style="margin-bottom: 0;">
             <div class="edit-section-header"><span class="edit-section-title">Straturi</span></div>
-            <label class="pro-layer-toggle"><span>Echipe (7)</span><input type="checkbox" data-layer="staff" checked></label>
+            <label class="pro-layer-toggle"><span>Echipe (16)</span><input type="checkbox" data-layer="staff" checked></label>
             <label class="pro-layer-toggle"><span>Intervenții azi (12)</span><input type="checkbox" data-layer="jobs" checked></label>
             <label class="pro-layer-toggle"><span>Probleme în rețea (8)</span><input type="checkbox" data-layer="alerts" checked></label>
             <label class="pro-layer-toggle"><span>Toate NOD-urile (18)</span><input type="checkbox" data-layer="nods"></label>
@@ -886,6 +915,96 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path></svg>
                         </button>
                                     </li>
+                                <li class="pro-feed-item">
+                    <span class="pro-avatar" data-status="teren">IC</span>
+                    <div class="pro-feed-body">
+                        <div class="pro-feed-title">Ionuț Ciobanu</div>
+                        <div class="pro-feed-meta">În teren · 0 azi</div>
+                    </div>
+                                            <button type="button" class="btn-action-icon" title="Arată pe hartă și traseul zilei" onclick="ProLiveMap.focus('s9')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path></svg>
+                        </button>
+                                    </li>
+                                <li class="pro-feed-item">
+                    <span class="pro-avatar" data-status="teren">EV</span>
+                    <div class="pro-feed-body">
+                        <div class="pro-feed-title">Elena Vasile</div>
+                        <div class="pro-feed-meta">În teren · 0 azi</div>
+                    </div>
+                                            <button type="button" class="btn-action-icon" title="Arată pe hartă și traseul zilei" onclick="ProLiveMap.focus('s10')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path></svg>
+                        </button>
+                                    </li>
+                                <li class="pro-feed-item">
+                    <span class="pro-avatar" data-status="teren">MN</span>
+                    <div class="pro-feed-body">
+                        <div class="pro-feed-title">Marius Neagu</div>
+                        <div class="pro-feed-meta">În teren · 0 azi</div>
+                    </div>
+                                            <button type="button" class="btn-action-icon" title="Arată pe hartă și traseul zilei" onclick="ProLiveMap.focus('s11')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path></svg>
+                        </button>
+                                    </li>
+                                <li class="pro-feed-item">
+                    <span class="pro-avatar" data-status="teren">LM</span>
+                    <div class="pro-feed-body">
+                        <div class="pro-feed-title">Laura Mihai</div>
+                        <div class="pro-feed-meta">În teren · 0 azi</div>
+                    </div>
+                                            <button type="button" class="btn-action-icon" title="Arată pe hartă și traseul zilei" onclick="ProLiveMap.focus('s12')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path></svg>
+                        </button>
+                                    </li>
+                                <li class="pro-feed-item">
+                    <span class="pro-avatar" data-status="teren">GT</span>
+                    <div class="pro-feed-body">
+                        <div class="pro-feed-title">Gabriel Toma</div>
+                        <div class="pro-feed-meta">În teren · 0 azi</div>
+                    </div>
+                                            <button type="button" class="btn-action-icon" title="Arată pe hartă și traseul zilei" onclick="ProLiveMap.focus('s13')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path></svg>
+                        </button>
+                                    </li>
+                                <li class="pro-feed-item">
+                    <span class="pro-avatar" data-status="teren">CD</span>
+                    <div class="pro-feed-body">
+                        <div class="pro-feed-title">Cristina Dinu</div>
+                        <div class="pro-feed-meta">În teren · 0 azi</div>
+                    </div>
+                                            <button type="button" class="btn-action-icon" title="Arată pe hartă și traseul zilei" onclick="ProLiveMap.focus('s14')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path></svg>
+                        </button>
+                                    </li>
+                                <li class="pro-feed-item">
+                    <span class="pro-avatar" data-status="teren">AP</span>
+                    <div class="pro-feed-body">
+                        <div class="pro-feed-title">Alin Petrescu</div>
+                        <div class="pro-feed-meta">În teren · 0 azi</div>
+                    </div>
+                                            <button type="button" class="btn-action-icon" title="Arată pe hartă și traseul zilei" onclick="ProLiveMap.focus('s15')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path></svg>
+                        </button>
+                                    </li>
+                                <li class="pro-feed-item">
+                    <span class="pro-avatar" data-status="teren">RI</span>
+                    <div class="pro-feed-body">
+                        <div class="pro-feed-title">Roxana Iordache</div>
+                        <div class="pro-feed-meta">În teren · 0 azi</div>
+                    </div>
+                                            <button type="button" class="btn-action-icon" title="Arată pe hartă și traseul zilei" onclick="ProLiveMap.focus('s16')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path></svg>
+                        </button>
+                                    </li>
+                                <li class="pro-feed-item">
+                    <span class="pro-avatar" data-status="teren">SL</span>
+                    <div class="pro-feed-body">
+                        <div class="pro-feed-title">Sebastian Lungu</div>
+                        <div class="pro-feed-meta">În teren · 0 azi</div>
+                    </div>
+                                            <button type="button" class="btn-action-icon" title="Arată pe hartă și traseul zilei" onclick="ProLiveMap.focus('s17')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path></svg>
+                        </button>
+                                    </li>
                             </ul>
         </div>
     </aside>
@@ -907,7 +1026,7 @@
 <script>
 /* Hartă Live – straturi, focus pe persoană + traseu, căutare NOD (date demo; în producție WebSocket /api/pro/live) */
 var ProLiveMap = (function () {
-    var D = {"staff":{"s1":{"name":"Teodor Milian","ini":"TM","roles":"Cititor, Service","status":"În teren","pos":[44.4512,26.1135],"base":[44.442,26.096],"route":[[44.4432,26.1202],[44.4521,26.1102]]},"s2":{"name":"Bogdan Antal","ini":"BA","roles":"Montator, Service","status":"În teren","pos":[44.4245,26.172],"base":[44.43,26.15],"route":[[44.4182,26.1702],[44.4241,26.1752],[44.4202,26.1502]]},"s3":{"name":"Mihai Dobre","ini":"MD","roles":"Montator","status":"În teren","pos":[44.4448,26.1452],"base":[44.43,26.15],"route":[[44.4452,26.1452]]},"s4":{"name":"Cristian Pană","ini":"CP","roles":"Service","status":"În teren","pos":[44.4705,26.066],"base":[44.442,26.096],"route":[[44.4241,26.1752],[44.4702,26.0652],[44.4781,26.0402]]},"s5":{"name":"Andrei Voicu","ini":"AV","roles":"Cititor","status":"Concediu","pos":null,"base":[44.442,26.096],"route":[]},"s6":{"name":"Florin Stoica","ini":"FS","roles":"Montator, Service","status":"În teren","pos":[44.429,26.0405],"base":[44.442,26.096],"route":[[44.4301,26.0402],[44.4322,26.0302]]},"s7":{"name":"Daniel Ene","ini":"DE","roles":"Service","status":"La birou","pos":[44.442,26.096],"base":[44.442,26.096],"route":[]},"s8":{"name":"Radu Marinescu","ini":"RM","roles":"Cititor, Montator","status":"În teren","pos":[44.4598,26.121],"base":[44.442,26.096],"route":[[44.4602,26.1202]]}},"jobs":[{"id":"I-5021","nod":"81-001-0004","gps":[44.4241,26.1752],"time":"09:00","type":"Service","status":"Finalizată","state":"done","staff":"Cristian Pană","address":"Str. Gura Ialomiței 3, Bl. PC9, Sc. B, Sector 3"},{"id":"I-5022","nod":"81-001-0002","gps":[44.4702,26.0652],"time":"11:00","type":"Service","status":"În curs","state":"progress","staff":"Cristian Pană","address":"Str. Reziliat 36, Vila, Sector 1"},{"id":"I-5023","nod":"81-001-0021","gps":[44.4781,26.0402],"time":"14:00","type":"Service","status":"Programată","state":"","staff":"Cristian Pană","address":"Str. Bucureștii Noi 26, Bl. 1, Sc. A, Sector 1"},{"id":"I-5024","nod":"81-001-0055","gps":[44.4182,26.1702],"time":"09:30","type":"Service","status":"Finalizată","state":"done","staff":"Bogdan Antal","address":"Aleea Bârsănești 2, Bl. 156, Sc. 2, Sector 6"},{"id":"I-5025","nod":"81-001-0004","gps":[44.4241,26.1752],"time":"12:00","type":"Service","status":"În curs","state":"progress","staff":"Bogdan Antal","address":"Str. Gura Ialomiței 3, Bl. PC9, Sc. B, Sector 3"},{"id":"I-5026","nod":"81-001-0140","gps":[44.4202,26.1502],"time":"15:00","type":"Service","status":"Programată","state":"","staff":"Bogdan Antal","address":"Str. Liviu Rebreanu 14, Bl. K, Sc. 3, Sector 3"},{"id":"I-5027","nod":"81-001-0040","gps":[44.4432,26.1202],"time":"10:00","type":"Service","status":"Nerealizată","state":"failed","staff":"Teodor Milian","address":"Calea Moșilor 241, Bl. 47, Sc. A+B+C, Sector 2"},{"id":"I-5028","nod":"81-001-0001","gps":[44.4521,26.1102],"time":"13:00","type":"Service","status":"Programată","state":"","staff":"Teodor Milian","address":"Str. Stefan cel Mare 27, Bl. 27, Sc. 1, Sector 2"},{"id":"I-5030","nod":"81-001-0017","gps":[44.4301,26.0402],"time":"10:30","type":"Service","status":"În curs","state":"progress","staff":"Florin Stoica","address":"Str. Sibiu 18, Bl. 813, Sc. 1, Sector 6"},{"id":"I-5031","nod":"81-001-0467","gps":[44.4322,26.0302],"time":"13:30","type":"Service","status":"Programată","state":"","staff":"Florin Stoica","address":"Aleea Callatis 1, Bl. A14A, Sc. 7+8, Sector 6"},{"id":"I-5035","nod":"81-001-2108","gps":[44.4452,26.1452],"time":"08:00","type":"Montaj","status":"În curs","state":"progress","staff":"Mihai Dobre","address":"Str. Cremenița 5, Corp B, Sector 2"},{"id":"I-5036","nod":"81-001-0047","gps":[44.4602,26.1202],"time":"08:30","type":"Citire walk-by","status":"În curs","state":"progress","staff":"Radu Marinescu","address":"Str. Lacul Tei 121, Bl. 5, Sc. 1, Sector 2"}],"alerts":[{"id":"R-901","nod":"81-001-0030","gps":[44.4372,26.1652],"title":"Gateway GW-40211","issue":"Nu transmite","sev":"Critic","type":"gw"},{"id":"R-902","nod":"81-001-0053","gps":[44.4021,26.1152],"title":"Gateway GW-40188","issue":"Nu transmite","sev":"Critic","type":"gw"},{"id":"R-903","nod":"81-001-0055","gps":[44.4182,26.1702],"title":"Contor apă 63333400","issue":"Flux invers","sev":"Ridicat","type":"apa"},{"id":"R-904","nod":"81-001-0001","gps":[44.4521,26.1102],"title":"Repartitor 34061227","issue":"Sabotaj \/ demontare","sev":"Ridicat","type":"rep"},{"id":"R-905","nod":"81-001-0023","gps":[44.4481,26.1402],"title":"Contor ET ET-77120","issue":"Eroare E3 (senzor temp.)","sev":"Mediu","type":"et"},{"id":"R-906","nod":"81-001-0140","gps":[44.4202,26.1502],"title":"Repartitor 34722225","issue":"Baterie descărcată","sev":"Mediu","type":"rep"},{"id":"R-907","nod":"81-001-0021","gps":[44.4781,26.0402],"title":"Senzor SZ-1102","issue":"Nu transmite","sev":"Mediu","type":"senzor"},{"id":"R-908","nod":"81-001-0040","gps":[44.4432,26.1202],"title":"Contor apă 63189283","issue":"Nu transmite","sev":"Scăzut","type":"apa"}],"nods":{"81-001-0001":{"gps":[44.4521,26.1102],"address":"Str. Stefan cel Mare 27, Bl. 27, Sc. 1, Sector 2","partner":"Asociația de Proprietari Bloc 27 Scara 1"},"81-001-0002":{"gps":[44.4702,26.0652],"address":"Str. Reziliat 36, Vila, Sector 1","partner":"Asociația de Proprietari Bloc Vila"},"81-001-0004":{"gps":[44.4241,26.1752],"address":"Str. Gura Ialomiței 3, Bl. PC9, Sc. B, Sector 3","partner":"Asociația de Proprietari Bloc PC9 Sc. B"},"81-001-0007":{"gps":[44.4252,26.1351],"address":"Str. Laborator 125-127, Bl. S1, Sc. 2, Sector 3","partner":"Asociația de Proprietari Bloc S1 Sc. 2"},"81-001-0010":{"gps":[44.4201,26.1031],"address":"Str. Bibescu Vodă 2, Bl. P5, Sc. 4, Sector 4","partner":"Asociația de Proprietari Bloc P5 Sc. 4"},"81-001-0017":{"gps":[44.4301,26.0402],"address":"Str. Sibiu 18, Bl. 813, Sc. 1, Sector 6","partner":"Asociația de Proprietari Bl. 813"},"81-001-0018":{"gps":[44.4271,26.1101],"address":"Str. Unirii 13, Bl. 2C, Sc. 1, Sector 5","partner":"Asociația de Proprietari Bloc 2C"},"81-001-0020":{"gps":[44.4452,26.1752],"address":"Str. Pantelimon 332, Bl. 32, Sc. 1, Sector 2","partner":"Asociația de Proprietari Bloc 32"},"81-001-0021":{"gps":[44.4781,26.0402],"address":"Str. Bucureștii Noi 26, Bl. 1, Sc. A, Sector 1","partner":"Asociația de Proprietari Bloc 1"},"81-001-0023":{"gps":[44.4481,26.1402],"address":"Str. Oteșani 14, Bl. T8B, Sc. 1, Sector 2","partner":"Asociația de Proprietari Bloc T8B"},"81-001-0030":{"gps":[44.4372,26.1652],"address":"Str. Vergului 65, Bl. 17, Sc. A, Sector 2","partner":"Asociația de Proprietari Bloc 17 Sc. A"},"81-001-0040":{"gps":[44.4432,26.1202],"address":"Calea Moșilor 241, Bl. 47, Sc. A+B+C, Sector 2","partner":"Asociația de Proprietari Bloc 47"},"81-001-0047":{"gps":[44.4602,26.1202],"address":"Str. Lacul Tei 121, Bl. 5, Sc. 1, Sector 2","partner":"Asociația de Proprietari Bloc 5 Sc. 1-4"},"81-001-0053":{"gps":[44.4021,26.1152],"address":"Calea Văcărești 308, Bl. 1E, Sc. 1, Sector 4","partner":"Asociația de Proprietari Bloc 1E"},"81-001-0055":{"gps":[44.4182,26.1702],"address":"Aleea Bârsănești 2, Bl. 156, Sc. 2, Sector 6","partner":"Asociația de Proprietari Bloc 156 Sc. 2"},"81-001-0140":{"gps":[44.4202,26.1502],"address":"Str. Liviu Rebreanu 14, Bl. K, Sc. 3, Sector 3","partner":"Asociația de Proprietari Bloc K"},"81-001-0467":{"gps":[44.4322,26.0302],"address":"Aleea Callatis 1, Bl. A14A, Sc. 7+8, Sector 6","partner":"Asociația de Proprietari Bloc A14A"},"81-001-2108":{"gps":[44.4452,26.1452],"address":"Str. Cremenița 5, Corp B, Sector 2","partner":"Asociația de Proprietari Cremenița 5"}}};
+    var D = {"staff":{"s1":{"name":"Teodor Milian","ini":"TM","roles":"Cititor, Service","status":"În teren","pos":[44.4512,26.1135],"base":[44.442,26.096],"route":[[44.4432,26.1202],[44.4521,26.1102]]},"s2":{"name":"Bogdan Antal","ini":"BA","roles":"Montator, Service","status":"În teren","pos":[44.4245,26.172],"base":[44.43,26.15],"route":[[44.4182,26.1702],[44.4241,26.1752],[44.4202,26.1502]]},"s3":{"name":"Mihai Dobre","ini":"MD","roles":"Montator","status":"În teren","pos":[44.4448,26.1452],"base":[44.43,26.15],"route":[[44.4452,26.1452]]},"s4":{"name":"Cristian Pană","ini":"CP","roles":"Service","status":"În teren","pos":[44.4705,26.066],"base":[44.442,26.096],"route":[[44.4241,26.1752],[44.4702,26.0652],[44.4781,26.0402]]},"s5":{"name":"Andrei Voicu","ini":"AV","roles":"Cititor","status":"Concediu","pos":null,"base":[44.442,26.096],"route":[]},"s6":{"name":"Florin Stoica","ini":"FS","roles":"Montator, Service","status":"În teren","pos":[44.429,26.0405],"base":[44.442,26.096],"route":[[44.4301,26.0402],[44.4322,26.0302]]},"s7":{"name":"Daniel Ene","ini":"DE","roles":"Service","status":"La birou","pos":[44.442,26.096],"base":[44.442,26.096],"route":[]},"s8":{"name":"Radu Marinescu","ini":"RM","roles":"Cititor, Montator","status":"În teren","pos":[44.4598,26.121],"base":[44.442,26.096],"route":[[44.4602,26.1202]]},"s9":{"name":"Ionuț Ciobanu","ini":"IC","roles":"Cititor","status":"În teren","pos":[44.416,26.039],"base":[44.416,26.039],"route":[]},"s10":{"name":"Elena Vasile","ini":"EV","roles":"Cititor","status":"În teren","pos":[44.388,26.118],"base":[44.388,26.118],"route":[]},"s11":{"name":"Marius Neagu","ini":"MN","roles":"Cititor","status":"În teren","pos":[44.452,26.152],"base":[44.452,26.152],"route":[]},"s12":{"name":"Laura Mihai","ini":"LM","roles":"Cititor","status":"În teren","pos":[44.433,26.023],"base":[44.433,26.023],"route":[]},"s13":{"name":"Gabriel Toma","ini":"GT","roles":"Cititor","status":"În teren","pos":[44.419,26.168],"base":[44.419,26.168],"route":[]},"s14":{"name":"Cristina Dinu","ini":"CD","roles":"Cititor","status":"În teren","pos":[44.464,26.1],"base":[44.464,26.1],"route":[]},"s15":{"name":"Alin Petrescu","ini":"AP","roles":"Cititor","status":"În teren","pos":[44.407,26.07],"base":[44.407,26.07],"route":[]},"s16":{"name":"Roxana Iordache","ini":"RI","roles":"Cititor","status":"În teren","pos":[44.447,26.048],"base":[44.447,26.048],"route":[]},"s17":{"name":"Sebastian Lungu","ini":"SL","roles":"Cititor","status":"În teren","pos":[44.408,26.135],"base":[44.408,26.135],"route":[]}},"jobs":[{"id":"I-5021","nod":"81-001-0004","gps":[44.4241,26.1752],"time":"09:00","type":"Service","status":"Finalizată","state":"done","staff":"Cristian Pană","address":"Str. Gura Ialomiței 3, Bl. PC9, Sc. B, Sector 3"},{"id":"I-5022","nod":"81-001-0002","gps":[44.4702,26.0652],"time":"11:00","type":"Service","status":"În curs","state":"progress","staff":"Cristian Pană","address":"Str. Reziliat 36, Vila, Sector 1"},{"id":"I-5023","nod":"81-001-0021","gps":[44.4781,26.0402],"time":"14:00","type":"Service","status":"Programată","state":"","staff":"Cristian Pană","address":"Str. Bucureștii Noi 26, Bl. 1, Sc. A, Sector 1"},{"id":"I-5024","nod":"81-001-0055","gps":[44.4182,26.1702],"time":"09:30","type":"Service","status":"Finalizată","state":"done","staff":"Bogdan Antal","address":"Aleea Bârsănești 2, Bl. 156, Sc. 2, Sector 6"},{"id":"I-5025","nod":"81-001-0004","gps":[44.4241,26.1752],"time":"12:00","type":"Service","status":"În curs","state":"progress","staff":"Bogdan Antal","address":"Str. Gura Ialomiței 3, Bl. PC9, Sc. B, Sector 3"},{"id":"I-5026","nod":"81-001-0140","gps":[44.4202,26.1502],"time":"15:00","type":"Service","status":"Programată","state":"","staff":"Bogdan Antal","address":"Str. Liviu Rebreanu 14, Bl. K, Sc. 3, Sector 3"},{"id":"I-5027","nod":"81-001-0040","gps":[44.4432,26.1202],"time":"10:00","type":"Service","status":"Nerealizată","state":"failed","staff":"Teodor Milian","address":"Calea Moșilor 241, Bl. 47, Sc. A+B+C, Sector 2"},{"id":"I-5028","nod":"81-001-0001","gps":[44.4521,26.1102],"time":"13:00","type":"Service","status":"Programată","state":"","staff":"Teodor Milian","address":"Str. Stefan cel Mare 27, Bl. 27, Sc. 1, Sector 2"},{"id":"I-5030","nod":"81-001-0017","gps":[44.4301,26.0402],"time":"10:30","type":"Service","status":"În curs","state":"progress","staff":"Florin Stoica","address":"Str. Sibiu 18, Bl. 813, Sc. 1, Sector 6"},{"id":"I-5031","nod":"81-001-0467","gps":[44.4322,26.0302],"time":"13:30","type":"Service","status":"Programată","state":"","staff":"Florin Stoica","address":"Aleea Callatis 1, Bl. A14A, Sc. 7+8, Sector 6"},{"id":"I-5035","nod":"81-001-2108","gps":[44.4452,26.1452],"time":"08:00","type":"Montaj","status":"În curs","state":"progress","staff":"Mihai Dobre","address":"Str. Cremenița 5, Corp B, Sector 2"},{"id":"I-5036","nod":"81-001-0047","gps":[44.4602,26.1202],"time":"08:30","type":"Citire walk-by","status":"În curs","state":"progress","staff":"Radu Marinescu","address":"Str. Lacul Tei 121, Bl. 5, Sc. 1, Sector 2"}],"alerts":[{"id":"R-901","nod":"81-001-0030","gps":[44.4372,26.1652],"title":"Gateway GW-40211","issue":"Nu transmite","sev":"Critic","type":"gw"},{"id":"R-902","nod":"81-001-0053","gps":[44.4021,26.1152],"title":"Gateway GW-40188","issue":"Nu transmite","sev":"Critic","type":"gw"},{"id":"R-903","nod":"81-001-0055","gps":[44.4182,26.1702],"title":"Contor apă 63333400","issue":"Flux invers","sev":"Ridicat","type":"apa"},{"id":"R-904","nod":"81-001-0001","gps":[44.4521,26.1102],"title":"Repartitor 34061227","issue":"Sabotaj \/ demontare","sev":"Ridicat","type":"rep"},{"id":"R-905","nod":"81-001-0023","gps":[44.4481,26.1402],"title":"Contor ET ET-77120","issue":"Eroare E3 (senzor temp.)","sev":"Mediu","type":"et"},{"id":"R-906","nod":"81-001-0140","gps":[44.4202,26.1502],"title":"Repartitor 34722225","issue":"Baterie descărcată","sev":"Mediu","type":"rep"},{"id":"R-907","nod":"81-001-0021","gps":[44.4781,26.0402],"title":"Senzor SZ-1102","issue":"Nu transmite","sev":"Mediu","type":"senzor"},{"id":"R-908","nod":"81-001-0040","gps":[44.4432,26.1202],"title":"Contor apă 63189283","issue":"Nu transmite","sev":"Scăzut","type":"apa"}],"nods":{"81-001-0001":{"gps":[44.4521,26.1102],"address":"Str. Stefan cel Mare 27, Bl. 27, Sc. 1, Sector 2","partner":"Asociația de Proprietari Bloc 27 Scara 1"},"81-001-0002":{"gps":[44.4702,26.0652],"address":"Str. Reziliat 36, Vila, Sector 1","partner":"Asociația de Proprietari Bloc Vila"},"81-001-0004":{"gps":[44.4241,26.1752],"address":"Str. Gura Ialomiței 3, Bl. PC9, Sc. B, Sector 3","partner":"Asociația de Proprietari Bloc PC9 Sc. B"},"81-001-0007":{"gps":[44.4252,26.1351],"address":"Str. Laborator 125-127, Bl. S1, Sc. 2, Sector 3","partner":"Asociația de Proprietari Bloc S1 Sc. 2"},"81-001-0010":{"gps":[44.4201,26.1031],"address":"Str. Bibescu Vodă 2, Bl. P5, Sc. 4, Sector 4","partner":"Asociația de Proprietari Bloc P5 Sc. 4"},"81-001-0017":{"gps":[44.4301,26.0402],"address":"Str. Sibiu 18, Bl. 813, Sc. 1, Sector 6","partner":"Asociația de Proprietari Bl. 813"},"81-001-0018":{"gps":[44.4271,26.1101],"address":"Str. Unirii 13, Bl. 2C, Sc. 1, Sector 5","partner":"Asociația de Proprietari Bloc 2C"},"81-001-0020":{"gps":[44.4452,26.1752],"address":"Str. Pantelimon 332, Bl. 32, Sc. 1, Sector 2","partner":"Asociația de Proprietari Bloc 32"},"81-001-0021":{"gps":[44.4781,26.0402],"address":"Str. Bucureștii Noi 26, Bl. 1, Sc. A, Sector 1","partner":"Asociația de Proprietari Bloc 1"},"81-001-0023":{"gps":[44.4481,26.1402],"address":"Str. Oteșani 14, Bl. T8B, Sc. 1, Sector 2","partner":"Asociația de Proprietari Bloc T8B"},"81-001-0030":{"gps":[44.4372,26.1652],"address":"Str. Vergului 65, Bl. 17, Sc. A, Sector 2","partner":"Asociația de Proprietari Bloc 17 Sc. A"},"81-001-0040":{"gps":[44.4432,26.1202],"address":"Calea Moșilor 241, Bl. 47, Sc. A+B+C, Sector 2","partner":"Asociația de Proprietari Bloc 47"},"81-001-0047":{"gps":[44.4602,26.1202],"address":"Str. Lacul Tei 121, Bl. 5, Sc. 1, Sector 2","partner":"Asociația de Proprietari Bloc 5 Sc. 1-4"},"81-001-0053":{"gps":[44.4021,26.1152],"address":"Calea Văcărești 308, Bl. 1E, Sc. 1, Sector 4","partner":"Asociația de Proprietari Bloc 1E"},"81-001-0055":{"gps":[44.4182,26.1702],"address":"Aleea Bârsănești 2, Bl. 156, Sc. 2, Sector 6","partner":"Asociația de Proprietari Bloc 156 Sc. 2"},"81-001-0140":{"gps":[44.4202,26.1502],"address":"Str. Liviu Rebreanu 14, Bl. K, Sc. 3, Sector 3","partner":"Asociația de Proprietari Bloc K"},"81-001-0467":{"gps":[44.4322,26.0302],"address":"Aleea Callatis 1, Bl. A14A, Sc. 7+8, Sector 6","partner":"Asociația de Proprietari Bloc A14A"},"81-001-2108":{"gps":[44.4452,26.1452],"address":"Str. Cremenița 5, Corp B, Sector 2","partner":"Asociația de Proprietari Cremenița 5"}}};
     var map, layers = {}, route = null, markers = {};
     function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
 
@@ -917,14 +1036,14 @@ var ProLiveMap = (function () {
         ['nods', 'jobs', 'alerts', 'staff'].forEach(function (k) { layers[k] = SonicProMap.layer(map); });
         Object.keys(D.nods).forEach(function (code) {
             var n = D.nods[code];
-            SonicProMap.nod(map, n.gps, SonicProMap.popup('NOD ' + code, esc(n.address) + '<br>' + esc(n.partner), '<a href="pro-programare.html?nod=' + encodeURIComponent(code) + '">Programează</a> · <a href="gestiune-nod-edit.html?nod=' + encodeURIComponent(code) + '">Fișa NOD</a>'), layers.nods);
+            SonicProMap.nod(map, n.gps, SonicProMap.popup('NOD ' + code, esc(n.address) + '<br>' + esc(n.partner), '<a href="pro-intrare-noua.html?level=nod&key=' + encodeURIComponent(code) + '">Deschide ticket</a> · <a href="gestiune-nod-edit.html?nod=' + encodeURIComponent(code) + '">Fișa NOD</a>'), layers.nods);
         });
         map.removeLayer(layers.nods);
         D.jobs.forEach(function (j) {
             SonicProMap.job(map, j.gps, j.state, SonicProMap.popup(j.id + ' · ' + j.time + ' · ' + esc(j.type), 'NOD ' + j.nod + '<br>' + esc(j.address) + '<br>' + esc(j.staff) + ' · ' + esc(j.status)), layers.jobs);
         });
         D.alerts.forEach(function (a) {
-            SonicProMap.alert(map, a.gps, SonicProMap.popup(esc(a.title) + ' – ' + esc(a.issue), 'NOD ' + a.nod + ' · ' + esc(a.sev), '<a href="pro-programare.html?nod=' + encodeURIComponent(a.nod) + '&types=' + a.type + '&alert=' + a.id + '">Programează service</a>'), layers.alerts);
+            SonicProMap.alert(map, a.gps, SonicProMap.popup(esc(a.title) + ' – ' + esc(a.issue), 'NOD ' + a.nod + ' · ' + esc(a.sev), '<a href="pro-intrare-noua.html?level=nod&key=' + encodeURIComponent(a.nod) + '&source=intern">Deschide ticket de service</a>'), layers.alerts);
         });
         Object.keys(D.staff).forEach(function (sid) {
             var s = D.staff[sid]; if (!s.pos) return;
@@ -939,7 +1058,7 @@ var ProLiveMap = (function () {
             var v = this.value.trim().toLowerCase(), code = Object.keys(D.nods).filter(function (c) { return c === v || D.nods[c].address.toLowerCase().indexOf(v) !== -1; })[0];
             if (!code) return;
             map.setView(D.nods[code].gps, 16);
-            L.popup().setLatLng(D.nods[code].gps).setContent(SonicProMap.popup('NOD ' + code, esc(D.nods[code].address), '<a href="pro-programare.html?nod=' + encodeURIComponent(code) + '">Programează intervenție</a>')).openOn(map);
+            L.popup().setLatLng(D.nods[code].gps).setContent(SonicProMap.popup('NOD ' + code, esc(D.nods[code].address), '<a href="pro-intrare-noua.html?level=nod&key=' + encodeURIComponent(code) + '">Deschide ticket</a>')).openOn(map);
         });
 
         // simulare poziție live: mică deplasare la 15 s pentru persoanele în teren
